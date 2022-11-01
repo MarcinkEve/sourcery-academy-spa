@@ -1,0 +1,15 @@
+// Container for all the components to be inserted within
+
+.main-container {
+  background-color: var(--color-peachy); // TEMPORARY COLOR - DELETE AFTER
+  display: grid;
+  grid-template-columns: 1fr 144rem 1fr;
+  height: 100vh;
+
+  &__content-components {
+    background-color: var(--color-white); // TEMPORARY COLOR - DELETE AFTER
+    font-size: 1.8rem;
+    grid-column: 2 / 3;
+    padding: 0 8rem;
+  }
+}
