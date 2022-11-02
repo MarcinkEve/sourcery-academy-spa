@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './pageLayout.scss';
 
-const Index = (props) => {
+const PageLayout = (props) => {
   return (
     <>
       <div className="page-layout">
@@ -11,8 +11,8 @@ const Index = (props) => {
     </>
   );
 };
-Index.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Index;
+export default PageLayout;
