@@ -5,9 +5,3 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-@mixin flex-box($direction, $content, $align) {
-  align-items: $align;
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $content;
-}
