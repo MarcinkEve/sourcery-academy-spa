@@ -15,3 +15,9 @@
 
 /* Print stylesheet */
 @import 'vendor/print';
+
+/* ---------Single components--------- */
+
+/* Main container-component */
+
+@import '../components/App/page/styles.module';

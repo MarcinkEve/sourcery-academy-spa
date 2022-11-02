@@ -1,4 +1,5 @@
 import React from 'react';
+import './page/styles.module.scss';
 
 const Index = () => {
   return (
