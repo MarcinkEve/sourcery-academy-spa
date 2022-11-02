@@ -1,0 +1,70 @@
+.footer {
+  align-items: center;
+  background-color: var(--color-white);
+  display: flex;
+  height: 104px;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+}
+
+.footer-container {
+  align-items: center;
+  background-color: var(--color-white);
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1440px;
+  overflow: hidden;
+  padding: 28px;
+  position: absolute;
+  width: 100%;
+
+  &-list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    &--item {
+      background-color: var(--color-light-purple);
+      border-radius: 50%;
+      list-style-type: none;
+      margin: 0;
+      margin-right: 16px;
+      outline-color: var(--color-purple);
+      padding: 0;
+
+      &:hover,
+      &:active {
+        box-shadow: rgba(61, 54, 145, 0.3) 0 1px 2px 0,
+          rgba(61, 54, 145, 0.15) 0 2px 6px 3px;
+        transform: scale(1.07);
+      }
+
+      &-link {
+        align-items: center;
+        color: var(--color-purple);
+        display: flex;
+        font-size: 24px;
+        height: 40px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+      }
+    }
+  }
+
+  &-text {
+    color: var(--color-purple);
+    // font-family: 'Raleway';    //TO DO
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    text-transform: capitalize;
+  }
+}
