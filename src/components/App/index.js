@@ -1,14 +1,16 @@
 import React from 'react';
-import './page/styles.module.scss';
+import PageLayout from '../../layout/page-layout/pageLayout';
 
 const Index = () => {
   return (
     <>
-      <div className="main-container">
-        <div className="main-container__content-components">
-          Imported components go here!
-        </div>
-      </div>
+      <PageLayout>
+        <h1 style={{ textAlign: 'center' }}>
+          {' '}
+          &rarr; Drop components here &larr;{' '}
+        </h1>{' '}
+        {/* Delete this h1 tag after first component added */}
+      </PageLayout>
     </>
   );
 };
