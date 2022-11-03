@@ -1,0 +1,53 @@
+body {
+  background-color: lightgreen;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+//blocked by SFE22D-26: need color and typography definitions
+.triangle {
+  border-bottom: 20px solid #fff; //color variable
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  height: 0;
+  width: 0;
+}
+
+.links {
+  background-color: #fff; //SFE22D-26
+  border-radius: 14px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 12px 0;
+  position: relative;
+}
+
+.link {
+  background-color: #fff; //SFE22D-26
+  border: none;
+  color: #3d3691; //SFE22D-26
+  font-family: 'Roboto Light', serif; //SFE22D-26
+  font-size: 16px; //SFE22D-26
+  font-style: normal; //SFE22D-26
+  font-weight: 400; //SFE22D-26
+  line-height: 16px; //SFE22D-26
+  list-style: none;
+  padding-bottom: 18px;
+  padding-left: 17px;
+  padding-top: 14px;
+  text-align: start;
+  width: 200px;
+}
+
+.link:hover,
+.link:focus {
+  background-color: #f6f5f7; //SFE22D-26
+  cursor: pointer;
+}
