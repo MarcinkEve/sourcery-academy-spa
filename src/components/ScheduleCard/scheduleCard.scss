@@ -1,0 +1,29 @@
+@import '../../sass/global';
+
+.schedule-card {
+  background-color: var(--color-primary); // should inherit color prop
+  border-radius: 1.5rem;
+  display: flex;
+  line-height: 2.1rem; // line height does not correspond to design value. Maybe fonts need to be included
+  min-height: 12rem;
+  padding: 2rem;
+  width: 26.6rem;
+  // box-shadow: -2rem 2rem 0 var(--color-light-gray); // background: #F6F5F7;
+  @include box-shadow;
+
+  &__name {
+    color: var(--color-white); // font variable
+    // font-family: 'Raleway'; // font variable
+    font-size: 1.8rem; // variable
+    font-style: normal;
+    font-weight: 700;
+    margin-right: auto;
+  }
+
+  &__arrow-icon {
+    background-color: var(--color-white);
+    height: 2rem;
+    padding-left: 2rem;
+    width: 2rem;
+  }
+}

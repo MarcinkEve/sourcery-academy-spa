@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageLayout from '../../layout/pageLayout';
+import PageLayout from '../../layout/PageLayout';
 
 export default function index() {
   return (
