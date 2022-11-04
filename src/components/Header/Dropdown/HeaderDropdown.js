@@ -5,19 +5,15 @@ import PropTypes from 'prop-types';
 
 const cn = classNames.bind(styles);
 
-//need accessibility features from parent
-//  drops down on enter
-//  separate element - arrow down
-//  delay 0.8s on mouse leave
 export default function HeaderDropdown({ data }) {
   return (
-    <div className={cn('container')}>
-      <div className={cn('triangle')} />
-      <ul className={cn('links')}>
+    <div className={cn('dropdown')}>
+      <div className={cn('dropdown__triangle')} />
+      <ul className={cn('dropdown__content')}>
         {data.map((element, index) => (
           <li
             key={index.toString()}
-            className={cn('link')}
+            className={cn('dropdown__content-link')}
             tabIndex="0"
             onClick={element.event}
           >
