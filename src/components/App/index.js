@@ -1,26 +1,31 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
-import styles from './styles.module';
-import Svg from '~/assets/svg/image.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const cn = classNames.bind(styles);
+import Header from '../Header';
 
-export default function App({ prop }) {
-  const charCount = prop.length;
+import Developers from '../Pages/Developers';
+import FrontEnd from '../Pages/FrontEnd';
+import Homepage from '../Pages/Homepage';
+import Kids from '../Pages/Kids';
+import Testers from '../Pages/Testers';
+import ApplicationForm from '../Pages/ApplicationForm';
 
+export default function App() {
   return (
-    <div className={cn('wrapper')}>
-      <div className={cn('content')}>
-        <Svg className={cn('image')} />
-        <pre className={cn('helloworld')} style={{ '--count': charCount }}>
-          {prop}
-        </pre>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Header></Header>
+
+      <Routes>
+        <Route path="/" element={<Homepage></Homepage>}></Route>
+        <Route path="/developers" element={<Developers></Developers>}></Route>
+        <Route path="/frontend" element={<FrontEnd></FrontEnd>}></Route>
+        <Route path="/kids" element={<Kids></Kids>}></Route>
+        <Route path="/testers" element={<Testers></Testers>}></Route>
+        <Route
+          path="/applicationform"
+          element={<ApplicationForm></ApplicationForm>}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-App.propTypes = {
-  prop: PropTypes.string,
-};
