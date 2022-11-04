@@ -1,36 +1,35 @@
 @import '../../sass/utilities/mixins/basics';
 
 .footer {
-  background-color: var(--color-white);
-  height: 104px;
-  position: absolute;
-  width: 100vw;
   @include flex-box(row, center, center);
 
+  background-color: var(--color-white);
+  height: 6.5em;
+
   &__container {
+    @include flex-box(row, space-between, center);
+
     background-color: var(--color-white);
     bottom: 0;
-    flex-wrap: wrap;
     height: fit-content;
-    max-width: 1440px;
+    max-width: 90em;
     overflow: hidden;
-    padding: 28px;
-    position: absolute;
+    padding: 1.75em;
     width: 100%;
-    @include flex-box(row, space-between, center);
   }
 
   &__list {
+    @include flex-box(row, center, center);
+
     margin: 0;
     padding: 0;
-    @include flex-box(row, center, center);
 
     &-item {
       background-color: var(--color-light-purple);
       border-radius: 50%;
       list-style-type: none;
       margin: 0;
-      margin-right: 16px;
+      margin-right: 1em;
       outline-color: var(--color-purple);
       padding: 0;
 
@@ -46,10 +45,10 @@
   &__text {
     color: var(--color-purple);
     // font-family: 'Raleway';    //TO DO
-    font-size: 16px;
+    font-size: 1em;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 1em;
     text-transform: capitalize;
   }
 }
