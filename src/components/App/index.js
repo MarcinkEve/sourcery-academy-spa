@@ -1,4 +1,5 @@
 import React from 'react';
+import PageLayout from '../../layout/pageLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from '../Header';
@@ -10,9 +11,11 @@ import Kids from '../Pages/Kids';
 import Testers from '../Pages/Testers';
 import ApplicationForm from '../Pages/ApplicationForm';
 
-export default function App() {
+export default function index() {
   return (
     <BrowserRouter>
+    <PageLayout>
+
       <Header></Header>
 
       <Routes>
@@ -26,6 +29,7 @@ export default function App() {
           element={<ApplicationForm></ApplicationForm>}
         ></Route>
       </Routes>
+    </PageLayout>
     </BrowserRouter>
-  );
+  )
 }
