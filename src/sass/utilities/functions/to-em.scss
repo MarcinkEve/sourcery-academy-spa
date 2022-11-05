@@ -1,4 +1,0 @@
-@function to-em($value) {
-  $em: ($value / 16) + em;
-  @return $em;
-}

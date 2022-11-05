@@ -1,17 +1,21 @@
-@import '../../sass/utilities/mixins/basics';
+@import '../../sass/utilities/mixins/flex-box';
 @import '../../sass/utilities/mixins/reset-list-styles';
-@import '../../sass/utilities/functions/to-em';
+@import '../../sass/utilities/functions/to-rem';
 
 .social-link {
-  @include flex-box(row, center, center);
+  @include flex-box(
+    $direction: row,
+    $justify-content: center,
+    $align-items: center
+  );
   @include reset-list-style;
 
   background-color: var(--color-light-purple);
   border-radius: 50%;
   color: var(--color-purple);
-  height: to-em(40);
+  height: to-rem(40);
   outline-color: var(--color-purple);
-  width: to-em(40);
+  width: to-rem(40);
 
   &:hover,
   &:active {
@@ -21,6 +25,6 @@
   }
 
   &__icon {
-    font-size: to-em(24);
+    font-size: to-rem(24);
   }
 }

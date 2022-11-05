@@ -1,25 +1,27 @@
-@import '../../sass/utilities/mixins/basics';
+@import '../../sass/utilities/mixins/flex-box';
 @import '../../sass/utilities/mixins/reset-list-styles';
-@import '../../sass/utilities/functions/to-em';
+@import '../../sass/utilities/functions/to-rem';
 
 .footer {
-  @include flex-box(row, center, center);
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
 
-  background-color: var(--color-white);
-
-  &__container {
-    @include flex-box(row, space-between, center);
-
-    max-width: to-em(1440);
-    padding: to-em(28);
-    width: 100%;
-  }
+  margin: 0 auto;
+  max-width: to-rem(1440);
+  padding: to-rem(28);
 
   &__list {
-    @include flex-box(row, center, center);
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
     @include reset-list-style;
 
-    gap: to-em(16);
+    gap: to-rem(16);
 
     &-item {
       @include reset-list-style;
@@ -29,10 +31,10 @@
   &__text {
     color: var(--color-purple);
     // font-family: 'Raleway';    //TO DO
-    font-size: to-em(16);
+    font-size: to-rem(16);
     font-style: normal;
     font-weight: 400;
-    line-height: to-em(16);
+    line-height: to-rem(16);
     margin: 0;
     text-transform: capitalize;
   }
