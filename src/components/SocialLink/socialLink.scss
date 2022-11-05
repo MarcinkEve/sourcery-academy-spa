@@ -1,0 +1,26 @@
+@import '../../sass/utilities/mixins/basics';
+@import '../../sass/utilities/mixins/reset-list-styles';
+@import '../../sass/utilities/functions/to-em';
+
+.social-link {
+  @include flex-box(row, center, center);
+  @include reset-list-style;
+
+  background-color: var(--color-light-purple);
+  border-radius: 50%;
+  color: var(--color-purple);
+  height: to-em(40);
+  outline-color: var(--color-purple);
+  width: to-em(40);
+
+  &:hover,
+  &:active {
+    box-shadow: rgba(61, 54, 145, 0.3) 0 1px 2px 0,
+      rgba(61, 54, 145, 0.15) 0 2px 6px 3px;
+    transform: scale(1.07);
+  }
+
+  &__icon {
+    font-size: to-em(24);
+  }
+}
