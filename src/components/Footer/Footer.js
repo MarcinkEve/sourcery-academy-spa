@@ -11,19 +11,19 @@ export const Footer = () => {
       id: 1,
       title: 'facebook',
       link: 'https://www.facebook.com/devbridge/',
-      icon: <FiFacebook />,
+      icon: <FiFacebook className="social-link__icon" />,
     },
     {
       id: 2,
       title: 'twitter',
       link: 'https://twitter.com/devbridge',
-      icon: <FiTwitter />,
+      icon: <FiTwitter className="social-link__icon" />,
     },
     {
       id: 3,
       title: 'instagram',
       link: 'https://www.instagram.com/devbridge',
-      icon: <BsInstagram />,
+      icon: <BsInstagram className="social-link__icon" />,
     },
   ];
   return (
@@ -36,7 +36,7 @@ export const Footer = () => {
             </li>
           ))}
         </ul>
-        <p className="footer__text">Copyright &copy; 2019 sourcery academy</p>
+        <p className="footer__text">Copyright &copy; 2022 sourcery academy</p>
       </div>
     </footer>
   );

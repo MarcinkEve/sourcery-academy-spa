@@ -1,54 +1,39 @@
 @import '../../sass/utilities/mixins/basics';
+@import '../../sass/utilities/mixins/reset-list-styles';
+@import '../../sass/utilities/functions/to-em';
 
 .footer {
   @include flex-box(row, center, center);
 
   background-color: var(--color-white);
-  height: 6.5em;
 
   &__container {
     @include flex-box(row, space-between, center);
 
-    background-color: var(--color-white);
-    bottom: 0;
-    height: fit-content;
-    max-width: 90em;
-    overflow: hidden;
-    padding: 1.75em;
+    max-width: to-em(1440);
+    padding: to-em(28);
     width: 100%;
   }
 
   &__list {
     @include flex-box(row, center, center);
+    @include reset-list-style;
 
-    margin: 0;
-    padding: 0;
+    gap: to-em(16);
 
     &-item {
-      background-color: var(--color-light-purple);
-      border-radius: 50%;
-      list-style-type: none;
-      margin: 0;
-      margin-right: 1em;
-      outline-color: var(--color-purple);
-      padding: 0;
-
-      &:hover,
-      &:active {
-        box-shadow: rgba(61, 54, 145, 0.3) 0 1px 2px 0,
-          rgba(61, 54, 145, 0.15) 0 2px 6px 3px;
-        transform: scale(1.07);
-      }
+      @include reset-list-style;
     }
   }
 
   &__text {
     color: var(--color-purple);
     // font-family: 'Raleway';    //TO DO
-    font-size: 1em;
+    font-size: to-em(16);
     font-style: normal;
     font-weight: 400;
-    line-height: 1em;
+    line-height: to-em(16);
+    margin: 0;
     text-transform: capitalize;
   }
 }
