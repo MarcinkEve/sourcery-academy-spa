@@ -1,7 +1,10 @@
+$font-size-html: 62.5%;
+
 :root {
   --color-primary: #ff3454;
   --color-secondary: #404cfa;
   --font-size-base: 1.6rem;
+  --font-size-html: #{$font-size-html};
   --font-family: system-ui;
   --line-height-base: 1.5;
 

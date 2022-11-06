@@ -1,3 +1,4 @@
+@import '../../../sass/utilities/functions';
 //blocked by SFE22D-26: need color and typography definitions
 
 .dropdown {
@@ -5,39 +6,39 @@
   display: flex;
   flex-direction: column;
   font-family: 'Roboto Light', serif; //SFE22D-26
-  font-size: 14px; //SFE22D-26
+  font-size: rem(14px); //SFE22D-26
   font-style: normal; //SFE22D-26
   font-weight: 400; //SFE22D-26
-  line-height: 16px; //SFE22D-26
+  line-height: rem(16px); //SFE22D-26
 
   &__triangle {
-    border-bottom: 1.43em solid #fff; //SFE22D-26
-    border-left: 1.43em solid transparent;
-    border-right: 1.43em solid transparent;
+    border-bottom: rem(20px) solid #fff; //SFE22D-26
+    border-left: rem(20px) solid transparent;
+    border-right: rem(20px) solid transparent;
     height: 0;
     width: 0;
   }
 
   &__content {
     background-color: #fff; //SFE22D-26
-    border-radius: 1em;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: rem(14px);
+    box-shadow: 0 rem(4px) rem(4px) rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    padding: 0.85em 0;
+    padding: rem(12px) 0;
     position: relative;
-    width: 14.29em;
+    width: rem(200px);
 
     &-link {
       background-color: #fff; //SFE22D-26
       border: none;
       color: #3d3691; //SFE22D-26
       list-style: none;
-      padding-bottom: 1.29em;
-      padding-left: 1.21em;
-      padding-top: 1em;
+      padding-bottom: rem(18px);
+      padding-left: rem(17px);
+      padding-top: rem(14px);
       text-align: start;
 
       &:hover,
