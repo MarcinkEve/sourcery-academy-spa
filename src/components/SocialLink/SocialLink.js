@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 
 import './socialLink.scss';
 
-export const SocialLink = ({ element }) => {
+export const SocialLink = ({ socialLink }) => {
   return (
     <a
-      href={element.link}
+      href={socialLink.link}
       target="_blank"
       rel="noreferrer"
-      aria-label={element.title + ' social link'}
+      title={socialLink.title}
       className="social-link"
     >
-      {element.icon}
+      {socialLink.icon}
     </a>
   );
 };
 
 SocialLink.propTypes = {
-  element: PropTypes.object,
+  socialLink: PropTypes.object,
 };

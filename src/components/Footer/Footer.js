@@ -1,34 +1,35 @@
 import React from 'react';
-import { FiTwitter, FiFacebook } from 'react-icons/fi';
-import { BsInstagram } from 'react-icons/bs';
 
 import SocialLink from '../SocialLink';
+import Facebook from '~/assets/svg/Icon_awesome-facebook-f.svg';
+import Twitter from '~/assets/svg/Icon_feather-twitter.svg';
+import Instagram from '~/assets/svg/instagram.svg';
 import './footer.scss';
 
 export const Footer = () => {
-  const icons = [
+  const socialLinks = [
     {
-      title: 'facebook',
+      title: 'Facebook',
       link: 'https://www.facebook.com/devbridge/',
-      icon: <FiFacebook className="social-link__icon" />,
+      icon: <Facebook className="social-link__icon" />,
     },
     {
-      title: 'twitter',
+      title: 'Twitter',
       link: 'https://twitter.com/devbridge',
-      icon: <FiTwitter className="social-link__icon" />,
+      icon: <Twitter className="social-link__icon" />,
     },
     {
-      title: 'instagram',
+      title: 'Instagram',
       link: 'https://www.instagram.com/devbridge',
-      icon: <BsInstagram className="social-link__icon" />,
+      icon: <Instagram className="social-link__icon" />,
     },
   ];
   return (
     <footer className="footer">
       <ul className="footer__list">
-        {icons.map((element, index) => (
+        {socialLinks.map((socialLink, index) => (
           <li className="footer__list-item" key={index}>
-            <SocialLink element={element} />
+            <SocialLink socialLink={socialLink} />
           </li>
         ))}
       </ul>

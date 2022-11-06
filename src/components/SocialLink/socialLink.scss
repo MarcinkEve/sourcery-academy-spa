@@ -13,6 +13,7 @@
   background-color: var(--color-light-purple);
   border-radius: 50%;
   color: var(--color-purple);
+  fill: var(--color-purple);
   height: to-rem(40);
   outline-color: var(--color-purple);
   width: to-rem(40);
@@ -25,6 +26,7 @@
   }
 
   &__icon {
-    font-size: to-rem(24);
+    height: to-rem(24);
+    width: to-rem(24);
   }
 }
