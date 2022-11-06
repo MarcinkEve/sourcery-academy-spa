@@ -1,6 +1,8 @@
-@import '../../sass/utilities/mixins/flex-box';
-@import '../../sass/utilities/mixins/reset-list-styles';
-@import '../../sass/utilities/functions/to-rem';
+@import '~/sass/utilities/mixins/flex-box';
+@import '~/sass/utilities/mixins/reset-list-styles';
+@import '~/sass/utilities/mixins/padding-margin-0';
+
+@import '~/sass/utilities/functions/to-rem';
 
 .social-link {
   @include flex-box(
@@ -8,7 +10,7 @@
     $justify-content: center,
     $align-items: center
   );
-  @include reset-list-style;
+  @include padding-margin-0;
 
   background-color: var(--color-light-purple);
   border-radius: 50%;

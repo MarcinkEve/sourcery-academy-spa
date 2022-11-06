@@ -1,5 +1,7 @@
 @import '../../sass/utilities/mixins/flex-box';
 @import '../../sass/utilities/mixins/reset-list-styles';
+@import '~/sass/utilities/mixins/padding-margin-0';
+
 @import '../../sass/utilities/functions/to-rem';
 
 .footer {
@@ -24,7 +26,7 @@
     gap: to-rem(16);
 
     &-item {
-      @include reset-list-style;
+      @include padding-margin-0;
     }
   }
 

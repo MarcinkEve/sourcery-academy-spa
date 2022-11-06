@@ -1,0 +1,5 @@
+/* Resets default styling for list elements (<ul>, <ol>) */
+@mixin padding-margin-0 {
+  margin: 0;
+  padding: 0;
+}
