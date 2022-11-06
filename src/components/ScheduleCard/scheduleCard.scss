@@ -1,29 +1,142 @@
 @import '../../sass/global';
 
 .schedule-card {
-  background-color: var(--color-primary); // should inherit color prop
-  border-radius: 1.5rem;
-  display: flex;
-  line-height: 2.1rem; // line height does not correspond to design value. Maybe fonts need to be included
-  min-height: 12rem;
-  padding: 2rem;
+  background-color: var(--color-page-3); // prop coolor
+  border: 0.2rem solid var(--color-page-3); // prop coolor
+  border-radius: 1.7rem;
+  color: var(--color-white); // always white
+  cursor: pointer;
+  min-height: 6rem;
   width: 26.6rem;
-  // box-shadow: -2rem 2rem 0 var(--color-light-gray); // background: #F6F5F7;
-  @include box-shadow;
+  @include box-shadow; // change color variable
 
-  &__name {
-    color: var(--color-white); // font variable
-    // font-family: 'Raleway'; // font variable
-    font-size: 1.8rem; // variable
-    font-style: normal;
-    font-weight: 700;
-    margin-right: auto;
+  &__title {
+    display: flex;
+    padding: 2rem;
+
+    &-name {
+      border-radius: inherit;
+      font-size: 1.8rem;
+      font-weight: 700;
+      max-width: 19.3rem;
+    }
+
+    &-arrow {
+      // height: 1.3rem; // for component
+      margin-left: auto;
+      margin-top: 0.8rem;
+      // width: 2.1em; // for component
+    }
   }
+  // -------------------------------------------------------------------DROPDOW SECTION
+  &__dropdown {
+    background-color: var(--color-white); // always white
+    border-radius: 0 0 1.5rem 1.5rem;
+    // display: none;
+    transition: 0.3s;
+  }
+  // -------------------------------------------------------------------DROPDOW / LECTURER PART
+  &__lecturer {
+    background-color: var(--color-page-3); // prop coolor
+    border-radius: 0 0 0 1.5rem;
+    font-size: 1.4rem;
+    padding: 0 2rem 2rem;
 
-  &__arrow-icon {
-    background-color: var(--color-white);
-    height: 2rem;
-    padding-left: 2rem;
-    width: 2rem;
+    &-credentials {
+      align-items: center;
+      display: flex;
+    }
+
+    &-avatar,
+    &-clock {
+      align-self: center;
+      display: flex;
+      margin-right: 1rem;
+    }
+    // COMPONENT / SVG
+    &-avatar {
+      margin-right: 1.4rem;
+    }
+
+    &-name {
+    }
+
+    &-timing {
+      align-items: center;
+      display: flex;
+    }
+    // COMPONENT / SVG
+    &-clock {
+      margin-left: -0.2rem;
+      width: 2rem;
+    }
+
+    &-time {
+    }
+    // COMPONENT / SVG
+    &-separator {
+      display: flex;
+      height: 100%;
+      margin: 0 1.5rem;
+    }
+
+    &-duration {
+    }
+  }
+  // -------------------------------------------------------------------DROPDOW / LOCATION PART
+  &__location {
+    color: var(--color-page-3); // prop color
+    padding: 2rem;
+
+    &-container {
+      align-items: center;
+      border: 0.2rem solid currentColor;
+      border-radius: 0.75rem;
+      display: inline-block;
+      display: flex;
+      height: 5rem;
+      width: 100%;
+    }
+
+    &-container:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &-date {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      height: 100%;
+      justify-content: center;
+      line-height: 1;
+      text-align: center;
+      width: 25%;
+    }
+
+    &-month {
+      font-size: 1.4rem;
+    }
+
+    &-day {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    // COMPONENT / SVG
+    &-separator {
+      align-self: center;
+      display: flex;
+    }
+    // COMPONENT / SVG
+    &-pin {
+      align-self: center;
+      display: flex;
+      height: 100%;
+      margin: 0 1rem;
+    }
+
+    &-city {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
   }
 }
