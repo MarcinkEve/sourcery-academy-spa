@@ -36,15 +36,19 @@
       border: none;
       color: #3d3691; //SFE22D-26
       list-style: none;
-      padding-bottom: rem(18px);
-      padding-left: rem(17px);
-      padding-top: rem(14px);
       text-align: start;
 
-      &:hover,
-      &:focus {
-        background-color: #f6f5f7; //SFE22D-26
-        cursor: pointer;
+      & > a {
+        display: inline-block;
+        height: 100%;
+        padding: rem(14px) rem(17px) rem(18px);
+        width: 100%;
+
+        &:hover,
+        &:focus {
+          background-color: #f6f5f7; //SFE22D-26
+          cursor: pointer;
+        }
       }
     }
   }

@@ -5,25 +5,22 @@ import PropTypes from 'prop-types';
 
 const cn = classNames.bind(styles);
 
-export default function HeaderDropdown({ data }) {
+const HeaderDropdown = ({ data }) => {
   return (
     <div className={cn('dropdown')}>
       <div className={cn('dropdown__triangle')} />
       <ul className={cn('dropdown__content')}>
         {data.map((element, index) => (
-          <li
-            key={index.toString()}
-            className={cn('dropdown__content-link')}
-            tabIndex="0"
-            onClick={element.event}
-          >
-            {element.text}
+          <li key={index.toString()} className={cn('dropdown__content-link')}>
+            <a onClick={element.event} tabIndex={0}>
+              {element.text}
+            </a>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 HeaderDropdown.propTypes = {
   data: PropTypes.arrayOf(
@@ -33,3 +30,5 @@ HeaderDropdown.propTypes = {
     })
   ),
 };
+
+export default HeaderDropdown;
