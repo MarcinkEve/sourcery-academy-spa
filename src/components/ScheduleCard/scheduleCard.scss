@@ -3,10 +3,11 @@
 .schedule-card {
   background-color: var(--color-page-3); // prop coolor
   border: 0.2rem solid var(--color-page-3); // prop coolor
-  border-radius: 1.7rem;
+  border-radius: 1.65rem;
   color: var(--color-white); // always white
   cursor: pointer;
   min-height: 6rem;
+  // transition: 1s;
   width: 26.6rem;
   @include box-shadow; // change color variable
 
@@ -15,25 +16,31 @@
     padding: 2rem;
 
     &-name {
-      border-radius: inherit;
       font-size: 1.8rem;
       font-weight: 700;
       max-width: 19.3rem;
     }
 
-    &-arrow {
-      // height: 1.3rem; // for component
-      margin-left: auto;
+    &-arrow,
+    &-arrow--down {
+      background-image: url('../../../public/assets/icons/Icon_ionic-ios-arrow-down-8.svg');
+      background-position: right;
+      background-repeat: no-repeat;
+      height: 1.3rem;
       margin-top: 0.8rem;
-      // width: 2.1em; // for component
+      transition: 0.3s;
+      width: 2.1em;
+    }
+
+    &-arrow--down {
+      background-position: left;
+      transform: rotate(180deg);
     }
   }
   // -------------------------------------------------------------------DROPDOW SECTION
   &__dropdown {
     background-color: var(--color-white); // always white
     border-radius: 0 0 1.5rem 1.5rem;
-    // display: none;
-    transition: 0.3s;
   }
   // -------------------------------------------------------------------DROPDOW / LECTURER PART
   &__lecturer {
@@ -47,19 +54,20 @@
       display: flex;
     }
 
-    &-avatar,
-    &-clock {
-      align-self: center;
-      display: flex;
-      margin-right: 1rem;
-    }
-    // COMPONENT / SVG
-    &-avatar {
-      margin-right: 1.4rem;
+    &-credentials:not(:last-child) {
+      margin-bottom: 0.5rem;
     }
 
-    &-name {
+    // COMPONENT / SVG
+    &-avatar {
+      background-image: url('../../../public/assets/icons/Icon_material-person-outline.svg');
+      height: 1.4rem;
+      margin-right: 1.4rem;
+      width: 1.4rem;
     }
+
+    // &-name {
+    // }
 
     &-timing {
       align-items: center;
@@ -67,21 +75,28 @@
     }
     // COMPONENT / SVG
     &-clock {
-      margin-left: -0.2rem;
-      width: 2rem;
+      background-image: url('../../../public/assets/icons/clock-svgrepo-com.svg');
+      background-position: center;
+      height: 2.2rem;
+      margin-left: -0.3rem;
+      margin-right: 1rem;
+      scale: 0.9;
+      width: 2.2rem;
     }
 
-    &-time {
-    }
+    // &-time {
+    // }
     // COMPONENT / SVG
     &-separator {
-      display: flex;
-      height: 100%;
+      background-image: url('../../../public/assets/icons/Line_11.svg');
+      background-position: right;
+      height: 1.4rem;
       margin: 0 1.5rem;
+      width: 0.2rem;
     }
 
-    &-duration {
-    }
+    // &-duration {
+    // }
   }
   // -------------------------------------------------------------------DROPDOW / LOCATION PART
   &__location {
@@ -124,14 +139,20 @@
     // COMPONENT / SVG
     &-separator {
       align-self: center;
-      display: flex;
+      background-color: violet; // prop color
+      height: 3.5rem;
+      margin-right: 1rem;
+      mask-image: url('../../../public/assets/icons/Line_10.svg');
+      width: 0.2rem;
     }
     // COMPONENT / SVG
     &-pin {
       align-self: center;
-      display: flex;
-      height: 100%;
+      background-color: violet; // prop color
+      height: 2.1rem;
       margin: 0 1rem;
+      mask-image: url('../../../public/assets/icons/Icon_material-location-on.svg');
+      width: 1.5rem;
     }
 
     &-city {

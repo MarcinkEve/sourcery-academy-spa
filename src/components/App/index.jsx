@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PageLayout from '../../layout/PageLayout';
-import ScheduleCard from '../../components/ScheduleCard';
+import ScheduleCard from '../ScheduleCard';
 
 export default function index() {
   return (
