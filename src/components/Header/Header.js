@@ -1,27 +1,27 @@
 import React from 'react';
 import SvgLogo from '~/assets/svg/sourcery-header-logo.svg';
-import SvgArrow from '~/assets/svg/header-arrow-down.svg';
-import classNames from 'classnames/bind';
-import styles from './header.scss';
+import SvgArrow from '~/assets/svg/dropdown-arrow-down.svg';
+import './header.scss';
 
 import { Link } from 'react-router-dom';
 
-const cn = classNames.bind(styles);
-
-export function Header() {
+export const Header = () => {
   return (
-    <header className={cn('header')}>
-      <div className={cn('logo')}>
-        <SvgLogo className={cn('logo__image')}></SvgLogo>
-        <h1 className={cn('logo__text')}>Sourcery Academy</h1>
+    <div className="header">
+      <div className="logo">
+        <SvgLogo className="logo__image" />
+        <h1 className="logo__text">Sourcery Academy</h1>
       </div>
-      <ul className={cn('navlinks reset-list-style')}>
+      <ul className="navlinks">
         <li>
           <Link to="/">About us</Link>
         </li>
-        <li className={cn('navlinks__academies')}>
+
+        {/* added tabIndex property for academies and arrow to be focusable 
+        by using Tab. */}
+        <li className="navlinks__academies" tabIndex={0}>
           <h2>Academies</h2>
-          <SvgArrow></SvgArrow>
+          <SvgArrow />
         </li>
         <li>
           <Link>Media</Link>
@@ -48,6 +48,6 @@ export function Header() {
           <Link to="/kids">Sourcery for Kids</Link>
         </li> */}
       </ul>
-    </header>
+    </div>
   );
-}
+};

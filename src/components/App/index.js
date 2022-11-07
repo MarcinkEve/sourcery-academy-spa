@@ -14,19 +14,16 @@ import ApplicationForm from '../Pages/ApplicationForm';
 export default function index() {
   return (
     <BrowserRouter>
-      <Header></Header>
+      <Header />
 
       <PageLayout>
         <Routes>
-          <Route path="/" element={<Homepage></Homepage>}></Route>
-          <Route path="/developers" element={<Developers></Developers>}></Route>
-          <Route path="/frontend" element={<FrontEnd></FrontEnd>}></Route>
-          <Route path="/kids" element={<Kids></Kids>}></Route>
-          <Route path="/testers" element={<Testers></Testers>}></Route>
-          <Route
-            path="/applicationform"
-            element={<ApplicationForm></ApplicationForm>}
-          ></Route>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/developers" element={<Developers />}></Route>
+          <Route path="/frontend" element={<FrontEnd />}></Route>
+          <Route path="/kids" element={<Kids />}></Route>
+          <Route path="/testers" element={<Testers />}></Route>
+          <Route path="/applicationform" element={<ApplicationForm />}></Route>
         </Routes>
       </PageLayout>
     </BrowserRouter>

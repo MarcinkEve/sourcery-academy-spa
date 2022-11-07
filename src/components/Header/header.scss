@@ -1,13 +1,6 @@
 @import '../../sass/variables';
 @import '../../sass/utilities/mixins/index';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-family: var(--font-family);
-}
-
 .header,
 .logo,
 ul {
@@ -16,11 +9,11 @@ ul {
 
 .header {
   align-items: center;
-  gap: 649px;
   height: 96px;
+  justify-content: space-between;
   margin: auto;
-  position: static;
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
 }
 
 .logo {
@@ -45,6 +38,7 @@ ul {
   @include reset-list-style;
 
   gap: var(--spacer-xl);
+  margin-right: var(--spacer-l);
 
   h2 {
     color: var(--color-header);

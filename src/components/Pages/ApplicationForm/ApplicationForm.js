@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function ApplicationForm() {
+export const ApplicationForm = () => {
   return (
     <div>
       <h1 style={{ textAlign: 'center' }}>Application Form</h1>
     </div>
   );
-}
+};

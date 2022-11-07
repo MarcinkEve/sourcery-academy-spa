@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function Homepage() {
+export const Homepage = () => {
   return (
     <div>
       <h1 style={{ textAlign: 'center' }}>Homepage</h1>
     </div>
   );
-}
+};
