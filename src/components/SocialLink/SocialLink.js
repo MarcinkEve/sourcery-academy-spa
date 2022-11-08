@@ -34,6 +34,7 @@ SocialLink.propTypes = {
   link: PropTypes.string,
   // icon: PropTypes.string,
   icon: PropTypes.func,
+  // icon: PropTypes.elementType,
   // icon: PropTypes.shape({
   //   type: PropTypes.oneOf(['img', 'svg']),
   // }),

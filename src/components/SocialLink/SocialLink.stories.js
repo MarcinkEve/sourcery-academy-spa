@@ -1,5 +1,5 @@
 import React from 'react';
-// import Facebook from '~/assets/svg/Icon_awesome-facebook-f.svg';
+// import Facebook from '../../assets/svg/Icon_awesome-facebook-f.svg';
 
 import { SocialLink } from './SocialLink';
 
@@ -20,7 +20,7 @@ const Template = (args) => (
 
 export const logoFB = () => (
   <img
-    src="./Icon_awesome-facebook-f.svg"
+    src="../../assets/svg/Icon_awesome-facebook-f.svg"
     alt="logo"
     className="social-link__icon"
   />
