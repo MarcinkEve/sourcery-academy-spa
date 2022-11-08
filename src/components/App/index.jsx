@@ -22,11 +22,6 @@ export default function index() {
       day: 31,
       month: 'Oct',
     },
-    // {
-    //   city: 'Klaipėda',
-    //   day: 29,
-    //   month: 'Oct',
-    // },
   ];
 
   return (
