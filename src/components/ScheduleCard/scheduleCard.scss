@@ -26,7 +26,9 @@
       background-image: url('../../../public/assets/icons/Icon_ionic-ios-arrow-down-8.svg');
       background-position: right;
       background-repeat: no-repeat;
+      display: flex;
       height: 1.3rem;
+      margin-left: auto;
       margin-top: 0.8rem;
       transition: 0.3s;
       width: 2.1em;
@@ -94,18 +96,14 @@
       margin: 0 1.5rem;
       width: 0.2rem;
     }
-
-    // &-duration {
-    // }
   }
   // -------------------------------------------------------------------DROPDOW / LOCATION PART
   &__location {
-    color: var(--color-page-3); // prop color
     padding: 2rem;
 
     &-container {
       align-items: center;
-      border: 0.2rem solid currentColor;
+      border: 0.2rem solid;
       border-radius: 0.75rem;
       display: inline-block;
       display: flex;
@@ -139,18 +137,15 @@
     // COMPONENT / SVG
     &-separator {
       align-self: center;
-      background-color: violet; // prop color
       height: 3.5rem;
-      margin-right: 1rem;
       mask-image: url('../../../public/assets/icons/Line_10.svg');
       width: 0.2rem;
     }
     // COMPONENT / SVG
     &-pin {
       align-self: center;
-      background-color: violet; // prop color
       height: 2.1rem;
-      margin: 0 1rem;
+      margin: 0 1rem 0 1.5rem;
       mask-image: url('../../../public/assets/icons/Icon_material-location-on.svg');
       width: 1.5rem;
     }

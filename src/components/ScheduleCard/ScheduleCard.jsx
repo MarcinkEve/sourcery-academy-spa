@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ScheduleCardLocation } from './ScheduleCardLocation';
 
 import './scheduleCard.scss';
 
-export const ScheduleCard = ({ backgroundColor, color, text, borderColor }) => {
+export const ScheduleCard = ({
+  backgroundColor,
+  color,
+  borderColor,
+  text,
+  lectureData,
+  lectureDates,
+}) => {
   const [open, setOpen] = React.useState(false);
 
+  // handleOpen toggles 'open' state to false/true
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -16,13 +25,16 @@ export const ScheduleCard = ({ backgroundColor, color, text, borderColor }) => {
     },
     (
       <div
-        style={backgroundColor && { backgroundColor, borderColor }}
+        style={color && { backgroundColor, borderColor }}
         className="schedule-card"
         onClick={handleOpen}
       >
         <div className="schedule-card__title">
           {/* ------------------------------------------------------ TITLE ----------------------------------------------------------*/}
-          <span className="schedule-card__title-name">{text}</span>
+          <span className="schedule-card__title-name">
+            {lectureData.lecture}
+            {text}
+          </span>
           <span
             className={
               open
@@ -36,61 +48,42 @@ export const ScheduleCard = ({ backgroundColor, color, text, borderColor }) => {
           <div className="schedule-card__dropdown">
             {/* ------------------------------------------------------ LECTURER ----------------------------------------------------------*/}
             <div
-              style={backgroundColor && { backgroundColor }}
+              style={color && { backgroundColor }}
               className="schedule-card__lecturer"
             >
               <div className="schedule-card__lecturer-credentials">
                 <span className="schedule-card__lecturer-avatar" />
                 <span className="schedule-card__lecturer-name">
-                  Audrius Navickas
+                  {lectureData.name}
                 </span>
               </div>
 
               <div className="schedule-card__lecturer-timing">
                 <span className="schedule-card__lecturer-clock" />
-                <span className="schedule-card__lecturer-time">4:00 pm</span>
+                <span className="schedule-card__lecturer-time">
+                  {lectureData.time}
+                </span>
                 <span className="schedule-card__lecturer-separator" />
                 <span className="schedule-card__lecturer-duration">
-                  3 hours
+                  {lectureData.duration}
                 </span>
               </div>
             </div>
             {/* ------------------------------------------------------ LOCATIONS ----------------------------------------------------------*/}
-            <div style={color && { color }} className="schedule-card__location">
-              {/* ------------------------------------------------------ KAUNAS ----------------------------------------------------------*/}
-
-              <div className="schedule-card__location-container">
-                <div className="schedule-card__location-date">
-                  <span className="schedule-card__location-month">Oct</span>
-                  <span className="schedule-card__location-day">30</span>
-                </div>
-                <span
-                  style={backgroundColor && { backgroundColor }}
-                  className="schedule-card__location-separator"
+            <div
+              style={color && { borderColor, color }}
+              className="schedule-card__location"
+            >
+              {/* ------------------------------------------------------ CITY MAPPING ----------------------------------------------------------*/}
+              {lectureDates.map((lecturesInCity, index) => (
+                <ScheduleCardLocation
+                  key={index}
+                  backgroundColor={backgroundColor}
+                  city={lecturesInCity.city}
+                  day={lecturesInCity.day}
+                  month={lecturesInCity.month}
                 />
-                <span
-                  style={backgroundColor && { backgroundColor }}
-                  className="schedule-card__location-pin"
-                />
-                <span className="schedule-card__location-city">Kaunas</span>
-              </div>
-              {/* ------------------------------------------------------ VILNIUS ----------------------------------------------------------*/}
-
-              <div className="schedule-card__location-container">
-                <div className="schedule-card__location-date">
-                  <span className="schedule-card__location-month">Oct</span>
-                  <span className="schedule-card__location-day">31</span>
-                </div>
-                <span
-                  style={backgroundColor && { backgroundColor }}
-                  className="schedule-card__location-separator"
-                />
-                <span
-                  style={backgroundColor && { backgroundColor }}
-                  className="schedule-card__location-pin"
-                />
-                <span className="schedule-card__location-city">Vilnius</span>
-              </div>
+              ))}
             </div>
           </div>
         )}
@@ -104,11 +97,19 @@ ScheduleCard.propTypes = {
   borderColor: PropTypes.string,
   color: PropTypes.string,
   text: PropTypes.string,
+  lectureData: PropTypes.object,
+  lectureDates: PropTypes.array,
 };
 
 ScheduleCard.defaultProps = {
-  backgroundColor: '#B40031',
-  borderColor: null,
-  text: 'JS fundamentals Part 1',
-  color: '#B40031',
+  lectureData: {
+    lecture: 'Intro, Agile & Git',
+    name: 'Audrius Navickas',
+    time: '4:00 pm',
+    duration: '3 hours',
+  },
+  lectureDates: [
+    { city: 'Kaunas', day: 30, month: 'Oct' },
+    { city: 'Vilnius', day: 31, month: 'Oct' },
+  ],
 };

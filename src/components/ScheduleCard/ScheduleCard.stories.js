@@ -5,7 +5,9 @@ import { ScheduleCard } from './ScheduleCard';
 export default {
   title: 'Schedule card',
   component: ScheduleCard,
-  argTypes: { text: { control: 'text' } },
+  argTypes: {
+    text: { control: 'text' },
+  },
   parameters: {
     layout: 'centered',
   },
