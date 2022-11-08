@@ -10,7 +10,7 @@ export const Footer = () => {
   const socialLinks = [
     {
       title: 'Facebook',
-      link: 'https://www.facebook.com/devbridge/',
+      link: 'https://www.facebook.com/devbridge',
       icon: <Facebook className="social-link__icon" />,
     },
     {

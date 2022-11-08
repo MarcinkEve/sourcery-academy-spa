@@ -1,26 +1,17 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
-import styles from './styles.module';
-import Svg from '~/assets/svg/image.svg';
 
-const cn = classNames.bind(styles);
+import PageLayout from '../../layout/pageLayout';
+import { Footer } from '../Footer/Footer';
 
-export default function App({ prop }) {
-  const charCount = prop.length;
-
+export default function index() {
   return (
-    <div className={cn('wrapper')}>
-      <div className={cn('content')}>
-        <Svg className={cn('image')} />
-        <pre className={cn('helloworld')} style={{ '--count': charCount }}>
-          {prop}
-        </pre>
-      </div>
-    </div>
+    <PageLayout>
+      <h1 style={{ textAlign: 'center' }}>
+        {' '}
+        &rarr; Drop components here &larr;{' '}
+      </h1>{' '}
+      {/* Delete this h1 tag after adding first component */}
+      <Footer />
+    </PageLayout>
   );
 }
-
-App.propTypes = {
-  prop: PropTypes.string,
-};

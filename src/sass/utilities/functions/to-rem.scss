@@ -1,4 +1,4 @@
 @function to-rem($value) {
-  $rem: ($value / 16) + rem;
+  $rem: calc($value / 16) + rem;
   @return $rem;
 }
