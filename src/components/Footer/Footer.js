@@ -1,9 +1,9 @@
 import React from 'react';
 
 import SocialLink from '../SocialLink';
-import Facebook from '~/assets/svg/Icon_awesome-facebook-f.svg';
-import Twitter from '~/assets/svg/Icon_feather-twitter.svg';
-import Instagram from '~/assets/svg/instagram.svg';
+import Facebook from '../../assets/svg/Icon_awesome-facebook-f.svg';
+import Twitter from '../../assets/svg/Icon_feather-twitter.svg';
+import Instagram from '../../assets/svg/instagram.svg';
 import './footer.scss';
 
 export const Footer = () => {

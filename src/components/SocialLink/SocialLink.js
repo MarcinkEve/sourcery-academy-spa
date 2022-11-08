@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 
 import './socialLink.scss';
 
-export const SocialLink = ({ socialLink, backgroundColor }) => {
+export const SocialLink = ({
+  socialLink,
+  link,
+  title,
+  icon,
+  backgroundColor,
+}) => {
   return (
     <a
       href={socialLink.link}
@@ -24,7 +30,15 @@ export const SocialLink = ({ socialLink, backgroundColor }) => {
 SocialLink.propTypes = {
   socialLink: PropTypes.object,
   backgroundColor: PropTypes.string,
+  title: PropTypes.string,
+  link: PropTypes.string,
+  // icon: PropTypes.string,
+  icon: PropTypes.func,
+  // icon: PropTypes.shape({
+  //   type: PropTypes.oneOf(['img', 'svg']),
+  // }),
 };
+
 SocialLink.defaultProps = {
   backgroundColor: null,
 };

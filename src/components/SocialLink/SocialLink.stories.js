@@ -18,9 +18,9 @@ const Template = (args) => (
   </div>
 );
 
-export const logo = () => (
+export const logoFB = () => (
   <img
-    src="../../assets/svg/Icon_awesome-facebook-f.svg"
+    src="./Icon_awesome-facebook-f.svg"
     alt="logo"
     className="social-link__icon"
   />
@@ -41,11 +41,14 @@ Facebook.args = {
   socialLink: {
     title: 'Facebook',
     link: 'https://www.facebook.com/devbridge',
-    icon: logo,
+    icon: logoFB(),
+    // icon: '../../assets/svg/Icon_awesome-facebook-f.svg',
+    // icon: '<img src="../../assets/svg/Icon_awesome-facebook-f.svg" alt="logo" className="social-link__icon"/>',
     // icon: '<Facebook className="social-link__icon" />',
-    // icon: '~/assets/svg/Icon_awesome-facebook-f.svg',
   },
-  // icon: 'https://www.svgrepo.com/show/325175/facebook.svg',
+  // link: {
+  //   b: 'https://www.facebook.com/devbridge',
+  // },
 };
 
 export const Twitter = Template.bind({});
@@ -56,6 +59,9 @@ Twitter.args = {
     link: 'https://www.twitter.com/devbridge',
     icon: '../../assets/svg/Icon_feather-twitter.svg',
   },
+  // link: {
+  //   b: 'https://www.twitter.com/devbridge',
+  // },
 };
 
 export const Instagram = Template.bind({});
@@ -66,4 +72,7 @@ Instagram.args = {
     link: 'https://www.instagram.com/devbridge',
     icon: '../../assets/svg/instagram.svg',
   },
+  // link: {
+  //   b: 'https://www.instagram.com/devbridge',
+  // },
 };
