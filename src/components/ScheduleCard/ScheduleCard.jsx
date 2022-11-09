@@ -8,7 +8,6 @@ export const ScheduleCard = ({
   backgroundColor,
   color,
   borderColor,
-  text,
   lectureData,
   lectureDates,
 }) => {
@@ -33,7 +32,6 @@ export const ScheduleCard = ({
           {/* ------------------------------------------------------ TITLE ----------------------------------------------------------*/}
           <span className="schedule-card__title-name">
             {lectureData.lecture}
-            {text}
           </span>
           <span
             className={
@@ -96,7 +94,6 @@ ScheduleCard.propTypes = {
   backgroundColor: PropTypes.string,
   borderColor: PropTypes.string,
   color: PropTypes.string,
-  text: PropTypes.string,
   lectureData: PropTypes.object,
   lectureDates: PropTypes.array,
 };
