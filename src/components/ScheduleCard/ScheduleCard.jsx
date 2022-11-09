@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { number, string } from 'prop-types';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 
 import './scheduleCard.scss';
@@ -95,7 +95,13 @@ ScheduleCard.propTypes = {
   borderColor: PropTypes.string,
   color: PropTypes.string,
   lectureData: PropTypes.object,
-  lectureDates: PropTypes.array,
+  lectureDates: PropTypes.arrayOf(
+    PropTypes.shape({
+      city: string,
+      day: number,
+      month: string,
+    })
+  ),
 };
 
 ScheduleCard.defaultProps = {

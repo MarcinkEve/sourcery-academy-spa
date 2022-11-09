@@ -14,6 +14,15 @@ export default {
         duration: '3 hours',
       },
     },
+    lectureDates: [
+      {
+        control: {
+          city: 'Kaunas',
+          day: 30,
+          month: 'Oct',
+        },
+      },
+    ],
   },
   parameters: {
     layout: 'centered',
@@ -33,6 +42,18 @@ Red.args = {
     time: '4:00 pm',
     duration: '3 hours',
   },
+  lectureDates: [
+    {
+      city: 'Kaunas',
+      day: 30,
+      month: 'Oct',
+    },
+    {
+      city: 'Vilnius',
+      day: 31,
+      month: 'Oct',
+    },
+  ],
 };
 
 export const Blue = Template.bind({});
@@ -46,6 +67,18 @@ Blue.args = {
     time: '11:00 am',
     duration: '5 hours',
   },
+  lectureDates: [
+    {
+      city: 'Kaunas',
+      day: 7,
+      month: 'Aug',
+    },
+    {
+      city: 'Vilnius',
+      day: 5,
+      month: 'Aug',
+    },
+  ],
 };
 
 export const Green = Template.bind({});
@@ -60,4 +93,16 @@ Green.args = {
     time: '11:00 pm',
     duration: '5 hours',
   },
+  lectureDates: [
+    {
+      city: 'Kaunas',
+      day: 25,
+      month: 'Sep',
+    },
+    {
+      city: 'Vilnius',
+      day: 27,
+      month: 'Sep',
+    },
+  ],
 };
