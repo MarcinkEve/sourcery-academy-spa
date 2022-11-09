@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #3d3691;
+  --secondary-color: #584dfc;
+  --button-hover: #483ed8;
+  --button-active: #7971fd;
+}
+
+[theme='developers'] {
+  --primary-color: #0048c1;
+  --secondary-color: #4d8af0;
+  --button-hover: #483ed8;
+  --button-active: #7971fd;
+}
+
+[theme='testers'] {
+  --primary-color: #0b555f;
+  --secondary-color: #009b84;
+  --button-hover: #1faf9a;
+  --button-active: #007c6a;
+}
+
+[theme='front-end'] {
+  --primary-color: #b40031;
+  --secondary-color: #ed1d55;
+  --button-hover: #f14a77;
+  --button-active: #c01745;
+}

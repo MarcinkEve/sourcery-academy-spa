@@ -1,15 +1,17 @@
-.header-large {
-  font: 700 var(--header-l) / var(--header-l-height) var(--header-font);
+h1 {
+  color: var(--primary-color);
+  font: 700 $header-l $header-font;
 }
 
-.header-small {
-  font: 700 var(--header-s) / var(--header-s-height) var(--header-font);
+h2 {
+  color: var(--primary-color);
+  font: 700 $header-s $header-font;
 }
 
-.paragraph-large {
-  font: 400 var(--paragraph-l) / var(--paragraph-l-height) var(--paragraph-font);
+p {
+  font: 400 $paragraph-l $paragraph-font;
 }
 
 .paragraph-small {
-  font: 400 var(--paragraph-s) / var(--paragraph-s-height) var(--paragraph-font);
+  font: 400 $paragraph-s $paragraph-font;
 }

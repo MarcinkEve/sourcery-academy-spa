@@ -1,52 +1,29 @@
-:root {
-  --font-size-base: 1.6rem;
-  --font-family: system-ui;
-  --line-height-base: 1.5;
-  --page-width: 1440px;
+@import './utilities/functions/index';
 
-  /* Colors */
-  --homepage_application-primary-clr: #3d3691;
-  --homepage_application-secondary-clr: #584dfc;
-  --developers-primary-clr: #0048c1;
-  --developers-secondary-clr: #4d8af0;
-  --testers-primary-clr: #0b555f;
-  --testers-secondary-clr: #009b84;
-  --frontend-primary-clr: #b40031;
-  --frontend-secondary-clr: #ed1d55;
+$max-page-width: to-rem(1440);
 
-  /* Fonts */
-  --header-font: 'Montserrat', sans-serif;
-  --paragraph-font: 'Raleway', sans-serif;
+/* Fonts */
+$header-font: 'Montserrat', sans-serif;
+$paragraph-font: 'Raleway', sans-serif;
 
-  /* Font sizes */
-  --header-l: 4.8rem;
-  --header-s: 3.2rem;
-  --paragraph-l: 1.8rem;
-  --paragraph-s: 1.4rem;
+/* Font sizes */
+$header-l: to-rem(48);
+$header-s: to-rem(32);
+$paragraph-l: to-rem(18);
+$paragraph-s: to-rem(14);
 
-  /* Spacers */
-  --spacer-xxs: 0.4rem;
-  --spacer-xs: 0.8rem;
-  --spacer-s: 1.2rem;
-  --spacer-m: 1.6rem;
-  --spacer: var(--spacer-m); /* alias for --spacer-m */
-  --spacer-l: 2rem;
-  --spacer-xl: 2.4rem;
-  --spacer-xxl: 3.2rem;
-  --spacer-xxxl: 4rem;
+/* Spacers */
 
-  /* Vertical gaps */
-  --gap-xxs: 3rem;
-  --gap-xs: 3.5rem;
-  --gap-s: 4rem;
-  --gap-m: 4.5rem;
-  --gap-l: 5rem;
-  --gap-xl: 5.5rem;
-  --gap-xxl: 6rem;
-
-  /* Line height */
-  --header-l-height: 5.8rem;
-  --header-s-height: 3.9rem;
-  --paragraph-l-height: 2.1rem;
-  --paragraph-s-height: 1.6rem;
-}
+$spacer-xxxxxs: to-rem(12);
+$spacer-xxxxs: to-rem(16);
+$spacer-xxxs: to-rem(20);
+$spacer-xxs: to-rem(24);
+$spacer-xs: to-rem(28);
+$spacer-s: to-rem(32);
+$spacer-m: to-rem(36);
+$spacer-l: to-rem(40);
+$spacer-xl: to-rem(44);
+$spacer-xxl: to-rem(48);
+$spacer-xxxl: to-rem(52);
+$spacer-xxxxl: to-rem(56);
+$spacer-xxxxxl: to-rem(60);
