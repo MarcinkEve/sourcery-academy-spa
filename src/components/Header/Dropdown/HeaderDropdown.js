@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './header.module';
+import styles from './header.scss';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
