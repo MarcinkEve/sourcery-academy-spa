@@ -12,12 +12,11 @@
   );
   @include padding-margin-0;
 
-  background-color: var(--color-light-purple);
+  background-color: var(--color-purple-100);
   border-radius: 50%;
-  color: var(--color-purple);
-  fill: var(--color-purple);
+  color: var(--color-purple-400);
   height: to-rem(40);
-  outline-color: var(--color-purple);
+  outline-color: var(--color-purple-400);
   width: to-rem(40);
 
   &:hover,

@@ -14,7 +14,7 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  staticDirs: ['../src/assets/svg'],
+  staticDirs: ['../src/assets/icons'],
   webpackFinal: (config) => {
     // Default rule for images /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
     const fileLoaderRule = config.module.rules.find(

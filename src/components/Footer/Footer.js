@@ -1,9 +1,9 @@
 import React from 'react';
 
 import SocialLink from '../SocialLink';
-import Facebook from '../../assets/svg/Icon_awesome-facebook-f.svg';
-import Twitter from '../../assets/svg/Icon_feather-twitter.svg';
-import Instagram from '../../assets/svg/instagram.svg';
+import Facebook from '../../assets/icons/Icon_awesome-facebook-f.svg';
+import Twitter from '../../assets/icons/Icon_feather-twitter.svg';
+import Instagram from '../../assets/icons/Icon_feather-instagram.svg';
 import './footer.scss';
 
 export const Footer = () => {
@@ -29,7 +29,11 @@ export const Footer = () => {
       <ul className="footer__list">
         {socialLinks.map((socialLink, index) => (
           <li className="footer__list-item" key={index}>
-            <SocialLink socialLink={socialLink} />
+            <SocialLink
+              link={socialLink.link}
+              title={socialLink.title}
+              icon={socialLink.icon}
+            />
           </li>
         ))}
       </ul>
