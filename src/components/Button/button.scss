@@ -1,0 +1,29 @@
+@import '../../sass/global';
+
+.btn {
+  background-color: var(--secondary-color);
+  border: 0;
+  border-radius: to-rem(48);
+  color: $white-400;
+  cursor: pointer;
+  font: 700 to-rem(18) $main-font;
+  padding: to-rem(12) to-rem(24);
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    background-color: var(--button-active);
+  }
+
+  &:focus {
+    outline: to-rem(2) solid var(--button-hover);
+  }
+
+  &:focus-visible {
+    outline: to-rem(4) dashed $orange-200;
+  }
+}
