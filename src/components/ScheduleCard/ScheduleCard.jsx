@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes, { number, string } from 'prop-types';
+import { number, string, object, arrayOf, shape } from 'prop-types';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 
 import './scheduleCard.scss';
+import ArrowDownIcon from '../../assets/icons/icon-arrow-down.svg';
+import AvatarIcon from '../../assets/icons/icon-avatar.svg';
+import ClockIcon from '../../assets/icons/icon-clock.svg';
+import SeparatorIconShort from '../../assets/icons/icon-short-horizontal-line.svg';
 
 export const ScheduleCard = ({
   backgroundColor,
@@ -13,14 +17,13 @@ export const ScheduleCard = ({
 }) => {
   const [open, setOpen] = React.useState(false);
 
-  // handleOpen toggles 'open' state to false/true
   const handleOpen = () => {
     setOpen(!open);
   };
 
   return (
     {
-      /* ------------------------------------------------------ MAIN CONTAINER ----------------------------------------------------------*/
+      /* -------------------------------------------------- MAIN CONTAINER ------------------------------------------------------*/
     },
     (
       <div
@@ -33,7 +36,7 @@ export const ScheduleCard = ({
           <span className="schedule-card__title-name">
             {lectureData.lecture}
           </span>
-          <span
+          <ArrowDownIcon
             className={
               open
                 ? 'schedule-card__title-arrow--down'
@@ -42,64 +45,68 @@ export const ScheduleCard = ({
           />
         </div>
         {/* ------------------------------------------------------ DROPDOWN ----------------------------------------------------------*/}
-        {open && (
-          <div className="schedule-card__dropdown">
-            {/* ------------------------------------------------------ LECTURER ----------------------------------------------------------*/}
-            <div
-              style={color && { backgroundColor }}
-              className="schedule-card__lecturer"
-            >
-              <div className="schedule-card__lecturer-credentials">
-                <span className="schedule-card__lecturer-avatar" />
-                <span className="schedule-card__lecturer-name">
-                  {lectureData.name}
-                </span>
-              </div>
 
-              <div className="schedule-card__lecturer-timing">
-                <span className="schedule-card__lecturer-clock" />
-                <span className="schedule-card__lecturer-time">
-                  {lectureData.time}
-                </span>
-                <span className="schedule-card__lecturer-separator" />
-                <span className="schedule-card__lecturer-duration">
-                  {lectureData.duration}
-                </span>
-              </div>
+        <div
+          className={
+            open ? 'schedule-card__dropdown--active' : 'schedule-card__dropdown'
+          }
+        >
+          {/* ------------------------------------------------------ LECTURER ----------------------------------------------------------*/}
+          <div
+            style={color && { backgroundColor }}
+            className="schedule-card__lecturer"
+          >
+            <div className="schedule-card__lecturer-credentials">
+              <AvatarIcon className="schedule-card__lecturer-avatar" />
+              <span className="schedule-card__lecturer-name">
+                {lectureData.name}
+              </span>
             </div>
-            {/* ------------------------------------------------------ LOCATIONS ----------------------------------------------------------*/}
-            <div
-              style={color && { borderColor, color }}
-              className="schedule-card__location"
-            >
-              {/* ------------------------------------------------------ CITY MAPPING ----------------------------------------------------------*/}
-              {lectureDates.map((lecturesInCity, index) => (
-                <ScheduleCardLocation
-                  key={index}
-                  backgroundColor={backgroundColor}
-                  city={lecturesInCity.city}
-                  day={lecturesInCity.day}
-                  month={lecturesInCity.month}
-                />
-              ))}
+
+            <div className="schedule-card__lecturer-timing">
+              <ClockIcon className="schedule-card__lecturer-clock" />
+              <span className="schedule-card__lecturer-time">
+                {lectureData.time}
+              </span>
+              <SeparatorIconShort className="schedule-card__lecturer-separator" />
+
+              <span className="schedule-card__lecturer-duration">
+                {lectureData.duration}
+              </span>
             </div>
           </div>
-        )}
+          {/* ------------------------------------------------------ LOCATIONS ----------------------------------------------------------*/}
+          <div
+            style={color && { borderColor, color }}
+            className="schedule-card__location"
+          >
+            {/* ------------------------------------------------------ CITY MAPPING ----------------------------------------------------------*/}
+            {lectureDates.map((lecturesInCity, index) => (
+              <ScheduleCardLocation
+                key={index}
+                backgroundColor={backgroundColor}
+                city={lecturesInCity.city}
+                day={lecturesInCity.day}
+                month={lecturesInCity.month}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     )
   );
 };
 
 ScheduleCard.propTypes = {
-  backgroundColor: PropTypes.string,
-  borderColor: PropTypes.string,
-  color: PropTypes.string,
-  lectureData: PropTypes.object,
-  lectureDates: PropTypes.arrayOf(
-    PropTypes.shape({
-      city: string,
-      day: number,
-      month: string,
+  backgroundColor: string.isRequired,
+  borderColor: string.isRequired,
+  color: string.isRequired,
+  lectureData: object.isRequired,
+  lectureDates: arrayOf(
+    shape({
+      city: string.isRequired,
+      day: number.isRequired,
+      month: string.isRequired,
     })
   ),
 };

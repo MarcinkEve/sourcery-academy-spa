@@ -23,9 +23,9 @@ export default function index() {
       month: 'Oct',
     },
   ];
-
   return (
     <PageLayout>
+      {/* <Second /> */}
       <h1 style={{ textAlign: 'center' }}>
         &rarr; Drop components here &larr;
       </h1>{' '}

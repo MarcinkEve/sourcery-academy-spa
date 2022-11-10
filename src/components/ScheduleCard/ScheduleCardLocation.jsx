@@ -1,5 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number, string } from 'prop-types';
+
+import LocationIcon from '../../assets/icons/icon-location.svg';
+import SeparatorIconLong from '../../assets/icons/icon-long-horizontal-line.svg';
 
 export const ScheduleCardLocation = ({ backgroundColor, city, day, month }) => {
   return (
@@ -9,12 +12,12 @@ export const ScheduleCardLocation = ({ backgroundColor, city, day, month }) => {
         <span className="schedule-card__location-month">{month}</span>
         <span className="schedule-card__location-day">{day}</span>
       </div>
-      <span
-        style={backgroundColor && { backgroundColor }}
+      <SeparatorIconLong
+        fill={backgroundColor && { backgroundColor }}
         className="schedule-card__location-separator"
       />
-      <span
-        style={backgroundColor && { backgroundColor }}
+      <LocationIcon
+        fill={backgroundColor && { backgroundColor }}
         className="schedule-card__location-pin"
       />
       <span className="schedule-card__location-city">{city}</span>
@@ -23,8 +26,8 @@ export const ScheduleCardLocation = ({ backgroundColor, city, day, month }) => {
 };
 
 ScheduleCardLocation.propTypes = {
-  backgroundColor: PropTypes.string,
-  city: PropTypes.string,
-  day: PropTypes.number,
-  month: PropTypes.string,
+  backgroundColor: string.isRequired,
+  city: string.isRequired,
+  day: number.isRequired,
+  month: string.isRequired,
 };

@@ -98,12 +98,8 @@ const config = {
       },
       {
         test: /\.svg$/i,
-        issuer: /\.js?$/,
+        issuer: /\.(js|jsx)?$/,
         use: ['@svgr/webpack'],
-      },
-      {
-        test: /\.(svg)$/i,
-        loader: 'file-loader',
       },
     ],
   },
