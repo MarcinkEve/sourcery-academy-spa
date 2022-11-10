@@ -14,8 +14,6 @@ $paragraph-s: to-rem(14);
 
 /* Spacers */
 
-$spacer-xxxxxs: to-rem(12);
-$spacer-xxxxs: to-rem(16);
 $spacer-xxxs: to-rem(20);
 $spacer-xxs: to-rem(24);
 $spacer-xs: to-rem(28);
@@ -25,5 +23,25 @@ $spacer-l: to-rem(40);
 $spacer-xl: to-rem(44);
 $spacer-xxl: to-rem(48);
 $spacer-xxxl: to-rem(52);
-$spacer-xxxxl: to-rem(56);
-$spacer-xxxxxl: to-rem(60);
+
+/* Colors */
+
+$violet-700: #3d3691;
+$violet-600: #483ed8;
+$violet-400: #584dfc;
+$violet-300: #7971fd;
+
+$blue-700: #0048c1;
+$blue-600: #3f73cb;
+$blue-400: #4d8af0;
+$blue-300: #71a1f3;
+
+$green-700: #0b555f;
+$green-600: #007c6a;
+$green-400: #009b84;
+$green-300: #1faf9a;
+
+$red-700: #b40031;
+$red-600: #c01745;
+$red-400: #ed1d55;
+$red-300: #f14a77;
