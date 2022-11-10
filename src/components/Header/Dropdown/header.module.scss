@@ -11,18 +11,27 @@
   font-weight: 400; //SFE22D-26
   line-height: rem(16px); //SFE22D-26
 
-  &__triangle {
-    border-bottom: rem(20px) solid #fff; //SFE22D-26
-    border-left: rem(20px) solid transparent;
-    border-right: rem(20px) solid transparent;
-    height: 0;
-    width: 0;
+  &__container {
+    display: flex;
+    height: rem(60px);
+    justify-content: center;
+    margin-top: rem(-30px);
+    padding-top: rem(46px);
+    width: rem(60px);
+
+    &-triangle {
+      background-color: #fff; //SFE22D-26
+      box-shadow: 0 rem(10px) rem(30px) rgba(0, 0, 0, 0.15);
+      height: rem(30px);
+      overflow: hidden;
+      transform: rotate(45deg);
+      width: rem(30px);
+    }
   }
 
   &__content {
     background-color: #fff; //SFE22D-26
     border-radius: rem(14px);
-    box-shadow: 0 rem(4px) rem(4px) rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,5 +60,17 @@
         }
       }
     }
+  }
+
+  &__content::after {
+    border-radius: rem(14px);
+    bottom: 0;
+    box-shadow: 0 rem(10px) rem(30px) rgba(0, 0, 0, 0.15);
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
   }
 }
