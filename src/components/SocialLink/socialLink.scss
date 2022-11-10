@@ -1,3 +1,5 @@
+@import '../../sass/variables';
+
 @import '../../sass/utilities/mixins/flex-box';
 @import '../../sass/utilities/mixins/reset-list-styles';
 @import '../../sass/utilities/mixins/padding-margin-0';
@@ -12,11 +14,11 @@
   );
   @include padding-margin-0;
 
-  background-color: var(--color-purple-100);
+  background-color: $lavender-100;
   border-radius: 50%;
-  color: var(--color-purple-400);
+  color: $violet-700;
   height: to-rem(40);
-  outline-color: var(--color-purple-400);
+  outline-color: $violet-700;
   width: to-rem(40);
 
   &:hover,

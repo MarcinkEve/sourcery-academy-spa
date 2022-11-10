@@ -1,8 +1,6 @@
 :root {
   --color-primary: #ff3454;
   --color-secondary: #404cfa;
-  --color-purple-400: #3d3691;
-  --color-purple-100: #ecebfb;
   --color-white: #fff;
   --font-size-base: 1rem;
   --font-family: system-ui;
@@ -19,3 +17,7 @@
   --spacer-xxl: 3.2rem;
   --spacer-xxxl: 4rem;
 }
+$main-font: 'Raleway', sans-serif;
+
+$violet-700: #3d3691;
+$lavender-100: #ecebfb;

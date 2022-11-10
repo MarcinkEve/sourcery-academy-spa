@@ -1,3 +1,5 @@
+@import '../../sass/variables';
+
 @import '../../sass/utilities/mixins/flex-box';
 @import '../../sass/utilities/mixins/reset-list-styles';
 @import '../../sass/utilities/mixins/padding-margin-0';
@@ -31,12 +33,12 @@
   }
 
   &__text {
-    color: var(--color-purple-400);
-    // font-family: 'Raleway';    //TO DO
+    color: $violet-700;
+    font-family: $main-font;
     font-size: to-rem(16);
     font-style: normal;
     font-weight: 400;
-    line-height: to-rem(16);
+    line-height: 1;
     margin: 0;
     text-transform: capitalize;
   }

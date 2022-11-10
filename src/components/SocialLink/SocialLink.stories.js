@@ -1,8 +1,8 @@
 import React from 'react';
 
-import FacebookIcon from '../../assets/icons/Icon_awesome-facebook-f.svg';
-import TwitterIcon from '../../assets/icons/Icon_feather-twitter.svg';
-import InstagramIcon from '../../assets/icons/Icon_feather-instagram.svg';
+import FacebookIcon from '../../assets/icons/icon-facebook.svg';
+import TwitterIcon from '../../assets/icons/icon-twitter.svg';
+import InstagramIcon from '../../assets/icons/icon-instagram.svg';
 
 import { SocialLink } from './SocialLink';
 
