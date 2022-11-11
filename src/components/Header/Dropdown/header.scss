@@ -6,39 +6,39 @@
   display: flex;
   flex-direction: column;
   font-family: 'Roboto Light', serif; //SFE22D-26
-  font-size: rem(14px); //SFE22D-26
+  font-size: to-rem(14); //SFE22D-26
   font-style: normal; //SFE22D-26
   font-weight: 400; //SFE22D-26
   line-height: 1.15; //SFE22D-26
 
   &__container {
     display: flex;
-    height: rem(60px);
+    height: to-rem(60);
     justify-content: center;
-    margin-top: rem(-30px);
-    padding-top: rem(46px);
-    width: rem(60px);
+    margin-top: to-rem(-30);
+    padding-top: to-rem(46);
+    width: to-rem(60px);
 
     &-triangle {
       background-color: #fff; //SFE22D-26
-      box-shadow: 0 rem(10px) rem(30px) rgba(0, 0, 0, 0.15);
-      height: rem(30px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      height: to-rem(30);
       overflow: hidden;
       transform: rotate(45deg);
-      width: rem(30px);
+      width: to-rem(30);
     }
   }
 
   &__content {
     background-color: #fff; //SFE22D-26
-    border-radius: rem(14px);
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    padding: rem(12px) 0;
+    padding: to-rem(12) 0;
     position: relative;
-    width: rem(200px);
+    width: to-rem(200);
 
     &-link {
       background-color: #fff; //SFE22D-26
@@ -50,7 +50,7 @@
         color: #3d3691; //SFE22D-26
         display: inline-block;
         height: 100%;
-        padding: rem(14px) rem(17px) rem(18px);
+        padding: to-rem(14) to-rem(17) to-rem(18);
         text-decoration: none;
         width: 100%;
 
@@ -64,9 +64,9 @@
   }
 
   &__content::after {
-    border-radius: rem(14px);
+    border-radius: 14px;
     bottom: 0;
-    box-shadow: 0 rem(10px) rem(30px) rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     content: '';
     left: 0;
     position: absolute;

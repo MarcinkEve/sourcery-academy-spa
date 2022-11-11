@@ -1,8 +1,0 @@
-@import '../../variables';
-
-@function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
-}
-@function rem($pxValue) {
-  @return #{stripUnit($pxValue) / (stripUnit($font-size-html) * 0.16)}rem;
-}

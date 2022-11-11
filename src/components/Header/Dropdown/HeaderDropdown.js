@@ -13,7 +13,7 @@ export const HeaderDropdown = ({ data }) => {
       <ul className="dropdown__content">
         {data.map((element, index) => (
           <li key={index.toString()} className="dropdown__content-link">
-            <Link to={element.route} onClick={element.event} tabIndex={0}>
+            <Link to={element.route} onClick={element.event}>
               {element.text}
             </Link>
           </li>
