@@ -1,1 +1,3 @@
-export { default } from './HeaderDropdown';
+import { HeaderDropdown } from './HeaderDropdown';
+
+export default HeaderDropdown;

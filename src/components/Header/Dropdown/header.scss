@@ -9,7 +9,7 @@
   font-size: rem(14px); //SFE22D-26
   font-style: normal; //SFE22D-26
   font-weight: 400; //SFE22D-26
-  line-height: rem(16px); //SFE22D-26
+  line-height: 1.15; //SFE22D-26
 
   &__container {
     display: flex;
@@ -43,14 +43,15 @@
     &-link {
       background-color: #fff; //SFE22D-26
       border: none;
-      color: #3d3691; //SFE22D-26
       list-style: none;
       text-align: start;
 
       & > a {
+        color: #3d3691; //SFE22D-26
         display: inline-block;
         height: 100%;
         padding: rem(14px) rem(17px) rem(18px);
+        text-decoration: none;
         width: 100%;
 
         &:hover,
