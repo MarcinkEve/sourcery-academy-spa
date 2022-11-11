@@ -14,14 +14,14 @@
   }
 
   &:active,
-  &:focus,
+  // &:focus,
   &:focus-visible {
     background-color: var(--button-active);
   }
 
-  &:focus {
-    outline: to-rem(2) solid var(--button-hover);
-  }
+  // &:focus {
+  //   outline: to-rem(2) solid var(--button-hover);
+  // }
 
   &:focus-visible {
     outline: to-rem(4) dashed $orange-200;

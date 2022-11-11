@@ -32,31 +32,53 @@ $blue-600: #3f73cb;
 $blue-400: #4d8af0;
 $blue-300: #71a1f3;
 
+$charcoal-400: #3e3c4e;
+$charcoal-200: #5c5c5c;
+
+$gray-200: #f6f5f7;
+$gray-100: #f2f2f2;
+
 $green-700: #0b555f;
 $green-600: #007c6a;
 $green-400: #009b84;
 $green-300: #1faf9a;
 
+$lavender-100: #ecebfb;
+
+$lightgreen-400: #1ce5af;
+$lightgreen-300: #47e6b1;
+
+$orange-200: #f89e4b;
+$orange-400: #f55f44;
+
 $red-700: #b40031;
 $red-600: #c01745;
+$red-500: #ff0753;
 $red-400: #ed1d55;
 $red-300: #f14a77;
 
+$skyblue-400: #17bce3;
+
+$violet-900: #2a2e71;
 $violet-700: #3d3691;
 $violet-600: #483ed8;
 $violet-400: #584dfc;
 $violet-300: #7971fd;
-
-$charcoal-400: #3e3c4e;
-$charcoal-200: #5c5c5c;
-$gray-100: #f2f2f2;
-$lavender-100: #ecebfb;
-$lightgreen-400: #1ce5af;
-$lightgreen-300: #47e6b1;
-$orange-200: #f89e4b;
-$orange-400: #f55f44;
-$red-500: #ff0753;
-$skyblue-400: #17bce3;
-$violet-900: #2a2e71;
 $violet-200: #6c63ff;
+
 $white-400: #fff;
+
+/* Colors by element */
+
+$header-clr: $violet-700;
+$header-bg-clr: $white-400;
+
+$primary-footer-clr: $violet-700;
+$secondary-footer-clr: $lavender-100;
+$footer-bg-clr: $white-400;
+
+$main-content-bg-clr: $gray-100; // 100 or 200 ?
+
+$paragraph-text-clr: $charcoal-400;
+
+$shadow-clr: $gray-200;
