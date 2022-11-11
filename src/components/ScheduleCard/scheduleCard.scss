@@ -34,21 +34,17 @@
     }
   }
   // -------------------------------------------------------------------DROPDOW SECTION
+  // REACT-SLIDER-COMPONENT/CONTROLS
+  .schedule-card--slider {
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
+  }
+
   &__dropdown {
     background-color: var(--color-white); // always white
     border-radius: 0 0 15px 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in;
-  }
-  //TEMP HERE
-  &__dropdown--active {
-    background-color: var(--color-white); // always white
-    border-radius: 0 0 15px 15px;
-    max-height: 25rem;
-    overflow: auto;
-    overflow-y: hidden;
-    transition: max-height 0.5s ease;
   }
 
   // -------------------------------------------------------------------DROPDOW / LECTURER PART
@@ -98,6 +94,7 @@
       border-radius: 7.5px;
       display: flex;
       height: 5rem;
+      // @include themed-border(var(--color-primary));
     }
 
     &-container:not(:last-child) {
