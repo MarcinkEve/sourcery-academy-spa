@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageLayout from '../../layout/pageLayout';
+import PageLayout from '../../layout/PageLayout';
 import { Footer } from '../Footer/Footer';
 
 export default function index() {
@@ -8,7 +8,7 @@ export default function index() {
     <>
       <PageLayout>
         <h1 style={{ textAlign: 'center' }}>
-          &rarr; Drop components here &larr;
+          &rarr; Drop components Ghere &larr;
         </h1>
         {/* Delete this h1 tag after adding first component */}
       </PageLayout>

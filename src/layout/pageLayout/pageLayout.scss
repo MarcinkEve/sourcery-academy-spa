@@ -1,12 +1,6 @@
-// Page layout Container for all the components to be inserted within
+@import '../../sass/global';
 
 .page-layout {
   margin: 0 auto;
-  max-width: 1440px;
-
-  // .main-container {
-  //   grid-column: 2 / 3;
-  //   min-height: 100vh;
-  //   padding: 0 to-rem(80);
-  // }
+  max-width: $max-page-width;
 }
