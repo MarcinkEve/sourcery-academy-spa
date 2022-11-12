@@ -5,25 +5,6 @@ import { ScheduleCard } from './ScheduleCard';
 export default {
   title: 'Schedule card',
   component: ScheduleCard,
-  argTypes: {
-    lectureData: {
-      control: {
-        lecture: 'Intro, Agile & Git',
-        name: 'Changable dummy data object',
-        time: '4:00 pm',
-        duration: '3 hours',
-      },
-    },
-    lectureDates: [
-      {
-        control: {
-          city: 'Kaunas',
-          day: 30,
-          month: 'Oct',
-        },
-      },
-    ],
-  },
   parameters: {
     layout: 'centered',
   },

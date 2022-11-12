@@ -1,32 +1,39 @@
 @import '../../sass/global';
 
 .schedule-card {
-  background-color: var(--color-page-3); // prop coolor
-  border: 2px solid var(--color-page-3); // prop coolor
+  background-color: $red-700; // prop coolor
+  border: 2px solid $red-700; // prop coolor
   border-radius: 17px;
-  color: var(--color-white); // always white
+  color: $white-400;
   cursor: pointer;
-  min-height: 6rem;
-  width: 26.6rem;
+  line-height: 1.5;
+  min-height: to-rem(60);
+  width: to-rem(266);
   @include box-shadow; // change color variable
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    background-color: $red-400;
+  }
 
   &__title {
     display: flex;
-    padding: 2rem;
+    padding: to-rem(20);
 
     &-name {
-      font-size: 1.8rem;
+      font-size: $paragraph-l;
       font-weight: 700;
-      max-width: 19.3rem;
+      max-width: to-rem(193);
     }
 
     // COMPONENT / SVG
     &-arrow,
     &-arrow--down {
-      height: 1.3rem;
+      height: to-rem(13);
       margin-left: auto;
-      margin-top: 0.5rem;
-      transition: all 0.5s;
+      margin-top: to-rem(5);
+      transition: all 0.5s ease-in-out;
     }
     // COMPONENT / SVG
     &-arrow--down {
@@ -43,29 +50,29 @@
   }
 
   &__dropdown {
-    background-color: var(--color-white); // always white
+    background-color: $white-400;
     border-radius: 0 0 15px 15px;
   }
 
   // -------------------------------------------------------------------DROPDOW / LECTURER PART
   &__lecturer {
     border-radius: 0 0 0 15px;
-    font-size: 1.4rem;
-    padding: 0 2rem 2rem;
+    font-size: $paragraph-s;
+    padding: 0 to-rem(20) to-rem(20);
 
     &-credentials {
       display: flex; // pushes element to position
     }
 
     &-credentials:not(:last-child) {
-      margin-bottom: 0.5rem;
+      margin-bottom: to-rem(5);
     }
 
     // COMPONENT / SVG
     &-avatar {
-      margin-right: 1.4rem;
-      margin-top: 0.1rem;
-      width: 1.4rem;
+      margin-right: $paragraph-s;
+      margin-top: to-rem(1);
+      width: to-rem(14);
     }
 
     &-timing {
@@ -73,63 +80,61 @@
     }
     // COMPONENT / SVG
     &-clock {
-      margin-left: -0.3rem;
-      margin-right: 1rem;
-      width: 2.2rem;
+      margin-left: to-rem(-3);
+      margin-right: to-rem(10);
+      width: to-rem(22);
     }
 
     // COMPONENT / SVG
     &-separator {
-      margin: 0 1.5rem;
-      width: 0.2rem;
+      margin: 0 to-rem(15);
+      width: to-rem(2);
     }
   }
   // -------------------------------------------------------------------DROPDOW / LOCATION PART
   &__location {
-    padding: 2rem;
+    padding: to-rem(20);
 
     &-container {
       align-items: center;
       border: 2px solid;
       border-radius: 7.5px;
       display: flex;
-      height: 5rem;
-      // @include themed-border(var(--color-primary));
+      min-height: to-rem(50);
     }
 
     &-container:not(:last-child) {
-      margin-bottom: 1rem;
+      margin-bottom: to-rem(10);
     }
 
     &-date {
       display: flex;
       flex-direction: column;
-      line-height: 1.3;
       text-align: center;
       width: 25%;
     }
 
     &-month {
-      font-size: 1.4rem;
+      font-size: $paragraph-s;
+      margin-bottom: to-rem(-7);
     }
 
     &-day {
-      font-size: 1.8rem;
+      font-size: $paragraph-l;
       font-weight: 700;
     }
     // COMPONENT / SVG
     &-separator {
-      width: 0.2rem;
+      width: to-rem(2);
     }
     // COMPONENT / SVG
     &-pin {
-      margin: 0 1rem 0 1.5rem;
-      width: 1.5rem;
+      margin: 0 to-rem(10) 0 to-rem(15);
+      width: to-rem(15);
     }
 
     &-city {
-      font-size: 1.8rem;
-      font-weight: 400;
+      font-size: $paragraph-l;
     }
   }
 }
