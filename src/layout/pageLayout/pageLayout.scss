@@ -1,12 +1,12 @@
 // Page layout Container for all the components to be inserted within
 
 .page-layout {
-  display: grid;
-  grid-template-columns: 1fr minmax(min-content, 144rem) 1fr;
+  margin: 0 auto;
+  max-width: 1440px;
 
-  .main-container {
-    grid-column: 2 / 3;
-    min-height: 100vh;
-    padding: 0 8rem;
-  }
+  // .main-container {
+  //   grid-column: 2 / 3;
+  //   min-height: 100vh;
+  //   padding: 0 to-rem(80);
+  // }
 }
