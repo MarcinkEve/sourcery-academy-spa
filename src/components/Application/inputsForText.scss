@@ -1,0 +1,46 @@
+@import '../../sass/global';
+
+.text-inputs {
+  &__label {
+    color: $charcoal-200;
+    font-size: to-rem(14);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: to-rem(5);
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+
+    &-field {
+      border: 1px solid $charcoal-200;
+      border-radius: 4px;
+      font-size: to-rem(16);
+      height: to-rem(48);
+      padding: to-rem(18);
+      width: 100%;
+
+      &::placeholder {
+        color: $charcoal-200;
+        font-size: to-rem(14);
+        font-weight: 400;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &__asterisk {
+    color: $red-500;
+    font-size: to-rem(18);
+  }
+
+  &__error {
+    border-color: $red-500;
+  }
+
+  &__error-message {
+    color: $red-500;
+    font-size: to-rem(16);
+  }
+}
