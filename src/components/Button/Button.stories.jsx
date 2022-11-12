@@ -7,7 +7,6 @@ export default {
   component: Button,
   args: {
     label: 'Button',
-    onClick: null,
   },
 };
 

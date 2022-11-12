@@ -13,7 +13,7 @@ export const Button = ({ label, onClick, theme }) => {
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   theme: PropTypes.oneOf([
     'home',
     'developers',
