@@ -1,0 +1,24 @@
+@import '../../sass/utilities/mixins/flex-box';
+@import '../../sass/utilities/functions/to-rem';
+@import '../../sass/base/fonts';
+
+.checkbox {
+  @include flex-box(row, flex-start, center);
+
+  height: to-rem(75);
+
+  &__checkmark {
+    height: 100%;
+    margin-right: to-rem(16);
+
+    @include flex-box(row, center, start);
+  }
+
+  &__text {
+    font-size: to-rem(18);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+  }
+}
