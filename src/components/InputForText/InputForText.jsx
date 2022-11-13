@@ -6,9 +6,9 @@ import './inputForText.scss';
 
 const InputForText = ({ name, type, errorMessage, state, setState }) => {
   return (
-    <div className="text-inputs__input">
-      <label htmlFor={name} className="text-inputs__label">
-        <span className="text-inputs__asterisk">*</span>
+    <div className="text-input">
+      <label htmlFor={name} className="text-input__label">
+        <span className="text-input__asterisk">*</span>
         {name}
       </label>
 
@@ -18,14 +18,14 @@ const InputForText = ({ name, type, errorMessage, state, setState }) => {
         name={name}
         className={
           errorMessage
-            ? 'text-inputs__input-field text-inputs__error'
-            : 'text-inputs__input-field'
+            ? 'text-input__input-field text-input__error'
+            : 'text-input__input-field'
         }
         value={state}
         onChange={(e) => setState(e.target.value)}
       ></input>
       {errorMessage && (
-        <div className="text-inputs__error-message">{errorMessage}</div>
+        <div className="text-input__error-message">{errorMessage}</div>
       )}
     </div>
   );
