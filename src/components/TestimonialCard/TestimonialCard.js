@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TestimonialCard.scss';
 
-export const TestimonialCard = ({ data }) => {
+export const TestimonialCard = ({ data, theme }) => {
   const { photo, message, name, academy } = data;
 
   return (
-    <div className="card">
+    <div className="card" theme={theme}>
       <img src={photo} alt="Graduate profile photo" />
       <p className="card__quote">“</p>
       <p className="card__testimonial">{message}</p>
@@ -18,12 +18,17 @@ export const TestimonialCard = ({ data }) => {
 };
 
 TestimonialCard.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      photo: PropTypes.string,
-      message: PropTypes.string,
-      name: PropTypes.string,
-      academy: PropTypes.string,
-    })
-  ),
+  data: PropTypes.shape({
+    photo: PropTypes.string,
+    message: PropTypes.string,
+    name: PropTypes.string,
+    academy: PropTypes.string,
+  }),
+  theme: PropTypes.oneOf([
+    'home',
+    'developers',
+    'testers',
+    'front-end',
+    'application',
+  ]),
 };
