@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './header.scss';
+import './headerDropdown.scss';
 import PropTypes from 'prop-types';
 
 export const HeaderDropdown = ({ data }) => {
@@ -12,8 +12,12 @@ export const HeaderDropdown = ({ data }) => {
       </div>
       <ul className="dropdown__content">
         {data.map((element, index) => (
-          <li key={index.toString()} className="dropdown__content-link">
-            <Link to={element.route} onClick={element.event}>
+          <li key={index.toString()} className="dropdown__content-item">
+            <Link
+              className="dropdown__content-link"
+              to={element.route}
+              onClick={element.event}
+            >
               {element.text}
             </Link>
           </li>

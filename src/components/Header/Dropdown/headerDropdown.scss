@@ -1,15 +1,14 @@
 @import '../../../sass/utilities/functions';
-//blocked by SFE22D-26: need color and typography definitions
+@import '../../../sass/global';
 
 .dropdown {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto Light', serif; //SFE22D-26
-  font-size: to-rem(14); //SFE22D-26
-  font-style: normal; //SFE22D-26
-  font-weight: 400; //SFE22D-26
-  line-height: 1.15; //SFE22D-26
+  font-family: $paragraph-font;
+  font-size: $paragraph-s;
+  font-weight: 400;
+  line-height: 1.15;
 
   &__container {
     display: flex;
@@ -20,7 +19,7 @@
     width: to-rem(60px);
 
     &-triangle {
-      background-color: #fff; //SFE22D-26
+      background-color: $white-400;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       height: to-rem(30);
       overflow: hidden;
@@ -30,7 +29,7 @@
   }
 
   &__content {
-    background-color: #fff; //SFE22D-26
+    background-color: $white-400;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
@@ -40,25 +39,24 @@
     position: relative;
     width: to-rem(200);
 
-    &-link {
-      background-color: #fff; //SFE22D-26
-      border: none;
+    &-item {
+      background-color: $white-400;
       list-style: none;
       text-align: start;
+    }
 
-      & > a {
-        color: #3d3691; //SFE22D-26
-        display: inline-block;
-        height: 100%;
-        padding: to-rem(14) to-rem(17) to-rem(18);
-        text-decoration: none;
-        width: 100%;
+    &-link {
+      color: $violet-700;
+      display: inline-block;
+      height: 100%;
+      padding: to-rem(14) to-rem(17) to-rem(18);
+      text-decoration: none;
+      width: 100%;
 
-        &:hover,
-        &:focus {
-          background-color: #f6f5f7; //SFE22D-26
-          cursor: pointer;
-        }
+      &:hover,
+      &:focus {
+        background-color: $gray-200;
+        cursor: pointer;
       }
     }
   }
