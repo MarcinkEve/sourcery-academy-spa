@@ -1,0 +1,18 @@
+h1 {
+  color: var(--primary-color);
+  font: 700 $header-l $header-font;
+}
+
+h2 {
+  color: var(--primary-color);
+  font: 700 $header-s $header-font;
+}
+
+p {
+  color: $charcoal-400;
+  font: 400 $paragraph-l $paragraph-font;
+}
+
+.paragraph-small {
+  font: 400 $paragraph-s $paragraph-font;
+}
