@@ -1,24 +1,96 @@
 @import '../../sass/utilities/mixins/flex-box';
 @import '../../sass/utilities/functions/to-rem';
 @import '../../sass/base/fonts';
+@import '../../sass/variables';
+
+// Checkmark box instead of native input type='checkbox'
+
+.checkmark {
+  &--default {
+    opacity: 0; // is visible for screen readers
+    position: absolute;
+  }
+
+  &--custom {
+    border: 2px solid $violet-700; // maby change color by theme ?
+    border-radius: 20%;
+    display: inline-block;
+    height: to-rem(20);
+    width: to-rem(20);
+
+    &.checked {
+      background-color: $violet-700;
+
+      &::after {
+        align-self: center;
+        color: $white-400;
+        content: '✔';
+        display: inline-grid;
+        font-size: to-rem(12);
+        height: to-rem(14);
+        position: absolute;
+        text-align: center;
+        width: to-rem(14);
+      }
+    }
+  }
+}
 
 .checkbox {
   @include flex-box(row, flex-start, center);
 
   height: to-rem(75);
+  width: 100%;
 
-  &__checkmark {
+  &__checkmark--container {
     height: 100%;
-    margin-right: to-rem(16);
-
     @include flex-box(row, center, start);
   }
 
   &__text {
     font-size: to-rem(18);
     height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 50%;
+    margin: 0 to-rem(16);
+  }
+
+  // STATES
+
+  //When focused with TAB key
+  &:focus-visible {
+    border: 2px solid $violet-700;
+    outline: none;
+    padding: to-rem(2);
+  }
+
+  //When hovering with mouse
+  &:hover {
+    cursor: pointer;
+
+    .checkmark--custom {
+      animation: checkmarkOnHover 1s ease-in-out infinite;
+
+      &.checked {
+        animation: none;
+      }
+    }
+  }
+
+  //touched
+  &:focus {
+    scale: 0.99;
+  }
+}
+
+@keyframes checkmarkOnHover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
