@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TestimonialCard.scss';
 
-export const TestimonialCard = ({ data, theme = 'home' }) => {
+export const TestimonialCard = ({ data, theme }) => {
   const {
     photo,
     message,
