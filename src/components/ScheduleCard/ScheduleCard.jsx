@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string, object, arrayOf, shape } from 'prop-types';
+import { number, string, object, arrayOf, shape, oneOf } from 'prop-types';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 import { SlideDown } from 'react-slidedown';
 
@@ -10,13 +10,7 @@ import IconAvatar from '../../assets/icons/icon-avatar.svg';
 import IconClock from '../../assets/icons/icon-clock.svg';
 import IconShortHorizontalLine from '../../assets/icons/icon-short-horizontal-line.svg';
 
-export const ScheduleCard = ({
-  backgroundColor,
-  color,
-  borderColor,
-  lectureData,
-  lectureDates,
-}) => {
+export const ScheduleCard = ({ lectureData, lectureDates, theme }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -29,9 +23,10 @@ export const ScheduleCard = ({
     },
     (
       <div
-        style={color && { backgroundColor, borderColor }}
         className="schedule-card"
         onClick={handleOpen}
+        theme={theme}
+        tabIndex="0"
       >
         <div className="schedule-card__title">
           {/*  TITLE */}
@@ -51,10 +46,7 @@ export const ScheduleCard = ({
           {open && (
             <div className="schedule-card__dropdown">
               {/*  LECTURER */}
-              <div
-                style={color && { backgroundColor }}
-                className="schedule-card__lecturer"
-              >
+              <div className="schedule-card__lecturer">
                 <div className="schedule-card__lecturer-credentials">
                   <IconAvatar className="schedule-card__lecturer-avatar" />
                   <span className="schedule-card__lecturer-name">
@@ -75,15 +67,12 @@ export const ScheduleCard = ({
                 </div>
               </div>
               {/*  LOCATIONS */}
-              <div
-                style={color && { borderColor, color }}
-                className="schedule-card__location"
-              >
+              <div className="schedule-card__location">
                 {/* CITY MAPPING */}
                 {lectureDates.map((lecturesInCity, index) => (
                   <ScheduleCardLocation
-                    key={'CHANGE THIS KEY VALUE WHEN DATA WILL BE AVAILABLE'} // IMPORTANT - CHANGE KEY LATER <---------------------------------------------------------
-                    backgroundColor={backgroundColor}
+                    key={index}
+                    theme={theme}
                     city={lecturesInCity.city}
                     day={lecturesInCity.day}
                     month={lecturesInCity.month}
@@ -99,24 +88,19 @@ export const ScheduleCard = ({
 };
 
 ScheduleCard.propTypes = {
-  backgroundColor: string.isRequired,
-  borderColor: string.isRequired,
-  color: string.isRequired,
   lectureData: object.isRequired,
   lectureDates: arrayOf(
     shape({
-      city: string.isRequired,
-      day: number.isRequired,
-      month: string.isRequired,
+      city: string,
+      day: number,
+      month: string,
     })
-  ),
+  ).isRequired,
+  theme: string.isRequired,
 };
 
-// LEAVING THIS FOR FURTHER DEVELOPMENT/ STRUCTURE FOR DATA MANIPULATION
+// LEAVING THIS PLACEHOLDER DATA FOR FURTHER DEVELOPMENT/ STRUCTURE FOR DATA MANIPULATION
 ScheduleCard.defaultProps = {
-  backgroundColor: '#b40031',
-  borderColor: '#b40031',
-  color: '#b40031',
   lectureData: {
     lecture: 'Intro, Agile & Git',
     name: 'Audrius Navickas',

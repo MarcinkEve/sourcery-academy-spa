@@ -1,25 +1,22 @@
 @import '../../sass/global';
 
 .schedule-card {
-  background-color: $red-700; // prop coolor
-  border: 2px solid $red-700; // prop coolor
+  border: 2px solid var(--primary-color);
   border-radius: 17px;
   color: $white-400;
   cursor: pointer;
   line-height: 1.5;
   min-height: to-rem(60);
+  overflow: hidden;
+  transition: all 0.2s;
   width: to-rem(266);
-  @include box-shadow; // change color variable
-
-  &:focus,
-  &:focus-visible,
-  &:active {
-    background-color: $red-400;
-  }
+  @include box-shadow;
 
   &__title {
+    background-color: var(--primary-color);
     display: flex;
     padding: to-rem(20);
+    transition: all 0.2s;
 
     &-name {
       font-size: $paragraph-l;
@@ -32,36 +29,34 @@
     &-arrow--down {
       height: to-rem(13);
       margin-left: auto;
-      margin-top: to-rem(5);
+      margin-top: to-rem(9);
       transition: all 0.5s ease-in-out;
     }
     // COMPONENT / SVG
     &-arrow--down {
+      margin-top: to-rem(3);
       transform: rotate(180deg);
     }
   }
+
   // -------------------------------------------------------------------DROPDOW SECTION
   // REACT-SLIDER-COMPONENT/CONTROLS
   .schedule-card--slider {
     border-radius: 0 0 15px 15px;
-    position: relative;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
   }
 
-  &__dropdown {
-    background-color: $white-400;
-    border-radius: 0 0 15px 15px;
-  }
-
   // -------------------------------------------------------------------DROPDOW / LECTURER PART
   &__lecturer {
+    background-color: var(--primary-color);
     border-radius: 0 0 0 15px;
     font-size: $paragraph-s;
     padding: 0 to-rem(20) to-rem(20);
+    transition: all 0.2s;
 
     &-credentials {
-      display: flex; // pushes element to position
+      display: flex;
     }
 
     &-credentials:not(:last-child) {
@@ -69,20 +64,16 @@
     }
 
     // COMPONENT / SVG
-    &-avatar {
-      margin-right: $paragraph-s;
-      margin-top: to-rem(1);
+    &-avatar,
+    &-clock {
+      align-self: flex-start;
+      margin-right: to-rem(10);
+      margin-top: to-rem(3);
       width: to-rem(14);
     }
 
     &-timing {
-      display: flex; // pushes element to position
-    }
-    // COMPONENT / SVG
-    &-clock {
-      margin-left: to-rem(-3);
-      margin-right: to-rem(10);
-      width: to-rem(22);
+      display: flex;
     }
 
     // COMPONENT / SVG
@@ -91,16 +82,20 @@
       width: to-rem(2);
     }
   }
-  // -------------------------------------------------------------------DROPDOW / LOCATION PART
+  // -------------------------------------------------------------------DROPDOWN / LOCATION PART
   &__location {
+    background-color: $white-400;
+    border-radius: 0 0 14px 14px;
     padding: to-rem(20);
+    @include themed-border(var(--primary-color));
 
     &-container {
       align-items: center;
+      background-color: $white-400;
       border: 2px solid;
       border-radius: 7.5px;
       display: flex;
-      min-height: to-rem(50);
+      transition: all 0.2s;
     }
 
     &-container:not(:last-child) {
@@ -110,18 +105,21 @@
     &-date {
       display: flex;
       flex-direction: column;
+      height: to-rem(51);
+      justify-content: center;
       text-align: center;
       width: 25%;
     }
 
     &-month {
       font-size: $paragraph-s;
-      margin-bottom: to-rem(-7);
+      line-height: to-rem(16);
     }
 
     &-day {
       font-size: $paragraph-l;
       font-weight: 700;
+      line-height: to-rem(21);
     }
     // COMPONENT / SVG
     &-separator {
@@ -135,6 +133,42 @@
 
     &-city {
       font-size: $paragraph-l;
+    }
+  }
+  // COMPONENT STATES
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: var(--button-active);
+
+    .schedule-card__lecturer,
+    .schedule-card__title {
+      background-color: var(--button-active);
+    }
+
+    .schedule-card__location-container {
+      @include themed-border(var(--button-active));
+    }
+  }
+
+  &:focus {
+    outline: 2px solid var(--button-hover);
+  }
+
+  &:focus-visible {
+    outline: 4px dashed $orange-200;
+  }
+
+  &:hover {
+    border-color: var(--button-hover);
+    // STYLELINT PROBLEM, MAYBE THE RULES CAN BE ADJUSTED OR THIS CAN BE WRITTEN BETTER?
+    .schedule-card__lecturer,
+    .schedule-card__title {
+      background-color: var(--button-hover);
+    }
+
+    .schedule-card__location-container {
+      @include themed-border(var(--button-hover));
     }
   }
 }
