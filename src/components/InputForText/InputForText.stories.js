@@ -7,11 +7,12 @@ export default {
   component: InputForText,
 };
 
-export const Input = () => <InputForText name={'First name'} type={'text'} />;
-export const InputError = () => (
-  <InputForText
-    name={'Last name'}
-    type={'text'}
-    errorMessage={'Some error after validation'}
-  />
-);
+const Template = (args) => <InputForText {...args} />;
+
+export const TextInput = Template.bind({});
+TextInput.args = {
+  name: 'Last name',
+  type: 'text',
+  state: '',
+  errorMessage: '',
+};

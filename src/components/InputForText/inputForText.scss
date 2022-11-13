@@ -1,4 +1,5 @@
-@import '../../sass/global';
+@import '../../sass/variables';
+@import '../../sass/utilities/functions/to-rem';
 
 .text-input {
   display: flex;
@@ -39,6 +40,7 @@
 
   &__error-message {
     color: $red-500;
-    font-size: to-rem(16);
+    font-size: to-rem(14);
+    margin-left: to-rem(18);
   }
 }

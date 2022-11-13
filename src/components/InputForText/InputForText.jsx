@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
+import { string, func } from 'prop-types';
 
 import './inputForText.scss';
 
@@ -32,11 +32,11 @@ const InputForText = ({ name, type, errorMessage, state, setState }) => {
 };
 
 InputForText.propTypes = {
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  state: PropTypes.string.isRequired,
-  setState: PropTypes.func.isRequired,
-  errorMessage: PropTypes.string,
+  name: string.isRequired,
+  type: string.isRequired,
+  state: string.isRequired,
+  setState: func.isRequired,
+  errorMessage: string,
 };
 
 export default InputForText;
