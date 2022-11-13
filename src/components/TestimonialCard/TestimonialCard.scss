@@ -1,3 +1,63 @@
+@import '../../sass/global';
+
 .card {
+  align-items: center;
+  background-color: $white-400;
+  border: var(--primary-color) solid 2px;
+  border-radius: 16px;
+  box-shadow: -20px 20px $gray-200;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  font-family: $main-font;
+  padding: 35px 30px;
   width: 340px;
+
+  &__photo {
+    border-radius: 50%;
+    height: to-rem(78);
+    margin: 0;
+    width: to-rem(78);
+  }
+
+  &__quote {
+    padding: 2px 0 11px;
+
+    &-mark {
+      color: var(--primary-color);
+      font-family: $header-font;
+      font-size: to-rem(38);
+      font-weight: 700;
+      line-height: to-rem(46);
+      margin: 0;
+      text-align: left;
+
+      &-lower {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-message {
+      color: var(--primary-color);
+      font-size: $paragraph-s;
+      font-weight: 400;
+      line-height: to-rem(17);
+      margin: -7px 0 0;
+      text-align: left;
+    }
+  }
+
+  &__name {
+    font-size: to-rem(20);
+    font-weight: 700;
+    line-height: to-rem(24);
+    margin: 0 0 7px;
+  }
+
+  &__academy {
+    font-size: $paragraph-s;
+    font-weight: 400;
+    line-height: to-rem(17);
+    margin: 0;
+  }
 }

@@ -7,10 +7,12 @@ export const TestimonialCard = ({ data, theme }) => {
 
   return (
     <div className="card" theme={theme}>
-      <img src={photo} alt="Graduate profile photo" />
-      <p className="card__quote">“</p>
-      <p className="card__testimonial">{message}</p>
-      <p className="card__quote card__quote-lower">“</p>
+      <img className="card__photo" src={photo} alt="Graduate profile photo" />
+      <div className="card__quote">
+        <p className="card__quote-mark">“</p>
+        <p className="card__quote-message">{message}</p>
+        <p className="card__quote-mark card__quote-mark-lower">“</p>
+      </div>
       <h3 className="card__name">{name}</h3>
       <h4 className="card__academy">{academy}</h4>
     </div>
