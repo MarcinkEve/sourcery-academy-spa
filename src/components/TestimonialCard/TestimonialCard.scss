@@ -28,7 +28,7 @@ $photo-size: to-rem(78);
       font-family: $header-font;
       font-size: to-rem(38);
       font-weight: 700;
-      line-height: to-rem(46);
+      line-height: 1.2;
       margin: 0;
       text-align: left;
 
@@ -41,7 +41,7 @@ $photo-size: to-rem(78);
       color: var(--primary-color);
       font-size: $paragraph-s;
       font-weight: 400;
-      line-height: to-rem(17);
+      line-height: 1.2;
       margin: -7px 0 0;
       text-align: left;
     }
@@ -50,14 +50,14 @@ $photo-size: to-rem(78);
   &__name {
     font-size: to-rem(20);
     font-weight: 700;
-    line-height: to-rem(24);
+    line-height: 1.2;
     margin: 11px 0 0;
   }
 
   &__academy {
     font-size: $paragraph-s;
     font-weight: 400;
-    line-height: to-rem(17);
+    line-height: 1.2;
     margin: 7px 0 0;
   }
 }
