@@ -4,10 +4,10 @@ import { number, string } from 'prop-types';
 import IconLocation from '../../assets/icons/icon-location.svg';
 import IconLongHorizontalLine from '../../assets/icons/icon-long-horizontal-line.svg';
 
-export const ScheduleCardLocation = ({ city, day, month, theme }) => {
+export const ScheduleCardLocation = ({ city, day, month }) => {
   return (
     // SHOULD I LEAVE THIS BEM IN COHERENCE TO PARENT COMPONENT OR SHOULD I RENAME TO SHORTER BEM?
-    <div className="schedule-card__location-container" theme={theme}>
+    <div className="schedule-card__location-container">
       <div className="schedule-card__location-date">
         <span className="schedule-card__location-month">{month}</span>
         <span className="schedule-card__location-day">{day}</span>
@@ -21,7 +21,6 @@ export const ScheduleCardLocation = ({ city, day, month, theme }) => {
 
 // DON'T HAVE THE DATA, SO DON'T KNOW THE STRUCTURE, SO LEAVING IT LIKE THIS FOR NOW
 ScheduleCardLocation.propTypes = {
-  theme: string.isRequired,
   city: string.isRequired,
   day: number.isRequired,
   month: string.isRequired,

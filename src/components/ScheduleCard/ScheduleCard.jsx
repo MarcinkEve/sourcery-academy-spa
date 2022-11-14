@@ -1,5 +1,5 @@
-import React from 'react';
-import { number, string, object, arrayOf, shape, oneOf } from 'prop-types';
+import React, { useState } from 'react';
+import { number, string, object, arrayOf, shape } from 'prop-types';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 import { SlideDown } from 'react-slidedown';
 
@@ -10,85 +10,74 @@ import IconAvatar from '../../assets/icons/icon-avatar.svg';
 import IconClock from '../../assets/icons/icon-clock.svg';
 import IconShortHorizontalLine from '../../assets/icons/icon-short-horizontal-line.svg';
 
-export const ScheduleCard = ({ lectureData, lectureDates, theme }) => {
-  const [open, setOpen] = React.useState(false);
+export const ScheduleCard = ({ lectureData, lectureDates }) => {
+  const [isCardExpanded, setIsCardExpanded] = useState(false);
 
   const handleOpen = () => {
-    setOpen(!open);
+    setIsCardExpanded(!isCardExpanded);
   };
 
   return (
-    {
-      /*  MAIN CONTAINER */
-    },
-    (
-      <div
-        className="schedule-card"
-        onClick={handleOpen}
-        theme={theme}
-        tabIndex="0"
-      >
-        <div className="schedule-card__title">
-          {/*  TITLE */}
-          <span className="schedule-card__title-name">
-            {lectureData.lecture}
-          </span>
-          <IconArrowDown
-            className={
-              open
-                ? 'schedule-card__title-arrow--down'
-                : 'schedule-card__title-arrow'
-            }
-          />
-        </div>
-        {/*  DROPDOWN SECTION STARTS HERE / SLIDER COMPONENT WRAPS DROPDOWN */}
-        <SlideDown className="schedule-card--slider">
-          {open && (
-            <div className="schedule-card__dropdown">
-              {/*  LECTURER */}
-              <div className="schedule-card__lecturer">
-                <div className="schedule-card__lecturer-credentials">
-                  <IconAvatar className="schedule-card__lecturer-avatar" />
-                  <span className="schedule-card__lecturer-name">
-                    {lectureData.name}
-                  </span>
-                </div>
-
-                <div className="schedule-card__lecturer-timing">
-                  <IconClock className="schedule-card__lecturer-clock" />
-                  <span className="schedule-card__lecturer-time">
-                    {lectureData.time}
-                  </span>
-                  <IconShortHorizontalLine className="schedule-card__lecturer-separator" />
-
-                  <span className="schedule-card__lecturer-duration">
-                    {lectureData.duration}
-                  </span>
-                </div>
+    <div className="schedule-card" onClick={handleOpen} tabIndex="0">
+      <div className="schedule-card__title">
+        <span className="schedule-card__title-name">{lectureData.lecture}</span>
+        <IconArrowDown
+          className={
+            isCardExpanded
+              ? 'schedule-card__title-arrow--down'
+              : 'schedule-card__title-arrow'
+          }
+        />
+      </div>
+      {/*  DROPDOWN SECTION STARTS HERE / SLIDER COMPONENT WRAPS DROPDOWN */}
+      <SlideDown className="schedule-card--slider">
+        {isCardExpanded && (
+          <div className="schedule-card__dropdown">
+            <div className="schedule-card__lecturer">
+              <div className="schedule-card__lecturer-credentials">
+                <IconAvatar className="schedule-card__lecturer-avatar" />
+                <span className="schedule-card__lecturer-name">
+                  {lectureData.name}
+                </span>
               </div>
-              {/*  LOCATIONS */}
-              <div className="schedule-card__location">
-                {/* CITY MAPPING */}
-                {lectureDates.map((lecturesInCity, index) => (
-                  <ScheduleCardLocation
-                    key={index}
-                    theme={theme}
-                    city={lecturesInCity.city}
-                    day={lecturesInCity.day}
-                    month={lecturesInCity.month}
-                  />
-                ))}
+
+              <div className="schedule-card__lecturer-timing">
+                <IconClock className="schedule-card__lecturer-clock" />
+                <span className="schedule-card__lecturer-time">
+                  {lectureData.time}
+                </span>
+                <IconShortHorizontalLine className="schedule-card__lecturer-separator" />
+
+                <span className="schedule-card__lecturer-duration">
+                  {lectureData.duration}
+                </span>
               </div>
             </div>
-          )}
-        </SlideDown>
-      </div>
-    )
+            <div className="schedule-card__location">
+              {/* CITY MAPPING */}
+              {lectureDates.map((lecturesInCity, index) => (
+                <ScheduleCardLocation
+                  key={index}
+                  city={lecturesInCity.city}
+                  day={lecturesInCity.day}
+                  month={lecturesInCity.month}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </SlideDown>
+    </div>
   );
 };
 
 ScheduleCard.propTypes = {
-  lectureData: object.isRequired,
+  lectureData: object({
+    lecture: string,
+    name: string,
+    time: string,
+    duration: string,
+  }).isRequired,
   lectureDates: arrayOf(
     shape({
       city: string,
@@ -96,7 +85,6 @@ ScheduleCard.propTypes = {
       month: string,
     })
   ).isRequired,
-  theme: string.isRequired,
 };
 
 // LEAVING THIS PLACEHOLDER DATA FOR FURTHER DEVELOPMENT/ STRUCTURE FOR DATA MANIPULATION

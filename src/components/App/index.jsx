@@ -8,7 +8,7 @@ export default function index() {
     <>
       <PageLayout>
         <h1 style={{ textAlign: 'center' }}>
-          &rarr; Drop components Ghere &larr;
+          &rarr; Drop components here &larr;
         </h1>
         {/* Delete this h1 tag after adding first component */}
       </PageLayout>
