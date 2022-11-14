@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, func } from 'prop-types';
 
 import './button.scss';
 
@@ -12,13 +12,7 @@ export const Button = ({ label, onClick, theme }) => {
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  theme: PropTypes.oneOf([
-    'home',
-    'developers',
-    'testers',
-    'front-end',
-    'application',
-  ]),
+  label: string.isRequired,
+  onClick: func,
+  theme: string,
 };

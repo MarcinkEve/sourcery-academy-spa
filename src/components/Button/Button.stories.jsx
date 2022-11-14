@@ -1,12 +1,19 @@
 import React from 'react';
 
 import { Button } from './Button';
+import { THEMES } from '../../data/themes';
 
 export default {
   title: 'Button',
   component: Button,
   args: {
     label: 'Button',
+  },
+  argTypes: {
+    theme: {
+      options: THEMES,
+      control: { type: 'radio' },
+    },
   },
 };
 

@@ -21,11 +21,11 @@
   }
 
   &:focus {
-    outline: to-rem(2) solid var(--button-hover);
+    outline: 2px solid var(--button-hover);
   }
 
   &:focus-visible {
-    outline: to-rem(4) dashed $orange-200;
+    outline: 4px dashed $orange-200;
   }
 
   &:active {
