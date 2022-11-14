@@ -8,18 +8,24 @@ $input-label-grey: #868686;
   flex-direction: column;
 
   &__input-field {
+    background-color: $white-400;
     border: 1px solid $charcoal-200;
     border-radius: 4px;
-    font-size: to-rem(16);
+    font-size: to-rem(18);
     height: to-rem(48);
-    padding: to-rem(18);
+    padding: to-rem(13) 0 to-rem(14) to-rem(14);
     width: 100%;
 
     &::placeholder {
       color: $input-label-grey;
       font-size: to-rem(18);
       font-weight: 400;
+      height: to-rem(21);
       line-height: 1.2;
+    }
+
+    &:focus {
+      outline: 2px solid $violet-600;
     }
   }
 
@@ -29,11 +35,21 @@ $input-label-grey: #868686;
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: to-rem(5);
+
+    span:nth-of-type(2) {
+      display: inline-block;
+      height: to-rem(21);
+    }
   }
 
   &__asterisk {
     color: $red-500;
     font-size: to-rem(18);
+    font-weight: 700;
+    height: to-rem(21);
+    margin-left: to-rem(-9);
+    margin-right: to-rem(2);
+    width: to-rem(7);
   }
 
   &__error {
@@ -43,6 +59,6 @@ $input-label-grey: #868686;
   &__error-message {
     color: $red-500;
     font-size: to-rem(14);
-    margin-left: to-rem(18);
+    margin-left: to-rem(14);
   }
 }

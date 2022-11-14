@@ -9,15 +9,19 @@ const InputForText = ({ name, type, errorMessage, getValue }) => {
     getValue(e.target.value);
   };
 
+  // changing text to figma design regardless of props text from the parent component
+  const nameForLabel = name[0].toUpperCase() + name.slice(1, name.length);
+  const nameForPlaceholder = name.toLowerCase();
+
   return (
     <div className="text-input">
       <label htmlFor={name} className="text-input__label">
         <span className="text-input__asterisk">*</span>
-        {name}
+        <span>{nameForLabel}</span>
       </label>
 
       <input
-        placeholder={`Enter your ${name}`}
+        placeholder={`Enter your ${nameForPlaceholder}`}
         type={type}
         name={name}
         className={
