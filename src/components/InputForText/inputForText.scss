@@ -1,8 +1,6 @@
 @import '../../sass/variables';
 @import '../../sass/utilities/functions/to-rem';
 
-$input-label-grey: #868686;
-
 .text-input {
   display: flex;
   flex-direction: column;
@@ -17,7 +15,7 @@ $input-label-grey: #868686;
     width: 100%;
 
     &::placeholder {
-      color: $input-label-grey;
+      color: $charcoal-100;
       font-size: to-rem(18);
       font-weight: 400;
       height: to-rem(21);
@@ -36,20 +34,20 @@ $input-label-grey: #868686;
     line-height: 1.5;
     margin-bottom: to-rem(5);
 
-    span:nth-of-type(2) {
+    &--asterisk {
+      color: $red-500;
+      font-size: to-rem(18);
+      font-weight: 700;
+      height: to-rem(21);
+      margin-left: to-rem(-9);
+      margin-right: to-rem(2);
+      width: to-rem(7);
+    }
+
+    &--text {
       display: inline-block;
       height: to-rem(21);
     }
-  }
-
-  &__asterisk {
-    color: $red-500;
-    font-size: to-rem(18);
-    font-weight: 700;
-    height: to-rem(21);
-    margin-left: to-rem(-9);
-    margin-right: to-rem(2);
-    width: to-rem(7);
   }
 
   &__error {
@@ -59,6 +57,6 @@ $input-label-grey: #868686;
   &__error-message {
     color: $red-500;
     font-size: to-rem(14);
-    margin-left: to-rem(14);
+    margin-top: to-rem(5);
   }
 }

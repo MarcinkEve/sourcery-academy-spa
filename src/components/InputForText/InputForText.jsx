@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { string, func } from 'prop-types';
 
 import './inputForText.scss';
 
-const InputForText = ({ name, type, errorMessage, getValue }) => {
+export const InputForText = ({ name, type, errorMessage, getValue }) => {
+  const [nameForLabel, setNameForLabel] = useState('');
+  const [nameForPlaceholder, setNameForPlaceholder] = useState('');
+
   const changeHandler = (e) => {
     getValue(e.target.value);
   };
 
   // changing text to figma design regardless of props text from the parent component
-  const nameForLabel = name[0].toUpperCase() + name.slice(1, name.length);
-  const nameForPlaceholder = name.toLowerCase();
+  useEffect(() => {
+    if (name) {
+      setNameForLabel(name[0].toUpperCase() + name.slice(1, name.length));
+      setNameForPlaceholder(name.toLowerCase());
+    }
+  }, [name]);
 
   return (
     <div className="text-input">
       <label htmlFor={name} className="text-input__label">
-        <span className="text-input__asterisk">*</span>
-        <span>{nameForLabel}</span>
+        <span className="text-input__label--asterisk">*</span>
+        <span className="text-input__label--text">{nameForLabel}</span>
       </label>
 
       <input
@@ -44,5 +51,3 @@ InputForText.propTypes = {
   getValue: func,
   errorMessage: string,
 };
-
-export default InputForText;

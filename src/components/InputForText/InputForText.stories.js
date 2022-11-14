@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InputForText from './InputForText';
+import { InputForText } from './InputForText';
 
 export default {
   title: 'Input for text',
