@@ -10,26 +10,30 @@ export const Header = () => {
     <div className="header">
       <div className="logo">
         <SvgLogo className="logo__image" />
-        <h1 className="logo__text">Sourcery Academy</h1>
+        <span className="logo__text">Sourcery Academy</span>
       </div>
       <ul className="navlinks">
         <li>
-          <Link to="/">About us</Link>
+          <Link to="/" className="navlinks__link">
+            About us
+          </Link>
         </li>
         <li className="navlinks__academies">
-          <button>
+          <button className="navlinks__academies-menu">
             Academies
-            <SvgArrow />
+            <SvgArrow className="navlinks__academies-arrow" />
           </button>
         </li>
         <li>
-          <Link>Media</Link>
+          <Link className="navlinks__link">Media</Link>
         </li>
         <li>
-          <Link to="/applicationform">Register</Link>
+          <Link className="navlinks__link" to="/applicationform">
+            Register
+          </Link>
         </li>
         <li>
-          <Link>Questions</Link>
+          <Link className="navlinks__link">Questions</Link>
         </li>
       </ul>
     </div>

@@ -1,14 +1,8 @@
 @import '../../sass/global';
 
-.header,
-.logo,
-.navlinks {
-  @include flex-box(null, null, null);
-}
-
 .header {
   @include flex-box(
-    $direction: null,
+    $direction: row,
     $justify-content: space-between,
     $align-items: center
   );
@@ -22,8 +16,8 @@
 
   .logo {
     @include flex-box(
-      $direction: null,
-      $justify-content: null,
+      $direction: row,
+      $justify-content: center,
       $align-items: center
     );
 
@@ -36,38 +30,42 @@
     &__text {
       color: $header-clr;
       font-size: $paragraph-l;
+      font-weight: 700;
     }
   }
 
   .navlinks {
     @include reset-list-style;
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
 
     gap: $spacer-xxs;
 
-    button {
+    &__academies-menu {
       background-color: $header-bg-clr;
       border: 0;
       font-family: $paragraph-font;
       padding: 0;
     }
 
-    button:hover {
+    &__academies-arrow {
+      margin-left: to-rem(7);
+      width: to-rem(14);
+    }
+
+    &__academies-menu:hover {
       cursor: pointer;
     }
 
-    a,
-    button {
+    &__link,
+    &__academies-menu {
       color: $header-clr;
       font-size: $paragraph-l;
       line-height: inherit;
       text-decoration: none;
-    }
-
-    &__academies {
-      svg {
-        margin-left: to-rem(7);
-        width: to-rem(14);
-      }
     }
   }
 }
