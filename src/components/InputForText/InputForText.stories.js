@@ -11,8 +11,13 @@ const Template = (args) => <InputForText {...args} />;
 
 export const TextInput = Template.bind({});
 TextInput.args = {
+  name: 'First name',
+  type: 'text',
+};
+
+export const TextInputWithError = Template.bind({});
+TextInputWithError.args = {
   name: 'Last name',
   type: 'text',
-  state: '',
-  errorMessage: '',
+  errorMessage: 'Something wrong with input',
 };

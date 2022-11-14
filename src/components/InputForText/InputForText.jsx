@@ -4,7 +4,11 @@ import { string, func } from 'prop-types';
 
 import './inputForText.scss';
 
-const InputForText = ({ name, type, errorMessage, state, setState }) => {
+const InputForText = ({ name, type, errorMessage, getValue }) => {
+  const changeHandler = (e) => {
+    getValue(e.target.value);
+  };
+
   return (
     <div className="text-input">
       <label htmlFor={name} className="text-input__label">
@@ -21,8 +25,7 @@ const InputForText = ({ name, type, errorMessage, state, setState }) => {
             ? 'text-input__input-field text-input__error'
             : 'text-input__input-field'
         }
-        value={state}
-        onChange={(e) => setState(e.target.value)}
+        onChange={changeHandler}
       ></input>
       {errorMessage && (
         <div className="text-input__error-message">{errorMessage}</div>
@@ -34,8 +37,7 @@ const InputForText = ({ name, type, errorMessage, state, setState }) => {
 InputForText.propTypes = {
   name: string.isRequired,
   type: string.isRequired,
-  state: string.isRequired,
-  setState: func.isRequired,
+  getValue: func,
   errorMessage: string,
 };
 
