@@ -18,15 +18,18 @@ export default function index() {
         <Header />
         <PageLayout>
           <Routes>
-            <Route path="/" element={<Homepage />}></Route>
-            <Route path="/developers" element={<Developers />}></Route>
-            <Route path="/frontend" element={<FrontEnd />}></Route>
-            <Route path="/kids" element={<Kids />}></Route>
-            <Route path="/testers" element={<Testers />}></Route>
+            <Route path="/" element={<Homepage theme="home" />} />
+            <Route
+              path="/developers"
+              element={<Developers theme="developers" />}
+            />
+            <Route path="/frontend" element={<FrontEnd theme="front-end" />} />
+            <Route path="/kids" element={<Kids />} />
+            <Route path="/testers" element={<Testers theme="testers" />} />
             <Route
               path="/applicationform"
-              element={<ApplicationForm />}
-            ></Route>
+              element={<ApplicationForm theme="application" />}
+            />
           </Routes>
         </PageLayout>
       </BrowserRouter>
