@@ -7,14 +7,14 @@ import IconLongHorizontalLine from '../../assets/icons/icon-long-horizontal-line
 export const ScheduleCardLocation = ({ city, day, month }) => {
   return (
     // SHOULD I LEAVE THIS BEM IN COHERENCE TO PARENT COMPONENT OR SHOULD I RENAME TO SHORTER BEM?
-    <div className="schedule-card__location-container">
-      <div className="schedule-card__location-date">
-        <span className="schedule-card__location-month">{month}</span>
-        <span className="schedule-card__location-day">{day}</span>
+    <div className="area">
+      <div className="area__date">
+        <span className="area__month">{month}</span>
+        <span className="area__day">{day}</span>
       </div>
-      <IconLongHorizontalLine className="schedule-card__location-separator" />
-      <IconLocation className="schedule-card__location-pin" />
-      <span className="schedule-card__location-city">{city}</span>
+      <IconLongHorizontalLine className="area__separator" />
+      <IconLocation className="area__pin" />
+      <span className="area__city">{city}</span>
     </div>
   );
 };

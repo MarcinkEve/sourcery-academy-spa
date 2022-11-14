@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { number, string, object, arrayOf, shape } from 'prop-types';
+import { number, string, arrayOf, shape } from 'prop-types';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 import { SlideDown } from 'react-slidedown';
 
@@ -30,7 +30,7 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
         />
       </div>
       {/*  DROPDOWN SECTION STARTS HERE / SLIDER COMPONENT WRAPS DROPDOWN */}
-      <SlideDown className="schedule-card--slider">
+      <SlideDown className="schedule-card__slider">
         {isCardExpanded && (
           <div className="schedule-card__dropdown">
             <div className="schedule-card__lecturer">
@@ -55,12 +55,12 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
             </div>
             <div className="schedule-card__location">
               {/* CITY MAPPING */}
-              {lectureDates.map((lecturesInCity, index) => (
+              {lectureDates.map((lectureDate, index) => (
                 <ScheduleCardLocation
                   key={index}
-                  city={lecturesInCity.city}
-                  day={lecturesInCity.day}
-                  month={lecturesInCity.month}
+                  city={lectureDate.city}
+                  day={lectureDate.day}
+                  month={lectureDate.month}
                 />
               ))}
             </div>
@@ -72,7 +72,7 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
 };
 
 ScheduleCard.propTypes = {
-  lectureData: object({
+  lectureData: shape({
     lecture: string,
     name: string,
     time: string,

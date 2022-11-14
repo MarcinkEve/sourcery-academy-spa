@@ -11,12 +11,13 @@
   transition: all 0.2s;
   width: to-rem(266);
   @include box-shadow;
+  $_this: &;
 
   &__title {
     background-color: var(--primary-color);
-    display: flex;
     padding: to-rem(20);
     transition: all 0.2s;
+    @include flex-box();
 
     &-name {
       font-size: $paragraph-l;
@@ -41,7 +42,7 @@
 
   // -------------------------------------------------------------------DROPDOW SECTION
   // REACT-SLIDER-COMPONENT/CONTROLS
-  .schedule-card--slider {
+  &__slider {
     border-radius: 0 0 15px 15px;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
@@ -56,7 +57,7 @@
     transition: all 0.2s;
 
     &-credentials {
-      display: flex;
+      @include flex-box();
     }
 
     &-credentials:not(:last-child) {
@@ -73,7 +74,7 @@
     }
 
     &-timing {
-      display: flex;
+      @include flex-box();
     }
 
     // COMPONENT / SVG
@@ -88,65 +89,63 @@
     border-radius: 0 0 14px 14px;
     padding: to-rem(20);
     @include themed-border(var(--primary-color));
+  }
 
-    &-container {
-      align-items: center;
-      background-color: $white-400;
-      border: 2px solid;
-      border-radius: 7.5px;
-      display: flex;
-      transition: all 0.2s;
-    }
+  .area {
+    border: 2px solid;
+    border-radius: 7.5px;
+    transition: all 0.2s;
+    @include flex-box(row, flex-start, center);
 
-    &-container:not(:last-child) {
+    &:not(:last-child) {
       margin-bottom: to-rem(10);
     }
 
-    &-date {
-      display: flex;
-      flex-direction: column;
+    &__date {
+      @include flex-box(column, center);
+
       height: to-rem(51);
-      justify-content: center;
       text-align: center;
       width: 25%;
     }
 
-    &-month {
+    &__month {
       font-size: $paragraph-s;
       line-height: to-rem(16);
     }
 
-    &-day {
+    &__day {
       font-size: $paragraph-l;
       font-weight: 700;
       line-height: to-rem(21);
     }
     // COMPONENT / SVG
-    &-separator {
+    &__separator {
       width: to-rem(2);
     }
     // COMPONENT / SVG
-    &-pin {
+    &__pin {
       margin: 0 to-rem(10) 0 to-rem(15);
       width: to-rem(15);
     }
 
-    &-city {
+    &__city {
       font-size: $paragraph-l;
     }
   }
+
   // COMPONENT STATES
   &:focus,
   &:focus-visible,
   &:active {
     border-color: var(--button-active);
 
-    .schedule-card__lecturer,
-    .schedule-card__title {
+    #{$_this}__lecturer,
+    #{$_this}__title {
       background-color: var(--button-active);
     }
 
-    .schedule-card__location-container {
+    .area {
       @include themed-border(var(--button-active));
     }
   }
@@ -161,13 +160,12 @@
 
   &:hover {
     border-color: var(--button-hover);
-    // STYLELINT PROBLEM, MAYBE THE RULES CAN BE ADJUSTED OR THIS CAN BE WRITTEN BETTER?
-    .schedule-card__lecturer,
-    .schedule-card__title {
+    #{$_this}__lecturer,
+    #{$_this}__title {
       background-color: var(--button-hover);
     }
 
-    .schedule-card__location-container {
+    .area {
       @include themed-border(var(--button-hover));
     }
   }

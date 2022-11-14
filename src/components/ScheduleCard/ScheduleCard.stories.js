@@ -10,11 +10,21 @@ export default {
   },
 };
 
+const setTheme = (theme) => {
+  return [
+    (Story) => (
+      <div theme={theme}>
+        <Story />
+      </div>
+    ),
+  ];
+};
+
 const Template = (args) => <ScheduleCard {...args} />;
 
 export const Red = Template.bind({});
+Red.decorators = setTheme('front-end');
 Red.args = {
-  theme: 'front-end',
   lectureData: {
     lecture: 'Intro, Agile & Git',
     name: 'Audrius Navickas',
@@ -36,6 +46,7 @@ Red.args = {
 };
 
 export const Blue = Template.bind({});
+Blue.decorators = setTheme('developers');
 Blue.args = {
   theme: 'developers',
   lectureData: {
@@ -59,6 +70,7 @@ Blue.args = {
 };
 
 export const Green = Template.bind({});
+Green.decorators = setTheme('testers');
 Green.args = {
   theme: 'testers',
   lectureData: {
