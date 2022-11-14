@@ -1,6 +1,8 @@
 @import '../../sass/variables';
 @import '../../sass/utilities/functions/to-rem';
 
+$input-label-grey: #868686;
+
 .text-input {
   display: flex;
   flex-direction: column;
@@ -14,8 +16,8 @@
     width: 100%;
 
     &::placeholder {
-      color: $charcoal-200;
-      font-size: to-rem(14);
+      color: $input-label-grey;
+      font-size: to-rem(18);
       font-weight: 400;
       line-height: 1.2;
     }
