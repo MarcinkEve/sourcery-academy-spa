@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Button } from './Button';
-import { THEMES } from '../../data/themes';
 
 export default {
   title: 'Button',
@@ -9,32 +8,28 @@ export default {
   args: {
     label: 'Button',
   },
-  argTypes: {
-    theme: {
-      options: THEMES,
-      control: { type: 'radio' },
-    },
-  },
+};
+
+const provideTheme = (theme) => {
+  return [
+    (Story) => (
+      <div theme={theme}>
+        <Story />
+      </div>
+    ),
+  ];
 };
 
 const Template = (args) => <Button {...args} />;
 
 export const Home = Template.bind({});
-Home.args = {
-  theme: 'home',
-};
+Home.decorators = provideTheme('home');
 
 export const Developers = Template.bind({});
-Developers.args = {
-  theme: 'developers',
-};
+Developers.decorators = provideTheme('developers');
 
 export const Testers = Template.bind({});
-Testers.args = {
-  theme: 'testers',
-};
+Testers.decorators = provideTheme('testers');
 
 export const FrontEnd = Template.bind({});
-FrontEnd.args = {
-  theme: 'front-end',
-};
+FrontEnd.decorators = provideTheme('front-end');

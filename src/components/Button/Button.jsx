@@ -3,9 +3,9 @@ import { string, func } from 'prop-types';
 
 import './button.scss';
 
-export const Button = ({ label, onClick, theme }) => {
+export const Button = ({ label, onClick }) => {
   return (
-    <button className="btn" type="button" onClick={onClick} theme={theme}>
+    <button className="btn" type="button" onClick={onClick}>
       {label}
     </button>
   );
@@ -13,6 +13,5 @@ export const Button = ({ label, onClick, theme }) => {
 
 Button.propTypes = {
   label: string.isRequired,
-  onClick: func,
-  theme: string,
+  onClick: func.isRequired,
 };
