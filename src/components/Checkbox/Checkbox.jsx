@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 
-import './Checkbox.scss';
+import './checkboxSc.scss';
 
-const Checkbox = ({ checkboxText }) => {
+const Checkbox = ({ checkboxText, getCheckboxValue }) => {
   const [isChecked, setIsChecked] = useState(false);
+
+  const clickHandler = () => {
+    setIsChecked(!isChecked);
+    getCheckboxValue(isChecked);
+  };
 
   return (
     <label onChange={() => setIsChecked(!isChecked)}>
@@ -13,7 +18,7 @@ const Checkbox = ({ checkboxText }) => {
           <input
             className="checkmark--default"
             checked={isChecked}
-            onChange={() => setIsChecked(!isChecked)}
+            onChange={clickHandler}
             type="checkbox"
             name="check_privacy"
           ></input>
@@ -32,6 +37,7 @@ const Checkbox = ({ checkboxText }) => {
 
 Checkbox.propTypes = {
   checkboxText: string.isRequired,
+  getCheckboxValue: func,
 };
 
 export default Checkbox;

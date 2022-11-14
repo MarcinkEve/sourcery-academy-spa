@@ -78,6 +78,13 @@
       font-weight: 500;
     }
   }
+
+  // When pressed
+  &:active {
+    p {
+      color: $violet-700;
+    }
+  }
 }
 
 @keyframes checkmarkOnHover {
