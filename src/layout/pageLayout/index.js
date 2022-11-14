@@ -1,3 +1,3 @@
-import { pageLayout } from './pageLayout';
+import { PageLayout } from './PageLayout';
 
-export default pageLayout;
+export default PageLayout;

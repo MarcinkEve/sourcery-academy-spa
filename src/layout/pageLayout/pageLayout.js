@@ -1,11 +1,12 @@
+import { element } from 'prop-types';
 import React from 'react';
 
-import './pageLayout.scss';
+import './PageLayout.scss';
 
-export const pageLayout = (props) => {
-  return (
-    <div className="page-layout">
-      <div className="main-container">{props.children}</div>
-    </div>
-  );
+export const PageLayout = ({ children }) => {
+  return <div className="page-layout">{children}</div>;
+};
+
+PageLayout.propTypes = {
+  children: element.isRequired,
 };

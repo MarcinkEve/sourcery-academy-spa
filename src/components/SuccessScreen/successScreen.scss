@@ -1,0 +1,52 @@
+@import '../../sass/global';
+
+h1,
+// TEMP---------
+h2 {
+  color: $violet-700;
+}
+
+.success-container {
+  margin: to-rem(40) 0;
+
+  &__header {
+    margin-bottom: to-rem(80);
+  }
+
+  &__content {
+    max-height: to-rem(726);
+    text-align: center;
+    @include flex-box(row, space-between, center);
+  }
+
+  &__left {
+    width: to-rem(576);
+    @include flex-box(row, center);
+  }
+
+  &__message-box {
+    @include flex-box(column, normal, center);
+  }
+
+  &__check-mark {
+    width: to-rem(104);
+  }
+
+  h2 {
+    margin: to-rem(40) 0 to-rem(12) 0;
+  }
+
+  &__confirmation-text {
+    color: $violet-700; // TEMP ???
+    font: 700 $paragraph-l $paragraph-font;
+  }
+
+  &__right {
+    max-width: to-rem(620);
+    @include flex-box(row);
+
+    &-image {
+      width: to-rem(620);
+    }
+  }
+}
