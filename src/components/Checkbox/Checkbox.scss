@@ -4,7 +4,6 @@
 @import '../../sass/variables';
 
 // Checkmark box instead of native input type='checkbox'
-
 .checkmark {
   &--default {
     opacity: 0; // is visible for screen readers
@@ -13,7 +12,7 @@
 
   &--custom {
     border: 2px solid $violet-700; // maby change color by theme ?
-    border-radius: 20%;
+    border-radius: to-rem(4);
     display: inline-block;
     height: to-rem(20);
     width: to-rem(20);
@@ -58,6 +57,7 @@
   //When focused with TAB key
   &:focus-visible {
     border: 2px solid $violet-700;
+    border-radius: to-rem(5);
     outline: none;
     padding: to-rem(2);
   }
@@ -73,11 +73,10 @@
         animation: none;
       }
     }
-  }
 
-  //touched
-  &:focus {
-    scale: 0.99;
+    p {
+      font-weight: 500;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 
-import './checkbox.scss';
+import './Checkbox.scss';
 
 const Checkbox = ({ checkboxText }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -31,7 +31,7 @@ const Checkbox = ({ checkboxText }) => {
 };
 
 Checkbox.propTypes = {
-  checkboxText: PropTypes.string,
+  checkboxText: string.isRequired,
 };
 
 export default Checkbox;
