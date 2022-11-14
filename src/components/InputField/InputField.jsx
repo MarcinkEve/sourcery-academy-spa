@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { string, func } from 'prop-types';
 
-import './inputForText.scss';
+import './inputField.scss';
 
-export const InputForText = ({ name, type, errorMessage, getValue }) => {
+export const InputField = ({ name, type, errorMessage, getValue }) => {
   const [nameForLabel, setNameForLabel] = useState('');
   const [nameForPlaceholder, setNameForPlaceholder] = useState('');
 
@@ -45,7 +45,7 @@ export const InputForText = ({ name, type, errorMessage, getValue }) => {
   );
 };
 
-InputForText.propTypes = {
+InputField.propTypes = {
   name: string.isRequired,
   type: string.isRequired,
   getValue: func,
