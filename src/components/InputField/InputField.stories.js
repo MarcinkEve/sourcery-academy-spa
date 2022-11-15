@@ -3,7 +3,7 @@ import React from 'react';
 import { InputField } from './InputField';
 
 export default {
-  title: 'Input for text/email/password',
+  title: 'Input field',
   component: InputField,
 };
 
