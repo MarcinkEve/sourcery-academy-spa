@@ -29,7 +29,6 @@ export const Toggler = ({ name, value, handleChange, radioValue }) => {
 };
 
 Toggler.propTypes = {
-  index: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
