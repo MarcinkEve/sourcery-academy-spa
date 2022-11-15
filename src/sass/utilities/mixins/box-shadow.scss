@@ -1,7 +1,7 @@
 @mixin box-shadow(
   $x-offset: to-rem(-20),
   $y-offset: to-rem(20),
-  $color: $gray-200 // need a proper variable
+  $color: $gray-200
 ) {
   box-shadow: $x-offset $y-offset $color;
 }
