@@ -2,14 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TestimonialCard.scss';
 
-export const TestimonialCard = ({ data, theme }) => {
-  const {
-    photo,
-    message,
-    name,
-    academy,
-    alt = 'Graduate profile photo',
-  } = data;
+export const TestimonialCard = ({
+  data,
+  theme,
+  alt = 'Graduate profile photo',
+}) => {
+  const { photo, message, name, academy } = data;
   return (
     <div className="card" theme={theme}>
       {photo && <img className="card__photo" src={photo} alt={alt} />}
@@ -30,7 +28,7 @@ TestimonialCard.propTypes = {
     message: PropTypes.string.isRequired,
     name: PropTypes.string,
     academy: PropTypes.string,
-    alt: PropTypes.string,
   }).isRequired,
   theme: PropTypes.string,
+  alt: PropTypes.string,
 };
