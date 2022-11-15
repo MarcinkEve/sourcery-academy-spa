@@ -17,7 +17,6 @@ export default function index() {
       <BrowserRouter>
         <Header />
         <PageLayout>
-          {/* ------------------------------------------------------------------------------ DELETE ME */}
           <Routes>
             <Route path="/" element={<Homepage theme="home" />} />
             <Route
