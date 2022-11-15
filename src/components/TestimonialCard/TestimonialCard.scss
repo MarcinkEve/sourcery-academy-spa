@@ -9,7 +9,8 @@ $_photo-size: to-rem(78);
   background-color: $white-400;
   border: var(--primary-color) solid 2px;
   border-radius: 16px;
-  font-family: $main-font;
+  font-family: inherit;
+  line-height: 1.2;
   padding: to-rem(35) to-rem(30);
   width: to-rem(340);
 
@@ -27,9 +28,8 @@ $_photo-size: to-rem(78);
       font-family: $header-font;
       font-size: to-rem(38);
       font-weight: 700;
-      line-height: 1.2;
+      line-height: inherit;
       margin: 0;
-      text-align: left;
 
       &--lower {
         transform: rotate(180deg);
@@ -39,10 +39,8 @@ $_photo-size: to-rem(78);
     &-message {
       color: var(--primary-color);
       font-size: $paragraph-s;
-      font-weight: 400;
-      line-height: 1.2;
+      line-height: inherit;
       margin: to-rem(-7) 0 0;
-      text-align: left;
     }
   }
 
@@ -50,15 +48,14 @@ $_photo-size: to-rem(78);
     color: var(--primary-color);
     font-size: to-rem(20);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: inherit;
     margin: to-rem(11) 0 0;
   }
 
   &__academy {
     color: var(--primary-color);
     font-size: $paragraph-s;
-    font-weight: 400;
-    line-height: 1.2;
+    line-height: inherit;
     margin: to-rem(7) 0 0;
   }
 }
