@@ -3,7 +3,7 @@ import React from 'react';
 import PageLayout from '../../layout/pageLayout';
 import { Footer } from '../Footer/Footer';
 import { Radio } from '../Radio/Radio';
-import { RadioToggler } from '../RadioToggler/RadioToggler ';
+import { RadioToggler } from '../RadioToggler/RadioToggler';
 
 export default function index() {
   return (

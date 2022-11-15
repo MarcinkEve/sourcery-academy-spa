@@ -28,7 +28,7 @@
       height: 2px;
       left: 50%;
       position: absolute;
-      transition: width 1s ease 0s, left 1s ease 0s;
+      transition: width 0.8s ease 0s, left 0.8s ease 0s;
       width: 0;
     }
 
@@ -49,7 +49,7 @@
   .radio-toggler__label#{$i} {
     background-color: $violet-400;
     color: $white-400;
-    transition: all 1.5s ease;
+    transition: all 1.3s ease;
 
     &:hover {
       background-color: $violet-600;

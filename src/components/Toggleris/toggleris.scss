@@ -21,6 +21,7 @@
     width: to-rem(159);
 
     &::after {
+      background: none repeat scroll 0 0 transparent;
       background: $violet-400;
       bottom: to-rem(10);
       content: '';
@@ -28,12 +29,13 @@
       height: 2px;
       left: 50%;
       position: absolute;
-      transition: width 1s ease 0s, left 1s ease 0s;
+      transition: width 0.8s ease 0s, left 0.8s ease 0s;
       width: 0;
     }
 
     &:hover::after {
       left: 15%;
+      transition: all 1s;
       width: 70%;
     }
   }
