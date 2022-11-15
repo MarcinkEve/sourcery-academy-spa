@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, shape } from 'prop-types';
 import './TestimonialCard.scss';
 
 export const TestimonialCard = ({ data, alt = 'Graduate profile photo' }) => {
@@ -19,11 +19,11 @@ export const TestimonialCard = ({ data, alt = 'Graduate profile photo' }) => {
 };
 
 TestimonialCard.propTypes = {
-  data: PropTypes.shape({
-    photo: PropTypes.string,
-    message: PropTypes.string.isRequired,
-    name: PropTypes.string,
-    academy: PropTypes.string,
+  data: shape({
+    photo: string,
+    message: string.isRequired,
+    name: string,
+    academy: string,
   }).isRequired,
-  alt: PropTypes.string,
+  alt: string,
 };
