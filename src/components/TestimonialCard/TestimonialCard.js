@@ -12,8 +12,8 @@ export const TestimonialCard = ({ data, alt = 'Graduate profile photo' }) => {
         <p className="card__quote-message">{message}</p>
         <p className="card__quote-mark card__quote-mark--lower">“</p>
       </div>
-      {name && <h3 className="card__name">{name}</h3>}
-      {academy && <h4 className="card__academy">{academy}</h4>}
+      {name && <p className="card__name">{name}</p>}
+      {academy && <p className="card__academy">{academy}</p>}
     </div>
   );
 };

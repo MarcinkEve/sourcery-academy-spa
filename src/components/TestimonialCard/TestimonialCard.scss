@@ -7,7 +7,6 @@ $photo-size: to-rem(78);
   border: var(--primary-color) solid 2px;
   border-radius: 16px;
   box-shadow: -20px 20px $gray-200;
-  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   font-family: $main-font;
@@ -48,6 +47,7 @@ $photo-size: to-rem(78);
   }
 
   &__name {
+    color: var(--primary-color);
     font-size: to-rem(20);
     font-weight: 700;
     line-height: 1.2;
@@ -55,6 +55,7 @@ $photo-size: to-rem(78);
   }
 
   &__academy {
+    color: var(--primary-color);
     font-size: $paragraph-s;
     font-weight: 400;
     line-height: 1.2;
