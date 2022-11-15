@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { string, func } from 'prop-types';
+import { string, func, bool } from 'prop-types';
 
 import './checkbox.scss';
 
-export const Checkbox = ({ checkboxText, getCheckboxValue }) => {
+export const Checkbox = ({ checkboxText, getCheckboxValue, error }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const clickHandler = () => {
@@ -29,7 +29,9 @@ export const Checkbox = ({ checkboxText, getCheckboxValue }) => {
           ></div>
         </div>
 
-        <p className="checkbox__text">{checkboxText}</p>
+        <p className={error ? 'checkbox__text error' : 'checkbox__text'}>
+          {checkboxText}
+        </p>
       </div>
     </label>
   );
@@ -38,4 +40,5 @@ export const Checkbox = ({ checkboxText, getCheckboxValue }) => {
 Checkbox.propTypes = {
   checkboxText: string.isRequired,
   getCheckboxValue: func,
+  error: bool,
 };
