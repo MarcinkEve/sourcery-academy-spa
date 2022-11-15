@@ -1,28 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames';
 import './toggler.scss';
 
-export const Toggler = ({ index, name, value, handleChange, radioValue }) => {
+export const Toggler = ({ name, value, handleChange, radioValue }) => {
   return (
     <>
-      <input
-        type="radio"
-        name={name}
-        value={value}
-        onChange={handleChange}
-        className={`radio-toggler__input ${value}`}
-        checked={value === radioValue}
-        id={value}
-      />
       <label
         htmlFor={value}
-        className={
-          value === radioValue
-            ? 'radio-toggler__label' + index
-            : 'radio-toggler__label'
-        }
+        className={classNames('radio-toggler__label', {
+          'radio-toggler__label--checked': value === radioValue,
+        })}
       >
+        <input
+          type="radio"
+          name={name}
+          value={value}
+          onChange={handleChange}
+          className={`radio-toggler__input ${value}`}
+          checked={value === radioValue}
+          id={value}
+        />
         {value}
       </label>
     </>

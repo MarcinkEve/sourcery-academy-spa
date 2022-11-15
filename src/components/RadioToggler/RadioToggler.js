@@ -31,7 +31,6 @@ export const RadioToggler = () => {
         {radioButtonValues.map((radioButtonValue, index) => (
           <Toggler
             key={index}
-            index={index}
             name={radioButtonValue.name}
             value={radioButtonValue.value}
             handleChange={handleChange}

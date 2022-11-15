@@ -1,10 +1,7 @@
 @import '../../sass/global';
 
 .radio-toggler {
-  &__label,
-  &__label0,
-  &__label1,
-  &__label2 {
+  &__label {
     @include flex-box(
       $direction: row,
       $justify-content: center,
@@ -28,7 +25,7 @@
       height: 2px;
       left: 50%;
       position: absolute;
-      transition: width 0.8s ease 0s, left 0.8s ease 0s;
+      transition: width 0.5s ease 0s, left 0.5s ease 0s;
       width: 0;
     }
 
@@ -36,33 +33,35 @@
       left: 15%;
       width: 70%;
     }
+
+    &--checked {
+      background-color: $violet-400;
+      color: $white-400;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: $violet-600;
+      }
+
+      &:focus,
+      &:focus-visible,
+      &:active {
+        background-color: $violet-300;
+      }
+
+      &:focus-within {
+        outline: 4px dashed $orange-200;
+      }
+
+      &:hover::after {
+        background-color: $white-400;
+      }
+    }
   }
 
   &__input {
     height: 0;
     position: absolute;
     width: 0;
-  }
-}
-
-@for $i from 0 through 2 {
-  .radio-toggler__label#{$i} {
-    background-color: $violet-400;
-    color: $white-400;
-    transition: all 1.3s ease;
-
-    &:hover {
-      background-color: $violet-600;
-    }
-
-    &:focus,
-    &:focus-visible,
-    &:active {
-      background-color: $violet-300;
-    }
-
-    &:hover::after {
-      background-color: $white-400;
-    }
   }
 }
