@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { string, func } from 'prop-types';
 
-import './checkboxSc.scss';
+import './checkbox.scss';
 
-const Checkbox = ({ checkboxText, getCheckboxValue }) => {
+export const Checkbox = ({ checkboxText, getCheckboxValue }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const clickHandler = () => {
@@ -39,5 +39,3 @@ Checkbox.propTypes = {
   checkboxText: string.isRequired,
   getCheckboxValue: func,
 };
-
-export default Checkbox;

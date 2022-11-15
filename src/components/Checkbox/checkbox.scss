@@ -11,11 +11,11 @@
   }
 
   &--custom {
-    border: 2px solid $violet-700; // maby change color by theme ?
+    border: 2px solid $violet-700;
     border-radius: to-rem(4);
     display: inline-block;
-    height: to-rem(20);
-    width: to-rem(20);
+    height: to-rem(24);
+    width: to-rem(24);
 
     &.checked {
       background-color: $violet-700;
@@ -25,11 +25,11 @@
         color: $white-400;
         content: '✔';
         display: inline-grid;
-        font-size: to-rem(12);
-        height: to-rem(14);
+        font-size: to-rem(16);
+        height: to-rem(20);
         position: absolute;
         text-align: center;
-        width: to-rem(14);
+        width: to-rem(20);
       }
     }
   }
@@ -47,16 +47,17 @@
   }
 
   &__text {
-    font-size: to-rem(18);
+    font-size: $paragraph-l;
     height: 100%;
-    margin: 0 to-rem(16);
+    line-height: 1.15;
+    margin: 0 to-rem(25);
   }
 
   // STATES
 
   //When focused with TAB key
   &:focus-visible {
-    border: 2px solid $violet-700;
+    border: 4px dashed $orange-200;
     border-radius: to-rem(5);
     outline: none;
     padding: to-rem(2);
@@ -75,7 +76,7 @@
     }
 
     p {
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 
