@@ -10,7 +10,6 @@ import Homepage from '../Pages/Homepage';
 import Kids from '../Pages/Kids';
 import PageLayout from '../../layout/pageLayout';
 import Testers from '../Pages/Testers';
-import RadioBtnCities from '../RadioBtnCities';
 
 export default function index() {
   return (
@@ -18,8 +17,6 @@ export default function index() {
       <BrowserRouter>
         <Header />
         <PageLayout>
-          <RadioBtnCities />
-          {/* ------------------------------------------------------------------------------ DELETE ME */}
           <Routes>
             <Route path="/" element={<Homepage theme="home" />} />
             <Route
