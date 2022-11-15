@@ -1,5 +1,6 @@
 @import '../../sass/global';
-$photo-size: to-rem(78);
+
+$_photo-size: to-rem(78);
 
 .card {
   align-items: center;
@@ -15,8 +16,8 @@ $photo-size: to-rem(78);
 
   &__photo {
     border-radius: 50%;
-    height: $photo-size;
-    width: $photo-size;
+    height: $_photo-size;
+    width: $_photo-size;
   }
 
   &__quote {
