@@ -15,9 +15,9 @@
 
   &__title {
     background-color: var(--primary-color);
+    display: flex;
     padding: to-rem(20);
     transition: all 0.2s;
-    @include flex-box();
 
     &-name {
       font-size: $paragraph-l;
@@ -57,7 +57,7 @@
     transition: all 0.2s;
 
     &-credentials {
-      @include flex-box();
+      display: flex;
     }
 
     &-credentials:not(:last-child) {
@@ -74,7 +74,7 @@
     }
 
     &-timing {
-      @include flex-box();
+      display: flex;
     }
 
     // COMPONENT / SVG
