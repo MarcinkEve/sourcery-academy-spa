@@ -1,11 +1,5 @@
 @import '../../sass/global';
 
-h1,
-// TEMP---------
-h2 {
-  color: $violet-700;
-}
-
 .success-container {
   margin: to-rem(40) 0;
 
@@ -37,7 +31,7 @@ h2 {
   }
 
   &__confirmation-text {
-    color: $violet-700; // TEMP ???
+    color: $violet-700;
     font: 700 $paragraph-l $paragraph-font;
   }
 
