@@ -39,7 +39,6 @@ export const Radio = () => {
         ))}
         <div className="radio-toggleris__indicatorius" />
       </div>
-      <div>{radioValue}</div> {/*DELETE*/}
     </>
   );
 };

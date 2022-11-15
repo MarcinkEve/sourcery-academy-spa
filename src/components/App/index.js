@@ -14,9 +14,9 @@ export default function index() {
           &rarr; Drop components here &larr;{' '}
         </h1>{' '}
         {/* Delete this h1 tag after adding first component */}
-        <div>Originalas</div>
+        <div>Click</div>
         <RadioToggler />
-        <div>Naujas</div>
+        <div>Slide</div>
         <Radio />
       </PageLayout>
       <Footer />

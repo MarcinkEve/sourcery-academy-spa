@@ -40,7 +40,6 @@ export const RadioToggler = () => {
         ))}
         <div className="radio-toggler__indicator" />
       </div>
-      <div>{radioValue}</div> {/*DELETE*/}
     </>
   );
 };

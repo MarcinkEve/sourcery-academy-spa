@@ -14,63 +14,8 @@
   position: relative;
   width: to-rem(507);
 
-  &__label,
-  &__label0,
-  &__label1,
-  &__label2 {
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
-
-    border-radius: to-rem(30);
-    color: $charcoal-400;
-    cursor: pointer;
-    font-size: to-rem(18);
-    font-weight: 700;
-    height: to-rem(48);
-    width: to-rem(159);
-  }
-
   &__label:nth-of-type(2),
   &__label1 {
     margin: 0 to-rem(8);
-  }
-
-  &__input {
-    height: 0;
-    position: absolute;
-    width: 0;
-  }
-}
-
-@for $i from 0 through 2 {
-  .radio-toggler__label#{$i} {
-    background-color: $violet-400;
-    color: $white-400;
-    transition: all 1s ease;
-
-    &:hover {
-      background-color: $violet-600;
-    }
-
-    &:focus,
-    &:focus-visible,
-    &:active {
-      background-color: $violet-300;
-    }
-
-    &:focus {
-      outline: 2px solid $violet-600;
-    }
-
-    &:focus-visible {
-      outline: 4px dashed $orange-200;
-    }
-
-    &:active {
-      outline: none;
-    }
   }
 }

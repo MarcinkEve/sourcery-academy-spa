@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './toggler.scss';
+
 export const Toggler = ({ index, name, value, handleChange, radioValue }) => {
   return (
     <>
