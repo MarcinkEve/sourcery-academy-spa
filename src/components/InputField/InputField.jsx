@@ -1,45 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { string, func } from 'prop-types';
 
 import './inputField.scss';
 
-export const InputField = ({ name, type, errorMessage, getValue }) => {
-  const [nameForLabel, setNameForLabel] = useState('');
-  const [nameForPlaceholder, setNameForPlaceholder] = useState('');
-
+export const InputField = ({
+  name,
+  type,
+  placeholder,
+  errorMessage,
+  getValue,
+}) => {
   const changeHandler = (e) => {
     getValue(e.target.value);
   };
 
-  // changing text to figma design regardless of props text from the parent component
-  useEffect(() => {
-    if (name) {
-      setNameForLabel(name[0].toUpperCase() + name.slice(1, name.length));
-      setNameForPlaceholder(name.toLowerCase());
-    }
-  }, [name]);
-
   return (
-    <div className="text-input">
-      <label htmlFor={name} className="text-input__label">
-        <span className="text-input__label--asterisk">*</span>
-        <span className="text-input__label--text">{nameForLabel}</span>
+    <div className="input">
+      <label htmlFor={name} className="input__label">
+        <span className="input__label--text">{name}</span>
       </label>
 
       <input
-        placeholder={`Enter your ${nameForPlaceholder}`}
+        placeholder={placeholder}
         type={type}
         name={name}
+        id={name}
         className={
           errorMessage
-            ? 'text-input__input-field text-input__error'
-            : 'text-input__input-field'
+            ? 'input__input-field input__error'
+            : 'input__input-field'
         }
         onChange={changeHandler}
       ></input>
       {errorMessage && (
-        <div className="text-input__error-message">{errorMessage}</div>
+        <div className="input__error-message">{errorMessage}</div>
       )}
     </div>
   );
@@ -48,6 +43,7 @@ export const InputField = ({ name, type, errorMessage, getValue }) => {
 InputField.propTypes = {
   name: string.isRequired,
   type: string.isRequired,
+  placeholder: string,
   getValue: func,
   errorMessage: string,
 };
