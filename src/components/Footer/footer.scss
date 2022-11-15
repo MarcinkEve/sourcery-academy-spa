@@ -25,10 +25,12 @@
     );
     @include reset-list-style;
 
-    gap: to-rem(16);
-
     &-item {
       @include padding-margin-0;
+
+      &:not(:last-child) {
+        margin-right: to-rem(16);
+      }
     }
   }
 
