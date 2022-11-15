@@ -2,6 +2,14 @@
 
 .success-container {
   margin: to-rem(40) 0;
+  position: relative;
+
+  &__particles-icon {
+    max-width: to-rem(1177);
+    position: absolute;
+    top: calc(50% - 1252px / 2 + 0.01px);
+    z-index: -1;
+  }
 
   &__header {
     margin-bottom: to-rem(80);
@@ -10,16 +18,16 @@
   &__content {
     max-height: to-rem(726);
     text-align: center;
-    @include flex-box(row, space-between, center);
+    @include flex-box(null, space-between, center);
   }
 
   &__left {
     width: to-rem(576);
-    @include flex-box(row, center);
+    @include flex-box(null, center);
   }
 
   &__message-box {
-    @include flex-box(column, normal, center);
+    @include flex-box(column, null, center);
   }
 
   &__check-mark {
@@ -36,8 +44,8 @@
   }
 
   &__right {
+    display: flex;
     max-width: to-rem(620);
-    @include flex-box(row);
 
     &-image {
       width: to-rem(620);
