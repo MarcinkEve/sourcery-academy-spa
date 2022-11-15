@@ -38,3 +38,9 @@ RadioBtnCities.propTypes = {
     })
   ).isRequired,
 };
+RadioBtnCities.defaultProps = {
+  cities: [
+    { name: 'Kaunas', value: 'kaunas' },
+    { name: 'Vilnius', value: 'vilnius' },
+  ],
+};
