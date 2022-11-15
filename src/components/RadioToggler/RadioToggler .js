@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Toggler } from '../Toggler/Toggler';
 
 import './radioToggler.scss';
-// import variables from '../RadioToggler/radioToggler.module.scss';
 
 export const RadioToggler = () => {
   const radioButtonValues = [
@@ -21,25 +20,10 @@ export const RadioToggler = () => {
   ];
 
   const [radioValue, setRadioValue] = useState('Full-stack');
-  //   const [checkedStyle, setCheckedStyle] = useState('');
-  //   const [isActive, setIsActive] = useState(false);
 
   const handleChange = (event) => {
-    // setRadioValue({
-    //   selectedOption: event.target.value,
-    // });
     setRadioValue(event.target.value);
-    // console.log('checked', radioValue);
-    // console.log('event', event.target.value);
-    // console.log('radio', radioButtonValues.value);
-    // console.log('checkedStyle', checkedStyle);
-    // if (event.target.value) {
-    //   setCheckedStyle({ checkedStyle: 'white' });
-    // }
   };
-  //   const handleClick = () => {
-  //     radioValue === ? setIsActive((current) => !current) : '';
-  //   };
 
   return (
     <>

@@ -15,7 +15,7 @@ export default function index() {
         </h1>{' '}
         {/* Delete this h1 tag after adding first component */}
         <div>Originalas</div>
-        {/* <RadioToggler /> */}
+        <RadioToggler />
         <div>Naujas</div>
         <Radio />
       </PageLayout>

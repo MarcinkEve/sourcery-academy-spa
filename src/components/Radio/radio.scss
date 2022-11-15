@@ -14,10 +14,10 @@
   position: relative;
   width: to-rem(507);
 
-  &__label,
-  &__label0,
-  &__label1,
-  &__label2 {
+  &__labelis,
+  &__labelis0,
+  &__labelis1,
+  &__labelis2 {
     @include flex-box(
       $direction: row,
       $justify-content: center,
@@ -39,19 +39,18 @@
     // }
   }
 
-  &__label:nth-of-type(2),
-  &__label1 {
+  &__labelis:nth-of-type(2),
+  &__labelis1 {
     margin: 0 to-rem(8);
   }
 
-  &__input {
+  &__inputas {
     height: 0;
     position: absolute;
     width: 0;
-    // display: none;
   }
 
-  &__indicator {
+  &__indicatorius {
     background: $violet-400;
     border-radius: to-rem(30);
     height: to-rem(48);
@@ -67,36 +66,23 @@
 }
 
 // UNCOMMENT BELOW
-// input.full-stackas:checked ~ .radio-toggleris__indicator {
+// input.full-stackas:checked ~ .radio-toggleris__indicatorius {
 //   transform: translate(to-rem(15), 0);
 //   transition: all 1.5s;
 // }
 
-// input.testeris:checked ~ .radio-toggleris__indicator {
+// input.testeris:checked ~ .radio-toggleris__indicatorius {
 //   transform: translate(to-rem(183), 0);
 //   transition: all 1.5s;
 // }
 
-// input.front-endas:checked ~ .radio-toggleris__indicator {
+// input.front-endas:checked ~ .radio-toggleris__indicatorius {
 //   transform: translate(to-rem(348), 0);
 //   transition: all 1.5s;
 // }
 
 @for $i from 0 through 2 {
-  .radio-toggleris__label#{$i} {
-    // background-color: $violet-400;
-    // @include flex-box(
-    //   $direction: row,
-    //   $justify-content: center,
-    //   $align-items: center
-    // );
-
-    // border-radius: to-rem(30);
-    // cursor: pointer;
-    // font-size: to-rem(18);
-    // font-weight: 700;
-    // height: to-rem(48);
-    // width: to-rem(159);
+  .radio-toggleris__labelis#{$i} {
     color: $white-400;
     transition: all 1.5s ease 0.3s;
   }
