@@ -1,6 +1,5 @@
 @import '../../sass/global';
 
-// Checkmark box instead of native input type='checkbox'
 .checkmark {
   &--default {
     opacity: 0; // is visible for screen readers
@@ -54,9 +53,6 @@
     }
   }
 
-  // STATES
-
-  //When focused with TAB key
   &:focus-visible {
     border: 4px dashed $orange-200;
     border-radius: to-rem(5);
@@ -64,7 +60,6 @@
     padding: to-rem(2);
   }
 
-  //When hovering with mouse
   &:hover {
     cursor: pointer;
 
@@ -81,7 +76,6 @@
     }
   }
 
-  // When pressed
   &:active {
     p {
       color: $violet-700;

@@ -21,15 +21,12 @@ export const Checkbox = ({ checkboxText, getCheckboxValue, error }) => {
             onChange={clickHandler}
             type="checkbox"
             name="check_privacy"
-          ></input>
+          />
           <div
-            className={
-              isChecked ? 'checkmark--custom checked' : 'checkmark--custom'
-            }
+            className={`checkmark--custom ${isChecked ? 'checked' : ''}`}
           ></div>
         </div>
-
-        <p className={error ? 'checkbox__text error' : 'checkbox__text'}>
+        <p className={`checkbox__text ${error ? 'error' : ''}`}>
           {checkboxText}
         </p>
       </div>
