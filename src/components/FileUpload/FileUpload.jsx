@@ -16,14 +16,15 @@ export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
   return (
     <div className="upload">
       <div className="upload__label">{name}</div>
-      <label className="upload__field" tabIndex="0">
-        <input
-          className="upload__input"
-          type="file"
-          name={name}
-          accept=".pdf"
-          onChange={uploadHandler}
-        />
+      <input
+        className="upload__input"
+        id={name}
+        type="file"
+        name={name}
+        accept=".pdf"
+        onChange={uploadHandler}
+      />
+      <label className="upload__field" htmlFor={name}>
         {uploadedFile?.name || (
           <span className="upload__placeholder">{placeholder}</span>
         )}

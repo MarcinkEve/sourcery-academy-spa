@@ -3,6 +3,7 @@
 .upload {
   display: flex;
   flex-direction: column;
+  $_this: &;
 
   &__label {
     @include label($charcoal-200);
@@ -13,6 +14,10 @@
     opacity: 0;
     position: absolute;
     width: 0;
+
+    &:focus + #{$_this}__field {
+      outline: 2px solid $violet-600;
+    }
   }
 
   &__field {
