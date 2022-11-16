@@ -1,8 +1,8 @@
 @import '../utilities/functions/index';
 @import '../variables';
 
-@mixin input-label {
-  color: $charcoal-200;
+@mixin label($color) {
+  color: $color;
   display: inline-block;
   font-size: to-rem(14);
   height: to-rem(21);
