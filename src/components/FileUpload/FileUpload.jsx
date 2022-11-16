@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { string, func } from 'prop-types';
 import UploadIcon from '../../assets/icons/icon-upload.svg';
 
-import './FileUpload.scss';
+import './fileUpload.scss';
 
 export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
   const [uploadedFile, setUploadedFile] = useState('');
