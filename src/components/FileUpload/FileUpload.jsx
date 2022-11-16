@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { string, func } from 'prop-types';
-import UploadIcon from '../../assets/icons/icon-upload.svg';
+import classNames from 'classnames';
 
 import './fileUpload.scss';
+import UploadIcon from '../../assets/icons/icon-upload.svg';
 
 export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
   const [uploadedFile, setUploadedFile] = useState('');
@@ -24,7 +25,10 @@ export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
         accept=".pdf"
         onChange={uploadHandler}
       />
-      <label className="upload__field" htmlFor={name}>
+      <label
+        className={classNames('upload__field', { upload__error: errorMessage })}
+        htmlFor={name}
+      >
         {uploadedFile?.name || (
           <span className="upload__placeholder">{placeholder}</span>
         )}
