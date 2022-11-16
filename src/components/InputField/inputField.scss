@@ -1,6 +1,4 @@
-@import '../../sass/variables';
-@import '../../sass/utilities/functions/to-rem';
-@import '../../sass/input/index';
+@import '../../sass/global';
 
 .input {
   display: flex;
@@ -11,7 +9,7 @@
   }
 
   &__label {
-    @include input-label;
+    @include label($charcoal-200);
   }
 
   &__error {
