@@ -3,6 +3,9 @@
 
 @mixin input-label {
   color: $charcoal-200;
+  display: inline-block;
+  font-size: to-rem(14);
+  height: to-rem(21);
   line-height: 1.5;
   margin-bottom: to-rem(5);
 
@@ -15,11 +18,5 @@
     margin-left: to-rem(-9);
     margin-right: to-rem(2);
     width: to-rem(7);
-  }
-
-  span {
-    display: inline-block;
-    font-size: to-rem(14);
-    height: to-rem(21);
   }
 }

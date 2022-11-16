@@ -6,19 +6,16 @@ import './inputField.scss';
 
 export const InputField = ({
   name,
+  label,
   type,
   placeholder,
   errorMessage,
   getValue,
 }) => {
-  const changeHandler = (e) => {
-    getValue(e.target.value);
-  };
-
   return (
     <div className="input">
       <label htmlFor={name} className="input__label">
-        <span className="input__label--text">{name}</span>
+        {label}
       </label>
 
       <input
@@ -26,12 +23,10 @@ export const InputField = ({
         type={type}
         name={name}
         id={name}
-        className={
-          errorMessage
-            ? 'input__input-field input__error'
-            : 'input__input-field'
-        }
-        onChange={changeHandler}
+        className={errorMessage ? 'input__field input__error' : 'input__field'}
+        onChange={(e) => {
+          getValue(e.target.value);
+        }}
       ></input>
       {errorMessage && (
         <div className="input__error-message">{errorMessage}</div>
@@ -41,8 +36,9 @@ export const InputField = ({
 };
 
 InputField.propTypes = {
-  name: string.isRequired,
-  type: string.isRequired,
+  name: string,
+  label: string,
+  type: string,
   placeholder: string,
   getValue: func,
   errorMessage: string,

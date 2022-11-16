@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
 
-  &__input-field {
+  &__field {
     @include input-field;
   }
 
