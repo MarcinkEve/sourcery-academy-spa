@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { number, string, arrayOf, shape } from 'prop-types';
-import { ScheduleCardLocation } from './ScheduleCardLocation';
 import { SlideDown } from 'react-slidedown';
+import { number, string, arrayOf, shape } from 'prop-types';
+
+import { ScheduleCardLocation } from './ScheduleCardLocation';
 
 import './scheduleCard.scss';
 import 'react-slidedown/lib/slidedown.scss';
