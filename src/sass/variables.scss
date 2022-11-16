@@ -48,6 +48,7 @@ $lavender-100: #ecebfb;
 $lightgreen-400: #1ce5af;
 $lightgreen-300: #47e6b1;
 
+$orange-200: #f89e4b;
 $orange-400: #f55f44;
 
 $red-700: #b40031;
@@ -70,13 +71,13 @@ $white-400: #fff;
 /* Colors by element */
 
 $header-clr: $violet-700;
-$heade-bg-clr: $white;
+$header-bg-clr: $white-400;
 
 $primary-footer-clr: $violet-700;
 $secondary-footer-clr: $lavender-100;
-$footer-bg-clr: $white;
+$footer-bg-clr: $white-400;
 
-$main-content-bg-clr: $gray;
+$main-content-bg-clr: $gray-100;
 
 $paragraph-text-clr: $charcoal-400;
 
