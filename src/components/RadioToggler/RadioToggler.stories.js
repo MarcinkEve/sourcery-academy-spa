@@ -7,4 +7,8 @@ export default {
   component: RadioToggler,
 };
 
-export const Toggler = (args) => <RadioToggler {...args} />;
+export const Toggler = (args) => (
+  <div style={{ width: '507px' }}>
+    <RadioToggler {...args} />
+  </div>
+);

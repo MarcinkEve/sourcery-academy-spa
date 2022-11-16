@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Toggler } from '../Toggler/Toggler';
+import { RadioButtonForToggler } from '../RadioButtonForToggler/RadioButtonForToggler';
 
 import './radioToggler.scss';
 
@@ -19,7 +19,7 @@ export const RadioToggler = () => {
     },
   ];
 
-  const [radioValue, setRadioValue] = useState('Full-stack');
+  const [radioValue, setRadioValue] = useState(radioButtonValues[0].value);
 
   const handleChange = (event) => {
     setRadioValue(event.target.value);
@@ -29,7 +29,7 @@ export const RadioToggler = () => {
     <>
       <div className="radio-toggler">
         {radioButtonValues.map((radioButtonValue, index) => (
-          <Toggler
+          <RadioButtonForToggler
             key={index}
             name={radioButtonValue.name}
             value={radioButtonValue.value}
@@ -37,7 +37,6 @@ export const RadioToggler = () => {
             radioValue={radioValue}
           />
         ))}
-        <div className="radio-toggler__indicator" />
       </div>
     </>
   );

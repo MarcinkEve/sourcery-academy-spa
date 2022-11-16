@@ -8,7 +8,7 @@
       $align-items: center
     );
 
-    border-radius: to-rem(30);
+    border-radius: 30px;
     color: $charcoal-400;
     cursor: pointer;
     font-size: to-rem(18);
@@ -17,21 +17,8 @@
     position: relative;
     width: to-rem(159);
 
-    &::after {
-      background: $violet-400;
-      bottom: to-rem(10);
-      content: '';
-      display: block;
-      height: 2px;
-      left: 50%;
-      position: absolute;
-      transition: width 0.5s ease 0s, left 0.5s ease 0s;
-      width: 0;
-    }
-
-    &:hover::after {
-      left: 15%;
-      width: 70%;
+    &:hover {
+      color: $violet-400;
     }
 
     &--checked {
@@ -41,20 +28,13 @@
 
       &:hover {
         background-color: $violet-600;
+        color: $white-400;
       }
 
       &:focus,
       &:focus-visible,
       &:active {
         background-color: $violet-300;
-      }
-
-      &:focus-within {
-        outline: 4px dashed $orange-200;
-      }
-
-      &:hover::after {
-        background-color: $white-400;
       }
     }
   }
@@ -63,5 +43,9 @@
     height: 0;
     position: absolute;
     width: 0;
+  }
+
+  &__input:focus-visible + &__label {
+    outline: 4px dashed $orange-200;
   }
 }
