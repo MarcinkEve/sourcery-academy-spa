@@ -5,26 +5,28 @@ import { useNavigate } from 'react-router-dom';
 import './paragraph.scss';
 import { Button } from '../Button/Button';
 
-export const ALIGN = {
-  RIGHT: 'paragraph--right',
-  LEFT: 'paragraph--left',
-};
-export const PAGEROUTE = {
-  HOME: '/',
-  DEVELOPERS: '/developers',
-  FRONTEND: '/frontend',
-  TESTERS: '/testers',
-  APPLICATION: '/applicationform',
-};
-export const BUTTONLABEL = {
-  VIEW: 'View academies',
-  LEARN: 'Learn more',
-  REGISTER: 'Register',
-  APPLY: 'Apply now',
+export const PARAGRAPH_PROPS = {
+  ALIGN: {
+    RIGHT: 'paragraph--right',
+    LEFT: 'paragraph--left',
+  },
+  PAGE_ROUTE: {
+    HOME: '/',
+    DEVELOPERS: '/developers',
+    FRONTEND: '/frontend',
+    TESTERS: '/testers',
+    APPLICATION: '/applicationform',
+  },
+  BUTTON_LABEL: {
+    VIEW: 'View academies',
+    LEARN: 'Learn more',
+    REGISTER: 'Register',
+    APPLY: 'Apply now',
+  },
 };
 
 export const Paragraph = ({
-  isMainHeader,
+  isMainHeading,
   headerContent,
   isBoldParagraph,
   paragraphContent,
@@ -41,14 +43,14 @@ export const Paragraph = ({
 
   return (
     <div className={`paragraph ${align}`}>
-      {isMainHeader ? (
-        <h1 className="paragraph-heading">{headerContent}</h1>
+      {isMainHeading ? (
+        <h1 className="paragraph__heading">{headerContent}</h1>
       ) : (
-        <h2 className="paragraph-heading">{headerContent}</h2>
+        <h2 className="paragraph__heading">{headerContent}</h2>
       )}
       <p
-        className={`paragraph-text${
-          isBoldParagraph ? ' paragraph-text--bold' : ''
+        className={`paragraph__text${
+          isBoldParagraph ? ' paragraph__text--bold' : ''
         }`}
       >
         {paragraphContent}
@@ -61,12 +63,12 @@ export const Paragraph = ({
 };
 
 Paragraph.propTypes = {
-  isMainHeader: bool,
+  isMainHeading: bool,
   headerContent: string.isRequired,
   isBoldParagraph: bool,
   paragraphContent: string.isRequired,
   hasButton: bool,
-  buttonContent: oneOf(Object.values(BUTTONLABEL)),
-  pageRoute: oneOf(Object.values(PAGEROUTE)),
-  align: oneOf(Object.values(ALIGN)),
+  buttonContent: oneOf(Object.values(PARAGRAPH_PROPS.BUTTON_LABEL)),
+  pageRoute: oneOf(Object.values(PARAGRAPH_PROPS.PAGE_ROUTE)),
+  align: oneOf(Object.values(PARAGRAPH_PROPS.ALIGN)),
 };

@@ -4,24 +4,30 @@
   width: 45%;
 
   &--right {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
+    @include flex-box(
+      $direction: column,
+      $align-items: flex-end,
+      $justify-content: normal
+    );
+
     text-align: right;
   }
 
   &--left {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
+    @include flex-box(
+      $direction: column,
+      $align-items: flex-start,
+      $justify-content: normal
+    );
+
     text-align: left;
   }
 
-  .paragraph-heading {
+  &__heading {
     margin: 0 0 $spacer-m 0;
   }
 
-  .paragraph-text {
+  &__text {
     margin: 0 0 $spacer-xxxl 0;
 
     &--bold {
