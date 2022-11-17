@@ -1,6 +1,10 @@
 @import '../../sass/global';
 
 .schedule-card {
+  $_this: &;
+
+  @include box-shadow;
+
   border: 2px solid var(--primary-color);
   border-radius: 17px;
   color: $white-400;
@@ -10,8 +14,6 @@
   overflow: hidden;
   transition: all 0.2s;
   width: to-rem(266);
-  @include box-shadow;
-  $_this: &;
 
   &__title {
     background-color: var(--primary-color);
@@ -32,11 +34,11 @@
       margin-left: auto;
       margin-top: to-rem(9);
       transition: all 0.5s ease-in-out;
-    }
-    // COMPONENT / SVG
-    &-arrow--down {
-      margin-top: to-rem(3);
-      transform: rotate(180deg);
+
+      &--down {
+        margin-top: to-rem(3);
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -85,54 +87,56 @@
   }
   // -------------------------------------------------------------------DROPDOWN / LOCATION PART
   &__location {
+    @include themed-border(var(--primary-color));
+
     background-color: $white-400;
     border-radius: 0 0 14px 14px;
     padding: to-rem(20);
-    @include themed-border(var(--primary-color));
   }
 
-  .area {
-    border: 2px solid;
-    border-radius: 7.5px;
-    transition: all 0.2s;
-    @include flex-box(row, flex-start, center);
+  // .location {
+  //   @include flex-box(row, flex-start, center);
 
-    &:not(:last-child) {
-      margin-bottom: to-rem(10);
-    }
+  //   border: 2px solid;
+  //   border-radius: 7.5px;
+  //   transition: all 0.2s;
 
-    &__date {
-      @include flex-box(column, center);
+  //   &:not(:last-child) {
+  //     margin-bottom: to-rem(10);
+  //   }
 
-      height: to-rem(51);
-      text-align: center;
-      width: 25%;
-    }
+  //   &__date {
+  //     @include flex-box(column, center);
 
-    &__month {
-      font-size: $paragraph-s;
-      line-height: to-rem(16);
-    }
+  //     height: to-rem(51);
+  //     text-align: center;
+  //     width: 25%;
+  //   }
 
-    &__day {
-      font-size: $paragraph-l;
-      font-weight: 700;
-      line-height: to-rem(21);
-    }
-    // COMPONENT / SVG
-    &__separator {
-      width: to-rem(2);
-    }
-    // COMPONENT / SVG
-    &__pin {
-      margin: 0 to-rem(10) 0 to-rem(15);
-      width: to-rem(15);
-    }
+  //   &__month {
+  //     font-size: $paragraph-s;
+  //     line-height: to-rem(16);
+  //   }
 
-    &__city {
-      font-size: $paragraph-l;
-    }
-  }
+  //   &__day {
+  //     font-size: $paragraph-l;
+  //     font-weight: 700;
+  //     line-height: to-rem(21);
+  //   }
+  //   // COMPONENT / SVG
+  //   &__separator {
+  //     width: to-rem(2);
+  //   }
+  //   // COMPONENT / SVG
+  //   &__pin {
+  //     margin: 0 to-rem(10) 0 to-rem(15);
+  //     width: to-rem(15);
+  //   }
+
+  //   &__city {
+  //     font-size: $paragraph-l;
+  //   }
+  // }
 
   // COMPONENT STATES
   &:focus,
@@ -145,7 +149,7 @@
       background-color: var(--button-active);
     }
 
-    .area {
+    .location {
       @include themed-border(var(--button-active));
     }
   }
@@ -160,12 +164,13 @@
 
   &:hover {
     border-color: var(--button-hover);
+
     #{$_this}__lecturer,
     #{$_this}__title {
       background-color: var(--button-hover);
     }
 
-    .area {
+    .location {
       @include themed-border(var(--button-hover));
     }
   }

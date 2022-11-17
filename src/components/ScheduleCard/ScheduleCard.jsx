@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { number, string, arrayOf, shape } from 'prop-types';
 
 import { SlideDown } from 'react-slidedown';
-import { number, string, arrayOf, shape } from 'prop-types';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 
 import './scheduleCard.scss';
-import 'react-slidedown/lib/slidedown.scss';
+import './scheduleCardLocation.scss';
+import '../../sass/vendor/slidedown.scss';
 import IconArrowDown from '../../assets/icons/icon-arrow-down.svg';
 import IconAvatar from '../../assets/icons/icon-avatar.svg';
 import IconClock from '../../assets/icons/icon-clock.svg';
@@ -23,11 +24,10 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
       <div className="schedule-card__title">
         <span className="schedule-card__title-name">{lectureData.lecture}</span>
         <IconArrowDown
-          className={
-            isCardExpanded
-              ? 'schedule-card__title-arrow--down'
-              : 'schedule-card__title-arrow'
-          }
+          // className={classNames('schedule-card__title-arrow', {isCardExpanded ? 'schedule-card__title-arrow--down' : null})}
+          className={`schedule-card__title-arrow${
+            isCardExpanded ? '--down' : ''
+          }`}
         />
       </div>
       {/*  DROPDOWN SECTION STARTS HERE / SLIDER COMPONENT WRAPS DROPDOWN */}
