@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RadioButtonForToggler } from '../RadioButtonForToggler/RadioButtonForToggler';
 import { func, string, array } from 'prop-types';
 
-import './RadioToggler.scss';
+import './radioToggler.scss';
 
 export const RadioToggler = ({ name, values, getValue }) => {
   const [radioValue, setRadioValue] = useState(values[0]);

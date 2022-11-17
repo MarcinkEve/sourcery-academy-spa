@@ -2,7 +2,7 @@ import React from 'react';
 import { string, func } from 'prop-types';
 
 import classNames from 'classnames';
-import './RadioButtonForToggler.scss';
+import './radioButtonForToggler.scss';
 
 export const RadioButtonForToggler = ({
   name,
