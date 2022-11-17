@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import './fileUpload.scss';
 import UploadIcon from '../../assets/icons/icon-upload.svg';
+import ErrorMessage from '../ErrorMessage';
 
 export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
   const [uploadedFile, setUploadedFile] = useState('');
@@ -40,9 +41,7 @@ export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
         )}
         <UploadIcon className="upload__icon" />
       </div>
-      {errorMessage && (
-        <div className="upload__error-message">{errorMessage}</div>
-      )}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>
   );
 };

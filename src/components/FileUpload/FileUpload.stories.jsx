@@ -2,7 +2,7 @@ import React from 'react';
 import { FileUpload } from './FileUpload';
 
 export default {
-  title: 'Form / File Upload Component',
+  title: 'Form / File Upload',
   component: FileUpload,
   decorators: [
     (Story) => (

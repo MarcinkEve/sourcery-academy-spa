@@ -39,8 +39,4 @@
   &__icon {
     width: to-rem(20);
   }
-
-  &__error-message {
-    @include error-message;
-  }
 }
