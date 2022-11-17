@@ -3,11 +3,8 @@
 .upload {
   $_this: &;
 
-  display: flex;
-  flex-direction: column;
-
   &__label {
-    @include label($charcoal-200);
+    @include label;
   }
 
   &__input {
@@ -20,15 +17,19 @@
 
   &__field {
     @include input-field;
-    @include flex-box(row, space-between, center);
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-between,
+      $align-items: center
+    );
 
     &:hover {
       cursor: pointer;
     }
-  }
 
-  &__error {
-    border-color: $red-500;
+    &--error {
+      border-color: $red-500;
+    }
   }
 
   &__placeholder {

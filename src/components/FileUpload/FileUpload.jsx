@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 
@@ -7,6 +7,9 @@ import UploadIcon from '../../assets/icons/icon-upload.svg';
 
 export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
   const [uploadedFile, setUploadedFile] = useState('');
+  const fileInput = useRef(null);
+
+  const triggerInputFile = () => fileInput.current.click();
 
   const uploadHandler = (e) => {
     const file = e.target.files[0];
@@ -16,24 +19,27 @@ export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
 
   return (
     <div className="upload">
-      <div className="upload__label">{name}</div>
+      <label className="upload__label">{name}</label>
       <input
         className="upload__input"
         id={name}
-        type="file"
         name={name}
+        ref={fileInput}
+        type="file"
         accept=".pdf"
         onChange={uploadHandler}
       />
-      <label
-        className={classNames('upload__field', { upload__error: errorMessage })}
-        htmlFor={name}
+      <div
+        className={classNames('upload__field', {
+          'upload__field--error': errorMessage,
+        })}
+        onClick={triggerInputFile}
       >
         {uploadedFile?.name || (
           <span className="upload__placeholder">{placeholder}</span>
         )}
         <UploadIcon className="upload__icon" />
-      </label>
+      </div>
       {errorMessage && (
         <div className="upload__error-message">{errorMessage}</div>
       )}
