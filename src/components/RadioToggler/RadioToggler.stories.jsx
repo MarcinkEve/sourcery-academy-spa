@@ -15,7 +15,7 @@ const Template = (args) => (
 
 export const RadioTogglerComponent = Template.bind({});
 RadioTogglerComponent.args = {
-  name: 'academies',
+  name: 'Academy',
   values: ['Full-stack', 'Testers', 'Front-End'],
-  getValue: () => {},
+  onValueChange: () => {},
 };

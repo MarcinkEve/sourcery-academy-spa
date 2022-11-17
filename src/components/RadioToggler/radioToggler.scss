@@ -1,5 +1,19 @@
 @import '../../sass/global';
 
+.section-label {
+  @include label($color: $charcoal-200);
+
+  margin-bottom: to-rem(17);
+
+  &__required {
+    color: $red-500;
+    font-size: to-rem(20);
+    font-weight: 700;
+    position: relative;
+    top: to-rem(3);
+  }
+}
+
 .radio-toggler {
   @include flex-box(
     $direction: row,

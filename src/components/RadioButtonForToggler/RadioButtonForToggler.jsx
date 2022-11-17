@@ -1,7 +1,7 @@
 import React from 'react';
 import { string, func } from 'prop-types';
-
 import classNames from 'classnames';
+
 import './radioButtonForToggler.scss';
 
 export const RadioButtonForToggler = ({
@@ -17,7 +17,7 @@ export const RadioButtonForToggler = ({
         name={name}
         value={value}
         onChange={handleChange}
-        className={`radio-toggler__input ${value}`}
+        className={'radio-toggler__input'}
         checked={value === radioValue}
         id={value}
       />

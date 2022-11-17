@@ -1,0 +1,5 @@
+@mixin label($color: $charcoal-200) {
+  color: $color;
+  display: inline-block;
+  font-size: to-rem(14);
+}
