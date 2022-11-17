@@ -1,8 +1,27 @@
 import React from 'react';
-import { boolean, string } from 'prop-types';
+import { bool, oneOf, string } from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 import './paragraph.scss';
 import { Button } from '../Button/Button';
+
+export const ALIGN = {
+  RIGHT: 'paragraph--right',
+  LEFT: 'paragraph--left',
+};
+export const PAGEROUTE = {
+  HOME: '/',
+  DEVELOPERS: '/developers',
+  FRONTEND: '/frontend',
+  TESTERS: '/testers',
+  APPLICATION: '/applicationform',
+};
+export const BUTTONLABEL = {
+  VIEW: 'View academies',
+  LEARN: 'Learn more',
+  REGISTER: 'Register',
+  APPLY: 'Apply now',
+};
 
 export const Paragraph = ({
   isMainHeader,
@@ -11,30 +30,43 @@ export const Paragraph = ({
   paragraphContent,
   hasButton,
   buttonContent,
+  pageRoute,
+  align,
 }) => {
-  const onPress = () => {
-    alert('hello');
+  const nav = useNavigate();
+
+  const navigateToPage = () => {
+    nav(pageRoute);
   };
+
   return (
-    <div>
-      {isMainHeader ? <h1>{headerContent}</h1> : <h2>{headerContent}</h2>}
-      {isBoldParagraph ? (
-        <p className="boldParagraph">{paragraphContent}</p>
+    <div className={`paragraph ${align}`}>
+      {isMainHeader ? (
+        <h1 className="paragraph-heading">{headerContent}</h1>
       ) : (
-        <p>paragraphContent</p>
+        <h2 className="paragraph-heading">{headerContent}</h2>
       )}
+      <p
+        className={`paragraph-text${
+          isBoldParagraph ? ' paragraph-text--bold' : ''
+        }`}
+      >
+        {paragraphContent}
+      </p>
       {hasButton ? (
-        <Button label={buttonContent} handleClick={onPress}></Button>
+        <Button label={buttonContent} handleClick={navigateToPage}></Button>
       ) : null}
     </div>
   );
 };
 
 Paragraph.propTypes = {
-  isMainHeader: boolean,
+  isMainHeader: bool,
   headerContent: string.isRequired,
-  isBoldParagraph: boolean,
+  isBoldParagraph: bool,
   paragraphContent: string.isRequired,
-  hasButton: boolean,
-  buttonContent: string,
+  hasButton: bool,
+  buttonContent: oneOf(Object.values(BUTTONLABEL)),
+  pageRoute: oneOf(Object.values(PAGEROUTE)),
+  align: oneOf(Object.values(ALIGN)),
 };
