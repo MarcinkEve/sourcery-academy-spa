@@ -15,8 +15,4 @@
   &__error {
     border-color: $red-500;
   }
-
-  &__error-message {
-    @include error-message;
-  }
 }

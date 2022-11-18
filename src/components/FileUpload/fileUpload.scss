@@ -1,0 +1,42 @@
+@import '../../sass/global';
+
+.upload {
+  $_this: &;
+
+  &__label {
+    @include label;
+  }
+
+  &__input {
+    @include hide;
+
+    &:focus + #{$_this}__field {
+      outline: 2px solid $violet-600;
+    }
+  }
+
+  &__field {
+    @include input-field;
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-between,
+      $align-items: center
+    );
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--error {
+      border-color: $red-500;
+    }
+  }
+
+  &__placeholder {
+    color: $charcoal-100;
+  }
+
+  &__icon {
+    width: to-rem(20);
+  }
+}
