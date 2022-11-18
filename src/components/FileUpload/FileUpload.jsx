@@ -6,7 +6,12 @@ import './fileUpload.scss';
 import UploadIcon from '../../assets/icons/icon-upload.svg';
 import ErrorMessage from '../ErrorMessage';
 
-export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
+export const FileUpload = ({
+  name,
+  placeholder,
+  errorMessage,
+  onValueChange,
+}) => {
   const [uploadedFile, setUploadedFile] = useState('');
   const fileInput = useRef(null);
 
@@ -15,7 +20,7 @@ export const FileUpload = ({ name, placeholder, errorMessage, getValue }) => {
   const uploadHandler = (e) => {
     const file = e.target.files[0];
     setUploadedFile(file);
-    getValue(file);
+    onValueChange(file);
   };
 
   return (
@@ -50,5 +55,5 @@ FileUpload.propTypes = {
   name: string.isRequired,
   placeholder: string.isRequired,
   errorMessage: string,
-  getValue: func,
+  onValueChange: func,
 };
