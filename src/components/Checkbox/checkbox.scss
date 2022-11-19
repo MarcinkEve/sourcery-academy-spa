@@ -1,15 +1,20 @@
 @import '../../sass/global';
 
 .checkmark {
+  $_this: &;
+
   &--default {
     opacity: 0; // is visible for screen readers
     position: absolute;
+
+    &:focus-visible + #{$_this}--custom {
+      outline: 4px dashed $orange-200;
+    }
   }
 
   &--custom {
     border: 2px solid $violet-700;
     border-radius: to-rem(4);
-    display: inline-block;
     height: to-rem(24);
     width: to-rem(24);
 
@@ -17,40 +22,27 @@
       background-color: $violet-700;
 
       &::after {
-        align-self: center;
         color: $white-400;
         content: '✔';
-        display: inline-grid;
-        font-size: to-rem(14);
-        height: to-rem(24);
-        position: absolute;
-        text-align: center;
-        width: to-rem(20);
+        display: flex;
+        font-size: to-rem(16);
+        justify-content: center;
+        position: relative;
+        width: 100%;
       }
     }
   }
 }
 
 .checkbox {
-  @include flex-box(row, flex-start, center);
+  @include flex-box(row, flex-start, start);
 
-  height: to-rem(75);
-  width: 100%;
-
-  &__checkmark--container {
-    height: 100%;
-    @include flex-box(row, center, start);
-  }
+  height: fit-content;
 
   &__text {
     font-size: $paragraph-l;
-    height: 100%;
     line-height: 1.15;
-    margin: 0 to-rem(25);
-
-    &.error {
-      color: $red-700;
-    }
+    margin: 0 0 0 to-rem(25);
   }
 
   &:focus-visible {
@@ -69,16 +61,6 @@
       &.checked {
         animation: none;
       }
-    }
-
-    p {
-      font-weight: 600;
-    }
-  }
-
-  &:active {
-    p {
-      color: $violet-700;
     }
   }
 }

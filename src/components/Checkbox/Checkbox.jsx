@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { string, func, bool } from 'prop-types';
+import { string, func } from 'prop-types';
 
 import './checkbox.scss';
+import ErrorMessage from '../ErrorMessage';
 
-export const Checkbox = ({ checkboxText, getCheckboxValue, error }) => {
+export const Checkbox = ({ checkboxText, getCheckboxValue, errorMessage }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const clickHandler = () => {
-    setIsChecked(!isChecked);
-    getCheckboxValue(isChecked);
+  const clickHandler = (event) => {
+    setIsChecked(event.target.checked);
+    getCheckboxValue(event.target.checked);
   };
 
   return (
-    <label onChange={() => setIsChecked(!isChecked)}>
-      <div className="checkbox" tabIndex="0">
-        <div className="checkbox__checkmark--container">
+    <label>
+      <div className="checkbox">
+        <div>
           <input
             className="checkmark--default"
             checked={isChecked}
@@ -26,16 +27,15 @@ export const Checkbox = ({ checkboxText, getCheckboxValue, error }) => {
             className={`checkmark--custom ${isChecked ? 'checked' : ''}`}
           ></div>
         </div>
-        <p className={`checkbox__text ${error ? 'error' : ''}`}>
-          {checkboxText}
-        </p>
+        <p className="checkbox__text">{checkboxText}</p>
       </div>
+      {errorMessage && <ErrorMessage message={errorMessage} />}
     </label>
   );
 };
 
 Checkbox.propTypes = {
   checkboxText: string.isRequired,
-  getCheckboxValue: func,
-  error: bool,
+  getCheckboxValue: func.isRequired,
+  errorMessage: string,
 };
