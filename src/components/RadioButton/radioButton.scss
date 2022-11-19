@@ -1,24 +1,14 @@
 @import '../../sass/global';
 
-.radio-btn-city {
+.radio {
   &__section-label {
-    color: $violet-400;
+    @include label($violet-400);
+
     display: block;
     margin-bottom: to-rem(17);
-    position: relative;
-
-    &::before {
-      color: $red-500;
-      content: '*';
-      font-size: to-rem(21);
-      font-weight: 700;
-      left: to-rem(-9);
-      position: absolute;
-      top: to-rem(-2);
-    }
   }
 
-  &__radio-label {
+  &__label {
     color: $charcoal-400;
     font: 700 $paragraph-l $paragraph-font;
 
@@ -27,10 +17,9 @@
     }
   }
 
-  &__radio-input {
+  &__input {
     accent-color: $violet-400;
-    margin: 0;
-    margin-right: to-rem(21);
+    margin: 0 to-rem(21) 0 0;
 
     &:focus,
     &:focus-visible,
@@ -49,5 +38,9 @@
     &:active {
       outline: none;
     }
+  }
+
+  &__value-label {
+    text-transform: capitalize;
   }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { RadioBtnCities } from './RadioBtnCities';
+import { RadioButton } from './RadioButton';
 
 export default {
-  title: 'RadioBtnCities',
-  component: RadioBtnCities,
+  title: 'RadioButton',
+  component: RadioButton,
   parameters: {
     layout: 'centered',
   },
@@ -20,7 +20,7 @@ const setTheme = (theme) => {
   ];
 };
 
-const Template = (args) => <RadioBtnCities {...args} />;
+const Template = (args) => <RadioButton {...args} />;
 export const RadioBtn = Template.bind({});
 RadioBtn.decorators = setTheme('application');
 RadioBtn.args = {
