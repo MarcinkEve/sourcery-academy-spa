@@ -3,6 +3,7 @@ import React from 'react';
 import { string, func } from 'prop-types';
 
 import './inputField.scss';
+import ErrorMessage from '../ErrorMessage';
 
 export const InputField = ({
   name,
@@ -28,9 +29,7 @@ export const InputField = ({
           getValue(e.target.value);
         }}
       ></input>
-      {errorMessage && (
-        <div className="input__error-message">{errorMessage}</div>
-      )}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>
   );
 };
