@@ -4,6 +4,7 @@ import { number, string, arrayOf, shape } from 'prop-types';
 import { SlideDown } from 'react-slidedown';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 
+import classNames from 'classnames';
 import './scheduleCard.scss';
 import './scheduleCardLocation.scss';
 import '../../sass/vendor/slidedown.scss';
@@ -24,10 +25,10 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
       <div className="schedule-card__title">
         <span className="schedule-card__title-name">{lectureData.lecture}</span>
         <IconArrowDown
-          // className={classNames('schedule-card__title-arrow', {isCardExpanded ? 'schedule-card__title-arrow--down' : null})}
-          className={`schedule-card__title-arrow${
-            isCardExpanded ? '--down' : ''
-          }`}
+          className={classNames(
+            'schedule-card__title-arrow',
+            isCardExpanded && 'schedule-card__title-arrow--up'
+          )}
         />
       </div>
       {/*  DROPDOWN SECTION STARTS HERE / SLIDER COMPONENT WRAPS DROPDOWN */}
