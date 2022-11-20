@@ -3,13 +3,6 @@
 .form-layout {
   margin: to-rem(40) 0;
 
-  &__particles-icon {
-    left: 132px;
-    position: absolute;
-    top: -127px;
-    width: to-rem(1177);
-  }
-
   &__container-header {
     margin-bottom: to-rem(80);
   }
@@ -17,7 +10,7 @@
   &__content-container {
     @include flex-box($justify-content: space-between, $align-items: center);
 
-    min-height: to-rem(726);
+    min-height: to-rem(587);
     text-align: center;
   }
 
@@ -29,7 +22,15 @@
 
   &__image-section {
     display: flex;
+    position: relative;
     width: to-rem(620);
+  }
+
+  &__particles-icon {
+    position: absolute;
+    right: 0;
+    transform: translateY(-32%);
+    width: to-rem(1177);
   }
 
   &-image {

@@ -1,16 +1,15 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 import './formLayout.scss';
 import IconSuccessImage from '../../assets/icons/icon-success-image.svg';
 import IconParticles from '../../assets/icons/icon-particles.svg';
 import { SuccessMessage } from '../../components/SuccessMessage/SuccessMessage';
 
-export const FormLayout = () => {
+export const FormLayout = ({ title }) => {
   return (
     <div className="form-layout">
-      <h1 className="form-layout__container-header">
-        Sourcery Academy Application
-      </h1>
+      <h1 className="form-layout__container-header">{title}</h1>
       <div className="form-layout__content-container">
         <div className="form-layout__form-and-success">
           <SuccessMessage />
@@ -22,4 +21,12 @@ export const FormLayout = () => {
       </div>
     </div>
   );
+};
+
+FormLayout.propTypes = {
+  title: string,
+};
+
+FormLayout.defaultProps = {
+  title: 'Sourcery Academy Application',
 };
