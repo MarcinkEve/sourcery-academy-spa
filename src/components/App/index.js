@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormLayout } from '../../layout/FormLayout/FormLayout';
 
 import PageLayout from '../../layout/PageLayout';
 import { Footer } from '../Footer/Footer';
@@ -12,7 +11,6 @@ export default function index() {
           &rarr; Drop components here &larr;
         </h1>
         {/* Delete this h1 tag after adding first component */}
-        <FormLayout />
       </PageLayout>
       <Footer />
     </>
