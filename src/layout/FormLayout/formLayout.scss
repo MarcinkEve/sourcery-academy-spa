@@ -1,0 +1,38 @@
+@import '../../sass/global';
+
+.form-layout {
+  margin: to-rem(40) 0;
+
+  &__particles-icon {
+    left: 132px;
+    position: absolute;
+    top: -127px;
+    width: to-rem(1177);
+  }
+
+  &__container-header {
+    margin-bottom: to-rem(80);
+  }
+
+  &__content-container {
+    @include flex-box($justify-content: space-between, $align-items: center);
+
+    min-height: to-rem(726);
+    text-align: center;
+  }
+
+  &__form-and-success {
+    @include flex-box($direction: column, $align-items: center);
+
+    width: to-rem(576);
+  }
+
+  &__image-section {
+    display: flex;
+    width: to-rem(620);
+  }
+
+  &-image {
+    width: to-rem(620);
+  }
+}

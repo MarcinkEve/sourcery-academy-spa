@@ -3,5 +3,7 @@
 .page-layout {
   margin: 0 auto;
   max-width: $max-page-width;
+  overflow: hidden;
   padding: 0 to-rem(80);
+  position: relative;
 }
