@@ -89,7 +89,6 @@ ScheduleCard.propTypes = {
   ).isRequired,
 };
 
-// LEAVING THIS PLACEHOLDER DATA FOR FURTHER DEVELOPMENT/ STRUCTURE FOR DATA MANIPULATION
 ScheduleCard.defaultProps = {
   lectureData: {
     lecture: 'Intro, Agile & Git',
