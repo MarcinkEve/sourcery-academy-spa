@@ -1,0 +1,77 @@
+@import '../../sass/global';
+
+.dates-card {
+  $_this: &;
+
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  color: var(--primary-color);
+  display: flex;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: to-rem(11);
+  }
+
+  &__date-wrapper {
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-around,
+      $align-items: center
+    );
+
+    padding: 0 to-rem(5);
+    position: relative;
+    width: to-rem(100);
+  }
+
+  &__date {
+    @include flex-box(
+      $direction: column,
+      $justify-content: space-between,
+      $align-items: center
+    );
+  }
+
+  &__month {
+    font-size: to-rem(14);
+  }
+
+  &__day {
+    font-size: to-rem(18);
+    font-weight: 700;
+  }
+
+  &__separator {
+    position: relative;
+
+    &::before {
+      background-color: var(--primary-color);
+      border-radius: 30px;
+      content: '';
+      height: to-rem(40);
+      margin-top: to-rem(5.5);
+      position: absolute;
+      width: to-rem(2);
+    }
+  }
+
+  &__text {
+    color: var(--primary-color);
+    font-size: to-rem(18);
+    margin: to-rem(15) 0 to-rem(13) to-rem(16);
+  }
+
+  .dates-separator {
+    &::after {
+      color: var(--primary-color);
+      content: '-';
+      font-weight: 700;
+      height: to-rem(15);
+      left: 50%;
+      position: absolute;
+      top: 60%;
+      transform: translate(-50%, -40%);
+    }
+  }
+}

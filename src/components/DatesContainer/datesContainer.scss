@@ -1,0 +1,15 @@
+@import '../../sass/global';
+
+.dates {
+  &__container {
+    width: to-rem(306);
+  }
+
+  &__title {
+    @include padding-margin-0;
+
+    color: var(--primary-color);
+    margin-bottom: to-rem(36);
+    text-align: end;
+  }
+}
