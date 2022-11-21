@@ -1,25 +1,37 @@
 @import '../../sass/global';
 
-.checkmark {
+.checkbox {
   $_this: &;
+  @include flex-box(row, flex-start, start);
 
-  &--default {
+  height: fit-content;
+
+  &__text {
+    font-size: $paragraph-l;
+    line-height: 1.15;
+    margin: 0 0 0 to-rem(25);
+  }
+
+  &__default-checkmark {
     opacity: 0; // is visible for screen readers
     position: absolute;
 
-    &:focus-visible + #{$_this}--custom {
+    &:focus-visible + #{$_this}__custom-checkmark {
       outline: 4px dashed $orange-200;
     }
   }
 
-  &--custom {
+  &__custom-checkmark {
     border: 2px solid $violet-700;
     border-radius: to-rem(4);
     height: to-rem(24);
     width: to-rem(24);
 
-    &.checked {
+    &--checked {
       background-color: $violet-700;
+      border-radius: to-rem(4);
+      height: to-rem(24);
+      width: to-rem(24);
 
       &::after {
         color: $white-400;
@@ -32,33 +44,14 @@
       }
     }
   }
-}
-
-.checkbox {
-  @include flex-box(row, flex-start, start);
-
-  height: fit-content;
-
-  &__text {
-    font-size: $paragraph-l;
-    line-height: 1.15;
-    margin: 0 0 0 to-rem(25);
-  }
-
-  &:focus-visible {
-    border: 4px dashed $orange-200;
-    border-radius: to-rem(5);
-    outline: none;
-    padding: to-rem(2);
-  }
 
   &:hover {
     cursor: pointer;
 
-    .checkmark--custom {
+    #{$_this}__custom-checkmark {
       animation: checkmarkOnHover 1s ease-in-out infinite;
 
-      &.checked {
+      &--checked {
         animation: none;
       }
     }
