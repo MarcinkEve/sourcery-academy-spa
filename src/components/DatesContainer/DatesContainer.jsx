@@ -22,8 +22,8 @@ DatesContainer.propTypes = {
       text: string.isRequired,
       dates: arrayOf(
         shape({
-          day: number,
-          month: string,
+          day: number.isRequired,
+          month: string.isRequired,
         })
       ),
     })

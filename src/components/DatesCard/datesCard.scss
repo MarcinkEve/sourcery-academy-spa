@@ -1,8 +1,6 @@
 @import '../../sass/global';
 
 .dates-card {
-  $_this: &;
-
   border: 2px solid var(--primary-color);
   border-radius: 10px;
   color: var(--primary-color);
