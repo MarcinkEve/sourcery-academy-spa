@@ -11,7 +11,9 @@ export const DatesCard = ({ text, dates }) => {
           <span key={index} className="dates-card__date">
             <span className="dates-card__month">{date.month}</span>
             <span className="dates-card__day">
-              {index >= 1 && <span className="dates-separator"></span>}
+              {index >= 1 && (
+                <span className="dates-card__dates-separator"></span>
+              )}
               {date.day}
             </span>
           </span>

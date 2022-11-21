@@ -40,6 +40,19 @@
     font-weight: 700;
   }
 
+  &__dates-separator {
+    &::after {
+      color: var(--primary-color);
+      content: '-';
+      font-weight: 700;
+      height: to-rem(15);
+      left: 50%;
+      position: absolute;
+      top: 60%;
+      transform: translate(-50%, -40%);
+    }
+  }
+
   &__separator {
     position: relative;
 
@@ -58,18 +71,5 @@
     color: var(--primary-color);
     font-size: to-rem(18);
     margin: to-rem(15) 0 to-rem(13) to-rem(16);
-  }
-
-  .dates-separator {
-    &::after {
-      color: var(--primary-color);
-      content: '-';
-      font-weight: 700;
-      height: to-rem(15);
-      left: 50%;
-      position: absolute;
-      top: 60%;
-      transform: translate(-50%, -40%);
-    }
   }
 }
