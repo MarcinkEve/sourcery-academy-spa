@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { arrayOf, shape, string, func } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 
 import './headerDropdown.scss';
 
@@ -13,11 +13,7 @@ export const HeaderDropdown = ({ data }) => {
       <ul className="dropdown__content">
         {data.map((element, index) => (
           <li key={index} className="dropdown__content-item">
-            <Link
-              className="dropdown__content-link"
-              to={element.route}
-              onClick={element.event}
-            >
+            <Link className="dropdown__content-link" to={element.route}>
               {element.text}
             </Link>
           </li>
@@ -32,7 +28,6 @@ HeaderDropdown.propTypes = {
     shape({
       text: string.isRequired,
       route: string.isRequired,
-      event: func,
     })
   ),
 };
