@@ -1,0 +1,19 @@
+@mixin label($color) {
+  color: $color;
+  display: inline-block;
+  font-size: to-rem(14);
+  height: to-rem(21);
+  line-height: 1.5;
+  margin-bottom: to-rem(5);
+
+  &::before {
+    color: $red-500;
+    content: '*';
+    font-size: to-rem(18);
+    font-weight: 700;
+    height: to-rem(21);
+    margin-left: to-rem(-9);
+    margin-right: to-rem(2);
+    width: to-rem(7);
+  }
+}

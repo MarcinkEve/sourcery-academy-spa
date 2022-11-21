@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import './scheduleCard.scss';
 import './scheduleCardLocation.scss';
 import '../../sass/vendor/slidedown.scss';
-import IconArrowDown from '../../assets/icons/icon-arrow-down.svg';
+import IconArrowDownSchedule from '../../assets/icons/icon-arrow-down-schedule.svg';
 import IconAvatar from '../../assets/icons/icon-avatar.svg';
 import IconClock from '../../assets/icons/icon-clock.svg';
 import IconShortHorizontalLine from '../../assets/icons/icon-short-horizontal-line.svg';
@@ -24,7 +24,7 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
     <div className="schedule-card" onClick={handleOpen} tabIndex="0">
       <div className="schedule-card__title">
         <span className="schedule-card__title-name">{lectureData.lecture}</span>
-        <IconArrowDown
+        <IconArrowDownSchedule
           className={classNames(
             'schedule-card__title-arrow',
             isCardExpanded && 'schedule-card__title-arrow--up'

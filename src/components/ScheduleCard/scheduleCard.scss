@@ -94,50 +94,6 @@
     padding: to-rem(20);
   }
 
-  // .location {
-  //   @include flex-box(row, flex-start, center);
-
-  //   border: 2px solid;
-  //   border-radius: 7.5px;
-  //   transition: all 0.2s;
-
-  //   &:not(:last-child) {
-  //     margin-bottom: to-rem(10);
-  //   }
-
-  //   &__date {
-  //     @include flex-box(column, center);
-
-  //     height: to-rem(51);
-  //     text-align: center;
-  //     width: 25%;
-  //   }
-
-  //   &__month {
-  //     font-size: $paragraph-s;
-  //     line-height: to-rem(16);
-  //   }
-
-  //   &__day {
-  //     font-size: $paragraph-l;
-  //     font-weight: 700;
-  //     line-height: to-rem(21);
-  //   }
-  //   // COMPONENT / SVG
-  //   &__separator {
-  //     width: to-rem(2);
-  //   }
-  //   // COMPONENT / SVG
-  //   &__pin {
-  //     margin: 0 to-rem(10) 0 to-rem(15);
-  //     width: to-rem(15);
-  //   }
-
-  //   &__city {
-  //     font-size: $paragraph-l;
-  //   }
-  // }
-
   // COMPONENT STATES
   &:focus,
   &:focus-visible,

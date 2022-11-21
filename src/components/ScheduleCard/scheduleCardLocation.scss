@@ -1,10 +1,14 @@
 @import '../../sass/global';
 
 .location {
-  @include flex-box(row, flex-start, center);
+  @include flex-box(
+    $direction: row,
+    $justify-content: flex-start,
+    $align-items: center
+  );
 
   border: 2px solid;
-  border-radius: 7.5px;
+  border-radius: 7.9px;
   transition: all 0.2s;
 
   &:not(:last-child) {
@@ -12,7 +16,7 @@
   }
 
   &__date {
-    @include flex-box(column, center);
+    @include flex-box($direction: column, $justify-content: center);
 
     height: to-rem(51);
     text-align: center;
