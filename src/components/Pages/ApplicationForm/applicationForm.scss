@@ -1,4 +1,4 @@
-@import '../../sass/global';
+@import '../../../sass/global';
 
 .form-layout {
   margin: to-rem(40) 0;
@@ -11,10 +11,9 @@
     @include flex-box($justify-content: space-between, $align-items: center);
 
     min-height: to-rem(587);
-    text-align: center;
   }
 
-  &__form-and-success {
+  &__content {
     @include flex-box($direction: column, $align-items: center);
 
     width: to-rem(576);
