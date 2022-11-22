@@ -2,9 +2,8 @@
 
 .checkbox {
   $_this: &;
-  @include flex-box(row, flex-start, start);
 
-  height: fit-content;
+  @include flex-box(row, flex-start, start);
 
   &__text {
     font-size: $paragraph-l;
