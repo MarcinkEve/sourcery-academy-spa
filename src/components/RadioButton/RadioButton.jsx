@@ -3,12 +3,12 @@ import React from 'react';
 
 import './radioButton.scss';
 
-export const RadioButton = ({ cities, radioTitle, onValueChange }) => {
+export const RadioButton = ({ data, title, onValueChange }) => {
   return (
     <div className="radio">
-      <span className="radio__section-label">{radioTitle}</span>
+      <span className="radio__title">{title}</span>
 
-      {cities.map((city, index) => (
+      {data.map((city, index) => (
         <label className="radio__label" key={index} htmlFor={city.value}>
           <input
             className="radio__input"
@@ -30,8 +30,8 @@ export const RadioButton = ({ cities, radioTitle, onValueChange }) => {
 
 RadioButton.propTypes = {
   onValueChange: func,
-  radioTitle: string,
-  cities: arrayOf(
+  title: string,
+  data: arrayOf(
     shape({
       name: string,
       value: string,
@@ -39,6 +39,6 @@ RadioButton.propTypes = {
   ).isRequired,
 };
 RadioButton.defaultProps = {
-  cities: [{ value: 'kaunas' }, { value: 'vilnius' }],
-  radioTitle: 'Academy city',
+  data: [{ value: 'kaunas' }, { value: 'vilnius' }],
+  title: 'Academy city',
 };

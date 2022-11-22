@@ -1,7 +1,7 @@
 @import '../../sass/global';
 
 .radio {
-  &__section-label {
+  &__title {
     @include label($violet-400);
 
     display: block;
