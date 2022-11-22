@@ -28,7 +28,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(jsx|js)$/,
+        test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -98,7 +98,7 @@ const config = {
       },
       {
         test: /\.svg$/i,
-        issuer: /\.(jsx|js)?$/,
+        issuer: /\.(js|jsx)?$/,
         use: ['@svgr/webpack'],
       },
     ],

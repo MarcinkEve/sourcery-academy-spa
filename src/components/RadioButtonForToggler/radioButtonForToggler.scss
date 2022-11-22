@@ -1,0 +1,50 @@
+@import '../../sass/global';
+
+.radio-toggler {
+  &__label {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    border-radius: 30px;
+    color: $charcoal-400;
+    cursor: pointer;
+    font-size: to-rem(18);
+    font-weight: 700;
+    height: to-rem(48);
+    width: to-rem(159);
+
+    &:hover {
+      color: $violet-400;
+    }
+
+    &--checked {
+      background-color: $violet-400;
+      color: $white-400;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: $violet-600;
+        color: $white-400;
+      }
+
+      &:focus,
+      &:focus-visible,
+      &:active {
+        background-color: $violet-300;
+      }
+    }
+  }
+
+  &__input {
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  &__input:focus-visible + &__label {
+    outline: 4px dashed $orange-200;
+  }
+}
