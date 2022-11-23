@@ -3,7 +3,7 @@ import React from 'react';
 import { RadioButton } from './RadioButton';
 
 export default {
-  title: 'RadioButton',
+  title: 'Form / RadioButton',
   component: RadioButton,
   parameters: {
     layout: 'centered',
