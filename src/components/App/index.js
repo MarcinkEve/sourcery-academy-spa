@@ -10,6 +10,7 @@ import Homepage from '../Pages/Homepage';
 import Kids from '../Pages/Kids';
 import PageLayout from '../../layout/pageLayout';
 import Testers from '../Pages/Testers';
+import { routes } from '../../constants/routes';
 
 export default function index() {
   return (
@@ -18,16 +19,22 @@ export default function index() {
         <Header />
         <PageLayout>
           <Routes>
-            <Route path="/" element={<Homepage theme="home" />} />
+            <Route path={routes.home} element={<Homepage theme="home" />} />
             <Route
-              path="/developers"
+              path={routes.developers}
               element={<Developers theme="developers" />}
             />
-            <Route path="/frontend" element={<FrontEnd theme="front-end" />} />
-            <Route path="/kids" element={<Kids />} />
-            <Route path="/testers" element={<Testers theme="testers" />} />
             <Route
-              path="/applicationform"
+              path={routes.frontend}
+              element={<FrontEnd theme="front-end" />}
+            />
+            <Route path={routes.kids} element={<Kids />} />
+            <Route
+              path={routes.testers}
+              element={<Testers theme="testers" />}
+            />
+            <Route
+              path={routes.application}
               element={<ApplicationForm theme="application" />}
             />
           </Routes>

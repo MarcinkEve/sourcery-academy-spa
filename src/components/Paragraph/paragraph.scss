@@ -1,8 +1,6 @@
 @import '../../sass/global';
 
 .paragraph {
-  width: 45%;
-
   &--right {
     @include flex-box(
       $direction: column,
@@ -11,16 +9,6 @@
     );
 
     text-align: right;
-  }
-
-  &--left {
-    @include flex-box(
-      $direction: column,
-      $align-items: flex-start,
-      $justify-content: normal
-    );
-
-    text-align: left;
   }
 
   &__heading {

@@ -4,36 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 import './paragraph.scss';
 import { Button } from '../Button/Button';
-
-export const PARAGRAPH_PROPS = {
-  ALIGN: {
-    RIGHT: 'paragraph--right',
-    LEFT: 'paragraph--left',
-  },
-  PAGE_ROUTE: {
-    HOME: '/',
-    DEVELOPERS: '/developers',
-    FRONTEND: '/frontend',
-    TESTERS: '/testers',
-    APPLICATION: '/applicationform',
-  },
-  BUTTON_LABEL: {
-    VIEW: 'View academies',
-    LEARN: 'Learn more',
-    REGISTER: 'Register',
-    APPLY: 'Apply now',
-  },
-};
+import { routes } from '../../constants/routes';
 
 export const Paragraph = ({
+  isRightAlligned,
   isMainHeading,
   headerContent,
   isBoldParagraph,
   paragraphContent,
-  hasButton,
   buttonContent,
   pageRoute,
-  align,
 }) => {
   const nav = useNavigate();
 
@@ -42,33 +22,32 @@ export const Paragraph = ({
   };
 
   return (
-    <div className={`paragraph ${align}`}>
+    <div className={`paragraph ${isRightAlligned && 'paragraph--right'}`}>
       {isMainHeading ? (
         <h1 className="paragraph__heading">{headerContent}</h1>
       ) : (
         <h2 className="paragraph__heading">{headerContent}</h2>
       )}
       <p
-        className={`paragraph__text${
-          isBoldParagraph ? ' paragraph__text--bold' : ''
+        className={`paragraph__text ${
+          isBoldParagraph && 'paragraph__text--bold'
         }`}
       >
         {paragraphContent}
       </p>
-      {hasButton ? (
-        <Button label={buttonContent} handleClick={navigateToPage}></Button>
-      ) : null}
+      {buttonContent && (
+        <Button label={buttonContent} handleClick={navigateToPage} />
+      )}
     </div>
   );
 };
 
 Paragraph.propTypes = {
+  isRightAlligned: bool,
   isMainHeading: bool,
   headerContent: string.isRequired,
   isBoldParagraph: bool,
   paragraphContent: string.isRequired,
-  hasButton: bool,
-  buttonContent: oneOf(Object.values(PARAGRAPH_PROPS.BUTTON_LABEL)),
-  pageRoute: oneOf(Object.values(PARAGRAPH_PROPS.PAGE_ROUTE)),
-  align: oneOf(Object.values(PARAGRAPH_PROPS.ALIGN)),
+  buttonContent: string.isRequired,
+  pageRoute: oneOf([...Object.values(routes)]),
 };
