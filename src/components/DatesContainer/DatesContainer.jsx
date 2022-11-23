@@ -6,10 +6,10 @@ import DatesCard from '../DatesCard';
 
 export const DatesContainer = ({ title, cardData }) => {
   return (
-    <div className="dates__container">
-      <h2 className="dates__title">{title}</h2>
-      {cardData.map((data, index) => (
-        <DatesCard key={index} text={data.text} dates={data.dates} />
+    <div className="dates-container">
+      <h2 className="dates-container__title">{title}</h2>
+      {cardData.map(({ text, dates }, index) => (
+        <DatesCard key={index} text={text} dates={dates} />
       ))}
     </div>
   );
