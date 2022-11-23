@@ -1,0 +1,72 @@
+@import '../../../sass/global';
+
+.dropdown {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: $paragraph-font;
+  font-size: $paragraph-s;
+  line-height: 1.15;
+
+  &__container {
+    display: flex;
+    height: to-rem(60);
+    justify-content: center;
+    margin-top: to-rem(-30);
+    padding-top: to-rem(46);
+    width: to-rem(60px);
+
+    &-triangle {
+      background-color: $white-400;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      height: to-rem(30);
+      overflow: hidden;
+      transform: rotate(45deg);
+      width: to-rem(30);
+    }
+  }
+
+  &__content {
+    background-color: $white-400;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: to-rem(12) 0;
+    position: relative;
+    width: to-rem(200);
+
+    &-item {
+      background-color: $white-400;
+      list-style: none;
+      text-align: start;
+    }
+
+    &-link {
+      color: $violet-700;
+      display: inline-block;
+      height: 100%;
+      padding: to-rem(14) to-rem(17) to-rem(18);
+      text-decoration: none;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        background-color: $gray-200;
+      }
+    }
+  }
+
+  &__content::after {
+    border-radius: 14px;
+    bottom: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
