@@ -8,20 +8,20 @@ export const RadioButton = ({ data, title, onValueChange }) => {
     <div className="radio">
       <span className="radio__title">{title}</span>
 
-      {data.map((city, index) => (
-        <label className="radio__label" key={index} htmlFor={city.value}>
+      {data.map((data, index) => (
+        <label className="radio__label" key={index} htmlFor={data.value}>
           <input
             className="radio__input"
             type="radio"
-            id={city.value}
-            name="radio"
-            value={city.value}
+            id={index}
+            name={data.value}
+            value={data.value}
             onChange={(e) => {
               onValueChange(e.target.value);
             }}
             defaultChecked={index <= 0 && true}
           />
-          <span className="radio__value-label">{city.value}</span>
+          <span className="radio__value-label">{data.value}</span>
         </label>
       ))}
     </div>
