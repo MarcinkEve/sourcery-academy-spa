@@ -1,7 +1,7 @@
 import React from 'react';
-import { arrayOf, shape, string, number } from 'prop-types';
+import { arrayOf, oneOfType, shape, string, number } from 'prop-types';
 
-import './datesContainer.scss';
+import './dates-container.scss';
 import DatesCard from '../DatesCard';
 
 export const DatesContainer = ({ title, cardData }) => {
@@ -22,7 +22,7 @@ DatesContainer.propTypes = {
       text: string.isRequired,
       dates: arrayOf(
         shape({
-          day: number.isRequired,
+          day: oneOfType([string.isRequired, number.isRequired]),
           month: string.isRequired,
         })
       ),

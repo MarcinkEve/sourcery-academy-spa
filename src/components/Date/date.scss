@@ -1,0 +1,24 @@
+@import '../../sass/global';
+
+.dates-card {
+  &__date {
+    @include flex-box(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+  }
+
+  &__month {
+    font-size: to-rem(14);
+  }
+
+  &__date:nth-child(2) > &__month {
+    opacity: 0;
+  }
+
+  &__day {
+    font-size: to-rem(18);
+    font-weight: 700;
+  }
+}

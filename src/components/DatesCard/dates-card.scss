@@ -18,39 +18,8 @@
       $align-items: center
     );
 
-    padding: 0 to-rem(5);
-    position: relative;
+    padding: 0 to-rem(13);
     width: to-rem(100);
-  }
-
-  &__date {
-    @include flex-box(
-      $direction: column,
-      $justify-content: space-between,
-      $align-items: center
-    );
-  }
-
-  &__month {
-    font-size: to-rem(14);
-  }
-
-  &__day {
-    font-size: to-rem(18);
-    font-weight: 700;
-  }
-
-  &__dates-separator {
-    &::after {
-      color: var(--primary-color);
-      content: '-';
-      font-weight: 700;
-      height: to-rem(15);
-      left: 50%;
-      position: absolute;
-      top: 60%;
-      transform: translate(-50%, -40%);
-    }
   }
 
   &__separator {
