@@ -1,0 +1,72 @@
+@import '../../sass/global';
+
+.checkbox {
+  $_this: &;
+
+  @include flex-box(row, flex-start, start);
+
+  &__text {
+    font-size: $paragraph-l;
+    line-height: 1.15;
+    margin: 0 0 0 to-rem(25);
+  }
+
+  &__default-checkmark {
+    opacity: 0; // is visible for screen readers
+    position: absolute;
+
+    &:focus-visible + #{$_this}__custom-checkmark {
+      outline: 4px dashed $orange-200;
+    }
+  }
+
+  &__custom-checkmark {
+    border: 2px solid $violet-700;
+    border-radius: to-rem(4);
+    height: to-rem(24);
+    width: to-rem(24);
+
+    &--checked {
+      background-color: $violet-700;
+      border-radius: to-rem(4);
+      height: to-rem(24);
+      width: to-rem(24);
+
+      &::after {
+        color: $white-400;
+        content: '✔';
+        display: flex;
+        font-size: to-rem(16);
+        justify-content: center;
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    #{$_this}__custom-checkmark {
+      animation: checkmarkOnHover 1s ease-in-out infinite;
+
+      &--checked {
+        animation: none;
+      }
+    }
+  }
+}
+
+@keyframes checkmarkOnHover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
