@@ -3,7 +3,7 @@ import React from 'react';
 import { ApplicationForm } from './ApplicationForm';
 
 export default {
-  title: 'ApplicationForm',
+  title: 'Form / Application Form',
   component: ApplicationForm,
   parameters: {
     layout: 'centered',
