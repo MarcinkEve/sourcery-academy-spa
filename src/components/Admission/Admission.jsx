@@ -1,46 +1,39 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { array } from 'prop-types';
 
 import './admission.scss';
+import { TextOrListWithHeading } from './TextOrListWithHeading';
 
-export const Admission = ({
-  section1Heading,
-  section1Text,
-  section2Heading,
-  section2List,
-  section3Heading,
-  section3Text,
-}) => {
+export const Admission = ({ content }) => {
   return (
     <article className="admission">
       <h1 className="admission__title">The Admission</h1>
-      <section className="admission__section">
-        <h2 className="admission__section-heading">{section1Heading}</h2>
-        <p className="admission__text">{section1Text}</p>
-      </section>
-      <section className="admission__section">
-        <h2 className="admission__section-heading">{section2Heading}</h2>
-        <ul className="admission__text admission__text--list">
-          {section2List.map((item, index) => (
-            <li key={index} className="admission__list-item">
-              {item}
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className="admission__section">
-        <h2 className="admission__section-heading">{section3Heading}</h2>
-        <p className="admission__text">{section3Text}</p>
-      </section>
+      {content.map((section, index) => (
+        <TextOrListWithHeading {...section} key={index} />
+      ))}
     </article>
   );
 };
 
 Admission.propTypes = {
-  section1Heading: string,
-  section1Text: string,
-  section2Heading: string,
-  section2List: string,
-  section3Heading: string,
-  section3Text: string,
+  content: array,
+};
+
+Admission.defaultProps = {
+  content: [
+    {
+      heading: 'Introduction',
+      text:
+        'During your first lecture we will introduce the Sourcery academy, tell you more about what we do as developers, get to know your fellow team members, lecturers and mentors.',
+    },
+    {
+      heading: 'You will learn',
+      list: ['React', 'JPA', 'Spring Boot'],
+    },
+    {
+      heading: 'An Interview',
+      text:
+        'Only the top candidates after the final exam are invited to a job interview which will challenge your technical skills and English knowledge.',
+    },
+  ],
 };

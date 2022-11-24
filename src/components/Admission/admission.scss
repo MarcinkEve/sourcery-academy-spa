@@ -2,33 +2,6 @@
 
 .admission {
   &__title {
-    margin: 0;
-  }
-
-  &__section {
-    margin: $spacer-l 0 0 0;
-
-    &:first-child {
-      margin-top: $spacer-xxl;
-    }
-  }
-
-  &__text {
-    line-height: 1.5;
-    margin: $spacer-s 0 0 0;
-
-    &--list {
-      font-size: $paragraph-l;
-      list-style-type: '\25cf';
-      padding-left: to-rem(10);
-    }
-  }
-
-  &__list-item {
-    padding-left: to-rem(16);
-
-    &::marker {
-      color: var(--primary-color);
-    }
+    margin: 0 0 $spacer-l 0;
   }
 }
