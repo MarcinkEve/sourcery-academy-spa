@@ -1,20 +1,24 @@
 @import '../../sass/global';
 
 .dates-card {
+  $_this: &;
+
   &__date {
     @include flex-box(
       $direction: column,
       $justify-content: center,
       $align-items: center
     );
+
+    &:nth-child(2) {
+      > #{$_this}__month {
+        opacity: 0;
+      }
+    }
   }
 
   &__month {
     font-size: to-rem(14);
-  }
-
-  &__date:nth-child(2) > &__month {
-    opacity: 0;
   }
 
   &__day {
