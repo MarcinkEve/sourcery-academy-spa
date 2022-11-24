@@ -2,12 +2,6 @@
 
 .paragraph {
   &--right {
-    @include flex-box(
-      $direction: column,
-      $align-items: flex-end,
-      $justify-content: normal
-    );
-
     text-align: right;
   }
 
