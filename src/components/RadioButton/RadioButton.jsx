@@ -29,7 +29,7 @@ export const RadioButton = ({ radioValues, title, onValueChange }) => {
 
 RadioButton.propTypes = {
   onValueChange: func,
-  title: string,
+  title: string.isRequired,
   radioValues: arrayOf(
     shape({
       name: string,
