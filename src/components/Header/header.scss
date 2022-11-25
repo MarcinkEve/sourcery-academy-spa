@@ -67,6 +67,7 @@
     &__academies-dropdown {
       position: absolute;
       top: to-rem(78);
+      z-index: 1; //temporary fix
     }
 
     &__academies-menu:hover {
