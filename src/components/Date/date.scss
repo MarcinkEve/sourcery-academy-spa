@@ -1,19 +1,17 @@
 @import '~/sass/global';
 
-.dates-card {
+.date {
   $_this: &;
 
-  &__date {
-    @include flex-box(
-      $direction: column,
-      $justify-content: center,
-      $align-items: center
-    );
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
 
-    &:nth-child(2) {
-      > #{$_this}__month {
-        opacity: 0;
-      }
+  &:nth-child(2) {
+    > #{$_this}__month {
+      opacity: 0;
     }
   }
 

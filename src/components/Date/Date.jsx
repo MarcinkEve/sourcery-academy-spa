@@ -5,9 +5,9 @@ import './date.scss';
 
 export const Date = ({ month, day }) => {
   return (
-    <span className="dates-card__date">
-      <span className="dates-card__month">{month}</span>
-      <span className="dates-card__day">{day}</span>
+    <span className="date">
+      <span className="date__month">{month}</span>
+      <span className="date__day">{day}</span>
     </span>
   );
 };
