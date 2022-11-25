@@ -2,18 +2,24 @@ import React from 'react';
 
 import { SectionCallToAction } from './SectionCallToAction';
 import { ROUTES } from '../../constants/routes';
-const content =
-  'Top-notch studies for the future Test Engineers. Students join the Devbridge team as a paid employee for the Academy period (two months) to learn and work. Ones who finish the Academy successfully are invited to continue employment on full time.';
+const content = (
+  <p>
+    Top-notch studies for the future Test Engineers. Students join the Devbridge
+    team as a paid employee for the Academy period (two months) to learn and
+    work. Ones who finish the Academy successfully are invited to continue
+    employment on full time.
+  </p>
+);
 
 export default {
   title: 'SectionCallToAction',
   component: SectionCallToAction,
   args: {
     isRightAlligned: true,
-    isMainHeading: true,
+    headingType: 'h2',
     headerText: 'Set your inner tester free with Sourcery for Testers!',
     isParagraphTextBold: true,
-    paragraphText: content,
+    paragraphContent: content,
     buttonText: 'Apply now',
     pageRoute: ROUTES.APPLICATION,
   },

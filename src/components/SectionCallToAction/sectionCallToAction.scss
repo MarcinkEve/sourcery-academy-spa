@@ -1,4 +1,4 @@
-@import '../../sass/global';
+@import '~/sass/global';
 
 .paragraph {
   &--right {
@@ -9,11 +9,22 @@
     margin: 0 0 $spacer-m 0;
   }
 
-  &__text {
+  &__wrapper {
+    font-size: $paragraph-l;
     margin: 0 0 $spacer-xxxl 0;
+  }
+
+  &__content {
+    margin: 0;
+    padding: 0;
 
     &--bold {
+      color: $charcoal-400;
       font-weight: 700;
+    }
+
+    li::marker {
+      color: var(--primary-color);
     }
   }
 }

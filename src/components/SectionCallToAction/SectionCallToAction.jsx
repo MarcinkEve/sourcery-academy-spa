@@ -1,5 +1,5 @@
-import React from 'react';
-import { bool, oneOf, string } from 'prop-types';
+import React, { cloneElement, createElement } from 'react';
+import { bool, element, oneOf, string } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 import './sectionCallToAction.scss';
@@ -8,33 +8,36 @@ import { ROUTES } from '../../constants/routes';
 
 export const SectionCallToAction = ({
   isRightAlligned,
-  isMainHeading,
+  // h1, h2, h3 should be passed
+  headingType,
   headerText,
   isParagraphTextBold,
-  paragraphText,
+  // form <ul> or <p> elements before passing
+  paragraphContent,
   buttonText,
   pageRoute,
 }) => {
   const nav = useNavigate();
 
+  const heading = createElement(
+    headingType,
+    { className: 'paragraph__heading' },
+    headerText
+  );
+
+  const paragraphContentWithClass = cloneElement(paragraphContent, {
+    className: `paragraph__content ${
+      isParagraphTextBold && 'paragraph__content--bold'
+    }`,
+  });
+
   const navigateToPage = () => {
     nav(pageRoute);
   };
-
   return (
     <div className={`paragraph ${isRightAlligned && 'paragraph--right'}`}>
-      {isMainHeading ? (
-        <h1 className="paragraph__heading">{headerText}</h1>
-      ) : (
-        <h2 className="paragraph__heading">{headerText}</h2>
-      )}
-      <p
-        className={`paragraph__text ${
-          isParagraphTextBold && 'paragraph__text--bold'
-        }`}
-      >
-        {paragraphText}
-      </p>
+      {heading}
+      <div className="paragraph__wrapper">{paragraphContentWithClass}</div>
       {buttonText && <Button label={buttonText} handleClick={navigateToPage} />}
     </div>
   );
@@ -42,10 +45,10 @@ export const SectionCallToAction = ({
 
 SectionCallToAction.propTypes = {
   isRightAlligned: bool,
-  isMainHeading: bool,
+  headingType: string.isRequired,
   headerText: string.isRequired,
   isParagraphTextBold: bool,
-  paragraphText: string.isRequired,
-  buttonText: string.isRequired,
+  paragraphContent: element.isRequired,
+  buttonText: string,
   pageRoute: oneOf([...Object.values(ROUTES)]),
 };
