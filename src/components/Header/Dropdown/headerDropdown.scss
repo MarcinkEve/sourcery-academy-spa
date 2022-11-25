@@ -35,7 +35,6 @@
     margin: 0;
     padding: to-rem(12) 0;
     position: relative;
-    width: to-rem(200);
 
     &-item {
       background-color: $white-400;
@@ -47,13 +46,19 @@
       color: $violet-700;
       display: inline-block;
       height: 100%;
-      padding: to-rem(14) to-rem(17) to-rem(18);
+      padding: to-rem(16) to-rem(23) to-rem(16) to-rem(20);
+      position: relative;
       text-decoration: none;
       width: 100%;
 
       &:hover,
       &:focus {
         background-color: $gray-200;
+        z-index: 2;
+      }
+
+      &:active {
+        background-color: $gray-100;
       }
     }
   }
