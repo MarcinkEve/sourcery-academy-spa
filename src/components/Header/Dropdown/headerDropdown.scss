@@ -8,21 +8,21 @@
   font-size: $paragraph-s;
   line-height: 1.15;
 
-  &__container {
+  &__pin {
     display: flex;
     height: to-rem(60);
     justify-content: center;
-    margin-top: to-rem(-30);
-    padding-top: to-rem(46);
+    margin-top: to-rem(-33);
+    padding-top: to-rem(49);
     width: to-rem(60px);
 
     &-triangle {
       background-color: $white-400;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      height: to-rem(30);
+      height: to-rem(25);
       overflow: hidden;
       transform: rotate(45deg);
-      width: to-rem(30);
+      width: to-rem(25);
     }
   }
 
@@ -49,12 +49,12 @@
       padding: to-rem(16) to-rem(23) to-rem(16) to-rem(20);
       position: relative;
       text-decoration: none;
+      transition: background-color 0.2s;
       width: 100%;
 
       &:hover,
       &:focus {
         background-color: $gray-200;
-        z-index: 2;
       }
 
       &:active {
