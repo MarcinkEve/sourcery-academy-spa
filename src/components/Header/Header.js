@@ -31,14 +31,15 @@ export const Header = () => {
 
   useEffect(() => setIsDropdownOpen(false), [useLocation()]);
   useEffect(() => {
-    const listener = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
+    const keyListener = ({ key }) => {
+      if (key === 'Escape') {
         setIsDropdownOpen(false);
       }
     };
-    document.addEventListener('mousedown', listener);
-    return () => document.removeEventListener('mousedown', listener);
-  }, [ref]);
+    document.addEventListener('keydown', keyListener, false);
+
+    return () => document.removeEventListener('keydown', keyListener);
+  }, []);
 
   return (
     <div className="header">
@@ -62,7 +63,10 @@ export const Header = () => {
           </button>
           {isDropdownOpen && (
             <div className="navlinks__academies-dropdown">
-              <HeaderDropdown data={dropdownElements} />
+              <HeaderDropdown
+                data={dropdownElements}
+                onClickOutside={() => setIsDropdownOpen(false)}
+              />
             </div>
           )}
         </li>
