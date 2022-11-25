@@ -1,4 +1,4 @@
-@import '../../../sass/global';
+@import '~/sass/global';
 
 .form-layout {
   margin: to-rem(40) 0;
@@ -30,6 +30,7 @@
     right: 0;
     transform: translateY(-32%);
     width: to-rem(1177);
+    z-index: -1; // Temporary fix while we create z-index variables
   }
 
   &-image {
