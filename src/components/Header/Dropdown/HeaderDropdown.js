@@ -12,6 +12,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
     if (!pinRef.current || !contentRef.current) {
       return;
     }
+
     const clickListener = ({ target }) => {
       if (
         onClickOutside &&
@@ -22,6 +23,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
       }
     };
     document.addEventListener('mousedown', clickListener);
+
     return () => document.removeEventListener('mousedown', clickListener);
   }, [pinRef, contentRef]);
   return (
