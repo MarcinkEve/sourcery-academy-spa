@@ -1,4 +1,4 @@
-@import '../../sass/global';
+@import '~/sass/global';
 
 .success-message-box {
   @include flex-box($direction: column, $align-items: center);
@@ -7,8 +7,15 @@
     width: to-rem(104);
   }
 
+  &__title {
+    height: to-rem(39);
+    margin: to-rem(40) 0 to-rem(12) 0;
+  }
+
   &__confirmation-text {
     color: $violet-700;
-    font: 700 $paragraph-l $paragraph-font;
+    font-family: $paragraph-font;
+    font-size: $paragraph-l;
+    font-weight: 700;
   }
 }
