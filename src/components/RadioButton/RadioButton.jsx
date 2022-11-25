@@ -38,11 +38,3 @@ RadioButton.propTypes = {
     })
   ).isRequired,
 };
-RadioButton.defaultProps = {
-  radioValues: [
-    { name: 'Kaunas', value: 'kaunas', id: 13654 },
-    { name: 'Vilnius', value: 'vilnius', id: 98541 },
-  ],
-  title: 'Academy city',
-  onValueChange: () => {},
-};
