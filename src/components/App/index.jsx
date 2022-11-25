@@ -8,7 +8,7 @@ import FrontEnd from '../Pages/FrontEnd';
 import Header from '../Header';
 import Homepage from '../Pages/Homepage';
 import Kids from '../Pages/Kids';
-import PageLayout from '../../layout/PageLayout';
+import PageLayout from '../../layout/pageLayout';
 import Testers from '../Pages/Testers';
 
 export default function index() {

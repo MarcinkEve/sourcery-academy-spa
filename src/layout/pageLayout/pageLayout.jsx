@@ -1,7 +1,7 @@
 import { element } from 'prop-types';
 import React from 'react';
 
-import './PageLayout.scss';
+import './pageLayout.scss';
 
 export const PageLayout = ({ children }) => {
   return <div className="page-layout">{children}</div>;
