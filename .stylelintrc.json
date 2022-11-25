@@ -37,7 +37,12 @@
     "property-no-unknown": [
       true,
       {
-        "ignoreProperties": ["composes", "compose-with", "font-range"]
+        "ignoreProperties": [
+          "composes",
+          "compose-with",
+          "font-range",
+          "accent-color"
+        ]
       }
     ],
     "selector-pseudo-class-no-unknown": [
