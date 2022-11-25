@@ -1,3 +1,5 @@
+const projectConfig = require('../webpack.config');
+
 module.exports = {
   webpackFinal: (config) => {
     const fileLoaderRule = config.module.rules.find(
@@ -11,7 +13,10 @@ module.exports = {
       loader: require.resolve('@svgr/webpack'),
     });
 
-    return config;
+    return {
+      ...config,
+      resolve: { ...config.resolve, alias: { ...projectConfig.resolve.alias } },
+    };
   },
   stories: [
     '../src/**/*.stories.mdx',

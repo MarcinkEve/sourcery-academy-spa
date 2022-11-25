@@ -1,27 +1,26 @@
-import { arrayOf, shape, string, func } from 'prop-types';
+import { arrayOf, func, number, shape, string } from 'prop-types';
 import React from 'react';
 
 import './radioButton.scss';
 
-export const RadioButton = ({ data, title, onValueChange }) => {
+export const RadioButton = ({ radioValues, title, onValueChange }) => {
   return (
     <div className="radio">
       <span className="radio__title">{title}</span>
 
-      {data.map((data, index) => (
-        <label className="radio__label" key={index} htmlFor={data.value}>
+      {radioValues.map((radioValue, index) => (
+        <label className="radio__label" key={radioValue.id}>
           <input
             className="radio__input"
             type="radio"
-            id={index}
-            name={data.value}
-            value={data.value}
+            name={title}
+            value={radioValue.value}
             onChange={(e) => {
               onValueChange(e.target.value);
             }}
             defaultChecked={index <= 0 && true}
           />
-          <span className="radio__value-label">{data.value}</span>
+          <span className="radio__input-label">{radioValue.name}</span>
         </label>
       ))}
     </div>
@@ -31,14 +30,19 @@ export const RadioButton = ({ data, title, onValueChange }) => {
 RadioButton.propTypes = {
   onValueChange: func,
   title: string,
-  data: arrayOf(
+  radioValues: arrayOf(
     shape({
       name: string,
       value: string,
+      id: number,
     })
   ).isRequired,
 };
 RadioButton.defaultProps = {
-  data: [{ value: 'kaunas' }, { value: 'vilnius' }],
+  radioValues: [
+    { name: 'Kaunas', value: 'kaunas', id: 13654 },
+    { name: 'Vilnius', value: 'vilnius', id: 98541 },
+  ],
   title: 'Academy city',
+  onValueChange: () => {},
 };

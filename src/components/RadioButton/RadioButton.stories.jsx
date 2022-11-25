@@ -24,7 +24,7 @@ const Template = (args) => <RadioButton {...args} />;
 export const RadioBtn = Template.bind({});
 RadioBtn.decorators = setTheme('application');
 RadioBtn.args = {
-  cities: [
+  radioValues: [
     {
       name: 'Kaunas',
       value: 'kaunas',
