@@ -9,14 +9,13 @@ import './applicationProcess.scss';
 export const ApplicationProcess = ({ data }) => {
   return (
     <div className="application-process">
-      {data.map((element, index) => (
+      {data.map(({ id, heading, paragraph, icon }, index) => (
         <ApplicationStep
-          // index as key for now
-          key={index}
-          heading={element.heading}
-          paragraph={element.paragraph}
-          icon={element.icon}
-          odd={index % 2 == 1 ? false : true}
+          key={id}
+          heading={heading}
+          paragraph={paragraph}
+          icon={icon}
+          odd={index % 2 === 1 ? false : true}
         />
       ))}
     </div>
@@ -24,7 +23,9 @@ export const ApplicationProcess = ({ data }) => {
 };
 
 ApplicationProcess.propTypes = {
-  data: arrayOf(shape({ heading: string, paragraph: string, icon: element })),
+  data: arrayOf(
+    shape({ id: string, heading: string, paragraph: string, icon: element })
+  ),
 };
 
 ApplicationProcess.defaultProps = {

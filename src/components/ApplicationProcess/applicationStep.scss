@@ -1,63 +1,48 @@
 @import '../../sass/global';
 
-//Change svg color on theme change
+//Depending on SVG line widht
+$_paragraph-width: 385px;
 
 .application-step {
   $_this: &;
 
-  align-items: flex-start;
-  display: flex;
-  justify-content: center;
+  margin: auto;
 
   &__heading {
     @include padding-margin-0;
 
     color: var(--primary-color);
-    line-height: 1.2;
+    margin-top: 23px;
+    padding-bottom: 16px;
   }
 
   &--odd-number {
     display: flex;
     text-align: left;
-    #{$_this}__text-container {
-      margin-right: to-rem(13);
+
+    #{$_this}__svg-container {
+      margin-left: -$_paragraph-width;
     }
   }
 
   &--even-number {
     display: flex;
     flex-direction: row-reverse;
-    margin-top: to-rem(94);
+    padding-top: 95px;
     text-align: right;
-    #{$_this}__text-container {
-      margin-left: to-rem(13);
-    }
-  }
 
-  &__text-container {
-    @include padding-margin-0;
-
-    &--svg {
-      // color: $orange-200; //checking if color is changing
-      color: var(--primary-color);
-      //solution to not have strange padding from svg
-      display: flex;
-      height: 2px;
-      justify-content: flex-start;
-      margin-bottom: to-rem(25);
-      margin-top: to-rem(17);
+    #{$_this}__svg-container {
+      margin-right: -$_paragraph-width;
     }
   }
 
   &__paragraph {
-    @include padding-margin-0;
-    //check this
-    width: 382px;
+    padding-top: 24px;
+    width: $_paragraph-width;
   }
 
   &__svg-container {
-    //check this. not needed ?
-    height: 200px;
-    width: 150px;
+    color: var(--primary-color);
+    width: 597px;
   }
 }

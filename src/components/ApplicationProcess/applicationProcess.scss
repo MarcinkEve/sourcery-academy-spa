@@ -1,14 +1,5 @@
 .application-process {
   display: grid;
-  // check template height,width by design
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: 236px 234px;
-}
-
-//some small responsive design
-@media (max-width: 800px) {
-  .application-process {
-    grid-template-columns: auto;
-    grid-template-rows: 236px;
-  }
+  grid-auto-rows: 236px;
+  grid-template-columns: repeat(2, 1fr);
 }
