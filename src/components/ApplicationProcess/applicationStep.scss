@@ -1,7 +1,9 @@
 @import '../../sass/global';
 
-//Depending on SVG line widht
-$_paragraph-width: 385px;
+// 380px - svg line width
+$_paragraph-width: 380px;
+//5px gap from longest heading text to circle in svg
+$_svg-to-side: 385px;
 
 .application-step {
   $_this: &;
@@ -11,38 +13,39 @@ $_paragraph-width: 385px;
   &__heading {
     @include padding-margin-0;
 
+    // --primary-color to get color from theme selected
     color: var(--primary-color);
-    margin-top: 23px;
-    padding-bottom: 16px;
+    margin-top: to-rem(23);
+    padding-bottom: to-rem(16);
   }
 
   &--odd-number {
     display: flex;
-    text-align: left;
 
     #{$_this}__svg-container {
-      margin-left: -$_paragraph-width;
+      margin-left: -$_svg-to-side;
     }
   }
 
   &--even-number {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 95px;
+    padding-top: to-rem(95);
     text-align: right;
 
     #{$_this}__svg-container {
-      margin-right: -$_paragraph-width;
+      margin-right: -$_svg-to-side;
     }
   }
 
   &__paragraph {
-    padding-top: 24px;
+    padding-top: to-rem(24);
     width: $_paragraph-width;
   }
 
   &__svg-container {
+    // --primary-color to get color from theme selected
     color: var(--primary-color);
-    width: 597px;
+    width: to-rem(597);
   }
 }

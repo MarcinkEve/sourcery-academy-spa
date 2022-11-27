@@ -1,10 +1,14 @@
 import React from 'react';
 
 import { ApplicationProcess } from './ApplicationProcess';
+import { defaultStorybookData } from './defaultData';
 
 export default {
   title: 'Application Process',
   component: ApplicationProcess,
+  args: {
+    stepsArray: defaultStorybookData,
+  },
 };
 
 const provideTheme = (theme) => {
