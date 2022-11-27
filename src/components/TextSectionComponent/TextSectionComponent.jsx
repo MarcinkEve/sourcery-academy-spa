@@ -8,6 +8,7 @@ import { ROUTES } from '../../constants/routes';
 
 export const TextSectionComponent = ({
   isRightAlligned,
+  isHeadingSpacingLarge,
   // form an h1, h2, h3 with text before passing
   headingContent,
   isParagraphTextBold,
@@ -19,9 +20,8 @@ export const TextSectionComponent = ({
   const nav = useNavigate();
 
   const headingContentWithClass = cloneElement(headingContent, {
-    className: `paragraph__heading ${
-      headingContent.props.children === 'Apply to academy' &&
-      'paragraph__heading--academy-last-section'
+    className: `text-section__heading ${
+      isHeadingSpacingLarge && 'text-section__heading--large-spacing'
     }`,
   });
 
@@ -30,19 +30,18 @@ export const TextSectionComponent = ({
   };
 
   return (
-    <div className={`paragraph ${isRightAlligned && 'paragraph--right'}`}>
+    <div className={`text-section ${isRightAlligned && 'text-section--right'}`}>
       {headingContentWithClass}
       <div
-        className={`paragraph__content ${
-          isParagraphTextBold && 'paragraph__content--bold'
+        className={`text-section__content ${
+          isParagraphTextBold && 'text-section__content--bold'
         }`}
       >
         {paragraphContent}
       </div>
       {buttonText && (
-        <div className="paragraph__button-wrapper">
-          {' '}
-          <Button label={buttonText} handleClick={navigateToPage} />{' '}
+        <div className="text-section__button-wrapper">
+          <Button label={buttonText} handleClick={navigateToPage} />
         </div>
       )}
     </div>
@@ -51,6 +50,7 @@ export const TextSectionComponent = ({
 
 TextSectionComponent.propTypes = {
   isRightAlligned: bool,
+  isHeadingSpacingLarge: bool,
   headingContent: element.isRequired,
   isParagraphTextBold: bool,
   paragraphContent: element.isRequired,

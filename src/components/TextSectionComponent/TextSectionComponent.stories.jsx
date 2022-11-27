@@ -23,10 +23,11 @@ const list = (
 const paragraphContent = [text, list];
 
 export default {
-  title: 'SectionCallToAction',
+  title: 'TextSectionComponent',
   component: TextSectionComponent,
   args: {
-    isRightAlligned: true,
+    isRightAlligned: false,
+    isHeadingSpacingLarge: false,
     headingContent: <h2>Sourcery for Testers</h2>,
     isParagraphTextBold: true,
     paragraphContent: paragraphContent[0],

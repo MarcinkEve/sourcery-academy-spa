@@ -1,6 +1,6 @@
 @import '~/sass/global';
 
-.paragraph {
+.text-section {
   &--right {
     text-align: right;
   }
@@ -8,7 +8,7 @@
   &__heading {
     margin: 0 0 $spacer-m 0;
 
-    &--academy-last-section {
+    &--large-spacing {
       margin: 0 0 to-rem(70) 0;
     }
   }
