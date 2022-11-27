@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { SectionCallToAction } from './SectionCallToAction';
+import { TextSectionComponent } from './TextSectionComponent';
 import { ROUTES } from '../../constants/routes';
-const content = (
+
+const text = (
   <p>
     Top-notch studies for the future Test Engineers. Students join the Devbridge
     team as a paid employee for the Academy period (two months) to learn and
@@ -11,15 +12,24 @@ const content = (
   </p>
 );
 
+const list = (
+  <ul>
+    <li>Semantic HTML code</li>
+    <li>Advanced CSS (Scss)</li>
+    <li>Agile methodology, build tools and task runners</li>
+  </ul>
+);
+
+const paragraphContent = [text, list];
+
 export default {
   title: 'SectionCallToAction',
-  component: SectionCallToAction,
+  component: TextSectionComponent,
   args: {
     isRightAlligned: true,
-    headingType: 'h2',
-    headerText: 'Set your inner tester free with Sourcery for Testers!',
+    headingContent: <h2>Sourcery for Testers</h2>,
     isParagraphTextBold: true,
-    paragraphContent: content,
+    paragraphContent: paragraphContent[0],
     buttonText: 'Apply now',
     pageRoute: ROUTES.APPLICATION,
   },
@@ -33,7 +43,7 @@ const provideTheme = (theme) => {
     ),
   ];
 };
-const Template = (args) => <SectionCallToAction {...args} />;
+const Template = (args) => <TextSectionComponent {...args} />;
 
 export const Home = Template.bind({});
 Home.decorators = provideTheme('home');

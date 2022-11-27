@@ -1,0 +1,48 @@
+@import '~/sass/global';
+
+.paragraph {
+  &--right {
+    text-align: right;
+  }
+
+  &__heading {
+    margin: 0 0 $spacer-m 0;
+
+    &--academy-last-section {
+      margin: 0 0 to-rem(70) 0;
+    }
+  }
+
+  &__content {
+    color: $charcoal-400;
+    font-size: $paragraph-l;
+    margin: 0;
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    p {
+      font-weight: inherit;
+      margin: inherit;
+    }
+
+    ul {
+      list-style-type: '\25cf';
+      margin: inherit;
+      padding-left: to-rem(10);
+
+      li {
+        padding-left: to-rem(16);
+      }
+
+      li::marker {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  &__button-wrapper {
+    margin: $spacer-xxxl 0 0 0;
+  }
+}

@@ -13,7 +13,7 @@ import { ROUTES } from '../../constants/routes';
 import Testers from '../Pages/Testers';
 
 export default function index() {
-  const { HOME, DEVELOPERS, FRONTED, KIDS, TESTERS, APPLICATION } = ROUTES;
+  const { HOME, DEVELOPERS, FRONTEND, KIDS, TESTERS, APPLICATION } = ROUTES;
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function index() {
               path={DEVELOPERS}
               element={<Developers theme="developers" />}
             />
-            <Route path={FRONTED} element={<FrontEnd theme="front-end" />} />
+            <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
             <Route path={KIDS} element={<Kids />} />
             <Route path={TESTERS} element={<Testers theme="testers" />} />
             <Route
