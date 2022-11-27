@@ -5,6 +5,13 @@ import { Checkbox } from './Checkbox';
 export default {
   title: 'Form/Checkbox',
   component: Checkbox,
+  decorators: [
+    (Story) => (
+      <div style={{ width: '509px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => <Checkbox {...args} />;
