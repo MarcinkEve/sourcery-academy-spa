@@ -1,0 +1,66 @@
+@import '~/sass/global';
+
+.article {
+  color: $violet-700;
+  padding: 0 to-rem(100); //@TODO delete before merging
+  position: relative;
+  text-align: center;
+
+  &__content-wrapper {
+    left: 0;
+    padding: 0 to-rem(100); //@TODO delete before merging
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  &__title {
+    margin: 0 0 to-rem(29);
+  }
+
+  &__content {
+    color: $charcoal-400;
+    margin-bottom: to-rem(35);
+  }
+
+  &__icons-wrapper {
+    @include flex-box(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+  }
+
+  &__icon-line {
+    height: to-rem(48);
+    margin-bottom: to-rem(32);
+  }
+
+  &__icon-circle {
+    border: 2px solid $violet-700;
+    border-radius: 50%;
+    height: to-rem(48);
+    padding-top: to-rem(8);
+    width: to-rem(48);
+  }
+
+  &__icon-arrow-down {
+    animation: down 1s infinite;
+    height: to-rem(22);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
