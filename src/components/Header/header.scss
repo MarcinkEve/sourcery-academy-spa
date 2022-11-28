@@ -44,6 +44,14 @@
 
     gap: $spacer-xxs;
 
+    &__academies {
+      @include flex-box(
+        $direction: column,
+        $justify-content: center,
+        $align-items: center
+      );
+    }
+
     &__academies-menu {
       background-color: $header-bg-clr;
       border: 0;
@@ -54,6 +62,12 @@
     &__academies-arrow {
       margin-left: to-rem(7);
       width: to-rem(14);
+    }
+
+    &__academies-dropdown {
+      position: absolute;
+      top: to-rem(78);
+      z-index: 1; //temporary fix
     }
 
     &__academies-menu:hover {
