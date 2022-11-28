@@ -1,4 +1,4 @@
-@import '../../sass/global';
+@import '~/sass/global';
 
 .section-label {
   @include label($color: $violet-400);
