@@ -17,7 +17,7 @@ export const Admission = ({ content }) => {
 
   return (
     <article className="admission">
-      <h1 className="admission__title">The Admission</h1>
+      <h2 className="admission__title">The Admission</h2>
       {content.map((section, index) => {
         const sectionContent = section.list ? (
           renderList(section.list)
@@ -26,7 +26,7 @@ export const Admission = ({ content }) => {
         );
         return (
           <TextSectionComponent
-            headingContent={<h2>{section.heading}</h2>}
+            headingContent={<h3>{section.heading}</h3>}
             paragraphContent={sectionContent}
             key={index}
           />
