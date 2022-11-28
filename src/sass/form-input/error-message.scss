@@ -1,8 +1,0 @@
-@import '../utilities/functions/index';
-@import '../variables';
-
-@mixin error-message {
-  color: $red-500;
-  font-size: to-rem(14);
-  margin-top: to-rem(5);
-}

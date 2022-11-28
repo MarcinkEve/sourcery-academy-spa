@@ -3,8 +3,15 @@ import React from 'react';
 import { InputField } from './InputField';
 
 export default {
-  title: 'Input field',
+  title: 'Form / Input field',
   component: InputField,
+  decorators: [
+    (Story) => (
+      <div style={{ width: '509px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => <InputField {...args} />;

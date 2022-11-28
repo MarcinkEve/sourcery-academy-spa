@@ -18,7 +18,8 @@
     "react-dom": "18.2.0",
     "react-icons": "4.6.0",
     "react-router-dom": "6.4.3",
-    "storybook-addon-pseudo-states": "1.15.1"
+    "storybook-addon-pseudo-states": "1.15.1",
+    "react-slidedown": "2.4.7"
   },
   "scripts": {
     "start": "npm run dev",

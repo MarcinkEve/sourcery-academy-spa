@@ -1,0 +1,12 @@
+QA rules:
+
+> Screen resolution support: Desktop only (> 1366px);
+
+> Browser support:
+	- Chrome 57+;
+	- Firefox 52+;
+	- Edge 16+;
+
+> Accessibility:
+	- Each clickable element (button/link) should be reachable with the tab keyboard and have style:
+	outline: 4px dashed #f89e4b
