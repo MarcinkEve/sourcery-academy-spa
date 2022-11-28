@@ -1,6 +1,10 @@
 @import '~/sass/global';
 
 .text-section {
+  &:not(:last-child) {
+    margin: 0 0 $spacer-l 0;
+  }
+
   &--right {
     text-align: right;
   }
@@ -24,6 +28,7 @@
 
     p {
       font-weight: inherit;
+      line-height: inherit;
       margin: inherit;
     }
 

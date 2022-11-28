@@ -24,6 +24,7 @@ export const Admission = ({ content }) => {
         ) : (
           <p>{section.text}</p>
         );
+
         return (
           <TextSectionComponent
             headingContent={<h3>{section.heading}</h3>}

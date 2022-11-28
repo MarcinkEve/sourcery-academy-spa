@@ -4,15 +4,4 @@
   &__title {
     margin: 0 0 $spacer-xxl 0;
   }
-
-  .text-section {
-    &:not(:last-child) {
-      margin: 0 0 $spacer-l 0;
-    }
-
-    p,
-    ul {
-      line-height: 1.5;
-    }
-  }
 }
