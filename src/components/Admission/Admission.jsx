@@ -1,39 +1,47 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 
 import './admission.scss';
-import { TextOrListWithHeading } from './TextOrListWithHeading';
+import TextSectionComponent from '~/components/TextSectionComponent';
 
 export const Admission = ({ content }) => {
+  const renderList = (list) => {
+    return (
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <article className="admission">
       <h1 className="admission__title">The Admission</h1>
-      {content.map((section, index) => (
-        <TextOrListWithHeading {...section} key={index} />
-      ))}
+      {content.map((section, index) => {
+        const sectionContent = section.list ? (
+          renderList(section.list)
+        ) : (
+          <p>{section.text}</p>
+        );
+        return (
+          <TextSectionComponent
+            headingContent={<h2>{section.heading}</h2>}
+            paragraphContent={sectionContent}
+            key={index}
+          />
+        );
+      })}
     </article>
   );
 };
 
 Admission.propTypes = {
-  content: array,
-};
-
-Admission.defaultProps = {
-  content: [
-    {
-      heading: 'Introduction',
-      text:
-        'During your first lecture we will introduce the Sourcery academy, tell you more about what we do as developers, get to know your fellow team members, lecturers and mentors.',
-    },
-    {
-      heading: 'You will learn',
-      list: ['React', 'JPA', 'Spring Boot'],
-    },
-    {
-      heading: 'An Interview',
-      text:
-        'Only the top candidates after the final exam are invited to a job interview which will challenge your technical skills and English knowledge.',
-    },
-  ],
+  content: arrayOf(
+    shape({
+      heading: string.isRequired,
+      text: string,
+      list: arrayOf(string),
+    })
+  ).isRequired,
 };
