@@ -5,15 +5,15 @@ import Step2 from '../../assets/icons/icon-application-step-2.svg';
 import Step3 from '../../assets/icons/icon-application-step-3.svg';
 import Step4 from '../../assets/icons/icon-application-step-4.svg';
 
-// If there will be more steps later - import svg for new step(StepN) and add it in 'defaultSvgs' array(<StepN />).
-export const defaultSvgs = [
+// If there will be more steps later - import svg for new step(StepN) and add it in 'stepsSvgs' array(<StepN />).
+export const stepsSvgs = [
   { key: 1, icon: <Step1 /> },
   { key: 2, icon: <Step2 /> },
   { key: 3, icon: <Step3 /> },
   { key: 4, icon: <Step4 /> },
 ];
 
-export const defaultStorybookData = [
+export const storybookText = [
   {
     id: 1,
     heading: 'Apply',

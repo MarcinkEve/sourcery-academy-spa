@@ -1,9 +1,7 @@
-@import '../../sass/global';
+@import '~/sass/global';
 
-// 380px - svg line width
+// 380px - svg line width from figma
 $_paragraph-width: 380px;
-//5px gap from longest heading text to circle in svg
-$_svg-to-side: 385px;
 
 .application-step {
   $_this: &;
@@ -23,7 +21,7 @@ $_svg-to-side: 385px;
     display: flex;
 
     #{$_this}__svg-container {
-      margin-left: -$_svg-to-side;
+      margin-left: -$_paragraph-width;
     }
   }
 
@@ -34,7 +32,7 @@ $_svg-to-side: 385px;
     text-align: right;
 
     #{$_this}__svg-container {
-      margin-right: -$_svg-to-side;
+      margin-right: -$_paragraph-width;
     }
   }
 

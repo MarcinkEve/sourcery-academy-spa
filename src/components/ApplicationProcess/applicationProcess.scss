@@ -1,5 +1,9 @@
+@import '~/sass/global';
+
 .application-process {
   display: grid;
-  grid-auto-rows: 236px; // Process_Left/Right_section from figma
+  grid-auto-rows: 236px; /* Process_Left/Right_section from figma */
   grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  width: max-content;
 }

@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { string, number, object } from 'prop-types';
+import { string, number } from 'prop-types';
 
 import './applicationStep.scss';
 
-const ApplicationStep = ({ indexFromParent, heading, paragraph, icon }) => {
+import { stepsSvgs } from './defaultData';
+
+const ApplicationStep = ({ indexFromParent, heading, paragraph }) => {
   const indexIsOdd = indexFromParent % 2 === 0 ? true : false;
 
   return (
@@ -16,7 +18,9 @@ const ApplicationStep = ({ indexFromParent, heading, paragraph, icon }) => {
           <h2 className="application-step__heading">{heading}</h2>
           <p className="application-step__paragraph">{paragraph}</p>
         </div>
-        <div className="application-step__svg-container">{icon}</div>
+        <div className="application-step__svg-container">
+          {stepsSvgs[indexFromParent].icon}
+        </div>
       </div>
     </div>
   );
@@ -26,7 +30,6 @@ ApplicationStep.propTypes = {
   indexFromParent: number,
   heading: string,
   paragraph: string,
-  icon: object,
 };
 
 export default ApplicationStep;
