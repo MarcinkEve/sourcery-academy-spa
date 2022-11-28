@@ -3,24 +3,29 @@ import React from 'react';
 import { TextSectionComponent } from './TextSectionComponent';
 import { ROUTES } from '../../constants/routes';
 
-const text = (
-  <p>
-    Top-notch studies for the future Test Engineers. Students join the Devbridge
-    team as a paid employee for the Academy period (two months) to learn and
-    work. Ones who finish the Academy successfully are invited to continue
-    employment on full time.
-  </p>
-);
+const paragraphContentOptions = {
+  text: (
+    <p>
+      Top-notch studies for the future Test Engineers. Students join the
+      Devbridge team as a paid employee for the Academy period (two months) to
+      learn and work. Ones who finish the Academy successfully are invited to
+      continue employment on full time.
+    </p>
+  ),
+  list: (
+    <ul>
+      <li>Semantic HTML code</li>
+      <li>Advanced CSS (Scss)</li>
+      <li>Agile methodology, build tools and task runners</li>
+    </ul>
+  ),
+};
 
-const list = (
-  <ul>
-    <li>Semantic HTML code</li>
-    <li>Advanced CSS (Scss)</li>
-    <li>Agile methodology, build tools and task runners</li>
-  </ul>
-);
-
-const paragraphContent = [text, list];
+const headingOptions = {
+  h1: <h1>Sourcery Academy for Developers</h1>,
+  h2: <h2>Sourcery for Testers</h2>,
+  h3: <h3>Introduction</h3>,
+};
 
 export default {
   title: 'TextSectionComponent',
@@ -28,11 +33,28 @@ export default {
   args: {
     isRightAlligned: false,
     isHeadingSpacingLarge: false,
-    headingContent: <h2>Sourcery for Testers</h2>,
+    headingContent: headingOptions.h2,
     isParagraphTextBold: true,
-    paragraphContent: paragraphContent[0],
+    paragraphContent: paragraphContentOptions.text,
     buttonText: 'Apply now',
     pageRoute: ROUTES.APPLICATION,
+  },
+  argTypes: {
+    paragraphContent: {
+      options: Object.keys(paragraphContentOptions),
+      control: { type: 'select' },
+      mapping: paragraphContentOptions,
+    },
+    headingContent: {
+      options: Object.keys(headingOptions),
+      controls: { type: 'select' },
+      mapping: headingOptions,
+    },
+    pageRoute: {
+      options: Object.keys(ROUTES),
+      controls: { type: 'select' },
+      mapping: ROUTES,
+    },
   },
 };
 const provideTheme = (theme) => {
