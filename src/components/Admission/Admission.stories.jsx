@@ -1,3 +1,4 @@
+import { oneOf } from 'prop-types';
 import React from 'react';
 
 import { Admission } from './Admission';
@@ -6,6 +7,7 @@ export default {
   title: 'Admission',
   component: Admission,
   args: {
+    theme: 'developers',
     content: [
       {
         heading: 'Introduction',
@@ -23,25 +25,19 @@ export default {
       },
     ],
   },
+  argTypes: {
+    theme: {
+      options: ['developers', 'testers', 'front-end'],
+      control: 'radio',
+    },
+  },
 };
 
-const provideTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
+export const AdmissionSection = (args) => {
+  const { theme, ...rest } = args;
+  return (
+    <div theme={theme}>
+      <Admission {...rest} />
+    </div>
+  );
 };
-
-const Template = (args) => <Admission {...args} />;
-
-export const Developers = Template.bind({});
-Developers.decorators = provideTheme('developers');
-
-export const Testers = Template.bind({});
-Testers.decorators = provideTheme('testers');
-
-export const FrontEnd = Template.bind({});
-FrontEnd.decorators = provideTheme('front-end');

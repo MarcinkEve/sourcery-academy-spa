@@ -23,12 +23,11 @@
     margin: 0;
 
     &--bold {
-      font-weight: 700;
+      font-weight: $font-bold;
     }
 
     p {
       font-weight: inherit;
-      line-height: inherit;
       margin: inherit;
     }
 
@@ -38,6 +37,7 @@
       padding-left: to-rem(10);
 
       li {
+        margin-bottom: to-rem(5);
         padding-left: to-rem(16);
       }
 

@@ -1,16 +1,25 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 import './successMessage.scss';
 import IconCheckMark from '../../assets/icons/icon-check-mark.svg';
 
-export const SuccessMessage = () => {
+export const SuccessMessage = ({ title, text }) => {
   return (
     <div className="success-message-box">
       <IconCheckMark className="success-message-box__check-mark-icon" />
-      <h2 className="success-message-box__title">Thank you!</h2>
-      <span className="success-message-box__confirmation-text">
-        Your form was submitted
-      </span>
+      <h2 className="success-message-box__title">{title}</h2>
+      <span className="success-message-box__confirmation-text">{text}</span>
     </div>
   );
+};
+
+SuccessMessage.propTypes = {
+  title: string,
+  text: string,
+};
+
+SuccessMessage.defaultProps = {
+  title: 'Thank you!',
+  text: 'Your form was submitted',
 };

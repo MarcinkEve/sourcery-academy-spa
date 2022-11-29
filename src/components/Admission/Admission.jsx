@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 
 import './admission.scss';
-import TextSectionComponent from '~/components/TextSectionComponent';
+import TextSection from '~/components/TextSection';
 
 export const Admission = ({ content }) => {
   const renderList = (list) => {
@@ -26,7 +26,7 @@ export const Admission = ({ content }) => {
         );
 
         return (
-          <TextSectionComponent
+          <TextSection
             headingContent={<h3>{section.heading}</h3>}
             paragraphContent={sectionContent}
             key={index}
