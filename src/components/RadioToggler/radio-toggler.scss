@@ -1,0 +1,26 @@
+@import '~/sass/global';
+
+.section-label {
+  @include label($color: $violet-400);
+
+  margin-bottom: to-rem(20);
+}
+
+.radio-toggler {
+  @include flex-box(
+    $direction: row,
+    $justify-content: center,
+    $align-items: center
+  );
+
+  border: 2px solid $violet-700;
+  border-radius: 30px;
+  height: to-rem(62);
+  padding: to-rem(7);
+  position: relative;
+
+  &__label:nth-of-type(2),
+  &__label1 {
+    margin: 0 to-rem(8);
+  }
+}

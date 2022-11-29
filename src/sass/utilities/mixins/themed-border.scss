@@ -1,0 +1,6 @@
+@mixin themed-border($theme-color: var(--color-primary)) {
+  border-color: $theme-color;
+  color: $theme-color;
+  fill: $theme-color;
+}
+// THIS MIXIN IS FOR DATES / SCHEDULE CARD COMPONENT

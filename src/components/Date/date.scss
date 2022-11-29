@@ -1,0 +1,26 @@
+@import '~/sass/global';
+
+.date {
+  $_this: &;
+
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+
+  &:nth-child(2) {
+    > #{$_this}__month {
+      opacity: 0;
+    }
+  }
+
+  &__month {
+    font-size: to-rem(14);
+  }
+
+  &__day {
+    font-size: to-rem(18);
+    font-weight: $font-bold;
+  }
+}

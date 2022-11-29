@@ -13,6 +13,11 @@ $header-s: to-rem(32);
 $paragraph-l: to-rem(18);
 $paragraph-s: to-rem(14);
 
+/* Font weights */
+
+$font-bold: 700;
+$font-normal: 400;
+
 /* Spacers */
 
 $spacer-xxxs: to-rem(20);
@@ -34,6 +39,7 @@ $blue-300: #71a1f3;
 
 $charcoal-400: #3e3c4e;
 $charcoal-200: #5c5c5c;
+$charcoal-100: #868686;
 
 $gray-200: #f6f5f7;
 $gray-100: #f2f2f2;
@@ -50,6 +56,7 @@ $lightgreen-300: #47e6b1;
 
 $orange-200: #f89e4b;
 $orange-400: #f55f44;
+$orange-200: #f89e4b;
 
 $red-700: #b40031;
 $red-600: #c01745;
