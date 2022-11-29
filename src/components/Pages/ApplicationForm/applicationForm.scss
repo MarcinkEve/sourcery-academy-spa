@@ -23,6 +23,7 @@
     display: flex;
     position: relative;
     width: to-rem(620);
+    z-index: -1; // Temporary fix while we create z-index variables
   }
 
   &__particles-icon {
@@ -30,7 +31,6 @@
     right: 0;
     transform: translateY(-32%);
     width: to-rem(1177);
-    z-index: -1; // Temporary fix while we create z-index variables
   }
 
   &-image {

@@ -5,9 +5,6 @@ import { RadioButton } from './RadioButton';
 export default {
   title: 'Form / Radio Button',
   component: RadioButton,
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 const setTheme = (theme) => {
@@ -21,9 +18,9 @@ const setTheme = (theme) => {
 };
 
 const Template = (args) => <RadioButton {...args} />;
-export const RadioBtn = Template.bind({});
-RadioBtn.decorators = setTheme('application');
-RadioBtn.args = {
+export const RadioButtonComponent = Template.bind({});
+RadioButtonComponent.decorators = setTheme('application');
+RadioButtonComponent.args = {
   title: 'Academy city',
   radioValues: [
     {
