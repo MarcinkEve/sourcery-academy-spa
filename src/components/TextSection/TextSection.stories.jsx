@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextSectionComponent } from './TextSectionComponent';
+import { TextSection } from './TextSection';
 import { ROUTES } from '../../constants/routes';
 
 const paragraphContentOptions = {
@@ -28,8 +28,8 @@ const headingOptions = {
 };
 
 export default {
-  title: 'TextSectionComponent',
-  component: TextSectionComponent,
+  title: 'TextSection',
+  component: TextSection,
   args: {
     isRightAlligned: false,
     isHeadingSpacingLarge: false,
@@ -66,7 +66,7 @@ const provideTheme = (theme) => {
     ),
   ];
 };
-const Template = (args) => <TextSectionComponent {...args} />;
+const Template = (args) => <TextSection {...args} />;
 
 export const Home = Template.bind({});
 Home.decorators = provideTheme('home');

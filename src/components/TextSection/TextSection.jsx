@@ -1,12 +1,12 @@
-import React, { cloneElement, createElement } from 'react';
+import React, { cloneElement } from 'react';
 import { bool, element, oneOf, string } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-import './textSectionComponent.scss';
+import './textSection.scss';
 import { Button } from '../Button/Button';
 import { ROUTES } from '../../constants/routes';
 
-export const TextSectionComponent = ({
+export const TextSection = ({
   isRightAlligned,
   isHeadingSpacingLarge,
   // form an h1, h2, h3 with text before passing
@@ -48,7 +48,7 @@ export const TextSectionComponent = ({
   );
 };
 
-TextSectionComponent.propTypes = {
+TextSection.propTypes = {
   isRightAlligned: bool,
   isHeadingSpacingLarge: bool,
   headingContent: element.isRequired,
