@@ -3,7 +3,7 @@ import React from 'react';
 import { RadioToggler } from './RadioToggler';
 
 export default {
-  title: 'RadioToggler',
+  title: 'Form / RadioToggler',
   component: RadioToggler,
 };
 
