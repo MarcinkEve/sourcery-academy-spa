@@ -1,0 +1,9 @@
+@import '~/sass/global';
+
+.schedule {
+  &__subcolumn {
+    @include flex-box($direction: column, $align-items: center);
+
+    gap: $spacer-l;
+  }
+}

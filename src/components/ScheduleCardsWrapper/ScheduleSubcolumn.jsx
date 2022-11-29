@@ -1,7 +1,8 @@
 import React from 'react';
-import { shape, arrayOf, string } from 'prop-types';
+import { shape, arrayOf } from 'prop-types';
 
 import ScheduleCard from '~/components/ScheduleCard';
+import './schedule-subcolumn.scss';
 
 export const ScheduleSubcolumn = ({ subcolumnData }) => (
   <div className="schedule__subcolumn">

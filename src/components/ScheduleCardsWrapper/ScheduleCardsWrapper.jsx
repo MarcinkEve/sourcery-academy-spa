@@ -1,8 +1,8 @@
 import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 
-import './schedule-cards-wrapper.scss';
 import { ScheduleColumn } from './ScheduleColumn';
+import './schedule-cards-wrapper.scss';
 
 export const ScheduleCardsWrapper = ({ schedule }) => {
   return (
@@ -17,14 +17,14 @@ export const ScheduleCardsWrapper = ({ schedule }) => {
 ScheduleCardsWrapper.propTypes = {
   schedule: shape({
     column_1: shape({
-      title: arrayOf(string),
+      title: arrayOf(string).isRequired,
       column_1: arrayOf(shape).isRequired,
-      column_2: arrayOf(shape).isRequired,
-    }),
+      column_2: arrayOf(shape),
+    }).isRequired,
     column_2: shape({
       title: arrayOf(string).isRequired,
       column_1: arrayOf(shape).isRequired,
-      column_2: arrayOf(shape).isRequired,
+      column_2: arrayOf(shape),
     }),
-  }).isRequired,
+  }),
 };

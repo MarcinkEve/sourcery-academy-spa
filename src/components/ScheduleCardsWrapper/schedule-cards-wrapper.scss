@@ -2,48 +2,13 @@
 
 .schedule {
   &-cards-wrapper {
-    display: flex;
-    gap: $spacer-l;
-    justify-content: center;
-  }
-
-  &__column {
-    column-gap: $spacer-l;
-    display: grid;
-    grid-template: min-content auto / repeat(2, 1fr);
-
-    &-title {
-      grid-area: 1 / 1 / 2 / 3;
-      text-align: center;
-    }
-  }
-
-  &__subcolumn {
-    @include flex-box($direction: column, $align-items: center);
+    @include flex-box($direction: row, $justify-content: center);
 
     gap: $spacer-l;
-  }
-}
 
-@media screen and (max-width: 1366px) {
-  .schedule {
-    &-cards-wrapper {
-      align-items: center;
+    @media screen and (max-width: 1366px) {
       flex-direction: column;
-    }
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .schedule {
-    &__column {
-      @include flex-box($direction: column);
-    }
-
-    &__subcolumn {
-      &:not(:last-child) {
-        margin-bottom: $spacer-l;
-      }
+      gap: $spacer-xxxl;
     }
   }
 }
