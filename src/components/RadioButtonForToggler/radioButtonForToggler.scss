@@ -12,28 +12,31 @@
     color: $charcoal-400;
     cursor: pointer;
     font-size: to-rem(18);
-    font-weight: 700;
+    font-weight: $font-bold;
     height: to-rem(48);
     width: to-rem(159);
 
     &:hover {
       color: $violet-400;
+      transition: color $transition-time-fast ease;
     }
 
     &--checked {
       background-color: $violet-400;
       color: $white-400;
-      transition: all 0.5s ease;
+      transition: all $transition-time-slow ease;
 
       &:hover {
         background-color: $violet-600;
         color: $white-400;
+        transition: all $transition-time-fast ease;
       }
 
       &:focus,
       &:focus-visible,
       &:active {
         background-color: $violet-300;
+        transition: background-color $transition-time-fast ease;
       }
     }
   }

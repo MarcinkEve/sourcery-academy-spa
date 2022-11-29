@@ -24,6 +24,7 @@
       margin: 0;
       overflow: visible;
       position: static;
+      transition: all $transition-time-fast ease;
       width: auto;
     }
   }

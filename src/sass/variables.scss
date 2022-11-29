@@ -8,10 +8,21 @@ $header-font: 'Montserrat', sans-serif;
 $paragraph-font: 'Raleway', sans-serif;
 
 /* Font sizes */
-$header-l: to-rem(48);
-$header-s: to-rem(32);
-$paragraph-l: to-rem(18);
-$paragraph-s: to-rem(14);
+
+$font-size-header-l: to-rem(48);
+$font-size-header-s: to-rem(32);
+$font-size-paragraph-l: to-rem(18);
+$font-size-paragraph-s: to-rem(14);
+
+/* Font weights */
+
+$font-bold: 700;
+$font-normal: 400;
+
+/* Line heights */
+
+$line-height-l: 1.5;
+$line-height-m: 1.2;
 
 /* Spacers */
 
@@ -24,6 +35,11 @@ $spacer-l: to-rem(40);
 $spacer-xl: to-rem(44);
 $spacer-xxl: to-rem(48);
 $spacer-xxxl: to-rem(52);
+
+/* Transition timing */
+
+$transition-time-fast: 0.2s;
+$transition-time-slow: 0.4s;
 
 /* Colors */
 
