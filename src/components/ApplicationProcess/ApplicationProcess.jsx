@@ -1,21 +1,22 @@
 import React from 'react';
 
-import { number, arrayOf, shape, string } from 'prop-types';
+import { number, arrayOf, shape, string, element } from 'prop-types';
 
 import ApplicationStep from './ApplicationStep';
 
 import './applicationProcess.scss';
 
-export const ApplicationProcess = ({ stepsTextArray }) => {
+export const ApplicationProcess = ({ stepsDataArray }) => {
   return (
     <div className="application-process">
-      {stepsTextArray &&
-        stepsTextArray.map(({ id, heading, paragraph }, index) => (
+      {stepsDataArray &&
+        stepsDataArray.map(({ id, heading, paragraph, icon }, index) => (
           <ApplicationStep
             key={id}
             heading={heading}
             paragraph={paragraph}
             indexFromParent={index}
+            icon={icon}
           />
         ))}
     </div>
@@ -23,7 +24,7 @@ export const ApplicationProcess = ({ stepsTextArray }) => {
 };
 
 ApplicationProcess.propTypes = {
-  stepsTextArray: arrayOf(
-    shape({ id: number, heading: string, paragraph: string })
+  stepsDataArray: arrayOf(
+    shape({ id: number, heading: string, paragraph: string, icon: element })
   ).isRequired,
 };

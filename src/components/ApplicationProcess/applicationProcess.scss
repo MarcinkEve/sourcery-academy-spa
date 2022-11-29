@@ -2,7 +2,6 @@
 
 .application-process {
   display: grid;
-  grid-auto-rows: to-rem(236); /* Process_Left/Right_section from figma */
   grid-template-columns: repeat(2, 1fr);
   margin: auto;
   padding-bottom: to-rem(95);

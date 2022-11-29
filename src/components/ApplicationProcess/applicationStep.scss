@@ -1,12 +1,15 @@
 @import '~/sass/global';
 
-// 380px - svg line width from figma
-$_paragraph-width: 380px;
+$_paragraph-width: 393px;
 
 .application-step {
   $_this: &;
 
   margin: auto;
+
+  &__text-container {
+    width: $_paragraph-width;
+  }
 
   &__heading {
     @include padding-margin-0;
@@ -14,36 +17,41 @@ $_paragraph-width: 380px;
     // --primary-color to get color from theme selected
     color: var(--primary-color);
     margin-top: to-rem(23);
-    padding-bottom: to-rem(16);
+  }
+
+  &__svg-line {
+    // --primary-color to get color from theme selected
+    color: var(--primary-color);
+    display: flex;
+    height: 2px;
+    margin-bottom: to-rem(25);
+    margin-top: to-rem(17);
+
+    svg {
+      width: 97%;
+    }
   }
 
   &--odd-number {
     display: flex;
-
-    #{$_this}__svg-container {
-      margin-left: -$_paragraph-width;
-    }
   }
 
   &--even-number {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: to-rem(95);
     text-align: right;
+    transform: translateY(95px);
 
-    #{$_this}__svg-container {
-      margin-right: -$_paragraph-width;
+    #{$_this}__svg-line {
+      justify-content: flex-end;
     }
   }
 
-  &__paragraph {
-    padding-top: to-rem(24);
-    width: $_paragraph-width;
-  }
-
   &__svg-container {
+    align-items: flex-start;
     // --primary-color to get color from theme selected
     color: var(--primary-color);
-    width: to-rem(597);
+    display: flex;
+    width: to-rem(225);
   }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { ApplicationProcess } from './ApplicationProcess';
-import { storybookText } from './defaultData';
+import { storybookData } from './storybookData';
 
 export default {
   title: 'Application Process',
   component: ApplicationProcess,
   args: {
-    stepsTextArray: storybookText,
+    stepsDataArray: storybookData,
   },
 };
 
