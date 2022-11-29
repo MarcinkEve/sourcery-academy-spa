@@ -37,12 +37,15 @@
       padding-left: to-rem(10);
 
       li {
-        margin-bottom: to-rem(5);
         padding-left: to-rem(16);
       }
 
       li::marker {
         color: var(--primary-color);
+      }
+
+      li:not(:last-child) {
+        margin-bottom: to-rem(5);
       }
     }
   }
