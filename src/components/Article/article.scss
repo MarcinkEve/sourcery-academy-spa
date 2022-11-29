@@ -1,22 +1,21 @@
 @import '~/sass/global';
 
 .article {
-  color: $violet-700;
-  padding: 0 to-rem(100); //@TODO delete before merging
-  position: relative;
+  margin: 0 auto;
+  max-width: to-rem(1006);
   text-align: center;
 
-  &__content-wrapper {
-    left: 0;
-    padding: 0 to-rem(100); //@TODO delete before merging
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
+  &__top-particles {
+    position: relative;
+    transform: translateY(20%);
+    z-index: -1;
   }
 
   &__title {
+    color: $violet-700;
     margin: 0 0 to-rem(29);
+    padding: 0 2rem;
+    word-wrap: break-word;
   }
 
   &__content {
@@ -24,12 +23,16 @@
     margin-bottom: to-rem(35);
   }
 
-  &__icons-wrapper {
+  &__icon-wrapper {
     @include flex-box(
       $direction: column,
       $justify-content: center,
       $align-items: center
     );
+
+    margin: 0 auto;
+    position: relative;
+    top: 0;
   }
 
   &__icon-line {
@@ -46,12 +49,18 @@
   }
 
   &__icon-arrow-down {
-    animation: down 1s infinite;
+    animation: bounce 1.2s ease-in-out infinite;
     height: to-rem(22);
+  }
+
+  &__bottom-particles {
+    max-width: to-rem(790);
+    position: relative;
+    transform: translateY(-50%);
   }
 }
 
-@keyframes down {
+@keyframes bounce {
   0% {
     transform: translateY(0);
   }

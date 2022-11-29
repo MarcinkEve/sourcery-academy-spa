@@ -8,7 +8,7 @@ import './intro-section.scss';
 export const IntroSection = () => {
   return (
     <section className="intro-section">
-      <ParagraphAndImageSection />
+      {/* // <ParagraphAndImageSection /> */}
       <Article />
     </section>
   );
