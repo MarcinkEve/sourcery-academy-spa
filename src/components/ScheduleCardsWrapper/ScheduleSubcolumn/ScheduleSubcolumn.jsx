@@ -5,7 +5,7 @@ import ScheduleCard from '~/components/ScheduleCard';
 import './schedule-subcolumn.scss';
 
 export const ScheduleSubcolumn = ({ subcolumnData }) => (
-  <div className="schedule__subcolumn">
+  <div className="schedule-subcolumn">
     {subcolumnData.map((card, index) => (
       <ScheduleCard
         lectureData={card.lectureData}
