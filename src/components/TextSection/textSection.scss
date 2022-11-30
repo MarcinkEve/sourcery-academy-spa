@@ -1,6 +1,10 @@
 @import '~/sass/global';
 
 .text-section {
+  &:not(:last-child) {
+    margin: 0 0 $spacer-l 0;
+  }
+
   &--right {
     text-align: right;
   }
@@ -31,13 +35,17 @@
       list-style-type: '\25cf';
       margin: inherit;
       padding-left: to-rem(10);
+    }
 
-      li {
-        padding-left: to-rem(16);
+    li {
+      padding-left: to-rem(16);
+
+      &::marker {
+        color: var(--primary-color);
       }
 
-      li::marker {
-        color: var(--primary-color);
+      &:not(:last-child) {
+        margin-bottom: to-rem(5);
       }
     }
   }
