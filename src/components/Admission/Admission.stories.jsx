@@ -7,7 +7,7 @@ export default {
   title: 'Admission',
   component: Admission,
   args: {
-    theme: 'developers',
+    theme: 'Blue',
     content: [
       {
         heading: 'Introduction',
@@ -27,13 +27,18 @@ export default {
   },
   argTypes: {
     theme: {
-      options: ['developers', 'testers', 'front-end'],
+      options: ['Blue', 'Green', 'Red'],
       control: 'radio',
+      mapping: {
+        Blue: 'developers',
+        Green: 'testers',
+        Red: 'front-end',
+      },
     },
   },
 };
 
-export const AdmissionSection = (args) => {
+export const AdmissionComponent = (args) => {
   const { theme, ...rest } = args;
   return (
     <div theme={theme}>

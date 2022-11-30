@@ -35,16 +35,16 @@
       list-style-type: '\25cf';
       margin: inherit;
       padding-left: to-rem(10);
+    }
 
-      li {
-        padding-left: to-rem(16);
-      }
+    li {
+      padding-left: to-rem(16);
 
-      li::marker {
+      &::marker {
         color: var(--primary-color);
       }
 
-      li:not(:last-child) {
+      &:not(:last-child) {
         margin-bottom: to-rem(5);
       }
     }
