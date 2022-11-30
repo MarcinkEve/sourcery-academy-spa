@@ -3,7 +3,11 @@
 $_photo-size: to-rem(78);
 
 .card {
-  @include flex-box(column, center, center);
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
   @include box-shadow();
 
   background-color: $white-400;

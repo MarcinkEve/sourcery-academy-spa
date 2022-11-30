@@ -3,7 +3,7 @@
 .checkbox {
   $_this: &;
 
-  @include flex-box(row, flex-start, start);
+  @include flex-box($justify-content: flex-start, $align-items: start);
 
   &__text {
     font-size: $font-size-paragraph-l;
