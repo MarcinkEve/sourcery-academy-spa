@@ -1,14 +1,12 @@
 @import '~/sass/global';
 
-$_paragraph-width: 393px;
-
 .application-step {
   $_this: &;
 
   margin: auto;
 
   &__text-container {
-    width: $_paragraph-width;
+    max-width: to-rem(388);
   }
 
   &__heading {
@@ -26,14 +24,17 @@ $_paragraph-width: 393px;
     height: 2px;
     margin-bottom: to-rem(25);
     margin-top: to-rem(17);
+  }
 
-    svg {
-      width: 97%;
-    }
+  &__paragraph {
+    width: 98%;
   }
 
   &--odd-number {
     display: flex;
+    #{$_this}__text-container {
+      margin-right: to-rem(13);
+    }
   }
 
   &--even-number {
@@ -44,6 +45,12 @@ $_paragraph-width: 393px;
 
     #{$_this}__svg-line {
       justify-content: flex-end;
+    }
+    #{$_this}__paragraph {
+      margin-left: auto;
+    }
+    #{$_this}__svg-container {
+      margin-right: to-rem(-29);
     }
   }
 
