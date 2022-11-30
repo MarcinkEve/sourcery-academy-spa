@@ -7,7 +7,6 @@ $_button-size: to-rem(40);
   max-width: 1440px;
 
   &__title {
-    font: 700 $header-l $header-font; //need to fix h2 default styles
     margin: 0 0 to-rem(67);
     text-align: right;
   }
@@ -64,14 +63,9 @@ $_button-size: to-rem(40);
     }
   }
 
-  &__slider-tray {
-    //gap: 180px;
-  }
-
   &__card {
     margin-bottom: to-rem($_shadow-size);
     margin-left: to-rem($_shadow-size);
     width: initial !important; //overriding carousel inline styles
   }
 }
-
