@@ -6,17 +6,18 @@ import ApplicationStep from './ApplicationStep';
 
 import './applicationProcess.scss';
 
-export const ApplicationProcess = ({ stepsDataArray }) => {
+export const ApplicationProcess = ({ textsArray, iconsArray }) => {
   return (
     <div className="application-process">
-      {stepsDataArray &&
-        stepsDataArray.map(({ id, heading, paragraph, icon }, index) => (
+      {textsArray &&
+        iconsArray &&
+        textsArray.map(({ id, heading, paragraph }, index) => (
           <ApplicationStep
             key={id}
             heading={heading}
             paragraph={paragraph}
             indexFromParent={index}
-            icon={icon}
+            iconObject={iconsArray.find((item) => item.id === id)}
           />
         ))}
     </div>
@@ -24,7 +25,7 @@ export const ApplicationProcess = ({ stepsDataArray }) => {
 };
 
 ApplicationProcess.propTypes = {
-  stepsDataArray: arrayOf(
-    shape({ id: number, heading: string, paragraph: string, icon: element })
-  ).isRequired,
+  textsArray: arrayOf(shape({ id: number, heading: string, paragraph: string }))
+    .isRequired,
+  iconsArray: arrayOf(shape({ id: number, icon: element })).isRequired,
 };
