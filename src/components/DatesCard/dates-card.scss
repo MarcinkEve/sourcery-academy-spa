@@ -38,7 +38,7 @@
 
   &__text {
     color: var(--primary-color);
-    font-size: to-rem(18);
+    font-size: $font-size-paragraph-l;
     margin: to-rem(15) 0 to-rem(13) to-rem(16);
   }
 }

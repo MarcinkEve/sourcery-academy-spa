@@ -9,7 +9,7 @@
   border-radius: 17px;
   color: $white-400;
   cursor: pointer;
-  line-height: 1.5;
+  line-height: $line-height-l;
   min-height: to-rem(60);
   overflow: hidden;
   transition: all 0.2s;
@@ -22,8 +22,8 @@
     transition: all 0.2s;
 
     &-name {
-      font-size: $paragraph-l;
-      font-weight: 700;
+      font-size: $font-size-paragraph-l;
+      font-weight: $font-bold;
       max-width: to-rem(193);
     }
 
@@ -53,7 +53,7 @@
   &__lecturer {
     background-color: var(--primary-color);
     border-radius: 0 0 0 15px;
-    font-size: $paragraph-s;
+    font-size: $font-size-paragraph-s;
     padding: 0 to-rem(20) to-rem(20);
     transition: all 0.2s;
 
@@ -102,11 +102,14 @@
     #{$_this}__lecturer,
     #{$_this}__title {
       background-color: var(--button-active);
+      transition: background-color $transition-time-fast ease;
     }
 
     .location {
       @include themed-border(var(--button-active));
     }
+
+    transition: border-color $transition-time-fast ease;
   }
 
   &:focus {
@@ -123,10 +126,13 @@
     #{$_this}__lecturer,
     #{$_this}__title {
       background-color: var(--button-hover);
+      transition: background-color $transition-time-fast ease;
     }
 
     .location {
       @include themed-border(var(--button-hover));
     }
+
+    transition: border-color $transition-time-fast ease;
   }
 }

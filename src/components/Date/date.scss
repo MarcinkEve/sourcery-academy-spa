@@ -16,11 +16,11 @@
   }
 
   &__month {
-    font-size: to-rem(14);
+    font-size: $font-size-paragraph-s;
   }
 
   &__day {
-    font-size: to-rem(18);
+    font-size: $font-size-paragraph-l;
     font-weight: $font-bold;
   }
 }

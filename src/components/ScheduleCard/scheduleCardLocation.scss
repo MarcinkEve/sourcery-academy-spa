@@ -24,13 +24,13 @@
   }
 
   &__month {
-    font-size: $paragraph-s;
+    font-size: $font-size-paragraph-s;
     line-height: to-rem(16);
   }
 
   &__day {
-    font-size: $paragraph-l;
-    font-weight: 700;
+    font-size: $font-size-paragraph-l;
+    font-weight: $font-bold;
     line-height: to-rem(21);
   }
   // COMPONENT / SVG
@@ -44,6 +44,6 @@
   }
 
   &__city {
-    font-size: $paragraph-l;
+    font-size: $font-size-paragraph-l;
   }
 }

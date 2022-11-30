@@ -6,8 +6,8 @@
   @include flex-box(row, flex-start, start);
 
   &__text {
-    font-size: $paragraph-l;
-    line-height: 1.15;
+    font-size: $font-size-paragraph-l;
+    line-height: $line-height-m;
     margin: 0 0 0 to-rem(25);
   }
 
