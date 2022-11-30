@@ -98,6 +98,7 @@
   &:focus-visible,
   &:active {
     border-color: var(--button-active);
+    transition: border-color $transition-time-fast ease;
 
     #{$_this}__lecturer,
     #{$_this}__title {
@@ -108,8 +109,6 @@
     .location {
       @include themed-border(var(--button-active));
     }
-
-    transition: border-color $transition-time-fast ease;
   }
 
   &:focus {
@@ -122,6 +121,7 @@
 
   &:hover {
     border-color: var(--button-hover);
+    transition: border-color $transition-time-fast ease;
 
     #{$_this}__lecturer,
     #{$_this}__title {
@@ -132,7 +132,5 @@
     .location {
       @include themed-border(var(--button-hover));
     }
-
-    transition: border-color $transition-time-fast ease;
   }
 }
