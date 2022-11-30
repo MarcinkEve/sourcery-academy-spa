@@ -9,25 +9,28 @@ import Header from '../Header';
 import Homepage from '../Pages/Homepage';
 import Kids from '../Pages/Kids';
 import PageLayout from '../../layout/pageLayout';
+import { ROUTES } from '../../constants/routes';
 import Testers from '../Pages/Testers';
 
 export default function index() {
+  const { HOME, DEVELOPERS, FRONTEND, KIDS, TESTERS, APPLICATION } = ROUTES;
+
   return (
     <>
       <BrowserRouter>
         <Header />
         <PageLayout>
           <Routes>
-            <Route path="/" element={<Homepage theme="home" />} />
+            <Route path={HOME} element={<Homepage theme="home" />} />
             <Route
-              path="/developers"
+              path={DEVELOPERS}
               element={<Developers theme="developers" />}
             />
-            <Route path="/frontend" element={<FrontEnd theme="front-end" />} />
-            <Route path="/kids" element={<Kids />} />
-            <Route path="/testers" element={<Testers theme="testers" />} />
+            <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
+            <Route path={KIDS} element={<Kids />} />
+            <Route path={TESTERS} element={<Testers theme="testers" />} />
             <Route
-              path="/applicationform"
+              path={APPLICATION}
               element={<ApplicationForm theme="application" />}
             />
           </Routes>

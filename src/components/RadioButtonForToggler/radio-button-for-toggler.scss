@@ -1,6 +1,8 @@
-@import '../../sass/global';
+@import '~/sass/global';
 
 .radio-toggler {
+  $_this: &;
+
   &__label {
     @include flex-box(
       $direction: row,
@@ -39,12 +41,15 @@
   }
 
   &__input {
+    clip-path: circle(0%);
     height: 0;
     position: absolute;
     width: 0;
-  }
 
-  &__input:focus-visible + &__label {
-    outline: 4px dashed $orange-200;
+    &:focus-visible {
+      + #{$_this}__label {
+        outline: 4px dashed $orange-200;
+      }
+    }
   }
 }
