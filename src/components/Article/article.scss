@@ -44,13 +44,11 @@
     border: 2px solid $violet-700;
     border-radius: 50%;
     height: to-rem(48);
-    padding-top: to-rem(8);
     width: to-rem(48);
   }
 
   &__icon-arrow-down {
     animation: bounce 1.2s ease-in-out infinite;
-    height: to-rem(22);
   }
 
   &__bottom-particles {
@@ -66,7 +64,7 @@
   }
 
   50% {
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
 
   100% {
