@@ -5,10 +5,6 @@
     margin: 0 0 $spacer-l 0;
   }
 
-  &--right {
-    text-align: right;
-  }
-
   &__heading {
     margin: 0 0 $spacer-m 0;
 
@@ -43,11 +39,24 @@
       &::marker {
         color: var(--primary-color);
       }
+    }
+  }
 
-      &:not(:last-child) {
-        margin-bottom: to-rem(5);
+  &--right {
+    text-align: right;
+
+    ul {
+      padding-right: to-rem(10);
+
+      li {
+        direction: rtl;
+        padding-right: to-rem(16);
       }
     }
+  }
+
+  li:not(:last-child) {
+    margin-bottom: to-rem(5);
   }
 
   &__button-wrapper {
