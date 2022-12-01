@@ -9,7 +9,7 @@ import ArrowDownArticle from '../../assets/icons/icon-arrow-down-article.svg';
 
 export const Article = ({ title, content }) => {
   return (
-    <section className="article">
+    <section className="article" id="acad">
       <ArticleTopParticles className="article__top-particles" />
       <div className="article__content-wrapper">
         <h2 className="article__title">{title}</h2>
