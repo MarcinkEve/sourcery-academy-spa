@@ -12,14 +12,14 @@
   line-height: $line-height-l;
   min-height: to-rem(60);
   overflow: hidden;
-  transition: all 0.2s;
+  transition: all $transition-time-fast;
   width: to-rem(266);
 
   &__title {
     background-color: var(--primary-color);
     display: flex;
     padding: to-rem(20);
-    transition: all 0.2s;
+    transition: all $transition-time-fast;
 
     &-name {
       font-size: $font-size-paragraph-l;
@@ -32,7 +32,7 @@
       height: to-rem(13);
       margin-left: auto;
       margin-top: to-rem(9);
-      transition: all 0.5s ease-in-out;
+      transition: all $transition-time-slow ease-in-out;
 
       &--up {
         margin-top: to-rem(3);
@@ -45,7 +45,7 @@
   // REACT-SLIDER-COMPONENT/CONTROLS
   &__slider {
     border-radius: 0 0 15px 15px;
-    transition-duration: 0.5s;
+    transition-duration: $transition-time-slow;
     transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
   }
 
@@ -55,7 +55,7 @@
     border-radius: 0 0 0 15px;
     font-size: $font-size-paragraph-s;
     padding: 0 to-rem(20) to-rem(20);
-    transition: all 0.2s;
+    transition: all $transition-time-fast;
 
     &-credentials {
       display: flex;

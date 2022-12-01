@@ -49,7 +49,7 @@
       padding: to-rem(16) to-rem(23) to-rem(16) to-rem(20);
       position: relative;
       text-decoration: none;
-      transition: background-color 0.2s;
+      transition: background-color $transition-time-fast;
       width: 100%;
 
       &:hover,
