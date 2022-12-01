@@ -8,6 +8,6 @@
   grid-template-rows: repeat(2, auto);
 
   &--single-column {
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
