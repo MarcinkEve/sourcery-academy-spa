@@ -4,10 +4,8 @@ import PageLayout from '~/layout/pageLayout';
 
 export const Developers = ({ theme }) => {
   return (
-    <PageLayout>
-      <div theme={theme}>
-        <h1 style={{ textAlign: 'center' }}>Sourcery for Developers</h1>
-      </div>
+    <PageLayout theme={theme}>
+      <h1 style={{ textAlign: 'center' }}>Sourcery for Developers</h1>
     </PageLayout>
   );
 };

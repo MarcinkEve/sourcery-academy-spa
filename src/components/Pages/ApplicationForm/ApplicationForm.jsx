@@ -9,8 +9,8 @@ import PageLayout from '~/layout/pageLayout';
 
 export const ApplicationForm = ({ title, theme }) => {
   return (
-    <PageLayout>
-      <div theme={theme} className="form-layout">
+    <PageLayout theme={theme}>
+      <div className="form-layout">
         <h1 className="form-layout__container-header">{title}</h1>
         <div className="form-layout__content-container">
           <div className="form-layout__content">
