@@ -22,8 +22,7 @@
     color: var(--primary-color);
     display: flex;
     height: 2px;
-    margin-bottom: to-rem(25);
-    margin-top: to-rem(17);
+    margin: to-rem(17) 0 to-rem(25);
   }
 
   &__paragraph {
