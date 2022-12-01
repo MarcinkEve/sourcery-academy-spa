@@ -1,1 +1,19 @@
 @import '~/sass/global';
+
+.intro-section {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  margin: to-rem(194) 0 to-rem(420);
+
+  &__paragraph {
+    max-width: to-rem(460);
+  }
+
+  &__image {
+    max-width: to-rem(634);
+  }
+}

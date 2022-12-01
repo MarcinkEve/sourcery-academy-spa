@@ -7,13 +7,17 @@ import ArticleBottomParticles from '../../assets/icons/icon-article-bottom-parti
 import VerticalLine from '../../assets/icons/icon-vertical-line-article.svg';
 import ArrowDownArticle from '../../assets/icons/icon-arrow-down-article.svg';
 
-export const Article = ({ title, content }) => {
+export const Article = ({ articleTitle, articleContent }) => {
   return (
-    <section className="article" id="acad">
+    <section className="article">
       <ArticleTopParticles className="article__top-particles" />
       <div className="article__content-wrapper">
-        <h2 className="article__title">{title}</h2>
-        <p className="article__content">{content}</p>
+        <h2 className="article__title">
+          {articleTitle ? articleTitle : 'Text is missing...'}
+        </h2>
+        <p className="article__content">
+          {articleContent ? articleContent : 'Text is missing...'}
+        </p>
         <div className="article__icon-wrapper">
           <VerticalLine className="article__icon-line" />
           <div className="article__icon-circle" title="More info below">
@@ -27,14 +31,6 @@ export const Article = ({ title, content }) => {
 };
 
 Article.propTypes = {
-  title: string.isRequired,
-  content: string.isRequired,
-};
-
-Article.defaultProps = {
-  title: 'Academies',
-  content: `There are four disciplines available: for developers, testers, front-end developers and kids. Academies are taking place
-  in Devbridge Lithuanian offices. Students, who are willing to join developers, testers or Front-End academies, need to
-  pass the test, prove their best to get an invitation to enroll. This rule doesn’t apply to the kids (7 to 12 years old) academy,
-  the admission is limited only by available number of entries.`,
+  articleTitle: string.isRequired,
+  articleContent: string.isRequired,
 };

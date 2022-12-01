@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, element, oneOf, string } from 'prop-types';
+import { bool, oneOf, string } from 'prop-types';
 
 import './intro-section.scss';
 import IntroIcon from '../../assets/icons/icon-intro.svg';
@@ -41,15 +41,4 @@ IntroSection.propTypes = {
   paragraphContent: string.isRequired,
   buttonText: string,
   pageRoute: oneOf([...Object.values(ROUTES)]),
-};
-
-IntroSection.defaultProps = {
-  isRightAlligned: false,
-  isHeadingSpacingLarge: true,
-  headingContent: 'Sourcery Academy',
-  isParagraphTextBold: false,
-  paragraphContent:
-    'Sourcery academy is our free of charge education program created to allow students to improve their skills and prepare for a career in the IT industry. There are three academies available. They serve as our long-term commitment to increase the number of students in Lithuania entering information technologies studies.',
-  buttonText: 'View academies',
-  pageRoute: ROUTES.ACADEMIES,
 };
