@@ -24,17 +24,11 @@ function useWindowSizeUpdates(func, deps) {
 export const TestimonialWrapper = ({ title, data, alt }) => {
   const ref = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
+  const updateWidth = () =>
+    ref.current && setContainerWidth(ref.current.offsetWidth);
 
-  // Set initial width
-  useEffect(() => ref.current && setContainerWidth(ref.current.offsetWidth), [
-    ref,
-  ]);
-  // Update width state when page size changes
-  useWindowSizeUpdates(() => {
-    if (ref.current) {
-      setContainerWidth(ref.current.offsetWidth);
-    }
-  }, [ref]);
+  useEffect(updateWidth, [ref]);
+  useWindowSizeUpdates(updateWidth, [ref]);
 
   const testimonialCardWidth = parseInt(cardWidth) + parseInt(shadowSize);
   const gap = (containerWidth - testimonialCardWidth * 3) / 2;
