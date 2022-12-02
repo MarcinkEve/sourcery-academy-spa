@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import ApplicationForm from '../Pages/ApplicationForm';
+import ApplicationPage from '../Pages/ApplicationPage';
 import Developers from '../Pages/Developers';
 import { Footer } from '../Footer/Footer';
 import FrontEnd from '../Pages/FrontEnd';
@@ -29,7 +29,7 @@ export default function index() {
           <Route path={TESTERS} element={<Testers theme="testers" />} />
           <Route
             path={APPLICATION}
-            element={<ApplicationForm theme="application" />}
+            element={<ApplicationPage theme="application" />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,27 @@
+@import '~/sass/global';
+
+.application-form {
+  //   display: block;
+
+  &__section {
+    &:not(:first-child) {
+      margin-top: to-rem(60);
+    }
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  &__styled-input {
+    margin-top: to-rem(60);
+  }
+
+  &__simple-input {
+    margin-top: to-rem(20);
+
+    &:first-child {
+      margin-top: to-rem(30);
+    }
+  }
+}

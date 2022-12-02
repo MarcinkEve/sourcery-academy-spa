@@ -5,6 +5,8 @@
 
   &__label {
     @include label;
+
+    text-transform: capitalize;
   }
 
   &__input {
