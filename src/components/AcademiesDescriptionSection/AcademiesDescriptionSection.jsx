@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../academies-description-section.scss';
+import './academies-description-section.scss';
 
 export const AcademiesDescriptionSection = () => {
   return (
