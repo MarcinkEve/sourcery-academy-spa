@@ -16,7 +16,7 @@ export const IntroSection = ({
   pageRoute,
 }) => {
   return (
-    <div className="intro-section">
+    <section className="intro-section">
       <div className="intro-section__paragraph">
         <TextSection
           isRightAlligned={isRightAlligned}
@@ -29,7 +29,7 @@ export const IntroSection = ({
         />
       </div>
       <IntroIcon className="intro-section__image" />
-    </div>
+    </section>
   );
 };
 

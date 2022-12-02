@@ -2,7 +2,8 @@ import React from 'react';
 import { bool, oneOf, string } from 'prop-types';
 
 import { ROUTES } from '../../../constants/routes';
-import HomeFirstSection from '../../HomeFirstSection';
+import IntroSection from '../../IntroSection';
+import Article from '../../Article';
 
 export const Homepage = ({
   theme,
@@ -19,7 +20,8 @@ export const Homepage = ({
   return (
     <div theme={theme}>
       <h1 style={{ textAlign: 'center' }}>Homepage</h1>
-      <HomeFirstSection
+
+      <IntroSection
         isRightAlligned={isRightAlligned}
         isHeadingSpacingLarge={isHeadingSpacingLarge}
         headingContent={headingContent}
@@ -27,9 +29,8 @@ export const Homepage = ({
         paragraphContent={paragraphContent}
         buttonText={buttonText}
         pageRoute={pageRoute}
-        articleTitle={articleTitle}
-        articleContent={articleContent}
       />
+      <Article articleTitle={articleTitle} articleContent={articleContent} />
     </div>
   );
 };
