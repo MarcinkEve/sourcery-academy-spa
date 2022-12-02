@@ -1,8 +1,6 @@
 .media {
   border-radius: 15px;
   max-width: 1086px;
-  // .media-player {
-  // }
   position: relative;
 
   video {
@@ -12,7 +10,6 @@
   }
 
   .media-controls {
-    // background-color: #584dfc;
     border-radius: 0 0 15px 15px;
     bottom: 5px;
     display: flex;
@@ -32,37 +29,22 @@
       &:hover {
         background-color: #3d3691;
       }
+
+      &:hover + .time-btn {
+        background-color: #3d3691;
+      }
     }
 
     .time-btn {
-      align-self: center;
-      color: white;
-      cursor: pointer;
-      left: 80px;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .seek-btn {
-      background-color: rgba(61, 54, 145, 0.5);
-      border-radius: 0 0 0 15px;
-      border-style: none;
-      height: 100%;
-      margin-right: auto;
-      // opacity: 0.5;
-      width: 100%;
-    }
-
-    .vol {
+      align-items: center;
       background-color: #584dfc;
-      border-style: none;
-      cursor: pointer;
-      flex-shrink: 0;
+      border-right: 1px solid white;
+      color: white;
+      cursor: default;
+      height: 100%;
+      padding-left: 10px;
+      padding-top: 13px;
       width: 69px;
-
-      &:hover {
-        background-color: #3d3691;
-      }
     }
 
     .settings-btn {
@@ -74,18 +56,6 @@
       &:hover {
         background-color: #3d3691;
       }
-    }
-
-    .volume-btn {
-      -webkit-appearance: none;
-      background: #d3d3d3;
-      height: 100%;
-      opacity: 0.7;
-      outline: none;
-      transform: rotate(-90deg);
-      // -webkit-transition: 0.2s;
-      // transition: opacity 0.2s;
-      width: 100%;
     }
 
     .full-screen-btn {
@@ -102,101 +72,77 @@
       }
     }
 
-    .volume-btn::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      background: #04aa6d;
-      cursor: pointer;
-      height: 100%;
-      width: 5px;
+    .volume-controls {
+      border-left: 1px solid white;
+      position: relative;
+
+      &:hover .volume-btn {
+        display: inline-block;
+      }
+
+      .vol {
+        background-color: #584dfc;
+        border-style: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        height: 100%;
+        width: 69px;
+
+        &:hover {
+          background-color: #3d3691;
+        }
+      }
+
+      .volume-btn {
+        -webkit-appearance: none;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-left: 1px solid white;
+        bottom: 63px;
+        display: none;
+        height: 69px;
+        opacity: 1;
+        outline: none;
+        position: absolute;
+        right: -16px;
+        transform: rotate(-90deg);
+        width: 100px;
+      }
     }
 
-    .volume-btn::-moz-range-thumb {
-      background: #04aa6d;
-      cursor: pointer;
+    .seek-btn {
+      background-color: rgba(61, 54, 145, 0.5);
+      border-style: none;
       height: 100%;
-      width: 5px;
-    }
-    // SEEK BAR ----
-    input[type='range'] {
-      -webkit-appearance: none;
-      // background-color: #584dfc;
-      border-radius: 0; /* iOS */
-      cursor: pointer;
-      height: 100%;
-      margin: auto;
-      // opacity: 0.5;
-      overflow: hidden;
-      position: relative;
+      margin-right: auto;
       width: 100%;
     }
 
-    ::-webkit-slider-runnable-track {
-      background: #ddd;
-    }
-
-    /*
-* 1. Set to 0 width and remove border for a slider without a thumb
-* 2. Shadow is negative the full width of the input and has a spread 
-*    of the width of the input.
-*/
-    ::-webkit-slider-thumb {
+    input {
       -webkit-appearance: none;
-      background: #fff;
-      border: 2px solid #999; /* 1 */
-      box-shadow: -200px 0 0 200px dodgerblue; /* 2 */
-      height: 40px;
-      width: 20px; /* 1 */
-    }
-
-    ::-moz-range-track {
-      // background: rgba(252, 249, 77, 1);
-      // border: 1px solid #4dfc4d;
-      // background-color: transparent;
+      border-radius: 0;
+      cursor: pointer;
       height: 100%;
-    }
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
 
-    ::-moz-range-thumb {
-      // background: #fff;
-      border: 1px solid #3d3691;
-      // border-radius: 0 !important;
-      box-shadow: -1000px 0 0 1000px #3d3691;
-      box-sizing: border-box;
-      height: 100%;
-      width: 0;
-    }
+      &::-moz-range-thumb {
+        border: 1px solid #3d3691;
+        box-shadow: -1000px 0 0 1000px #3d3691;
+        box-sizing: border-box;
+        height: 100%;
+        width: 0;
+      }
 
-    ::-ms-fill-lower {
-      background: dodgerblue;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #3d3691;
+        box-shadow: -1000px 0 0 1000px #3d3691;
+        height: 100%;
+        width: 0;
+      }
     }
-
-    ::-ms-thumb {
-      // background: #fff;
-      // border: 2px solid #999;
-      box-sizing: border-box;
-      height: 40px;
-      width: 20px;
-    }
-
-    ::-ms-ticks-after {
-      display: none;
-    }
-
-    ::-ms-ticks-before {
-      display: none;
-    }
-
-    ::-ms-track {
-      background: #ddd;
-      border: none;
-      color: transparent;
-      height: 40px;
-    }
-
-    ::-ms-tooltip {
-      display: none;
-    }
-    // -------------
   }
 }
 
