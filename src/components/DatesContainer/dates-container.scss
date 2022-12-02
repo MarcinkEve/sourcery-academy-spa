@@ -9,5 +9,9 @@
     color: var(--primary-color);
     margin-bottom: to-rem(36);
     text-align: right;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 }
