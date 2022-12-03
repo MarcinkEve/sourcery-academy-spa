@@ -1,6 +1,7 @@
 import React from 'react';
 import { shape, arrayOf } from 'prop-types';
 
+import { scheduleCardType } from '~/components/ScheduleCard/types';
 import ScheduleCard from '~/components/ScheduleCard';
 import './schedule-subcolumn.scss';
 
@@ -17,5 +18,5 @@ export const ScheduleSubcolumn = ({ subcolumnData }) => (
 );
 
 ScheduleSubcolumn.propTypes = {
-  subcolumnData: arrayOf(shape).isRequired,
+  subcolumnData: arrayOf(shape(scheduleCardType)).isRequired,
 };
