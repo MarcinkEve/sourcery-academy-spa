@@ -12,13 +12,11 @@
   &__heading {
     @include padding-margin-0;
 
-    // --primary-color to get color from theme selected
     color: var(--primary-color);
     margin-top: to-rem(23);
   }
 
   &__svg-line {
-    // --primary-color to get color from theme selected
     color: var(--primary-color);
     display: flex;
     height: 2px;
@@ -29,14 +27,15 @@
     width: 98%;
   }
 
-  &--odd-number {
+  &__odd-number {
     display: flex;
+
     #{$_this}__text-container {
       margin-right: to-rem(13);
     }
   }
 
-  &--even-number {
+  &__even-number {
     display: flex;
     flex-direction: row-reverse;
     text-align: right;
@@ -45,9 +44,11 @@
     #{$_this}__svg-line {
       justify-content: flex-end;
     }
+
     #{$_this}__paragraph {
       margin-left: auto;
     }
+
     #{$_this}__svg-container {
       margin-right: to-rem(-29);
     }
@@ -55,7 +56,6 @@
 
   &__svg-container {
     align-items: flex-start;
-    // --primary-color to get color from theme selected
     color: var(--primary-color);
     display: flex;
     width: to-rem(225);

@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { number, arrayOf, shape, string, element } from 'prop-types';
 
-import ApplicationStep from './ApplicationStep';
-
+import { ApplicationStep } from './ApplicationStep';
 import './applicationProcess.scss';
 
 export const ApplicationProcess = ({ textsArray, iconsArray }) => {
