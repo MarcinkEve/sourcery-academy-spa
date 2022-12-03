@@ -7,9 +7,10 @@ import TextSection from '~/components/TextSection';
 const renderList = (list) => {
   return (
     <ul>
-      {list.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
+      {list.map((item, index) => {
+        if (item === '') return;
+        return <li key={index}>{item}</li>;
+      })}
     </ul>
   );
 };
