@@ -9,6 +9,18 @@
     width: 100%;
   }
 
+  .play-screen {
+    background-color: transparent;
+    border-style: none;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 5;
+  }
+
   .media-controls {
     border-radius: 0 0 15px 15px;
     bottom: 5px;
@@ -16,6 +28,7 @@
     height: 48px;
     position: absolute;
     width: 100%;
+    z-index: 10;
 
     .play-btn {
       background-color: #584dfc;
@@ -36,7 +49,6 @@
     }
 
     .time-btn {
-      align-items: center;
       background-color: #584dfc;
       border-right: 1px solid white;
       color: white;

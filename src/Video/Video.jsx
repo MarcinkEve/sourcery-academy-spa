@@ -2,6 +2,7 @@ import React from 'react';
 import { Media, Player, controls } from 'react-media-player';
 import './video.scss';
 import CustomPlayPause from './CustomPlayPause';
+import CustomPlayPauseOnScreen from './CustomPlayPauseOnScreen';
 import CustomFullscreen from './CustomFullscreen';
 import CustomVolume from './CustomVolume';
 import Settings from '../assets/icons/icon-settings.svg';
@@ -13,9 +14,10 @@ export const Video = () => {
     <Media>
       <div className="media">
         <div className="media-player">
+          <CustomPlayPauseOnScreen className="play-screen" />
           <Player
             src="https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4"
-            autoplay={true}
+            autoPlay={true}
           />
         </div>
         <div className="media-controls">

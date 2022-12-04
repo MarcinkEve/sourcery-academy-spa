@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+import { any, string } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
 import IconPause from '../assets/icons/icon-pause.svg';
@@ -12,6 +12,9 @@ class CustomPlayPause extends Component {
   _handlePlayPause = () => {
     this.props.media.playPause();
   };
+  _handleFullscreen = () => {
+    this.props.media.fullscreen();
+  };
   render() {
     const { className, style, media } = this.props;
     return (
@@ -20,12 +23,9 @@ class CustomPlayPause extends Component {
         className={className}
         style={style}
         onClick={this._handlePlayPause}
+        onDoubleClick={this._handleFullscreen}
       >
-        {media.isPlaying ? (
-          <IconPause className="pause-icon" />
-        ) : (
-          <IconPlay className="play-icon" />
-        )}
+        {!media.isPlaying && <IconPause className="pause-icon" />}
       </button>
     );
   }

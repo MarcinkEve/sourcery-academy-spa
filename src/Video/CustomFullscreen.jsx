@@ -1,4 +1,4 @@
-import { any } from 'prop-types';
+import { object, string } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
 import IconFullscreen from '../assets/icons/icon-fullscreen.svg';
@@ -28,7 +28,7 @@ class CustomFullscreen extends Component {
 export default withMediaProps(CustomFullscreen);
 
 CustomFullscreen.propTypes = {
-  media: any,
-  className: any,
-  style: any,
+  media: object,
+  className: string,
+  style: string,
 };
