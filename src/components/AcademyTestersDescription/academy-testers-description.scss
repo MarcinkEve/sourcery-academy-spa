@@ -1,0 +1,42 @@
+@import '~/sass/global';
+
+.testers-description {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: flex-start
+  );
+
+  // padding-top: to-rem(17);
+  // position: relative;
+
+  &__content {
+    max-width: to-rem(542);
+    padding-top: to-rem(77);
+    position: relative;
+  }
+
+  &__top-particles {
+    // left: to-rem(374);
+    margin-bottom: to-rem(15);
+    max-width: to-rem(125);
+    position: absolute;
+    right: to-rem(44);
+    top: to-rem(0);
+  }
+
+  &__bottom-particles {
+    // top: to-rem(-145);
+    bottom: 0;
+    // left: to-rem(249);
+    max-width: to-rem(230);
+    position: absolute;
+  }
+
+  &__icon {
+    left: to-rem(-57);
+    max-width: to-rem(693);
+    position: relative;
+    z-index: -1;
+  }
+}

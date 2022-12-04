@@ -1,0 +1,82 @@
+// @import '~/sass/global';
+
+// .developers-description {
+//   @include flex-box(
+//     $direction: row,
+//     $justify-content: space-between,
+//     $align-items: flex-start
+//   );
+
+//   padding-top: to-rem(200);
+//   position: relative;
+
+//   &__top-particles {
+//     left: to-rem(25);
+//     margin-bottom: to-rem(15);
+//     max-width: to-rem(126);
+//     position: relative;
+//   }
+
+//   &__content {
+//     max-width: to-rem(552);
+//   }
+
+//   &__button-particles {
+//     left: to-rem(249);
+//     max-width: to-rem(190);
+//     position: relative;
+//     top: to-rem(-145);
+//   }
+
+//   &__icon {
+//     max-width: to-rem(665);
+//     position: absolute;
+//     right: to-rem(-53);
+//     top: 0;
+//     z-index: -1;
+//   }
+// }
+@import '~/sass/global';
+
+.developers-description {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  margin-bottom: to-rem(-141);
+  margin-top: to-rem(130);
+  // min-height: to-rem(354);
+  // position: relative;
+
+  &__top-particles {
+    margin-bottom: to-rem(15);
+    max-width: to-rem(126);
+    position: relative;
+    right: 0;
+  }
+
+  &__content {
+    max-width: to-rem(552);
+    // padding: to-rem(15) 0 0;
+  }
+
+  &__bottom-particles {
+    left: to-rem(249);
+    max-width: to-rem(190);
+    position: relative;
+    top: to-rem(-145);
+  }
+
+  &__icon {
+    // margin: to-rem(60) 0 0;
+    max-width: to-rem(665);
+    // max-width: to-rem(430);
+    position: relative;
+    right: to-rem(-53);
+    // top: 0;
+    top: to-rem(-130);
+    z-index: -1;
+  }
+}
