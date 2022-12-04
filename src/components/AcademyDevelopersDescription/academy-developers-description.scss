@@ -11,7 +11,7 @@
 //   position: relative;
 
 //   &__top-particles {
-//     left: to-rem(25);
+//    // left: to-rem(25);
 //     margin-bottom: to-rem(15);
 //     max-width: to-rem(126);
 //     position: relative;
@@ -47,19 +47,17 @@
 
   margin-bottom: to-rem(-141);
   margin-top: to-rem(130);
-  // min-height: to-rem(354);
-  // position: relative;
 
   &__top-particles {
-    margin-bottom: to-rem(15);
+    left: to-rem(25);
     max-width: to-rem(126);
-    position: relative;
-    right: 0;
+    position: absolute;
+    top: to-rem(-68);
   }
 
   &__content {
     max-width: to-rem(552);
-    // padding: to-rem(15) 0 0;
+    position: relative;
   }
 
   &__bottom-particles {
@@ -70,12 +68,9 @@
   }
 
   &__icon {
-    // margin: to-rem(60) 0 0;
     max-width: to-rem(665);
-    // max-width: to-rem(430);
     position: relative;
     right: to-rem(-53);
-    // top: 0;
     top: to-rem(-130);
     z-index: -1;
   }

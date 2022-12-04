@@ -32,8 +32,8 @@
 
   &__icon {
     left: to-rem(-57);
-    max-width: to-rem(693);
     position: relative;
+    width: to-rem(693);
     z-index: -1;
   }
 }

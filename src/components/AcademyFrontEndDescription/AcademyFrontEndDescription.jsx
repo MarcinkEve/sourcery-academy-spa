@@ -59,5 +59,5 @@ AcademyFrontEndDescription.defaultProps = {
   paragraphContent:
     'Start your career in software development with the intense program at Sourcery for Front-End Developers. Complete the admission and enter our free of charge two-month academy this autumn in Vilnius to learn from our top specialists.',
   buttonText: 'Learn more',
-  pageRoute: ROUTES.TESTERS,
+  pageRoute: ROUTES.FRONTEND,
 };
