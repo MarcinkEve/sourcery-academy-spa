@@ -3,6 +3,7 @@ import React from 'react';
 import './academies-description-section.scss';
 import AcademyDevelopersDescription from '../AcademyDevelopersDescription';
 import AcademyTestersDescription from '../AcademyTestersDescription';
+import AcademyFrontEndDescription from '../AcademyFrontEndDescription';
 
 export const AcademiesDescriptionSection = () => {
   return (
@@ -12,6 +13,7 @@ export const AcademiesDescriptionSection = () => {
     >
       <AcademyDevelopersDescription />
       <AcademyTestersDescription />
+      <AcademyFrontEndDescription />
     </section>
   );
 };
