@@ -12,18 +12,17 @@
   line-height: $line-height-l;
   min-height: to-rem(60);
   overflow: hidden;
-  transition: all $transition-time-fast;
+  transition: $transition-time-200;
   width: to-rem(266);
 
   &__title {
     background-color: var(--primary-color);
     display: flex;
     padding: to-rem(20);
-    transition: all $transition-time-fast;
+    transition: $transition-time-200;
 
     &-name {
-      font-size: $font-size-paragraph-l;
-      font-weight: $font-bold;
+      font-weight: $font-weight-bold;
       max-width: to-rem(193);
     }
 
@@ -32,7 +31,7 @@
       height: to-rem(13);
       margin-left: auto;
       margin-top: to-rem(9);
-      transition: all $transition-time-slow ease-in-out;
+      transition: $transition-time-400 ease-in-out;
 
       &--up {
         margin-top: to-rem(3);
@@ -45,7 +44,7 @@
   // REACT-SLIDER-COMPONENT/CONTROLS
   &__slider {
     border-radius: 0 0 15px 15px;
-    transition-duration: $transition-time-slow;
+    transition-duration: $transition-time-400;
     transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
   }
 
@@ -53,9 +52,9 @@
   &__lecturer {
     background-color: var(--primary-color);
     border-radius: 0 0 0 15px;
-    font-size: $font-size-paragraph-s;
+    font-size: $font-size-s;
     padding: 0 to-rem(20) to-rem(20);
-    transition: all $transition-time-fast;
+    transition: $transition-time-200;
 
     &-credentials {
       display: flex;
@@ -91,6 +90,7 @@
     background-color: $white-400;
     border-radius: 0 0 14px 14px;
     padding: to-rem(20);
+    transition: $transition-time-200 ease;
   }
 
   // COMPONENT STATES
@@ -98,12 +98,10 @@
   &:focus-visible,
   &:active {
     border-color: var(--button-active);
-    transition: border-color $transition-time-fast ease;
 
     #{$_this}__lecturer,
     #{$_this}__title {
       background-color: var(--button-active);
-      transition: background-color $transition-time-fast ease;
     }
 
     .location {
@@ -121,12 +119,10 @@
 
   &:hover {
     border-color: var(--button-hover);
-    transition: border-color $transition-time-fast ease;
 
     #{$_this}__lecturer,
     #{$_this}__title {
       background-color: var(--button-hover);
-      transition: background-color $transition-time-fast ease;
     }
 
     .location {

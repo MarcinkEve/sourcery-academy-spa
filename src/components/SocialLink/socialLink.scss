@@ -13,6 +13,7 @@
   color: $violet-700;
   height: to-rem(40);
   outline-color: $violet-700;
+  transition: $transition-time-200 ease;
   width: to-rem(40);
 
   &:hover,
@@ -20,7 +21,6 @@
     box-shadow: rgba(61, 54, 145, 0.3) 0 1px 2px 0,
       rgba(61, 54, 145, 0.15) 0 2px 6px 3px;
     transform: scale(1.07);
-    transition: all $transition-time-fast ease;
   }
 
   &__icon {

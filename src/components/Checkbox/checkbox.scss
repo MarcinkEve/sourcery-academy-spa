@@ -6,8 +6,6 @@
   @include flex-box($justify-content: flex-start, $align-items: start);
 
   &__text {
-    font-size: $font-size-paragraph-l;
-    line-height: $line-height-m;
     margin: 0 0 0 to-rem(25);
   }
 

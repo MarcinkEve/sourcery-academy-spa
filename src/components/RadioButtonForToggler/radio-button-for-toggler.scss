@@ -13,32 +13,29 @@
     border-radius: 30px;
     color: $charcoal-400;
     cursor: pointer;
-    font-size: $font-size-paragraph-l;
-    font-weight: $font-bold;
+    font-weight: $font-weight-bold;
     height: to-rem(48);
+    transition: $transition-time-200 ease;
     width: to-rem(159);
 
     &:hover {
       color: $violet-400;
-      transition: color $transition-time-fast ease;
     }
 
     &--checked {
       background-color: $violet-400;
       color: $white-400;
-      transition: all $transition-time-slow ease;
+      transition: all $transition-time-400 ease;
 
       &:hover {
         background-color: $violet-600;
         color: $white-400;
-        transition: all $transition-time-fast ease;
       }
 
       &:focus,
       &:focus-visible,
       &:active {
         background-color: $violet-300;
-        transition: background-color $transition-time-fast ease;
       }
     }
   }

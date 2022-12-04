@@ -1,20 +1,20 @@
 h1,
 h2 {
   color: var(--primary-color);
-  font: $font-bold $font-size-header-l $header-font;
+  font: $font-weight-bold $font-size-xl $header-font;
 }
 
 h3 {
   color: var(--primary-color);
-  font: $font-bold $font-size-header-s $header-font;
+  font: $font-weight-bold $font-size-l $header-font;
 }
 
 p {
   color: $charcoal-400;
-  font: $font-normal $font-size-paragraph-l $paragraph-font;
+  font: $font-weight-normal $font-size-m $paragraph-font;
   line-height: inherit;
 }
 
 .paragraph-small {
-  font: $font-normal $font-size-paragraph-s $paragraph-font;
+  font: $font-weight-normal $font-size-s $paragraph-font;
 }

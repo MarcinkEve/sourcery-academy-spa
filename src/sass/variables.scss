@@ -9,25 +9,20 @@ $paragraph-font: 'Raleway', sans-serif;
 
 /* Font sizes */
 
-$font-size-header-l: to-rem(48);
-$font-size-header-s: to-rem(32);
-$font-size-paragraph-l: to-rem(18);
-$font-size-paragraph-s: to-rem(14);
+$font-size-xl: to-rem(48);
+$font-size-l: to-rem(32);
+$font-size-m: to-rem(18);
+$font-size-s: to-rem(14);
 
 /* Font weights */
 
-$font-bold: 700;
-$font-normal: 400;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
 
 /* Line heights */
 
 $line-height-l: 1.5;
 $line-height-m: 1.2;
-
-/* Font weights */
-
-$font-bold: 700;
-$font-normal: 400;
 
 /* Spacers */
 
@@ -43,8 +38,8 @@ $spacer-xxxl: to-rem(52);
 
 /* Transition timing */
 
-$transition-time-fast: 0.2s;
-$transition-time-slow: 0.4s;
+$transition-time-200: 0.2s;
+$transition-time-400: 0.4s;
 
 /* Colors */
 
