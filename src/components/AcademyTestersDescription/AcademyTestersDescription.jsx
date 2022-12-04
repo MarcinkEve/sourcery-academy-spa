@@ -7,10 +7,6 @@ import TextSection from '../TextSection';
 import IconTestersDescriptionParticlesTop from '../../assets/icons/icon-testers-description-particles-top.svg';
 import IconTestersDescriptionParticlesBottom from '../../assets/icons/icon-testers-description-particles-bottom.svg';
 import IconTestersDescription from '../../assets/icons/icon-testers-description.svg';
-// import IconFrontEndDescriptionParticlesTop from '../../assets/icons/icon-frontend-description-particles-top.svg';
-// import IconFrontEndDescriptionParticlesBottom from '../../assets/icons/icon-frontend-description-particles-bottom.svg';
-// import IconKidsDescriptionParticlesTop from '../../assets/icons/icon-kids-description-particles-top.svg';
-// import IconKidsDescriptionParticlesBottom from '../../assets/icons/icon-kids-description-particles-bottom.svg';
 
 export const AcademyTestersDescription = ({
   isRightAlligned,

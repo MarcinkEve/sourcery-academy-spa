@@ -1,37 +1,38 @@
 @import '~/sass/global';
 
-.frontend-description {
+.kids-description {
   @include flex-box(
     $direction: row,
     $justify-content: space-between,
     $align-items: flex-start
   );
 
-  margin-bottom: to-rem(110);
+  margin-bottom: to-rem(-290);
 
   &__content {
-    max-width: to-rem(534);
+    max-width: to-rem(551);
     position: relative;
   }
 
   &__top-particles {
-    margin-bottom: to-rem(2);
-    max-width: to-rem(99);
+    left: to-rem(365);
+    max-width: to-rem(140);
     position: absolute;
-    right: to-rem(39);
-    top: to-rem(-37);
+    top: to-rem(-90);
   }
 
   &__bottom-particles {
-    bottom: to-rem(2);
-    left: to-rem(40);
-    max-width: to-rem(285);
+    bottom: to-rem(-248);
+    left: to-rem(100);
+    max-width: to-rem(442);
     position: absolute;
   }
 
   &__icon {
-    left: to-rem(109);
-    max-width: to-rem(417);
+    left: to-rem(45);
+    max-width: to-rem(657);
     position: relative;
+    top: to-rem(-64);
+    z-index: -1;
   }
 }

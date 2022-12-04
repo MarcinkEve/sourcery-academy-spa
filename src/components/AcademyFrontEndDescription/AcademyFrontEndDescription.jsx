@@ -4,13 +4,9 @@ import { bool, oneOf, string } from 'prop-types';
 import './academy-frontend-description.scss';
 import { ROUTES } from '../../constants/routes';
 import TextSection from '../TextSection';
-// import IconTestersDescriptionParticlesTop from '../../assets/icons/icon-testers-description-particles-top.svg';
-// import IconTestersDescriptionParticlesBottom from '../../assets/icons/icon-testers-description-particles-bottom.svg';
 import IconFrontEndDescription from '../../assets/icons/icon-frontend-description.svg';
 import IconFrontEndDescriptionParticlesTop from '../../assets/icons/icon-frontend-description-particles-top.svg';
 import IconFrontEndDescriptionParticlesBottom from '../../assets/icons/icon-frontend-description-particles-bottom.svg';
-// import IconKidsDescriptionParticlesTop from '../../assets/icons/icon-kids-description-particles-top.svg';
-// import IconKidsDescriptionParticlesBottom from '../../assets/icons/icon-kids-description-particles-bottom.svg';
 
 export const AcademyFrontEndDescription = ({
   isRightAlligned,
