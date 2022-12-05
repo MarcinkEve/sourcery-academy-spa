@@ -16,12 +16,10 @@
   }
 
   &__content {
-    color: $charcoal-400;
-    font-size: $paragraph-l;
     margin: 0;
 
     &--bold {
-      font-weight: $font-bold;
+      font-weight: $font-weight-bold;
     }
 
     p {

@@ -13,6 +13,7 @@
   color: $violet-700;
   height: to-rem(40);
   outline-color: $violet-700;
+  transition: $transition-time-200 ease;
   width: to-rem(40);
 
   &:hover,

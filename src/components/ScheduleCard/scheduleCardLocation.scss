@@ -9,7 +9,7 @@
 
   border: 2px solid;
   border-radius: 8px;
-  transition: all 0.2s;
+  transition: $transition-time-200;
 
   &:not(:last-child) {
     margin-bottom: to-rem(10);
@@ -24,13 +24,12 @@
   }
 
   &__month {
-    font-size: $paragraph-s;
+    font-size: $font-size-s;
     line-height: to-rem(16);
   }
 
   &__day {
-    font-size: $paragraph-l;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     line-height: to-rem(21);
   }
   // COMPONENT / SVG
@@ -41,9 +40,5 @@
   &__pin {
     margin: 0 to-rem(10) 0 to-rem(15);
     width: to-rem(15);
-  }
-
-  &__city {
-    font-size: $paragraph-l;
   }
 }
