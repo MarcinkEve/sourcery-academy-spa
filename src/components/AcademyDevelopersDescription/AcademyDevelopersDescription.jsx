@@ -30,14 +30,10 @@ export const AcademyDevelopersDescription = ({
             paragraphContent={<p>{paragraphContent}</p>}
             buttonText={buttonText}
             pageRoute={pageRoute}
-            // className="developers-description__content-paragraph"
           />
           <IconDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
         </div>
-        {/* <div className="developers-description__icons"> */}
-        {/* <IconDevelopersDescriptionLine className="developers-description__icon-line" /> */}
         <IconDevelopersDescription className="developers-description__icon" />
-        {/* </div> */}
       </section>
     </>
   );
