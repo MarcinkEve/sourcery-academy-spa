@@ -4,9 +4,9 @@ import { bool, oneOf, string } from 'prop-types';
 import './academy-testers-description.scss';
 import { ROUTES } from '../../constants/routes';
 import TextSection from '../TextSection';
-import IconTestersDescriptionParticlesTop from '../../assets/icons/icon-testers-description-particles-top.svg';
-import IconTestersDescriptionParticlesBottom from '../../assets/icons/icon-testers-description-particles-bottom.svg';
-import IconTestersDescription from '../../assets/icons/icon-testers-description.svg';
+import ImageTestersDescriptionParticlesTop from '../../assets/particles/testers-description-particles-top.svg';
+import ImageTestersDescriptionParticlesBottom from '../../assets/particles/testers-description-particles-bottom.svg';
+import ImageTestersDescription from '../../assets/images/testers-description.svg';
 
 export const AcademyTestersDescription = ({
   isRightAlligned,
@@ -19,9 +19,9 @@ export const AcademyTestersDescription = ({
 }) => {
   return (
     <section className="testers-description">
-      <IconTestersDescription className="testers-description__icon" />
+      <ImageTestersDescription className="testers-description__icon" />
       <div className="testers-description__content">
-        <IconTestersDescriptionParticlesTop className="testers-description__top-particles" />
+        <ImageTestersDescriptionParticlesTop className="testers-description__top-particles" />
         <TextSection
           isRightAlligned={isRightAlligned}
           isHeadingSpacingLarge={isHeadingSpacingLarge}
@@ -31,7 +31,7 @@ export const AcademyTestersDescription = ({
           buttonText={buttonText}
           pageRoute={pageRoute}
         />
-        <IconTestersDescriptionParticlesBottom className="testers-description__bottom-particles" />
+        <ImageTestersDescriptionParticlesBottom className="testers-description__bottom-particles" />
       </div>
     </section>
   );
@@ -47,6 +47,7 @@ AcademyTestersDescription.propTypes = {
   pageRoute: oneOf([...Object.values(ROUTES)]),
 };
 
+//Leaving this for DEMO until data will be passed
 AcademyTestersDescription.defaultProps = {
   isRightAlligned: true,
   isHeadingSpacingLarge: false,

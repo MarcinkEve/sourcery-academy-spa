@@ -4,9 +4,9 @@ import { bool, oneOf, string } from 'prop-types';
 import './academy-kids-description.scss';
 import { ROUTES } from '../../constants/routes';
 import TextSection from '../TextSection';
-import IconKidsDescription from '../../assets/icons/icon-kids-description.svg';
-import IconKidsDescriptionParticlesTop from '../../assets/icons/icon-kids-description-particles-top.svg';
-import IconKidsDescriptionParticlesBottom from '../../assets/icons/icon-kids-description-particles-bottom.svg';
+import ImageKidsDescription from '../../assets/images/kids-description.svg';
+import ImageKidsDescriptionParticlesTop from '../../assets/particles/kids-description-particles-top.svg';
+import ImageKidsDescriptionParticlesBottom from '../../assets/particles/kids-description-particles-bottom.svg';
 
 export const AcademyKidsDescription = ({
   isRightAlligned,
@@ -20,7 +20,7 @@ export const AcademyKidsDescription = ({
   return (
     <section className="kids-description">
       <div className="kids-description__content">
-        <IconKidsDescriptionParticlesTop className="kids-description__top-particles" />
+        <ImageKidsDescriptionParticlesTop className="kids-description__top-particles" />
         <TextSection
           isRightAlligned={isRightAlligned}
           isHeadingSpacingLarge={isHeadingSpacingLarge}
@@ -30,9 +30,9 @@ export const AcademyKidsDescription = ({
           buttonText={buttonText}
           pageRoute={pageRoute}
         />
-        <IconKidsDescriptionParticlesBottom className="kids-description__bottom-particles" />
+        <ImageKidsDescriptionParticlesBottom className="kids-description__bottom-particles" />
       </div>
-      <IconKidsDescription className="kids-description__icon" />
+      <ImageKidsDescription className="kids-description__icon" />
     </section>
   );
 };
@@ -47,6 +47,7 @@ AcademyKidsDescription.propTypes = {
   pageRoute: oneOf([...Object.values(ROUTES)]),
 };
 
+//Leaving this for DEMO until data will be passed
 AcademyKidsDescription.defaultProps = {
   isRightAlligned: false,
   isHeadingSpacingLarge: false,

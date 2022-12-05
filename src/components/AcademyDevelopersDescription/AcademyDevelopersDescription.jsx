@@ -4,9 +4,9 @@ import { bool, oneOf, string } from 'prop-types';
 import './academy-developers-description.scss';
 import { ROUTES } from '../../constants/routes';
 import TextSection from '../TextSection';
-import IconDevelopersDescriptionParticlesTop from '../../assets/icons/icon-developers-description-particles-top.svg';
-import IconDevelopersDescriptionParticlesBottom from '../../assets/icons/icon-developers-description-particles-bottom.svg';
-import IconDevelopersDescription from '../../assets/icons/icon-developers-description.svg';
+import ImageDevelopersDescriptionParticlesTop from '../../assets/particles/developers-description-particles-top.svg';
+import ImageDevelopersDescriptionParticlesBottom from '../../assets/particles/developers-description-particles-bottom.svg';
+import ImageDevelopersDescription from '../../assets/images/developers-description.svg';
 
 export const AcademyDevelopersDescription = ({
   isRightAlligned,
@@ -21,7 +21,7 @@ export const AcademyDevelopersDescription = ({
     <>
       <section className="developers-description">
         <div className="developers-description__content">
-          <IconDevelopersDescriptionParticlesTop className="developers-description__top-particles" />
+          <ImageDevelopersDescriptionParticlesTop className="developers-description__top-particles" />
           <TextSection
             isRightAlligned={isRightAlligned}
             isHeadingSpacingLarge={isHeadingSpacingLarge}
@@ -31,9 +31,9 @@ export const AcademyDevelopersDescription = ({
             buttonText={buttonText}
             pageRoute={pageRoute}
           />
-          <IconDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
+          <ImageDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
         </div>
-        <IconDevelopersDescription className="developers-description__icon" />
+        <ImageDevelopersDescription className="developers-description__icon" />
       </section>
     </>
   );
@@ -49,6 +49,7 @@ AcademyDevelopersDescription.propTypes = {
   pageRoute: oneOf([...Object.values(ROUTES)]),
 };
 
+//Leaving this for DEMO until data will be passed
 AcademyDevelopersDescription.defaultProps = {
   isRightAlligned: false,
   isHeadingSpacingLarge: false,

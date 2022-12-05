@@ -4,9 +4,9 @@ import { bool, oneOf, string } from 'prop-types';
 import './academy-frontend-description.scss';
 import { ROUTES } from '../../constants/routes';
 import TextSection from '../TextSection';
-import IconFrontEndDescription from '../../assets/icons/icon-frontend-description.svg';
-import IconFrontEndDescriptionParticlesTop from '../../assets/icons/icon-frontend-description-particles-top.svg';
-import IconFrontEndDescriptionParticlesBottom from '../../assets/icons/icon-frontend-description-particles-bottom.svg';
+import ImageFrontEndDescription from '../../assets/images/frontend-description.svg';
+import ImageFrontEndDescriptionParticlesTop from '../../assets/particles/frontend-description-particles-top.svg';
+import ImageFrontEndDescriptionParticlesBottom from '../../assets/particles/frontend-description-particles-bottom.svg';
 
 export const AcademyFrontEndDescription = ({
   isRightAlligned,
@@ -19,9 +19,9 @@ export const AcademyFrontEndDescription = ({
 }) => {
   return (
     <section className="frontend-description">
-      <IconFrontEndDescription className="frontend-description__icon" />
+      <ImageFrontEndDescription className="frontend-description__icon" />
       <div className="frontend-description__content">
-        <IconFrontEndDescriptionParticlesTop className="frontend-description__top-particles" />
+        <ImageFrontEndDescriptionParticlesTop className="frontend-description__top-particles" />
         <TextSection
           isRightAlligned={isRightAlligned}
           isHeadingSpacingLarge={isHeadingSpacingLarge}
@@ -31,7 +31,7 @@ export const AcademyFrontEndDescription = ({
           buttonText={buttonText}
           pageRoute={pageRoute}
         />
-        <IconFrontEndDescriptionParticlesBottom className="frontend-description__bottom-particles" />
+        <ImageFrontEndDescriptionParticlesBottom className="frontend-description__bottom-particles" />
       </div>
     </section>
   );
@@ -47,6 +47,7 @@ AcademyFrontEndDescription.propTypes = {
   pageRoute: oneOf([...Object.values(ROUTES)]),
 };
 
+//Leaving this for DEMO until data will be passed
 AcademyFrontEndDescription.defaultProps = {
   isRightAlligned: true,
   isHeadingSpacingLarge: false,
