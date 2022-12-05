@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, string, shape, func } from 'prop-types';
+import { arrayOf, string, shape, func, oneOfType, number } from 'prop-types';
 
 import RadioToggler from '../RadioToggler';
 import RadioButton from '../RadioButton';
@@ -96,12 +96,55 @@ export const ApplicationForm = ({ data, setIsSubmitted }) => {
 ApplicationForm.propTypes = {
   data: shape({
     section_1: shape({
-      title: string,
-      inputs: arrayOf(shape),
+      title: string.isRequired,
+      inputs: arrayOf(
+        oneOfType([
+          // types for RadioToggler
+          shape({
+            name: string.isRequired,
+            values: arrayOf(string).isRequired,
+            type: string.isRequired,
+          }),
+          // types for RadioButton
+          shape({
+            title: string.isRequired,
+            radioValues: arrayOf(
+              shape({
+                name: string,
+                value: string,
+                id: number,
+              })
+            ).isRequired,
+            type: string.isRequired,
+          }),
+        ])
+      ),
     }),
     section_2: shape({
       title: string,
-      inputs: arrayOf(shape),
+      inputs: arrayOf(
+        oneOfType([
+          // types for InputField
+          shape({
+            name: string.isRequired,
+            label: string.isRequired,
+            type: string.isRequired,
+            placeholder: string.isRequired,
+          }),
+          // types for FileUpload
+          shape({
+            name: string.isRequired,
+            placeholder: string.isRequired,
+            type: string.isRequired,
+          }),
+          // types for Checkbox
+          shape({
+            checkboxText: string.isRequired,
+            name: string.isRequired,
+            type: string.isRequired,
+          }),
+        ])
+      ),
     }),
     button: shape({
       label: string,

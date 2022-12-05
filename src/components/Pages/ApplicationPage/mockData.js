@@ -48,7 +48,6 @@ export const data = {
       },
       {
         name: 'resume',
-        label: 'Resume',
         type: 'file',
         placeholder: 'Upload your resume',
       },
