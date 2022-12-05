@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, string, shape } from 'prop-types';
+import { arrayOf, string, shape, func } from 'prop-types';
 
 import RadioToggler from '../RadioToggler';
 import RadioButton from '../RadioButton';
@@ -10,91 +10,102 @@ import Button from '../Button';
 
 import './application-form.scss';
 
-export const ApplicationForm = ({ data }) => {
-  const { section_1, section_2, button } = data;
+const renderFormElement = (elementData) => {
+  switch (elementData.type) {
+    case 'ragioToggler':
+      return (
+        <RadioToggler
+          name={elementData.name}
+          values={elementData.values}
+          onValueChange={() => {}}
+        />
+      );
+    case 'radio':
+      return (
+        <RadioButton
+          title={elementData.title}
+          radioValues={elementData.radioValues}
+          onValueChange={() => {}}
+        />
+      );
+    case 'text':
+    case 'email':
+      return (
+        <InputField
+          name={elementData.name}
+          label={elementData.label}
+          type={elementData.type}
+          placeholder={elementData.placeholder}
+          getValue={() => {}}
+        />
+      );
+    case 'file':
+      return (
+        <FileUpload
+          name={elementData.name}
+          label={elementData.label}
+          placeholder={elementData.placeholder}
+          onValueChange={() => {}}
+        />
+      );
+    case 'checkbox':
+      return (
+        <Checkbox
+          name={elementData.name}
+          checkboxText={elementData.checkboxText}
+          type="checkbox"
+          getCheckboxValue={() => {}}
+        />
+      );
+  }
+};
 
+const renderFormSection = (sectionData) => (
+  <section className="application-form__section">
+    <h3 className="application-form__section-title">{sectionData.title}</h3>
+    {sectionData.inputs.map((input, index) => (
+      <div
+        className={`application-form__${
+          input.type === 'text' ||
+          input.type === 'email' ||
+          input.type === 'file'
+            ? 'simple'
+            : 'spaced'
+        }-input`}
+        key={index}
+      >
+        {renderFormElement(input)}
+      </div>
+    ))}
+  </section>
+);
+
+export const ApplicationForm = ({ data, setIsSubmitted }) => {
   return (
     <form className="application-form">
-      <section className="application-form__section">
-        <h3 className="application-form__section-title">{section_1.title}</h3>
-        <div className="application-form__styled-input">
-          <RadioToggler
-            name={section_1.inputs[0].name}
-            values={section_1.inputs[0].values}
-            onValueChange={() => {}}
-          />
-        </div>
-        <div className="application-form__styled-input">
-          <RadioButton
-            title={section_1.inputs[1].title}
-            radioValues={section_1.inputs[1].radioValues}
-            onValueChange={() => {}}
-          />
-        </div>
-      </section>
-      <section className="application-form__section">
-        <h3 className="application-form__section-title">{section_2.title}</h3>
-        {section_2.inputs.map((input, index) => {
-          switch (input.type) {
-            case 'text':
-              return (
-                <div className="application-form__simple-input" key={index}>
-                  <InputField
-                    name={input.name}
-                    label={input.label}
-                    type="text"
-                    placeholder={input.placeholder}
-                    errorMessage=""
-                    getValue={() => {}}
-                  />
-                </div>
-              );
-            case 'file':
-              return (
-                <div className="application-form__simple-input" key={index}>
-                  <FileUpload
-                    name={input.name}
-                    label={input.label}
-                    placeholder={input.placeholder}
-                    errorMessage=""
-                    onValueChange={() => {}}
-                  />
-                </div>
-              );
-            case 'checkbox':
-              return (
-                <div className="application-form__styled-input" key={index}>
-                  <Checkbox
-                    name={input.name}
-                    checkboxText={input.checkboxText}
-                    type="checkbox"
-                    errorMessage=""
-                    getCheckboxValue={() => {}}
-                  />
-                </div>
-              );
-          }
-        })}
-      </section>
-      <section className="application-form__section">
-        <Button label={button.label} handleClick={() => {}} />
-      </section>
+      {renderFormSection(data.section_1)}
+      {renderFormSection(data.section_2)}
+      <Button
+        label={data.button.label}
+        handleClick={(e) => setIsSubmitted(true)}
+      />
     </form>
   );
 };
 
 ApplicationForm.propTypes = {
-  data: {
-    section_1: {
+  data: shape({
+    section_1: shape({
       title: string,
       inputs: arrayOf(shape),
-    },
-    section_2: {
+    }),
+    section_2: shape({
       title: string,
       inputs: arrayOf(shape),
-    },
-    button: {
+    }),
+    button: shape({
       label: string,
-    },
-  },
+    }),
+  }),
+  setIsSubmitted: func,
 };

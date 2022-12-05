@@ -22,7 +22,10 @@ export const ApplicationPage = ({ title, theme }) => {
             {isSubmitted ? (
               <SuccessMessage />
             ) : (
-              <ApplicationForm data={applicationPageData} />
+              <ApplicationForm
+                data={applicationPageData}
+                setIsSubmitted={setIsSubmitted}
+              />
             )}
           </div>
           <div className="form-layout__image-section">

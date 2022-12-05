@@ -5,6 +5,7 @@ export const data = {
       {
         name: 'Academy type',
         values: ['Full-stack', 'Testers', 'Front-End'],
+        type: 'ragioToggler',
       },
       {
         title: 'Academy city',
@@ -20,6 +21,7 @@ export const data = {
             id: 81554,
           },
         ],
+        type: 'radio',
       },
     ],
   },
@@ -54,7 +56,7 @@ export const data = {
         type: 'checkbox',
         checkboxText:
           'I have read, understand and accept the content of the Privacy Notice and consent to the processing of my data as part of this application.',
-        name: 'privacyNoticeConsent',
+        name: 'privacyConsent',
       },
     ],
   },

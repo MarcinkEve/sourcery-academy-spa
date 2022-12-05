@@ -8,7 +8,7 @@ export const SuccessMessage = ({ title, text }) => {
   return (
     <div className="success-message-box">
       <IconCheckMark className="success-message-box__check-mark-icon" />
-      <h2 className="success-message-box__title">{title}</h2>
+      <h3 className="success-message-box__title">{title}</h3>
       <span className="success-message-box__confirmation-text">{text}</span>
     </div>
   );

@@ -7,7 +7,7 @@
 
   &__text {
     font-size: $paragraph-l;
-    line-height: 1.15;
+    line-height: 1.5;
     margin: 0 0 0 to-rem(25);
   }
 
@@ -21,13 +21,13 @@
   }
 
   &__custom-checkmark {
-    border: 2px solid $violet-700;
+    border: 2px solid $charcoal-200;
     border-radius: to-rem(4);
     height: to-rem(24);
     width: to-rem(24);
 
     &--checked {
-      background-color: $violet-700;
+      background-color: $violet-400;
       border-radius: to-rem(4);
       height: to-rem(24);
       width: to-rem(24);

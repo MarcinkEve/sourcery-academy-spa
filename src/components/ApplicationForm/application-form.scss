@@ -1,11 +1,13 @@
 @import '~/sass/global';
 
 .application-form {
-  //   display: block;
+  align-self: flex-start;
+  max-width: to-rem(536);
 
   &__section {
     &:not(:first-child) {
       margin-top: to-rem(60);
+      padding-right: $spacer-xs;
     }
 
     &-title {
@@ -13,7 +15,8 @@
     }
   }
 
-  &__styled-input {
+  &__spaced-input,
+  button {
     margin-top: to-rem(60);
   }
 

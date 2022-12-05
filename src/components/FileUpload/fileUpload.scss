@@ -29,9 +29,17 @@
       cursor: pointer;
     }
 
+    &:active {
+      outline: 2px solid $violet-600;
+    }
+
     &--error {
       border-color: $red-500;
     }
+  }
+
+  &__file-name {
+    @include overflow-ellipsis($width: 95%);
   }
 
   &__placeholder {
