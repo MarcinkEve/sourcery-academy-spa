@@ -6,12 +6,30 @@
   video {
     border: 2px solid #3d3691;
     border-radius: 15px;
+    pointer-events: all;
     width: 100%;
+
+    &::-moz-full-screen {
+      border: 5px solid coral;
+    }
+    // &::-webkit-media-controls-panel {
+    //   display: none;
+    // }
+
+    &:fullscreen {
+      border: unset;
+      border-radius: 0;
+
+      // &::-moz-media-controls-panel {
+      //   display: block;
+      // }
+    }
   }
 
   .play-screen {
     background-color: transparent;
     border-style: none;
+    cursor: pointer;
     height: 100%;
     left: 50%;
     position: absolute;
@@ -175,4 +193,9 @@
 .settings-btn {
   flex-shrink: 0;
   width: 69px;
+}
+
+.play-icon--larger {
+  opacity: 0.7;
+  width: 10%;
 }
