@@ -1,12 +1,10 @@
 @import '~/sass/global';
 
 .text-section {
+  $_this: &;
+
   &:not(:last-child) {
     margin: 0 0 $spacer-l 0;
-  }
-
-  &--right {
-    text-align: right;
   }
 
   &__heading {
@@ -44,6 +42,21 @@
 
       &:not(:last-child) {
         margin-bottom: to-rem(5);
+      }
+    }
+  }
+
+  &--right {
+    text-align: right;
+
+    #{$_this}__content {
+      ul {
+        padding-right: to-rem(10);
+      }
+
+      li {
+        direction: rtl;
+        padding-right: to-rem(16);
       }
     }
   }
