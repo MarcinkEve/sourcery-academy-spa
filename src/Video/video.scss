@@ -1,7 +1,19 @@
+// .visible {
+//   // display: block;
+//   // position: fixed;
+//   opacity: 0;
+// }
+
+// .invisible {
+//   // display: none;
+//   opacity: 1;
+// }
+
 .media {
   border-radius: 15px;
   max-width: 1086px;
-  position: relative;
+  position: fixed;
+  top: 100px;
 
   video {
     border: 2px solid #3d3691;

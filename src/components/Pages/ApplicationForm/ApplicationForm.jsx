@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { string } from 'prop-types';
 
 import './applicationForm.scss';
@@ -8,11 +8,15 @@ import { SuccessMessage } from '../../SuccessMessage/SuccessMessage';
 import Video from '../../../Video';
 
 export const ApplicationForm = ({ title, theme }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div theme={theme} className="form-layout">
       <h1 className="form-layout__container-header">{title}</h1>
       <div className="form-layout__content-container">
-        <div className="form-layout__content">
+        <div
+          className="form-layout__content"
+          onClick={() => setIsModalOpen(true)}
+        >
           <SuccessMessage />
         </div>
         <div className="form-layout__image-section">
@@ -20,7 +24,9 @@ export const ApplicationForm = ({ title, theme }) => {
           <IconSuccessImage className="form-layout__image" />
         </div>
       </div>
-      <Video />
+      {/* <Video videoSrc="https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4" /> */}
+
+      <Video isModalOpen={isModalOpen} />
     </div>
   );
 };
