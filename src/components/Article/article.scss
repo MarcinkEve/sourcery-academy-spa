@@ -1,6 +1,8 @@
 @import '~/sass/global';
 
 .article {
+  $_icon-size: to-rem(48);
+
   margin: 0 auto;
   max-width: to-rem(1006);
   text-align: center;
@@ -13,14 +15,14 @@
 
   &__title {
     color: $violet-700;
-    margin: 0 0 to-rem(29);
+    margin: 0 0 $spacer-xs;
     padding: 0 2rem;
     word-wrap: break-word;
   }
 
   &__content {
     color: $charcoal-400;
-    margin-bottom: to-rem(35);
+    margin-bottom: $spacer-m;
   }
 
   &__icon-wrapper {
@@ -37,18 +39,18 @@
 
   &__icon-line {
     height: to-rem(48);
-    margin-bottom: to-rem(32);
+    margin-bottom: $spacer-s;
   }
 
   &__icon-circle {
     border: 2px solid $violet-700;
     border-radius: 50%;
-    height: to-rem(48);
-    width: to-rem(48);
+    height: #{$_icon-size};
+    width: #{$_icon-size};
   }
 
   &__icon-arrow-down {
-    animation: bounce 1.2s ease-in-out infinite;
+    animation: bounce $transition-time-1200 ease-in-out infinite;
   }
 
   &__bottom-particles {

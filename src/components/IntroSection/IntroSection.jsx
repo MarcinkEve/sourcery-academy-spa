@@ -1,20 +1,21 @@
 import React from 'react';
-import { bool, oneOf, string } from 'prop-types';
+import { bool, oneOf, shape, string } from 'prop-types';
 
 import './intro-section.scss';
 import IntroIcon from '../../assets/icons/icon-intro.svg';
 import TextSection from '../TextSection';
 import { ROUTES } from '../../constants/routes';
 
-export const IntroSection = ({
-  isRightAlligned,
-  isHeadingSpacingLarge,
-  headingContent,
-  isParagraphTextBold,
-  paragraphContent,
-  buttonText,
-  pageRoute,
-}) => {
+export const IntroSection = ({ introSectionData }) => {
+  const {
+    isRightAlligned,
+    isHeadingSpacingLarge,
+    headingContent,
+    isParagraphTextBold,
+    paragraphContent,
+    buttonText,
+    pageRoute,
+  } = introSectionData;
   return (
     <section className="intro-section">
       <div className="intro-section__paragraph">
@@ -34,11 +35,13 @@ export const IntroSection = ({
 };
 
 IntroSection.propTypes = {
-  isRightAlligned: bool,
-  isHeadingSpacingLarge: bool,
-  headingContent: string.isRequired,
-  isParagraphTextBold: bool,
-  paragraphContent: string.isRequired,
-  buttonText: string,
-  pageRoute: oneOf([...Object.values(ROUTES)]),
+  introSectionData: shape({
+    isRightAlligned: bool,
+    isHeadingSpacingLarge: bool,
+    headingContent: string.isRequired,
+    isParagraphTextBold: bool,
+    paragraphContent: string.isRequired,
+    buttonText: string,
+    pageRoute: oneOf([...Object.values(ROUTES)]),
+  }).isRequired,
 };
