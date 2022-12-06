@@ -9,8 +9,6 @@ import { introSectionData, articleSectionData } from './data.js';
 export const Homepage = ({ theme }) => {
   return (
     <div theme={theme}>
-      <h1 style={{ textAlign: 'center' }}>Homepage</h1>
-
       <IntroSection introSectionData={introSectionData} />
       <Article articleSectionData={articleSectionData} />
     </div>
