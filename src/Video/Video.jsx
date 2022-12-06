@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { node, string, boolean } from 'prop-types';
+import React from 'react';
+import { string, boolean } from 'prop-types';
 
-import { Media, Player, controls } from 'react-media-player';
 import './video.scss';
+import { Media, Player, controls } from 'react-media-player';
 import CustomPlayPause from './CustomPlayPause';
 import CustomPlayPauseOnScreen from './CustomPlayPauseOnScreen';
 import CustomFullscreen from './CustomFullscreen';
@@ -11,52 +11,45 @@ import Settings from '../assets/icons/icon-settings.svg';
 
 const { CurrentTime, SeekBar, Volume } = controls;
 
-export const Video = ({ children, videoSrc, isModalOpen }) => {
-  // const [isShown, setIsShown] = useState(false);
-  // const handleState = () => {
-  //   setIsShown(!isShown);
-  // };
-
+export const Video = ({ videoSrc, isModalOpen, onClose }) => {
   if (!isModalOpen) return null;
 
   return (
-    <div>
-      {/* <div onClick={handleState} className={isShown ? 'invisible' : 'visible'}> */}
+    <div className="overlay" onClick={onClose}>
       <Media>
-        <div className="media">
-          <div className="media-player">
-            <CustomPlayPauseOnScreen className="play-screen" />
-            <Player
-              src={videoSrc}
-              // controlsList="nofullscreen"
-              // autoPlay={true}
-              // controls
-            />
+        <div
+          className="media"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <div className="media__player">
+            <CustomPlayPauseOnScreen className="media__player-overlay-icon" />
+            <Player src={videoSrc} />
           </div>
-          <div className="media-controls">
-            <CustomPlayPause className="play-btn" />
-            <CurrentTime className="time-btn" />
-            <SeekBar className="seek-btn" />
-            <div className="volume-controls">
-              <CustomVolume className="vol" />
-              <Volume className="volume-btn" />
+          <div className="media__controls">
+            <CustomPlayPause className="media__controls-play-pause" />
+            <CurrentTime className="media__controls-current-time" />
+            <SeekBar className="media__controls-seek-bar" />
+            <div className="media__controls-volume">
+              <CustomVolume className="media__controls-volume-mute" />
+              <Volume className="media__controls-volume-bar" />
             </div>
-            <button className="settings-btn">
-              <Settings className="settings-icon" />
+            <button className="media__controls-settings">
+              <Settings className="media__controls-settings-icon" />
             </button>
-            <CustomFullscreen className="full-screen-btn" />
+            <CustomFullscreen className="media__controls-fullscreen" />
           </div>
         </div>
       </Media>
-      {children}
     </div>
   );
 };
 
 Video.propTypes = {
-  children: node,
   videoSrc: string,
   isModalOpen: boolean,
+  onClose: boolean,
 };
 
 Video.defaultProps = {

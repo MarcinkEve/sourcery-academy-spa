@@ -1,44 +1,36 @@
-// .visible {
-//   // display: block;
-//   // position: fixed;
-//   opacity: 0;
-// }
+@import '~/sass/global';
 
-// .invisible {
-//   // display: none;
-//   opacity: 1;
-// }
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 .media {
+  $_this: &;
+
   border-radius: 15px;
-  max-width: 1086px;
+  left: 50%;
   position: fixed;
-  top: 100px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   video {
     border: 2px solid #3d3691;
     border-radius: 15px;
-    pointer-events: all;
-    width: 100%;
-
-    &::-moz-full-screen {
-      border: 5px solid coral;
-    }
-    // &::-webkit-media-controls-panel {
-    //   display: none;
-    // }
+    max-width: to-rem(1086);
 
     &:fullscreen {
       border: unset;
       border-radius: 0;
-
-      // &::-moz-media-controls-panel {
-      //   display: block;
-      // }
     }
   }
 
-  .play-screen {
+  .media__player-overlay-icon {
     background-color: transparent;
     border-style: none;
     cursor: pointer;
@@ -51,7 +43,7 @@
     z-index: 5;
   }
 
-  .media-controls {
+  &__controls {
     border-radius: 0 0 15px 15px;
     bottom: 5px;
     display: flex;
@@ -60,7 +52,7 @@
     width: 100%;
     z-index: 10;
 
-    .play-btn {
+    &-play-pause {
       background-color: #584dfc;
       border-radius: 0 0 0 15px;
       border-style: none;
@@ -73,12 +65,12 @@
         background-color: #3d3691;
       }
 
-      &:hover + .time-btn {
+      &:hover + #{$_this}__controls-current-time {
         background-color: #3d3691;
       }
     }
 
-    .time-btn {
+    &-current-time {
       background-color: #584dfc;
       border-right: 1px solid white;
       color: white;
@@ -89,69 +81,7 @@
       width: 69px;
     }
 
-    .settings-btn {
-      background-color: #584dfc;
-      border-style: none;
-      cursor: pointer;
-      flex-shrink: 0;
-
-      &:hover {
-        background-color: #3d3691;
-      }
-    }
-
-    .full-screen-btn {
-      background-color: #584dfc;
-      border-radius: 0 0 15px;
-      border-style: none;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: all 0.2s;
-      width: 69px;
-
-      &:hover {
-        background-color: #3d3691;
-      }
-    }
-
-    .volume-controls {
-      border-left: 1px solid white;
-      position: relative;
-
-      &:hover .volume-btn {
-        display: inline-block;
-      }
-
-      .vol {
-        background-color: #584dfc;
-        border-style: none;
-        cursor: pointer;
-        flex-shrink: 0;
-        height: 100%;
-        width: 69px;
-
-        &:hover {
-          background-color: #3d3691;
-        }
-      }
-
-      .volume-btn {
-        -webkit-appearance: none;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-left: 1px solid white;
-        bottom: 63px;
-        display: none;
-        height: 69px;
-        opacity: 1;
-        outline: none;
-        position: absolute;
-        right: -16px;
-        transform: rotate(-90deg);
-        width: 100px;
-      }
-    }
-
-    .seek-btn {
+    &-seek-bar {
       background-color: rgba(61, 54, 145, 0.5);
       border-style: none;
       height: 100%;
@@ -162,7 +92,6 @@
     input {
       -webkit-appearance: none;
       border-radius: 0;
-      cursor: pointer;
       height: 100%;
       margin: auto;
       overflow: hidden;
@@ -185,12 +114,87 @@
         width: 0;
       }
     }
+
+    &-volume {
+      border-left: 1px solid white;
+      flex-shrink: 0;
+      height: 100%;
+      position: relative;
+      width: 69px;
+
+      &-mute {
+        background-color: #584dfc;
+        border-style: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        height: 100%;
+        width: 69px;
+
+        &:hover {
+          background-color: #3d3691;
+        }
+      }
+
+      &-bar {
+        -webkit-appearance: none;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-left: 1px solid white;
+        bottom: 142px;
+        height: 300px;
+        opacity: 0;
+        right: 25px;
+        transform: rotate(-90deg);
+        width: 200px;
+      }
+
+      input {
+        height: 69px;
+        width: 120px;
+      }
+
+      &:hover &-bar {
+        opacity: 1;
+      }
+    }
+
+    &-settings {
+      background-color: #584dfc;
+      border: none;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      cursor: pointer;
+      flex-shrink: 0;
+      height: 100%;
+      width: 69px;
+      z-index: 5;
+
+      &-icon {
+        width: 24px;
+      }
+
+      &:hover {
+        background-color: #3d3691;
+      }
+    }
+
+    &-fullscreen {
+      background-color: #584dfc;
+      border-radius: 0 0 15px;
+      border-style: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      width: 69px;
+
+      &:hover {
+        background-color: #3d3691;
+      }
+    }
   }
 }
 
 .volume-icon,
-.volume-off-icon,
-.settings-icon {
+.volume-off-icon {
   height: 23px;
 }
 
@@ -198,13 +202,6 @@
 .play-icon,
 .fullscreen-icon {
   height: 19px;
-}
-
-.fullscreen-btn,
-.vol,
-.settings-btn {
-  flex-shrink: 0;
-  width: 69px;
 }
 
 .play-icon--larger {

@@ -24,9 +24,13 @@ export const ApplicationForm = ({ title, theme }) => {
           <IconSuccessImage className="form-layout__image" />
         </div>
       </div>
-      {/* <Video videoSrc="https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4" /> */}
-
-      <Video isModalOpen={isModalOpen} />
+      <Video
+        videoSrc={
+          'https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4'
+        }
+        isModalOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
