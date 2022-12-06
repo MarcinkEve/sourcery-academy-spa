@@ -2,7 +2,7 @@ import React from 'react';
 import { string, number, object } from 'prop-types';
 
 import './applicationStep.scss';
-import SvgLine from '../../assets/icons/icon-long-horizontal-line.svg';
+import SvgLine from '../../assets/images/long-horizontal-line.svg';
 
 export const ApplicationStep = ({
   indexFromParent,
@@ -18,7 +18,7 @@ export const ApplicationStep = ({
         className={`application-step__${isIndexOdd ? 'odd' : 'even'}-number`}
       >
         <div className="application-step__text-container">
-          <h2 className="application-step__heading">{heading}</h2>
+          <h3 className="application-step__heading">{heading}</h3>
           <div className="application-step__svg-line">
             <SvgLine />
           </div>

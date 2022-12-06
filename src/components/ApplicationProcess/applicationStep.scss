@@ -17,8 +17,9 @@
   }
 
   &__svg-line {
+    @include flex-box;
+
     color: var(--primary-color);
-    display: flex;
     height: 2px;
     margin: to-rem(17) 0 to-rem(25);
   }
@@ -28,7 +29,7 @@
   }
 
   &__odd-number {
-    display: flex;
+    @include flex-box;
 
     #{$_this}__text-container {
       margin-right: to-rem(13);
@@ -36,8 +37,8 @@
   }
 
   &__even-number {
-    display: flex;
-    flex-direction: row-reverse;
+    @include flex-box(row-reverse);
+
     text-align: right;
     transform: translateY(95px);
 
@@ -55,9 +56,9 @@
   }
 
   &__svg-container {
-    align-items: flex-start;
+    @include flex-box($align-items: flex-start);
+
     color: var(--primary-color);
-    display: flex;
     width: to-rem(225);
   }
 }
