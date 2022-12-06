@@ -13,7 +13,7 @@
     @include hide;
 
     &:focus-visible + #{$_this}__field {
-      outline: 4px dashed $orange-200;
+      outline: 2px solid $violet-600;
     }
   }
 

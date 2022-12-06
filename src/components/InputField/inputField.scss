@@ -6,7 +6,6 @@
 
   &__field {
     @include input-field;
-    @include tab-outline;
   }
 
   &__label {

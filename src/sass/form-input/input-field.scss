@@ -15,4 +15,8 @@
     color: $charcoal-100;
     opacity: 1;
   }
+
+  &:focus {
+    outline: 2px solid $violet-600;
+  }
 }

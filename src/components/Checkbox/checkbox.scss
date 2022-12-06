@@ -33,10 +33,11 @@
       width: to-rem(24);
 
       &::after {
+        align-items: center;
         color: $white-400;
         content: '✔';
         display: flex;
-        font-size: to-rem(16);
+        font-size: to-rem(19);
         justify-content: center;
         position: relative;
         width: 100%;
