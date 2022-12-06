@@ -1,7 +1,7 @@
 import { any, string } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
-import IconPlay from '../assets/icons/icon-play.svg';
+import IconPlay from '../../assets/icons/icon-play.svg';
 import './video.scss';
 
 class CustomPlayPause extends Component {
@@ -24,7 +24,7 @@ class CustomPlayPause extends Component {
         onClick={this._handlePlayPause}
         onDoubleClick={this._handleFullscreen}
       >
-        {!media.isPlaying && <IconPlay className="play-icon--larger" />}
+        {/* {!media.isPlaying && <IconPlay className="play-icon--larger" />} */}
       </button>
     );
   }

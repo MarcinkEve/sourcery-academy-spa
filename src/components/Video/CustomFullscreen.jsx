@@ -1,7 +1,7 @@
 import { object, string } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
-import IconFullscreen from '../assets/icons/icon-fullscreen.svg';
+import IconFullscreen from '../../assets/icons/icon-fullscreen.svg';
 import './video.scss';
 
 class CustomFullscreen extends Component {

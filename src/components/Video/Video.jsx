@@ -7,7 +7,7 @@ import CustomPlayPause from './CustomPlayPause';
 import CustomPlayPauseOnScreen from './CustomPlayPauseOnScreen';
 import CustomFullscreen from './CustomFullscreen';
 import CustomVolume from './CustomVolume';
-import Settings from '../assets/icons/icon-settings.svg';
+import Settings from '../../assets/icons/icon-settings.svg';
 
 const { CurrentTime, SeekBar, Volume } = controls;
 
@@ -25,7 +25,7 @@ export const Video = ({ videoSrc, isModalOpen, onClose }) => {
         >
           <div className="media__player">
             <CustomPlayPauseOnScreen className="media__player-overlay-icon" />
-            <Player src={videoSrc} />
+            <Player src={videoSrc} controls autoPlay={true} />
           </div>
           <div className="media__controls">
             <CustomPlayPause className="media__controls-play-pause" />
