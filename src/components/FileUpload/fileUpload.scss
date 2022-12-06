@@ -12,8 +12,8 @@
   &__input {
     @include hide;
 
-    &:focus + #{$_this}__field {
-      outline: 2px solid $violet-600;
+    &:focus-visible + #{$_this}__field {
+      outline: 4px dashed $orange-200;
     }
   }
 
@@ -39,7 +39,9 @@
   }
 
   &__file-name {
-    @include overflow-ellipsis($width: 95%);
+    padding-right: to-rem(5);
+    width: 100%;
+    @include overflow-ellipsis();
   }
 
   &__placeholder {
@@ -47,6 +49,7 @@
   }
 
   &__icon {
+    flex: 0 0 auto;
     width: to-rem(20);
   }
 }

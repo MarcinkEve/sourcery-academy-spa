@@ -3,11 +3,10 @@
 .checkbox {
   $_this: &;
 
-  @include flex-box(row, flex-start, start);
+  @include flex-box($justify-content: flex-start, $align-items: start);
 
   &__text {
-    font-size: $paragraph-l;
-    line-height: 1.5;
+    line-height: $line-height-l;
     margin: 0 0 0 to-rem(25);
   }
 
@@ -15,7 +14,8 @@
     opacity: 0; // is visible for screen readers
     position: absolute;
 
-    &:focus-visible + #{$_this}__custom-checkmark {
+    &:focus-visible + #{$_this}__custom-checkmark,
+    &:focus-visible + #{$_this}__custom-checkmark--checked {
       outline: 4px dashed $orange-200;
     }
   }

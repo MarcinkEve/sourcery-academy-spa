@@ -13,9 +13,10 @@
     border-radius: 30px;
     color: $charcoal-400;
     cursor: pointer;
-    font-size: to-rem(18);
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     height: to-rem(48);
+    transition: color $transition-time-200 ease,
+      background-color $transition-time-200 ease;
     width: to-rem(159);
 
     &:hover {
@@ -25,7 +26,8 @@
     &--checked {
       background-color: $violet-400;
       color: $white-400;
-      transition: background-color 0.5s ease, background-color 0.5s ease;
+      transition: color $transition-time-400 ease,
+        background-color $transition-time-400 ease;
 
       &:hover {
         background-color: $violet-600;

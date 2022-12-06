@@ -11,8 +11,7 @@
   &__label {
     color: $charcoal-400;
     font-family: $paragraph-font;
-    font-size: $paragraph-l;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
 
     &:not(:last-child) {
       margin-right: to-rem(61);

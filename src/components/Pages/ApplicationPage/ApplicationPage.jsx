@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 
 import './application-page.scss';
 import IconSuccessImage from '../../../assets/icons/icon-success-image.svg';
-import IconParticles from '../../../assets/icons/icon-particles.svg';
+import Particles from '../../../assets/particles/application-form-particles.svg';
 import ApplicationForm from '../../ApplicationForm';
 import { SuccessMessage } from '../../SuccessMessage/SuccessMessage';
 import PageLayout from '~/layout/pageLayout';
@@ -29,7 +29,7 @@ export const ApplicationPage = ({ title, theme }) => {
             )}
           </div>
           <div className="form-layout__image-section">
-            <IconParticles className="form-layout__particles-icon" />
+            <Particles className="form-layout__particles-icon" />
             <IconSuccessImage className="form-layout__image" />
           </div>
         </div>

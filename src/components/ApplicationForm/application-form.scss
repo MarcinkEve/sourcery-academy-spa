@@ -3,28 +3,4 @@
 .application-form {
   align-self: flex-start;
   max-width: to-rem(536);
-
-  &__section {
-    &:not(:first-child) {
-      margin-top: to-rem(60);
-      padding-right: $spacer-xs;
-    }
-
-    &-title {
-      margin: 0;
-    }
-  }
-
-  &__spaced-input,
-  button {
-    margin-top: to-rem(60);
-  }
-
-  &__simple-input {
-    margin-top: to-rem(20);
-
-    &:first-child {
-      margin-top: to-rem(30);
-    }
-  }
 }

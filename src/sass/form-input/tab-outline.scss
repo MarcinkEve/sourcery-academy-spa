@@ -1,0 +1,18 @@
+@import '../variables';
+
+@mixin tab-outline {
+  // stylelint-disable no-descending-specificity
+  &:focus {
+    outline: 2px solid $violet-600;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 4px dashed $orange-200;
+  }
+
+  // stylelint-enable no-descending-specificity
+}

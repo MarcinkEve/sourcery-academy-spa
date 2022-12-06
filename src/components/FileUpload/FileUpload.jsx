@@ -25,7 +25,9 @@ export const FileUpload = ({
 
   return (
     <div className="upload">
-      <label className="upload__label">{name}</label>
+      <label className="upload__label" htmlFor={name}>
+        {name}
+      </label>
       <input
         className="upload__input"
         id={name}

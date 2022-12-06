@@ -5,7 +5,7 @@ export const data = {
       {
         name: 'Academy type',
         values: ['Full-stack', 'Testers', 'Front-End'],
-        type: 'ragioToggler',
+        type: 'radioToggler',
       },
       {
         title: 'Academy city',
