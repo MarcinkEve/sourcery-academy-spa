@@ -1,10 +1,9 @@
 import React from 'react';
-import { bool, oneOf, shape, string } from 'prop-types';
 
 import './intro-section.scss';
 import IntroIcon from '../../assets/images/intro.svg';
 import TextSection from '../TextSection';
-import { ROUTES } from '../../constants/routes';
+import { textSectionType } from '../Pages/Homepage/types';
 
 export const IntroSection = ({ introSectionData }) => {
   const {
@@ -35,13 +34,5 @@ export const IntroSection = ({ introSectionData }) => {
 };
 
 IntroSection.propTypes = {
-  introSectionData: shape({
-    isRightAlligned: bool,
-    isHeadingSpacingLarge: bool,
-    headingContent: string.isRequired,
-    isParagraphTextBold: bool,
-    paragraphContent: string.isRequired,
-    buttonText: string,
-    pageRoute: oneOf([...Object.values(ROUTES)]),
-  }).isRequired,
+  introSectionData: textSectionType.isRequired,
 };

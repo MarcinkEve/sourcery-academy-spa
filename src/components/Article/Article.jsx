@@ -6,6 +6,7 @@ import ArticleTopParticles from '../../assets/icons/icon-article-top-particles.s
 import ArticleBottomParticles from '../../assets/icons/icon-article-bottom-particles.svg';
 import VerticalLine from '../../assets/icons/icon-vertical-line-article.svg';
 import ArrowDownArticle from '../../assets/icons/icon-arrow-down-article.svg';
+import { articleTypes } from '../Pages/Homepage/types';
 
 export const Article = ({ articleSectionData }) => {
   const { articleTitle, articleContent } = articleSectionData;
@@ -31,8 +32,5 @@ export const Article = ({ articleSectionData }) => {
 };
 
 Article.propTypes = {
-  articleSectionData: shape({
-    articleTitle: string.isRequired,
-    articleContent: string.isRequired,
-  }).isRequired,
+  articleSectionData: articleTypes.isRequired,
 };
