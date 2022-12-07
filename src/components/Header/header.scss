@@ -7,7 +7,7 @@
     $align-items: center
   );
 
-  height: to-rem(96);
+  height: $height-header-footer;
   margin: auto;
   max-width: $max-page-width;
   padding: 0 $spacer-l;

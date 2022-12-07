@@ -30,6 +30,7 @@
       background-color: $violet-400;
       border-radius: to-rem(4);
       height: to-rem(24);
+      line-height: $line-height-l;
       width: to-rem(24);
 
       &::after {
@@ -39,6 +40,7 @@
         display: flex;
         font-size: to-rem(19);
         justify-content: center;
+        line-height: $line-height-m;
         position: relative;
         width: 100%;
       }

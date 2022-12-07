@@ -5,6 +5,7 @@
   border-radius: 10px;
   color: var(--primary-color);
   display: flex;
+  min-height: to-rem(59);
   overflow: hidden;
 
   &:not(:last-child) {
@@ -18,8 +19,8 @@
       $align-items: center
     );
 
+    min-width: to-rem(100);
     padding: 0 to-rem(15);
-    width: to-rem(100);
   }
 
   &__separator {
@@ -28,16 +29,18 @@
     &::before {
       background-color: var(--primary-color);
       border-radius: 30px;
+      bottom: to-rem(5.5);
       content: '';
-      height: to-rem(40);
-      margin-top: to-rem(5.5);
       position: absolute;
+      top: to-rem(5.5);
       width: to-rem(2);
     }
   }
 
   &__text {
     color: var(--primary-color);
-    margin: to-rem(15) 0 to-rem(13) to-rem(16);
+    line-height: $line-height-m;
+    margin: to-rem(15) to-rem(16) to-rem(13);
+    word-break: break-all;
   }
 }
