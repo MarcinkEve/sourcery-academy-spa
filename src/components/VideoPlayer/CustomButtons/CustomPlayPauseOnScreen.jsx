@@ -1,7 +1,8 @@
 import { string, object } from 'prop-types';
 import React, { Component } from 'react';
+
+import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import './videoPlayer.scss';
 
 class CustomPlayPause extends Component {
   shouldComponentUpdate({ media }) {

@@ -1,7 +1,8 @@
-import { any } from 'prop-types';
+import { string, object } from 'prop-types';
 import React, { Component } from 'react';
+
+import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import './videoPlayer.scss';
 
 class CustomVolumeControl extends Component {
   shouldComponentUpdate({ media }) {
@@ -29,7 +30,7 @@ class CustomVolumeControl extends Component {
 export default withMediaProps(CustomVolumeControl);
 
 CustomVolumeControl.propTypes = {
-  media: any,
-  className: any,
-  style: any,
+  media: object,
+  className: string,
+  style: string,
 };

@@ -3,10 +3,10 @@ import { string, bool, func } from 'prop-types';
 
 import './videoPlayer.scss';
 import { Media, Player, controls } from 'react-media-player';
-import CustomPlayPause from './CustomPlayPause';
-import CustomPlayPauseOnScreen from './CustomPlayPauseOnScreen';
-import CustomFullscreen from './CustomFullscreen';
-import CustomVolume from './CustomVolume';
+import CustomPlayPause from './CustomButtons/CustomPlayPause';
+import CustomPlayPauseOnScreen from './CustomButtons/CustomPlayPauseOnScreen';
+import CustomFullscreen from './CustomButtons/CustomFullscreen';
+import CustomVolume from './CustomButtons/CustomVolume';
 import Settings from '../../assets/icons/icon-settings.svg';
 
 const { CurrentTime, SeekBar, Volume } = controls;

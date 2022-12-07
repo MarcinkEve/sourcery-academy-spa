@@ -1,9 +1,10 @@
-import { any } from 'prop-types';
+import { string, object } from 'prop-types';
 import React, { Component } from 'react';
+
+import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import IconVolume from '../../assets/icons/icon-volume.svg';
-import IconVolumeOff from '../../assets/icons/icon-volume-off.svg';
-import './videoPlayer.scss';
+import IconVolume from '../../../assets/icons/icon-volume.svg';
+import IconVolumeOff from '../../../assets/icons/icon-volume-off.svg';
 
 class CustomVolume extends Component {
   shouldComponentUpdate({ media }) {
@@ -33,7 +34,7 @@ class CustomVolume extends Component {
 export default withMediaProps(CustomVolume);
 
 CustomVolume.propTypes = {
-  media: any,
-  className: any,
-  style: any,
+  media: object,
+  className: string,
+  style: string,
 };

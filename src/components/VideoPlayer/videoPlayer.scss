@@ -25,13 +25,13 @@
     max-width: to-rem(1086);
 
     &::-webkit-media-controls-panel {
-      display: none !important;
+      display: none;
       opacity: 0;
     }
 
     &:fullscreen {
       &::-webkit-media-controls-panel {
-        display: flex !important;
+        display: flex;
         opacity: 1;
       }
 
@@ -82,8 +82,8 @@
 
     &-current-time {
       background-color: $violet-400;
-      border-right: 1px solid white;
-      color: white;
+      border-right: 1px solid $white-400;
+      color: $white-400;
       cursor: default;
       height: 100%;
       padding-left: 10px;
@@ -92,7 +92,6 @@
     }
 
     &-seek-bar {
-      // background-color: rgba(61, 54, 145, 0.5);
       background-color: $violet-700;
       border-style: none;
       height: 100%;
@@ -111,7 +110,7 @@
 
       &::-moz-range-thumb {
         border: 1px solid $violet-400;
-        box-shadow: -1000px 0 0 1000px $violet-400;
+        box-shadow: -100vw 0 0 100vw $violet-400;
         box-sizing: border-box;
         height: 100%;
         width: 0;
@@ -120,7 +119,7 @@
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
         border: 1px solid $violet-400;
-        box-shadow: -1000px 0 0 1000px $violet-400;
+        box-shadow: -100vw 0 0 100vw $violet-400;
         height: 100%;
         width: 0;
       }
@@ -160,7 +159,7 @@
       &-bar {
         -webkit-appearance: none;
         background-color: rgba(255, 255, 255, 0.3);
-        border-left: 1px solid white;
+        border-left: 1px solid $white-400;
         bottom: 142px;
         height: 300px;
         opacity: 0;
@@ -186,7 +185,6 @@
       flex-shrink: 0;
       height: 100%;
       width: 69px;
-      // z-index: 5;
 
       &-icon {
         width: 24px;
@@ -212,15 +210,6 @@
     }
   }
 }
-
-// .volume-icon,
-// .volume-off-icon {
-//   height: 23px;
-
-//   &:hover {
-//     fill: #a06000;
-//   }
-// }
 
 .pause-icon,
 .play-icon,

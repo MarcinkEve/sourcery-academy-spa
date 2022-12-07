@@ -1,8 +1,9 @@
 import { object, string } from 'prop-types';
 import React, { Component } from 'react';
+
+import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import IconFullscreen from '../../assets/icons/icon-fullscreen.svg';
-import './videoPlayer.scss';
+import IconFullscreen from '../../../assets/icons/icon-fullscreen.svg';
 
 class CustomFullscreen extends Component {
   shouldComponentUpdate({ media }) {
@@ -12,7 +13,7 @@ class CustomFullscreen extends Component {
     this.props.media.fullscreen();
   };
   render() {
-    const { className, style, media } = this.props;
+    const { className, style } = this.props;
     return (
       <button
         type="button"
