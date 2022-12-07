@@ -1,4 +1,5 @@
 import { bool, oneOf, shape, string } from 'prop-types';
+
 import { ROUTES } from '../../../constants/routes';
 
 export const textSectionType = shape({
