@@ -39,7 +39,7 @@
 
   &__text {
     color: var(--primary-color);
-    font-size: to-rem(18);
+    line-height: $line-height-m;
     margin: to-rem(15) to-rem(16) to-rem(13);
     word-break: break-all;
   }

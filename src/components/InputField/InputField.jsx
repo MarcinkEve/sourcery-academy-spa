@@ -25,7 +25,7 @@ export const InputField = ({
         name={name}
         id={name}
         className={errorMessage ? 'input__field input__error' : 'input__field'}
-        onChange={(e) => {
+        onBlur={(e) => {
           getValue(e.target.value);
         }}
       ></input>
@@ -35,10 +35,10 @@ export const InputField = ({
 };
 
 InputField.propTypes = {
-  name: string,
-  label: string,
-  type: string,
-  placeholder: string,
+  name: string.isRequired,
+  label: string.isRequired,
+  type: string.isRequired,
+  placeholder: string.isRequired,
   getValue: func,
   errorMessage: string,
 };

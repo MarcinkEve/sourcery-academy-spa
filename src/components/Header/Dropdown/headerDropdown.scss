@@ -5,8 +5,7 @@
   display: flex;
   flex-direction: column;
   font-family: $paragraph-font;
-  font-size: $paragraph-s;
-  line-height: 1.15;
+  font-size: $font-size-s;
 
   &__pin {
     display: flex;
@@ -40,6 +39,7 @@
       background-color: $white-400;
       list-style: none;
       text-align: start;
+      transition: $transition-time-200;
     }
 
     &-link {
@@ -49,7 +49,6 @@
       padding: to-rem(16) to-rem(23) to-rem(16) to-rem(20);
       position: relative;
       text-decoration: none;
-      transition: background-color 0.2s;
       width: 100%;
 
       &:hover,

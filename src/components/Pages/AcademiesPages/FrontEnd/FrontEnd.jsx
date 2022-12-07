@@ -1,15 +1,17 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
-import PageLayout from '~/layout/pageLayout';
 
-export const Developers = ({ theme }) => {
+import PageLayout from '~/layout/pageLayout';
+import AcademyWrapper from '~/components/Pages/AcademiesPages/AcademyWrapper';
+
+export const FrontEnd = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
-      <h1 style={{ textAlign: 'center' }}>Sourcery for Developers</h1>
+      <AcademyWrapper />
     </PageLayout>
   );
 };
 
-Developers.propTypes = {
+FrontEnd.propTypes = {
   theme: PropTypes.string,
 };
