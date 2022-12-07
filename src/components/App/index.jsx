@@ -8,6 +8,7 @@ import FrontEnd from '../Pages/FrontEnd';
 import Header from '../Header';
 import Homepage from '../Pages/Homepage';
 import Kids from '../Pages/Kids';
+import PageLayout from '../../layout/pageLayout';
 import { ROUTES } from '../../constants/routes';
 import Testers from '../Pages/Testers';
 
@@ -18,20 +19,22 @@ export default function index() {
     <>
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path={HOME} element={<Homepage theme="home" />} />
-          <Route
-            path={DEVELOPERS}
-            element={<Developers theme="developers" />}
-          />
-          <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
-          <Route path={KIDS} element={<Kids />} />
-          <Route path={TESTERS} element={<Testers theme="testers" />} />
-          <Route
-            path={APPLICATION}
-            element={<ApplicationForm theme="application" />}
-          />
-        </Routes>
+        <PageLayout>
+          <Routes>
+            <Route path={HOME} element={<Homepage theme="home" />} />
+            <Route
+              path={DEVELOPERS}
+              element={<Developers theme="developers" />}
+            />
+            <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
+            <Route path={KIDS} element={<Kids />} />
+            <Route path={TESTERS} element={<Testers theme="testers" />} />
+            <Route
+              path={APPLICATION}
+              element={<ApplicationForm theme="application" />}
+            />
+          </Routes>
+        </PageLayout>
       </BrowserRouter>
       <Footer />
     </>

@@ -16,10 +16,11 @@
   }
 
   &__month {
-    font-size: $font-size-s;
+    font-size: to-rem(14);
   }
 
   &__day {
-    font-weight: $font-weight-bold;
+    font-size: to-rem(18);
+    font-weight: $font-bold;
   }
 }

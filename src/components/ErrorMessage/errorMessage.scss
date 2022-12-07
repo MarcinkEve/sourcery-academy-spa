@@ -2,6 +2,6 @@
 
 .error-message {
   color: $red-500;
-  font-size: $font-size-s;
+  font-size: to-rem(14);
   margin-top: to-rem(5);
 }
