@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { number, string, arrayOf, shape } from 'prop-types';
+import classNames from 'classnames';
 
 import { SlideDown } from 'react-slidedown';
 import { ScheduleCardLocation } from './ScheduleCardLocation';
 
-import classNames from 'classnames';
+import { scheduleCardType } from './types';
 import './scheduleCard.scss';
 import './scheduleCardLocation.scss';
 import '../../sass/vendor/slidedown.scss';
@@ -73,21 +73,7 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
   );
 };
 
-ScheduleCard.propTypes = {
-  lectureData: shape({
-    lecture: string,
-    name: string,
-    time: string,
-    duration: string,
-  }).isRequired,
-  lectureDates: arrayOf(
-    shape({
-      city: string,
-      day: number,
-      month: string,
-    })
-  ).isRequired,
-};
+ScheduleCard.propTypes = scheduleCardType;
 
 ScheduleCard.defaultProps = {
   lectureData: {
