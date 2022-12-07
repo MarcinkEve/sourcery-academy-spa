@@ -1,0 +1,35 @@
+@import '~/sass/global';
+
+.schedule-section {
+  margin: to-rem(250) 0 to-rem(290) 0;
+  padding: 0 $spacer-xxl;
+  position: relative;
+
+  &__title {
+    margin: 0 0 to-rem(60) 0;
+    text-align: center;
+  }
+
+  &__top-particles {
+    left: to-rem(48);
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    width: to-rem(732);
+  }
+
+  &__bottom-particles {
+    left: to-rem(314);
+    position: absolute;
+    transform: translateY(38%);
+    width: to-rem(732);
+  }
+
+  &__line {
+    position: absolute;
+    right: 0;
+    top: to-rem(110);
+    transform: translateX(50%);
+    width: to-rem(40);
+  }
+}

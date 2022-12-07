@@ -61,3 +61,16 @@ export const card3 = {
     },
   ],
 };
+
+export const schedule = {
+  column_1: {
+    title: ['October', 'November', 'December'],
+    column_1: [card1, card2, card3],
+    column_2: [card2, card3],
+  },
+  column_2: {
+    title: ['December', 'January'],
+    column_1: [card1],
+    column_2: [card2, card3],
+  },
+};
