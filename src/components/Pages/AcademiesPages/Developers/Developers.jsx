@@ -7,7 +7,7 @@ import AcademyWrapper from '~/components/Pages/AcademiesPages/AcademyWrapper';
 export const Developers = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
-      <AcademyWrapper theme={theme} />
+      <AcademyWrapper />
     </PageLayout>
   );
 };
