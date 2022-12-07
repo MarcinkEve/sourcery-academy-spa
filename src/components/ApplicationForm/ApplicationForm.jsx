@@ -11,8 +11,6 @@ export const ApplicationForm = ({ data, setIsSubmitted }) => {
     <form className="application-form">
       <FormSection sectionData={data.section_1} />
       <FormSection sectionData={data.section_2} />
-      {/* {renderFormSection(data.section_1)}
-      {renderFormSection(data.section_2)} */}
       <Button
         label={data.button.label}
         handleClick={(e) => setIsSubmitted(true)}
