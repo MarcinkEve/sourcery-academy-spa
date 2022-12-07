@@ -3,11 +3,9 @@
 .checkbox {
   $_this: &;
 
-  @include flex-box(row, flex-start, start);
+  @include flex-box($justify-content: flex-start, $align-items: start);
 
   &__text {
-    font-size: $paragraph-l;
-    line-height: 1.15;
     margin: 0 0 0 to-rem(25);
   }
 

@@ -1,5 +1,4 @@
 import '../src/sass/global.scss';
-import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { MemoryRouter } from 'react-router';
 
