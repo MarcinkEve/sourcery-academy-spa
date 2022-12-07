@@ -3,7 +3,7 @@
 .page-layout {
   margin: 0 auto;
   max-width: $max-page-width;
-  min-height: calc(100vh - (96px + 96px));
+  min-height: calc(100vh - (#{$height-header-footer} * 2));
   overflow-y: hidden;
   padding: 0 to-rem(80);
 }
