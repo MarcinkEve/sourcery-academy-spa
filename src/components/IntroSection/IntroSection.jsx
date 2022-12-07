@@ -2,7 +2,7 @@ import React from 'react';
 import { bool, oneOf, shape, string } from 'prop-types';
 
 import './intro-section.scss';
-import IntroIcon from '../../assets/icons/icon-intro.svg';
+import IntroIcon from '../../assets/images/intro.svg';
 import TextSection from '../TextSection';
 import { ROUTES } from '../../constants/routes';
 
