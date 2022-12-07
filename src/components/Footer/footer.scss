@@ -7,9 +7,10 @@
     $align-items: center
   );
 
+  height: $height-header-footer;
   margin: 0 auto;
   max-width: to-rem(1440);
-  padding: to-rem(28) to-rem(40);
+  padding: 0 to-rem(40);
 
   &__list {
     @include flex-box(
@@ -33,7 +34,6 @@
     font-family: $main-font;
     font-size: to-rem(16);
     font-style: normal;
-    font-weight: 400;
     line-height: 1;
     margin: 0;
     text-transform: capitalize;

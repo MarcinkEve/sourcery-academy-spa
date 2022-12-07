@@ -3,11 +3,9 @@
 .checkbox {
   $_this: &;
 
-  @include flex-box(row, flex-start, start);
+  @include flex-box($justify-content: flex-start, $align-items: start);
 
   &__text {
-    font-size: $paragraph-l;
-    line-height: 1.15;
     margin: 0 0 0 to-rem(25);
   }
 
@@ -30,6 +28,7 @@
       background-color: $violet-700;
       border-radius: to-rem(4);
       height: to-rem(24);
+      line-height: $line-height-l;
       width: to-rem(24);
 
       &::after {
