@@ -7,11 +7,7 @@
     @include padding-margin-0;
 
     color: var(--primary-color);
-    margin-bottom: to-rem(36);
+    margin-bottom: $spacer-m;
     text-align: right;
-
-    &::first-letter {
-      text-transform: capitalize;
-    }
   }
 }

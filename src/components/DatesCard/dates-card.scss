@@ -29,11 +29,10 @@
     &::before {
       background-color: var(--primary-color);
       border-radius: 30px;
-      bottom: 0;
+      bottom: to-rem(5.5);
       content: '';
-      margin: to-rem(5.5) 0;
       position: absolute;
-      top: 0;
+      top: to-rem(5.5);
       width: to-rem(2);
     }
   }
@@ -43,9 +42,5 @@
     font-size: to-rem(18);
     margin: to-rem(15) to-rem(16) to-rem(13);
     word-break: break-all;
-
-    &::first-letter {
-      text-transform: capitalize;
-    }
   }
 }
