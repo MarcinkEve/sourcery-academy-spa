@@ -1,10 +1,11 @@
 @import '../utilities/functions/index';
-@import '../variables';
 
 @mixin input-field {
   background-color: $white-400;
   border: 1px solid $charcoal-200;
-  border-radius: 4px;
+  border-radius: 10px;
+  color: $charcoal-400;
+  font-family: $paragraph-font;
   font-size: $font-size-m;
   height: to-rem(48);
   padding: to-rem(14);
@@ -12,6 +13,7 @@
 
   &::placeholder {
     color: $charcoal-100;
+    opacity: 1;
   }
 
   &:focus {
