@@ -38,6 +38,7 @@
 
   &__text {
     color: var(--primary-color);
+    line-height: $line-height-m;
     margin: to-rem(15) 0 to-rem(13) to-rem(16);
   }
 }

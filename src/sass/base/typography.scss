@@ -12,7 +12,7 @@ h3 {
 p {
   color: $charcoal-400;
   font: $font-weight-normal $font-size-m $paragraph-font;
-  line-height: inherit;
+  line-height: $line-height-l;
 }
 
 .paragraph-small {
