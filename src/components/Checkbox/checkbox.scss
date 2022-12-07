@@ -28,6 +28,7 @@
       background-color: $violet-700;
       border-radius: to-rem(4);
       height: to-rem(24);
+      line-height: $line-height-l;
       width: to-rem(24);
 
       &::after {
