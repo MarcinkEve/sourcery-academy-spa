@@ -5,7 +5,7 @@ import './applicationForm.scss';
 import IconSuccessImage from '../../../assets/icons/icon-success-image.svg';
 import IconParticles from '../../../assets/icons/icon-particles.svg';
 import { SuccessMessage } from '../../SuccessMessage/SuccessMessage';
-import Video from '../../Video';
+import VideoPlayer from '../../VideoPlayer';
 
 export const ApplicationForm = ({ title, theme }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,7 +24,7 @@ export const ApplicationForm = ({ title, theme }) => {
           <IconSuccessImage className="form-layout__image" />
         </div>
       </div>
-      <Video
+      <VideoPlayer
         videoSrc={
           'https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4'
         }

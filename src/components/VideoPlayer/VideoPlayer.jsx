@@ -1,7 +1,7 @@
 import React from 'react';
-import { string, boolean } from 'prop-types';
+import { string, bool, func } from 'prop-types';
 
-import './video.scss';
+import './videoPlayer.scss';
 import { Media, Player, controls } from 'react-media-player';
 import CustomPlayPause from './CustomPlayPause';
 import CustomPlayPauseOnScreen from './CustomPlayPauseOnScreen';
@@ -11,7 +11,7 @@ import Settings from '../../assets/icons/icon-settings.svg';
 
 const { CurrentTime, SeekBar, Volume } = controls;
 
-export const Video = ({ videoSrc, isModalOpen, onClose }) => {
+export const VideoPlayer = ({ videoSrc, isModalOpen, onClose }) => {
   if (!isModalOpen) return null;
 
   return (
@@ -46,13 +46,15 @@ export const Video = ({ videoSrc, isModalOpen, onClose }) => {
   );
 };
 
-Video.propTypes = {
+VideoPlayer.propTypes = {
   videoSrc: string,
-  isModalOpen: boolean,
-  onClose: boolean,
+  isModalOpen: bool,
+  onClose: func,
 };
-
-Video.defaultProps = {
+// TEMP -------------------------------------------------------------------------------------------------------------
+VideoPlayer.defaultProps = {
+  isModalOpen: false,
+  onClose: false,
   videoSrc:
     'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4',
 };

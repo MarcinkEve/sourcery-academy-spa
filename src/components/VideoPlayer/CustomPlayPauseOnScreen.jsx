@@ -1,33 +1,34 @@
-import { object, string } from 'prop-types';
+import { string, object } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
-import IconFullscreen from '../../assets/icons/icon-fullscreen.svg';
-import './video.scss';
+import './videoPlayer.scss';
 
-class CustomFullscreen extends Component {
+class CustomPlayPause extends Component {
   shouldComponentUpdate({ media }) {
     return this.props.media.isPlaying !== media.isPlaying;
   }
+  _handlePlayPause = () => {
+    this.props.media.playPause();
+  };
   _handleFullscreen = () => {
     this.props.media.fullscreen();
   };
   render() {
-    const { className, style, media } = this.props;
+    const { className, style } = this.props;
     return (
       <button
         type="button"
         className={className}
         style={style}
-        onClick={this._handleFullscreen}
-      >
-        <IconFullscreen className="fullscreen-icon" />
-      </button>
+        onClick={this._handlePlayPause}
+        onDoubleClick={this._handleFullscreen}
+      ></button>
     );
   }
 }
-export default withMediaProps(CustomFullscreen);
+export default withMediaProps(CustomPlayPause);
 
-CustomFullscreen.propTypes = {
+CustomPlayPause.propTypes = {
   media: object,
   className: string,
   style: string,

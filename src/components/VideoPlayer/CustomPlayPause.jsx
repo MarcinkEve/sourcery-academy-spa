@@ -1,9 +1,9 @@
-import { string } from 'prop-types';
+import { string, object } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
 import IconPause from '../../assets/icons/icon-pause.svg';
 import IconPlay from '../../assets/icons/icon-play.svg';
-import './video.scss';
+import './videoPlayer.scss';
 
 class CustomPlayPause extends Component {
   shouldComponentUpdate({ media }) {
@@ -33,7 +33,7 @@ class CustomPlayPause extends Component {
 export default withMediaProps(CustomPlayPause);
 
 CustomPlayPause.propTypes = {
-  media: string,
+  media: object,
   className: string,
   style: string,
 };

@@ -1,15 +1,12 @@
 import { any } from 'prop-types';
 import React, { Component } from 'react';
 import { withMediaProps } from 'react-media-player';
-import './video.scss';
+import './videoPlayer.scss';
 
 class CustomVolumeControl extends Component {
   shouldComponentUpdate({ media }) {
     return this.props.media.isPlaying !== media.isPlaying;
   }
-  // _handleVolumeControl = () => {
-  //   this.props.media.volume();
-  // };
   _handleChange = () => {
     this.props.media._ref3();
   };
