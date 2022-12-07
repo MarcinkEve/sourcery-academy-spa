@@ -8,7 +8,6 @@
   );
 
   height: to-rem(96);
-  line-height: 1.5;
   margin: auto;
   max-width: $max-page-width;
   padding: 0 $spacer-l;
@@ -29,8 +28,7 @@
 
     &__text {
       color: $header-clr;
-      font-size: $paragraph-l;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
   }
 
@@ -78,7 +76,7 @@
     &__link,
     &__academies-menu {
       color: $header-clr;
-      font-size: $paragraph-l;
+      font-size: $font-size-m;
       line-height: inherit;
       text-decoration: none;
     }
