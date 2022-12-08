@@ -1,4 +1,4 @@
-import { element, string } from 'prop-types';
+import { node, string } from 'prop-types';
 import React from 'react';
 
 import './pageLayout.scss';
@@ -12,6 +12,6 @@ export const PageLayout = ({ children, theme }) => {
 };
 
 PageLayout.propTypes = {
-  children: element.isRequired,
+  children: node.isRequired,
   theme: string,
 };

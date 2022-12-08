@@ -25,7 +25,9 @@ export const FileUpload = ({
 
   return (
     <div className="upload">
-      <label className="upload__label">{name}</label>
+      <label className="upload__label" htmlFor={name}>
+        {name}
+      </label>
       <input
         className="upload__input"
         id={name}
@@ -41,7 +43,9 @@ export const FileUpload = ({
         })}
         onClick={triggerInputFile}
       >
-        {uploadedFile?.name || (
+        {uploadedFile ? (
+          <span className="upload__file-name">{uploadedFile.name}</span>
+        ) : (
           <span className="upload__placeholder">{placeholder}</span>
         )}
         <UploadIcon className="upload__icon" />
