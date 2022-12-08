@@ -2,7 +2,6 @@ import React from 'react';
 import { string, number, object } from 'prop-types';
 
 import './applicationStep.scss';
-import SvgLine from '../../assets/images/long-horizontal-line.svg';
 
 export const ApplicationStep = ({
   indexFromParent,
@@ -19,13 +18,13 @@ export const ApplicationStep = ({
       >
         <div className="application-step__text-container">
           <h3 className="application-step__heading">{heading}</h3>
-          <div className="application-step__svg-line">
-            <SvgLine />
+          <div className="application-step__line">
+            <div className="application-step__svg-container">
+              {iconObject && iconObject.icon}
+            </div>
           </div>
+
           <p className="application-step__paragraph">{paragraph}</p>
-        </div>
-        <div className="application-step__svg-container">
-          {iconObject && iconObject.icon}
         </div>
       </div>
     </div>

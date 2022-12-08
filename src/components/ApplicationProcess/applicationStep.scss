@@ -1,12 +1,15 @@
 @import '~/sass/global';
 
+$_paragraph-width: 380px;
+$_svg-container-width: 225px;
+
 .application-step {
   $_this: &;
 
-  margin: auto;
+  width: calc(#{$_paragraph-width} + #{$_svg-container-width});
 
   &__text-container {
-    max-width: to-rem(388);
+    max-width: calc(#{$_paragraph-width} + 8px);
   }
 
   &__heading {
@@ -14,18 +17,18 @@
 
     color: var(--primary-color);
     margin-top: to-rem(23);
+    min-height: to-rem(39);
   }
 
-  &__svg-line {
-    @include flex-box;
-
-    color: var(--primary-color);
+  &__line {
+    background-color: var(--primary-color);
     height: 2px;
     margin: to-rem(17) 0 to-rem(25);
+    width: $_paragraph-width;
   }
 
   &__paragraph {
-    width: 98%;
+    width: $_paragraph-width;
   }
 
   &__odd-number {
@@ -42,23 +45,27 @@
     text-align: right;
     transform: translateY(95px);
 
-    #{$_this}__svg-line {
-      justify-content: flex-end;
-    }
-
-    #{$_this}__paragraph {
-      margin-left: auto;
-    }
-
     #{$_this}__svg-container {
-      margin-right: to-rem(-29);
+      left: -57%;
     }
   }
 
   &__svg-container {
-    @include flex-box($align-items: flex-start);
-
     color: var(--primary-color);
-    width: to-rem(225);
+    left: 100%;
+    margin-left: 13px;
+    position: relative;
+    top: -80px;
+    width: $_svg-container-width;
+  }
+}
+
+.isolated-path {
+  &--secondary {
+    color: var(--secondary-color);
+  }
+
+  &--lighter {
+    color: var(--icon-secondary-color);
   }
 }
