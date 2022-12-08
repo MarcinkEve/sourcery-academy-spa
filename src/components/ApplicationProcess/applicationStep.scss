@@ -10,7 +10,7 @@ $_svg-container-width: to-rem(225);
   width: calc(#{$_paragraph-width} + #{$_svg-container-width});
 
   &__text-container {
-    max-width: calc(#{$_paragraph-width} + 8px);
+    max-width: calc(#{$_paragraph-width} + 0.5rem);
   }
 
   &__heading {
