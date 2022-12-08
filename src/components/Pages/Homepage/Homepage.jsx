@@ -2,8 +2,8 @@ import React from 'react';
 import { shape, string } from 'prop-types';
 
 import PageLayout from '~/layout/pageLayout';
-import IntroSection from '../../IntroSection';
-import Article from '../../Article';
+import IntroSection from '~/components/IntroSection';
+import Article from '~/components/Article';
 import { introSectionData, articleSectionData } from './data.js';
 import { textSectionType, articleTypes } from './types';
 
