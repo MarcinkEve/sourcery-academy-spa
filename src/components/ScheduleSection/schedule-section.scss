@@ -1,4 +1,4 @@
-@import '~/sass/global';
+@import '~/sass/variables';
 
 .schedule-section {
   margin: to-rem(250) 0 to-rem(290) 0;
@@ -13,7 +13,6 @@
   &__top-particles {
     left: to-rem(48);
     position: absolute;
-    top: 0;
     transform: translateY(-50%);
     width: to-rem(732);
   }
@@ -26,10 +25,10 @@
   }
 
   &__line {
+    height: to-rem(680);
     position: absolute;
     right: 0;
-    top: to-rem(110);
+    top: to-rem(115);
     transform: translateX(50%);
-    width: to-rem(40);
   }
 }
