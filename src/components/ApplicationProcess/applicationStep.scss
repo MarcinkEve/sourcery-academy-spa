@@ -1,4 +1,5 @@
-@import '~/sass/global';
+@import '~/sass/utilities/functions/to-rem';
+@import '~/sass/utilities/mixins';
 
 $_paragraph-width: 380px;
 $_svg-container-width: 225px;
