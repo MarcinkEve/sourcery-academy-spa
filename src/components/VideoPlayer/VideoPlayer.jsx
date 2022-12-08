@@ -11,11 +11,16 @@ import Settings from '../../assets/icons/icon-settings.svg';
 
 const { CurrentTime, SeekBar, Volume } = controls;
 
-export const VideoPlayer = ({ videoSrc, isModalOpen, onClose }) => {
+export const VideoPlayer = ({
+  videoSrc,
+  isModalOpen,
+  onClose,
+  hasAutoPlay,
+}) => {
   if (!isModalOpen) return null;
 
   return (
-    <div className="overlay" onClick={onClose}>
+    <div className="media__overlay" onClick={onClose}>
       <Media>
         <div
           className="media"
@@ -23,9 +28,17 @@ export const VideoPlayer = ({ videoSrc, isModalOpen, onClose }) => {
             e.stopPropagation();
           }}
         >
+          <button onClick={onClose} className="media__close-button">
+            &times;
+          </button>
           <div className="media__player">
             <CustomPlayPauseOnScreen className="media__player-overlay-icon" />
-            <Player src={videoSrc} controls autoPlay={true} />
+            <Player
+              className="player"
+              src={videoSrc}
+              controls
+              autoPlay={hasAutoPlay}
+            />
           </div>
           <div className="media__controls">
             <CustomPlayPause className="media__controls-play-pause" />
@@ -48,12 +61,14 @@ export const VideoPlayer = ({ videoSrc, isModalOpen, onClose }) => {
 
 VideoPlayer.propTypes = {
   videoSrc: string,
+  hasAutoPlay: bool,
   isModalOpen: bool,
   onClose: func,
 };
 // TEMP -------------------------------------------------------------------------------------------------------------
 VideoPlayer.defaultProps = {
   isModalOpen: false,
+  hasAutoPlay: false,
   onClose: false,
   videoSrc:
     'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4',

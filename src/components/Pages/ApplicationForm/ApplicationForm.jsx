@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { string } from 'prop-types';
 
 import './applicationForm.scss';
+import VideoPlayer from '../../VideoPlayer';
 import IconSuccessImage from '../../../assets/icons/icon-success-image.svg';
 import IconParticles from '../../../assets/icons/icon-particles.svg';
 import { SuccessMessage } from '../../SuccessMessage/SuccessMessage';
-import VideoPlayer from '../../VideoPlayer';
 
 export const ApplicationForm = ({ title, theme }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleKeyDown = document.addEventListener('keydown', (e) => {
+    e.key === 'Escape' && setIsModalOpen(false);
+  });
+
   return (
-    <div theme={theme} className="form-layout">
+    <div theme={theme} className="form-layout" onKeyDown={handleKeyDown}>
       <h1 className="form-layout__container-header">{title}</h1>
       <div className="form-layout__content-container">
         <div
@@ -25,8 +29,9 @@ export const ApplicationForm = ({ title, theme }) => {
         </div>
       </div>
       <VideoPlayer
+        modalOptions={{ dismissible: false }}
         videoSrc={
-          'https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4'
+          'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4'
         }
         isModalOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

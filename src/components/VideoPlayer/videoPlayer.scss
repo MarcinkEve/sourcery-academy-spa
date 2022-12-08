@@ -1,23 +1,43 @@
 @import '~/sass/global';
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.3);
-  display: block;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
+.player {
+  max-height: 800px; // fix this
   width: 100%;
 }
 
 .media {
   $_this: &;
+  $_overlay-color: rgba(0, 0, 0, 0.6);
+  $_volume-bar-color: rgba(0, 0, 0, 0.6);
 
   border-radius: 15px;
   left: 50%;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  &__overlay {
+    background-color: $_overlay-color;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  &__close-button {
+    background-color: transparent;
+    border: 0;
+    color: $white-400;
+    cursor: pointer;
+    font-size: 40px;
+    height: min-content;
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: min-content;
+  }
 
   video {
     border: 2px solid $violet-700;
@@ -40,7 +60,7 @@
     }
   }
 
-  .media__player-overlay-icon {
+  #{$_this}__player-overlay-icon {
     background-color: transparent;
     border-style: none;
     cursor: pointer;
@@ -85,6 +105,7 @@
       border-right: 1px solid $white-400;
       color: $white-400;
       cursor: default;
+      flex-shrink: 0;
       height: 100%;
       padding-left: 10px;
       padding-top: 13px;
@@ -158,11 +179,11 @@
 
       &-bar {
         -webkit-appearance: none;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: $_volume-bar-color;
         border-left: 1px solid $white-400;
         bottom: 142px;
+        display: none;
         height: 300px;
-        opacity: 0;
         right: 25px;
         transform: rotate(-90deg);
         width: 200px;
@@ -174,13 +195,13 @@
       }
 
       &:hover &-bar {
-        opacity: 1;
+        display: block;
       }
     }
 
     &-settings {
       background-color: $violet-400;
-      border: none;
+      border: 0;
       cursor: pointer;
       flex-shrink: 0;
       height: 100%;
