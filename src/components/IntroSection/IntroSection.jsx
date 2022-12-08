@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './intro-section.scss';
-import IntroIcon from '../../assets/images/intro.svg';
-import TextSection from '../TextSection';
-import { textSectionType } from '../Pages/Homepage/types';
+import IntroIcon from '~/assets/images/intro.svg';
+import TextSection from '~/components/TextSection';
+import { textSectionType } from '~/components/Pages/Homepage/types';
 
 export const IntroSection = ({ introSectionData }) => {
   const {

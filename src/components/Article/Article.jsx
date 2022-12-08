@@ -1,12 +1,11 @@
 import React from 'react';
-import { string, shape } from 'prop-types';
 
 import './article.scss';
-import ArticleTopParticles from '../../assets/icons/icon-article-top-particles.svg';
-import ArticleBottomParticles from '../../assets/icons/icon-article-bottom-particles.svg';
-import VerticalLine from '../../assets/icons/icon-vertical-line-article.svg';
-import ArrowDownArticle from '../../assets/icons/icon-arrow-down-article.svg';
-import { articleTypes } from '../Pages/Homepage/types';
+import ArticleTopParticles from '~/assets/icons/icon-article-top-particles.svg';
+import ArticleBottomParticles from '~/assets/icons/icon-article-bottom-particles.svg';
+import VerticalLine from '~/assets/icons/icon-vertical-line-article.svg';
+import ArrowDownArticle from '~/assets/icons/icon-arrow-down-article.svg';
+import { articleTypes } from '~/components/Pages/Homepage/types';
 
 export const Article = ({ articleSectionData }) => {
   const { articleTitle, articleContent } = articleSectionData;
