@@ -9,7 +9,7 @@ $_button-size: to-rem(40);
     text-align: right;
   }
 
-  &__button-container {
+  &__navigation {
     display: flex;
     gap: to-rem(10);
     margin-left: to-rem(20);

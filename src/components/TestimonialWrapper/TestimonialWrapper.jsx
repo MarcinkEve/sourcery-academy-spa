@@ -41,7 +41,7 @@ export const TestimonialWrapper = ({ title, data, alt }) => {
         visibleSlides={3}
         isIntrinsicHeight={true}
       >
-        <div className={'carousel__button-container'}>
+        <div className={'carousel__navigation'}>
           <ButtonBack className={'carousel__button'}>
             <SvgArrow className={'carousel__arrow'} />
           </ButtonBack>
