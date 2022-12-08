@@ -7,6 +7,7 @@ import TextSection from '../TextSection';
 import ImageDevelopersDescriptionParticlesTop from '../../assets/particles/developers-description-particles-top.svg';
 import ImageDevelopersDescriptionParticlesBottom from '../../assets/particles/developers-description-particles-bottom.svg';
 import ImageDevelopersDescription from '../../assets/images/developers-description.svg';
+import LineDevelopersDescription from '../../assets/lines/developers-description-line.svg';
 
 export const AcademyDevelopersDescription = ({
   isRightAlligned,
@@ -34,6 +35,7 @@ export const AcademyDevelopersDescription = ({
           <ImageDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
         </div>
         <ImageDevelopersDescription className="developers-description__icon" />
+        <LineDevelopersDescription className="developers-description__line" />
       </section>
     </>
   );

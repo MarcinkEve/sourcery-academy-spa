@@ -12,11 +12,11 @@ export const AcademiesDescriptionSection = () => {
       id="academies-decription-section"
     >
       <AcademyDevelopersDescription />
-      <AcademyTestersDescription />
-      <AcademyFrontEndDescription />
-      <AcademyKidsDescription />
+      {/* <AcademyTestersDescription /> */}
+      {/* <AcademyFrontEndDescription /> */}
+      {/* <AcademyKidsDescription /> */}
       {/*@TODO: DELETE --> as a placeholder until "Testimonials" section is added: */}
-      <h2 style={{ textAlign: 'right', opacity: '0.5' }}>Testimonials</h2>
+      {/* <h2 style={{ textAlign: 'right', opacity: '0.5' }}>Testimonials</h2> */}
     </section>
   );
 };
