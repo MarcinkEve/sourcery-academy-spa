@@ -27,6 +27,7 @@ export default {
 
 export const TestimonialWrapperComponent = (args) => {
   const { theme, ...rest } = args;
+
   return (
     <div theme={theme}>
       <TestimonialWrapper {...rest} />

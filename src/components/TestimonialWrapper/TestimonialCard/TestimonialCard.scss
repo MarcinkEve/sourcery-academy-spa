@@ -1,4 +1,5 @@
-@import '~/sass/global';
+@import '~/sass/utilities/mixins';
+@import '~/sass/variables';
 
 $_photo-size: to-rem(78);
 $_card-width: 340;
@@ -6,9 +7,9 @@ $_shadow-size: 20;
 
 .card {
   @include flex-box(
-          $direction: column,
-          $justify-content: center,
-          $align-items: center
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
   );
   @include box-shadow(to-rem(-$_shadow-size), to-rem($_shadow-size));
 

@@ -6,10 +6,10 @@ import {
   ButtonBack,
   ButtonNext,
 } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import { arrayOf, shape, string } from 'prop-types';
 
 import TestimonialCard from './TestimonialCard';
-import 'pure-react-carousel/dist/react-carousel.es.css';
 import './TestimonialWrapper.scss';
 import { cardWidth, shadowSize } from './TestimonialCard/TestimonialCard.scss';
 import SvgArrow from '../../assets/icons/icon-feather-arrow-down.svg';
