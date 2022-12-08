@@ -13,9 +13,9 @@ export default {
 const provideTheme = (theme) => {
   return [
     (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
+        <div theme={theme}>
+          <Story />
+        </div>
     ),
   ];
 };
