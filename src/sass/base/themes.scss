@@ -26,7 +26,7 @@
   --secondary-color: #{$red-400};
   --button-hover: #{$red-300};
   --button-active: #{$red-600};
-  --icon-secondary-color: #{$red-400};
+  --icon-secondary-color: var(--secondary-color);
 }
 
 [theme='application'] {
