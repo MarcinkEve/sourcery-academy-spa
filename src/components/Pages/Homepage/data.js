@@ -16,3 +16,14 @@ export const articleSectionData = {
   articleContent:
     'There are four disciplines available: for developers, testers, front-end developers and kids. Academies are taking place in Devbridge Lithuanian offices. Students, who are willing to join developers, testers or Front-End academies, need to pass the test, prove their best to get an invitation to enroll. This rule doesn’t apply to the kids (7 to 12 years old) academy, the admission is limited only by available number of entries.',
 };
+
+export const developersDescriptionData = {
+  isRightAlligned: false,
+  isHeadingSpacingLarge: false,
+  headingContent: 'Sourcery for Developers',
+  isParagraphTextBold: false,
+  paragraphContent:
+    'A free of charge three-month cutting-edge technology course, available in the Spring and Fall of each year. Students are invited to the Devbridge in Kaunas and Vilnius offices to attend lectures and create custom projects with the help of software development professionals.',
+  buttonText: 'Learn more',
+  pageRoute: ROUTES.DEVELOPERS,
+};
