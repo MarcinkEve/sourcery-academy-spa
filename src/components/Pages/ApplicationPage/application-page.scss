@@ -28,8 +28,8 @@
 
   &__particles-icon {
     position: absolute;
-    right: 0;
-    transform: translateY(-32%);
+    right: to-rem(40);
+    transform: translateY(-31%);
     width: to-rem(1177);
   }
 
