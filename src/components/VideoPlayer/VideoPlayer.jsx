@@ -7,7 +7,7 @@ import CustomPlayPause from './CustomButtons/CustomPlayPause';
 import CustomPlayPauseOnScreen from './CustomButtons/CustomPlayPauseOnScreen';
 import CustomFullscreen from './CustomButtons/CustomFullscreen';
 import CustomVolume from './CustomButtons/CustomVolume';
-import Settings from '../../assets/icons/icon-settings.svg';
+import Settings from '~/assets/icons/icon-settings.svg';
 
 const { CurrentTime, SeekBar, Volume } = controls;
 

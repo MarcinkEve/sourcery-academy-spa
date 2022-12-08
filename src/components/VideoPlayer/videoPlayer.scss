@@ -1,14 +1,14 @@
-@import '~/sass/global';
+@import '~/sass/variables';
 
 .player {
-  max-height: 800px; // fix this
+  min-height: 600px; // fix this
   width: 100%;
 }
 
 .media {
   $_this: &;
   $_overlay-color: rgba(0, 0, 0, 0.6);
-  $_volume-bar-color: rgba(0, 0, 0, 0.6);
+  $_volume-bar-color: rgba(0, 0, 0, 0.6); // same color...
 
   border-radius: 15px;
   left: 50%;
@@ -40,7 +40,7 @@
   }
 
   video {
-    border: 2px solid $violet-700;
+    border: 2px solid var(--primary-color);
     border-radius: 15px;
     max-width: to-rem(1086);
 
@@ -83,7 +83,7 @@
     z-index: 10;
 
     &-play-pause {
-      background-color: $violet-400;
+      background-color: var(--secondary-color);
       border-radius: 0 0 0 15px;
       border-style: none;
       cursor: pointer;
@@ -92,16 +92,16 @@
       width: 64px;
 
       &:hover {
-        background-color: $violet-700;
+        background-color: var(--primary-color);
       }
 
       &:hover + #{$_this}__controls-current-time {
-        background-color: $violet-700;
+        background-color: var(--primary-color);
       }
     }
 
     &-current-time {
-      background-color: $violet-400;
+      background-color: var(--secondary-color);
       border-right: 1px solid $white-400;
       color: $white-400;
       cursor: default;
@@ -113,7 +113,7 @@
     }
 
     &-seek-bar {
-      background-color: $violet-700;
+      background-color: var(--primary-color);
       border-style: none;
       height: 100%;
       margin-right: auto;
@@ -130,8 +130,8 @@
       width: 100%;
 
       &::-moz-range-thumb {
-        border: 1px solid $violet-400;
-        box-shadow: -100vw 0 0 100vw $violet-400;
+        border: 1px solid var(--secondary-color);
+        box-shadow: -100vw 0 0 100vw var(--secondary-color);
         box-sizing: border-box;
         height: 100%;
         width: 0;
@@ -139,8 +139,8 @@
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        border: 1px solid $violet-400;
-        box-shadow: -100vw 0 0 100vw $violet-400;
+        border: 1px solid var(--secondary-color);
+        box-shadow: -100vw 0 0 100vw var(--secondary-color);
         height: 100%;
         width: 0;
       }
@@ -160,7 +160,7 @@
       }
 
       &-mute {
-        background-color: $violet-400;
+        background-color: var(--secondary-color);
         border-style: none;
         cursor: pointer;
         flex-shrink: 0;
@@ -170,7 +170,7 @@
         &:hover {
           .volume-icon,
           .volume-off-icon {
-            fill: $violet-700;
+            fill: var(--primary-color);
             scale: 1.1;
             transition: 0.2s;
           }
@@ -200,7 +200,7 @@
     }
 
     &-settings {
-      background-color: $violet-400;
+      background-color: var(--secondary-color);
       border: 0;
       cursor: pointer;
       flex-shrink: 0;
@@ -212,12 +212,12 @@
       }
 
       &:hover {
-        background-color: $violet-700;
+        background-color: var(--primary-color);
       }
     }
 
     &-fullscreen {
-      background-color: $violet-400;
+      background-color: var(--secondary-color);
       border-radius: 0 0 15px;
       border-style: none;
       cursor: pointer;
@@ -226,7 +226,7 @@
       width: 69px;
 
       &:hover {
-        background-color: $violet-700;
+        background-color: var(--primary-color);
       }
     }
   }
