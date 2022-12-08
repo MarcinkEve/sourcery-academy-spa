@@ -33,10 +33,6 @@ $_svg-container-width: 225px;
 
   &__odd-number {
     @include flex-box;
-
-    #{$_this}__text-container {
-      margin-right: to-rem(13);
-    }
   }
 
   &__even-number {
@@ -53,7 +49,7 @@ $_svg-container-width: 225px;
   &__svg-container {
     color: var(--primary-color);
     left: 100%;
-    margin-left: 13px;
+    margin-left: to-rem(13);
     position: relative;
     top: -80px;
     width: $_svg-container-width;
