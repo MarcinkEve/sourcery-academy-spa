@@ -7,7 +7,6 @@ import AcademiesDescriptionSection from '~/components/AcademiesDescriptionSectio
 export const Homepage = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
-      <h1 style={{ textAlign: 'center' }}>Homepage</h1>
       <AcademiesDescriptionSection />
     </PageLayout>
   );
