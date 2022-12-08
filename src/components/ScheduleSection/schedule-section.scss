@@ -25,6 +25,7 @@
   }
 
   &__line {
+    color: var(--primary-color);
     height: to-rem(680);
     position: absolute;
     right: 0;
