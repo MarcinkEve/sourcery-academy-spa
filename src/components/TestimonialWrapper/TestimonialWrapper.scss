@@ -18,25 +18,12 @@ $_button-size: to-rem(40);
   }
 
   &__button {
-    background-color: $white-400;
     border-radius: 50%;
     border-style: none;
     color: var(--primary-color);
     height: $_button-size;
     padding: 0;
     width: $_button-size;
-
-    &:hover {
-      background-color: var(--button-hover);
-      color: $white-400;
-    }
-
-    &:focus,
-    &:focus-visible,
-    &:active {
-      background-color: var(--button-active);
-      color: $white-400;
-    }
 
     &:focus {
       outline: 2px solid var(--button-hover);
@@ -51,7 +38,6 @@ $_button-size: to-rem(40);
     }
 
     &:disabled {
-      background-color: $gray-100;
       color: $charcoal-100;
       cursor: not-allowed;
       outline: none;
@@ -59,13 +45,30 @@ $_button-size: to-rem(40);
   }
 
   &__arrow {
+    fill: $white-400;
     height: 100%;
     transform: rotate(90deg);
     width: 100%;
 
+    &:hover {
+      color: $white-400;
+      fill: var(--button-hover);
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      color: $white-400;
+      fill: var(--button-active);
+    }
+
     &--next {
       transform: rotate(270deg);
     }
+  }
+
+  &__slider:focus {
+    outline: 4px dashed $orange-200;
   }
 
   &__card {
