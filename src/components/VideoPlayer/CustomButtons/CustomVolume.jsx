@@ -1,7 +1,8 @@
 import { string, object } from 'prop-types';
 import React, { Component } from 'react';
 
-import '../videoPlayer.scss';
+// import '../videoPlayer.scss';
+import './customButtonStyles.scss';
 import { withMediaProps } from 'react-media-player';
 import IconVolume from '~/assets/icons/icon-volume.svg';
 import IconVolumeOff from '~/assets/icons/icon-volume-off.svg';

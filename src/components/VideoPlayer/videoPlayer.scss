@@ -20,7 +20,7 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
 
   &__player {
-    height: 600px; // fix this
+    height: to-rem(600);
   }
 
   &__close-button {
@@ -28,12 +28,16 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     border: 0;
     color: $white-400;
     cursor: pointer;
-    font-size: 40px;
+    font-size: to-rem(40);
     height: min-content;
     position: absolute;
-    right: -50px;
-    top: -50px;
+    right: to-rem(-50);
+    top: to-rem(-50);
     width: min-content;
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
   }
 
   video {
@@ -63,49 +67,31 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 
   bottom: 0;
   display: flex;
-  height: 48px;
+  height: to-rem(48);
   position: absolute;
   width: 100%;
   z-index: 1;
 
   &__play-pause {
-    background-color: var(--secondary-color);
     border-radius: 0 0 0 15px;
-    border-style: none;
-    cursor: pointer;
-    flex-shrink: 0;
-    height: 100%;
-    width: 64px;
 
-    .pause-icon,
-    .play-icon {
-      fill: $white-400;
-    }
-
-    &:hover {
-      background-color: var(--primary-color);
-
-      .pause-icon,
-      .play-icon {
-        fill: var(--secondary-color);
-      }
-    }
-
-    &:hover + #{$_this}__controls-current-time {
-      background-color: var(--primary-color);
+    &:hover + #{$_this}__current-time {
+      background-color: var(--button-hover);
     }
   }
-
+  ////////////////////////////////////FLEX MIXIN
   &__current-time {
+    align-items: center;
     background-color: var(--secondary-color);
-    border-right: 1px solid $white-400;
+    border-right: 1px solid var(--primary-color);
     color: $white-400;
     cursor: default;
+    display: flex;
     flex-shrink: 0;
     height: 100%;
-    padding-left: 10px;
-    padding-top: 13px;
-    width: 69px;
+    padding: 0 to-rem(10);
+    transition: $transition-time-200;
+    width: to-rem(69);
   }
 
   &__seek-bar,
@@ -114,6 +100,7 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     background-color: var(--primary-color);
     border-radius: 0;
     border-style: none;
+    flex-shrink: 1;
     height: 100%;
     margin: auto;
     margin-right: auto;
@@ -139,87 +126,95 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   }
 
   &__volume-mute {
-    background-color: var(--secondary-color);
-    border-style: none;
-    cursor: pointer;
-    flex-shrink: 0;
-    height: 100%;
-    position: relative;
-    width: 69px;
-
-    .volume-icon,
-    .volume-off-icon {
-      fill: $white-400;
-      height: 23px;
-      transition: 0.2s;
+    &:hover + #{$_this}__volume-bar {
+      background-color: $_semi-transparent-color;
+      opacity: 1;
+      z-index: 10;
     }
-
-    &:hover + #{$_this}__controls-volume-bar {
-      display: block;
+    &:focus-visible + #{$_this}__volume-bar {
+      // display: block;
+      background-color: $_semi-transparent-color;
     }
   }
 
   &__volume-bar {
-    appearance: none;
-    background-color: $_semi-transparent-color;
-    bottom: 88px;
-    display: inline-block;
-    display: none;
-    height: 69px;
+    bottom: to-rem(72);
+    display: block;
+    // display: none;
+    // flex-shrink: 0;
+    height: to-rem(69);
+    opacity: 0;
     position: absolute;
-    right: 98px;
+    right: to-rem(113);
     transform: rotate(-90deg);
-    width: 150px;
+    width: to-rem(120);
+    z-index: -10;
 
-    &:hover {
-      display: block;
+    &:hover,
+    &:focus-visible {
+      // display: block;
+      background-color: $_semi-transparent-color;
+      opacity: 1;
     }
 
     &::-moz-range-thumb {
-      border: 1px solid var(--primary-color);
-      box-shadow: -100vw 0 0 100vw var(--primary-color);
+      border: 1px solid var(--secondary-color);
+      box-shadow: -100vw 0 0 100vw var(--secondary-color);
     }
 
     &::-webkit-slider-thumb {
-      border: 1px solid var(--primary-color);
-      box-shadow: -100vw 0 0 100vw var(--primary-color);
+      border: 1px solid var(--secondary-color);
+      box-shadow: -100vw 0 0 100vw var(--secondary-color);
+    }
+  }
+
+  button {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    flex-shrink: 0;
+    height: 100%;
+    padding-top: to-rem(3);
+    width: to-rem(69);
+  }
+
+  button,
+  &__seek-bar,
+  &__volume-bar {
+    border-style: none;
+    transition: $transition-time-200;
+
+    &:hover {
+      background-color: var(--button-hover);
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--button-active);
+      z-index: inherit;
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+      z-index: 20;
     }
   }
 
   &__settings {
-    background-color: var(--secondary-color);
-    border: 0;
-    cursor: pointer;
-    flex-shrink: 0;
-    height: 100%;
-    width: 69px;
-
     &-icon {
-      width: 24px;
-    }
-
-    &:hover {
-      background-color: var(--primary-color);
+      width: to-rem(24);
     }
   }
 
   &__fullscreen {
-    background-color: var(--secondary-color);
     border-radius: 0 0 15px;
-    border-style: none;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: all 0.2s;
-    width: 69px;
-
-    &:hover {
-      background-color: var(--primary-color);
-    }
   }
-}
-
-.pause-icon,
-.play-icon,
-.fullscreen-icon {
-  height: 19px;
 }

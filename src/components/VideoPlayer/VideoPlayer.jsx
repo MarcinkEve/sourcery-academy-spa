@@ -32,7 +32,11 @@ export const VideoPlayer = ({
             e.stopPropagation();
           }}
         >
-          <button onClick={onClose} className="media__close-button">
+          <button
+            onClick={onClose}
+            className="media__close-button"
+            aria-label="Close modal"
+          >
             &times;
           </button>
           <Player
@@ -45,7 +49,7 @@ export const VideoPlayer = ({
             <CustomPlayPause className="controls__play-pause" />
             <CurrentTime className="controls__current-time" />
             <SeekBar className="controls__seek-bar" />
-            <CustomVolume className="controls__volume-mute" />
+            <CustomVolume className="controls__volume-mute" tabindex={2} />
             <Volume className="controls__volume-bar" />
             <button
               aria-label="This button doesn't work"
