@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, number, object } from 'prop-types';
+import { string, number, shape, element } from 'prop-types';
 
 import './applicationStep.scss';
 
@@ -35,5 +35,5 @@ ApplicationStep.propTypes = {
   indexFromParent: number,
   heading: string,
   paragraph: string,
-  iconObject: object,
+  iconObject: shape({ id: number, icon: element }),
 };
