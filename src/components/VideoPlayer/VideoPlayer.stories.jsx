@@ -3,31 +3,34 @@ import React from 'react';
 import { VideoPlayer } from './VideoPlayer';
 
 export default {
-  title: 'Video Player',
+  title: 'VideoPlayer',
   component: VideoPlayer,
-  parameters: {
-    layout: 'centered',
+  args: {
+    theme: 'Violet',
+    isModalOpen: true,
+    hasAutoPlay: false,
+    videoSrc:
+      'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4',
+  },
+  argTypes: {
+    theme: {
+      options: ['Violet', 'Blue', 'Green', 'Red'],
+      control: 'radio',
+      mapping: {
+        Violet: 'home',
+        Blue: 'developers',
+        Green: 'testers',
+        Red: 'front-end',
+      },
+    },
   },
 };
 
-const setTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <VideoPlayer {...args} />;
-
-export const VideoModal = Template.bind({});
-VideoModal.decorators = setTheme('front-end');
-VideoModal.args = {
-  isModalOpen: true,
-  hasAutoPlay: false,
-  // onClose: false,
-  videoSrc:
-    'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4',
+export const Video = (args) => {
+  const { theme, ...rest } = args;
+  return (
+    <div theme={theme}>
+      <VideoPlayer {...rest} />
+    </div>
+  );
 };
