@@ -4,6 +4,8 @@
 $_button-size: to-rem(40);
 
 .carousel {
+  $_this: &;
+
   &__title {
     margin: 0 0 to-rem(67);
     text-align: right;
@@ -33,8 +35,9 @@ $_button-size: to-rem(40);
       outline: 4px dashed $orange-200;
     }
 
-    &:active {
-      outline: none;
+    &:disabled > #{$_this}__arrow:hover {
+      color: $charcoal-100;
+      fill: $white-400;
     }
 
     &:disabled {
