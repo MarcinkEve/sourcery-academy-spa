@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AcademyDevelopersDescription from '~/components/AcademiesDescriptionSection/AcademyDevelopersDescription';
-import AcademyTestersDescription from '../AcademyTestersDescription';
+import AcademyTestersDescription from '~/components/AcademiesDescriptionSection/AcademyTestersDescription';
 import AcademyFrontEndDescription from '../AcademyFrontEndDescription';
 import AcademyKidsDescription from '../AcademyKidsDescription';
 import { textSectionType } from '~/components/Pages/Homepage/types';

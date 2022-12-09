@@ -1,8 +1,6 @@
 import React from 'react';
-import { bool, oneOf, string } from 'prop-types';
 
 import './academy-testers-description.scss';
-import { ROUTES } from '~/constants/routes';
 import TextSection from '~/components/TextSection';
 import ImageTestersDescriptionParticlesTop from '~/assets/particles/testers-description-particles-top.svg';
 import ImageTestersDescriptionParticlesBottom from '~/assets/particles/testers-description-particles-bottom.svg';
