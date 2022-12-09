@@ -4,5 +4,5 @@
 .schedule-subcolumn {
   @include flex-box($direction: column, $align-items: center);
 
-  gap: $spacer-l;
+  row-gap: $spacer-l;
 }
