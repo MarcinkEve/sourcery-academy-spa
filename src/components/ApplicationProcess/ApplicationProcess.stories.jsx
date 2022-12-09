@@ -61,7 +61,7 @@ const Template = (args) => {
   const { theme, ...rest } = args;
   return (
     <div theme={theme}>
-      <ApplicationProcess {...rest} />;
+      <ApplicationProcess {...rest} />
     </div>
   );
 };
