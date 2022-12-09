@@ -15,6 +15,7 @@
     position: absolute;
     transform: translateY(-50%);
     width: to-rem(732);
+    z-index: -1;
   }
 
   &__bottom-particles {
@@ -22,6 +23,7 @@
     position: absolute;
     transform: translateY(38%);
     width: to-rem(732);
+    z-index: -1;
   }
 
   &__line {
@@ -31,5 +33,6 @@
     top: to-rem(115);
     transform: translateX(150%);
     width: to-rem(43);
+    z-index: -1;
   }
 }

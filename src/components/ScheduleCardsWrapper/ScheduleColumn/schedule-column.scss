@@ -10,6 +10,6 @@
   &__data {
     @include flex-box($direction: row, $justify-content: center);
 
-    gap: $spacer-l;
+    column-gap: $spacer-l;
   }
 }
