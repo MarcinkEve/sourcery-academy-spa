@@ -1,4 +1,5 @@
-@import '~/sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .kids-description {
   @include flex-box(
@@ -7,7 +8,7 @@
     $align-items: flex-start
   );
 
-  margin-bottom: to-rem(-290);
+  // margin-bottom: to-rem(-290); ////
 
   &__content {
     max-width: to-rem(551);
@@ -22,17 +23,24 @@
   }
 
   &__bottom-particles {
-    bottom: to-rem(-248);
+    bottom: to-rem(-248); /////
     left: to-rem(100);
     max-width: to-rem(442);
     position: absolute;
   }
 
-  &__icon {
-    left: to-rem(45);
-    max-width: to-rem(657);
+  .kids-academy-icons {
     position: relative;
-    top: to-rem(-64);
-    z-index: -1;
+
+    &__image {
+      left: to-rem(45);
+      max-width: to-rem(657);
+      // top: to-rem(-64); ////
+      z-index: -1;
+    }
+
+    &__line {
+      position: absolute;
+    }
   }
 }

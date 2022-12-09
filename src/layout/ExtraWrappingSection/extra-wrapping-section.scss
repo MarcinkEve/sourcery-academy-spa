@@ -1,0 +1,7 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.extra-wrapper {
+  margin: 0 auto;
+  max-width: to-rem(1200);
+}

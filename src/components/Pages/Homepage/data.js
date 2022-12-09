@@ -49,3 +49,14 @@ export const frontEndDescriptionData = {
   buttonText: 'Learn more',
   pageRoute: ROUTES.FRONTEND,
 };
+
+export const kidsDescriptionData = {
+  isRightAlligned: false,
+  isHeadingSpacingLarge: false,
+  headingContent: 'Sourcery for Kids',
+  isParagraphTextBold: false,
+  paragraphContent:
+    'Sourcery for Kids seeks to educate kids giving them opportunity to learn and apply technological product development skills. For the entire academic year, the children will study key aspects of programming, from logical concepts and functions, through to variables, sequences, coordinates, and movement.',
+  buttonText: 'Learn more',
+  pageRoute: ROUTES.KIDS,
+};
