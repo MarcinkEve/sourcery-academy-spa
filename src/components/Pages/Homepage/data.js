@@ -38,3 +38,14 @@ export const testersDescriptionData = {
   buttonText: 'Learn more',
   pageRoute: ROUTES.TESTERS,
 };
+
+export const frontEndDescriptionData = {
+  isRightAlligned: true,
+  isHeadingSpacingLarge: false,
+  headingContent: 'Sourcery for Front-End',
+  isParagraphTextBold: false,
+  paragraphContent:
+    'Start your career in software development with the intense program at Sourcery for Front-End Developers. Complete the admission and enter our free of charge two-month academy this autumn in Vilnius to learn from our top specialists.',
+  buttonText: 'Learn more',
+  pageRoute: ROUTES.FRONTEND,
+};

@@ -1,4 +1,5 @@
-@import '~/sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .frontend-description {
   @include flex-box(
@@ -7,7 +8,8 @@
     $align-items: flex-start
   );
 
-  margin-bottom: to-rem(110);
+  margin-top: to-rem(180);
+  position: relative;
 
   &__content {
     max-width: to-rem(534);
@@ -19,7 +21,7 @@
     max-width: to-rem(99);
     position: absolute;
     right: to-rem(39);
-    top: to-rem(-37);
+    transform: translateY(-100%);
   }
 
   &__bottom-particles {
@@ -30,8 +32,7 @@
   }
 
   &__icon {
-    left: to-rem(109);
     max-width: to-rem(417);
-    position: relative;
+    transform: translateX(18%);
   }
 }

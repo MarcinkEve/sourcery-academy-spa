@@ -2,13 +2,14 @@ import React from 'react';
 
 import AcademyDevelopersDescription from '~/components/AcademiesDescriptionSection/AcademyDevelopersDescription';
 import AcademyTestersDescription from '~/components/AcademiesDescriptionSection/AcademyTestersDescription';
-import AcademyFrontEndDescription from '../AcademyFrontEndDescription';
+import AcademyFrontEndDescription from '~/components/AcademiesDescriptionSection/AcademyFrontEndDescription';
 import AcademyKidsDescription from '../AcademyKidsDescription';
 import { textSectionType } from '~/components/Pages/Homepage/types';
 
 export const AcademiesDescriptionSection = ({
   developersDescriptionData,
   testersDescriptionData,
+  frontEndDescriptionData,
 }) => {
   return (
     <section
@@ -21,7 +22,9 @@ export const AcademiesDescriptionSection = ({
       <AcademyTestersDescription
         testersDescriptionData={testersDescriptionData}
       />
-      {/* <AcademyFrontEndDescription /> */}
+      <AcademyFrontEndDescription
+        frontEndDescriptionData={frontEndDescriptionData}
+      />
       {/* <AcademyKidsDescription /> */}
       {/*@TODO: DELETE --> as a placeholder until "Testimonials" section is added: */}
       {/* <h2 style={{ textAlign: 'right', opacity: '0.5' }}>Testimonials</h2> */}
@@ -32,4 +35,5 @@ export const AcademiesDescriptionSection = ({
 AcademiesDescriptionSection.propTypes = {
   developersDescriptionData: textSectionType.isRequired,
   testersDescriptionData: textSectionType.isRequired,
+  frontEndDescriptionData: textSectionType.isRequired,
 };
