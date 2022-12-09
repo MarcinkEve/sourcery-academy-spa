@@ -29,7 +29,7 @@ export const TestimonialWrapperComponent = (args) => {
   const { theme, ...rest } = args;
 
   return (
-    <div theme={theme}>
+    <div theme={theme} style={{ maxWidth: 1440, marginInline: 'auto' }}>
       <TestimonialWrapper {...rest} />
     </div>
   );
