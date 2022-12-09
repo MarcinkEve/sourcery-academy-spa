@@ -19,8 +19,8 @@ $_button-size: to-rem(40);
 
   &__button {
     background-color: $white-400;
-    border: none;
     border-radius: 50%;
+    border-style: none;
     color: var(--primary-color);
     height: $_button-size;
     padding: 0;
