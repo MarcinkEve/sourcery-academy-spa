@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { string, bool, func } from 'prop-types';
 
 import './videoPlayer.scss';
 import { Media, Player, controls } from 'react-media-player';
 import CustomPlayPause from './CustomButtons/CustomPlayPause';
-import CustomPlayPauseOnScreen from './CustomButtons/CustomPlayPauseOnScreen';
 import CustomFullscreen from './CustomButtons/CustomFullscreen';
 import CustomVolume from './CustomButtons/CustomVolume';
 import Settings from '~/assets/icons/icon-settings.svg';
@@ -17,16 +16,15 @@ export const VideoPlayer = ({
   onClose,
   hasAutoPlay,
 }) => {
-  if (!isModalOpen) return null;
-
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       e.key === 'Escape' && onClose();
     });
   }, []);
+  if (!isModalOpen) return null;
 
   return (
-    <div className="media__overlay" onClick={onClose}>
+    <div className="overlay" onClick={onClose}>
       <Media>
         <div
           className="media"
@@ -37,26 +35,25 @@ export const VideoPlayer = ({
           <button onClick={onClose} className="media__close-button">
             &times;
           </button>
-          <div className="media__player">
-            <Player
-              className="player"
-              src={videoSrc}
-              controls
-              autoPlay={hasAutoPlay}
-            />
-          </div>
-          <div className="media__controls">
-            <CustomPlayPause className="media__controls-play-pause" />
-            <CurrentTime className="media__controls-current-time" />
-            <SeekBar className="media__controls-seek-bar" />
-            <div className="media__controls-volume">
-              <CustomVolume className="media__controls-volume-mute" />
-              <Volume className="media__controls-volume-bar" />
-            </div>
-            <button className="media__controls-settings">
-              <Settings className="media__controls-settings-icon" />
+          <Player
+            className="media__player"
+            src={videoSrc}
+            controls
+            autoPlay={hasAutoPlay}
+          />
+          <div className="controls">
+            <CustomPlayPause className="controls__play-pause" />
+            <CurrentTime className="controls__current-time" />
+            <SeekBar className="controls__seek-bar" />
+            <CustomVolume className="controls__volume-mute" />
+            <Volume className="controls__volume-bar" />
+            <button
+              aria-label="This button doesn't work"
+              className="controls__settings"
+            >
+              <Settings className="controls__settings-icon" />
             </button>
-            <CustomFullscreen className="media__controls-fullscreen" />
+            <CustomFullscreen className="controls__fullscreen" />
           </div>
         </div>
       </Media>

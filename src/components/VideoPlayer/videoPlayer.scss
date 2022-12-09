@@ -1,28 +1,26 @@
 @import '~/sass/variables';
 
-.player {
-  height: 600px; // fix this
+$_semi-transparent-color: rgba(0, 0, 0, 0.3);
+
+.overlay {
+  background-color: $_semi-transparent-color;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .media {
-  $_this: &;
-  $_overlay-color: rgba(0, 0, 0, 0.6);
-  $_volume-bar-color: rgba(0, 0, 0, 0.6); // same color...
-
   border-radius: 15px;
   left: 50%;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  &__overlay {
-    background-color: $_overlay-color;
-    display: block;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  &__player {
+    height: 600px; // fix this
   }
 
   &__close-button {
@@ -58,171 +56,164 @@
       border-radius: 0;
     }
   }
+}
 
-  // #{$_this}__player-overlay-icon {
-  //   background-color: transparent;
-  //   border-style: none;
-  //   cursor: pointer;
-  //   height: 100%;
-  //   left: 50%;
-  //   position: absolute;
-  //   top: 50%;
-  //   transform: translate(-50%, -50%);
-  //   width: 100%;
-  //   z-index: 5;
-  // }
+.controls {
+  $_this: &;
 
-  &__controls {
-    bottom: 0;
-    display: flex;
-    height: 48px;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
+  bottom: 0;
+  display: flex;
+  height: 48px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 
-    &-play-pause {
-      background-color: var(--secondary-color);
-      border-radius: 0 0 0 15px;
-      border-style: none;
-      cursor: pointer;
-      flex-shrink: 0;
-      height: 100%;
-      width: 64px;
+  &__play-pause {
+    background-color: var(--secondary-color);
+    border-radius: 0 0 0 15px;
+    border-style: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    height: 100%;
+    width: 64px;
 
-      &:hover {
-        background-color: var(--primary-color);
-      }
-
-      &:hover + #{$_this}__controls-current-time {
-        background-color: var(--primary-color);
-      }
+    .pause-icon,
+    .play-icon {
+      fill: $white-400;
     }
 
-    &-current-time {
-      background-color: var(--secondary-color);
-      border-right: 1px solid $white-400;
-      color: $white-400;
-      cursor: default;
-      flex-shrink: 0;
-      height: 100%;
-      padding-left: 10px;
-      padding-top: 13px;
-      width: 69px;
-    }
-
-    &-seek-bar {
+    &:hover {
       background-color: var(--primary-color);
-      border-style: none;
-      height: 100%;
-      margin-right: auto;
-      width: 100%;
+
+      .pause-icon,
+      .play-icon {
+        fill: var(--secondary-color);
+      }
     }
 
-    input {
+    &:hover + #{$_this}__controls-current-time {
+      background-color: var(--primary-color);
+    }
+  }
+
+  &__current-time {
+    background-color: var(--secondary-color);
+    border-right: 1px solid $white-400;
+    color: $white-400;
+    cursor: default;
+    flex-shrink: 0;
+    height: 100%;
+    padding-left: 10px;
+    padding-top: 13px;
+    width: 69px;
+  }
+
+  &__seek-bar,
+  &__volume-bar {
+    appearance: none;
+    background-color: var(--primary-color);
+    border-radius: 0;
+    border-style: none;
+    height: 100%;
+    margin: auto;
+    margin-right: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &::-moz-range-thumb {
+      border: 1px solid var(--secondary-color);
+      box-shadow: -100vw 0 0 100vw var(--secondary-color);
+      box-sizing: border-box;
+      height: 100%;
+      width: 0;
+    }
+
+    &::-webkit-slider-thumb {
       appearance: none;
-      border-radius: 0;
+      border: 1px solid var(--secondary-color);
+      box-shadow: -100vw 0 0 100vw var(--secondary-color);
       height: 100%;
-      margin: auto;
-      overflow: hidden;
-      position: relative;
-      width: 100%;
+      width: 0;
+    }
+  }
 
-      &::-moz-range-thumb {
-        border: 1px solid var(--secondary-color);
-        box-shadow: -100vw 0 0 100vw var(--secondary-color);
-        box-sizing: border-box;
-        height: 100%;
-        width: 0;
-      }
+  &__volume-mute {
+    background-color: var(--secondary-color);
+    border-style: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    width: 69px;
 
-      &::-webkit-slider-thumb {
-        appearance: none;
-        border: 1px solid var(--secondary-color);
-        box-shadow: -100vw 0 0 100vw var(--secondary-color);
-        height: 100%;
-        width: 0;
-      }
+    .volume-icon,
+    .volume-off-icon {
+      fill: $white-400;
+      height: 23px;
+      transition: 0.2s;
     }
 
-    &-volume {
-      border-left: 1px solid $white-400;
-      height: 100%;
-      position: relative;
-      width: 69px;
+    &:hover + #{$_this}__controls-volume-bar {
+      display: block;
+    }
+  }
 
-      .volume-icon,
-      .volume-off-icon {
-        fill: $white-400;
-        height: 23px;
-        transition: 0.2s;
+  &__volume-bar {
+    appearance: none;
+    background-color: $_semi-transparent-color;
+    bottom: 88px;
+    display: inline-block;
+    display: none;
+    height: 69px;
+    position: absolute;
+    right: 98px;
+    transform: rotate(-90deg);
+    width: 150px;
 
-        &:hover {
-          fill: var(--primary-color);
-          scale: 1.1;
-          transition: 0.2s;
-        }
-      }
-
-      &-mute {
-        background-color: var(--secondary-color);
-        border-style: none;
-        cursor: pointer;
-        flex-shrink: 0;
-        height: 100%;
-        width: 69px;
-      }
-
-      &-bar {
-        appearance: none;
-        background-color: $_volume-bar-color;
-        border-left: 1px solid $white-400;
-        bottom: 142px;
-        display: none;
-        height: 300px;
-        right: 25px;
-        transform: rotate(-90deg);
-        width: 200px;
-      }
-
-      input {
-        height: 69px;
-        width: 120px;
-      }
-
-      &:hover &-bar {
-        display: block;
-      }
+    &:hover {
+      display: block;
     }
 
-    &-settings {
-      background-color: var(--secondary-color);
-      border: 0;
-      cursor: pointer;
-      flex-shrink: 0;
-      height: 100%;
-      width: 69px;
-
-      &-icon {
-        width: 24px;
-      }
-
-      &:hover {
-        background-color: var(--primary-color);
-      }
+    &::-moz-range-thumb {
+      border: 1px solid var(--primary-color);
+      box-shadow: -100vw 0 0 100vw var(--primary-color);
     }
 
-    &-fullscreen {
-      background-color: var(--secondary-color);
-      border-radius: 0 0 15px;
-      border-style: none;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: all 0.2s;
-      width: 69px;
+    &::-webkit-slider-thumb {
+      border: 1px solid var(--primary-color);
+      box-shadow: -100vw 0 0 100vw var(--primary-color);
+    }
+  }
 
-      &:hover {
-        background-color: var(--primary-color);
-      }
+  &__settings {
+    background-color: var(--secondary-color);
+    border: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    height: 100%;
+    width: 69px;
+
+    &-icon {
+      width: 24px;
+    }
+
+    &:hover {
+      background-color: var(--primary-color);
+    }
+  }
+
+  &__fullscreen {
+    background-color: var(--secondary-color);
+    border-radius: 0 0 15px;
+    border-style: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    width: 69px;
+
+    &:hover {
+      background-color: var(--primary-color);
     }
   }
 }
