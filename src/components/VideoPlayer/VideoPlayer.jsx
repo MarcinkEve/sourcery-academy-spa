@@ -49,7 +49,7 @@ export const VideoPlayer = ({
             <CustomPlayPause className="controls__play-pause" />
             <CurrentTime className="controls__current-time" />
             <SeekBar className="controls__seek-bar" />
-            <CustomVolume className="controls__volume-mute" tabindex={2} />
+            <CustomVolume className="controls__volume-mute" />
             <Volume className="controls__volume-bar" />
             <button
               aria-label="This button doesn't work"
