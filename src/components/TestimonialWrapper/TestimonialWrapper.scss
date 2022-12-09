@@ -13,7 +13,7 @@ $_button-size: to-rem(40);
     display: flex;
     gap: to-rem(10);
     margin-left: to-rem(20);
-    margin-top: calc(-#{$_button-size} - 1rem);
+    margin-top: calc(-1rem - #{$_button-size});
     position: absolute;
   }
 
