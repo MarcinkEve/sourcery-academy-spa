@@ -128,20 +128,20 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   &__volume-mute {
     &:hover + #{$_this}__volume-bar {
       background-color: $_semi-transparent-color;
+      display: block;
       opacity: 1;
       z-index: 10;
     }
     &:focus-visible + #{$_this}__volume-bar {
-      // display: block;
       background-color: $_semi-transparent-color;
+      display: block;
     }
   }
 
   &__volume-bar {
     bottom: to-rem(72);
-    display: block;
-    // display: none;
-    // flex-shrink: 0;
+    // display: block;
+    display: none;
     height: to-rem(69);
     opacity: 0;
     position: absolute;
@@ -151,9 +151,11 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     z-index: -10;
 
     &:hover,
+    &:focus,
     &:focus-visible {
-      // display: block;
       background-color: $_semi-transparent-color;
+      display: block;
+      // display: block;
       opacity: 1;
     }
 
