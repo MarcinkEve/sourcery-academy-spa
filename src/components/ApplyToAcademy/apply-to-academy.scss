@@ -1,0 +1,18 @@
+.apply-to-academy {
+  display: flex;
+  padding: 0 48px;
+
+  .text-section {
+    margin: 0;
+    width: 50%;
+  }
+
+  &__image {
+    height: 464px;
+    width: 564px;
+  }
+
+  &__line {
+    stroke: var(--primary-color);
+  }
+}

@@ -1,11 +1,13 @@
+import React from 'react';
 import { string, oneOf, element } from 'prop-types';
+
 import { ROUTES } from '~/constants/routes';
 import TextSection from '~/components/TextSection';
-import React from 'react';
+import './apply-to-academy';
 
-export const ApplyToAcademy = ({ headingText, mainText, route, icon }) => {
+export const ApplyToAcademy = ({ headingText, mainText, route, Image }) => {
   return (
-    <div style={{ display: 'flex' }}>
+    <section className="apply-to-academy">
       <TextSection
         isRightAlligned={false}
         isHeadingSpacingLarge={true}
@@ -15,14 +17,14 @@ export const ApplyToAcademy = ({ headingText, mainText, route, icon }) => {
         buttonText="Apply now"
         pageRoute={route}
       />
-      {icon}
-    </div>
+      <Image className="apply-to-academy__image" />
+    </section>
   );
 };
 
 ApplyToAcademy.propTypes = {
   headingText: string,
   mainText: string,
-  icon: element,
+  Image: element,
   route: oneOf([...Object.values(ROUTES)]),
 };
