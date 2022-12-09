@@ -1,5 +1,5 @@
-import { PropTypes } from 'prop-types';
 import React from 'react';
+import { string } from 'prop-types';
 
 import PageLayout from '~/layout/pageLayout';
 import AcademyWrapper from '~/components/Pages/AcademiesPages/AcademyWrapper';
@@ -15,5 +15,5 @@ export const Developers = ({ theme }) => {
 };
 
 Developers.propTypes = {
-  theme: PropTypes.string,
+  theme: string,
 };

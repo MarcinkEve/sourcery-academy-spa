@@ -1,5 +1,4 @@
 import React from 'react';
-import { shape } from 'prop-types';
 import classNames from 'classnames';
 
 import { scheduleType } from './types';

@@ -1,5 +1,4 @@
 import React from 'react';
-import { shape } from 'prop-types';
 
 import './schedule-section.scss';
 import TopParticles from '~/assets/particles/particles-schedule-top.svg';

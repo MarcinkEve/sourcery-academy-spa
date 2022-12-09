@@ -1,5 +1,4 @@
 import React from 'react';
-import {} from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import ScheduleSection from '~/components/ScheduleSection';
