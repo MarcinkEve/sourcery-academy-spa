@@ -28,7 +28,16 @@ export const AcademiesDescriptionSection = ({
       />
       <AcademyKidsDescription kidsDescriptionData={kidsDescriptionData} />
       {/*@TODO: DELETE --> as a placeholder until "Testimonials" section is added: */}
-      {/* <h2 style={{ textAlign: 'right', opacity: '0.5' }}>Testimonials</h2> */}
+      <h2
+        style={{
+          textAlign: 'right',
+          opacity: '0.5',
+          margin: '0',
+          height: '200px',
+        }}
+      >
+        Testimonials
+      </h2>
     </section>
   );
 };

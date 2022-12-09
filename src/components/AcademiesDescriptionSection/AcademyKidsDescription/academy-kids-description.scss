@@ -8,7 +8,8 @@
     $align-items: flex-start
   );
 
-  // margin-bottom: to-rem(-290); ////
+  margin-top: to-rem(101);
+  padding-bottom: to-rem(275);
 
   &__content {
     max-width: to-rem(551);
@@ -23,10 +24,10 @@
   }
 
   &__bottom-particles {
-    bottom: to-rem(-248); /////
     left: to-rem(100);
     max-width: to-rem(442);
     position: absolute;
+    transform: translateY(-30%);
   }
 
   .kids-academy-icons {
@@ -34,13 +35,14 @@
 
     &__image {
       left: to-rem(45);
-      max-width: to-rem(657);
-      // top: to-rem(-64); ////
-      z-index: -1;
+      width: to-rem(458);
     }
 
     &__line {
       position: absolute;
+      transform: translate(-85%, -8%);
+      width: to-rem(657);
+      z-index: -1;
     }
   }
 }
