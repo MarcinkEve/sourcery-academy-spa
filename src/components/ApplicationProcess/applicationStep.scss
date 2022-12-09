@@ -29,6 +29,7 @@ $_svg-container-width: to-rem(225);
   }
 
   &__paragraph {
+    min-height: to-rem(110);
     width: $_paragraph-width;
   }
 
