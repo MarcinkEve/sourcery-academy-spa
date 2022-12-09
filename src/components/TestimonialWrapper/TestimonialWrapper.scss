@@ -49,6 +49,13 @@ $_button-size: to-rem(40);
     &:active {
       outline: none;
     }
+
+    &:disabled {
+      background-color: $gray-100;
+      color: $charcoal-100;
+      cursor: not-allowed;
+      outline: none;
+    }
   }
 
   &__arrow {
