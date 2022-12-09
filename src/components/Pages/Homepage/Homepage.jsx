@@ -28,6 +28,17 @@ export const Homepage = ({ theme }) => {
           frontEndDescriptionData={frontEndDescriptionData}
           kidsDescriptionData={kidsDescriptionData}
         />
+        {/*@TODO: DELETE --> as a placeholder until "Testimonials" section is added: */}
+        <h2
+          style={{
+            textAlign: 'right',
+            opacity: '0.5',
+            margin: '0',
+            height: '200px',
+          }}
+        >
+          Testimonials
+        </h2>
       </ExtraWrappingSection>
     </PageLayout>
   );
