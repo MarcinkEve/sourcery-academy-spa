@@ -110,7 +110,7 @@
     "webpack-dev-server": "3.11.0"
   },
   "lint-staged": {
-    "./src/**/*.{js,jsx,ts,tsx,json,md}": [
+    "./src/**/*.{js,jsx,ts,tsx,md}": [
       "eslint",
       "git add"
     ],
