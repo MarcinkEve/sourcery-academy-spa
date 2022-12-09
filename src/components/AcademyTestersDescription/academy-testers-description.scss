@@ -7,20 +7,19 @@
     $align-items: flex-start
   );
 
-  margin-bottom: to-rem(-50);
-
-  &__content {
-    max-width: to-rem(542);
-    padding-top: to-rem(77);
-    position: relative;
-  }
+  padding-top: to-rem(77);
 
   &__top-particles {
     margin-bottom: to-rem(15);
     max-width: to-rem(125);
     position: absolute;
     right: to-rem(41);
-    top: to-rem(0);
+    transform: translateY(-125%);
+  }
+
+  &__content {
+    max-width: to-rem(542);
+    position: relative;
   }
 
   &__bottom-particles {
@@ -30,10 +29,20 @@
     position: absolute;
   }
 
-  &__icon {
-    left: to-rem(-57);
+  .testers-icons {
+    left: to-rem(70);
     position: relative;
-    width: to-rem(693);
-    z-index: -1;
+
+    &__image {
+      width: to-rem(353);
+      z-index: -1;
+    }
+
+    &__line {
+      position: absolute;
+      transform: translate(-75%, -11%);
+      width: to-rem(693);
+      z-index: -1;
+    }
   }
 }

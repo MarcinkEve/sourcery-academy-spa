@@ -6,7 +6,10 @@ import AcademyFrontEndDescription from '../AcademyFrontEndDescription';
 import AcademyKidsDescription from '../AcademyKidsDescription';
 import { textSectionType } from '~/components/Pages/Homepage/types';
 
-export const AcademiesDescriptionSection = ({ developersDescriptionData }) => {
+export const AcademiesDescriptionSection = ({
+  developersDescriptionData,
+  testersDescriptionData,
+}) => {
   return (
     <section
       className="academies-description-section"
@@ -15,7 +18,9 @@ export const AcademiesDescriptionSection = ({ developersDescriptionData }) => {
       <AcademyDevelopersDescription
         developersDescriptionData={developersDescriptionData}
       />
-      {/* <AcademyTestersDescription /> */}
+      <AcademyTestersDescription
+        testersDescriptionData={testersDescriptionData}
+      />
       {/* <AcademyFrontEndDescription /> */}
       {/* <AcademyKidsDescription /> */}
       {/*@TODO: DELETE --> as a placeholder until "Testimonials" section is added: */}
@@ -26,4 +31,5 @@ export const AcademiesDescriptionSection = ({ developersDescriptionData }) => {
 
 AcademiesDescriptionSection.propTypes = {
   developersDescriptionData: textSectionType.isRequired,
+  testersDescriptionData: textSectionType.isRequired,
 };

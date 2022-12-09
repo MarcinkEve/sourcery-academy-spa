@@ -30,7 +30,7 @@
     transform: translateY(-175%);
   }
 
-  .icons {
+  .developers-icons {
     position: relative;
 
     &__image {
@@ -40,7 +40,7 @@
 
     &__line {
       position: absolute;
-      transform: translate(-92%, -40%);
+      transform: translate(-85%, -40%);
       width: to-rem(665);
       z-index: -1;
     }

@@ -27,3 +27,14 @@ export const developersDescriptionData = {
   buttonText: 'Learn more',
   pageRoute: ROUTES.DEVELOPERS,
 };
+
+export const testersDescriptionData = {
+  isRightAlligned: true,
+  isHeadingSpacingLarge: false,
+  headingContent: 'Sourcery for Testers',
+  isParagraphTextBold: false,
+  paragraphContent:
+    'Top-notch studies for the future Test Engineers. Students join the Devbridge team as a paid employee for the Academy period (two months) to learn and work. Ones who finish the Academy successfully are invited to continue employment on full time.',
+  buttonText: 'Learn more',
+  pageRoute: ROUTES.TESTERS,
+};

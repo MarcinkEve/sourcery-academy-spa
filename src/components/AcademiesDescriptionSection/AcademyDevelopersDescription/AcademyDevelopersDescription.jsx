@@ -34,9 +34,9 @@ export const AcademyDevelopersDescription = ({ developersDescriptionData }) => {
           />
           <ImageDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
         </div>
-        <div className="icons">
-          <ImageDevelopersDescription className="icons__image" />
-          <LineDevelopersDescription className="icons__line" />
+        <div className="developers-icons">
+          <ImageDevelopersDescription className="developers-icons__image" />
+          <LineDevelopersDescription className="developers-icons__line" />
         </div>
       </section>
     </>
