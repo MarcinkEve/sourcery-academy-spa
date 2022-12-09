@@ -15,7 +15,7 @@ class CustomVolumeControl extends Component {
     this.props.media.volume();
   };
   render() {
-    const { className, style, media } = this.props;
+    const { className, style } = this.props;
     return (
       <input
         type="range"

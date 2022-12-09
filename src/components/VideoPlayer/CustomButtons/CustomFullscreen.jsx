@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import IconFullscreen from '../../../assets/icons/icon-fullscreen.svg';
+import IconFullscreen from '~/assets/icons/icon-fullscreen.svg';
 
 class CustomFullscreen extends Component {
   shouldComponentUpdate({ media }) {

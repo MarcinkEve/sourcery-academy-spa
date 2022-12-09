@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import IconPause from '../../../assets/icons/icon-pause.svg';
-import IconPlay from '../../../assets/icons/icon-play.svg';
+import IconPause from '~/assets/icons/icon-pause.svg';
+import IconPlay from '~/assets/icons/icon-play.svg';
 
 class CustomPlayPause extends Component {
   shouldComponentUpdate({ media }) {

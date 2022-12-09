@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
-import IconVolume from '../../../assets/icons/icon-volume.svg';
-import IconVolumeOff from '../../../assets/icons/icon-volume-off.svg';
+import IconVolume from '~/assets/icons/icon-volume.svg';
+import IconVolumeOff from '~/assets/icons/icon-volume-off.svg';
 
 class CustomVolume extends Component {
   shouldComponentUpdate({ media }) {

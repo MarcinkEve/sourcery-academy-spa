@@ -9,12 +9,9 @@ import { SuccessMessage } from '../../SuccessMessage/SuccessMessage';
 
 export const ApplicationForm = ({ title, theme }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleKeyDown = document.addEventListener('keydown', (e) => {
-    e.key === 'Escape' && setIsModalOpen(false);
-  });
 
   return (
-    <div theme={theme} className="form-layout" onKeyDown={handleKeyDown}>
+    <div theme={theme} className="form-layout">
       <h1 className="form-layout__container-header">{title}</h1>
       <div className="form-layout__content-container">
         <div
@@ -29,7 +26,6 @@ export const ApplicationForm = ({ title, theme }) => {
         </div>
       </div>
       <VideoPlayer
-        modalOptions={{ dismissible: false }}
         videoSrc={
           'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4'
         }

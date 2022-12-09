@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { string, bool, func } from 'prop-types';
 
 import './videoPlayer.scss';
@@ -19,6 +19,12 @@ export const VideoPlayer = ({
 }) => {
   if (!isModalOpen) return null;
 
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      e.key === 'Escape' && onClose();
+    });
+  }, []);
+
   return (
     <div className="media__overlay" onClick={onClose}>
       <Media>
@@ -32,7 +38,6 @@ export const VideoPlayer = ({
             &times;
           </button>
           <div className="media__player">
-            <CustomPlayPauseOnScreen className="media__player-overlay-icon" />
             <Player
               className="player"
               src={videoSrc}
