@@ -1,11 +1,10 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import { string } from 'prop-types';
 
 import PageLayout from '~/layout/pageLayout';
 import IntroSection from '~/components/IntroSection';
 import Article from '~/components/Article';
 import { introSectionData, articleSectionData } from './data.js';
-import { textSectionType, articleTypes } from './types';
 
 export const Homepage = ({ theme }) => {
   return (
@@ -18,6 +17,4 @@ export const Homepage = ({ theme }) => {
 
 Homepage.propTypes = {
   theme: string,
-  introSectionData: textSectionType,
-  articleSectionData: articleTypes,
 };
