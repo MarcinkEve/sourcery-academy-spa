@@ -1,5 +1,5 @@
-import { string, object } from 'prop-types';
 import React, { Component } from 'react';
+import { string, object } from 'prop-types';
 
 import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';

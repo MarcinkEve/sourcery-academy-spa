@@ -1,13 +1,12 @@
-import { string, object } from 'prop-types';
 import React, { Component } from 'react';
+import { string, object } from 'prop-types';
 
-// import '../videoPlayer.scss';
 import './customButtonStyles.scss';
 import { withMediaProps } from 'react-media-player';
 import IconVolume from '~/assets/icons/icon-volume.svg';
 import IconVolumeOff from '~/assets/icons/icon-volume-off.svg';
 
-class CustomVolume extends Component {
+class CustomVolumeMute extends Component {
   shouldComponentUpdate({ media }) {
     return this.props.media.isMuted !== media.isMuted;
   }
@@ -32,9 +31,9 @@ class CustomVolume extends Component {
     );
   }
 }
-export default withMediaProps(CustomVolume);
+export default withMediaProps(CustomVolumeMute);
 
-CustomVolume.propTypes = {
+CustomVolumeMute.propTypes = {
   media: object,
   className: string,
   style: string,

@@ -5,10 +5,11 @@ import './videoPlayer.scss';
 import { Media, Player, controls } from 'react-media-player';
 import CustomPlayPause from './CustomButtons/CustomPlayPause';
 import CustomFullscreen from './CustomButtons/CustomFullscreen';
-import CustomVolume from './CustomButtons/CustomVolume';
+import CustomVolumeMute from './CustomButtons/CustomVolumeMute';
+import CustomVolumeSlider from './CustomButtons/CustomVolumeSlider';
 import Settings from '~/assets/icons/icon-settings.svg';
 
-const { CurrentTime, SeekBar, Volume } = controls;
+const { CurrentTime, SeekBar } = controls;
 
 export const VideoPlayer = ({
   videoSrc,
@@ -49,8 +50,8 @@ export const VideoPlayer = ({
             <CustomPlayPause className="controls__play-pause" />
             <CurrentTime className="controls__current-time" />
             <SeekBar className="controls__seek-bar" />
-            <CustomVolume className="controls__volume-mute" />
-            <Volume className="controls__volume-bar" />
+            <CustomVolumeMute className="controls__volume-mute" />
+            <CustomVolumeSlider className="controls__volume-bar" />
             <button
               aria-label="This button doesn't work"
               className="controls__settings"

@@ -1,10 +1,10 @@
 @import '~/sass/variables';
+@import '~/sass/utilities';
 
 $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 
 .overlay {
   background-color: $_semi-transparent-color;
-  display: block;
   height: 100%;
   left: 0;
   position: fixed;
@@ -29,14 +29,35 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     color: $white-400;
     cursor: pointer;
     font-size: to-rem(40);
-    height: min-content;
     position: absolute;
     right: to-rem(-50);
     top: to-rem(-50);
-    width: min-content;
+
+    // &:focus-visible {
+    //   outline: 4px dashed $orange-200;
+    // }
+    &:hover {
+      background-color: var(--button-hover);
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--button-active);
+      z-index: inherit;
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
 
     &:focus-visible {
       outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+      z-index: 20;
     }
   }
 
@@ -74,24 +95,18 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 
   &__play-pause {
     border-radius: 0 0 0 15px;
-
-    &:hover + #{$_this}__current-time {
-      background-color: var(--button-hover);
-    }
   }
-  ////////////////////////////////////FLEX MIXIN
+
   &__current-time {
-    align-items: center;
+    @include flex-box($align-items: center, $justify-content: center);
+
     background-color: var(--secondary-color);
-    border-right: 1px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
     color: $white-400;
     cursor: default;
-    display: flex;
-    flex-shrink: 0;
-    height: 100%;
-    padding: 0 to-rem(10);
-    transition: $transition-time-200;
-    width: to-rem(69);
+    margin: 0 auto;
+    padding-bottom: to-rem(3);
+    width: to-rem(100);
   }
 
   &__seek-bar,
@@ -126,6 +141,8 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   }
 
   &__volume-mute {
+    box-shadow: 1px 0 0 var(--primary-color) inset;
+
     &:hover + #{$_this}__volume-bar,
     &:focus-visible + #{$_this}__volume-bar {
       background-color: $_semi-transparent-color;
