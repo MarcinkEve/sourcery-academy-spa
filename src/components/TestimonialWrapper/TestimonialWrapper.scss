@@ -25,6 +25,7 @@ $_button-size: to-rem(40);
     color: var(--primary-color);
     height: $_button-size;
     padding: 0;
+    transition: color $transition-time-200 ease;
     width: $_button-size;
 
     &:focus {
@@ -51,6 +52,7 @@ $_button-size: to-rem(40);
     fill: $white-400;
     height: 100%;
     transform: rotate(90deg);
+    transition: color $transition-time-200 ease, fill $transition-time-200 ease;
     width: 100%;
 
     &:hover {
