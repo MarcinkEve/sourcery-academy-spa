@@ -16,15 +16,18 @@ export const RadioToggler = ({ name, values, onValueChange }) => {
     <>
       <span className="section-label">{name}</span>
       <div className="radio-toggler">
-        {values.map((itemValue, index) => (
-          <RadioButtonForToggler
-            key={index}
-            name={name}
-            value={itemValue}
-            handleChange={handleChange}
-            radioValue={radioValue}
-          />
-        ))}
+        {values.map(
+          (itemValue, index) =>
+            itemValue.trim() !== '' && (
+              <RadioButtonForToggler
+                key={index}
+                name={name}
+                value={itemValue}
+                handleChange={handleChange}
+                radioValue={radioValue}
+              />
+            )
+        )}
       </div>
     </>
   );
