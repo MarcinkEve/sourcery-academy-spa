@@ -6,7 +6,7 @@ import ImageDevelopersDescriptionParticlesTop from '~/assets/particles/developer
 import ImageDevelopersDescriptionParticlesBottom from '~/assets/particles/developers-description-particles-bottom.svg';
 import ImageDevelopersDescription from '~/assets/images/developers-description.svg';
 import LineDevelopersDescription from '~/assets/lines/developers-description-line.svg';
-import { textSectionType } from '~/components/Pages/Homepage/types';
+import { textSectionType } from '~/components/AcademiesDescriptionSection/types';
 
 export const AcademyDevelopersDescription = ({ developersDescriptionData }) => {
   const {
@@ -19,27 +19,25 @@ export const AcademyDevelopersDescription = ({ developersDescriptionData }) => {
     pageRoute,
   } = developersDescriptionData;
   return (
-    <>
-      <section className="developers-description">
-        <div className="developers-description__content">
-          <ImageDevelopersDescriptionParticlesTop className="developers-description__top-particles" />
-          <TextSection
-            isRightAlligned={isRightAlligned}
-            isHeadingSpacingLarge={isHeadingSpacingLarge}
-            headingContent={<h3>{headingContent}</h3>}
-            isParagraphTextBold={isParagraphTextBold}
-            paragraphContent={<p>{paragraphContent}</p>}
-            buttonText={buttonText}
-            pageRoute={pageRoute}
-          />
-          <ImageDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
-        </div>
-        <div className="developers-icons">
-          <ImageDevelopersDescription className="developers-icons__image" />
-          <LineDevelopersDescription className="developers-icons__line" />
-        </div>
-      </section>
-    </>
+    <section className="developers-description">
+      <div className="developers-description__content">
+        <ImageDevelopersDescriptionParticlesTop className="developers-description__top-particles" />
+        <TextSection
+          isRightAlligned={isRightAlligned}
+          isHeadingSpacingLarge={isHeadingSpacingLarge}
+          headingContent={<h3>{headingContent}</h3>}
+          isParagraphTextBold={isParagraphTextBold}
+          paragraphContent={<p>{paragraphContent}</p>}
+          buttonText={buttonText}
+          pageRoute={pageRoute}
+        />
+        <ImageDevelopersDescriptionParticlesBottom className="developers-description__bottom-particles" />
+      </div>
+      <div className="developers-icons">
+        <ImageDevelopersDescription className="developers-icons__image" />
+        <LineDevelopersDescription className="developers-icons__line" />
+      </div>
+    </section>
   );
 };
 

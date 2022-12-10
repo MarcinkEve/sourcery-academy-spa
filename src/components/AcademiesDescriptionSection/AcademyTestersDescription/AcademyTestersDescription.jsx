@@ -6,7 +6,7 @@ import ImageTestersDescriptionParticlesTop from '~/assets/particles/testers-desc
 import ImageTestersDescriptionParticlesBottom from '~/assets/particles/testers-description-particles-bottom.svg';
 import ImageTestersDescription from '~/assets/images/testers-description.svg';
 import LineTestersDescription from '~/assets/lines/testers-description-line.svg';
-import { textSectionType } from '~/components/Pages/Homepage/types';
+import { textSectionType } from '~/components/AcademiesDescriptionSection/types';
 
 export const AcademyTestersDescription = ({ testersDescriptionData }) => {
   const {

@@ -6,7 +6,7 @@ import ImageKidsDescriptionParticlesTop from '~/assets/particles/kids-descriptio
 import ImageKidsDescriptionParticlesBottom from '~/assets/particles/kids-description-particles-bottom.svg';
 import ImageKidsDescription from '~/assets/images/kids-description.svg';
 import LineKidsDescription from '~/assets/lines/kids-description-line.svg';
-import { textSectionType } from '~/components/Pages/Homepage/types';
+import { textSectionType } from '~/components/AcademiesDescriptionSection/types';
 
 export const AcademyKidsDescription = ({ kidsDescriptionData }) => {
   const {

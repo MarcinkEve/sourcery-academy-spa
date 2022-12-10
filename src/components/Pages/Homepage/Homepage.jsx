@@ -14,14 +14,13 @@ import {
   frontEndDescriptionData,
   kidsDescriptionData,
 } from './data.js';
-import { textSectionType, articleTypes } from './types';
 
 export const Homepage = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <IntroSection introSectionData={introSectionData} />
       <Article articleSectionData={articleSectionData} />
-      <ExtraWrappingSection theme={theme}>
+      <ExtraWrappingSection>
         <AcademiesDescriptionSection
           developersDescriptionData={developersDescriptionData}
           testersDescriptionData={testersDescriptionData}
@@ -46,10 +45,4 @@ export const Homepage = ({ theme }) => {
 
 Homepage.propTypes = {
   theme: string,
-  introSectionData: textSectionType,
-  articleSectionData: articleTypes,
-  developersDescriptionData: textSectionType,
-  testersDescriptionData: textSectionType,
-  frontEndDescriptionData: textSectionType,
-  kidsDescriptionData: textSectionType,
 };
