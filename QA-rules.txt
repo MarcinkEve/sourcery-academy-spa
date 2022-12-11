@@ -1,0 +1,20 @@
+QA rules:
+
+> Screen resolution support: Desktop only (> 1366px);
+
+> Browser support:
+	- Chrome 57+;
+	- Firefox 52+;
+	- Edge 16+;
+
+> Accessibility:
+	- Each clickable element (button/link) should be reachable with the tab keyboard and have style:
+	outline: 4px dashed #f89e4b
+
+> Component props:
+	- Check component props, see if it works and try to see if component works without props or try to give it wrong prop type(e.g. number instead of string).
+
+> Check z-index:
+	- Some elements may hide under others, escpecially when we will add svg elements (mainly particles), most of the times this will be invisible.
+	Bugs occur when particles are over some kind of component and you can't interact with interactable components such as buttons and
+	you won't be able to mark text (pesticide browser extension recommended).

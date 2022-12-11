@@ -1,0 +1,41 @@
+@import '../../sass/global';
+
+.footer {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  height: $height-header-footer;
+  margin: 0 auto;
+  max-width: to-rem(1440);
+  padding: 0 to-rem(40);
+
+  &__list {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+    @include reset-list-style;
+
+    &-item {
+      @include padding-margin-0;
+
+      &:not(:last-child) {
+        margin-right: to-rem(16);
+      }
+    }
+  }
+
+  &__text {
+    color: $violet-700;
+    font-family: $main-font;
+    font-size: to-rem(16);
+    font-style: normal;
+    line-height: 1;
+    margin: 0;
+    text-transform: capitalize;
+  }
+}

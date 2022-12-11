@@ -1,18 +1,107 @@
-:root {
-  --color-primary: #ff3454;
-  --color-secondary: #404cfa;
-  --font-size-base: 1.6rem;
-  --font-family: system-ui;
-  --line-height-base: 1.5;
+@import './utilities/functions/index';
 
-  /* Spacers */
-  --spacer-xxs: 0.4rem;
-  --spacer-xs: 0.8rem;
-  --spacer-s: 1.2rem;
-  --spacer-m: 1.6rem;
-  --spacer: var(--spacer-m); /* alias for --spacer-m */
-  --spacer-l: 2rem;
-  --spacer-xl: 2.4rem;
-  --spacer-xxl: 3.2rem;
-  --spacer-xxxl: 4rem;
-}
+$main-font: 'Raleway', sans-serif;
+$max-page-width: to-rem(1440);
+
+/* Fonts */
+$header-font: 'Montserrat', sans-serif;
+$paragraph-font: 'Raleway', sans-serif;
+
+/* Font sizes */
+
+$font-size-xl: to-rem(48);
+$font-size-l: to-rem(32);
+$font-size-m: to-rem(18);
+$font-size-s: to-rem(14);
+
+/* Font weights */
+
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+
+/* Line heights */
+
+$line-height-l: 1.5;
+$line-height-m: 1.2;
+
+/* Spacers */
+
+$spacer-xxxs: to-rem(20);
+$spacer-xxs: to-rem(24);
+$spacer-xs: to-rem(28);
+$spacer-s: to-rem(32);
+$spacer-m: to-rem(36);
+$spacer-l: to-rem(40);
+$spacer-xl: to-rem(44);
+$spacer-xxl: to-rem(48);
+$spacer-xxxl: to-rem(52);
+
+/* Transition timing */
+
+$transition-time-200: 0.2s;
+$transition-time-400: 0.4s;
+$transition-time-1200: 1.2s;
+
+/* Other */
+
+$height-header-footer: to-rem(96);
+
+/* Colors */
+
+$blue-700: #0048c1;
+$blue-600: #3f73cb;
+$blue-400: #4d8af0;
+$blue-300: #71a1f3;
+
+$charcoal-400: #3e3c4e;
+$charcoal-200: #5c5c5c;
+$charcoal-100: #868686;
+
+$gray-200: #f6f5f7;
+$gray-100: #f2f2f2;
+
+$green-700: #0b555f;
+$green-600: #007c6a;
+$green-400: #009b84;
+$green-300: #1faf9a;
+
+$lavender-100: #ecebfb;
+
+$lightgreen-400: #1ce5af;
+$lightgreen-300: #47e6b1;
+
+$orange-200: #f89e4b;
+$orange-400: #f55f44;
+$orange-200: #f89e4b;
+
+$red-700: #b40031;
+$red-600: #c01745;
+$red-500: #ff0753;
+$red-400: #ed1d55;
+$red-300: #f14a77;
+
+$skyblue-400: #17bce3;
+
+$violet-900: #2a2e71;
+$violet-700: #3d3691;
+$violet-600: #483ed8;
+$violet-400: #584dfc;
+$violet-300: #7971fd;
+$violet-200: #6c63ff;
+
+$white-400: #fff;
+
+/* Colors by element */
+
+$header-clr: $violet-700;
+$header-bg-clr: $white-400;
+
+$primary-footer-clr: $violet-700;
+$secondary-footer-clr: $lavender-100;
+$footer-bg-clr: $white-400;
+
+$main-content-bg-clr: $gray-100;
+
+$paragraph-text-clr: $charcoal-400;
+
+$shadow-clr: $gray-200;

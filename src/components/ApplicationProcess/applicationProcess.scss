@@ -1,0 +1,9 @@
+@import '~/sass/utilities/functions/to-rem';
+
+.application-process {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  padding-bottom: to-rem(95);
+  width: max-content;
+}

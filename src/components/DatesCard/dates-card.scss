@@ -1,0 +1,46 @@
+@import '~/sass/global';
+
+.dates-card {
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  color: var(--primary-color);
+  display: flex;
+  min-height: to-rem(59);
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: to-rem(11);
+  }
+
+  &__date-wrapper {
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-around,
+      $align-items: center
+    );
+
+    min-width: to-rem(100);
+    padding: 0 to-rem(15);
+  }
+
+  &__separator {
+    position: relative;
+
+    &::before {
+      background-color: var(--primary-color);
+      border-radius: 30px;
+      bottom: to-rem(5.5);
+      content: '';
+      position: absolute;
+      top: to-rem(5.5);
+      width: to-rem(2);
+    }
+  }
+
+  &__text {
+    color: var(--primary-color);
+    line-height: $line-height-m;
+    margin: to-rem(15) to-rem(16) to-rem(13);
+    word-break: break-all;
+  }
+}

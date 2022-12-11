@@ -5,9 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 const devMode = process.env.NODE_ENV !== 'production';
-
 const config = {
   entry: './src/index.js', // The point or points where to start the application bundling process. If an array is passed then all items will be processed. https://webpack.js.org/configuration/entry-context/#entry
   output: {
@@ -28,7 +26,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -58,6 +56,10 @@ const config = {
           },
         ],
         exclude: /\.module\.scss$/,
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -98,7 +100,7 @@ const config = {
       },
       {
         test: /\.svg$/i,
-        issuer: /\.js?$/,
+        issuer: /\.(js|jsx)?$/,
         use: ['@svgr/webpack'],
       },
     ],
@@ -141,5 +143,4 @@ const config = {
     },
   },
 };
-
 module.exports = config;

@@ -1,0 +1,15 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.schedule-column {
+  &__title {
+    margin: 0 0 $spacer-xxl 0;
+    text-align: center;
+  }
+
+  &__data {
+    @include flex-box($direction: row, $justify-content: center);
+
+    column-gap: $spacer-l;
+  }
+}

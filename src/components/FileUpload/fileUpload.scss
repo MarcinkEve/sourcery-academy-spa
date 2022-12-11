@@ -1,0 +1,55 @@
+@import '../../sass/global';
+
+.upload {
+  $_this: &;
+
+  &__label {
+    @include label;
+
+    text-transform: capitalize;
+  }
+
+  &__input {
+    @include hide;
+
+    &:focus-visible + #{$_this}__field {
+      outline: 2px solid $violet-600;
+    }
+  }
+
+  &__field {
+    @include input-field;
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-between,
+      $align-items: center
+    );
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      outline: 2px solid $violet-600;
+    }
+
+    &--error {
+      border-color: $red-500;
+    }
+  }
+
+  &__file-name {
+    padding-right: to-rem(5);
+    width: 100%;
+    @include overflow-ellipsis();
+  }
+
+  &__placeholder {
+    color: $charcoal-100;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    width: to-rem(20);
+  }
+}

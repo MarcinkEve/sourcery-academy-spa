@@ -1,0 +1,8 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.schedule-subcolumn {
+  @include flex-box($direction: column, $align-items: center);
+
+  row-gap: $spacer-l;
+}

@@ -1,0 +1,84 @@
+@import '../../sass/global';
+
+.header {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  height: $height-header-footer;
+  margin: auto;
+  max-width: $max-page-width;
+  padding: 0 $spacer-l;
+  width: 100%;
+
+  .logo {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    gap: $spacer-xxxs;
+
+    &__image {
+      width: to-rem(38);
+    }
+
+    &__text {
+      color: $header-clr;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .navlinks {
+    @include reset-list-style;
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    gap: $spacer-xxs;
+
+    &__academies {
+      @include flex-box(
+        $direction: column,
+        $justify-content: center,
+        $align-items: center
+      );
+    }
+
+    &__academies-menu {
+      background-color: $header-bg-clr;
+      border: 0;
+      font-family: $paragraph-font;
+      padding: 0;
+    }
+
+    &__academies-arrow {
+      margin-left: to-rem(7);
+      width: to-rem(14);
+    }
+
+    &__academies-dropdown {
+      padding-right: to-rem(21);
+      position: absolute;
+      top: to-rem(78);
+      z-index: 1; //temporary fix
+    }
+
+    &__academies-menu:hover {
+      cursor: pointer;
+    }
+
+    &__link,
+    &__academies-menu {
+      color: $header-clr;
+      font-size: $font-size-m;
+      line-height: inherit;
+      text-decoration: none;
+    }
+  }
+}

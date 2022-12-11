@@ -1,0 +1,7 @@
+@import '../../sass/global';
+
+.error-message {
+  color: $red-500;
+  font-size: $font-size-s;
+  margin-top: to-rem(5);
+}
