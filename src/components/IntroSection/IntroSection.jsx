@@ -7,10 +7,7 @@ import { textSectionType } from '~/components/IntroSection/types';
 
 export const IntroSection = ({ introSectionData }) => {
   const {
-    isRightAlligned,
-    isHeadingSpacingLarge,
     headingContent,
-    isParagraphTextBold,
     paragraphContent,
     buttonText,
     pageRoute,
@@ -19,10 +16,10 @@ export const IntroSection = ({ introSectionData }) => {
     <section className="intro-section">
       <div className="intro-section__paragraph">
         <TextSection
-          isRightAlligned={isRightAlligned}
-          isHeadingSpacingLarge={isHeadingSpacingLarge}
+          isRightAlligned={false}
+          isHeadingSpacingLarge={false}
           headingContent={<h2>{headingContent}</h2>}
-          isParagraphTextBold={isParagraphTextBold}
+          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}
