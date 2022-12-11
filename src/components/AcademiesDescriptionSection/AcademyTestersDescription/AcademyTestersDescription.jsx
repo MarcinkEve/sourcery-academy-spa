@@ -10,27 +10,24 @@ import { textSectionType } from '~/components/AcademiesDescriptionSection/types'
 
 export const AcademyTestersDescription = ({ testersDescriptionData }) => {
   const {
-    isRightAlligned,
-    isHeadingSpacingLarge,
     headingContent,
-    isParagraphTextBold,
     paragraphContent,
     buttonText,
     pageRoute,
   } = testersDescriptionData;
   return (
     <section className="testers-description">
-      <div className="testers-icons">
-        <ImageTestersDescription className="testers-icons__image" />
-        <LineTestersDescription className="testers-icons__line" />
+      <div className="testers-description__icons">
+        <ImageTestersDescription className="testers-description__icons-image" />
+        <LineTestersDescription className="testers-description__icons-line" />
       </div>
       <div className="testers-description__content">
         <ImageTestersDescriptionParticlesTop className="testers-description__top-particles" />
         <TextSection
-          isRightAlligned={isRightAlligned}
-          isHeadingSpacingLarge={isHeadingSpacingLarge}
+          isRightAligned={true}
+          isHeadingSpacingLarge={false}
           headingContent={<h3>{headingContent}</h3>}
-          isParagraphTextBold={isParagraphTextBold}
+          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}

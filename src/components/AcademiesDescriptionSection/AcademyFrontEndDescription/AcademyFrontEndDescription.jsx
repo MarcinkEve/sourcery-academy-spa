@@ -9,10 +9,7 @@ import { textSectionType } from '~/components/AcademiesDescriptionSection/types'
 
 export const AcademyFrontEndDescription = ({ frontEndDescriptionData }) => {
   const {
-    isRightAlligned,
-    isHeadingSpacingLarge,
     headingContent,
-    isParagraphTextBold,
     paragraphContent,
     buttonText,
     pageRoute,
@@ -23,10 +20,10 @@ export const AcademyFrontEndDescription = ({ frontEndDescriptionData }) => {
       <div className="frontend-description__content">
         <ImageFrontEndDescriptionParticlesTop className="frontend-description__top-particles" />
         <TextSection
-          isRightAlligned={isRightAlligned}
-          isHeadingSpacingLarge={isHeadingSpacingLarge}
+          isRightAligned={true}
+          isHeadingSpacingLarge={false}
           headingContent={<h3>{headingContent}</h3>}
-          isParagraphTextBold={isParagraphTextBold}
+          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}

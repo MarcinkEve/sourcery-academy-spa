@@ -29,19 +29,19 @@
     transform: translateY(-175%);
   }
 
-  .developers-icons {
+  &__icons {
     position: relative;
+  }
 
-    &__image {
-      margin-right: to-rem(53);
-      width: to-rem(430);
-    }
+  &__icons-image {
+    margin-right: to-rem(53);
+    width: to-rem(430);
+  }
 
-    &__line {
-      position: absolute;
-      transform: translate(-85%, -40%);
-      width: to-rem(665);
-      z-index: -1;
-    }
+  &__icons-line {
+    position: absolute;
+    transform: translate(-85%, -40%);
+    width: to-rem(665);
+    z-index: -1;
   }
 }

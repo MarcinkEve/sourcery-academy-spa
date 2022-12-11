@@ -10,10 +10,7 @@ import { textSectionType } from '~/components/AcademiesDescriptionSection/types'
 
 export const AcademyKidsDescription = ({ kidsDescriptionData }) => {
   const {
-    isRightAlligned,
-    isHeadingSpacingLarge,
     headingContent,
-    isParagraphTextBold,
     paragraphContent,
     buttonText,
     pageRoute,
@@ -23,19 +20,19 @@ export const AcademyKidsDescription = ({ kidsDescriptionData }) => {
       <div className="kids-description__content">
         <ImageKidsDescriptionParticlesTop className="kids-description__top-particles" />
         <TextSection
-          isRightAlligned={isRightAlligned}
-          isHeadingSpacingLarge={isHeadingSpacingLarge}
+          isRightAligned={false}
+          isHeadingSpacingLarge={false}
           headingContent={<h3>{headingContent}</h3>}
-          isParagraphTextBold={isParagraphTextBold}
+          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}
         />
         <ImageKidsDescriptionParticlesBottom className="kids-description__bottom-particles" />
       </div>
-      <div className="kids-academy-icons">
-        <ImageKidsDescription className="kids-academy-icons__image" />
-        <LineKidsDescription className="kids-academy-icons__line" />
+      <div className="kids-description__icons">
+        <ImageKidsDescription className="kids-description__icons-image" />
+        <LineKidsDescription className="kids-description__icons-line" />
       </div>
     </section>
   );

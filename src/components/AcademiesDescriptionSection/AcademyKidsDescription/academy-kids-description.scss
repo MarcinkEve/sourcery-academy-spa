@@ -30,19 +30,19 @@
     transform: translateY(-30%);
   }
 
-  .kids-academy-icons {
+  &__icons {
     position: relative;
+  }
 
-    &__image {
-      left: to-rem(45);
-      width: to-rem(458);
-    }
+  &__icons-image {
+    left: to-rem(45);
+    width: to-rem(458);
+  }
 
-    &__line {
-      position: absolute;
-      transform: translate(-85%, -8%);
-      width: to-rem(657);
-      z-index: -1;
-    }
+  &__icons-line {
+    position: absolute;
+    transform: translate(-85%, -8%);
+    width: to-rem(657);
+    z-index: -1;
   }
 }

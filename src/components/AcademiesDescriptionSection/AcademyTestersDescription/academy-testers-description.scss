@@ -30,20 +30,20 @@
     position: absolute;
   }
 
-  .testers-icons {
+  &__icons {
     left: to-rem(70);
     position: relative;
+  }
 
-    &__image {
-      width: to-rem(353);
-      z-index: -1;
-    }
+  &__icons-image {
+    width: to-rem(353);
+    z-index: -1;
+  }
 
-    &__line {
-      position: absolute;
-      transform: translate(-75%, -11%);
-      width: to-rem(693);
-      z-index: -1;
-    }
+  &__icons-line {
+    position: absolute;
+    transform: translate(-75%, -11%);
+    width: to-rem(693);
+    z-index: -1;
   }
 }
