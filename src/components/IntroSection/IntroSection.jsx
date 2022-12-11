@@ -16,10 +16,7 @@ export const IntroSection = ({ introSectionData }) => {
     <section className="intro-section">
       <div className="intro-section__paragraph">
         <TextSection
-          isRightAlligned={false}
-          isHeadingSpacingLarge={false}
           headingContent={<h2>{headingContent}</h2>}
-          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}
