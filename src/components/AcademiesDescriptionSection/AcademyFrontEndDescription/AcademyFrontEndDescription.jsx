@@ -21,9 +21,7 @@ export const AcademyFrontEndDescription = ({ frontEndDescriptionData }) => {
         <ImageFrontEndDescriptionParticlesTop className="frontend-description__top-particles" />
         <TextSection
           isRightAligned={true}
-          isHeadingSpacingLarge={false}
           headingContent={<h3>{headingContent}</h3>}
-          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}

@@ -20,10 +20,7 @@ export const AcademyDevelopersDescription = ({ developersDescriptionData }) => {
       <div className="developers-description__content">
         <ImageDevelopersDescriptionParticlesTop className="developers-description__top-particles" />
         <TextSection
-          isRightAligned={false}
-          isHeadingSpacingLarge={false}
           headingContent={<h3>{headingContent}</h3>}
-          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}

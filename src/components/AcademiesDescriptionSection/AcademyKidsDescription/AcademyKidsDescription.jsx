@@ -20,10 +20,7 @@ export const AcademyKidsDescription = ({ kidsDescriptionData }) => {
       <div className="kids-description__content">
         <ImageKidsDescriptionParticlesTop className="kids-description__top-particles" />
         <TextSection
-          isRightAligned={false}
-          isHeadingSpacingLarge={false}
           headingContent={<h3>{headingContent}</h3>}
-          isParagraphTextBold={false}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}
