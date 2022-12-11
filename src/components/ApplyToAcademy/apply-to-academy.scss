@@ -1,18 +1,22 @@
+@import '~/sass/utilities/functions';
+
 .apply-to-academy {
+  $_this: &;
+
+  align-items: center;
   display: flex;
-  padding: 0 48px;
+  padding: 0 to-rem(48);
 
   .text-section {
     margin: 0;
-    width: 50%;
+    width: 100%;
   }
 
-  &__image {
-    height: 464px;
-    width: 564px;
-  }
+  &__image-wrapper {
+    width: 100%;
 
-  &__line {
-    stroke: var(--primary-color);
+    #{$_this}__image {
+      transform: translate(6%, -4%) scale(106%);
+    }
   }
 }

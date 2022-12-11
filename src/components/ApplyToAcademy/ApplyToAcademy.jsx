@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, oneOf, element } from 'prop-types';
+import { string, oneOf, element, object, func } from 'prop-types';
 
 import { ROUTES } from '~/constants/routes';
 import TextSection from '~/components/TextSection';
@@ -17,7 +17,9 @@ export const ApplyToAcademy = ({ headingText, mainText, route, Image }) => {
         buttonText="Apply now"
         pageRoute={route}
       />
-      <Image className="apply-to-academy__image" />
+      <div className="apply-to-academy__image-wrapper">
+        <Image className="apply-to-academy__image" />
+      </div>
     </section>
   );
 };
@@ -25,6 +27,6 @@ export const ApplyToAcademy = ({ headingText, mainText, route, Image }) => {
 ApplyToAcademy.propTypes = {
   headingText: string,
   mainText: string,
-  Image: element,
+  Image: func,
   route: oneOf([...Object.values(ROUTES)]),
 };
