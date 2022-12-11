@@ -57,7 +57,7 @@ export const TestimonialWrapper = ({ title, data, alt }) => {
         >
           {data.map((element, index) => (
             <Slide key={index} index={index} className="carousel__card">
-              <div style={{ marginRight: gap }} tabIndex={0}>
+              <div style={{ marginRight: gap }}>
                 <TestimonialCard data={data[index]} alt={alt && alt[index]} />
               </div>
             </Slide>
