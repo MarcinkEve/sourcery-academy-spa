@@ -25,7 +25,7 @@ export const Footer = () => {
     },
   ];
 
-  const years = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
@@ -40,7 +40,9 @@ export const Footer = () => {
           </li>
         ))}
       </ul>
-      <p className="footer__text">Copyright &copy; {years} sourcery academy</p>
+      <p className="footer__text">
+        Copyright &copy; {currentYear} sourcery academy
+      </p>
     </footer>
   );
 };
