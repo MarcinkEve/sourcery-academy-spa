@@ -20,7 +20,7 @@ export const RadioToggler = ({ name, values, onValueChange }) => {
           (itemValue, index) =>
             itemValue.trim() !== '' && (
               <RadioButtonForToggler
-                key={index}
+                key={itemValue + index}
                 name={name}
                 value={itemValue}
                 handleChange={handleChange}

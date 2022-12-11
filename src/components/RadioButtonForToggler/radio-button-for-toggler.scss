@@ -4,18 +4,17 @@
   $_this: &;
 
   &__label {
+    @include overflow-ellipsis();
+
     border-radius: 30px;
     color: $charcoal-400;
     cursor: pointer;
     font-weight: $font-weight-bold;
     margin: to-rem(7);
-    overflow: hidden;
     padding: to-rem(13);
     text-align: center;
-    text-overflow: ellipsis;
     transition: color $transition-time-200 ease,
       background-color $transition-time-200 ease;
-    white-space: nowrap;
     width: to-rem(159);
 
     &:hover {
