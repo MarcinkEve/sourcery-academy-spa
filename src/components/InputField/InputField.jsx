@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { string, func } from 'prop-types';
 
 import './inputField.scss';
 import ErrorMessage from '../ErrorMessage';
 
+import useValidation from '../../hooks/useValidation/';
+
 export const InputField = ({
   name,
   label,
   type,
   placeholder,
-  errorMessage,
-  getValue,
+  getValidatedValue,
 }) => {
+  const [input, setInput] = useState();
+
+  //Only validating name and email for now
+  const [validInput, errorAfterValidation] = useValidation(
+    `${type === 'text' ? 'name' : 'email'}`,
+    input,
+    label
+  );
+  useEffect(() => {
+    if (validInput && getValidatedValue) return getValidatedValue(validInput);
+    return;
+  }, [validInput]);
+
   return (
     <div className="input">
       <label htmlFor={name} className="input__label">
@@ -24,12 +38,14 @@ export const InputField = ({
         type={type}
         name={name}
         id={name}
-        className={errorMessage ? 'input__field input__error' : 'input__field'}
+        className={
+          errorAfterValidation ? 'input__field input__error' : 'input__field'
+        }
         onBlur={(e) => {
-          getValue(e.target.value);
+          setInput(e.target.value);
         }}
       ></input>
-      {errorMessage && <ErrorMessage message={errorMessage} />}
+      {errorAfterValidation && <ErrorMessage message={errorAfterValidation} />}
     </div>
   );
 };
@@ -39,6 +55,5 @@ InputField.propTypes = {
   label: string.isRequired,
   type: string.isRequired,
   placeholder: string.isRequired,
-  getValue: func,
-  errorMessage: string,
+  getValidatedValue: func,
 };

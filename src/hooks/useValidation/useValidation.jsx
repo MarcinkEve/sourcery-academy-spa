@@ -65,7 +65,7 @@ export const useValidation = (validating, inputValue, writeNameInError) => {
         returnArray[1] = errorTextForFileSize;
         return returnArray;
       } else {
-        returnArray[0] = inputValue.name;
+        returnArray[0] = inputValue;
         returnArray[1] = undefined;
         return returnArray;
       }

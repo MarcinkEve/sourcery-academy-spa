@@ -1,28 +1,28 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 
 import './fileUpload.scss';
 import UploadIcon from '../../assets/icons/icon-upload.svg';
 import ErrorMessage from '../ErrorMessage';
+import useValidation from '../../hooks/useValidation';
 
-export const FileUpload = ({
-  name,
-  placeholder,
-  errorMessage,
-  onValueChange,
-}) => {
-  const [uploadedFile, setUploadedFile] = useState('');
+export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
+  const [uploadedFile, setUploadedFile] = useState();
   const fileInput = useRef(null);
+
+  const [validFile, errorAfterValidation] = useValidation('file', uploadedFile);
+  useEffect(() => {
+    if (validFile && getValidatedValue) return getValidatedValue(validFile);
+    return;
+  }, [validFile]);
 
   const triggerInputFile = () => fileInput.current.click();
 
   const uploadHandler = (e) => {
     const file = e.target.files[0];
     setUploadedFile(file);
-    onValueChange(file);
   };
-
   return (
     <div className="upload">
       <label className="upload__label" htmlFor={name}>
@@ -39,7 +39,7 @@ export const FileUpload = ({
       />
       <div
         className={classNames('upload__field', {
-          'upload__field--error': errorMessage,
+          'upload__field--error': errorAfterValidation,
         })}
         onClick={triggerInputFile}
       >
@@ -50,7 +50,7 @@ export const FileUpload = ({
         )}
         <UploadIcon className="upload__icon" />
       </div>
-      {errorMessage && <ErrorMessage message={errorMessage} />}
+      {errorAfterValidation && <ErrorMessage message={errorAfterValidation} />}
     </div>
   );
 };
@@ -58,6 +58,5 @@ export const FileUpload = ({
 FileUpload.propTypes = {
   name: string.isRequired,
   placeholder: string.isRequired,
-  errorMessage: string,
-  onValueChange: func,
+  getValidatedValue: func,
 };
