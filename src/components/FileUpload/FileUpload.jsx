@@ -3,8 +3,8 @@ import { string, func } from 'prop-types';
 import classNames from 'classnames';
 
 import './fileUpload.scss';
-import UploadIcon from '../../assets/icons/icon-upload.svg';
-import ErrorMessage from '../ErrorMessage';
+import UploadIcon from '~/assets/icons/icon-upload.svg';
+import ErrorMessage from '~/components/ErrorMessage';
 
 export const FileUpload = ({
   name,
