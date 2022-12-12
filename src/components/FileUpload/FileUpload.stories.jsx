@@ -21,11 +21,3 @@ ResumeUpload.args = {
   placeholder: 'Upload your resume',
   getValue: () => {},
 };
-
-export const ResumeUploadWithError = Template.bind({});
-ResumeUploadWithError.args = {
-  name: 'Resume',
-  placeholder: 'Upload your resume',
-  errorMessage: 'You can only upload PDF files',
-  getValue: () => {},
-};

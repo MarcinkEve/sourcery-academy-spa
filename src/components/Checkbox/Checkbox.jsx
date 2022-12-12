@@ -16,6 +16,9 @@ export const Checkbox = ({
     setIsChecked(event.target.checked);
     getCheckboxValue(event.target.checked);
   };
+  const enterHandler = (event) => {
+    if (event.key === 'Enter') setIsChecked(!isChecked);
+  };
 
   return (
     <>
@@ -26,6 +29,7 @@ export const Checkbox = ({
               className="checkbox__default-checkmark"
               checked={isChecked}
               onChange={clickHandler}
+              onKeyDown={enterHandler}
               type="checkbox"
               name={name}
             />

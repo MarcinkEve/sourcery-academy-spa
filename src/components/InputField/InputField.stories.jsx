@@ -23,12 +23,3 @@ Input.args = {
   type: 'text',
   placeholder: 'Enter your first name',
 };
-
-export const InputWithError = Template.bind({});
-InputWithError.args = {
-  name: 'Last name',
-  label: 'Your last name',
-  type: 'text',
-  errorMessage: 'Something wrong with input',
-  placeholder: 'Enter your last name',
-};
