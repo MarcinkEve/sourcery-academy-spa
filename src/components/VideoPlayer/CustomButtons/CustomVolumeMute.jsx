@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { string, object } from 'prop-types';
 
 import './customButtonStyles.scss';
@@ -6,35 +6,25 @@ import { withMediaProps } from 'react-media-player';
 import IconVolume from '~/assets/icons/icon-volume.svg';
 import IconVolumeOff from '~/assets/icons/icon-volume-off.svg';
 
-class CustomVolumeMute extends Component {
-  shouldComponentUpdate({ media }) {
-    return this.props.media.isMuted !== media.isMuted;
-  }
-  _handleVolume = () => {
-    this.props.media.muteUnmute();
+export const CustomVolumeMute = (props) => {
+  const { className, media } = props;
+  const handleVolume = () => {
+    props.media.muteUnmute();
   };
-  render() {
-    const { className, style, media } = this.props;
-    return (
-      <button
-        type="button"
-        className={className}
-        style={style}
-        onClick={this._handleVolume}
-      >
-        {media.isMuted ? (
-          <IconVolumeOff className="volume-off-icon" />
-        ) : (
-          <IconVolume className="volume-icon" />
-        )}
-      </button>
-    );
-  }
-}
+  return (
+    <button type="button" className={className} onClick={handleVolume}>
+      {media.isMuted ? (
+        <IconVolumeOff className="volume-off-icon" />
+      ) : (
+        <IconVolume className="volume-icon" />
+      )}
+    </button>
+  );
+};
+
 export default withMediaProps(CustomVolumeMute);
 
 CustomVolumeMute.propTypes = {
   media: object,
   className: string,
-  style: string,
 };
