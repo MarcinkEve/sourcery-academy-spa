@@ -20,7 +20,7 @@ export const AcademyFrontEndDescription = ({ frontEndDescriptionData }) => {
       <div className="frontend-description__content">
         <ImageFrontEndDescriptionParticlesTop className="frontend-description__top-particles" />
         <TextSection
-          isRightAligned={true}
+          isRightAligned
           headingContent={<h3>{headingContent}</h3>}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}

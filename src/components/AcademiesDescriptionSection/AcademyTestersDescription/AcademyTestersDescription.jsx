@@ -24,7 +24,7 @@ export const AcademyTestersDescription = ({ testersDescriptionData }) => {
       <div className="testers-description__content">
         <ImageTestersDescriptionParticlesTop className="testers-description__top-particles" />
         <TextSection
-          isRightAligned={true}
+          isRightAligned
           headingContent={<h3>{headingContent}</h3>}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}

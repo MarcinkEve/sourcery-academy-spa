@@ -3,12 +3,8 @@ import { node, string } from 'prop-types';
 
 import './extra-wrapping-section.scss';
 
-export const ExtraWrappingSection = ({ children, theme }) => {
-  return (
-    <div className="extra-wrapper" theme={theme}>
-      {children}
-    </div>
-  );
+export const ExtraWrappingSection = ({ children }) => {
+  return <div className="extra-wrapper">{children}</div>;
 };
 
 ExtraWrappingSection.propTypes = {
