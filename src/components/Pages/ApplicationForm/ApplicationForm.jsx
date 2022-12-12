@@ -15,8 +15,12 @@ export const ApplicationForm = ({ title, theme }) => {
       <h1 className="form-layout__container-header">{title}</h1>
       <div className="form-layout__content-container">
         <div
+          tabIndex={1}
           className="form-layout__content"
           onClick={() => setIsModalOpen(true)}
+          onKeyDown={(e) =>
+            e.key === ('Enter' || 'Space') && setIsModalOpen(true)
+          }
         >
           <SuccessMessage />
         </div>
@@ -30,7 +34,6 @@ export const ApplicationForm = ({ title, theme }) => {
           'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4'
         }
         isModalOpen={isModalOpen}
-        tabIndex={1}
         onClose={() => setIsModalOpen(false)}
       />
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { object, string } from 'prop-types';
+import { object, string, number } from 'prop-types';
 
 import '../videoPlayer.scss';
 import { withMediaProps } from 'react-media-player';
@@ -11,7 +11,14 @@ export const CustomFullscreen = (props) => {
   };
   const { className } = props;
   return (
-    <button type="button" className={className} onClick={handleFullscreen}>
+    <button
+      type="button"
+      className={className}
+      onClick={handleFullscreen}
+      onKeyDown={(e) =>
+        e.key === ('Enter' || 'Space') && props.toggleTabIndex(0)
+      }
+    >
       <IconFullscreen className="fullscreen-icon" />
     </button>
   );
@@ -20,6 +27,7 @@ export const CustomFullscreen = (props) => {
 export default withMediaProps(CustomFullscreen);
 
 CustomFullscreen.propTypes = {
-  media: object,
   className: string,
+  media: object,
+  toggleTabIndex: number,
 };

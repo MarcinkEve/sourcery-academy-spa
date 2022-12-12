@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { string, bool, func } from 'prop-types';
 
 import './videoPlayer.scss';
@@ -22,12 +22,15 @@ export const VideoPlayer = ({
       e.key === 'Escape' && onClose();
     });
   }, []);
-
+  const [toggleTabIndex, setToggleTabIndex] = useState(-1);
   if (!isModalOpen) return null;
-
+  const tabIndexHandler = (data) => {
+    setToggleTabIndex(data);
+    // console.log('data: ', data);
+  };
   return (
     <div className="overlay" onClick={onClose}>
-      <Media tabIndex={1}>
+      <Media>
         <div
           className="media"
           onClick={(e) => {
@@ -46,7 +49,7 @@ export const VideoPlayer = ({
             src={videoSrc}
             controls
             autoPlay={hasAutoPlay}
-            tabIndex={-1}
+            tabIndex={toggleTabIndex}
           />
           <div className="controls">
             <CustomPlayPause className="controls__play-pause" />
@@ -58,7 +61,10 @@ export const VideoPlayer = ({
               aria-label="This button doesn't work"
               className="controls__settings"
             />
-            <CustomFullscreen className="controls__fullscreen" />
+            <CustomFullscreen
+              className="controls__fullscreen"
+              toggleTabIndex={tabIndexHandler}
+            />
           </div>
         </div>
       </Media>
