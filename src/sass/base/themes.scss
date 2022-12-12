@@ -10,6 +10,7 @@
   --secondary-color: #{$blue-400};
   --button-hover: #{$blue-600};
   --button-active: #{$blue-300};
+  --icon-secondary-color: #{$skyblue-400};
 }
 
 [theme='testers'] {
@@ -17,6 +18,7 @@
   --secondary-color: #{$green-400};
   --button-hover: #{$green-300};
   --button-active: #{$green-600};
+  --icon-secondary-color: #{$lightgreen-400};
 }
 
 [theme='front-end'] {
@@ -24,6 +26,7 @@
   --secondary-color: #{$red-400};
   --button-hover: #{$red-300};
   --button-active: #{$red-600};
+  --icon-secondary-color: var(--secondary-color);
 }
 
 [theme='application'] {

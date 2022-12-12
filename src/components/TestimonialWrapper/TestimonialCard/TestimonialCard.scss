@@ -1,6 +1,9 @@
-@import '../../sass/global';
+@import '~/sass/utilities/mixins';
+@import '~/sass/variables';
 
 $_photo-size: to-rem(78);
+$_card-width: 340;
+$_shadow-size: 20;
 
 .card {
   @include flex-box(
@@ -8,15 +11,15 @@ $_photo-size: to-rem(78);
     $justify-content: center,
     $align-items: center
   );
-  @include box-shadow();
+  @include box-shadow(to-rem(-$_shadow-size), to-rem($_shadow-size));
 
   background-color: $white-400;
   border: var(--primary-color) solid 2px;
   border-radius: 16px;
   font-family: inherit;
   line-height: $line-height-l;
-  padding: to-rem(35) to-rem(30);
-  width: to-rem(340);
+  padding: to-rem(35) to-rem(28);
+  width: to-rem($_card-width);
 
   &__photo {
     border-radius: 50%;
@@ -63,3 +66,10 @@ $_photo-size: to-rem(78);
     margin: to-rem(7) 0 0;
   }
 }
+
+/* stylelint-disable property-no-unknown */
+:export {
+  cardWidth: $_card-width;
+  shadowSize: $_shadow-size;
+}
+/* stylelint-enable property-no-unknown */

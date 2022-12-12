@@ -58,6 +58,10 @@ const config = {
         exclude: /\.module\.scss$/,
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,

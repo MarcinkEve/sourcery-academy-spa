@@ -11,8 +11,3 @@ export const textSectionType = shape({
   buttonText: string,
   pageRoute: oneOf([...Object.values(ROUTES)]),
 });
-
-export const articleTypes = shape({
-  articleTitle: string.isRequired,
-  articleContent: string.isRequired,
-});

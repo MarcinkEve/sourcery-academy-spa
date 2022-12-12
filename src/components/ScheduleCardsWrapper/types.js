@@ -7,3 +7,8 @@ export const scheduleColumnType = shape({
   column_1: arrayOf(shape(scheduleCardType)).isRequired,
   column_2: arrayOf(shape(scheduleCardType)),
 });
+
+export const scheduleType = shape({
+  column_1: scheduleColumnType.isRequired,
+  column_2: scheduleColumnType,
+});

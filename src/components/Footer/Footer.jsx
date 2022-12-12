@@ -24,6 +24,9 @@ export const Footer = () => {
       icon: <Instagram className="social-link__icon" />,
     },
   ];
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <ul className="footer__list">
@@ -37,7 +40,9 @@ export const Footer = () => {
           </li>
         ))}
       </ul>
-      <p className="footer__text">Copyright &copy; 2022 sourcery academy</p>
+      <p className="footer__text">
+        Copyright &copy; {currentYear} sourcery academy
+      </p>
     </footer>
   );
 };

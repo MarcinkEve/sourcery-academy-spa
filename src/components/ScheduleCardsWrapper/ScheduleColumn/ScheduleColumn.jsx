@@ -1,5 +1,4 @@
 import React from 'react';
-import { shape, arrayOf, string } from 'prop-types';
 
 import { scheduleColumnType } from '../types';
 
