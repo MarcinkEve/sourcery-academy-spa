@@ -2,6 +2,7 @@ import React from 'react';
 
 import { TestimonialWrapper } from './TestimonialWrapper';
 import { data } from './TestimonialCard/data';
+import './TestimonialCardStories.scss';
 
 export default {
   title: 'TestimonialWrapper',
@@ -29,7 +30,7 @@ export const TestimonialWrapperComponent = (args) => {
   const { theme, ...rest } = args;
 
   return (
-    <div theme={theme}>
+    <div theme={theme} className={'story-container'}>
       <TestimonialWrapper {...rest} />
     </div>
   );
