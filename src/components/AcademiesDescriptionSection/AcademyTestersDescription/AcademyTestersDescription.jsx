@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape } from 'prop-types';
 
 import './academy-testers-description.scss';
 import TextSection from '~/components/TextSection';
@@ -37,5 +38,5 @@ export const AcademyTestersDescription = ({ testersDescriptionData }) => {
 };
 
 AcademyTestersDescription.propTypes = {
-  testersDescriptionData: textSectionType.isRequired,
+  testersDescriptionData: shape(textSectionType).isRequired,
 };

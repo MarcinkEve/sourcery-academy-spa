@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape } from 'prop-types';
 
 import './intro-section.scss';
 import IntroIcon from '~/assets/images/intro.svg';
@@ -28,5 +29,5 @@ export const IntroSection = ({ introSectionData }) => {
 };
 
 IntroSection.propTypes = {
-  introSectionData: textSectionType.isRequired,
+  introSectionData: shape(textSectionType).isRequired,
 };

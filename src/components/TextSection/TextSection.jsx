@@ -1,10 +1,10 @@
 import React, { cloneElement } from 'react';
-import { bool, element, oneOf, string } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { shape } from 'prop-types';
 
 import './textSection.scss';
 import Button from '~/components/Button';
-import { ROUTES } from '~/constants/routes';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const TextSection = ({
   isRightAligned,
@@ -48,12 +48,4 @@ export const TextSection = ({
   );
 };
 
-TextSection.propTypes = {
-  isRightAligned: bool,
-  isHeadingSpacingLarge: bool,
-  headingContent: element.isRequired,
-  isParagraphTextBold: bool,
-  paragraphContent: element.isRequired,
-  buttonText: string,
-  pageRoute: oneOf([...Object.values(ROUTES)]),
-};
+TextSection.propTypes = shape(textSectionType).isRequired;
