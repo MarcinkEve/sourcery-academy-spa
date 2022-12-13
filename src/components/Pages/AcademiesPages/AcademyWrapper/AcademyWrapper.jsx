@@ -15,6 +15,7 @@ export const AcademyWrapper = () => {
       mainText={applyToAcademyData[academyType].paragraphTxt}
       route={ROUTES.APPLICATION}
       Image={applyToAcademyData[academyType].image}
+      TopParticles={applyToAcademyData[academyType].topParticles}
     />
   );
 };

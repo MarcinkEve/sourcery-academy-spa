@@ -9,6 +9,7 @@
 
   .text-section {
     margin: 0;
+    position: relative;
     width: 100%;
   }
 
@@ -16,7 +17,21 @@
     width: 100%;
 
     #{$_this}__image {
-      transform: translate(6%, -4%) scale(106%);
+      transform: translate(8%, -6%) scale(110%);
     }
   }
+}
+
+.particles-top {
+  position: absolute;
+  transform: translate(-2%, -98%) scale(24%);
+
+  &--five {
+    transform: translate(-5%, -54%) scale(32%);
+  }
+}
+
+.particles-bottom {
+  position: absolute;
+  transform: translate(-35%, -68%) scale(24%);
 }
