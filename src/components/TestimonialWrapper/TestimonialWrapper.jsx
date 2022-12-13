@@ -12,7 +12,7 @@ import { arrayOf, shape, string } from 'prop-types';
 import TestimonialCard from './TestimonialCard';
 import './TestimonialWrapper.scss';
 import { cardWidth, shadowSize } from './TestimonialCard/TestimonialCard.scss';
-import SvgArrow from '../../assets/icons/icon-feather-arrow-down.svg';
+import SvgArrow from '~/assets/icons/icon-feather-arrow-down.svg';
 
 function useWindowSizeUpdates(func, deps) {
   useEffect(() => {

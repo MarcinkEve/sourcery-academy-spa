@@ -1,6 +1,6 @@
 import { shape, arrayOf, string } from 'prop-types';
 
-import { scheduleCardType } from '../ScheduleCard/types';
+import { scheduleCardType } from '~/components/ScheduleCard/types';
 
 export const scheduleColumnType = shape({
   title: arrayOf(string).isRequired,

@@ -2,12 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 
 import './form-section.scss';
-import { sectionType } from '../types';
-import RadioToggler from '../../RadioToggler';
-import RadioButton from '../../RadioButton';
-import InputField from '../../InputField';
-import FileUpload from '../../FileUpload';
-import Checkbox from '../../Checkbox';
+import { sectionType } from '~/components/ApplicationForm/types';
+import RadioToggler from '~/components/RadioToggler';
+import RadioButton from '~/components/RadioButton';
+import InputField from '~/components/InputField';
+import FileUpload from '~/components/FileUpload';
+import Checkbox from '~/components/Checkbox';
 
 const renderFormElement = (elementData) => {
   switch (elementData.type) {

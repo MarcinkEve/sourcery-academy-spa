@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { scheduleColumnType } from '../types';
+import { scheduleColumnType } from '~/components/ScheduleCardsWrapper/types';
 
-import ScheduleSubcolumn from '../ScheduleSubcolumn';
+import ScheduleSubcolumn from '~/components/ScheduleCardsWrapper/ScheduleSubcolumn';
 import './schedule-column.scss';
 
 export const ScheduleColumn = ({ columnData }) => {
