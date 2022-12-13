@@ -31,9 +31,14 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
   useWindowSizeUpdates(updateWidth, [ref]);
 
   const testimonialCardWidth = parseInt(cardWidth) + parseInt(shadowSize);
-  const gap =
-    (containerWidth - testimonialCardWidth * visibleSlides) /
-    (visibleSlides - 1);
+  visibleSlides = Math.min(data.length, visibleSlides);
+
+  let gap = containerWidth - testimonialCardWidth * visibleSlides;
+  if (visibleSlides !== 1) {
+    gap = gap / (visibleSlides - 1);
+  } else {
+    gap = gap / 2 + data.length * parseInt(shadowSize);
+  }
 
   return (
     <div className="carousel" ref={ref}>
@@ -64,7 +69,9 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
               key={index}
               index={index}
               className="carousel__card"
-              style={{ marginRight: gap }}
+              style={
+                visibleSlides !== 1 ? { marginRight: gap } : { marginLeft: gap }
+              }
             >
               <TestimonialCard data={data[index]} alt={alt && alt[index]} />
             </Slide>
