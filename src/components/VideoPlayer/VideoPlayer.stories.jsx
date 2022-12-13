@@ -8,7 +8,6 @@ export default {
   args: {
     theme: 'Violet',
     isModalOpen: true,
-    hasAutoPlay: false,
     videoSrc:
       'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4',
   },

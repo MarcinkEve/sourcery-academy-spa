@@ -8,9 +8,11 @@ import IconVolumeOff from '~/assets/icons/icon-volume-off.svg';
 
 export const CustomVolumeMute = (props) => {
   const { className, media } = props;
+
   const handleVolume = () => {
     props.media.muteUnmute();
   };
+
   return (
     <button type="button" className={className} onClick={handleVolume}>
       {media.isMuted ? (

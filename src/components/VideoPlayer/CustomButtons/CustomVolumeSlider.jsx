@@ -9,7 +9,9 @@ export const CustomVolumeSlider = (props) => {
     let value = e.target.value;
     props.media.setVolume((+value).toFixed(4));
   };
+
   const { className, media } = props;
+
   return (
     <input
       type="range"

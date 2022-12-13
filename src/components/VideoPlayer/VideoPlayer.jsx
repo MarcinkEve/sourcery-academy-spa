@@ -17,16 +17,18 @@ export const VideoPlayer = ({
   onClose,
   hasAutoPlay,
 }) => {
+  const [changeTabIndex, setChangeTabIndex] = useState(-1);
+
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       e.key === 'Escape' && onClose();
     });
   }, []);
-  const [toggleTabIndex, setToggleTabIndex] = useState(-1);
+
   if (!isModalOpen) return null;
+
   const tabIndexHandler = (data) => {
-    setToggleTabIndex(data);
-    // console.log('data: ', data);
+    setChangeTabIndex(data);
   };
   return (
     <div className="overlay" onClick={onClose}>
@@ -49,7 +51,7 @@ export const VideoPlayer = ({
             src={videoSrc}
             controls
             autoPlay={hasAutoPlay}
-            tabIndex={toggleTabIndex}
+            tabIndex={changeTabIndex}
           />
           <div className="controls">
             <CustomPlayPause className="controls__play-pause" />
@@ -63,7 +65,7 @@ export const VideoPlayer = ({
             />
             <CustomFullscreen
               className="controls__fullscreen"
-              toggleTabIndex={tabIndexHandler}
+              changeTabIndex={tabIndexHandler}
             />
           </div>
         </div>
@@ -73,16 +75,8 @@ export const VideoPlayer = ({
 };
 
 VideoPlayer.propTypes = {
-  videoSrc: string,
+  videoSrc: string.isRequired,
   hasAutoPlay: bool,
-  isModalOpen: bool,
-  onClose: func,
-};
-// TEMP -------------------------------------------------------------------------------------------------------------
-VideoPlayer.defaultProps = {
-  isModalOpen: false,
-  hasAutoPlay: false,
-  onClose: false,
-  videoSrc:
-    'https://sfe-2022-data.netlify.app/static/video/testers/7cd88093664cd782e4868a6706f2787da2eb7dc9.mp4',
+  isModalOpen: bool.isRequired,
+  onClose: func.isRequired,
 };

@@ -8,9 +8,11 @@ import IconPlay from '~/assets/icons/icon-play.svg';
 
 export const CustomPlayPause = (props) => {
   const { className, media } = props;
+
   const handlePlayPause = () => {
     props.media.playPause();
   };
+
   return (
     <button type="button" className={className} onClick={handlePlayPause}>
       {media.isPlaying ? (

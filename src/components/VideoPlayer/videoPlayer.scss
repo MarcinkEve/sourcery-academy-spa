@@ -32,18 +32,17 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     right: to-rem(-50);
     top: to-rem(-50);
+    transition: $transition-time-200;
 
-    // &:focus-visible {
-    //   outline: 4px dashed $orange-200;
-    // }
     &:hover {
-      background-color: var(--button-hover);
+      color: var(--button-hover);
+      transition: $transition-time-200;
     }
 
     &:focus,
     &:focus-visible,
     &:active {
-      background-color: var(--button-active);
+      color: var(--button-active);
       z-index: inherit;
     }
 
@@ -101,11 +100,10 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     @include flex-box($align-items: center, $justify-content: center);
 
     background-color: var(--secondary-color);
-    border-right: 2px solid var(--primary-color);
     color: $white-400;
     cursor: default;
     margin: 0 auto;
-    padding-bottom: to-rem(3);
+    padding-bottom: to-rem(5);
     width: to-rem(100);
   }
 
@@ -124,8 +122,8 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     width: 100%;
 
     &::-moz-range-thumb {
-      border: 1px solid var(--secondary-color);
-      box-shadow: -100vw 0 0 100vw var(--secondary-color);
+      border: 1px solid var(--button-active);
+      box-shadow: -100vw 0 0 100vw var(--button-active);
       box-sizing: border-box;
       height: 100%;
       width: 0;
@@ -133,16 +131,14 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 
     &::-webkit-slider-thumb {
       appearance: none;
-      border: 1px solid var(--secondary-color);
-      box-shadow: -100vw 0 0 100vw var(--secondary-color);
+      border: 1px solid var(--button-active);
+      box-shadow: -100vw 0 0 100vw var(--button-active);
       height: 100%;
       width: 0;
     }
   }
 
   &__volume-mute {
-    box-shadow: 1px 0 0 var(--primary-color) inset;
-
     &:hover + #{$_this}__volume-bar,
     &:focus-visible + #{$_this}__volume-bar {
       background-color: $_semi-transparent-color;
@@ -205,13 +201,14 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   &__volume-bar {
     border-style: none;
     transition: $transition-time-200;
-
     &:hover:not(#{$_this}__volume-bar) {
       background-color: var(--button-hover);
     }
 
     &:focus:not(#{$_this}__volume-bar),
     &:focus-visible:not(#{$_this}__volume-bar),
+    &:focus-visible:not(#{$_this}__volume-bar::-moz-range-thumb),
+    &:focus-visible:not(#{$_this}__volume-bar::-webkit-slider-thumb),
     &:active:not(#{$_this}__volume-bar) {
       background-color: var(--button-active);
       z-index: inherit;
