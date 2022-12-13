@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, oneOfType, shape, string, number } from 'prop-types';
 
 import './dates-container.scss';
-import DatesCard from '../DatesCard';
+import DatesCard from '~/components/DatesCard';
 
 export const DatesContainer = ({ title, cardData }) => {
   return (

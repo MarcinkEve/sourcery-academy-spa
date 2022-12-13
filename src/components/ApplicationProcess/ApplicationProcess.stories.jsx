@@ -2,10 +2,10 @@ import React from 'react';
 
 import { ApplicationProcess } from './ApplicationProcess';
 
-import Step1 from '../../assets/images/application-step-1.svg';
-import Step2 from '../../assets/images/application-step-2.svg';
-import Step3 from '../../assets/images/application-step-3.svg';
-import Step4 from '../../assets/images/application-step-4.svg';
+import Step1 from '~/assets/images/application-step-1.svg';
+import Step2 from '~/assets/images/application-step-2.svg';
+import Step3 from '~/assets/images/application-step-3.svg';
+import Step4 from '~/assets/images/application-step-4.svg';
 
 const icons = [
   { id: 1, icon: <Step1 /> },
@@ -61,7 +61,7 @@ const Template = (args) => {
   const { theme, ...rest } = args;
   return (
     <div theme={theme}>
-      <ApplicationProcess {...rest} />;
+      <ApplicationProcess {...rest} />
     </div>
   );
 };

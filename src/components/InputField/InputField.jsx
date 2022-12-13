@@ -3,7 +3,7 @@ import React from 'react';
 import { string, func } from 'prop-types';
 
 import './inputField.scss';
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from '~/components/ErrorMessage';
 
 export const InputField = ({
   name,

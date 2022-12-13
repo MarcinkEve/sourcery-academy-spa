@@ -1,15 +1,20 @@
-import { PropTypes } from 'prop-types';
 import React from 'react';
+import { string } from 'prop-types';
+
 import PageLayout from '~/layout/pageLayout';
+import IntroSection from '~/components/IntroSection';
+import Article from '~/components/Article';
+import { introSectionData, articleSectionData } from './data.js';
 
 export const Homepage = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
-      <h1 style={{ textAlign: 'center' }}>Homepage</h1>
+      <IntroSection introSectionData={introSectionData} />
+      <Article articleSectionData={articleSectionData} />
     </PageLayout>
   );
 };
 
 Homepage.propTypes = {
-  theme: PropTypes.string,
+  theme: string,
 };
