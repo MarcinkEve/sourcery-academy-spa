@@ -7,7 +7,7 @@ import { Button } from '../Button/Button';
 import { ROUTES } from '../../constants/routes';
 
 export const TextSection = ({
-  isRightAlligned,
+  isRightAligned,
   isHeadingSpacingLarge,
   // form an h1, h2, h3 with text before passing
   headingContent,
@@ -30,7 +30,7 @@ export const TextSection = ({
   };
 
   return (
-    <div className={`text-section ${isRightAlligned && 'text-section--right'}`}>
+    <div className={`text-section ${isRightAligned && 'text-section--right'}`}>
       {headingContentWithClass}
       <div
         className={`text-section__content ${
@@ -49,7 +49,7 @@ export const TextSection = ({
 };
 
 TextSection.propTypes = {
-  isRightAlligned: bool,
+  isRightAligned: bool,
   isHeadingSpacingLarge: bool,
   headingContent: element.isRequired,
   isParagraphTextBold: bool,

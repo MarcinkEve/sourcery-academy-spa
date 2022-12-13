@@ -3,7 +3,7 @@ import React from 'react';
 import './intro-section.scss';
 import IntroIcon from '~/assets/images/intro.svg';
 import TextSection from '~/components/TextSection';
-import { textSectionType } from '~/components/IntroSection/types';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const IntroSection = ({ introSectionData }) => {
   const {
