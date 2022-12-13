@@ -10,50 +10,59 @@ import FileUpload from '../../FileUpload';
 import Checkbox from '../../Checkbox';
 
 const renderFormElement = (elementData) => {
-  switch (elementData.type) {
+  const {
+    type,
+    name,
+    values,
+    getValue,
+    radioValues,
+    label,
+    placeholder,
+    checkboxText,
+    errorMessage,
+  } = elementData;
+
+  switch (type) {
     case 'radioToggler':
       return (
-        <RadioToggler
-          name={elementData.name}
-          values={elementData.values}
-          onValueChange={() => {}}
-        />
+        <RadioToggler name={name} values={values} onValueChange={getValue} />
       );
     case 'radio':
       return (
         <RadioButton
-          title={elementData.title}
-          radioValues={elementData.radioValues}
-          onValueChange={() => {}}
+          name={name}
+          radioValues={radioValues}
+          onValueChange={getValue}
         />
       );
     case 'text':
     case 'email':
       return (
         <InputField
-          name={elementData.name}
-          label={elementData.label}
-          type={elementData.type}
-          placeholder={elementData.placeholder}
-          getValue={() => {}}
+          name={name}
+          label={label}
+          type={type}
+          placeholder={placeholder}
+          getValidatedValue={getValue}
         />
       );
     case 'file':
       return (
         <FileUpload
-          name={elementData.name}
-          label={elementData.label}
-          placeholder={elementData.placeholder}
-          onValueChange={() => {}}
+          name={name}
+          label={label}
+          placeholder={placeholder}
+          getValidatedValue={getValue}
         />
       );
     case 'checkbox':
       return (
         <Checkbox
-          name={elementData.name}
-          checkboxText={elementData.checkboxText}
+          name={name}
+          checkboxText={checkboxText}
           type="checkbox"
-          getCheckboxValue={() => {}}
+          getCheckboxValue={getValue}
+          errorMessage={errorMessage}
         />
       );
   }

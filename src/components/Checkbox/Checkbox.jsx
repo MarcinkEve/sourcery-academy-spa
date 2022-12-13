@@ -10,7 +10,7 @@ export const Checkbox = ({
   errorMessage,
   name,
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState();
 
   const clickHandler = (event) => {
     setIsChecked(event.target.checked);
@@ -42,14 +42,16 @@ export const Checkbox = ({
           <p className="checkbox__text">{checkboxText}</p>
         </div>
       </label>
-      {errorMessage && <ErrorMessage message={errorMessage} />}
+      {isChecked === false && errorMessage && (
+        <ErrorMessage message={errorMessage} />
+      )}
     </>
   );
 };
 
 Checkbox.propTypes = {
   checkboxText: string.isRequired,
-  getCheckboxValue: func.isRequired,
+  getCheckboxValue: func,
   name: string.isRequired,
   errorMessage: string,
 };

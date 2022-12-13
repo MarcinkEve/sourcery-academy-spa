@@ -3,17 +3,17 @@ import React from 'react';
 
 import './radioButton.scss';
 
-export const RadioButton = ({ radioValues, title, onValueChange }) => {
+export const RadioButton = ({ radioValues, name, onValueChange }) => {
   return (
     <div className="radio">
-      <span className="radio__title">{title}</span>
+      <span className="radio__title">{name}</span>
 
       {radioValues.map((radioValue, index) => (
         <label className="radio__label" key={radioValue.id}>
           <input
             className="radio__input"
             type="radio"
-            name={title}
+            name={name}
             value={radioValue.value}
             onChange={(e) => {
               onValueChange(e.target.value);
@@ -29,7 +29,7 @@ export const RadioButton = ({ radioValues, title, onValueChange }) => {
 
 RadioButton.propTypes = {
   onValueChange: func,
-  title: string.isRequired,
+  name: string.isRequired,
   radioValues: arrayOf(
     shape({
       name: string,
