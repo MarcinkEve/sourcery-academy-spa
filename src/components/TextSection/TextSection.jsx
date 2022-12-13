@@ -48,4 +48,4 @@ export const TextSection = ({
   );
 };
 
-TextSection.propTypes = shape(textSectionType).isRequired;
+TextSection.propTypes = textSectionType.isRequired;
