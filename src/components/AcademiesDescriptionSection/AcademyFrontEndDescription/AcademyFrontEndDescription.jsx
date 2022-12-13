@@ -5,7 +5,7 @@ import TextSection from '~/components/TextSection';
 import ImageFrontEndDescription from '~/assets/images/frontend-description.svg';
 import ImageFrontEndDescriptionParticlesTop from '~/assets/particles/frontend-description-particles-top.svg';
 import ImageFrontEndDescriptionParticlesBottom from '~/assets/particles/frontend-description-particles-bottom.svg';
-import { textSectionType } from '~/components/AcademiesDescriptionSection/types';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const AcademyFrontEndDescription = ({ frontEndDescriptionData }) => {
   const {

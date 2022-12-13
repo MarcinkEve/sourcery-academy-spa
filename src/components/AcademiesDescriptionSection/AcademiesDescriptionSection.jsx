@@ -4,7 +4,7 @@ import AcademyDevelopersDescription from '~/components/AcademiesDescriptionSecti
 import AcademyTestersDescription from '~/components/AcademiesDescriptionSection/AcademyTestersDescription';
 import AcademyFrontEndDescription from '~/components/AcademiesDescriptionSection/AcademyFrontEndDescription';
 import AcademyKidsDescription from '~/components/AcademiesDescriptionSection/AcademyKidsDescription';
-import { textSectionType } from '~/components/AcademiesDescriptionSection/types';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const AcademiesDescriptionSection = ({
   developersDescriptionData,

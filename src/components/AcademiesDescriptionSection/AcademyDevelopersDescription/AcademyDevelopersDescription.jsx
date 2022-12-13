@@ -6,7 +6,7 @@ import ImageDevelopersDescriptionParticlesTop from '~/assets/particles/developer
 import ImageDevelopersDescriptionParticlesBottom from '~/assets/particles/developers-description-particles-bottom.svg';
 import ImageDevelopersDescription from '~/assets/images/developers-description.svg';
 import LineDevelopersDescription from '~/assets/lines/developers-description-line.svg';
-import { textSectionType } from '~/components/AcademiesDescriptionSection/types';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const AcademyDevelopersDescription = ({ developersDescriptionData }) => {
   const {
