@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { string, func } from 'prop-types';
 
 import './checkbox.scss';
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from '~/components/ErrorMessage';
 
 export const Checkbox = ({
   checkboxText,

@@ -67,7 +67,9 @@ $_shadow-size: 20;
   }
 }
 
+/* stylelint-disable property-no-unknown */
 :export {
   cardWidth: $_card-width;
   shadowSize: $_shadow-size;
 }
+/* stylelint-enable property-no-unknown */

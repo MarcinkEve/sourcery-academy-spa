@@ -1,4 +1,5 @@
-@import '../../sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .input {
   display: flex;
@@ -9,7 +10,7 @@
   }
 
   &__label {
-    @include label($charcoal-200);
+    @include label;
   }
 
   &__error {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { string, func } from 'prop-types';
 
 import './inputField.scss';
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from '~/components/ErrorMessage';
 
 import useValidation from '../../hooks/useValidation/';
 

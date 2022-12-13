@@ -4,7 +4,7 @@ import { string, shape, func } from 'prop-types';
 import './application-form.scss';
 import { sectionType } from './types';
 import FormSection from './FormSection';
-import Button from '../Button';
+import Button from '~/components/Button';
 
 export const ApplicationForm = ({ data, setIsSubmitted }) => {
   const { section_1, section_2, button } = data;
