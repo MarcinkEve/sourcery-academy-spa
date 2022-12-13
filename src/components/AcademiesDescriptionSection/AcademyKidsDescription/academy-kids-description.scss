@@ -1,0 +1,48 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.kids-description {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: flex-start
+  );
+
+  margin-top: to-rem(110);
+  padding-bottom: to-rem(275);
+
+  &__content {
+    max-width: to-rem(565);
+    position: relative;
+  }
+
+  &__top-particles {
+    left: to-rem(365);
+    max-width: to-rem(140);
+    position: absolute;
+    top: to-rem(-90);
+  }
+
+  &__bottom-particles {
+    left: to-rem(100);
+    max-width: to-rem(442);
+    position: absolute;
+    transform: translateY(-30%);
+  }
+
+  &__icons {
+    position: relative;
+  }
+
+  &__icons-image {
+    left: to-rem(45);
+    width: to-rem(458);
+  }
+
+  &__icons-line {
+    position: absolute;
+    transform: translate(-85%, -8%);
+    width: to-rem(657);
+    z-index: -1;
+  }
+}

@@ -1,4 +1,5 @@
-@import '../../sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .footer {
   @include flex-box(
@@ -7,9 +8,10 @@
     $align-items: center
   );
 
+  height: $height-header-footer;
   margin: 0 auto;
   max-width: to-rem(1440);
-  padding: to-rem(28) to-rem(40);
+  padding: 0 to-rem(40);
 
   &__list {
     @include flex-box(

@@ -1,16 +1,19 @@
-@import '../../sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .upload {
   $_this: &;
 
   &__label {
     @include label;
+
+    text-transform: capitalize;
   }
 
   &__input {
     @include hide;
 
-    &:focus + #{$_this}__field {
+    &:focus-visible + #{$_this}__field {
       outline: 2px solid $violet-600;
     }
   }
@@ -27,9 +30,19 @@
       cursor: pointer;
     }
 
+    &:active {
+      outline: 2px solid $violet-600;
+    }
+
     &--error {
       border-color: $red-500;
     }
+  }
+
+  &__file-name {
+    padding-right: to-rem(5);
+    width: 100%;
+    @include overflow-ellipsis();
   }
 
   &__placeholder {
@@ -37,6 +50,7 @@
   }
 
   &__icon {
+    flex: 0 0 auto;
     width: to-rem(20);
   }
 }

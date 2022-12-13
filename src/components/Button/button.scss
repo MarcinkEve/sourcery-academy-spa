@@ -1,4 +1,4 @@
-@import '../../sass/global';
+@import '~/sass/variables';
 
 .btn {
   background-color: var(--secondary-color);
@@ -10,7 +10,8 @@
   font-size: $font-size-m;
   font-weight: $font-weight-bold;
   padding: to-rem(12) to-rem(24);
-  transition: $transition-time-200 ease;
+  transition: color $transition-time-200 ease,
+    background-color $transition-time-200 ease;
 
   &:hover {
     background-color: var(--button-hover);

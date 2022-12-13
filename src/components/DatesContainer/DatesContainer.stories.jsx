@@ -106,33 +106,33 @@ FrontEnd.args = {
   title: 'Dates',
   cardData: [
     {
-      text: 'Entrance exam',
+      text: 'entrance exam',
       dates: [
         {
           day: 26,
-          month: 'Sep',
+          month: 'sep',
         },
         {
           day: 28,
-          month: 'Sep',
+          month: 'sep',
         },
       ],
     },
     {
-      text: 'Academy duration',
+      text: 'academy duration',
       dates: [
         {
           day: 30,
-          month: 'Oct',
+          month: 'oct',
         },
         {
           day: 18,
-          month: 'Dec',
+          month: 'dec',
         },
       ],
     },
     {
-      text: 'Final exam',
+      text: 'final exam',
       dates: [
         {
           day: 8,

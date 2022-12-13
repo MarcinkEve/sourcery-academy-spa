@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TextSection } from './TextSection';
-import { ROUTES } from '../../constants/routes';
+import { ROUTES } from '~/constants/routes';
 
 const paragraphContentOptions = {
   text: (

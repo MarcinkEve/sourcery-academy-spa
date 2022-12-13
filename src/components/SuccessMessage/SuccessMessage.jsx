@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 
 import './successMessage.scss';
-import IconCheckMark from '../../assets/icons/icon-check-mark.svg';
+import IconCheckMark from '~/assets/icons/icon-check-mark.svg';
 
 export const SuccessMessage = ({ title, text }) => {
   return (

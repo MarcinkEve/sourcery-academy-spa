@@ -3,8 +3,8 @@ import { bool, element, oneOf, string } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 import './textSection.scss';
-import { Button } from '../Button/Button';
-import { ROUTES } from '../../constants/routes';
+import Button from '~/components/Button';
+import { ROUTES } from '~/constants/routes';
 
 export const TextSection = ({
   isRightAligned,

@@ -1,0 +1,75 @@
+@import '~/sass/utilities/mixins';
+@import '~/sass/variables';
+
+$_photo-size: to-rem(78);
+$_card-width: 340;
+$_shadow-size: 20;
+
+.card {
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+  @include box-shadow(to-rem(-$_shadow-size), to-rem($_shadow-size));
+
+  background-color: $white-400;
+  border: var(--primary-color) solid 2px;
+  border-radius: 16px;
+  font-family: inherit;
+  line-height: $line-height-l;
+  padding: to-rem(35) to-rem(28);
+  width: to-rem($_card-width);
+
+  &__photo {
+    border-radius: 50%;
+    height: $_photo-size;
+    width: $_photo-size;
+  }
+
+  &__quote {
+    padding: to-rem(2) 0 0;
+
+    &-mark {
+      color: var(--primary-color);
+      font-family: $header-font;
+      font-size: to-rem(38);
+      font-weight: $font-weight-bold;
+      line-height: inherit;
+      margin: 0;
+
+      &--lower {
+        text-align: right;
+      }
+    }
+
+    &-message {
+      color: var(--primary-color);
+      font-size: $font-size-s;
+      line-height: inherit;
+      margin: to-rem(-7) 0 0;
+    }
+  }
+
+  &__name {
+    color: var(--primary-color);
+    font-size: to-rem(20);
+    font-weight: $font-weight-bold;
+    line-height: inherit;
+    margin: to-rem(11) 0 0;
+  }
+
+  &__academy {
+    color: var(--primary-color);
+    font-size: $font-size-s;
+    line-height: inherit;
+    margin: to-rem(7) 0 0;
+  }
+}
+
+/* stylelint-disable property-no-unknown */
+:export {
+  cardWidth: $_card-width;
+  shadowSize: $_shadow-size;
+}
+/* stylelint-enable property-no-unknown */
