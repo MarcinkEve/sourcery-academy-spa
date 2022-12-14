@@ -38,10 +38,3 @@ RadioToggler.propTypes = {
   values: array.isRequired,
   onValueChange: func.isRequired,
 };
-
-// DEFAULT PROPS PLACEHOLDER
-RadioToggler.defaultProps = {
-  name: 'Academy type',
-  values: ['Full-stack', 'Testers', 'Front-End'],
-  onValueChange: () => {},
-};
