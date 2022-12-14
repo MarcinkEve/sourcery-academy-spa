@@ -31,7 +31,7 @@ export default {
   title: 'TextSection',
   component: TextSection,
   args: {
-    isRightAlligned: false,
+    isRightAligned: false,
     isHeadingSpacingLarge: false,
     headingContent: headingOptions.h2,
     isParagraphTextBold: true,
