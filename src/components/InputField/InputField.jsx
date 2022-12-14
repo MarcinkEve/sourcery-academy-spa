@@ -5,7 +5,7 @@ import { string, func } from 'prop-types';
 import './inputField.scss';
 import ErrorMessage from '~/components/ErrorMessage';
 
-import useValidation from '../../hooks/useValidation/';
+import useValidation from '~/hooks/useValidation/';
 
 export const InputField = ({
   name,

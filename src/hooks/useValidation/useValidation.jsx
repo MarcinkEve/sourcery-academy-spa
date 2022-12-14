@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const useValidation = (validating, inputValue, writeNameInError) => {
+export const useValidation = (validating, inputValue, writeNameInNameError) => {
   //validation data for name input
   const notAllowedCharRegex = /[!@#$%^&*()_+=[\]{};':"|<>\\/?\d]+/;
   const minNameLength = 2;
@@ -22,9 +22,6 @@ export const useValidation = (validating, inputValue, writeNameInError) => {
   const errorTextForFile = `File must be ${fileFormat} format`;
   const errorTextForFileSize = `File has to be less than ${fileSizeMb}mb`;
 
-  //validation data for checkbox
-  const errorTextForCheckbox = 'Please read and agree to terms and conditions';
-
   const returnArray = [undefined, undefined];
 
   if (inputValue === undefined) return returnArray;
@@ -36,14 +33,13 @@ export const useValidation = (validating, inputValue, writeNameInError) => {
         inputValue.length > maxNameLength
       ) {
         returnArray[1] = `${
-          writeNameInError ? writeNameInError : 'Name'
+          writeNameInNameError ? writeNameInNameError : 'Name'
         } ${errorForNameLength} `;
         return returnArray;
       } else if (notAllowedCharRegex.test(inputValue)) {
         returnArray[1] = errorTextForNameSymbols;
         return returnArray;
       }
-
       break;
 
     case 'email':
@@ -69,13 +65,6 @@ export const useValidation = (validating, inputValue, writeNameInError) => {
         returnArray[1] = undefined;
         return returnArray;
       }
-
-    case 'check':
-      if (inputValue === false) {
-        returnArray[1] = errorTextForCheckbox;
-        return returnArray;
-      }
-      break;
   }
 
   returnArray[0] = inputValue;

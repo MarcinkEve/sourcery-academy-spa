@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './fileUpload.scss';
 import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
-import useValidation from '../../hooks/useValidation';
+import useValidation from '~/hooks/useValidation';
 
 export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
   const [uploadedFile, setUploadedFile] = useState();
