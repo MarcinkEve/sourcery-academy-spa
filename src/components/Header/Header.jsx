@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 
 import './header.scss';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
@@ -27,7 +28,9 @@ const dropdownElements = [
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { pathname } = useLocation();
   const ref = useRef(null);
+  const academiesPaths = [];
 
   useEffect(() => setIsDropdownOpen(false), [useLocation()]);
   useEffect(() => {
@@ -41,19 +44,38 @@ export const Header = () => {
     return () => document.removeEventListener('keydown', keyListener);
   }, []);
 
+  for (let i = 0; i < Object.keys(dropdownElements).length; i++) {
+    academiesPaths.push(dropdownElements[i].route);
+  }
+
   return (
     <div className="header">
       <div className="logo">
-        <SvgLogo className="logo__image" />
+        <NavLink to="/" className="logo" aria-label="Home button">
+          <SvgLogo className="logo__image" />
+        </NavLink>
         <span className="logo__text">Sourcery Academy</span>
       </div>
       <ul className="navlinks">
         <li>
-          <Link to="/" className="navlinks__link">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? 'navlinks__link navlinks__link--active'
+                : 'navlinks__link'
+            }
+            to="/"
+          >
             About us
-          </Link>
+          </NavLink>
         </li>
-        <li className="navlinks__academies" ref={ref}>
+        <li
+          className={classNames(
+            'navlinks__academies',
+            academiesPaths.includes(pathname) && 'navlinks__academies--active'
+          )}
+          ref={ref}
+        >
           <button
             className="navlinks__academies-menu"
             onClick={() => setIsDropdownOpen((prev) => !prev)}
@@ -71,15 +93,24 @@ export const Header = () => {
           )}
         </li>
         <li>
-          <Link className="navlinks__link">Media</Link>
+          <NavLink className="navlinks__link" to="#media">
+            Media
+          </NavLink>
         </li>
         <li>
-          <Link className="navlinks__link" to="/applicationform">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? 'navlinks__link navlinks__link--active'
+                : 'navlinks__link'
+            }
+            to="/applicationform"
+          >
             Register
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className="navlinks__link">Questions</Link>
+          <NavLink className="navlinks__link">Questions</NavLink>
         </li>
       </ul>
     </div>

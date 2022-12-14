@@ -23,6 +23,10 @@
 
     gap: $spacer-xxxs;
 
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
     &__image {
       width: to-rem(38);
     }
@@ -80,6 +84,15 @@
       font-size: $font-size-m;
       line-height: inherit;
       text-decoration: none;
+
+      &:focus-visible {
+        outline: 4px dashed $orange-200;
+      }
+    }
+
+    &__link--active,
+    &__academies--active {
+      text-decoration: underline;
     }
   }
 }
