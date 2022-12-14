@@ -1,13 +1,13 @@
 import React, { cloneElement } from 'react';
-import { bool, element, oneOf, string } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { shape } from 'prop-types';
 
 import './textSection.scss';
 import Button from '~/components/Button';
-import { ROUTES } from '~/constants/routes';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const TextSection = ({
-  isRightAlligned,
+  isRightAligned,
   isHeadingSpacingLarge,
   // form an h1, h2, h3 with text before passing
   headingContent,
@@ -30,7 +30,7 @@ export const TextSection = ({
   };
 
   return (
-    <div className={`text-section ${isRightAlligned && 'text-section--right'}`}>
+    <div className={`text-section ${isRightAligned && 'text-section--right'}`}>
       {headingContentWithClass}
       <div
         className={`text-section__content ${
@@ -48,12 +48,4 @@ export const TextSection = ({
   );
 };
 
-TextSection.propTypes = {
-  isRightAlligned: bool,
-  isHeadingSpacingLarge: bool,
-  headingContent: element.isRequired,
-  isParagraphTextBold: bool,
-  paragraphContent: element.isRequired,
-  buttonText: string,
-  pageRoute: oneOf([...Object.values(ROUTES)]),
-};
+TextSection.propTypes = textSectionType.isRequired;

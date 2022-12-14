@@ -1,8 +1,8 @@
-import { bool, oneOf, shape, string } from 'prop-types';
+import { bool, oneOf, string } from 'prop-types';
 
 import { ROUTES } from '~/constants/routes';
 
-export const textSectionType = shape({
+export const textSectionType = {
   isRightAligned: bool,
   isHeadingSpacingLarge: bool,
   headingContent: string.isRequired,
@@ -10,4 +10,4 @@ export const textSectionType = shape({
   paragraphContent: string.isRequired,
   buttonText: string,
   pageRoute: oneOf([...Object.values(ROUTES)]),
-});
+};
