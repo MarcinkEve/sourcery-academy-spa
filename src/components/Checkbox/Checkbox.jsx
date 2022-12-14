@@ -10,7 +10,7 @@ export const Checkbox = ({
   errorMessage,
   name,
 }) => {
-  const [isChecked, setIsChecked] = useState();
+  const [isChecked, setIsChecked] = useState(null);
 
   const clickHandler = (event) => {
     setIsChecked(event.target.checked);

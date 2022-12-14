@@ -9,17 +9,17 @@ import Button from '~/components/Button';
 export const ApplicationForm = ({ data, setIsSubmitted }) => {
   const { section_1, section_2, button } = data;
 
-  const defaultRadioTogglerValue = 'Full-stack';
-  const defaultRadioValue = 'Kaunas';
+  const defaultRadioTogglerValue = section_1.inputs[0].values[0];
+  const defaultRadioValue = section_1.inputs[1].radioValues[0].value;
 
   const [values, setValues] = useState({
-    type: `${defaultRadioTogglerValue}`,
-    city: `${defaultRadioValue}`,
-    firstName: undefined,
-    lastName: undefined,
-    email: undefined,
-    resume: undefined,
-    checkbox: undefined,
+    type: defaultRadioTogglerValue,
+    city: defaultRadioValue,
+    firstName: null,
+    lastName: null,
+    email: null,
+    resume: null,
+    checkbox: null,
   });
 
   //adding functions to get values of radio inputs
@@ -37,7 +37,7 @@ export const ApplicationForm = ({ data, setIsSubmitted }) => {
       });
   });
 
-  const isBtnDisabled = Object.values(values).includes(undefined);
+  const isBtnDisabled = Object.values(values).includes(null);
   const returnObject = `Candidate = ${JSON.stringify(values)}`;
 
   const submitHandler = () => {

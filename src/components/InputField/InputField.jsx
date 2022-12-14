@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { string, func } from 'prop-types';
 
 import './inputField.scss';
@@ -14,12 +13,12 @@ export const InputField = ({
   placeholder,
   getValidatedValue,
 }) => {
-  const [input, setInput] = useState();
+  const [typedValue, setTypedValue] = useState();
 
   //Only validating name and email for now
   const [validInput, errorAfterValidation] = useValidation(
     `${type === 'text' ? 'name' : 'email'}`,
-    input,
+    typedValue,
     label
   );
   useEffect(() => {
@@ -42,7 +41,7 @@ export const InputField = ({
           errorAfterValidation ? 'input__field input__error' : 'input__field'
         }
         onBlur={(e) => {
-          setInput(e.target.value);
+          setTypedValue(e.target.value);
         }}
       ></input>
       {errorAfterValidation && <ErrorMessage message={errorAfterValidation} />}
