@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, oneOf, element, object, func } from 'prop-types';
+import { string, oneOf, func, bool } from 'prop-types';
 
 import { ROUTES } from '~/constants/routes';
 import TextSection from '~/components/TextSection';
@@ -12,39 +12,41 @@ export const ApplyToAcademy = ({
   route,
   Image,
   TopParticles,
+  isParticlePositionDefault,
 }) => {
   return (
-    <>
-      <section className="apply-to-academy">
+    <section className="apply-to-academy">
+      {TopParticles && (
         <TopParticles
-          className={`particles-top ${
-            TopParticles.name === 'SvgApplyToAcademyFiveTopParticles'
-              ? 'particles-top--five'
-              : null
+          className={`apply-to-academy__particles-top ${
+            isParticlePositionDefault && 'apply-to-academy__particles-top--five'
           }`}
         />
-        <TextSection
-          isRightAlligned={false}
-          isHeadingSpacingLarge={true}
-          headingContent={<h2>{headingText}</h2>}
-          isParagraphTextBold={true}
-          paragraphContent={<p>{mainText}</p>}
-          buttonText="Apply now"
-          pageRoute={route}
-        />
+      )}
+      <TextSection
+        isRightAlligned={false}
+        isHeadingSpacingLarge={true}
+        headingContent={<h2>{headingText}</h2>}
+        isParagraphTextBold={true}
+        paragraphContent={<p>{mainText}</p>}
+        buttonText="Apply now"
+        pageRoute={route}
+      />
+      {Image && (
         <div className="apply-to-academy__image-wrapper">
           <Image className="apply-to-academy__image" />
         </div>
-      </section>
-      <BottomParticles className="particles-bottom" />
-    </>
+      )}
+      <BottomParticles className="apply-to-academy__particles-bottom" />
+    </section>
   );
 };
 
 ApplyToAcademy.propTypes = {
-  headingText: string,
-  mainText: string,
+  headingText: string.isRequired,
+  mainText: string.isRequired,
   Image: func,
   TopParticles: func,
   route: oneOf([...Object.values(ROUTES)]),
+  isParticlePositionDefault: bool,
 };

@@ -1,10 +1,14 @@
-@import '~/sass/utilities/functions';
+@import '~/sass/utilities';
 
 .apply-to-academy {
   $_this: &;
 
-  align-items: center;
-  display: flex;
+  @include flex-box(
+    $direction: row,
+    $justify-content: normal,
+    $align-items: center
+  );
+
   padding: 0 to-rem(48);
 
   .text-section {
@@ -20,18 +24,18 @@
       transform: translate(8%, -6%) scale(110%);
     }
   }
-}
 
-.particles-top {
-  position: absolute;
-  transform: translate(-2%, -98%) scale(24%);
+  &__particles-top {
+    position: absolute;
+    transform: translate(-2%, -98%) scale(24%);
 
-  &--five {
-    transform: translate(-5%, -54%) scale(32%);
+    &--five {
+      transform: translate(0%, -54%) scale(32%);
+    }
   }
-}
 
-.particles-bottom {
-  position: absolute;
-  transform: translate(-35%, -68%) scale(24%);
+  &__particles-bottom {
+    position: absolute;
+    transform: translate(-37%, 53%) scale(24%);
+  }
 }
