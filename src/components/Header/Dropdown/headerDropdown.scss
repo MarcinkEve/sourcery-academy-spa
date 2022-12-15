@@ -64,8 +64,8 @@
       }
 
       &--active {
-        text-decoration: underline;
-        text-decoration-color: $violet-600;
+        background-color: $gray-200;
+        font-weight: 700;
       }
     }
   }

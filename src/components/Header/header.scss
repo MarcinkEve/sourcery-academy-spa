@@ -21,20 +21,22 @@
       $align-items: center
     );
 
-    &:focus-visible {
-      outline: 4px dashed $orange-200;
-    }
+    gap: $spacer-xxxs;
+    text-decoration: none;
 
     &__image {
       width: to-rem(38);
     }
-  }
 
-  &__text {
-    color: $header-clr;
-    font-weight: $font-weight-bold;
-    margin-left: to-rem(20);
-    margin-right: auto;
+    &__text {
+      color: $header-clr;
+      font-weight: $font-weight-bold;
+      margin-left: to-rem(20);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
   }
 
   .navlinks {
@@ -60,6 +62,8 @@
       border: 0;
       font-family: $paragraph-font;
       padding: 0;
+      position: relative;
+      z-index: 1;
     }
 
     &__academies-arrow {
@@ -73,15 +77,16 @@
     }
 
     &__academies-menu:hover {
-      cursor: pointer;
-
       #{$_this}__academies-arrow {
         fill: $white-400;
       }
+
+      cursor: pointer;
     }
 
     &__link {
       position: relative;
+      z-index: 2;
     }
 
     &__link,
@@ -101,6 +106,7 @@
       &:hover {
         background-color: $violet-400;
         color: $white-400;
+        transition: $transition-time-200;
       }
     }
 

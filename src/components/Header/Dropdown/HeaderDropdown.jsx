@@ -36,9 +36,9 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
           <li key={index} className="dropdown__content-item">
             <NavLink
               className={({ isActive }) =>
-                isActive
-                  ? 'dropdown__content-link dropdown__content-link--active'
-                  : 'dropdown__content-link'
+                `dropdown__content-link ${
+                  isActive ? 'dropdown__content-link--active' : ''
+                }`
               }
               to={element.route}
             >

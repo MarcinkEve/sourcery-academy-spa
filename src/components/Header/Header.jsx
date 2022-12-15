@@ -30,7 +30,19 @@ export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { pathname } = useLocation();
   const ref = useRef(null);
-  const academiesPaths = [];
+
+  const getAcademiesPath = () => {
+    const academiesPathArray = [];
+    dropdownElements.forEach((el) => {
+      academiesPathArray.push(el.route);
+    });
+    return academiesPathArray;
+  };
+
+  const academiesPaths = getAcademiesPath();
+  const isAcademiesPathActive = (pathname) => {
+    return academiesPaths.includes(pathname);
+  };
 
   useEffect(() => setIsDropdownOpen(false), [useLocation()]);
   useEffect(() => {
@@ -44,27 +56,20 @@ export const Header = () => {
     return () => document.removeEventListener('keydown', keyListener);
   }, []);
 
-  for (let i = 0; i < Object.keys(dropdownElements).length; i++) {
-    academiesPaths.push(dropdownElements[i].route);
-  }
-
-  const getActivePath = (path) => {
-    if (path === pathname) {
-      return 'navlinks__link navlinks__link--active';
-    }
-
-    return 'navlinks__link';
-  };
-
   return (
     <div className="header">
-      <NavLink to="/" className="logo" aria-label="Home button">
+      <NavLink className="logo" to="/" aria-label="Home link">
         <SvgLogo className="logo__image" />
+        <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <span className="header__text">Sourcery Academy</span>
       <ul className="navlinks">
         <li>
-          <NavLink className={getActivePath('/')} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/"
+          >
             About us
           </NavLink>
         </li>
@@ -72,7 +77,7 @@ export const Header = () => {
           <button
             className={classNames(
               'navlinks__academies-menu',
-              academiesPaths.includes(pathname) &&
+              isAcademiesPathActive(pathname) &&
                 'navlinks__academies-menu--active'
             )}
             onClick={() => setIsDropdownOpen((prev) => !prev)}
@@ -94,7 +99,9 @@ export const Header = () => {
         </li>
         <li>
           <NavLink
-            className={getActivePath('/applicationform')}
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
             to="/applicationform"
           >
             Register
