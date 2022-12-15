@@ -90,9 +90,7 @@ export const Header = () => {
           )}
         </li>
         <li>
-          <NavLink className="navlinks__link" to="#media">
-            Media
-          </NavLink>
+          <NavLink className="navlinks__link">Media</NavLink>
         </li>
         <li>
           <NavLink
