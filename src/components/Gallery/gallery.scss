@@ -1,0 +1,39 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.gallery {
+  display: grid;
+  gap: $spacer-l;
+  grid-auto-rows: to-rem(220);
+  grid-template-columns: repeat(4, 1fr);
+
+  &__item {
+    @include box-shadow;
+
+    &:nth-child(13n + 2),
+    &:nth-child(13n + 6),
+    &:nth-child(13n + 7) {
+      grid-column: span 2;
+    }
+
+    &--video {
+      @include flex-box($justify-content: center, $align-items: center);
+
+      position: relative;
+    }
+  }
+
+  &__thumbnail {
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__play-icon {
+    color: var(--primary-color);
+    position: absolute;
+    width: to-rem(90);
+  }
+}

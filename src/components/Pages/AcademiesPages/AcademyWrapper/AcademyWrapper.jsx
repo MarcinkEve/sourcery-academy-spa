@@ -12,7 +12,7 @@ export const AcademyWrapper = ({ schedule }) => {
       <h1 style={{ textAlign: 'center' }}>
         This is the {location.pathname.slice(1)} academy{' '}
       </h1>
-      ;
+
       <ScheduleSection schedule={schedule} />
     </>
   );
