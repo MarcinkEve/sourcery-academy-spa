@@ -1,5 +1,6 @@
 import React from 'react';
 import { string, shape } from 'prop-types';
+
 import './TestimonialCard.scss';
 
 export const TestimonialCard = ({ data, alt = 'Graduate profile photo' }) => {

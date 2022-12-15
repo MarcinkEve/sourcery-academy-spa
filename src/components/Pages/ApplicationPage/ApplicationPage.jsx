@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { string } from 'prop-types';
 
 import './application-page.scss';
-import IconSuccessImage from '../../../assets/icons/icon-success-image.svg';
-import Particles from '../../../assets/particles/application-form-particles.svg';
-import ApplicationForm from '../../ApplicationForm';
-import { SuccessMessage } from '../../SuccessMessage/SuccessMessage';
+import IconSuccessImage from '~/assets/icons/icon-success-image.svg';
+import Particles from '~/assets/particles/application-form-particles.svg';
+import ApplicationForm from '~/components/ApplicationForm';
+import { SuccessMessage } from '~/components/SuccessMessage/SuccessMessage';
 import PageLayout from '~/layout/pageLayout';
 
 import { data as applicationPageData } from './mockData';

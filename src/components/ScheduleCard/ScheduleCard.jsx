@@ -7,11 +7,11 @@ import { ScheduleCardLocation } from './ScheduleCardLocation';
 import { scheduleCardType } from './types';
 import './scheduleCard.scss';
 import './scheduleCardLocation.scss';
-import '../../sass/vendor/slidedown.scss';
-import IconArrowDownSchedule from '../../assets/icons/icon-arrow-down-schedule.svg';
-import IconAvatar from '../../assets/icons/icon-avatar.svg';
-import IconClock from '../../assets/icons/icon-clock.svg';
-import IconShortHorizontalLine from '../../assets/icons/icon-short-horizontal-line.svg';
+import '~/sass/vendor/slidedown.scss';
+import IconArrowDownSchedule from '~/assets/icons/icon-arrow-down-schedule.svg';
+import IconAvatar from '~/assets/icons/icon-avatar.svg';
+import IconClock from '~/assets/icons/icon-clock.svg';
+import IconShortHorizontalLine from '~/assets/icons/icon-short-horizontal-line.svg';
 
 export const ScheduleCard = ({ lectureData, lectureDates }) => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);

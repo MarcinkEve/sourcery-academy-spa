@@ -1,20 +1,19 @@
-@import '~/sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .radio-toggler {
   $_this: &;
 
   &__label {
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
+    @include overflow-ellipsis();
 
     border-radius: 30px;
     color: $charcoal-400;
     cursor: pointer;
     font-weight: $font-weight-bold;
-    height: to-rem(48);
+    margin: to-rem(7);
+    padding: to-rem(13);
+    text-align: center;
     transition: color $transition-time-200 ease,
       background-color $transition-time-200 ease;
     width: to-rem(159);

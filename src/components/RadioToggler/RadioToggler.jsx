@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { func, string, array } from 'prop-types';
 
-import { RadioButtonForToggler } from '../RadioButtonForToggler/RadioButtonForToggler';
+import RadioButtonForToggler from '~/components/RadioButtonForToggler';
 import './radio-toggler.scss';
 
 export const RadioToggler = ({ name, values, onValueChange }) => {
@@ -16,15 +16,18 @@ export const RadioToggler = ({ name, values, onValueChange }) => {
     <>
       <span className="section-label">{name}</span>
       <div className="radio-toggler">
-        {values.map((itemValue, index) => (
-          <RadioButtonForToggler
-            key={index}
-            name={name}
-            value={itemValue}
-            handleChange={handleChange}
-            radioValue={radioValue}
-          />
-        ))}
+        {values.map(
+          (itemValue, index) =>
+            itemValue.trim() !== '' && (
+              <RadioButtonForToggler
+                key={itemValue + index}
+                name={name}
+                value={itemValue}
+                handleChange={handleChange}
+                radioValue={radioValue}
+              />
+            )
+        )}
       </div>
     </>
   );
@@ -34,11 +37,4 @@ RadioToggler.propTypes = {
   name: string.isRequired,
   values: array.isRequired,
   onValueChange: func.isRequired,
-};
-
-// DEFAULT PROPS PLACEHOLDER
-RadioToggler.defaultProps = {
-  name: 'Academy type',
-  values: ['Full-stack', 'Testers', 'Front-End'],
-  onValueChange: () => {},
 };

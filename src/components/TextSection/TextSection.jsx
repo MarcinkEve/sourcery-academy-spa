@@ -1,13 +1,13 @@
 import React, { cloneElement } from 'react';
-import { bool, element, oneOf, string } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames';
 
 import './textSection.scss';
-import { Button } from '../Button/Button';
-import { ROUTES } from '../../constants/routes';
+import Button from '~/components/Button';
+import { textSectionType } from '~/components/TextSection/types';
 
 export const TextSection = ({
-  isRightAlligned,
+  isRightAligned,
   isHeadingSpacingLarge,
   // form an h1, h2, h3 with text before passing
   headingContent,
@@ -20,9 +20,9 @@ export const TextSection = ({
   const nav = useNavigate();
 
   const headingContentWithClass = cloneElement(headingContent, {
-    className: `text-section__heading ${
-      isHeadingSpacingLarge && 'text-section__heading--large-spacing'
-    }`,
+    className: classNames('text-section__heading', {
+      'text-section__heading--large-spacing': isHeadingSpacingLarge,
+    }),
   });
 
   const navigateToPage = () => {
@@ -30,12 +30,16 @@ export const TextSection = ({
   };
 
   return (
-    <div className={`text-section ${isRightAlligned && 'text-section--right'}`}>
+    <div
+      className={classNames('text-section', {
+        'text-section--right': isRightAligned,
+      })}
+    >
       {headingContentWithClass}
       <div
-        className={`text-section__content ${
-          isParagraphTextBold && 'text-section__content--bold'
-        }`}
+        className={classNames('text-section__content', {
+          'text-section__content--bold': isParagraphTextBold,
+        })}
       >
         {paragraphContent}
       </div>
@@ -48,12 +52,4 @@ export const TextSection = ({
   );
 };
 
-TextSection.propTypes = {
-  isRightAlligned: bool,
-  isHeadingSpacingLarge: bool,
-  headingContent: element.isRequired,
-  isParagraphTextBold: bool,
-  paragraphContent: element.isRequired,
-  buttonText: string,
-  pageRoute: oneOf([...Object.values(ROUTES)]),
-};
+TextSection.propTypes = textSectionType.isRequired;

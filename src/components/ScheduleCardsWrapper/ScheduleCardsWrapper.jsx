@@ -1,8 +1,7 @@
 import React from 'react';
-import { shape } from 'prop-types';
 import classNames from 'classnames';
 
-import { scheduleColumnType } from './types';
+import { scheduleType } from './types';
 
 import ScheduleColumn from './ScheduleColumn';
 import './schedule-cards-wrapper.scss';
@@ -22,8 +21,5 @@ export const ScheduleCardsWrapper = ({ schedule }) => {
 };
 
 ScheduleCardsWrapper.propTypes = {
-  schedule: shape({
-    column_1: scheduleColumnType.isRequired,
-    column_2: scheduleColumnType,
-  }).isRequired,
+  schedule: scheduleType.isRequired,
 };
