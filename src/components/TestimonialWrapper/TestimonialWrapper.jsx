@@ -33,11 +33,12 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
   const testimonialCardWidth = parseInt(cardWidth) + parseInt(shadowSize);
   visibleSlides = Math.min(data.length, visibleSlides);
 
-  let gap = containerWidth - testimonialCardWidth * visibleSlides;
+  const sumGaps = containerWidth - testimonialCardWidth * visibleSlides;
+  let gap;
   if (visibleSlides !== 1) {
-    gap = gap / (visibleSlides - 1);
+    gap = sumGaps / (visibleSlides - 1);
   } else {
-    gap = gap / 2 + data.length * parseInt(shadowSize);
+    gap = sumGaps / 2 + data.length * parseInt(shadowSize);
   }
 
   return (
