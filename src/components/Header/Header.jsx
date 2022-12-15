@@ -48,36 +48,33 @@ export const Header = () => {
     academiesPaths.push(dropdownElements[i].route);
   }
 
+  const getActivePath = (path) => {
+    if (path === pathname) {
+      return 'navlinks__link navlinks__link--active';
+    }
+
+    return 'navlinks__link';
+  };
+
   return (
     <div className="header">
-      <div className="logo">
-        <NavLink to="/" className="logo" aria-label="Home button">
-          <SvgLogo className="logo__image" />
-        </NavLink>
-        <span className="logo__text">Sourcery Academy</span>
-      </div>
+      <NavLink to="/" className="logo" aria-label="Home button">
+        <SvgLogo className="logo__image" />
+      </NavLink>
+      <span className="header__text">Sourcery Academy</span>
       <ul className="navlinks">
         <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? 'navlinks__link navlinks__link--active'
-                : 'navlinks__link'
-            }
-            to="/"
-          >
+          <NavLink className={getActivePath('/')} to="/">
             About us
           </NavLink>
         </li>
-        <li
-          className={classNames(
-            'navlinks__academies',
-            academiesPaths.includes(pathname) && 'navlinks__academies--active'
-          )}
-          ref={ref}
-        >
+        <li className="navlinks__academies" ref={ref}>
           <button
-            className="navlinks__academies-menu"
+            className={classNames(
+              'navlinks__academies-menu',
+              academiesPaths.includes(pathname) &&
+                'navlinks__academies-menu--active'
+            )}
             onClick={() => setIsDropdownOpen((prev) => !prev)}
           >
             Academies
@@ -99,11 +96,7 @@ export const Header = () => {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? 'navlinks__link navlinks__link--active'
-                : 'navlinks__link'
-            }
+            className={getActivePath('/applicationform')}
             to="/applicationform"
           >
             Register

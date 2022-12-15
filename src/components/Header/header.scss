@@ -21,8 +21,6 @@
       $align-items: center
     );
 
-    gap: $spacer-xxxs;
-
     &:focus-visible {
       outline: 4px dashed $orange-200;
     }
@@ -30,22 +28,24 @@
     &__image {
       width: to-rem(38);
     }
+  }
 
-    &__text {
-      color: $header-clr;
-      font-weight: $font-weight-bold;
-    }
+  &__text {
+    color: $header-clr;
+    font-weight: $font-weight-bold;
+    margin-left: to-rem(20);
+    margin-right: auto;
   }
 
   .navlinks {
+    $_this: &;
+
     @include reset-list-style;
     @include flex-box(
       $direction: row,
       $justify-content: center,
       $align-items: center
     );
-
-    gap: $spacer-xxs;
 
     &__academies {
       @include flex-box(
@@ -68,31 +68,51 @@
     }
 
     &__academies-dropdown {
-      padding-right: to-rem(21);
       position: absolute;
       top: to-rem(78);
-      z-index: 1; //temporary fix
     }
 
     &__academies-menu:hover {
       cursor: pointer;
+
+      #{$_this}__academies-arrow {
+        fill: $white-400;
+      }
+    }
+
+    &__link {
+      position: relative;
     }
 
     &__link,
     &__academies-menu {
+      border-radius: 5px;
       color: $header-clr;
       font-size: $font-size-m;
       line-height: inherit;
+      padding: to-rem(7) to-rem(11);
+      position: relative;
       text-decoration: none;
 
       &:focus-visible {
         outline: 4px dashed $orange-200;
       }
+
+      &:hover {
+        background-color: $violet-400;
+        color: $white-400;
+      }
     }
 
     &__link--active,
-    &__academies--active {
+    &__academies-menu--active {
       text-decoration: underline;
+      text-decoration-color: $violet-600;
+    }
+
+    &__link--active:hover,
+    &__academies-menu--active:hover {
+      text-decoration-color: $white-400;
     }
   }
 }
