@@ -1,0 +1,56 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.video-card {
+  position: relative;
+  width: to-rem(620);
+
+  &__button {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    background: transparent;
+    border: transparent;
+    border-radius: 50%;
+    left: 50%;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: to-rem(90);
+
+    &:hover {
+      background-color: var(--button-hover);
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--button-active);
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &__button-icon {
+    color: var(--primary-color);
+    width: 100%;
+  }
+
+  &__image {
+    // position: relative;
+  }
+}
