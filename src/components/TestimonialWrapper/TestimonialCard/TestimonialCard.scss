@@ -4,6 +4,7 @@
 $_photo-size: to-rem(78);
 $_card-width: 340;
 $_shadow-size: 20;
+$_border-radius-size: 16px;
 
 .card {
   @include flex-box(
@@ -15,7 +16,7 @@ $_shadow-size: 20;
 
   background-color: $white-400;
   border: var(--primary-color) solid 2px;
-  border-radius: 16px;
+  border-radius: $_border-radius-size;
   font-family: inherit;
   line-height: $line-height-l;
   padding: to-rem(35) to-rem(28);

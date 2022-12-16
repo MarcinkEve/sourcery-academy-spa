@@ -77,8 +77,14 @@ $_button-size: to-rem(40);
   }
 
   &__card {
+    height: 100% !important; //overriding carousel inline styles
     margin-bottom: to-rem($_shadow-size);
     margin-left: to-rem($_shadow-size);
     width: initial !important; //overriding carousel inline styles
+  }
+
+  &__slide-focus-ring {
+    border-radius: $_border-radius-size;
+    outline: 4px dashed $orange-200;
   }
 }

@@ -4,6 +4,6 @@
   margin: 0 auto;
   max-width: $max-page-width;
   min-height: calc(100vh - (#{$height-header-footer} * 2));
-  overflow-y: hidden;
+  overflow: hidden;
   padding: 0 to-rem(80);
 }
