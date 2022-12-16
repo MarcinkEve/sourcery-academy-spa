@@ -1,0 +1,8 @@
+@import '~/sass/variables';
+
+.media {
+  &__title,
+  .btn {
+    margin: $spacer-l 0;
+  }
+}

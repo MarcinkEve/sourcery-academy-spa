@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import FsLightbox from 'fslightbox-react';
 
 import { mediaType } from './types';
-import PlayIcon from '~/assets/icons/icon-play.svg';
+import PlayIcon from '~/assets/icons/icon-play-button.svg';
 import './gallery.scss';
 
 export const Gallery = ({ media }) => {

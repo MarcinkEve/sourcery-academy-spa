@@ -9,7 +9,7 @@ export default {
   component: GalleryComponent,
   args: {
     theme: 'Violet',
-    media: media.slice(0, 6),
+    media: media.slice(0, 13),
   },
   argTypes: {
     theme: {
