@@ -6,22 +6,13 @@ import IconFullscreen from '~/assets/icons/icon-fullscreen.svg';
 
 import '../videoPlayer.scss';
 
-export const CustomFullscreenButton = ({
-  media,
-  className,
-  changeTabIndex,
-}) => {
+export const CustomFullscreenButton = ({ media, className }) => {
   const handleFullscreen = () => {
     media.fullscreen();
   };
 
   return (
-    <button
-      type="button"
-      className={className}
-      onClick={handleFullscreen}
-      onKeyDown={(e) => e.key === ('Enter' || 'Space') && changeTabIndex(0)}
-    >
+    <button type="button" className={className} onClick={handleFullscreen}>
       <IconFullscreen className="fullscreen-icon" />
     </button>
   );
@@ -34,5 +25,4 @@ CustomFullscreenButton.propTypes = {
   media: shape({
     fullscreen: func,
   }),
-  changeTabIndex: func,
 };

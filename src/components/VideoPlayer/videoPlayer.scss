@@ -10,6 +10,7 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .media {
@@ -20,7 +21,7 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
 
   &__player {
-    min-height: 500px;
+    min-height: to-rem(500);
   }
 
   &__close-button {
@@ -36,14 +37,12 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 
     &:hover {
       color: var(--button-hover);
-      transition: $transition-time-200;
     }
 
     &:focus,
     &:focus-visible,
     &:active {
       color: var(--button-active);
-      z-index: inherit;
     }
 
     &:focus {
@@ -90,7 +89,6 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   height: to-rem(48);
   position: absolute;
   width: 100%;
-  z-index: 1;
 
   &__play-pause {
     border-radius: 0 0 0 15px;
@@ -116,7 +114,6 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     flex-shrink: 1;
     height: 100%;
     margin: auto;
-    margin-right: auto;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -142,27 +139,25 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     &:hover + #{$_this}__volume-bar,
     &:focus-visible + #{$_this}__volume-bar {
       background-color: $_semi-transparent-color;
-      bottom: to-rem(73);
-      right: to-rem(112);
+      bottom: to-rem(74);
+      right: to-rem(43);
       width: to-rem(120);
     }
   }
 
   &__volume-bar {
     bottom: to-rem(13);
-    display: block;
     height: to-rem(69);
     position: absolute;
-    right: to-rem(172);
+    right: to-rem(103);
     transform: rotate(-90deg);
-    width: to-rem(1);
-    z-index: -1;
+    width: to-rem(0);
 
     &:hover,
     &:focus-visible {
       background-color: $_semi-transparent-color;
-      bottom: to-rem(73);
-      right: to-rem(112);
+      bottom: to-rem(74);
+      right: to-rem(43);
       width: to-rem(120);
     }
 
@@ -174,12 +169,6 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     &::-webkit-slider-thumb {
       border: 1px solid var(--button-active);
       box-shadow: -100vw 0 0 100vw var(--button-active);
-    }
-  }
-
-  &__settings {
-    &-icon {
-      width: to-rem(24);
     }
   }
 
@@ -211,15 +200,16 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
     &:focus-visible:not(#{$_this}__volume-bar::-webkit-slider-thumb),
     &:active:not(#{$_this}__volume-bar) {
       background-color: var(--button-active);
-      z-index: inherit;
     }
 
     &:focus {
       outline: 2px solid var(--button-hover);
+      z-index: 1;
     }
 
     &:focus-visible {
       outline: 4px dashed $orange-200;
+      z-index: 1;
     }
 
     &:active {
