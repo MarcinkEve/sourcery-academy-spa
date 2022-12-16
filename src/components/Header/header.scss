@@ -21,7 +21,7 @@
       $align-items: center
     );
 
-    gap: $spacer-xxxs;
+    column-gap: $spacer-xxxs;
     text-decoration: none;
 
     &__image {

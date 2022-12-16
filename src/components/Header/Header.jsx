@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
-import './header.scss';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HeaderDropdown from '~/components/Header/Dropdown';
+import './header.scss';
 
 const dropdownElements = [
   {
