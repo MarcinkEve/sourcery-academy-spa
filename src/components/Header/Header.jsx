@@ -36,13 +36,12 @@ export const Header = () => {
     dropdownElements.forEach((el) => {
       academiesPathArray.push(el.route);
     });
+
     return academiesPathArray;
   };
 
   const academiesPaths = getAcademiesPath();
-  const isAcademiesPathActive = (pathname) => {
-    return academiesPaths.includes(pathname);
-  };
+  const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
 
   useEffect(() => setIsDropdownOpen(false), [useLocation()]);
   useEffect(() => {
