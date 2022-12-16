@@ -27,6 +27,7 @@ export default {
 
 export const Video = (args) => {
   const { theme, ...rest } = args;
+
   return (
     <div theme={theme}>
       <VideoPlayer {...rest} />
