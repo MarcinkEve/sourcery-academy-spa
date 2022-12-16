@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { func } from 'prop-types';
 
 import ScheduleSection from '~/components/ScheduleSection';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
@@ -11,6 +10,8 @@ export const AcademyWrapper = ({ schedule }) => {
   const location = useLocation();
   const academyType = location.pathname.slice(1);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>
@@ -19,6 +20,7 @@ export const AcademyWrapper = ({ schedule }) => {
       <CornerVideoCard
         Image={cornerImages[academyType].image}
         academyType={academyType}
+        setIsModalOpen={setIsModalOpen}
       />
       <ScheduleSection schedule={schedule} />
     </>
