@@ -16,7 +16,10 @@ export const AcademyWrapper = ({ schedule }) => {
       <h1 style={{ textAlign: 'center' }}>
         This is the {location.pathname.slice(1)} academy{' '}
       </h1>
-      <CornerVideoCard Image={cornerImages[academyType].image} />
+      <CornerVideoCard
+        Image={cornerImages[academyType].image}
+        academyType={academyType}
+      />
       <ScheduleSection schedule={schedule} />
     </>
   );
@@ -24,5 +27,4 @@ export const AcademyWrapper = ({ schedule }) => {
 
 AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
-  Image: func,
 };

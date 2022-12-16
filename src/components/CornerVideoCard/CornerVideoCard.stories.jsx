@@ -2,9 +2,9 @@ import React from 'react';
 
 import { CornerVideoCard } from './CornerVideoCard';
 
-import DevelopersCornerImage from '~/assets/images/developers-description.svg';
-import TestersCornerImage from '~/assets/images/testers-description.svg';
-import FrontEndCornerImage from '~/assets/images/frontend-description.svg';
+import DevelopersCornerImage from '~/assets/images/developers-corner-photo.jpg';
+import TestersCornerImage from '~/assets/images/testers-corner-photo.jpg';
+import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
 
 const Images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
 
@@ -17,11 +17,24 @@ const themes = [
 export default {
   title: 'CornerVideoCard',
   component: CornerVideoCard,
-  args: themes[0],
+  args: {
+    theme: 'developers',
+    Image: themes,
+    mapping: {
+      developers: 'developers',
+      testers: 'testers',
+      'front-end': 'front-end',
+    },
+  },
   argTypes: {
     theme: {
       options: ['developers', 'testers', 'front-end'],
       control: 'radio',
+      mapping: {
+        developers: 'developers',
+        testers: 'testers',
+        'front-end': 'front-end',
+      },
     },
   },
 };
@@ -37,20 +50,20 @@ const Template = (args) => {
 
 export const VideoCardComponent = Template.bind({});
 
-// export const Red = Template.bind({});
-// Red.args = {
-//   theme: 'front-end',
-//   Image: DevelopersCornerImage,
-// };
+export const Red = Template.bind({});
+Red.args = {
+  theme: 'front-end',
+  Image: DevelopersCornerImage,
+};
 
-// export const Green = Template.bind({});
-// Green.args = {
-//   theme: 'testers',
-//   Image: TestersCornerImage,
-// };
+export const Green = Template.bind({});
+Green.args = {
+  theme: 'testers',
+  Image: TestersCornerImage,
+};
 
-// export const Blue = Template.bind({});
-// Blue.args = {
-//   theme: 'developers',
-//   Image: FrontEndCornerImage,
-// };
+export const Blue = Template.bind({});
+Blue.args = {
+  theme: 'developers',
+  Image: FrontEndCornerImage,
+};
