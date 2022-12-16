@@ -3,8 +3,8 @@ import classnames from 'classnames';
 import FsLightbox from 'fslightbox-react';
 
 import { mediaType } from './types';
-import './gallery.scss';
 import PlayIcon from '~/assets/icons/icon-play.svg';
+import './gallery.scss';
 
 export const Gallery = ({ media }) => {
   const [lightboxController, setLightboxController] = useState({

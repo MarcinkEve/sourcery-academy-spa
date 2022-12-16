@@ -71,7 +71,9 @@ export const Header = () => {
           )}
         </li>
         <li>
-          <Link className="navlinks__link">Media</Link>
+          <Link className="navlinks__link" to="/media">
+            Media
+          </Link>
         </li>
         <li>
           <Link className="navlinks__link" to="/applicationform">

@@ -1,4 +1,3 @@
-import { oneOf } from 'prop-types';
 import React from 'react';
 
 import { Gallery as GalleryComponent } from './Gallery';
