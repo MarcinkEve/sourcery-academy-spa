@@ -114,11 +114,10 @@
     &__academies-menu--active {
       text-decoration: underline;
       text-decoration-color: $violet-600;
-    }
 
-    &__link--active:hover,
-    &__academies-menu--active:hover {
-      text-decoration-color: $white-400;
+      &:hover {
+        text-decoration-color: $white-400;
+      }
     }
   }
 }
