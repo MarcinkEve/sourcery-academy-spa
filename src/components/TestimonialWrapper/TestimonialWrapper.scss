@@ -77,7 +77,7 @@ $_button-size: to-rem(40);
   }
 
   &__card {
-    height: fit-content !important; //overriding carousel inline styles
+    height: 100% !important; //overriding carousel inline styles
     margin-bottom: to-rem($_shadow-size);
     margin-left: to-rem($_shadow-size);
     width: initial !important; //overriding carousel inline styles
