@@ -12,12 +12,24 @@ export const Gallery = ({ media }) => {
     slide: 1,
   });
 
-  function openLightboxOnSlide(number) {
+  const openLightboxOnSlide = (number) => {
     setLightboxController({
       toggler: !lightboxController.toggler,
       slide: number + 1,
     });
-  }
+  };
+
+  const openLightboxWithKeyboard = (e, number) => {
+    const keyCodeEnter = 13;
+    const keyCodeSpace = 32;
+
+    if (e.keyCode === keyCodeEnter || e.keyCode === keyCodeSpace) {
+      setLightboxController({
+        toggler: !lightboxController.toggler,
+        slide: number + 1,
+      });
+    }
+  };
 
   return (
     <>
@@ -29,6 +41,9 @@ export const Gallery = ({ media }) => {
             })}
             key={item.src}
             onClick={() => openLightboxOnSlide(index)}
+            onKeyDown={(e) => openLightboxWithKeyboard(e, index)}
+            tabIndex={0}
+            title="Click on an image to open an expanded view"
           >
             <img
               className="gallery__thumbnail"
@@ -46,6 +61,7 @@ export const Gallery = ({ media }) => {
         toggler={lightboxController.toggler}
         sources={media.map((item) => item.src)}
         slide={lightboxController.slide}
+        exitFullscreenOnClose={true}
       />
     </>
   );

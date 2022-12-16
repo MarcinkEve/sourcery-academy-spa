@@ -3,13 +3,14 @@ import React from 'react';
 
 import { Gallery as GalleryComponent } from './Gallery';
 import media from './data.json';
+import './gallery-stories.scss';
 
 export default {
   title: 'Gallery',
   component: GalleryComponent,
   args: {
     theme: 'Violet',
-    media: media,
+    media: media.slice(0, 6),
   },
   argTypes: {
     theme: {
@@ -28,7 +29,7 @@ export default {
 export const Gallery = (args) => {
   const { theme, ...rest } = args;
   return (
-    <div theme={theme} style={{ maxWidth: '1200px', marginInline: 'auto' }}>
+    <div theme={theme} className="story-wrapper">
       <GalleryComponent {...rest} />
     </div>
   );
