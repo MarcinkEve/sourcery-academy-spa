@@ -1,16 +1,15 @@
 import React from 'react';
-import { string, object } from 'prop-types';
-
-import './customButtonStyles.scss';
+import { bool, func, shape, string } from 'prop-types';
 import { withMediaProps } from 'react-media-player';
+
 import IconVolume from '~/assets/icons/icon-volume.svg';
 import IconVolumeOff from '~/assets/icons/icon-volume-off.svg';
 
-export const CustomVolumeMute = (props) => {
-  const { className, media } = props;
+import './customButtonStyles.scss';
 
+export const CustomVolumeMuteButton = ({ media, className }) => {
   const handleVolume = () => {
-    props.media.muteUnmute();
+    media.muteUnmute();
   };
 
   return (
@@ -24,9 +23,12 @@ export const CustomVolumeMute = (props) => {
   );
 };
 
-export default withMediaProps(CustomVolumeMute);
+export default withMediaProps(CustomVolumeMuteButton);
 
-CustomVolumeMute.propTypes = {
-  media: object,
+CustomVolumeMuteButton.propTypes = {
+  media: shape({
+    muteUnmute: func,
+    isMuted: bool,
+  }),
   className: string,
 };

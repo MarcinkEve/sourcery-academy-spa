@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { string, bool, func } from 'prop-types';
-
-import './videoPlayer.scss';
 import { Media, Player, controls } from 'react-media-player';
-import CustomPlayPause from './CustomButtons/CustomPlayPause';
-import CustomFullscreen from './CustomButtons/CustomFullscreen';
-import CustomVolumeMute from './CustomButtons/CustomVolumeMute';
-import CustomVolumeSlider from './CustomButtons/CustomVolumeSlider';
-import { CustomSettings } from './CustomButtons/CustomSettings';
+
+import CustomPlayPauseButton from './CustomButtons/CustomPlayPauseButton';
+import CustomFullscreenButton from './CustomButtons/CustomFullscreenButton';
+import CustomVolumeMuteButton from './CustomButtons/CustomVolumeMuteButton';
+import CustomVolumeSliderButton from './CustomButtons/CustomVolumeSliderButton';
+import { CustomSettingsButton } from './CustomButtons/CustomSettingsButton';
+import './videoPlayer.scss';
 
 const { CurrentTime, SeekBar } = controls;
 
@@ -30,6 +30,7 @@ export const VideoPlayer = ({
   const tabIndexHandler = (data) => {
     setChangeTabIndex(data);
   };
+
   return (
     <div className="overlay" onClick={onClose}>
       <Media>
@@ -54,16 +55,16 @@ export const VideoPlayer = ({
             tabIndex={changeTabIndex}
           />
           <div className="controls">
-            <CustomPlayPause className="controls__play-pause" />
+            <CustomPlayPauseButton className="controls__play-pause" />
             <CurrentTime className="controls__current-time" />
             <SeekBar className="controls__seek-bar" />
-            <CustomVolumeMute className="controls__volume-mute" />
-            <CustomVolumeSlider className="controls__volume-bar" />
-            <CustomSettings
+            <CustomVolumeMuteButton className="controls__volume-mute" />
+            <CustomVolumeSliderButton className="controls__volume-bar" />
+            <CustomSettingsButton
               aria-label="This button doesn't work"
               className="controls__settings"
             />
-            <CustomFullscreen
+            <CustomFullscreenButton
               className="controls__fullscreen"
               changeTabIndex={tabIndexHandler}
             />

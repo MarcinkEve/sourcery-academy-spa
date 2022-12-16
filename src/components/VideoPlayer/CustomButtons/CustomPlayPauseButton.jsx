@@ -1,16 +1,15 @@
 import React from 'react';
-import { string, object } from 'prop-types';
-
-import '../videoPlayer.scss';
+import { bool, func, shape, string } from 'prop-types';
 import { withMediaProps } from 'react-media-player';
+
 import IconPause from '~/assets/icons/icon-pause.svg';
 import IconPlay from '~/assets/icons/icon-play.svg';
 
-export const CustomPlayPause = (props) => {
-  const { className, media } = props;
+import '../videoPlayer.scss';
 
+export const CustomPlayPauseButton = ({ media, className }) => {
   const handlePlayPause = () => {
-    props.media.playPause();
+    media.playPause();
   };
 
   return (
@@ -24,9 +23,12 @@ export const CustomPlayPause = (props) => {
   );
 };
 
-export default withMediaProps(CustomPlayPause);
+export default withMediaProps(CustomPlayPauseButton);
 
-CustomPlayPause.propTypes = {
-  media: object,
+CustomPlayPauseButton.propTypes = {
+  media: shape({
+    playPause: func,
+    isPlaying: bool,
+  }),
   className: string,
 };
