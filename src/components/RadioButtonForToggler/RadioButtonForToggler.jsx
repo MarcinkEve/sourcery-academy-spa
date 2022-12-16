@@ -26,8 +26,10 @@ export const RadioButtonForToggler = ({
         className={classNames('radio-toggler__label', {
           'radio-toggler__label--checked': value === radioValue,
         })}
+        title={value}
+        aria-label={value}
       >
-        {value}
+        <span aria-hidden="true">{value}</span>
       </label>
     </>
   );
