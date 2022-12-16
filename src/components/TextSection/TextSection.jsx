@@ -1,6 +1,6 @@
 import React, { cloneElement } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { shape } from 'prop-types';
+import classNames from 'classnames';
 
 import './textSection.scss';
 import Button from '~/components/Button';
@@ -20,9 +20,9 @@ export const TextSection = ({
   const nav = useNavigate();
 
   const headingContentWithClass = cloneElement(headingContent, {
-    className: `text-section__heading ${
-      isHeadingSpacingLarge && 'text-section__heading--large-spacing'
-    }`,
+    className: classNames('text-section__heading', {
+      'text-section__heading--large-spacing': isHeadingSpacingLarge,
+    }),
   });
 
   const navigateToPage = () => {
@@ -30,12 +30,16 @@ export const TextSection = ({
   };
 
   return (
-    <div className={`text-section ${isRightAligned && 'text-section--right'}`}>
+    <div
+      className={classNames('text-section', {
+        'text-section--right': isRightAligned,
+      })}
+    >
       {headingContentWithClass}
       <div
-        className={`text-section__content ${
-          isParagraphTextBold && 'text-section__content--bold'
-        }`}
+        className={classNames('text-section__content', {
+          'text-section__content--bold': isParagraphTextBold,
+        })}
       >
         {paragraphContent}
       </div>
