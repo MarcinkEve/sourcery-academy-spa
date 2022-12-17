@@ -21,7 +21,7 @@ $_border-radius-size: 16px;
   line-height: $line-height-l;
   padding: to-rem(35) to-rem(28);
   width: to-rem($_card-width);
-  word-break: break-all;
+  word-break: break-word;
 
   &__photo {
     border-radius: 50%;
