@@ -12,6 +12,46 @@ import { data as applicationPageData } from './mockData';
 
 export const ApplicationPage = ({ title, theme }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { section_1, section_2 } = applicationPageData;
+
+  const defaultRadioTogglerValue = section_1.inputs[0].values[0];
+  const defaultRadioValue = section_1.inputs[1].radioValues[0].value;
+
+  const [formValues, setFormValues] = useState({
+    type: defaultRadioTogglerValue,
+    city: defaultRadioValue,
+    firstName: null,
+    lastName: null,
+    email: null,
+    resume: null,
+    checkbox: null,
+  });
+
+  //adding functions to get values of radio inputs
+  section_1.inputs.forEach((input) => {
+    const inputNeededName = input.name.split(' ')[1];
+    input.getValue = (e) =>
+      setFormValues({ ...formValues, [inputNeededName]: e });
+  });
+
+  //adding functions to get values form inputs
+  section_2.inputs.forEach((input) => {
+    input.getValue = (e) =>
+      setFormValues({
+        ...formValues,
+        [input.name]: `${input.name === 'resume' ? e.name : e}`,
+      });
+  });
+
+  const isBtnDisabled = Object.values(formValues).includes(null);
+  const returnObject = `
+  There is no backend to send data to...
+  Candidate = ${JSON.stringify(formValues)}`;
+
+  const submitHandler = () => {
+    setIsSubmitted(true);
+    console.log(returnObject); //eslint-disable-line
+  };
 
   return (
     <PageLayout theme={theme}>
@@ -24,7 +64,8 @@ export const ApplicationPage = ({ title, theme }) => {
             ) : (
               <ApplicationForm
                 data={applicationPageData}
-                setIsSubmitted={setIsSubmitted}
+                isBtnDisabled={isBtnDisabled}
+                submitHandler={submitHandler}
               />
             )}
           </div>

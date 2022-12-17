@@ -3,8 +3,7 @@ import { string, func } from 'prop-types';
 
 import './inputField.scss';
 import ErrorMessage from '~/components/ErrorMessage';
-
-import useValidation from '~/hooks/useValidation/';
+import { nameYupSchema, emailYupSchema } from './validationOnBlur';
 
 export const InputField = ({
   name,
@@ -13,14 +12,30 @@ export const InputField = ({
   placeholder,
   getValidatedValue,
 }) => {
-  const [typedValue, setTypedValue] = useState();
+  const [inputValue, setInputValue] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [validInput, setValidInput] = useState(null);
 
-  //Only validating name and email for now
-  const [validInput, errorAfterValidation] = useValidation(
-    `${type === 'text' ? 'name' : 'email'}`,
-    typedValue,
-    label
-  );
+  //Validating input
+  useEffect(() => {
+    if (inputValue !== null) {
+      const validateValue = async () => {
+        //validating name or email
+        const typeOfInput = type === 'text' ? nameYupSchema : emailYupSchema;
+        try {
+          const yupValidation = await typeOfInput.validate(inputValue);
+          setErrorMessage(null);
+          setValidInput(yupValidation);
+        } catch (err) {
+          setErrorMessage(err.message);
+          setValidInput(null);
+        }
+      };
+      validateValue();
+    }
+  }, [inputValue]);
+
+  //Send valid input string
   useEffect(() => {
     if (validInput && getValidatedValue) return getValidatedValue(validInput);
     return;
@@ -37,14 +52,12 @@ export const InputField = ({
         type={type}
         name={name}
         id={name}
-        className={
-          errorAfterValidation ? 'input__field input__error' : 'input__field'
-        }
+        className={errorMessage ? 'input__field input__error' : 'input__field'}
         onBlur={(e) => {
-          setTypedValue(e.target.value);
+          setInputValue(e.target.value);
         }}
       ></input>
-      {errorAfterValidation && <ErrorMessage message={errorAfterValidation} />}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>
   );
 };

@@ -5,13 +5,38 @@ import classNames from 'classnames';
 import './fileUpload.scss';
 import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
-import useValidation from '~/hooks/useValidation';
+import { fileYumSchema } from './validationOnBlur';
 
 export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
   const [uploadedFile, setUploadedFile] = useState();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [validFile, setValidFile] = useState(null);
   const fileInput = useRef(null);
 
-  const [validFile, errorAfterValidation] = useValidation('file', uploadedFile);
+  //Validating file
+  useEffect(() => {
+    if (uploadedFile) {
+      const validateFileFromInput = async () => {
+        const objectForValidation = {
+          name: uploadedFile.name,
+          size: uploadedFile.size,
+        };
+        try {
+          const yupValidation = await fileYumSchema.validate(
+            objectForValidation
+          );
+          setErrorMessage(null);
+          setValidFile(yupValidation);
+        } catch (err) {
+          setErrorMessage(err.message);
+          setValidFile(null);
+        }
+      };
+      validateFileFromInput();
+    }
+  }, [uploadedFile]);
+
+  //sending valid file
   useEffect(() => {
     if (validFile && getValidatedValue) return getValidatedValue(validFile);
     return;
@@ -39,7 +64,7 @@ export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
       />
       <div
         className={classNames('upload__field', {
-          'upload__field--error': errorAfterValidation,
+          'upload__field--error': errorMessage,
         })}
         onClick={triggerInputFile}
       >
@@ -50,7 +75,7 @@ export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
         )}
         <UploadIcon className="upload__icon" />
       </div>
-      {errorAfterValidation && <ErrorMessage message={errorAfterValidation} />}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>
   );
 };
