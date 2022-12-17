@@ -8,8 +8,8 @@ import { mediaType } from '~/components/Gallery/types';
 
 export const MediaSection = ({ title, media, handleClick }) => {
   return (
-    <section className="media">
-      <h2 className="media__title">{title}</h2>
+    <section className="media-section">
+      <h2 className="media-section__title">{title}</h2>
       <Gallery media={media} />
       {handleClick && <Button label="View more" handleClick={handleClick} />}
     </section>

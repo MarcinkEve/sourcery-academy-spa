@@ -4,6 +4,9 @@ import FsLightbox from 'fslightbox-react';
 
 import { mediaType } from './types';
 import PlayIcon from '~/assets/icons/icon-play-button.svg';
+
+import VideoPlayer from '~/components/VideoPlayer';
+
 import './gallery.scss';
 
 export const Gallery = ({ media }) => {
@@ -19,17 +22,17 @@ export const Gallery = ({ media }) => {
     });
   };
 
-  const openLightboxWithKeyboard = (e, number) => {
-    const keyCodeEnter = 13;
-    const keyCodeSpace = 32;
+  // const openLightboxWithKeyboard = (e, number) => {
+  //   const keyCodeEnter = 13;
+  //   const keyCodeSpace = 32;
 
-    if (e.keyCode === keyCodeEnter || e.keyCode === keyCodeSpace) {
-      setLightboxController({
-        toggler: !lightboxController.toggler,
-        slide: number + 1,
-      });
-    }
-  };
+  //   if (e.keyCode === keyCodeEnter || e.keyCode === keyCodeSpace) {
+  //     setLightboxController({
+  //       toggler: !lightboxController.toggler,
+  //       slide: number + 1,
+  //     });
+  //   }
+  // };
 
   return (
     <>
@@ -41,7 +44,7 @@ export const Gallery = ({ media }) => {
             })}
             key={item.src}
             onClick={() => openLightboxOnSlide(index)}
-            onKeyDown={(e) => openLightboxWithKeyboard(e, index)}
+            // onKeyDown={(e) => openLightboxWithKeyboard(e, index)}
             tabIndex={0}
             title="Click on an image to open an expanded view"
           >
@@ -59,7 +62,21 @@ export const Gallery = ({ media }) => {
 
       <FsLightbox
         toggler={lightboxController.toggler}
-        sources={media.map((item) => item.src)}
+        sources={media.map((item) => {
+          // gallery with video in integrated player
+          return item.src;
+
+          // gallery with video in custom player
+          // if (item.type === 'image') {
+          //   return item.src
+          // } else {
+          //   return (
+          //     <div onChange={e => e.stopPropagation()}>
+          //       <VideoPlayer videoSrc={item.src} isModalOpen={true} onClose={() => {}} />
+          //     </div>
+          //   )
+          // }
+        })}
         slide={lightboxController.slide}
         exitFullscreenOnClose={true}
       />
