@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape } from 'prop-types';
 
 import AcademyDevelopersDescription from '~/components/AcademiesDescriptionSection/AcademyDevelopersDescription';
 import AcademyTestersDescription from '~/components/AcademiesDescriptionSection/AcademyTestersDescription';
@@ -32,8 +33,8 @@ export const AcademiesDescriptionSection = ({
 };
 
 AcademiesDescriptionSection.propTypes = {
-  developersDescriptionData: textSectionType.isRequired,
-  testersDescriptionData: textSectionType.isRequired,
-  frontEndDescriptionData: textSectionType.isRequired,
-  kidsDescriptionData: textSectionType.isRequired,
+  developersDescriptionData: shape(textSectionType).isRequired,
+  testersDescriptionData: shape(textSectionType).isRequired,
+  frontEndDescriptionData: shape(textSectionType).isRequired,
+  kidsDescriptionData: shape(textSectionType).isRequired,
 };
