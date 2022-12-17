@@ -1,6 +1,6 @@
-import ApplyToAcademyDevelopersImage from '~/assets/images/image-apply-to-academy-developers.svg';
-import ApplyToAcademyFrontendImage from '~/assets/images/image-apply-to-academy-frontend.svg';
-import ApplyToAcademyTestersImage from '~/assets/images/image-apply-to-academy-testers.svg';
+import ApplyToAcademyDevelopersImage from '~/assets/images/apply-to-academy-developers.svg';
+import ApplyToAcademyFrontendImage from '~/assets/images/apply-to-academy-frontend.svg';
+import ApplyToAcademyTestersImage from '~/assets/images/apply-to-academy-testers.svg';
 import ApplyToAcademyTopThreeParticles from '~/assets/particles/apply-to-academy-three-top-particles.svg';
 import ApplyToAcademyTopFiveParticles from '~/assets/particles/apply-to-academy-five-top-particles.svg';
 

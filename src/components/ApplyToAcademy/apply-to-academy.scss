@@ -3,17 +3,17 @@
 .apply-to-academy {
   $_this: &;
 
+  padding: 0 to-rem(48);
+  position: relative;
+
   @include flex-box(
     $direction: row,
     $justify-content: normal,
     $align-items: center
   );
 
-  padding: 0 to-rem(48);
-
   .text-section {
     margin: 0;
-    position: relative;
     width: 100%;
   }
 
@@ -26,16 +26,22 @@
   }
 
   &__particles-top {
+    left: 50%;
     position: absolute;
-    transform: translate(-2%, -98%) scale(24%);
+    right: 20%;
+    top: 3%;
 
     &--five {
-      transform: translate(0%, -54%) scale(32%);
+      left: 40%;
+      right: 20%;
+      top: 0%;
     }
   }
 
   &__particles-bottom {
+    left: 4%;
     position: absolute;
-    transform: translate(-37%, 53%) scale(24%);
+    right: 65%;
+    top: 77%;
   }
 }

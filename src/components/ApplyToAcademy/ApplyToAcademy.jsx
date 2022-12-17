@@ -1,52 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { string, oneOf, func, bool } from 'prop-types';
 
 import { ROUTES } from '~/constants/routes';
-import TextSection from '~/components/TextSection';
+import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
 import BottomParticles from '~/assets/particles/apply-to-academy-bottom-particles.svg';
+import TextSection from '~/components/TextSection';
+import { applyToAcademyData } from './applyToAcademyData';
 import './apply-to-academy';
 
-export const ApplyToAcademy = ({
-  headingText,
-  mainText,
-  route,
-  Image,
-  TopParticles,
-  isParticlePositionDefault,
-}) => {
+export const ApplyToAcademy = ({ location }) => {
+  const academyType = location.pathname.slice(1);
+  const Image = applyToAcademyData[academyType].image;
+  const TopParticles = applyToAcademyData[academyType].topParticles;
+
+  const [particlePositionNonDefault, setParticlePositionNonDefault] = useState(
+    false
+  );
+
+  useEffect(() => {
+    if (academyType === 'frontend') return setParticlePositionNonDefault(true);
+  }, []);
+
   return (
-    <section className="apply-to-academy">
-      {TopParticles && (
-        <TopParticles
-          className={`apply-to-academy__particles-top ${
-            isParticlePositionDefault && 'apply-to-academy__particles-top--five'
-          }`}
+    <ExtraWrappingSection>
+      <section className="apply-to-academy">
+        {TopParticles && (
+          <TopParticles
+            className={`apply-to-academy__particles-top ${
+              particlePositionNonDefault &&
+              'apply-to-academy__particles-top--five'
+            }`}
+          />
+        )}
+        <TextSection
+          isRightAlligned={false}
+          isHeadingSpacingLarge={true}
+          headingContent={<h2>{applyToAcademyData[academyType].title}</h2>}
+          isParagraphTextBold={true}
+          paragraphContent={
+            <p>{applyToAcademyData[academyType].paragraphTxt}</p>
+          }
+          buttonText="Apply now"
+          pageRoute={ROUTES.APPLICATION}
         />
-      )}
-      <TextSection
-        isRightAlligned={false}
-        isHeadingSpacingLarge={true}
-        headingContent={<h2>{headingText}</h2>}
-        isParagraphTextBold={true}
-        paragraphContent={<p>{mainText}</p>}
-        buttonText="Apply now"
-        pageRoute={route}
-      />
-      {Image && (
-        <div className="apply-to-academy__image-wrapper">
-          <Image className="apply-to-academy__image" />
-        </div>
-      )}
-      <BottomParticles className="apply-to-academy__particles-bottom" />
-    </section>
+        {Image && (
+          <div className="apply-to-academy__image-wrapper">
+            <Image className="apply-to-academy__image" />
+          </div>
+        )}
+        <BottomParticles className="apply-to-academy__particles-bottom" />
+      </section>
+    </ExtraWrappingSection>
   );
 };
 
 ApplyToAcademy.propTypes = {
-  headingText: string.isRequired,
-  mainText: string.isRequired,
-  Image: func,
-  TopParticles: func,
-  route: oneOf([...Object.values(ROUTES)]),
-  isParticlePositionDefault: bool,
+  location: string.isRequired,
 };
