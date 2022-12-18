@@ -27,10 +27,10 @@
   }
 
   &__particles-icon {
+    left: -96%;
     position: absolute;
-    right: to-rem(40);
-    transform: translateY(-31%);
-    width: to-rem(1177);
+    top: -74%;
+    width: to-rem(1225);
   }
 
   &-image {

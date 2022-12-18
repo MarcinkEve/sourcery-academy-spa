@@ -8,13 +8,14 @@
     $align-items: flex-start
   );
 
-  padding-top: to-rem(148);
+  padding-top: to-rem(400);
+  position: relative;
 
   &__top-particles {
-    left: to-rem(25);
+    left: 4%;
     max-width: to-rem(126);
     position: absolute;
-    transform: translateY(-170%);
+    top: -18%;
   }
 
   &__content {
@@ -23,10 +24,10 @@
   }
 
   &__bottom-particles {
-    left: to-rem(249);
+    left: 44%;
     max-width: to-rem(190);
     position: absolute;
-    transform: translateY(-175%);
+    top: 61%;
   }
 
   &__icons {

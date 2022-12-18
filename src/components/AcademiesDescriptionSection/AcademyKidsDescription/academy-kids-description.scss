@@ -10,6 +10,7 @@
 
   margin-top: to-rem(110);
   padding-bottom: to-rem(275);
+  position: relative;
 
   &__content {
     max-width: to-rem(565);
@@ -17,17 +18,17 @@
   }
 
   &__top-particles {
-    left: to-rem(365);
+    left: 65%;
     max-width: to-rem(140);
     position: absolute;
-    top: to-rem(-90);
+    top: -26%;
   }
 
   &__bottom-particles {
-    left: to-rem(100);
+    left: 18%;
     max-width: to-rem(442);
     position: absolute;
-    transform: translateY(-30%);
+    top: 70%;
   }
 
   &__icons {

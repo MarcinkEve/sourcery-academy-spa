@@ -9,13 +9,14 @@
   );
 
   padding-top: to-rem(100);
+  position: relative;
 
   &__top-particles {
+    left: 70%;
     margin-bottom: to-rem(15);
     max-width: to-rem(125);
     position: absolute;
-    right: to-rem(41);
-    transform: translateY(-125%);
+    top: -24%;
   }
 
   &__content {
@@ -24,10 +25,10 @@
   }
 
   &__bottom-particles {
-    bottom: to-rem(20);
-    left: to-rem(45);
+    left: 10%;
     max-width: to-rem(230);
     position: absolute;
+    top: 68%;
   }
 
   &__icons {
