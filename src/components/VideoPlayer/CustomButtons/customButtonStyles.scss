@@ -1,0 +1,15 @@
+@import '~/sass/variables';
+
+.play-icon,
+.pause-icon,
+.fullscreen-icon {
+  width: to-rem(20);
+}
+
+.volume-icon {
+  width: to-rem(24);
+}
+
+.volume-off-icon {
+  width: to-rem(26);
+}
