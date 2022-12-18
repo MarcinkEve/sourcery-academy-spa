@@ -4,7 +4,7 @@ import { func, string } from 'prop-types';
 import './corner-video-card.scss';
 import PlayButton from '~/assets/icons/icon-play-button.svg';
 
-export const CornerVideoCard = ({ Image, academyType, setIsModalOpen }) => {
+export const CornerVideoCard = ({ image, academyType, setIsModalOpen }) => {
   const handleKeyDown = (event) => {
     if (event.code === 'Space') {
       setIsModalOpen(true);
@@ -17,7 +17,7 @@ export const CornerVideoCard = ({ Image, academyType, setIsModalOpen }) => {
 
   return (
     <div className="video-card">
-      <img src={Image} alt={academyType} />
+      <img src={image} alt={academyType + ' academy graduators'} />
       <button type="button" className="video-card__button">
         <PlayButton
           onClick={() => {
@@ -31,7 +31,7 @@ export const CornerVideoCard = ({ Image, academyType, setIsModalOpen }) => {
 };
 
 CornerVideoCard.propTypes = {
-  Image: string,
+  image: string,
   academyType: string,
   setIsModalOpen: func,
 };

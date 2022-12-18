@@ -1,18 +1,18 @@
 import React from 'react';
 
 import { CornerVideoCard } from './CornerVideoCard';
-import DevelopersCornerImage from '~/assets/images/developers-corner-photo.jpg';
-import TestersCornerImage from '~/assets/images/testers-corner-photo.jpg';
-import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
+import DevelopersCornerImage from '~/assets/images/developers-description.jpg';
+import TestersCornerImage from '~/assets/images/developers-description.jpg';
+import FrontEndCornerImage from '~/assets/images/developers-description.jpg';
 
-const Images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
+const images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
 
 export default {
   title: 'CornerVideoCard',
   component: CornerVideoCard,
   args: {
     theme: 'developers',
-    Image: DevelopersCornerImage,
+    image: DevelopersCornerImage,
   },
   argTypes: {
     theme: {
@@ -24,8 +24,8 @@ export default {
         'front-end': 'front-end',
       },
     },
-    Image: {
-      options: Images,
+    image: {
+      options: images,
       control: 'radio',
     },
   },
@@ -45,17 +45,17 @@ export const VideoCardComponent = Template.bind({});
 export const Red = Template.bind({});
 Red.args = {
   theme: 'front-end',
-  Image: FrontEndCornerImage,
+  image: FrontEndCornerImage,
 };
 
 export const Green = Template.bind({});
 Green.args = {
   theme: 'testers',
-  Image: TestersCornerImage,
+  image: TestersCornerImage,
 };
 
 export const Blue = Template.bind({});
 Blue.args = {
   theme: 'developers',
-  Image: DevelopersCornerImage,
+  image: DevelopersCornerImage,
 };

@@ -3,11 +3,11 @@ const projectConfig = require('../webpack.config');
 module.exports = {
   webpackFinal: (config) => {
     const fileLoaderRule = config.module.rules.find(
-      (rule) => rule.test && rule.test.test('.svg') && rule.test.test('.jpg')
+      (rule) => rule.test && rule.test.test('.svg')
     );
-    fileLoaderRule.exclude = /\.svg|jpg$/;
+    fileLoaderRule.exclude = /\.svg$/;
     config.module.rules.push({
-      test: /\.svg|jpg$/,
+      test: /\.svg$/,
       enforce: 'pre',
       loader: require.resolve('@svgr/webpack'),
     });
