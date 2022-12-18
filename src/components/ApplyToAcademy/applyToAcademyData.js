@@ -1,29 +1,29 @@
-import ApplyToAcademyDevelopersImage from '~/assets/images/apply-to-academy-developers.svg';
-import ApplyToAcademyFrontendImage from '~/assets/images/apply-to-academy-frontend.svg';
-import ApplyToAcademyTestersImage from '~/assets/images/apply-to-academy-testers.svg';
-import ApplyToAcademyTopThreeParticles from '~/assets/particles/apply-to-academy-three-top-particles.svg';
-import ApplyToAcademyTopFiveParticles from '~/assets/particles/apply-to-academy-five-top-particles.svg';
+import applyToAcademyDevelopersImage from '~/assets/images/apply-to-academy-developers.svg';
+import applyToAcademyFrontendImage from '~/assets/images/apply-to-academy-frontend.svg';
+import applyToAcademyTestersImage from '~/assets/images/apply-to-academy-testers.svg';
+import applyToAcademyTopThreeParticles from '~/assets/particles/apply-to-academy-three-top-particles.svg';
+import applyToAcademyTopFiveParticles from '~/assets/particles/apply-to-academy-five-top-particles.svg';
 
 export const applyToAcademyData = {
   developers: {
     title: 'Apply to academy',
     paragraphTxt:
       'Entrance test results define a priority list of candidates. We accept 20 candidates with highest marks into academy.',
-    image: ApplyToAcademyDevelopersImage,
-    topParticles: ApplyToAcademyTopThreeParticles,
+    image: applyToAcademyDevelopersImage,
+    topParticles: applyToAcademyTopThreeParticles,
   },
   frontend: {
     title: 'Apply to academy',
     paragraphTxt:
       'Start your career in software development with the intense program at Sourcery for Front-End Developers.',
-    image: ApplyToAcademyFrontendImage,
-    topParticles: ApplyToAcademyTopFiveParticles,
+    image: applyToAcademyFrontendImage,
+    topParticles: applyToAcademyTopFiveParticles,
   },
   testers: {
     title: 'Apply to academy',
     paragraphTxt:
       'Set your inner tester free and apply to empower yourself with the top-notch studies for the future Test Engineers!',
-    image: ApplyToAcademyTestersImage,
-    topParticles: ApplyToAcademyTopThreeParticles,
+    image: applyToAcademyTestersImage,
+    topParticles: applyToAcademyTopThreeParticles,
   },
 };
