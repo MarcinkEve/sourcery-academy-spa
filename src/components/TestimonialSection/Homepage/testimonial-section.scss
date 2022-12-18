@@ -1,0 +1,20 @@
+@import '~/sass/variables';
+@import '../../TestimonialWrapper/TestimonialCard/TestimonialCard';
+
+.testimonial-homepage-section {
+  margin: 0 auto to-rem(295);
+  max-width: to-rem(1200);
+  position: relative;
+
+  &__wrapper {
+    margin-left: to-rem(-$_shadow-size);
+  }
+
+  &__bottom-particles {
+    left: 7%;
+    position: absolute;
+    top: 90%;
+    width: to-rem(1100);
+    z-index: -1;
+  }
+}
