@@ -51,13 +51,21 @@
       text-decoration: none;
       width: 100%;
 
-      &:hover,
-      &:focus {
+      &:hover {
         background-color: $gray-200;
+      }
+
+      &:focus-visible {
+        outline: 4px dashed $orange-200;
       }
 
       &:active {
         background-color: $gray-100;
+      }
+
+      &--active {
+        background-color: $gray-200;
+        font-weight: 700;
       }
     }
   }

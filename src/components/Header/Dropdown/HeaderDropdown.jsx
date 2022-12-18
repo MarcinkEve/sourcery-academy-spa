@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { arrayOf, func, shape, string } from 'prop-types';
 
 import './headerDropdown.scss';
@@ -34,9 +34,16 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
       <ul className="dropdown__content" ref={contentRef}>
         {data.map((element, index) => (
           <li key={index} className="dropdown__content-item">
-            <Link className="dropdown__content-link" to={element.route}>
+            <NavLink
+              className={({ isActive }) =>
+                `dropdown__content-link ${
+                  isActive ? 'dropdown__content-link--active' : ''
+                }`
+              }
+              to={element.route}
+            >
               {element.text}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
