@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { string, oneOf, func, bool } from 'prop-types';
+import { string } from 'prop-types';
 
 import { ROUTES } from '~/constants/routes';
 import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
