@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './fileUpload.scss';
 import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
-import { fileYumSchema } from './validationOnBlur';
+import { validationHandler } from './validationOnBlur';
 
 export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
   const [uploadedFile, setUploadedFile] = useState();
@@ -13,27 +13,8 @@ export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
   const [validFile, setValidFile] = useState(null);
   const fileInput = useRef(null);
 
-  //Validating file
   useEffect(() => {
-    if (uploadedFile) {
-      const validateFileFromInput = async () => {
-        const objectForValidation = {
-          name: uploadedFile.name,
-          size: uploadedFile.size,
-        };
-        try {
-          const yupValidation = await fileYumSchema.validate(
-            objectForValidation
-          );
-          setErrorMessage(null);
-          setValidFile(yupValidation);
-        } catch (err) {
-          setErrorMessage(err.message);
-          setValidFile(null);
-        }
-      };
-      validateFileFromInput();
-    }
+    validationHandler(uploadedFile, setErrorMessage, setValidFile);
   }, [uploadedFile]);
 
   //sending valid file

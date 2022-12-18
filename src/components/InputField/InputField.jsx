@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 
 import './inputField.scss';
 import ErrorMessage from '~/components/ErrorMessage';
-import { nameYupSchema, emailYupSchema } from './validationOnBlur';
+import { validationHandler } from './validationOnBlur';
 
 export const InputField = ({
   name,
@@ -16,23 +16,8 @@ export const InputField = ({
   const [errorMessage, setErrorMessage] = useState(null);
   const [validInput, setValidInput] = useState(null);
 
-  //Validating input
   useEffect(() => {
-    if (inputValue !== null) {
-      const validateValue = async () => {
-        //validating name or email
-        const typeOfInput = type === 'text' ? nameYupSchema : emailYupSchema;
-        try {
-          const yupValidation = await typeOfInput.validate(inputValue);
-          setErrorMessage(null);
-          setValidInput(yupValidation);
-        } catch (err) {
-          setErrorMessage(err.message);
-          setValidInput(null);
-        }
-      };
-      validateValue();
-    }
+    validationHandler(inputValue, type, setErrorMessage, setValidInput);
   }, [inputValue]);
 
   //Send valid input string

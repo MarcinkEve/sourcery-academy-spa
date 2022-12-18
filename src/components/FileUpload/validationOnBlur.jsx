@@ -12,3 +12,27 @@ export const fileYumSchema = object({
   }),
   size: number().lessThan(fileSizeKb, errorTextForFileSize),
 });
+
+export const validationHandler = (
+  uploadedFile,
+  setErrorMessage,
+  setValidFile
+) => {
+  if (uploadedFile) {
+    const validateFileFromInput = async () => {
+      const objectForValidation = {
+        name: uploadedFile.name,
+        size: uploadedFile.size,
+      };
+      try {
+        const yupValidation = await fileYumSchema.validate(objectForValidation);
+        setErrorMessage(null);
+        setValidFile(yupValidation);
+      } catch (err) {
+        setErrorMessage(err.message);
+        setValidFile(null);
+      }
+    };
+    validateFileFromInput();
+  }
+};

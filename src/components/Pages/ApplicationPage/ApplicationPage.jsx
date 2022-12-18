@@ -44,13 +44,10 @@ export const ApplicationPage = ({ title, theme }) => {
   });
 
   const isBtnDisabled = Object.values(formValues).includes(null);
-  const returnObject = `
-  There is no backend to send data to...
-  Candidate = ${JSON.stringify(formValues)}`;
 
   const submitHandler = () => {
     setIsSubmitted(true);
-    console.log(returnObject); //eslint-disable-line
+    console.table(formValues); //eslint-disable-line
   };
 
   return (
