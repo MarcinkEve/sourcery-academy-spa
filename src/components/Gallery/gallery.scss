@@ -2,6 +2,8 @@
 @import '~/sass/utilities/mixins';
 
 .gallery {
+  $_this: &;
+
   display: grid;
   gap: $spacer-l;
   grid-auto-rows: to-rem(220);
@@ -35,6 +37,14 @@
       @include flex-box($justify-content: center, $align-items: center);
 
       position: relative;
+
+      &:focus-visible {
+        outline: none;
+
+        #{$_this}__play-icon {
+          outline: 4px dashed $orange-200;
+        }
+      }
     }
   }
 
@@ -45,6 +55,7 @@
   }
 
   &__play-icon {
+    border-radius: 50%;
     color: var(--primary-color);
     position: absolute;
     width: to-rem(90);

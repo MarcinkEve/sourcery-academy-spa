@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 import FsLightbox from 'fslightbox-react';
 
@@ -20,13 +20,11 @@ export const Gallery = ({ media }) => {
       toggler: !lightboxController.toggler,
       slide: number + 1,
     });
+    document.activeElement.blur();
   };
 
-  const openLightboxWithKeyboard = (e, number) => {
-    const keyCodeEnter = 13;
-    const keyCodeSpace = 32;
-
-    if (e.keyCode === keyCodeEnter || e.keyCode === keyCodeSpace) {
+  const openLightboxWithKeyboard = ({ code }, number) => {
+    if (code === 'Enter') {
       openLightboxOnSlide(number);
     }
   };
@@ -34,25 +32,23 @@ export const Gallery = ({ media }) => {
   return (
     <>
       <div className="gallery">
-        {media.map((item, index) => (
+        {media.map(({ type, src, thumbnail, alt }, index) => (
           <div
             className={classnames('gallery__item', {
-              'gallery__item--video': item.type === 'video',
+              'gallery__item--video': type === 'video',
             })}
-            key={item.src}
+            key={src}
             onClick={() => openLightboxOnSlide(index)}
             onKeyDown={(e) => openLightboxWithKeyboard(e, index)}
             tabIndex={0}
-            title="Click on an image to open an expanded view"
+            title="Click a thumbnail to open an expanded view"
           >
             <img
               className="gallery__thumbnail"
-              src={item.thumbnail}
-              alt={item.alt || ''}
+              src={thumbnail}
+              alt={alt || ''}
             />
-            {item.type === 'video' && (
-              <PlayIcon className="gallery__play-icon" />
-            )}
+            {type === 'video' && <PlayIcon className="gallery__play-icon" />}
           </div>
         ))}
       </div>
@@ -62,24 +58,21 @@ export const Gallery = ({ media }) => {
         slide={lightboxController.slide}
         exitFullscreenOnClose={true}
         loadOnlyCurrentSource={true}
-        sources={media.map((item) => {
-          // gallery with video in integrated player
-          // return item.src;
-
-          // gallery with video in custom player
-          if (item.type === 'video') {
+        sources={media.map(({ type, src }) => {
+          if (type === 'video') {
             return (
               <div onMouseDown={(e) => e.stopPropagation()}>
                 <VideoPlayer
-                  videoSrc={item.src}
+                  videoSrc={src}
                   isModalOpen={true}
-                  onClose={() => {}}
+                  onClose={() => document.activeElement.blur()}
+                  hasCloseButton={false}
                 />
               </div>
             );
           }
 
-          return item.src;
+          return src;
         })}
       />
     </>
