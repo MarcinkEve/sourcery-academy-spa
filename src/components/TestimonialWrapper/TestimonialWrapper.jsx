@@ -47,21 +47,17 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
         isIntrinsicHeight={true}
       >
         {data.length > visibleSlides && (
-          <div className={'carousel-wrapper__navigation'}>
-            <ButtonBack className={'carousel-wrapper__button'}>
-              <SvgArrow className={'carousel-wrapper__arrow'} />
+          <div className="carousel-wrapper__navigation">
+            <ButtonBack className="carousel-wrapper__button">
+              <SvgArrow className="carousel-wrapper__arrow" />
             </ButtonBack>
-            <ButtonNext className={'carousel-wrapper__button'}>
-              <SvgArrow
-                className={
-                  'carousel-wrapper__arrow carousel-wrapper__arrow--next'
-                }
-              />
+            <ButtonNext className="carousel-wrapper__button">
+              <SvgArrow className="carousel-wrapper__arrow carousel-wrapper__arrow--next" />
             </ButtonNext>
           </div>
         )}
         <Slider
-          className={'carousel-wrapper__slider'}
+          className="carousel-wrapper__slider"
           slideTraySize={
             ((testimonialCardWidth + gap) * data.length * 100) / containerWidth
           }
