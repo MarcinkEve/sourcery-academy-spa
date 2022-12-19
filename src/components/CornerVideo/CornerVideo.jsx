@@ -23,6 +23,6 @@ export const CornerVideo = ({ image, setOpenVideoModal }) => {
 };
 
 CornerVideo.propTypes = {
-  image: string,
-  setOpenVideoModal: func,
+  image: string.isRequired,
+  setOpenVideoModal: func.isRequired,
 };
