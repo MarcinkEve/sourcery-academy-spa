@@ -64,7 +64,7 @@ export const Gallery = ({ mediaList }) => {
                 <VideoPlayer
                   videoSrc={src}
                   isModalOpen={true}
-                  onClose={() => document.activeElement.blur()}
+                  onClose={() => {}}
                   hasCloseButton={false}
                 />
               </div>
