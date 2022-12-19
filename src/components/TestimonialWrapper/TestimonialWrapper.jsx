@@ -25,13 +25,14 @@ function useWindowSizeUpdates(func, deps) {
 export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
   visibleSlides = Math.min(data.length, visibleSlides);
 
-  const ref = useRef(null);
+  const carouselWrapperRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const updateWidth = () =>
-    ref.current && setContainerWidth(ref.current.offsetWidth);
+    carouselWrapperRef.current &&
+    setContainerWidth(carouselWrapperRef.current.offsetWidth);
 
-  useEffect(updateWidth, [ref]);
-  useWindowSizeUpdates(updateWidth, [ref]);
+  useEffect(updateWidth, [carouselWrapperRef]);
+  useWindowSizeUpdates(updateWidth, [carouselWrapperRef]);
 
   const testimonialCardWidth = parseInt(cardWidth) + parseInt(shadowSize);
   const sumGaps = containerWidth - testimonialCardWidth * visibleSlides;
@@ -39,7 +40,7 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
   const gapWithShadows = gap + parseInt(shadowSize);
 
   return (
-    <div className="carousel-wrapper" ref={ref}>
+    <div className="carousel-wrapper" ref={carouselWrapperRef}>
       {title && <h2 className="carousel-wrapper__title">{title}</h2>}
       <CarouselProvider
         totalSlides={data.length}
