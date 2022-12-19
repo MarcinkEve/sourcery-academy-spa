@@ -5,10 +5,6 @@
   margin: 0 auto to-rem(295);
   position: relative;
 
-  &__wrapper {
-    margin-left: to-rem(-$_shadow-size);
-  }
-
   &__bottom-particles {
     left: 7%;
     position: absolute;

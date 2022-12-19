@@ -38,25 +38,27 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
   const gapWithShadows = gap + parseInt(shadowSize);
 
   return (
-    <div className="carousel" ref={ref}>
-      {title && <h2 className="carousel__title">{title}</h2>}
+    <div className="carousel-wrapper" ref={ref}>
+      {title && <h2 className="carousel-wrapper__title">{title}</h2>}
       <CarouselProvider
         totalSlides={data.length}
         visibleSlides={visibleSlides}
         isIntrinsicHeight={true}
       >
         {data.length > visibleSlides && (
-          <div className={'carousel__navigation'}>
-            <ButtonBack className={'carousel__button'}>
-              <SvgArrow className={'carousel__arrow'} />
+          <div className={'carousel-wrapper__navigation'}>
+            <ButtonBack className={'carousel-wrapper__button'}>
+              <SvgArrow className={'carousel-wrapper__arrow'} />
             </ButtonBack>
-            <ButtonNext className={'carousel__button'}>
-              <SvgArrow className={'carousel__arrow carousel__arrow--next'} />
+            <ButtonNext className={'carousel-wrapper__button'}>
+              <SvgArrow
+                className={'carousel-wrapper__arrow carousel__arrow--next'}
+              />
             </ButtonNext>
           </div>
         )}
         <Slider
-          className={'carousel__slider'}
+          className={'carousel-wrapper__slider'}
           slideTraySize={
             ((testimonialCardWidth + gap) * data.length * 100) / containerWidth
           }
@@ -65,7 +67,7 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
             <Slide
               key={index}
               index={index}
-              className="carousel__card"
+              className="carousel-wrapper__card"
               style={
                 visibleSlides !== 1
                   ? { marginRight: gap }
