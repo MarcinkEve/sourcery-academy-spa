@@ -1,9 +1,8 @@
 @import '~/sass/variables';
-@import '../../TestimonialWrapper/TestimonialCard/TestimonialCard';
+@import '~/components/TestimonialWrapper/TestimonialCard/TestimonialCard';
 
 .testimonial-academies-section {
   margin: 0 auto to-rem(349);
-  max-width: to-rem(1184);
   position: relative;
 
   &__top-particles {

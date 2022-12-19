@@ -2,9 +2,9 @@ import React from 'react';
 
 import TopParticles from '~/assets/particles/particles-testimonial-top.svg';
 import BottomParticles from '~/assets/particles/particles-testimonial-academies-bottom.svg';
-import './testimonial-section.scss';
 import TestimonialWrapper from '~/components/TestimonialWrapper';
 import { data } from '~/components/TestimonialWrapper/TestimonialCard/data';
+import './testimonial-section.scss';
 
 export const TestimonialSection = () => {
   return (
