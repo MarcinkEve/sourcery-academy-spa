@@ -7,8 +7,8 @@ import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
 import { validationHandler } from './validationOnBlur';
 
-export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
-  const [uploadedFile, setUploadedFile] = useState();
+export const FileUpload = ({ name, placeholder, getValue }) => {
+  const [uploadedFile, setUploadedFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [validFile, setValidFile] = useState(null);
   const fileInput = useRef(null);
@@ -19,7 +19,7 @@ export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
 
   //sending valid file
   useEffect(() => {
-    if (validFile && getValidatedValue) return getValidatedValue(validFile);
+    if (validFile && getValue) return getValue(validFile);
     return;
   }, [validFile]);
 
@@ -64,5 +64,5 @@ export const FileUpload = ({ name, placeholder, getValidatedValue }) => {
 FileUpload.propTypes = {
   name: string.isRequired,
   placeholder: string.isRequired,
-  getValidatedValue: func,
+  getValue: func,
 };

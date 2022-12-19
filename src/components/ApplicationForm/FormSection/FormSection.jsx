@@ -43,7 +43,7 @@ const renderFormElement = (elementData) => {
           label={label}
           type={type}
           placeholder={placeholder}
-          getValidatedValue={getValue}
+          getValue={getValue}
         />
       );
     case 'file':
@@ -52,7 +52,7 @@ const renderFormElement = (elementData) => {
           name={name}
           label={label}
           placeholder={placeholder}
-          getValidatedValue={getValue}
+          getValue={getValue}
         />
       );
     case 'checkbox':

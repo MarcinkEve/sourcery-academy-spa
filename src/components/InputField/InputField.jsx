@@ -5,13 +5,7 @@ import './inputField.scss';
 import ErrorMessage from '~/components/ErrorMessage';
 import { validationHandler } from './validationOnBlur';
 
-export const InputField = ({
-  name,
-  label,
-  type,
-  placeholder,
-  getValidatedValue,
-}) => {
+export const InputField = ({ name, label, type, placeholder, getValue }) => {
   const [inputValue, setInputValue] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [validInput, setValidInput] = useState(null);
@@ -22,7 +16,7 @@ export const InputField = ({
 
   //Send valid input string
   useEffect(() => {
-    if (validInput && getValidatedValue) return getValidatedValue(validInput);
+    if (validInput && getValue) return getValue(validInput);
     return;
   }, [validInput]);
 
@@ -52,5 +46,5 @@ InputField.propTypes = {
   label: string.isRequired,
   type: string.isRequired,
   placeholder: string.isRequired,
-  getValidatedValue: func,
+  getValue: func,
 };
