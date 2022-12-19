@@ -53,7 +53,9 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
             </ButtonBack>
             <ButtonNext className={'carousel-wrapper__button'}>
               <SvgArrow
-                className={'carousel-wrapper__arrow carousel__arrow--next'}
+                className={
+                  'carousel-wrapper__arrow carousel-wrapper__arrow--next'
+                }
               />
             </ButtonNext>
           </div>
