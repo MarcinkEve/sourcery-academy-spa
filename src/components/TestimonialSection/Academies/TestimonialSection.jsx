@@ -10,9 +10,7 @@ export const TestimonialSection = () => {
   return (
     <section className="testimonial-academies-section">
       <TopParticles className="testimonial-academies-section__top-particles" />
-      <div className="testimonial-academies-section__wrapper">
-        <TestimonialWrapper data={data.slice(0, 4)} title="Testimonials" />
-      </div>
+      <TestimonialWrapper data={data.slice(0, 4)} title="Testimonials" />
       <BottomParticles className="testimonial-academies-section__bottom-particles" />
     </section>
   );
