@@ -46,7 +46,7 @@ export const Homepage = ({ theme }) => {
         </h2>
         <MediaSection
           title="Media"
-          media={mediaData}
+          mediaList={mediaData}
           handleClick={() => nav(ROUTES.MEDIA)}
         />
       </ExtraWrappingSection>

@@ -22,9 +22,15 @@ export const MediaPage = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <div className="media-page-wrapper">
-        <MediaSection title="Sourcery for Developers" media={mediaDevelopers} />
-        <MediaSection title="Sourcery for Testers" media={mediaTesters} />
-        <MediaSection title="Sourcery for Front-end" media={mediaFrontend} />
+        <MediaSection
+          title="Sourcery for Developers"
+          mediaList={mediaDevelopers}
+        />
+        <MediaSection title="Sourcery for Testers" mediaList={mediaTesters} />
+        <MediaSection
+          title="Sourcery for Front-end"
+          mediaList={mediaFrontend}
+        />
       </div>
     </PageLayout>
   );

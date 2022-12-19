@@ -6,32 +6,32 @@ import VideoPlayer from '~/components/VideoPlayer';
 import PlayIcon from '~/assets/icons/icon-play-button.svg';
 
 import './gallery.scss';
-import { mediaType } from './types';
+import { mediaListType } from './types';
 
-export const Gallery = ({ media }) => {
+export const Gallery = ({ mediaList }) => {
   const [lightboxController, setLightboxController] = useState({
-    toggler: false,
+    isOpened: false,
     slide: 1,
   });
 
-  const openLightboxOnSlide = (number) => {
+  const openLightboxOnSlide = (index) => {
     setLightboxController({
-      toggler: !lightboxController.toggler,
-      slide: number + 1,
+      isOpened: !lightboxController.isOpened,
+      slide: index + 1,
     });
     document.activeElement.blur();
   };
 
-  const openLightboxWithKeyboard = ({ code }, number) => {
+  const openLightboxWithKeyboard = ({ code }, index) => {
     if (code === 'Enter') {
-      openLightboxOnSlide(number);
+      openLightboxOnSlide(index);
     }
   };
 
   return (
     <>
       <div className="gallery">
-        {media.map(({ type, src, thumbnail, alt }, index) => (
+        {mediaList.map(({ type, src, thumbnail, alt }, index) => (
           <div
             className={classnames('gallery__item', {
               'gallery__item--video': type === 'video',
@@ -53,11 +53,11 @@ export const Gallery = ({ media }) => {
       </div>
 
       <FsLightbox
-        toggler={lightboxController.toggler}
+        toggler={lightboxController.isOpened}
         slide={lightboxController.slide}
         exitFullscreenOnClose={true}
         loadOnlyCurrentSource={true}
-        sources={media.map(({ type, src }) => {
+        sources={mediaList.map(({ type, src }) => {
           if (type === 'video') {
             return (
               <div onMouseDown={(e) => e.stopPropagation()}>
@@ -79,5 +79,5 @@ export const Gallery = ({ media }) => {
 };
 
 Gallery.propTypes = {
-  media: mediaType.isRequired,
+  mediaList: mediaListType.isRequired,
 };
