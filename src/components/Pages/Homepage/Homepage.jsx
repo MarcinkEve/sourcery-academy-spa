@@ -7,6 +7,7 @@ import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
 import IntroSection from '~/components/IntroSection';
 import Article from '~/components/Article';
 import AcademiesDescriptionSection from '~/components/AcademiesDescriptionSection';
+import { TestimonialSection } from '~/components/TestimonialSection/Homepage/TestimonialSection';
 import MediaSection from '~/components/MediaSection';
 import {
   introSectionData,
@@ -33,17 +34,7 @@ export const Homepage = ({ theme }) => {
           frontEndDescriptionData={frontEndDescriptionData}
           kidsDescriptionData={kidsDescriptionData}
         />
-        {/*@TODO: DELETE --> as a placeholder until "Testimonials" section is added: */}
-        <h2
-          style={{
-            textAlign: 'right',
-            opacity: '0.5',
-            margin: '0',
-            height: '200px',
-          }}
-        >
-          Testimonials
-        </h2>
+        <TestimonialSection />
         <MediaSection
           title="Media"
           mediaList={mediaData}

@@ -1,0 +1,14 @@
+@import '~/sass/variables';
+
+.testimonial-homepage-section {
+  margin: 0 auto to-rem(295);
+  position: relative;
+
+  &__bottom-particles {
+    left: 7%;
+    position: absolute;
+    top: 90%;
+    width: to-rem(1100);
+    z-index: -1;
+  }
+}
