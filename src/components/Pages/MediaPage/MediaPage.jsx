@@ -3,6 +3,7 @@ import { string } from 'prop-types';
 
 import PageLayout from '~/layout/pageLayout';
 import MediaSection from '~/components/MediaSection';
+
 import './media-page.scss';
 import mediaData from './data.json';
 

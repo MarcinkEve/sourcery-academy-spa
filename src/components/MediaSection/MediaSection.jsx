@@ -3,8 +3,9 @@ import { func, string } from 'prop-types';
 
 import Gallery from '~/components/Gallery';
 import Button from '~/components/Button';
-import './media-section.scss';
 import { mediaType } from '~/components/Gallery/types';
+
+import './media-section.scss';
 
 export const MediaSection = ({ title, media, handleClick }) => {
   return (

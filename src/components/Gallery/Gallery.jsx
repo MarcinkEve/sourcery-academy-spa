@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import classnames from 'classnames';
 import FsLightbox from 'fslightbox-react';
 
-import { mediaType } from './types';
+import VideoPlayer from '~/components/VideoPlayer';
 import PlayIcon from '~/assets/icons/icon-play-button.svg';
 
-import VideoPlayer from '~/components/VideoPlayer';
-
 import './gallery.scss';
+import { mediaType } from './types';
 
 export const Gallery = ({ media }) => {
   const [lightboxController, setLightboxController] = useState({
