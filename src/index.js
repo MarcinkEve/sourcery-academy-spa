@@ -7,10 +7,11 @@ import './sass/global.scss';
 import App from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const dataProviders = [TestimonialProvider];
+
+const withProviders = (providers, component) =>
+  providers.reduce((Acc, Curr) => <Curr>{Acc}</Curr>, <>{component}</>);
+
 root.render(
-  <React.StrictMode>
-    <TestimonialProvider>
-      <App />
-    </TestimonialProvider>
-  </React.StrictMode>
+  <React.StrictMode>{withProviders(dataProviders, <App />)}</React.StrictMode>
 );
