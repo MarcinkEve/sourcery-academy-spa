@@ -5,14 +5,19 @@ import ApplyToAcademy from '~/components/ApplyToAcademy';
 import applyToAcademyData from '~/components/pages/AcademiesPages/applyToAcademyData.json';
 import ScheduleSection from '~/components/ScheduleSection';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
+import TestimonialSection from '~/components/TestimonialSection/Academies';
+import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
 
 export const AcademyWrapper = ({ schedule }) => {
   const location = useLocation();
 
   return (
     <>
-      <ScheduleSection schedule={schedule} />
-      <ApplyToAcademy location={location} data={applyToAcademyData} />
+      <ExtraWrappingSection>
+        <ScheduleSection schedule={schedule} />
+        <TestimonialSection />
+        <ApplyToAcademy location={location} data={applyToAcademyData} />
+      </ExtraWrappingSection>
     </>
   );
 };

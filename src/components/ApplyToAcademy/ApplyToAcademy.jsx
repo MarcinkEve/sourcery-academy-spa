@@ -3,7 +3,6 @@ import { object } from 'prop-types';
 import classNames from 'classnames';
 
 import { ROUTES } from '~/constants/routes';
-import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
 import BottomParticles from '~/assets/particles/apply-to-academy-bottom-particles.svg';
 import TextSection from '~/components/TextSection';
 import DevelopersImage from '~/assets/images/apply-to-academy-developers.svg';
@@ -42,31 +41,29 @@ export const ApplyToAcademy = ({ location, data }) => {
   }, []);
 
   return (
-    <ExtraWrappingSection>
-      <section className="apply-to-academy">
-        {TopParticles && (
-          <TopParticles
-            className={classNames('apply-to-academy__particles-top', {
-              'apply-to-academy__particles-top--five': isParticlePositionNonDefault,
-            })}
-          />
-        )}
-        <TextSection
-          isHeadingSpacingLarge
-          headingContent={<h2>{data[academyType].title}</h2>}
-          isParagraphTextBold
-          paragraphContent={<p>{data[academyType].paragraphTxt}</p>}
-          buttonText="Apply now"
-          pageRoute={ROUTES.APPLICATION}
+    <section className="apply-to-academy">
+      {TopParticles && (
+        <TopParticles
+          className={classNames('apply-to-academy__particles-top', {
+            'apply-to-academy__particles-top--five': isParticlePositionNonDefault,
+          })}
         />
-        {Image && (
-          <div className="apply-to-academy__image-wrapper">
-            <Image className="apply-to-academy__image" />
-          </div>
-        )}
-        <BottomParticles className="apply-to-academy__particles-bottom" />
-      </section>
-    </ExtraWrappingSection>
+      )}
+      <TextSection
+        isHeadingSpacingLarge
+        headingContent={<h2>{data[academyType].title}</h2>}
+        isParagraphTextBold
+        paragraphContent={<p>{data[academyType].paragraphTxt}</p>}
+        buttonText="Apply now"
+        pageRoute={ROUTES.APPLICATION}
+      />
+      {Image && (
+        <div className="apply-to-academy__image-wrapper">
+          <Image className="apply-to-academy__image" />
+        </div>
+      )}
+      <BottomParticles className="apply-to-academy__particles-bottom" />
+    </section>
   );
 };
 
