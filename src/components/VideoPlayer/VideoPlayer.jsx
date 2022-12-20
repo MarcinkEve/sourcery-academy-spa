@@ -15,6 +15,7 @@ export const VideoPlayer = ({
   openVideoModal,
   onClose,
   hasAutoPlay,
+  hasCloseButton,
 }) => {
   const [tabIndexToggler, setTabIndexToggler] = useState(-1);
 
@@ -50,13 +51,15 @@ export const VideoPlayer = ({
             e.stopPropagation();
           }}
         >
-          <button
-            onClick={onClose}
-            className="media__close-button"
-            title="Close video"
-          >
-            &times;
-          </button>
+          {hasCloseButton && (
+            <button
+              onClick={onClose}
+              className="media__close-button"
+              title="Close video"
+            >
+              &times;
+            </button>
+          )}
           <Player
             className="media__player"
             src={videoSrc}
@@ -83,4 +86,9 @@ VideoPlayer.propTypes = {
   hasAutoPlay: bool,
   openVideoModal: bool.isRequired,
   onClose: func.isRequired,
+  hasCloseButton: bool.isRequired,
+};
+
+VideoPlayer.default = {
+  hasCloseButton: true,
 };
