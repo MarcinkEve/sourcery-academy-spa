@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import FsLightbox from 'fslightbox-react';
 
 import VideoPlayer from '~/components/VideoPlayer';
@@ -33,7 +33,7 @@ export const Gallery = ({ mediaList }) => {
       <div className="gallery">
         {mediaList.map(({ type, src, thumbnail, alt }, index) => (
           <div
-            className={classnames('gallery__item', {
+            className={classNames('gallery__item', {
               'gallery__item--video': type === 'video',
             })}
             key={src}
