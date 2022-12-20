@@ -3,8 +3,10 @@
 
 $_button-size: to-rem(40);
 
-.carousel {
+.carousel-wrapper {
   $_this: &;
+
+  margin-left: to-rem(-$_shadow-size);
 
   &__title {
     margin: 0 0 to-rem(67);

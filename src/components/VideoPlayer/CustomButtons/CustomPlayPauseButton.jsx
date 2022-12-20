@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, createRef } from 'react';
 import { bool, func, shape, string } from 'prop-types';
 import { withMediaProps } from 'react-media-player';
 
@@ -11,9 +11,19 @@ export const CustomPlayPauseButton = ({ media, className }) => {
   const handlePlayPause = () => {
     media.playPause();
   };
+  const playPauseRef = createRef();
+
+  useEffect(() => {
+    playPauseRef.current.focus();
+  }, []);
 
   return (
-    <button type="button" className={className} onClick={handlePlayPause}>
+    <button
+      type="button"
+      className={className}
+      onClick={handlePlayPause}
+      ref={playPauseRef}
+    >
       {media.isPlaying ? (
         <IconPause className="pause-icon" />
       ) : (
