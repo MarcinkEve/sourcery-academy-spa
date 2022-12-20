@@ -5,10 +5,10 @@ import PlayButton from '~/assets/icons/icon-play-button.svg';
 
 import './corner-video.scss';
 
-export const CornerVideo = ({ image, setOpenVideoModal }) => {
+export const CornerVideo = ({ image, description, setOpenVideoModal }) => {
   return (
     <div className="corner-video">
-      <img src={image} alt="corner video background photo" />
+      <img src={image} alt={description} />
       <button
         type="button"
         className="corner-video__button"
@@ -24,5 +24,6 @@ export const CornerVideo = ({ image, setOpenVideoModal }) => {
 
 CornerVideo.propTypes = {
   image: string.isRequired,
+  description: string.isRequired,
   setOpenVideoModal: func.isRequired,
 };

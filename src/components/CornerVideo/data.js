@@ -5,11 +5,14 @@ import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
 export const cornerImages = {
   developers: {
     image: DevelopersCornerImage,
+    description: 'Developers academy graduators',
   },
   testers: {
     image: TestersCornerImage,
+    description: 'Testers academy students',
   },
   frontend: {
     image: FrontEndCornerImage,
+    description: 'Front-end academy graduators',
   },
 };
