@@ -53,7 +53,7 @@ export const ApplyToAcademy = ({ location, data }) => {
         isHeadingSpacingLarge
         headingContent={<h2>{data[academyType].title}</h2>}
         isParagraphTextBold
-        paragraphContent={<p>{data[academyType].paragraphTxt}</p>}
+        paragraphContent={<p>{data[academyType].text}</p>}
         buttonText="Apply now"
         pageRoute={ROUTES.APPLICATION}
       />
