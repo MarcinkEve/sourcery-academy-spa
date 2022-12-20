@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 
-import './form-section.scss';
 import { sectionType } from '~/components/ApplicationForm/types';
 import RadioToggler from '~/components/RadioToggler';
 import RadioButton from '~/components/RadioButton';
 import InputField from '~/components/InputField';
 import FileUpload from '~/components/FileUpload';
 import Checkbox from '~/components/Checkbox';
+import { FormValuesContext } from '~/components/Pages/ApplicationPage/ApplicationPage';
+
+import './form-section.scss';
 
 const renderFormElement = (elementData) => {
   const {
     type,
     name,
     values,
-    getValue,
     radioValues,
     label,
     placeholder,
@@ -22,20 +23,33 @@ const renderFormElement = (elementData) => {
     errorMessage,
   } = elementData;
 
+  const {
+    typeValueHandler,
+    cityValueHandler,
+    firstNameValueHandler,
+    lastNameValueHandler,
+    emailValueHandler,
+    resumeValueHandler,
+    checkboxValueHandler,
+  } = useContext(FormValuesContext);
+
   switch (type) {
     case 'radioToggler':
       return (
-        <RadioToggler name={name} values={values} onValueChange={getValue} />
+        <RadioToggler
+          name={name}
+          values={values}
+          onValueChange={typeValueHandler}
+        />
       );
     case 'radio':
       return (
         <RadioButton
           name={name}
           radioValues={radioValues}
-          onValueChange={getValue}
+          onValueChange={cityValueHandler}
         />
       );
-    case 'text':
     case 'email':
       return (
         <InputField
@@ -43,7 +57,21 @@ const renderFormElement = (elementData) => {
           label={label}
           type={type}
           placeholder={placeholder}
-          getValue={getValue}
+          getValue={emailValueHandler}
+        />
+      );
+    case 'text':
+      return (
+        <InputField
+          name={name}
+          label={label}
+          type={type}
+          placeholder={placeholder}
+          getValue={
+            `${name}` === 'firstName'
+              ? firstNameValueHandler
+              : lastNameValueHandler
+          }
         />
       );
     case 'file':
@@ -52,7 +80,7 @@ const renderFormElement = (elementData) => {
           name={name}
           label={label}
           placeholder={placeholder}
-          getValue={getValue}
+          getValue={resumeValueHandler}
         />
       );
     case 'checkbox':
@@ -61,8 +89,8 @@ const renderFormElement = (elementData) => {
           name={name}
           checkboxText={checkboxText}
           type="checkbox"
-          getCheckboxValue={getValue}
           errorMessage={errorMessage}
+          getCheckboxValue={checkboxValueHandler}
         />
       );
   }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { string, shape, func, bool } from 'prop-types';
 
-import './application-form.scss';
-import { sectionType } from './types';
-import FormSection from './FormSection';
 import Button from '~/components/Button';
+
+import FormSection from './FormSection';
+import { sectionType } from './types';
+import './application-form.scss';
 
 export const ApplicationForm = ({ data, isBtnDisabled, submitHandler }) => {
   const { section_1, section_2, button } = data;
