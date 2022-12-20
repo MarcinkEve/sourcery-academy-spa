@@ -94,7 +94,9 @@ export const Header = () => {
           )}
         </li>
         <li>
-          <NavLink className="navlinks__link">Media</NavLink>
+          <NavLink className="navlinks__link" to="/media">
+            Media
+          </NavLink>
         </li>
         <li>
           <NavLink
