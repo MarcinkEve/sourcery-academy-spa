@@ -1,8 +1,8 @@
 import React from 'react';
-import {} from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import ApplyToAcademy from '~/components/ApplyToAcademy';
+import applyToAcademyData from '~/components/pages/AcademiesPages/applyToAcademyData.json';
 import ScheduleSection from '~/components/ScheduleSection';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
 
@@ -12,7 +12,7 @@ export const AcademyWrapper = ({ schedule }) => {
   return (
     <>
       <ScheduleSection schedule={schedule} />
-      <ApplyToAcademy location={location} />
+      <ApplyToAcademy location={location} data={applyToAcademyData} />
     </>
   );
 };
