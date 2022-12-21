@@ -29,7 +29,7 @@ export const VideoPlayer = ({
   }, []);
 
   useEffect(() => {
-    const fullscreenListener = (e) => {
+    const fullscreenListener = () => {
       if (document.fullscreenElement) {
         setTabIndexToggler(0);
       } else {
