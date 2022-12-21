@@ -9,11 +9,11 @@ import './media-section.scss';
 
 export const MediaSection = ({ title, mediaList, handleClick }) => {
   return (
-    <section className="media-section">
+    <div className="media-section">
       <h2 className="media-section__title">{title}</h2>
       <Gallery mediaList={mediaList} />
       {handleClick && <Button label="View more" handleClick={handleClick} />}
-    </section>
+    </div>
   );
 };
 
