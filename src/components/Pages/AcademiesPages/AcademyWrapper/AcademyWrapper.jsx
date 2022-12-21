@@ -3,21 +3,25 @@ import { useLocation } from 'react-router-dom';
 
 import ScheduleSection from '~/components/ScheduleSection';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
-import TestimonialSection from '~/components/TestimonialSection/Academies';
-import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
+import CornerVideo from '~/components/CornerVideo';
+import { cornerImages } from '~/components/CornerVideo/data.js';
 
 export const AcademyWrapper = ({ schedule }) => {
   const location = useLocation();
+  const academyType = location.pathname.slice(1);
 
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>
         This is the {location.pathname.slice(1)} academy{' '}
       </h1>
-      <ExtraWrappingSection>
-        <ScheduleSection schedule={schedule} />
-        <TestimonialSection />
-      </ExtraWrappingSection>
+
+      <CornerVideo
+        image={cornerImages[academyType].image}
+        description={cornerImages[academyType].description}
+        videoSrc={cornerImages[academyType].videoSrc}
+      />
+      <ScheduleSection schedule={schedule} />
     </>
   );
 };

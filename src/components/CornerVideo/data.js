@@ -8,20 +8,17 @@ export const cornerImages = {
     description: 'Developers academy graduators',
     videoSrc:
       'https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4',
-    hasCloseButton: true,
   },
   testers: {
     image: TestersCornerImage,
     description: 'Testers academy students',
     videoSrc:
       'https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4',
-    hasCloseButton: true,
   },
   frontend: {
     image: FrontEndCornerImage,
     description: 'Front-end academy graduators',
     videoSrc:
       'https://sfe-2022-data.netlify.app/static/video/developers/80b0058a9428314582a3f25f3b1dfb8bc27de8a4.mp4',
-    hasCloseButton: true,
   },
 };

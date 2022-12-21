@@ -88,3 +88,7 @@ VideoPlayer.propTypes = {
   onClose: func.isRequired,
   hasCloseButton: bool.isRequired,
 };
+
+VideoPlayer.defaultProps = {
+  hasCloseButton: true,
+};

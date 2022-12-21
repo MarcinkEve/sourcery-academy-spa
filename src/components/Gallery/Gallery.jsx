@@ -63,7 +63,7 @@ export const Gallery = ({ mediaList }) => {
               <div onMouseDown={(e) => e.stopPropagation()}>
                 <VideoPlayer
                   videoSrc={src}
-                  isModalOpen={true}
+                  isVideoModalOpen={true}
                   onClose={() => {}}
                   hasCloseButton={false}
                 />
