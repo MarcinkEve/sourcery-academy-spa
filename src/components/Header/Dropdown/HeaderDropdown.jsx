@@ -17,7 +17,8 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
       if (
         onClickOutside &&
         !pinRef.current.contains(target) &&
-        !contentRef.current.contains(target)
+        !contentRef.current.contains(target) &&
+        !(target.autofocus === false)
       ) {
         onClickOutside();
       }
@@ -26,6 +27,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
 
     return () => document.removeEventListener('mousedown', clickListener);
   }, [pinRef, contentRef]);
+
   return (
     <div className="dropdown">
       <div className="dropdown__pin">

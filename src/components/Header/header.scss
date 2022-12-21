@@ -12,7 +12,9 @@
   margin: auto;
   max-width: $max-page-width;
   padding: 0 $spacer-l;
+  position: relative;
   width: 100%;
+  z-index: 10;
 
   .logo {
     @include flex-box(
@@ -35,6 +37,7 @@
     }
 
     &:focus-visible {
+      border-radius: 5px;
       outline: 4px dashed $orange-200;
     }
   }

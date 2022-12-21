@@ -1,0 +1,23 @@
+@import '~/sass/variables';
+
+.media-section-homepage {
+  margin-bottom: to-rem(20);
+  position: relative;
+
+  &__particles {
+    position: absolute;
+    right: 5%;
+    top: -5%;
+    width: to-rem(800);
+    z-index: -1;
+  }
+
+  &__line {
+    color: var(--primary-color);
+    left: -5%;
+    position: absolute;
+    top: -35%;
+    width: to-rem(350);
+    z-index: -1;
+  }
+}
