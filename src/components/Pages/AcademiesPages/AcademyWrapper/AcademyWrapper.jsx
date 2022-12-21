@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import ScheduleSection from '~/components/ScheduleSection';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
 import TestimonialSection from '~/components/TestimonialSection/Academies';
+import { MediaSectionAcademies } from '~/components/MediaSection/MediaSectionAcademies/MediaSectionAcademies';
 import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
 
 export const AcademyWrapper = ({ schedule }) => {
@@ -17,6 +18,7 @@ export const AcademyWrapper = ({ schedule }) => {
       <ExtraWrappingSection>
         <ScheduleSection schedule={schedule} />
         <TestimonialSection />
+        <MediaSectionAcademies />
       </ExtraWrappingSection>
     </>
   );
