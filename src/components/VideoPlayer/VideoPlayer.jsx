@@ -20,24 +20,23 @@ export const VideoPlayer = ({
   const [tabIndexToggler, setTabIndexToggler] = useState(-1);
 
   useEffect(() => {
-    const onCloseListener = document.addEventListener('keydown', (e) => {
+    const escapeListener = (e) => {
       e.key === 'Escape' && onClose();
-    });
+    };
+    document.addEventListener('keydown', escapeListener);
 
-    return () => document.removeEventListener('keydown', onCloseListener);
+    return () => document.removeEventListener('keydown', escapeListener);
   }, []);
 
   useEffect(() => {
-    const fullscreenListener = document.addEventListener(
-      'fullscreenchange',
-      () => {
-        if (document.fullscreenElement) {
-          setTabIndexToggler(0);
-        } else {
-          setTabIndexToggler(-1);
-        }
+    const fullscreenListener = (e) => {
+      if (document.fullscreenElement) {
+        setTabIndexToggler(0);
+      } else {
+        setTabIndexToggler(-1);
       }
-    );
+    };
+    document.addEventListener('fullscreenchange', fullscreenListener);
 
     return () =>
       document.removeEventListener('fullscreenchange', fullscreenListener);
