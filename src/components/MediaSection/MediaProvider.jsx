@@ -9,12 +9,12 @@ export const getMedia = () => {
   const mediaContext = useContext(MediaContext);
 
   const generateMediaForHomepage = () => {
-    const video = mediaContext.data.find((item) => item.type === 'video');
-    const mediaForHomepage = mediaContext.data
-      .filter((item) => item.type === 'image')
-      .slice(0, 5);
-    mediaForHomepage.push(video);
-    return mediaForHomepage;
+    const videos = mediaContext.data.filter((item) => item.type === 'video');
+    const images = mediaContext.data.filter((item) => item.type === 'image');
+    return [
+      ...images.slice(0, Math.min(5, images.length)),
+      ...videos.slice(0, Math.min(1, videos.length)),
+    ];
   };
 
   const filterMediaForAcademy = (academy) =>
