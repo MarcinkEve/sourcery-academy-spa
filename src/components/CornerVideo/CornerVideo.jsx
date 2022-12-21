@@ -23,7 +23,7 @@ export const CornerVideo = ({
         hasCloseButton={hasCloseButton}
       />
       <div className="corner-video">
-        <img src={image} alt={description} />
+        <img src={image} alt={description || ''} />
         <button
           type="button"
           className="corner-video__button"
