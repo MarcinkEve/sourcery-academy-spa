@@ -36,8 +36,6 @@
     &--video {
       @include flex-box($justify-content: center, $align-items: center);
 
-      position: relative;
-
       &:focus-visible {
         outline: none;
 
