@@ -4,7 +4,7 @@ import { string } from 'prop-types';
 import PageLayout from '~/layout/pageLayout';
 import AcademyWrapper from '~/components/Pages/AcademiesPages/AcademyWrapper';
 
-import { developersText } from '../applicationProcessData.js';
+import applicationProcessData from '../applicationProcessData.json';
 import scheduleData from '../scheduleData.json';
 
 export const Developers = ({ theme }) => {
@@ -12,7 +12,7 @@ export const Developers = ({ theme }) => {
     <PageLayout theme={theme}>
       <AcademyWrapper
         schedule={scheduleData}
-        applicationText={developersText}
+        applicationText={applicationProcessData.developersText}
       />
     </PageLayout>
   );
