@@ -9,15 +9,12 @@ import IconParticlesBottom from '~/assets/particles/application-process-particle
 import { icons } from './data';
 import './applicationProcessSection.scss';
 
-export const ApplicationProcessSection = (applicationText) => {
+export const ApplicationProcessSection = ({ applicationText }) => {
   return (
     <section className="application-section">
       <IconParticlesTop className="application-section__particles--top" />
       <IconLine className="application-section__svg-line" />
-      <ApplicationProcess
-        textsArray={applicationText.applicationText}
-        iconsArray={icons}
-      />
+      <ApplicationProcess textsArray={applicationText} iconsArray={icons} />
       <IconParticlesBottom className="application-section__particles--bottom" />
     </section>
   );
