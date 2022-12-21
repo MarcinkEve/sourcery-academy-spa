@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { ROUTES } from '~/constants/routes.js';
 
-export const useTestimonials = () => {
+export const getTestimonials = () => {
   const { pathname } = useLocation();
   const testimonialContext = useContext(TestimonialContext);
 
