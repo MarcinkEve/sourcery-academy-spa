@@ -36,8 +36,7 @@ export const ApplyToAcademy = ({ location, data }) => {
   ] = useState(false);
 
   useEffect(() => {
-    if (academyType === 'frontend')
-      return setIsParticlePositionNonDefault(true);
+    if (academyType === 'frontend') setIsParticlePositionNonDefault(true);
   }, []);
 
   return (
