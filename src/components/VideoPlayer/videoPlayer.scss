@@ -14,11 +14,10 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 }
 
 .media {
+  @include center-alignment;
+
   border-radius: 15px;
-  left: 50%;
   position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
 
   &__player {
     width: 90vw;

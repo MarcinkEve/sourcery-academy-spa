@@ -91,6 +91,6 @@ VideoPlayer.propTypes = {
   hasCloseButton: bool.isRequired,
 };
 
-VideoPlayer.default = {
+VideoPlayer.defaultProps = {
   hasCloseButton: true,
 };
