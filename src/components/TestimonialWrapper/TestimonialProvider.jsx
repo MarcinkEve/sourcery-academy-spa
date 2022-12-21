@@ -1,44 +1,50 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { any, func } from 'prop-types';
+import { func, node } from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import { ROUTES } from '~/constants/routes.js';
 
 export const useTestimonials = () => {
   const { pathname } = useLocation();
-  const { data } = useContext(TestimonialContext);
+  const testimonialContext = useContext(TestimonialContext);
 
   const filterTestimonialsForAcademy = (academy) =>
-    data.filter((testimonial) => testimonial.academy.includes(academy));
+    testimonialContext.data.filter((testimonial) =>
+      testimonial.academy.includes(academy)
+    );
 
   const getTestimonialsForPage = (page) => {
-    if (page === ROUTES.DEVELOPERS) {
-      return filterTestimonialsForAcademy('Developers');
-    } else if (page === ROUTES.TESTERS) {
-      return filterTestimonialsForAcademy('Testers');
-    } else if (page === ROUTES.FRONTEND) {
-      return filterTestimonialsForAcademy('Front-End');
-    } else {
-      return data;
+    switch (page) {
+      case ROUTES.DEVELOPERS:
+        return filterTestimonialsForAcademy('Developers');
+      case ROUTES.TESTERS:
+        return filterTestimonialsForAcademy('Testers');
+      case ROUTES.FRONTEND:
+        return filterTestimonialsForAcademy('Front-End');
+      default:
+        return testimonialContext.data;
     }
   };
 
-  return { testimonials: getTestimonialsForPage(pathname) };
+  return { ...testimonialContext, data: getTestimonialsForPage(pathname) };
 };
 
-export const TestimonialContext = createContext({ data: [] });
+const initialState = { data: [], error: false };
+
+export const TestimonialContext = createContext(initialState);
 
 export const TestimonialProvider = ({ children }) => {
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState(initialState);
 
   useEffect(() => {
     fetch('https://www.jurele.lt/testimonials.json')
       .then((response) => response.json())
-      .then((response) => setTestimonials(response));
+      .then((response) => setTestimonials({ data: response, error: false }))
+      .catch(() => setTestimonials({ data: [], error: true }));
   }, []);
 
   return (
-    <TestimonialContext.Provider value={{ data: testimonials }}>
+    <TestimonialContext.Provider value={testimonials}>
       {children}
     </TestimonialContext.Provider>
   );
@@ -49,5 +55,5 @@ TestimonialContext.propTypes = {
 };
 
 TestimonialProvider.propTypes = {
-  children: any,
+  children: node,
 };

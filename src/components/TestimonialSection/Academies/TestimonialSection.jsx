@@ -6,14 +6,19 @@ import TestimonialWrapper from '~/components/TestimonialWrapper';
 import { useTestimonials } from '~/components/TestimonialWrapper/TestimonialProvider';
 
 import './testimonial-section.scss';
+import TestimonialError from '~/components/TestimonialWrapper/TestimonialError';
 
 export const TestimonialSection = () => {
-  const { testimonials } = useTestimonials();
+  const { data, error } = useTestimonials();
 
   return (
     <section className="testimonial-academies-section">
       <TopParticles className="testimonial-academies-section__top-particles" />
-      <TestimonialWrapper data={testimonials} title="Testimonials" />
+      {error ? (
+        <TestimonialError />
+      ) : (
+        <TestimonialWrapper data={data} title="Testimonials" />
+      )}
       <BottomParticles className="testimonial-academies-section__bottom-particles" />
     </section>
   );
