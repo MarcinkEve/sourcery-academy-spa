@@ -7,14 +7,14 @@ import VideoPlayer from '~/components/VideoPlayer';
 import './corner-video.scss';
 
 export const CornerVideo = ({ image, description, videoSrc }) => {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <VideoPlayer
         videoSrc={videoSrc}
-        isVideoModalOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
+        isModalOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
       <div className="corner-video">
         <img src={image} alt={description || ''} />
@@ -22,7 +22,7 @@ export const CornerVideo = ({ image, description, videoSrc }) => {
           type="button"
           className="corner-video__button"
           onClick={() => {
-            setIsVideoModalOpen(true);
+            setIsModalOpen(true);
           }}
         >
           <PlayButton className="corner-video__button-icon" />
