@@ -12,7 +12,7 @@ const { CurrentTime, SeekBar } = controls;
 
 export const VideoPlayer = ({
   videoSrc,
-  openVideoModal,
+  isVideoModalOpen,
   onClose,
   hasAutoPlay,
   hasCloseButton,
@@ -40,7 +40,7 @@ export const VideoPlayer = ({
       document.removeEventListener('fullscreenchange', setTabIndexToggler);
   }, []);
 
-  if (!openVideoModal) return null;
+  if (!isVideoModalOpen) return null;
 
   return (
     <div className="overlay" onClick={onClose}>
@@ -84,11 +84,7 @@ export const VideoPlayer = ({
 VideoPlayer.propTypes = {
   videoSrc: string.isRequired,
   hasAutoPlay: bool,
-  openVideoModal: bool.isRequired,
+  isVideoModalOpen: bool.isRequired,
   onClose: func.isRequired,
   hasCloseButton: bool.isRequired,
-};
-
-VideoPlayer.default = {
-  hasCloseButton: true,
 };
