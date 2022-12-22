@@ -5,6 +5,7 @@ import { ApplicationProcessSection } from '~/components/ApplicationProcessSectio
 import ScheduleSection from '~/components/ScheduleSection';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
 import TestimonialSection from '~/components/TestimonialSection/Academies';
+import { MediaSectionAcademies } from '~/components/MediaSection/MediaSectionAcademies/MediaSectionAcademies';
 import ExtraWrappingSection from '~/layout/ExtraWrappingSection';
 
 export const AcademyWrapper = ({ schedule, applicationText }) => {
@@ -14,6 +15,7 @@ export const AcademyWrapper = ({ schedule, applicationText }) => {
         <ApplicationProcessSection applicationText={applicationText} />
         <ScheduleSection schedule={schedule} />
         <TestimonialSection />
+        <MediaSectionAcademies />
       </ExtraWrappingSection>
     </>
   );

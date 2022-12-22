@@ -4,9 +4,9 @@ import TopParticles from '~/assets/particles/particles-testimonial-top.svg';
 import BottomParticles from '~/assets/particles/particles-testimonial-academies-bottom.svg';
 import TestimonialWrapper from '~/components/TestimonialWrapper';
 import { getTestimonials } from '~/components/TestimonialWrapper/TestimonialProvider';
+import Error from '~/components/Error';
 
 import './testimonial-section.scss';
-import TestimonialError from '~/components/TestimonialWrapper/TestimonialError';
 
 export const TestimonialSection = () => {
   const { data, error } = getTestimonials();
@@ -15,7 +15,7 @@ export const TestimonialSection = () => {
     <section className="testimonial-academies-section">
       <TopParticles className="testimonial-academies-section__top-particles" />
       {error ? (
-        <TestimonialError />
+        <Error title="Testimonials" />
       ) : (
         <TestimonialWrapper data={data} title="Testimonials" />
       )}

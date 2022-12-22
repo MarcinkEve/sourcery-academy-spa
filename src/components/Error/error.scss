@@ -1,27 +1,26 @@
 @import '~/sass/utilities/mixins';
 @import '~/sass/variables';
-@import '../TestimonialCard/TestimonialCard';
 
-.error-card {
+.error {
   &__title {
     margin: 0 0 to-rem(67);
-    text-align: right;
+    text-align: center;
   }
 
-  &__content {
-    @include box-shadow(to-rem(-$_shadow-size), to-rem($_shadow-size));
+  &__card {
+    @include box-shadow;
 
     background-color: $white-400;
     border: var(--primary-color) solid 2px;
-    border-radius: $_border-radius-size;
+    border-radius: 16px;
     line-height: $line-height-l;
     margin: auto;
-    padding: to-rem(35) to-rem(28);
-    width: to-rem($_card-width);
+    max-width: to-rem(340);
+    padding: $spacer-xs;
     word-break: break-word;
   }
 
-  &__quote-message {
+  &__message {
     color: var(--primary-color);
     font-size: $font-size-s;
   }

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { func, node } from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
-import { ROUTES } from '~/constants/routes.js';
+import { ROUTES, LINKS } from '~/constants/';
 
 export const getTestimonials = () => {
   const { pathname } = useLocation();
@@ -37,7 +37,7 @@ export const TestimonialProvider = ({ children }) => {
   const [testimonials, setTestimonials] = useState(initialState);
 
   useEffect(() => {
-    fetch('https://www.jurele.lt/testimonials.json')
+    fetch(LINKS.TESTIMONIALS)
       .then((response) => response.json())
       .then((response) => setTestimonials({ data: response, error: false }))
       .catch(() => setTestimonials({ data: [], error: true }));

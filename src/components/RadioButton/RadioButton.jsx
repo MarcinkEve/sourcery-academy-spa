@@ -1,19 +1,31 @@
-import { arrayOf, func, number, shape, string } from 'prop-types';
+import { arrayOf, bool, func, number, shape, string } from 'prop-types';
 import React from 'react';
+import classNames from 'classnames';
 
 import './radioButton.scss';
 
-export const RadioButton = ({ radioValues, title, onValueChange }) => {
+export const RadioButton = ({
+  radioValues,
+  name,
+  onValueChange,
+  isRequired = true,
+}) => {
   return (
     <div className="radio">
-      <span className="radio__title">{title}</span>
+      <span
+        className={classNames('radio__title', {
+          'radio__title--required': isRequired,
+        })}
+      >
+        {name}
+      </span>
 
       {radioValues.map((radioValue, index) => (
         <label className="radio__label" key={radioValue.id}>
           <input
             className="radio__input"
             type="radio"
-            name={title}
+            name={name}
             value={radioValue.value}
             onChange={(e) => {
               onValueChange(e.target.value);
@@ -29,7 +41,7 @@ export const RadioButton = ({ radioValues, title, onValueChange }) => {
 
 RadioButton.propTypes = {
   onValueChange: func,
-  title: string.isRequired,
+  name: string.isRequired,
   radioValues: arrayOf(
     shape({
       name: string,
@@ -37,4 +49,5 @@ RadioButton.propTypes = {
       id: number,
     })
   ).isRequired,
+  isRequired: bool,
 };
