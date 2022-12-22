@@ -5,7 +5,7 @@
   line-height: $line-height-l;
   margin-bottom: to-rem(5);
 
-  &::before {
+  &--required::before {
     color: $red-500;
     content: '*';
     font-size: $font-size-m;
