@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '~/constants/routes';
 import Particles from '~/assets/particles/particles-media.svg';
 import Line from '~/assets/lines/line-media-homepage.svg';
+import Error from '~/components/Error';
 
 import { getMedia } from '../MediaProvider';
 import { MediaSection } from '../MediaSection';
-import { MediaError } from '../MediaError';
 import './media-section-homepage.scss';
 
 export const MediaSectionHomepage = () => {
@@ -18,7 +18,7 @@ export const MediaSectionHomepage = () => {
     <section className="media-section-homepage">
       <Particles className="media-section-homepage__particles" />
       {error ? (
-        <MediaError />
+        <Error title="Media" />
       ) : (
         <>
           <Line className="media-section-homepage__line" />

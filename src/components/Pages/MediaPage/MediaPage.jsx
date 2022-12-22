@@ -5,7 +5,7 @@ import { string } from 'prop-types';
 import PageLayout from '~/layout/pageLayout';
 import MediaSection from '~/components/MediaSection';
 import { getMedia } from '~/components/MediaSection/MediaProvider';
-import { MediaError } from '~/components/MediaSection/MediaError';
+import Error from '~/components/Error';
 
 import './media-page.scss';
 
@@ -29,27 +29,29 @@ export const MediaPage = ({ theme }) => {
 
   return (
     <PageLayout theme={theme}>
-      {error ? (
-        <MediaError />
-      ) : (
-        <div className="media-page-wrapper">
-          <MediaSection
-            title="Sourcery for Developers"
-            mediaList={developersMedia}
-            id="developersMedia"
-          />
-          <MediaSection
-            title="Sourcery for Testers"
-            mediaList={testersMedia}
-            id="testersMedia"
-          />
-          <MediaSection
-            title="Sourcery for Front-end"
-            mediaList={frontendMedia}
-            id="frontendMedia"
-          />
-        </div>
-      )}
+      <div className="media-page-wrapper">
+        {error ? (
+          <Error title="Media" />
+        ) : (
+          <>
+            <MediaSection
+              title="Sourcery for Developers"
+              mediaList={developersMedia}
+              id="developersMedia"
+            />
+            <MediaSection
+              title="Sourcery for Testers"
+              mediaList={testersMedia}
+              id="testersMedia"
+            />
+            <MediaSection
+              title="Sourcery for Front-end"
+              mediaList={frontendMedia}
+              id="frontendMedia"
+            />
+          </>
+        )}
+      </div>
     </PageLayout>
   );
 };
