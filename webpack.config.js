@@ -103,6 +103,14 @@ const config = {
         issuer: /\.(js|jsx)?$/,
         use: ['@svgr/webpack'],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
