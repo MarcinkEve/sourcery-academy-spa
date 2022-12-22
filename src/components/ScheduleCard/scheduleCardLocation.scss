@@ -2,11 +2,7 @@
 @import '~/sass/utilities/mixins';
 
 .location {
-  @include flex-box(
-    $direction: row,
-    $justify-content: flex-start,
-    $align-items: center
-  );
+  @include flex-box($direction: row, $justify-content: flex-start);
 
   border: 2px solid;
   border-radius: 8px;
@@ -20,33 +16,25 @@
   &__date {
     @include flex-box($direction: column, $justify-content: center);
 
-    height: 100%;
+    line-height: 1;
     text-align: center;
     width: 25%;
     word-break: break-word;
 
     &-month {
       font-size: $font-size-s;
-      line-height: to-rem(16);
     }
 
     &-day {
       font-weight: $font-weight-bold;
-      line-height: to-rem(21);
     }
   }
-
-  // COMPONENT / SVG
-  // &__separator {
-  //   width: to-rem(2);
-  // }
 
   &__separator {
     position: relative;
 
-    &::after {
-      background-color: var(--primary-color);
-      border-radius: 30px;
+    &::before {
+      border: 1px solid;
       bottom: to-rem(5.5);
       content: '';
       position: absolute;
@@ -63,6 +51,8 @@
   }
 
   &__city {
-    max-width: 60%;
+    align-self: center;
+    flex-shrink: 0;
+    max-width: 50%;
   }
 }

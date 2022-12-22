@@ -2,19 +2,16 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 import IconLocation from '~/assets/icons/icon-location.svg';
-import IconVerticalLine from '~/assets/icons/icon-vertical-line.svg';
 
 export const ScheduleCardLocation = ({ city, day, month }) => {
   return (
     <div className="location">
       {month && day && (
-        <div className="location__date">
+        <span className="location__date">
           <span className="location__date-month">{month}</span>
           <span className="location__date-day">{day}</span>
-        </div>
+        </span>
       )}
-
-      {/* <IconVerticalLine className="location__separator" /> */}
       <div className="location__separator"></div>
       {city && <IconLocation className="location__pin" />}
       <span className="location__city">{city}</span>

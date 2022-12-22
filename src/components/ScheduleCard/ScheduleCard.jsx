@@ -19,11 +19,16 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
     setIsCardExpanded(!isCardExpanded);
   };
 
+  const handleKeyDown = (e) => {
+    e.key === 'Enter' && handleOpen();
+  };
+
   return (
     <div
       className="schedule-card"
       onClick={handleOpen}
-      aria-role="button"
+      role="button"
+      onKeyDown={handleKeyDown}
       tabIndex="0"
     >
       <div className="schedule-card__title">
@@ -86,16 +91,3 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
 };
 
 ScheduleCard.propTypes = scheduleCardType;
-
-ScheduleCard.defaultProps = {
-  lectureData: {
-    lecture: 'Intro, Agile & Git',
-    name: 'Audrius Navickas',
-    time: '4:00 pm',
-    duration: '3 hours',
-  },
-  lectureDates: [
-    { city: 'Kaunas', day: 30, month: 'Oct' },
-    { city: 'Vilnius', day: 31, month: 'Oct' },
-  ],
-};
