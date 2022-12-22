@@ -4,9 +4,9 @@ import BottomParticles from '~/assets/particles/particles-testimonial-homepage-b
 import TestimonialWrapper from '~/components/TestimonialWrapper';
 import '~/components/TestimonialWrapper/TestimonialCard/data';
 import { getTestimonials } from '~/components/TestimonialWrapper/TestimonialProvider';
+import Error from '~/components/Error';
 
 import './testimonial-section.scss';
-import TestimonialError from '~/components/TestimonialWrapper/TestimonialError';
 
 export const TestimonialSection = () => {
   const { data, error } = getTestimonials();
@@ -14,7 +14,7 @@ export const TestimonialSection = () => {
   return (
     <section className="testimonial-homepage-section">
       {error ? (
-        <TestimonialError />
+        <Error title="Testimonials" />
       ) : (
         <TestimonialWrapper data={data} title="Testimonials" />
       )}

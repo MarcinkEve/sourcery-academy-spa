@@ -7,12 +7,14 @@ import { mediaListType } from '~/components/Gallery/types';
 
 import './media-section.scss';
 
-export const MediaSection = ({ title, mediaList, handleClick }) => {
+export const MediaSection = ({ title, mediaList, handleButtonClick, id }) => {
   return (
-    <div className="media-section">
+    <div className="media-section" id={id}>
       <h2 className="media-section__title">{title}</h2>
       <Gallery mediaList={mediaList} />
-      {handleClick && <Button label="View more" handleClick={handleClick} />}
+      {handleButtonClick && (
+        <Button label="View more" handleClick={handleButtonClick} />
+      )}
     </div>
   );
 };
@@ -20,5 +22,6 @@ export const MediaSection = ({ title, mediaList, handleClick }) => {
 MediaSection.propTypes = {
   title: string.isRequired,
   mediaList: mediaListType.isRequired,
-  handleClick: func,
+  handleButtonClick: func,
+  id: string,
 };
