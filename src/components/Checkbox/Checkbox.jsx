@@ -24,7 +24,6 @@ export const Checkbox = ({
           <div>
             <input
               className="checkbox__default-checkmark"
-              checked={isChecked}
               onChange={clickHandler}
               onKeyDown={(e) => e.key === 'Enter' && setIsChecked(!isChecked)}
               type="checkbox"
