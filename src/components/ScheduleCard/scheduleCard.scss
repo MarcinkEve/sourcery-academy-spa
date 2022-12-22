@@ -15,10 +15,12 @@
   overflow: hidden;
   transition: $transition-time-200;
   width: to-rem(266);
+  word-break: break-word;
 
   &__title {
     background-color: var(--primary-color);
     display: flex;
+    min-height: to-rem(62);
     padding: to-rem(20);
     transition: $transition-time-200;
 
@@ -69,6 +71,7 @@
     &-avatar,
     &-clock {
       align-self: flex-start;
+      flex-shrink: 0;
       margin-right: to-rem(10);
       margin-top: to-rem(3);
       width: to-rem(14);
@@ -78,10 +81,25 @@
       display: flex;
     }
 
-    // COMPONENT / SVG
+    &-time,
+    &-duration {
+      flex-shrink: 0;
+      max-width: 35%;
+    }
+
     &-separator {
       margin: 0 to-rem(15);
-      width: to-rem(2);
+      position: relative;
+
+      &::before {
+        background-color: $white-400;
+        bottom: 0;
+        content: '';
+        margin: to-rem(2.5) 0;
+        position: absolute;
+        top: 0;
+        width: to-rem(2);
+      }
     }
   }
   // -------------------------------------------------------------------DROPDOWN / LOCATION PART

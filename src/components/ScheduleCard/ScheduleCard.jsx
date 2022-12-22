@@ -11,7 +11,6 @@ import '~/sass/vendor/slidedown.scss';
 import IconArrowDownSchedule from '~/assets/icons/icon-arrow-down-schedule.svg';
 import IconAvatar from '~/assets/icons/icon-avatar.svg';
 import IconClock from '~/assets/icons/icon-clock.svg';
-import IconShortHorizontalLine from '~/assets/icons/icon-short-horizontal-line.svg';
 
 export const ScheduleCard = ({ lectureData, lectureDates }) => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
@@ -21,9 +20,19 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
   };
 
   return (
-    <div className="schedule-card" onClick={handleOpen} tabIndex="0">
+    <div
+      className="schedule-card"
+      onClick={handleOpen}
+      aria-role="button"
+      tabIndex="0"
+    >
       <div className="schedule-card__title">
-        <span className="schedule-card__title-name">{lectureData.lecture}</span>
+        {lectureData.lecture && (
+          <span className="schedule-card__title-name">
+            {lectureData.lecture}
+          </span>
+        )}
+
         <IconArrowDownSchedule
           className={classNames(
             'schedule-card__title-arrow',
@@ -37,7 +46,9 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
           <div className="schedule-card__dropdown">
             <div className="schedule-card__lecturer">
               <div className="schedule-card__lecturer-credentials">
-                <IconAvatar className="schedule-card__lecturer-avatar" />
+                {lectureData.name && (
+                  <IconAvatar className="schedule-card__lecturer-avatar" />
+                )}
                 <span className="schedule-card__lecturer-name">
                   {lectureData.name}
                 </span>
@@ -48,8 +59,9 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
                 <span className="schedule-card__lecturer-time">
                   {lectureData.time}
                 </span>
-                <IconShortHorizontalLine className="schedule-card__lecturer-separator" />
-
+                {lectureData.time && lectureData.duration && (
+                  <div className="schedule-card__lecturer-separator"></div>
+                )}
                 <span className="schedule-card__lecturer-duration">
                   {lectureData.duration}
                 </span>

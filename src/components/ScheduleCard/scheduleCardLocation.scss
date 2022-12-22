@@ -22,24 +22,44 @@
     height: to-rem(51);
     text-align: center;
     width: 25%;
+    word-break: break-word;
+
+    &-month {
+      font-size: $font-size-s;
+      line-height: to-rem(16);
+    }
+
+    &-day {
+      font-weight: $font-weight-bold;
+      line-height: to-rem(21);
+    }
   }
 
-  &__month {
-    font-size: $font-size-s;
-    line-height: to-rem(16);
-  }
-
-  &__day {
-    font-weight: $font-weight-bold;
-    line-height: to-rem(21);
-  }
   // COMPONENT / SVG
+  // &__separator {
+  //   width: to-rem(2);
+  // }
   &__separator {
-    width: to-rem(2);
+    position: relative;
+
+    &::before {
+      background-color: var(--primary-color);
+      border-radius: 30px;
+      bottom: to-rem(1);
+      content: '';
+      position: absolute;
+      top: to-rem(0);
+      width: to-rem(2);
+    }
   }
   // COMPONENT / SVG
   &__pin {
+    flex-shrink: 0;
     margin: 0 to-rem(10) 0 to-rem(15);
     width: to-rem(15);
+  }
+
+  &__city {
+    max-width: 60%;
   }
 }
