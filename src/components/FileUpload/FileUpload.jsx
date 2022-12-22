@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { string, func } from 'prop-types';
+import { string, func, bool } from 'prop-types';
 import classNames from 'classnames';
 
 import './fileUpload.scss';
@@ -7,7 +7,7 @@ import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
 import { handleValidation } from './validationOnBlur';
 
-export const FileUpload = ({ name, placeholder, getValue }) => {
+export const FileUpload = ({ name, placeholder, getValue, isRequired = true }) => {
   const [uploadedFile, setUploadedFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [validFile, setValidFile] = useState(null);
@@ -31,7 +31,10 @@ export const FileUpload = ({ name, placeholder, getValue }) => {
   };
   return (
     <div className="upload">
-      <label className="upload__label" htmlFor={name}>
+      <label
+        className={`upload__label ${isRequired && 'upload__label--required'}`}
+        htmlFor={name}
+      >
         {name}
       </label>
       <input
@@ -65,4 +68,5 @@ FileUpload.propTypes = {
   name: string.isRequired,
   placeholder: string.isRequired,
   getValue: func,
+  isRequired: bool,
 };

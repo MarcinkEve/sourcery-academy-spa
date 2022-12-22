@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { func, string, array } from 'prop-types';
+import { func, string, array, bool } from 'prop-types';
 
 import RadioButtonForToggler from '~/components/RadioButtonForToggler';
 import './radio-toggler.scss';
 
-export const RadioToggler = ({ name, values, onValueChange }) => {
+export const RadioToggler = ({
+  name,
+  values,
+  onValueChange,
+  isRequired = true,
+}) => {
   const [radioValue, setRadioValue] = useState(values[0]);
 
   const handleChange = (event) => {
@@ -14,7 +19,11 @@ export const RadioToggler = ({ name, values, onValueChange }) => {
 
   return (
     <>
-      <span className="section-label">{name}</span>
+      <span
+        className={`section-label ${isRequired && 'section-label--required'}`}
+      >
+        {name}
+      </span>
       <div className="radio-toggler">
         {values.map(
           (itemValue, index) =>
@@ -37,4 +46,5 @@ RadioToggler.propTypes = {
   name: string.isRequired,
   values: array.isRequired,
   onValueChange: func.isRequired,
+  isRequired: bool,
 };

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { string, func } from 'prop-types';
+import { string, func, bool } from 'prop-types';
 
 import ErrorMessage from '~/components/ErrorMessage';
 
 import { handleValidation } from './validationOnBlur';
 import './inputField.scss';
 
-export const InputField = ({ name, label, type, placeholder, getValue }) => {
+export const InputField = ({ name, label, type, placeholder, getValue, isRequired = true }) => {
   const [inputValue, setInputValue] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [validInput, setValidInput] = useState(null);
@@ -23,7 +23,10 @@ export const InputField = ({ name, label, type, placeholder, getValue }) => {
 
   return (
     <div className="input">
-      <label htmlFor={name} className="input__label">
+      <label
+        htmlFor={name}
+        className={`input__label ${isRequired && 'input__label--required'}`}
+      >
         {label}
       </label>
 
@@ -36,7 +39,7 @@ export const InputField = ({ name, label, type, placeholder, getValue }) => {
         onBlur={(e) => {
           setInputValue(e.target.value);
         }}
-      ></input>
+      />
       {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>
   );
@@ -48,4 +51,5 @@ InputField.propTypes = {
   type: string.isRequired,
   placeholder: string.isRequired,
   getValue: func,
+  isRequired: bool,
 };
