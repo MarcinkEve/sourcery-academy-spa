@@ -7,17 +7,17 @@ export default {
   title: 'Admission',
   component: Admission,
   args: {
-    theme: 'Developers',
+    theme: 'developers',
     content: developersText,
   },
   argTypes: {
     theme: {
-      options: ['Developers', 'Testers', 'FrontEnd'],
+      options: ['developers', 'testers', 'front-end'],
       control: 'radio',
       mapping: {
-        Developers: { theme: 'developers', content: developersText },
-        Testers: { theme: 'testers', content: testersText },
-        FrontEnd: { theme: 'front-end', content: frontEndText },
+        developers: { theme: 'developers', content: developersText },
+        testers: { theme: 'testers', content: testersText },
+        'front-end': { theme: 'front-end', content: frontEndText },
       },
     },
   },

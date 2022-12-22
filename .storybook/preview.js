@@ -10,6 +10,7 @@ export const argTypes = {
   theme: {
     options: ['developers', 'testers', 'front-end'],
     control: 'radio',
+    defaultValue: 'developers',
   },
 };
 

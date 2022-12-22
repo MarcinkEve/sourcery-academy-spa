@@ -8,28 +8,18 @@ export default {
   args: {
     label: 'Button',
   },
+  argTypes: {
+    handleClick: {
+      table: { disable: true },
+    },
+  },
 };
 
-const provideTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
+export const ButtonStory = (args) => {
+  const { theme } = args;
+  return (
+    <div theme={theme}>
+      <Button {...args} />
+    </div>
+  );
 };
-
-const Template = (args) => <Button {...args} />;
-
-export const Home = Template.bind({});
-Home.decorators = provideTheme('home');
-
-export const Developers = Template.bind({});
-Developers.decorators = provideTheme('developers');
-
-export const Testers = Template.bind({});
-Testers.decorators = provideTheme('testers');
-
-export const FrontEnd = Template.bind({});
-FrontEnd.decorators = provideTheme('front-end');

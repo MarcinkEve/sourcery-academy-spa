@@ -1,144 +1,36 @@
 import React from 'react';
 
 import { DatesContainer } from './DatesContainer';
+import { developersText, testersText, frontEndText } from './storybookText';
 
 export default {
   title: 'Dates container',
   component: DatesContainer,
+  args: {
+    title: 'Dates',
+    cardData: developersText,
+  },
+  argTypes: {
+    theme: {
+      options: ['developers', 'testers', 'front-end'],
+      control: 'radio',
+      mapping: {
+        developers: { theme: 'developers', cardData: developersText },
+        testers: { theme: 'testers', cardData: testersText },
+        'front-end': { theme: 'front-end', cardData: frontEndText },
+      },
+    },
+    title: {
+      table: { disable: true },
+    },
+  },
 };
 
-const setTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <DatesContainer {...args} />;
-export const FullStack = Template.bind({});
-FullStack.decorators = setTheme('developers');
-FullStack.args = {
-  title: 'Dates',
-  cardData: [
-    {
-      text: 'Entrance exam',
-      dates: [
-        {
-          day: 2,
-          month: 'Oct',
-        },
-      ],
-    },
-    {
-      text: 'Academy duration',
-      dates: [
-        {
-          day: 9,
-          month: 'Oct',
-        },
-        {
-          day: 12,
-          month: 'Dec',
-        },
-      ],
-    },
-    {
-      text: 'Final exam',
-      dates: [
-        {
-          day: 16,
-          month: 'Dec',
-        },
-      ],
-    },
-  ],
-};
-
-export const Testers = Template.bind({});
-Testers.decorators = setTheme('testers');
-Testers.args = {
-  title: 'Dates',
-  cardData: [
-    {
-      text: 'Application deadline',
-      dates: [
-        {
-          day: 17,
-          month: 'May',
-        },
-      ],
-    },
-    {
-      text: 'Admission',
-      dates: [
-        {
-          day: 28,
-          month: 'May',
-        },
-        {
-          day: 29,
-          month: 'May',
-        },
-      ],
-    },
-    {
-      text: 'Academy duration',
-      dates: [
-        {
-          day: 26,
-          month: 'Jun',
-        },
-        {
-          day: 30,
-          month: 'Aug',
-        },
-      ],
-    },
-  ],
-};
-
-export const FrontEnd = Template.bind({});
-FrontEnd.decorators = setTheme('front-end');
-FrontEnd.args = {
-  title: 'Dates',
-  cardData: [
-    {
-      text: 'entrance exam',
-      dates: [
-        {
-          day: 26,
-          month: 'sep',
-        },
-        {
-          day: 28,
-          month: 'sep',
-        },
-      ],
-    },
-    {
-      text: 'academy duration',
-      dates: [
-        {
-          day: 30,
-          month: 'oct',
-        },
-        {
-          day: 18,
-          month: 'dec',
-        },
-      ],
-    },
-    {
-      text: 'final exam',
-      dates: [
-        {
-          day: 8,
-          month: 'Jan',
-        },
-      ],
-    },
-  ],
+export const Dates = (args) => {
+  const { theme, cardData } = args.theme;
+  return (
+    <div theme={theme}>
+      <DatesContainer {...args} cardData={cardData} />
+    </div>
+  );
 };
