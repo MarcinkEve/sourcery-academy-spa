@@ -30,14 +30,13 @@ export const ApplicationPage = ({ title, theme }) => {
   });
 
   const inputValuesHandlers = {
-    typeValueHandler: (e) => setFormValues({ ...formValues, type: e }),
-    cityValueHandler: (e) => setFormValues({ ...formValues, city: e }),
-    firstNameValueHandler: (e) =>
-      setFormValues({ ...formValues, firstName: e }),
-    lastNameValueHandler: (e) => setFormValues({ ...formValues, lastName: e }),
-    emailValueHandler: (e) => setFormValues({ ...formValues, email: e }),
-    resumeValueHandler: (e) => setFormValues({ ...formValues, resume: e.name }),
-    checkboxValueHandler: (e) => setFormValues({ ...formValues, checkbox: e }),
+    setTypeValue: (e) => setFormValues({ ...formValues, type: e }),
+    setCityValue: (e) => setFormValues({ ...formValues, city: e }),
+    setFirstNameValue: (e) => setFormValues({ ...formValues, firstName: e }),
+    setLastNameValue: (e) => setFormValues({ ...formValues, lastName: e }),
+    setEmailValue: (e) => setFormValues({ ...formValues, email: e }),
+    setResumeValue: (e) => setFormValues({ ...formValues, resume: e.name }),
+    setCheckboxValue: (e) => setFormValues({ ...formValues, checkbox: e }),
   };
 
   const isBtnDisabled = Object.values(formValues).includes(null);

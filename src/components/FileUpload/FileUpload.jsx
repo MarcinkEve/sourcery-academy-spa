@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './fileUpload.scss';
 import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
-import { validationHandler } from './validationOnBlur';
+import { handleValidation } from './validationOnBlur';
 
 export const FileUpload = ({ name, placeholder, getValue }) => {
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -14,7 +14,7 @@ export const FileUpload = ({ name, placeholder, getValue }) => {
   const fileInput = useRef(null);
 
   useEffect(() => {
-    validationHandler(uploadedFile, setErrorMessage, setValidFile);
+    handleValidation(uploadedFile, setErrorMessage, setValidFile);
   }, [uploadedFile]);
 
   //sending valid file
@@ -25,7 +25,7 @@ export const FileUpload = ({ name, placeholder, getValue }) => {
 
   const triggerInputFile = () => fileInput.current.click();
 
-  const uploadHandler = (e) => {
+  const handleUpload = (e) => {
     const file = e.target.files[0];
     setUploadedFile(file);
   };
@@ -41,7 +41,7 @@ export const FileUpload = ({ name, placeholder, getValue }) => {
         ref={fileInput}
         type="file"
         accept=".pdf"
-        onChange={uploadHandler}
+        onChange={handleUpload}
       />
       <div
         className={classNames('upload__field', {

@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 
 import './inputField.scss';
 import ErrorMessage from '~/components/ErrorMessage';
-import { validationHandler } from './validationOnBlur';
+import { handleValidation } from './validationOnBlur';
 
 export const InputField = ({ name, label, type, placeholder, getValue }) => {
   const [inputValue, setInputValue] = useState(null);
@@ -11,7 +11,7 @@ export const InputField = ({ name, label, type, placeholder, getValue }) => {
   const [validInput, setValidInput] = useState(null);
 
   useEffect(() => {
-    validationHandler(inputValue, type, setErrorMessage, setValidInput);
+    handleValidation(inputValue, type, setErrorMessage, setValidInput);
   }, [inputValue]);
 
   //Send valid input string

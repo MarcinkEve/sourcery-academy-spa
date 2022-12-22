@@ -24,13 +24,13 @@ const renderFormElement = (elementData) => {
   } = elementData;
 
   const {
-    typeValueHandler,
-    cityValueHandler,
-    firstNameValueHandler,
-    lastNameValueHandler,
-    emailValueHandler,
-    resumeValueHandler,
-    checkboxValueHandler,
+    setTypeValue,
+    setCityValue,
+    setFirstNameValue,
+    setLastNameValue,
+    setEmailValue,
+    setResumeValue,
+    setCheckboxValue,
   } = useContext(FormValuesContext);
 
   switch (type) {
@@ -39,7 +39,7 @@ const renderFormElement = (elementData) => {
         <RadioToggler
           name={name}
           values={values}
-          onValueChange={typeValueHandler}
+          onValueChange={setTypeValue}
         />
       );
     case 'radio':
@@ -47,7 +47,7 @@ const renderFormElement = (elementData) => {
         <RadioButton
           name={name}
           radioValues={radioValues}
-          onValueChange={cityValueHandler}
+          onValueChange={setCityValue}
         />
       );
     case 'email':
@@ -57,7 +57,7 @@ const renderFormElement = (elementData) => {
           label={label}
           type={type}
           placeholder={placeholder}
-          getValue={emailValueHandler}
+          getValue={setEmailValue}
         />
       );
     case 'text':
@@ -68,9 +68,7 @@ const renderFormElement = (elementData) => {
           type={type}
           placeholder={placeholder}
           getValue={
-            `${name}` === 'firstName'
-              ? firstNameValueHandler
-              : lastNameValueHandler
+            `${name}` === 'firstName' ? setFirstNameValue : setLastNameValue
           }
         />
       );
@@ -80,7 +78,7 @@ const renderFormElement = (elementData) => {
           name={name}
           label={label}
           placeholder={placeholder}
-          getValue={resumeValueHandler}
+          getValue={setResumeValue}
         />
       );
     case 'checkbox':
@@ -90,7 +88,7 @@ const renderFormElement = (elementData) => {
           checkboxText={checkboxText}
           type="checkbox"
           errorMessage={errorMessage}
-          getCheckboxValue={checkboxValueHandler}
+          getCheckboxValue={setCheckboxValue}
         />
       );
   }

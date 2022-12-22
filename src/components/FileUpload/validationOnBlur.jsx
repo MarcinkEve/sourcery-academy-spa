@@ -13,7 +13,7 @@ export const fileYumSchema = object({
   size: number().lessThan(fileSizeKb, errorTextForFileSize),
 });
 
-export const validationHandler = (
+export const handleValidation = (
   uploadedFile,
   setErrorMessage,
   setValidFile

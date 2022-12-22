@@ -25,7 +25,7 @@ const emailYupSchema = string()
   .max(maxEmailLength, errorTextForEmail)
   .trim();
 
-export const validationHandler = (
+export const handleValidation = (
   inputValue,
   typeOfInputToValidate,
   setErrorMessage,
