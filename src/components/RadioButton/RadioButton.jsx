@@ -4,10 +4,14 @@ import classNames from 'classnames';
 
 import './radioButton.scss';
 
-export const RadioButton = ({ radioValues, name, onValueChange, isRequired = true }) => {
+export const RadioButton = ({
+  radioValues,
+  name,
+  onValueChange,
+  isRequired = true,
+}) => {
   return (
     <div className="radio">
-      <span className="radio__title">{name}</span>
       <span
         className={classNames('radio__title', {
           'radio__title--required': isRequired,
