@@ -7,6 +7,8 @@
 
   column-gap: $_gap-size;
   display: grid;
+
+  /* autoprefixer: ignore next */
   grid-auto-rows: to-rem(220);
   grid-template-columns: repeat(4, 1fr);
   row-gap: $_gap-size;
