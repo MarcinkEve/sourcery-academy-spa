@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { ROUTES } from '~/constants/routes';
 import Particles from '~/assets/particles/particles-media.svg';
@@ -8,16 +8,21 @@ import Error from '~/components/Error';
 
 import { getMedia } from '../MediaProvider';
 import { MediaSection } from '../MediaSection';
+import { IMAGE_LIMIT, MEDIA_PAGE_SECTION_IDS } from '../constants';
 import './media-section-academies.scss';
 
 export const MediaSectionAcademies = () => {
   const { data, error } = getMedia();
   const nav = useNavigate();
+  const currentAcademy = useLocation().pathname.slice(1);
+
   const handleButtonClick =
-    data.length > 6
+    data.length > IMAGE_LIMIT
       ? () =>
           nav(ROUTES.MEDIA, {
-            state: { targetId: `${location.pathname.slice(1)}Media` },
+            state: {
+              targetId: MEDIA_PAGE_SECTION_IDS[currentAcademy.toUpperCase()],
+            },
           })
       : null;
 
@@ -31,7 +36,7 @@ export const MediaSectionAcademies = () => {
           <Line className="media-section-academies__line" />
           <MediaSection
             title="Media"
-            mediaList={data.slice(0, 6)}
+            mediaList={data.slice(0, IMAGE_LIMIT)}
             handleButtonClick={handleButtonClick}
           />
         </>

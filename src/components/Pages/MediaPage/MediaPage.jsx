@@ -5,6 +5,7 @@ import { string } from 'prop-types';
 import PageLayout from '~/layout/pageLayout';
 import MediaSection from '~/components/MediaSection';
 import { getMedia } from '~/components/MediaSection/MediaProvider';
+import { MEDIA_PAGE_SECTION_IDS } from '~/components/MediaSection/constants';
 import Error from '~/components/Error';
 
 import './media-page.scss';
@@ -13,12 +14,12 @@ export const MediaPage = ({ theme }) => {
   const { data, error } = getMedia();
   const { targetId } = useLocation().state || {};
 
-  const filterMedia = (academy) =>
+  const getMediaByAcademy = (academy) =>
     data.filter((item) => item.academy === academy);
 
-  const developersMedia = filterMedia('developers');
-  const testersMedia = filterMedia('testers');
-  const frontendMedia = filterMedia('frontend');
+  const developersMedia = getMediaByAcademy('developers');
+  const testersMedia = getMediaByAcademy('testers');
+  const frontendMedia = getMediaByAcademy('frontend');
 
   useEffect(() => {
     if (targetId) {
@@ -37,17 +38,17 @@ export const MediaPage = ({ theme }) => {
             <MediaSection
               title="Sourcery for Developers"
               mediaList={developersMedia}
-              id="developersMedia"
+              id={MEDIA_PAGE_SECTION_IDS.DEVELOPERS}
             />
             <MediaSection
               title="Sourcery for Testers"
               mediaList={testersMedia}
-              id="testersMedia"
+              id={MEDIA_PAGE_SECTION_IDS.TESTERS}
             />
             <MediaSection
               title="Sourcery for Front-end"
               mediaList={frontendMedia}
-              id="frontendMedia"
+              id={MEDIA_PAGE_SECTION_IDS.FRONTEND}
             />
           </>
         )}

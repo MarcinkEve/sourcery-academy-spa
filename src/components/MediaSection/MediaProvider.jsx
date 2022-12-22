@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { func, node } from 'prop-types';
 
-import { ROUTES } from '~/constants/routes.js';
+import { ROUTES, LINKS } from '~/constants';
 
 export const getMedia = () => {
   const { pathname } = useLocation();
@@ -44,7 +44,7 @@ export const MediaContext = createContext(initialState);
 export const MediaProvider = ({ children }) => {
   const [media, setMedia] = useState(initialState);
   useEffect(() => {
-    fetch('https://sfe-2022-data.netlify.app/static/media.json')
+    fetch(LINKS.MEDIA)
       .then((response) => response.json())
       .then((response) => setMedia({ data: response, error: false }))
       .catch(() => setMedia({ data: [], error: true }));
