@@ -1,13 +1,13 @@
-import { oneOf } from 'prop-types';
 import React from 'react';
 
 import { Admission } from './Admission';
+import { developersText, testersText, frontEndText } from './storybookText';
 
 export default {
   title: 'Admission',
   component: Admission,
   args: {
-    theme: 'Blue',
+    theme: 'Developers',
     content: [
       {
         heading: 'Introduction',
@@ -27,22 +27,22 @@ export default {
   },
   argTypes: {
     theme: {
-      options: ['Blue', 'Green', 'Red'],
+      options: ['Developers', 'Testers', 'FrontEnd'],
       control: 'radio',
       mapping: {
-        Blue: 'developers',
-        Green: 'testers',
-        Red: 'front-end',
+        Developers: { theme: 'developers', content: developersText },
+        Testers: { theme: 'testers', content: testersText },
+        FrontEnd: { theme: 'front-end', content: frontEndText },
       },
     },
   },
 };
 
 export const AdmissionComponent = (args) => {
-  const { theme, ...rest } = args;
+  const { theme, content } = args.theme;
   return (
     <div theme={theme}>
-      <Admission {...rest} />
+      <Admission content={content} />
     </div>
   );
 };
