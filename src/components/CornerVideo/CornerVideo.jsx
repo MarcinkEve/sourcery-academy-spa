@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { bool, string } from 'prop-types';
+import { string } from 'prop-types';
 
 import PlayButton from '~/assets/icons/icon-play-button.svg';
 import VideoPlayer from '~/components/VideoPlayer';
@@ -17,7 +17,11 @@ export const CornerVideo = ({ image, description, videoSrc }) => {
         onClose={() => setIsModalOpen(false)}
       />
       <div className="corner-video">
-        <img src={image} alt={description || ''} />
+        <img
+          src={image}
+          alt={description || ''}
+          className="corner-video__image"
+        />
         <button
           type="button"
           className="corner-video__button"
