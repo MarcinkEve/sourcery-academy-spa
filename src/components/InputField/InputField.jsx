@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { string, func, bool } from 'prop-types';
 
 import ErrorMessage from '~/components/ErrorMessage';
@@ -25,7 +26,9 @@ export const InputField = ({ name, label, type, placeholder, getValue, isRequire
     <div className="input">
       <label
         htmlFor={name}
-        className={`input__label ${isRequired && 'input__label--required'}`}
+        className={classNames('input__label', {
+          'input__label--required': isRequired,
+        })}
       >
         {label}
       </label>

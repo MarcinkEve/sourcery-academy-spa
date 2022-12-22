@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { func, string, array, bool } from 'prop-types';
+import classNames from 'classnames';
 
 import RadioButtonForToggler from '~/components/RadioButtonForToggler';
 import './radio-toggler.scss';
@@ -20,7 +21,9 @@ export const RadioToggler = ({
   return (
     <>
       <span
-        className={`section-label ${isRequired && 'section-label--required'}`}
+        className={classNames('section-label', {
+          'section-label--required': isRequired,
+        })}
       >
         {name}
       </span>

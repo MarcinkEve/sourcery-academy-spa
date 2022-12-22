@@ -32,7 +32,9 @@ export const FileUpload = ({ name, placeholder, getValue, isRequired = true }) =
   return (
     <div className="upload">
       <label
-        className={`upload__label ${isRequired && 'upload__label--required'}`}
+        className={classNames('upload__label', {
+          'upload__label--required': isRequired,
+        })}
         htmlFor={name}
       >
         {name}
