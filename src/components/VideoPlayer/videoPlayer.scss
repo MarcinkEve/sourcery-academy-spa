@@ -1,10 +1,8 @@
 @import '~/sass/variables';
 @import '~/sass/utilities';
 
-$_semi-transparent-color: rgba(0, 0, 0, 0.3);
-
 .overlay {
-  background-color: $_semi-transparent-color;
+  background-color: $semi-transparent-bg-clr;
   height: 100%;
   left: 0;
   position: fixed;
@@ -137,7 +135,7 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
   &__volume-mute {
     &:hover + #{$_this}__volume-bar,
     &:focus-visible + #{$_this}__volume-bar {
-      background-color: $_semi-transparent-color;
+      background-color: $semi-transparent-bg-clr;
       bottom: to-rem(74);
       right: to-rem(43);
       width: to-rem(120);
@@ -154,7 +152,7 @@ $_semi-transparent-color: rgba(0, 0, 0, 0.3);
 
     &:hover,
     &:focus-visible {
-      background-color: $_semi-transparent-color;
+      background-color: $semi-transparent-bg-clr;
       bottom: to-rem(74);
       right: to-rem(43);
       width: to-rem(120);
