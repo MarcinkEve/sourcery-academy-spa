@@ -2,9 +2,23 @@
 @import '~/sass/utilities/mixins';
 
 .corner-video {
-  max-height: to-rem(620);
-  max-width: to-rem(620);
+  height: to-rem(620);
   position: relative;
+  width: to-rem(620);
+
+  &::before {
+    background-color: $white-400;
+    border-radius: 30%;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
 
   &__image {
     border-radius: 30%;
