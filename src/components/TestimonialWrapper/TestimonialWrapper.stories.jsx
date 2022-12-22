@@ -8,30 +8,43 @@ export default {
   title: 'TestimonialWrapper',
   component: TestimonialWrapper,
   args: {
-    theme: 'Violet',
+    theme: 'developers',
     title: 'Testimonials',
-    data: data.slice(0, 4),
   },
   argTypes: {
     theme: {
-      options: ['Violet', 'Blue', 'Green', 'Red'],
+      options: ['developers', 'testers', 'front-end'],
       control: 'radio',
       mapping: {
-        Violet: 'home',
-        Blue: 'developers',
-        Green: 'testers',
-        Red: 'front-end',
+        developers: { theme: 'developers', data: data.slice(2, 5) },
+        testers: { theme: 'testers', data: data.slice(5, 8) },
+        'front-end': { theme: 'front-end', data: data.slice(8, 11) },
+      },
+    },
+    alt: {
+      table: {
+        disable: true,
+      },
+    },
+    title: {
+      table: {
+        disable: true,
+      },
+    },
+    data: {
+      table: {
+        disable: true,
       },
     },
   },
 };
 
 export const TestimonialWrapperComponent = (args) => {
-  const { theme, ...rest } = args;
+  const { theme, data } = args.theme;
 
   return (
     <div theme={theme} className={'story-container'}>
-      <TestimonialWrapper {...rest} />
+      <TestimonialWrapper data={data} {...args} />
     </div>
   );
 };

@@ -8,19 +8,13 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
-const setTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <SuccessMessage {...args} />;
-
-export const Success = Template.bind({});
-Success.decorators = setTheme('application');
+export const SuccessComponent = (args) => <SuccessMessage {...args} />;

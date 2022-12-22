@@ -3,33 +3,34 @@ import TestimonialCard from './index';
 import { data } from './data';
 
 export default {
-  component: TestimonialCard,
   title: 'TestimonialCard',
+  component: TestimonialCard,
   args: {
     data: data[0],
   },
+  argTypes: {
+    theme: {
+      options: ['developers', 'testers', 'front-end'],
+      control: 'radio',
+      mapping: {
+        developers: { theme: 'developers', data: data[3] },
+        testers: { theme: 'testers', data: data[5] },
+        'front-end': { theme: 'front-end', data: data[9] },
+      },
+    },
+    alt: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
-const provideTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
+export const Testimonial = (args) => {
+  const { theme, data } = args.theme;
+  return (
+    <div theme={theme}>
+      <TestimonialCard data={data} />
+    </div>
+  );
 };
-
-const Template = (args) => <TestimonialCard {...args} />;
-
-export const Home = Template.bind({});
-Home.decorators = provideTheme('home');
-
-export const Developers = Template.bind({});
-Developers.decorators = provideTheme('developers');
-
-export const Testers = Template.bind({});
-Testers.decorators = provideTheme('testers');
-
-export const FrontEnd = Template.bind({});
-FrontEnd.decorators = provideTheme('front-end');

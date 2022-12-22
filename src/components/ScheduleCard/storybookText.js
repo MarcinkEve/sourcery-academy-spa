@@ -29,7 +29,7 @@ export const testersData = {
   },
   lectureDates: [
     {
-      city: 'Kauhas',
+      city: 'Kaunas',
       day: 25,
       month: 'Sep',
     },
