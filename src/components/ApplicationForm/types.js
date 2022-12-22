@@ -12,7 +12,7 @@ export const sectionType = shape({
       }),
       // types for RadioButton
       shape({
-        title: string.isRequired,
+        name: string.isRequired,
         radioValues: arrayOf(
           shape({
             name: string,

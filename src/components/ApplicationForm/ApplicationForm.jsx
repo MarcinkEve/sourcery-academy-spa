@@ -1,19 +1,23 @@
 import React from 'react';
-import { string, shape, func } from 'prop-types';
+import { string, shape, func, bool } from 'prop-types';
 
-import './application-form.scss';
-import { sectionType } from './types';
-import FormSection from './FormSection';
 import Button from '~/components/Button';
 
-export const ApplicationForm = ({ data, setIsSubmitted }) => {
+import FormSection from './FormSection';
+import { sectionType } from './types';
+import './application-form.scss';
+
+export const ApplicationForm = ({ data, isButtonDisabled, submitHandler }) => {
+  const { section_1, section_2, button } = data;
+
   return (
     <form className="application-form">
-      <FormSection sectionData={data.section_1} />
-      <FormSection sectionData={data.section_2} />
+      <FormSection sectionData={section_1} />
+      <FormSection sectionData={section_2} />
       <Button
-        label={data.button.label}
-        handleClick={(e) => setIsSubmitted(true)}
+        label={button.label}
+        handleClick={submitHandler}
+        disabled={isButtonDisabled}
       />
     </form>
   );
@@ -27,5 +31,6 @@ ApplicationForm.propTypes = {
       label: string,
     }),
   }),
-  setIsSubmitted: func,
+  isButtonDisabled: bool,
+  submitHandler: func,
 };

@@ -10,9 +10,9 @@ export const Checkbox = ({
   errorMessage,
   name,
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(null);
 
-  const clickHandler = (event) => {
+  const handleClick = (event) => {
     setIsChecked(event.target.checked);
     getCheckboxValue(event.target.checked);
   };
@@ -24,8 +24,8 @@ export const Checkbox = ({
           <div>
             <input
               className="checkbox__default-checkmark"
-              checked={isChecked}
-              onChange={clickHandler}
+              onChange={handleClick}
+              onKeyDown={(e) => e.key === 'Enter' && setIsChecked(!isChecked)}
               type="checkbox"
               name={name}
             />
@@ -38,14 +38,16 @@ export const Checkbox = ({
           <p className="checkbox__text">{checkboxText}</p>
         </div>
       </label>
-      {errorMessage && <ErrorMessage message={errorMessage} />}
+      {isChecked === false && errorMessage && (
+        <ErrorMessage message={errorMessage} />
+      )}
     </>
   );
 };
 
 Checkbox.propTypes = {
   checkboxText: string.isRequired,
-  getCheckboxValue: func.isRequired,
+  getCheckboxValue: func,
   name: string.isRequired,
   errorMessage: string,
 };

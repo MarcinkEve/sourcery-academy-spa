@@ -1,28 +1,34 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 
 import './fileUpload.scss';
 import UploadIcon from '~/assets/icons/icon-upload.svg';
 import ErrorMessage from '~/components/ErrorMessage';
+import { handleValidation } from './validationOnBlur';
 
-export const FileUpload = ({
-  name,
-  placeholder,
-  errorMessage,
-  onValueChange,
-}) => {
-  const [uploadedFile, setUploadedFile] = useState('');
+export const FileUpload = ({ name, placeholder, getValue }) => {
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [validFile, setValidFile] = useState(null);
   const fileInput = useRef(null);
+
+  useEffect(() => {
+    handleValidation(uploadedFile, setErrorMessage, setValidFile);
+  }, [uploadedFile]);
+
+  //sending valid file
+  useEffect(() => {
+    if (validFile && getValue) return getValue(validFile);
+    return;
+  }, [validFile]);
 
   const triggerInputFile = () => fileInput.current.click();
 
-  const uploadHandler = (e) => {
+  const handleUpload = (e) => {
     const file = e.target.files[0];
     setUploadedFile(file);
-    onValueChange(file);
   };
-
   return (
     <div className="upload">
       <label className="upload__label" htmlFor={name}>
@@ -35,7 +41,7 @@ export const FileUpload = ({
         ref={fileInput}
         type="file"
         accept=".pdf"
-        onChange={uploadHandler}
+        onChange={handleUpload}
       />
       <div
         className={classNames('upload__field', {
@@ -58,6 +64,5 @@ export const FileUpload = ({
 FileUpload.propTypes = {
   name: string.isRequired,
   placeholder: string.isRequired,
-  errorMessage: string,
-  onValueChange: func,
+  getValue: func,
 };
