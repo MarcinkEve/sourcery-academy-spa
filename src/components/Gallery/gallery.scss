@@ -2,8 +2,8 @@
 @import '~/sass/utilities/mixins';
 
 .gallery {
-  $_gap-size: $spacer-l;
   $_this: &;
+  $_gap-size: $spacer-l;
 
   column-gap: $_gap-size;
   display: grid;
