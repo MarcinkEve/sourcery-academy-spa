@@ -7,7 +7,7 @@ import FormSection from './FormSection';
 import { sectionType } from './types';
 import './application-form.scss';
 
-export const ApplicationForm = ({ data, isBtnDisabled, submitHandler }) => {
+export const ApplicationForm = ({ data, isButtonDisabled, submitHandler }) => {
   const { section_1, section_2, button } = data;
 
   return (
@@ -17,7 +17,7 @@ export const ApplicationForm = ({ data, isBtnDisabled, submitHandler }) => {
       <Button
         label={button.label}
         handleClick={submitHandler}
-        disabled={isBtnDisabled}
+        disabled={isButtonDisabled}
       />
     </form>
   );
@@ -31,6 +31,6 @@ ApplicationForm.propTypes = {
       label: string,
     }),
   }),
-  isBtnDisabled: bool,
+  isButtonDisabled: bool,
   submitHandler: func,
 };

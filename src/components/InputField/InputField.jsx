@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { string, func } from 'prop-types';
 
-import './inputField.scss';
 import ErrorMessage from '~/components/ErrorMessage';
+
 import { handleValidation } from './validationOnBlur';
+import './inputField.scss';
 
 export const InputField = ({ name, label, type, placeholder, getValue }) => {
   const [inputValue, setInputValue] = useState(null);

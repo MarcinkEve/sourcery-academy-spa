@@ -39,7 +39,7 @@ export const ApplicationPage = ({ title, theme }) => {
     setCheckboxValue: (e) => setFormValues({ ...formValues, checkbox: e }),
   };
 
-  const isBtnDisabled = Object.values(formValues).includes(null);
+  const isButtonDisabled = Object.values(formValues).includes(null);
 
   const submitHandler = () => {
     setIsSubmitted(true);
@@ -58,7 +58,7 @@ export const ApplicationPage = ({ title, theme }) => {
               ) : (
                 <ApplicationForm
                   data={applicationPageData}
-                  isBtnDisabled={isBtnDisabled}
+                  isButtonDisabled={isButtonDisabled}
                   submitHandler={submitHandler}
                 />
               )}

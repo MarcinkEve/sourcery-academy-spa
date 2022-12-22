@@ -1,12 +1,12 @@
 import { string } from 'yup';
 
 //validation data for name input
-const notAllowedCharRegex = /^[^!@#$%^&*()_+=[\]{};':"|<>\\/?\d]+$/;
+const notAllowedCharRegex = /^[^!@#$%^&*()_+=[\]{};:"|<>\\/?\d]+$/;
 const minNameLength = 2;
 const maxNameLength = 64;
 const errorForNameLength = `Name needs to contain between ${minNameLength} and ${maxNameLength} symbols`;
 const errorTextForNameSymbols =
-  'If needed please use the following symbols “-“, “,“ “.“ “';
+  "If needed please use the following symbols ( - , . ' )";
 
 // validation data for email
 const minEmailLength = 6;

@@ -3,7 +3,7 @@ import { string, number, object } from 'yup';
 // validation data for file
 const fileSizeMb = 2;
 const fileSizeKb = fileSizeMb * 1000000;
-const errorTextForFile = 'File must be pdf format';
+const errorTextForFile = 'File must be PDF format';
 const errorTextForFileSize = `File has to be less than ${fileSizeMb}mb`;
 
 export const fileYumSchema = object({
