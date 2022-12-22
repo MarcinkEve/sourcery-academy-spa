@@ -10,6 +10,7 @@
 
   border: 2px solid;
   border-radius: 8px;
+  min-height: to-rem(52);
   transition: $transition-time-200;
 
   &:not(:last-child) {
@@ -19,7 +20,7 @@
   &__date {
     @include flex-box($direction: column, $justify-content: center);
 
-    height: to-rem(51);
+    height: 100%;
     text-align: center;
     width: 25%;
     word-break: break-word;
@@ -39,19 +40,21 @@
   // &__separator {
   //   width: to-rem(2);
   // }
+
   &__separator {
     position: relative;
 
-    &::before {
+    &::after {
       background-color: var(--primary-color);
       border-radius: 30px;
-      bottom: to-rem(1);
+      bottom: to-rem(5.5);
       content: '';
       position: absolute;
-      top: to-rem(0);
+      top: to-rem(5.5);
       width: to-rem(2);
     }
   }
+
   // COMPONENT / SVG
   &__pin {
     flex-shrink: 0;
