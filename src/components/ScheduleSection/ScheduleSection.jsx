@@ -1,11 +1,12 @@
 import React from 'react';
 
-import './schedule-section.scss';
 import TopParticles from '~/assets/particles/particles-schedule-top.svg';
 import BottomParticles from '~/assets/particles/particles-schedule-bottom.svg';
 import Line from '~/assets/lines/line-schedule.svg';
 import ScheduleCardsWrapper from '~/components/ScheduleCardsWrapper';
 import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
+
+import './schedule-section.scss';
 
 export const ScheduleSection = ({ schedule }) => {
   return (
