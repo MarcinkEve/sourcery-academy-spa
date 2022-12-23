@@ -14,8 +14,8 @@ $_button-size: to-rem(40);
   }
 
   &__navigation {
-    column-gap: to-rem(10);
     display: flex;
+    gap: to-rem(10);
     margin-left: to-rem(20);
     margin-top: calc(-1rem - #{$_button-size});
     position: absolute;
