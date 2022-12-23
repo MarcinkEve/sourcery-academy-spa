@@ -5,23 +5,24 @@ import { RadioButton } from './RadioButton';
 export default {
   title: 'Form / Radio Button',
   component: RadioButton,
-};
-
-const setTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+    onValueChange: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 const Template = (args) => <RadioButton {...args} />;
 export const RadioButtonComponent = Template.bind({});
-RadioButtonComponent.decorators = setTheme('application');
 RadioButtonComponent.args = {
-  title: 'Academy city',
+  name: 'City',
   radioValues: [
     {
       name: 'Kaunas',
@@ -34,4 +35,5 @@ RadioButtonComponent.args = {
       id: 81554,
     },
   ],
+  isRequired: true,
 };

@@ -11,6 +11,18 @@ export default {
       </div>
     ),
   ],
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+    getValue: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 const Template = (args) => <FileUpload {...args} />;
@@ -19,5 +31,5 @@ export const ResumeUpload = Template.bind({});
 ResumeUpload.args = {
   name: 'Resume',
   placeholder: 'Upload your resume',
-  getValue: () => {},
+  isRequired: true,
 };

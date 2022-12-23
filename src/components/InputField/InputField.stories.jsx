@@ -12,6 +12,23 @@ export default {
       </div>
     ),
   ],
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+    name: {
+      table: {
+        disable: true,
+      },
+    },
+    getValue: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 const Template = (args) => <InputField {...args} />;
@@ -22,4 +39,5 @@ Input.args = {
   label: 'Your first name',
   type: 'text',
   placeholder: 'Enter your first name',
+  isRequired: true,
 };
