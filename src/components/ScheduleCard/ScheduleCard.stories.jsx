@@ -10,6 +10,7 @@ export default {
     layout: 'centered',
   },
   args: {
+    theme: 'developers',
     lectureData: developersData.lectureData,
     lectureDates: developersData.lectureDates,
   },

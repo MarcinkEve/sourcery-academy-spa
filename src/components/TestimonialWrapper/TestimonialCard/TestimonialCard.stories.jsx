@@ -6,6 +6,7 @@ export default {
   title: 'TestimonialCard',
   component: TestimonialCard,
   args: {
+    theme: 'developers',
     data: data[0],
   },
   argTypes: {

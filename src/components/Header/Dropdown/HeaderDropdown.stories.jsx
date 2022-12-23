@@ -29,6 +29,9 @@ export default {
     theme: {
       table: { disable: true },
     },
+    onClickOutside: {
+      table: { disable: true },
+    },
   },
 };
 

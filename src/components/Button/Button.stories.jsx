@@ -6,7 +6,9 @@ export default {
   title: 'Button',
   component: Button,
   args: {
+    theme: 'developer',
     label: 'Button',
+    disabled: false,
   },
   argTypes: {
     handleClick: {

@@ -7,6 +7,7 @@ export default {
   title: 'Dates container',
   component: DatesContainer,
   args: {
+    theme: 'developers',
     title: 'Dates',
     cardData: developersText,
   },
