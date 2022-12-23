@@ -11,7 +11,7 @@ export const FrontEnd = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <AcademyWrapper
-        schedule={scheduleData}
+        schedule={''}
         applicationText={applicationProcessData.frontEndText}
       />
     </PageLayout>

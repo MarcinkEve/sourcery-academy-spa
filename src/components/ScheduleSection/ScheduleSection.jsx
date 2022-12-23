@@ -9,13 +9,17 @@ import { scheduleType } from '~/components/ScheduleCardsWrapper/types';
 
 export const ScheduleSection = ({ schedule }) => {
   return (
-    <section className="schedule-section">
-      <TopParticles className="schedule-section__top-particles" />
-      <h2 className="schedule-section__title">Schedule</h2>
-      <ScheduleCardsWrapper schedule={schedule} />
-      <BottomParticles className="schedule-section__bottom-particles" />
-      <Line className="schedule-section__line" />
-    </section>
+    <>
+      {schedule && (
+        <section className="schedule-section">
+          <TopParticles className="schedule-section__top-particles" />
+          <h2 className="schedule-section__title">Schedule</h2>
+          <ScheduleCardsWrapper schedule={schedule} />
+          <BottomParticles className="schedule-section__bottom-particles" />
+          <Line className="schedule-section__line" />
+        </section>
+      )}
+    </>
   );
 };
 
