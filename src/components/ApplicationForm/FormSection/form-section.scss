@@ -10,7 +10,11 @@
   }
 
   &__input {
-    margin-top: to-rem(20);
+    min-height: to-rem(102);
+
+    &:first-child {
+      margin-top: to-rem(20);
+    }
 
     &--spaced {
       margin: to-rem(60) 0;

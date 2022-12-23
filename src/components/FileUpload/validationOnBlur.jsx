@@ -5,12 +5,15 @@ const fileSizeMb = 2;
 const fileSizeKb = fileSizeMb * 1000000;
 const errorTextForFile = 'File must be PDF format';
 const errorTextForFileSize = `File has to be less than ${fileSizeMb}mb`;
+const errorTextForEmptyFile = 'File can not be empty';
 
 export const fileYumSchema = object({
   name: string().matches(/\b\w*\.pdf\b/, errorTextForFile, {
     excludeEmptyString: true,
   }),
-  size: number().lessThan(fileSizeKb, errorTextForFileSize),
+  size: number()
+    .lessThan(fileSizeKb, errorTextForFileSize)
+    .moreThan(0, errorTextForEmptyFile),
 });
 
 export const handleValidation = (
