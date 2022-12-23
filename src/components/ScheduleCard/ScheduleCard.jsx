@@ -29,6 +29,7 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
       onClick={handleOpen}
       onKeyDown={handleKeyDown}
       tabIndex="0"
+      aria-expanded={isCardExpanded ? 'true' : 'false'}
     >
       <div className="schedule-card__title">
         {lectureData.lecture && (
