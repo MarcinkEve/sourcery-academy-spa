@@ -27,7 +27,6 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
     <div
       className="schedule-card"
       onClick={handleOpen}
-      role="button"
       onKeyDown={handleKeyDown}
       tabIndex="0"
     >
