@@ -8,7 +8,7 @@ const errorTextForFileSize = `File has to be less than ${fileSizeMb}mb`;
 const errorTextForEmptyFile = 'File can not be empty';
 
 export const fileYumSchema = object({
-  name: string().matches(/\b\w*\.pdf\b/, errorTextForFile, {
+  name: string().matches(/\b\w*\s*\.\s*pdf\b/, errorTextForFile, {
     excludeEmptyString: true,
   }),
   size: number()
@@ -33,7 +33,7 @@ export const handleValidation = (
         setValidFile(yupValidation);
       } catch (err) {
         setErrorMessage(err.message);
-        setValidFile(null);
+        setValidFile('null');
       }
     };
     validateFileFromInput();

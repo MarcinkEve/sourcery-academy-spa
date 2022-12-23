@@ -39,7 +39,9 @@ export const ApplicationPage = ({ title, theme }) => {
     setCheckboxValue: (e) => setFormValues({ ...formValues, checkbox: e }),
   };
 
-  const isButtonDisabled = Object.values(formValues).includes(null);
+  const isButtonDisabled = Object.values(formValues).some((value) =>
+    [null, undefined].includes(value)
+  );
 
   const submitHandler = () => {
     setIsSubmitted(true);
