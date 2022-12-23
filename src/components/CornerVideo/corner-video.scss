@@ -2,8 +2,16 @@
 @import '~/sass/utilities/mixins';
 
 .corner-video {
+  max-height: to-rem(620);
+  max-width: to-rem(620);
   position: relative;
-  width: to-rem(620);
+
+  &__image {
+    border-radius: 30%;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
 
   &__button {
     @include flex-box(
@@ -14,10 +22,14 @@
     @include center-alignment;
 
     background: transparent;
-    border: transparent;
+    border: var(--primary-color);
     border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
     padding: 0;
     position: absolute;
+    transition: color $transition-time-200 ease,
+      background-color $transition-time-200 ease;
     width: to-rem(90);
 
     &:hover {

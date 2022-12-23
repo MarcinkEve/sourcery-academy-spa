@@ -1,59 +1,94 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 
-import './form-section.scss';
 import { sectionType } from '~/components/ApplicationForm/types';
 import RadioToggler from '~/components/RadioToggler';
 import RadioButton from '~/components/RadioButton';
 import InputField from '~/components/InputField';
 import FileUpload from '~/components/FileUpload';
 import Checkbox from '~/components/Checkbox';
+import { FormValuesContext } from '~/components/Pages/ApplicationPage/ApplicationPage';
+
+import './form-section.scss';
 
 const renderFormElement = (elementData) => {
-  switch (elementData.type) {
+  const {
+    type,
+    name,
+    values,
+    radioValues,
+    label,
+    placeholder,
+    checkboxText,
+    errorMessage,
+  } = elementData;
+
+  const {
+    setTypeValue,
+    setCityValue,
+    setFirstNameValue,
+    setLastNameValue,
+    setEmailValue,
+    setResumeValue,
+    setCheckboxValue,
+  } = useContext(FormValuesContext);
+
+  switch (type) {
     case 'radioToggler':
       return (
         <RadioToggler
-          name={elementData.name}
-          values={elementData.values}
-          onValueChange={() => {}}
+          name={name}
+          values={values}
+          onValueChange={setTypeValue}
         />
       );
     case 'radio':
       return (
         <RadioButton
-          title={elementData.title}
-          radioValues={elementData.radioValues}
-          onValueChange={() => {}}
+          name={name}
+          radioValues={radioValues}
+          onValueChange={setCityValue}
         />
       );
-    case 'text':
     case 'email':
       return (
         <InputField
-          name={elementData.name}
-          label={elementData.label}
-          type={elementData.type}
-          placeholder={elementData.placeholder}
-          getValue={() => {}}
+          name={name}
+          label={label}
+          type={type}
+          placeholder={placeholder}
+          getValue={setEmailValue}
+        />
+      );
+    case 'text':
+      return (
+        <InputField
+          name={name}
+          label={label}
+          type={type}
+          placeholder={placeholder}
+          getValue={
+            `${name}` === 'firstName' ? setFirstNameValue : setLastNameValue
+          }
         />
       );
     case 'file':
       return (
         <FileUpload
-          name={elementData.name}
-          label={elementData.label}
-          placeholder={elementData.placeholder}
-          onValueChange={() => {}}
+          name={name}
+          label={label}
+          placeholder={placeholder}
+          getValue={setResumeValue}
         />
       );
     case 'checkbox':
       return (
         <Checkbox
-          name={elementData.name}
-          checkboxText={elementData.checkboxText}
+          name={name}
+          checkboxText={checkboxText}
           type="checkbox"
-          getCheckboxValue={() => {}}
+          errorMessage={errorMessage}
+          getCheckboxValue={setCheckboxValue}
         />
       );
   }

@@ -3,11 +3,15 @@
 
 .gallery {
   $_this: &;
+  $_gap-size: $spacer-l;
 
+  column-gap: $_gap-size;
   display: grid;
-  gap: $spacer-l;
+
+  /* autoprefixer: ignore next */
   grid-auto-rows: to-rem(220);
   grid-template-columns: repeat(4, 1fr);
+  row-gap: $_gap-size;
 
   &__item {
     @include box-shadow;
@@ -21,6 +25,10 @@
     &:active {
       cursor: pointer;
       transform: scale(1.02);
+
+      #{$_this}__play-icon {
+        background-color: var(--primary-color);
+      }
     }
 
     &:focus-visible {
@@ -56,6 +64,7 @@
     border-radius: 50%;
     color: var(--primary-color);
     position: absolute;
+    transition: background-color $transition-time-200 ease;
     width: to-rem(90);
   }
 }

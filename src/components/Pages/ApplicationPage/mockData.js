@@ -8,16 +8,16 @@ export const data = {
         type: 'radioToggler',
       },
       {
-        title: 'Academy city',
+        name: 'Academy city',
         radioValues: [
           {
             name: 'Kaunas',
-            value: 'kaunas',
+            value: 'Kaunas',
             id: 15698,
           },
           {
             name: 'Vilnius',
-            value: 'vilnius',
+            value: 'Vilnius',
             id: 81554,
           },
         ],
@@ -55,7 +55,8 @@ export const data = {
         type: 'checkbox',
         checkboxText:
           'I have read, understand and accept the content of the Privacy Notice and consent to the processing of my data as part of this application.',
-        name: 'privacyConsent',
+        name: 'checkbox',
+        errorMessage: 'Please read and agree to terms and conditions',
       },
     ],
   },
