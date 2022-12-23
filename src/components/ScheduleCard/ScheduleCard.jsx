@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-
 import { SlideDown } from 'react-slidedown';
-import { ScheduleCardLocation } from './ScheduleCardLocation';
 
-import { scheduleCardType } from './types';
+import '~/sass/vendor/slidedown.scss';
+import IconClock from '~/assets/icons/icon-clock.svg';
+import IconAvatar from '~/assets/icons/icon-avatar.svg';
+import IconArrowDownSchedule from '~/assets/icons/icon-arrow-down-schedule.svg';
+
 import './scheduleCard.scss';
 import './scheduleCardLocation.scss';
-import '~/sass/vendor/slidedown.scss';
-import IconArrowDownSchedule from '~/assets/icons/icon-arrow-down-schedule.svg';
-import IconAvatar from '~/assets/icons/icon-avatar.svg';
-import IconClock from '~/assets/icons/icon-clock.svg';
+import { scheduleCardType } from './types';
+import { ScheduleCardLocation } from './ScheduleCardLocation';
 
 export const ScheduleCard = ({ lectureData, lectureDates }) => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
