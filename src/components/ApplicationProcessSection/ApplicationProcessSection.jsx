@@ -11,15 +11,19 @@ import './applicationProcessSection.scss';
 
 export const ApplicationProcessSection = ({ applicationText }) => {
   return (
-    <section className="application-section">
-      <IconParticlesTop className="application-section__particles--top" />
-      <IconLine className="application-section__svg-line" />
-      <ApplicationProcess textsArray={applicationText} iconsArray={icons} />
-      <IconParticlesBottom className="application-section__particles--bottom" />
-    </section>
+    <>
+      {applicationText && (
+        <section className="application-section">
+          <IconParticlesTop className="application-section__particles--top" />
+          <IconLine className="application-section__svg-line" />
+          <ApplicationProcess textsArray={applicationText} iconsArray={icons} />
+          <IconParticlesBottom className="application-section__particles--bottom" />
+        </section>
+      )}
+    </>
   );
 };
 
 ApplicationProcessSection.propTypes = {
-  applicationText: array,
+  applicationText: array.isRequired,
 };
