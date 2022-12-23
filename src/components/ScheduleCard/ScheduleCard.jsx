@@ -19,25 +19,16 @@ export const ScheduleCard = ({ lectureData, lectureDates }) => {
     setIsCardExpanded(!isCardExpanded);
   };
 
-  const handleKeyDown = (e) => {
-    e.key === 'Enter' && handleOpen();
-  };
-
   return (
     <div
       className="schedule-card"
       onClick={handleOpen}
-      onKeyDown={handleKeyDown}
+      onKeyDown={(e) => e.key === 'Enter' && handleOpen()}
       tabIndex="0"
       aria-expanded={isCardExpanded}
     >
       <div className="schedule-card__title">
-        {lectureData.lecture && (
-          <span className="schedule-card__title-name">
-            {lectureData.lecture}
-          </span>
-        )}
-
+        <span className="schedule-card__title-name">{lectureData.lecture}</span>
         <IconArrowDownSchedule
           className={classNames(
             'schedule-card__title-arrow',
