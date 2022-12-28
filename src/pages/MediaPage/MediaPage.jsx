@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { string } from 'prop-types';
 
 import PageLayout from '~/layouts/pageLayout';
-import MediaSection from '~/pages/AcademiesPages/AcademyWrapper/MediaSection';
+import { MediaSection } from '~/widgets/Media/MediaSection';
 import { getMedia } from '~/pages/AcademiesPages/AcademyWrapper/MediaSection/MediaProvider';
 import { MEDIA_PAGE_SECTION_IDS } from '~/widgets/Media/constants';
 import Error from '~/components/UI/Error';
