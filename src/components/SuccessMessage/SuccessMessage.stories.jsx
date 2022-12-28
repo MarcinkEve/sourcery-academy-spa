@@ -8,6 +8,10 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  args: {
+    title: 'Thank you',
+    text: 'Your form was submitted',
+  },
   argTypes: {
     theme: {
       table: {

@@ -6,7 +6,7 @@ export default {
   title: 'VideoPlayer',
   component: VideoPlayer,
   args: {
-    theme: 'Violet',
+    theme: 'developers',
     isModalOpen: true,
     hasAutoPlay: false,
     hasCloseButton: true,
@@ -23,11 +23,11 @@ export default {
 };
 
 export const Video = (args) => {
-  const { theme, ...rest } = args;
+  const { theme } = args;
 
   return (
     <div theme={theme}>
-      <VideoPlayer {...rest} />
+      <VideoPlayer {...args} />
     </div>
   );
 };

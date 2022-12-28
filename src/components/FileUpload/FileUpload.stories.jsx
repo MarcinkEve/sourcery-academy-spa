@@ -11,6 +11,11 @@ export default {
       </div>
     ),
   ],
+  args: {
+    isRequired: true,
+    name: 'Resume',
+    placeholder: 'Upload your resume',
+  },
   argTypes: {
     theme: {
       table: {
@@ -25,11 +30,4 @@ export default {
   },
 };
 
-const Template = (args) => <FileUpload {...args} />;
-
-export const ResumeUpload = Template.bind({});
-ResumeUpload.args = {
-  name: 'Resume',
-  placeholder: 'Upload your resume',
-  isRequired: true,
-};
+export const ResumeUpload = (args) => <FileUpload {...args} />;

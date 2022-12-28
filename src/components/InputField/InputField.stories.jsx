@@ -12,6 +12,13 @@ export default {
       </div>
     ),
   ],
+  args: {
+    isRequired: true,
+    name: 'First name',
+    label: 'Your first name',
+    type: 'text',
+    placeholder: 'Enter your first name',
+  },
   argTypes: {
     theme: {
       table: {
@@ -31,13 +38,4 @@ export default {
   },
 };
 
-const Template = (args) => <InputField {...args} />;
-
-export const Input = Template.bind({});
-Input.args = {
-  name: 'First name',
-  label: 'Your first name',
-  type: 'text',
-  placeholder: 'Enter your first name',
-  isRequired: true,
-};
+export const Input = (args) => <InputField {...args} />;

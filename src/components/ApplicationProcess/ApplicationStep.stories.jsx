@@ -24,6 +24,7 @@ export default {
   component: ApplicationStep,
   args: {
     theme: 'developers',
+    indexFromParent: 'odd',
     heading: storybookText1Step.heading,
     paragraph: storybookText1Step.paragraph,
   },
