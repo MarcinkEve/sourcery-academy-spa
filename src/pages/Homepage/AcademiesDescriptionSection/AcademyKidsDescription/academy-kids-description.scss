@@ -28,6 +28,7 @@
     max-width: to-rem(442);
     position: absolute;
     transform: translateY(-30%);
+    z-index: -1;
   }
 
   &__icons {
