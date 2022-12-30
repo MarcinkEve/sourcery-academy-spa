@@ -1,0 +1,58 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.location {
+  @include flex-box($direction: row, $justify-content: flex-start);
+
+  border: 2px solid;
+  border-radius: 8px;
+  min-height: to-rem(52);
+  transition: $transition-time-200;
+
+  &:not(:last-child) {
+    margin-bottom: to-rem(10);
+  }
+
+  &__date {
+    @include flex-box($direction: column, $justify-content: center);
+
+    line-height: 1;
+    text-align: center;
+    width: 25%;
+    word-break: break-word;
+
+    &-month {
+      font-size: $font-size-s;
+    }
+
+    &-day {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__separator {
+    position: relative;
+
+    &::before {
+      border: 1px solid;
+      bottom: to-rem(5.5);
+      content: '';
+      position: absolute;
+      top: to-rem(5.5);
+      width: to-rem(2);
+    }
+  }
+
+  // COMPONENT / SVG
+  &__pin {
+    flex-shrink: 0;
+    margin: 0 to-rem(10) 0 to-rem(15);
+    width: to-rem(15);
+  }
+
+  &__city {
+    align-self: center;
+    flex-shrink: 0;
+    max-width: 50%;
+  }
+}

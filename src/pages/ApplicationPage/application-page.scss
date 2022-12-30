@@ -1,0 +1,39 @@
+@import '~/sass/utilities';
+
+.form-layout {
+  margin: to-rem(40) 0;
+
+  &__container-header {
+    margin-bottom: to-rem(80);
+  }
+
+  &__content-container {
+    @include flex-box($justify-content: space-between, $align-items: center);
+
+    min-height: to-rem(587);
+  }
+
+  &__content {
+    @include flex-box($direction: column, $align-items: center);
+
+    width: to-rem(576);
+  }
+
+  &__image-section {
+    display: flex;
+    position: relative;
+    width: to-rem(620);
+    z-index: -1; // Temporary fix while we create z-index variables
+  }
+
+  &__particles-icon {
+    position: absolute;
+    right: to-rem(40);
+    transform: translateY(-27%);
+    width: to-rem(1177);
+  }
+
+  &-image {
+    max-width: to-rem(620);
+  }
+}
