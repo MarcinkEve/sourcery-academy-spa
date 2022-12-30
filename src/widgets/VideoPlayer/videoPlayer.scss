@@ -1,0 +1,217 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.overlay {
+  background-color: $semi-transparent-bg-clr;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.media {
+  @include center-alignment;
+
+  border-radius: 15px;
+  position: fixed;
+
+  &__player {
+    width: 90vw;
+  }
+
+  &__close-button {
+    background-color: transparent;
+    border: 0;
+    color: $white-400;
+    cursor: pointer;
+    font-size: to-rem(40);
+    position: absolute;
+    right: to-rem(-50);
+    top: to-rem(-50);
+    transition: $transition-time-200;
+
+    &:hover {
+      color: var(--button-hover);
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      color: var(--button-active);
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+      z-index: 20;
+    }
+  }
+
+  video {
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    max-width: to-rem(1086);
+
+    &::-webkit-media-controls-panel {
+      display: none;
+      opacity: 0;
+    }
+
+    &:fullscreen {
+      &::-webkit-media-controls-panel {
+        display: flex;
+        opacity: 1;
+      }
+
+      border: unset;
+      border-radius: 0;
+    }
+  }
+}
+
+.controls {
+  $_this: &;
+
+  bottom: 0;
+  display: flex;
+  height: to-rem(48);
+  position: absolute;
+  width: 100%;
+
+  &__play-pause {
+    border-radius: 0 0 0 15px;
+  }
+
+  &__current-time {
+    @include flex-box($align-items: center, $justify-content: center);
+
+    background-color: var(--secondary-color);
+    color: $white-400;
+    cursor: default;
+    margin: 0 auto;
+    padding-bottom: to-rem(5);
+    width: to-rem(100);
+  }
+
+  &__seek-bar,
+  &__volume-bar {
+    appearance: none;
+    background-color: var(--primary-color);
+    border-radius: 0;
+    border-style: none;
+    flex-shrink: 1;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &::-moz-range-thumb {
+      border: 1px solid var(--button-active);
+      box-shadow: -100vw 0 0 100vw var(--button-active);
+      box-sizing: border-box;
+      height: 100%;
+      width: 0;
+    }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      border: 1px solid var(--button-active);
+      box-shadow: -100vw 0 0 100vw var(--button-active);
+      height: 100%;
+      width: 0;
+    }
+  }
+
+  &__volume-mute {
+    &:hover + #{$_this}__volume-bar,
+    &:focus-visible + #{$_this}__volume-bar {
+      background-color: $semi-transparent-bg-clr;
+      bottom: to-rem(74);
+      right: to-rem(43);
+      width: to-rem(120);
+    }
+  }
+
+  &__volume-bar {
+    bottom: to-rem(13);
+    height: to-rem(69);
+    position: absolute;
+    right: to-rem(103);
+    transform: rotate(-90deg);
+    width: to-rem(0);
+
+    &:hover,
+    &:focus-visible {
+      background-color: $semi-transparent-bg-clr;
+      bottom: to-rem(74);
+      right: to-rem(43);
+      width: to-rem(120);
+    }
+
+    &::-moz-range-thumb {
+      border: 1px solid var(--button-active);
+      box-shadow: -100vw 0 0 100vw var(--button-active);
+    }
+
+    &::-webkit-slider-thumb {
+      border: 1px solid var(--button-active);
+      box-shadow: -100vw 0 0 100vw var(--button-active);
+    }
+  }
+
+  &__fullscreen {
+    border-radius: 0 0 15px;
+  }
+
+  button {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    flex-shrink: 0;
+    height: 100%;
+    padding-top: to-rem(3);
+    width: to-rem(69);
+  }
+
+  button,
+  &__seek-bar,
+  &__volume-bar {
+    border-style: none;
+    transition: $transition-time-200;
+    &:hover:not(#{$_this}__volume-bar) {
+      background-color: var(--button-hover);
+    }
+
+    &:focus:not(#{$_this}__volume-bar),
+    &:focus-visible:not(#{$_this}__volume-bar),
+    &:focus-visible:not(#{$_this}__volume-bar::-moz-range-thumb),
+    &:focus-visible:not(#{$_this}__volume-bar::-webkit-slider-thumb),
+    &:active:not(#{$_this}__volume-bar) {
+      background-color: var(--button-active);
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+      z-index: 1;
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+      z-index: 1;
+    }
+
+    &:active {
+      outline: none;
+      z-index: 20;
+    }
+  }
+}

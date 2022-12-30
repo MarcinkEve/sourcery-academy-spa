@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import ApplicationPage from '~/components/Pages/ApplicationPage';
-import Developers from '~/components/Pages/AcademiesPages/Developers';
+import ApplicationPage from '~/pages/ApplicationPage';
+import Developers from '~/pages/AcademiesPages/Developers';
 import { Footer } from '~/components/Footer/Footer';
-import FrontEnd from '~/components/Pages/AcademiesPages/FrontEnd';
+import FrontEnd from '~/pages/AcademiesPages/FrontEnd';
 import Header from '~/components/Header';
-import Homepage from '~/components/Pages/Homepage';
-import Kids from '~/components/Pages/AcademiesPages/Kids';
-import Media from '~/components/Pages/MediaPage';
+import Homepage from '~/pages/Homepage';
+import Kids from '~/pages/AcademiesPages/Kids';
+import Media from '~/pages/MediaPage';
 import { ROUTES } from '~/constants/routes';
-import Testers from '~/components/Pages/AcademiesPages/Testers';
+import Testers from '~/pages/AcademiesPages/Testers';
 
 export default function index() {
   const {

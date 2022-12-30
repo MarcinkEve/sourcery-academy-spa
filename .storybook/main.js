@@ -32,5 +32,5 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  staticDirs: ['../src/assets/icons'],
+  staticDirs: ['../src/assets/icons', '../src/assets/images'],
 };

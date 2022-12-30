@@ -1,0 +1,42 @@
+@import '~/sass/variables';
+
+.btn {
+  background-color: var(--secondary-color);
+  border: 0;
+  border-radius: 48px;
+  color: $white-400;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: $font-size-m;
+  font-weight: $font-weight-bold;
+  padding: to-rem(12) to-rem(24);
+  transition: color $transition-time-200 ease,
+    background-color $transition-time-200 ease;
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    background-color: var(--button-active);
+  }
+
+  &:focus {
+    outline: 2px solid var(--button-hover);
+  }
+
+  &:focus-visible {
+    outline: 4px dashed $orange-200;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}

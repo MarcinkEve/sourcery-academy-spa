@@ -1,0 +1,23 @@
+@import '~/sass/variables';
+
+.form-section {
+  &:not(:first-child) {
+    padding-right: $spacer-xs;
+  }
+
+  &__title {
+    margin: 0 0 to-rem(30) 0;
+  }
+
+  &__input {
+    min-height: to-rem(102);
+
+    &:first-child {
+      margin-top: to-rem(20);
+    }
+
+    &--spaced {
+      margin: to-rem(60) 0;
+    }
+  }
+}

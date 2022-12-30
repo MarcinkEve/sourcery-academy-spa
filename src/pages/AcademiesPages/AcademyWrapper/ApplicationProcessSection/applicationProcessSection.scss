@@ -1,0 +1,28 @@
+@import '~/sass/variables';
+
+.application-section {
+  margin: to-rem(300) auto to-rem(356);
+  position: relative;
+
+  &__particles--top {
+    left: 63%;
+    position: absolute;
+    top: -15%;
+    width: to-rem(436);
+  }
+
+  &__particles--bottom {
+    left: 5%;
+    position: absolute;
+    width: to-rem(476);
+  }
+
+  &__svg-line {
+    left: -6%;
+    position: absolute;
+    stroke: var(--primary-color);
+    top: -2%;
+    transform: rotate(3deg);
+    width: to-rem(72);
+  }
+}
