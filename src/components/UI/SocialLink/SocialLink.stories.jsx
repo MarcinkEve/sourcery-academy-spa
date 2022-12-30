@@ -9,11 +9,13 @@ import { SocialLink } from './SocialLink';
 export default {
   title: 'UI/SocialLink component',
   component: SocialLink,
+  args: {
+    icons: 'Facebook',
+  },
   argTypes: {
     icons: {
       options: ['Facebook', 'Twitter', 'Instagram'],
       control: 'radio',
-      defaultValue: 'Facebook',
       mapping: {
         Facebook: {
           icon: <FacebookIcon className="social-link__icon" />,
