@@ -9,6 +9,7 @@ export default {
     theme: 'developers',
     disabled: false,
     label: 'Button',
+    handleClick: () => {},
   },
   argTypes: {
     handleClick: {
@@ -17,11 +18,8 @@ export default {
   },
 };
 
-export const ButtonStory = (args) => {
-  const { theme } = args;
-  return (
-    <div theme={theme}>
-      <Button {...args} />
-    </div>
-  );
-};
+export const ButtonStory = (args) => (
+  <div theme={args.theme}>
+    <Button {...args} />
+  </div>
+);

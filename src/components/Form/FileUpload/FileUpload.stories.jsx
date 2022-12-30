@@ -4,13 +4,6 @@ import { FileUpload } from './FileUpload';
 export default {
   title: 'Form / File Upload',
   component: FileUpload,
-  decorators: [
-    (Story) => (
-      <div style={{ width: '509px' }}>
-        <Story />
-      </div>
-    ),
-  ],
   args: {
     isRequired: true,
     name: 'Resume',
@@ -28,6 +21,13 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '509px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const ResumeUpload = (args) => <FileUpload {...args} />;

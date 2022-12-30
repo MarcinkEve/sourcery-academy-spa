@@ -63,11 +63,8 @@ export default {
   },
 };
 
-export const TextSections = (args) => {
-  const { theme } = args;
-  return (
-    <div theme={theme}>
-      <TextSection {...args} />
-    </div>
-  );
-};
+export const TextSections = (args) => (
+  <div theme={args.theme}>
+    <TextSection {...args} />
+  </div>
+);

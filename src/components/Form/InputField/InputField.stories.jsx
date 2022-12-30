@@ -5,13 +5,6 @@ import { InputField } from './InputField';
 export default {
   title: 'Form / Input field',
   component: InputField,
-  decorators: [
-    (Story) => (
-      <div style={{ width: '509px' }}>
-        <Story />
-      </div>
-    ),
-  ],
   args: {
     isRequired: true,
     name: 'First name',
@@ -36,6 +29,13 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '509px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Input = (args) => <InputField {...args} />;

@@ -17,11 +17,8 @@ export default {
   },
 };
 
-export const DateCard = (args) => {
-  const { theme } = args;
-  return (
-    <div theme={theme} style={{ width: '306px' }}>
-      <DatesCard {...args} />
-    </div>
-  );
-};
+export const DateCard = (args) => (
+  <div theme={args.theme} style={{ width: '306px' }}>
+    <DatesCard {...args} />
+  </div>
+);

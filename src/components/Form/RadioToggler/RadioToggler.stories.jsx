@@ -5,6 +5,12 @@ import { RadioToggler } from './RadioToggler';
 export default {
   title: 'Form / RadioToggler',
   component: RadioToggler,
+  args: {
+    name: 'Academy',
+    values: ['Full-stack', 'Testers', 'Front-End'],
+    isRequired: true,
+    onValueChange: () => {},
+  },
   argTypes: {
     theme: {
       table: {
@@ -17,18 +23,13 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '509px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
-const Template = (args) => (
-  <div style={{ width: '507px' }}>
-    <RadioToggler {...args} />
-  </div>
-);
-
-export const RadioTogglerComponent = Template.bind({});
-RadioTogglerComponent.args = {
-  name: 'Academy',
-  values: ['Full-stack', 'Testers', 'Front-End'],
-  isRequired: true,
-  onValueChange: () => {},
-};
+export const RadioTogglerComponent = (args) => <RadioToggler {...args} />;

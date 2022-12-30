@@ -18,11 +18,8 @@ export default {
   },
 };
 
-export const Testimonial = (args) => {
-  const { theme } = args;
-  return (
-    <div theme={theme}>
-      <TestimonialCard {...args} />
-    </div>
-  );
-};
+export const Testimonial = (args) => (
+  <div theme={args.theme} style={{ paddingLeft: '1rem' }}>
+    <TestimonialCard {...args} />
+  </div>
+);
