@@ -3,22 +3,13 @@ import TestimonialCard from './index';
 import { data } from './data';
 
 export default {
-  title: 'TestimonialCard',
+  title: 'widgets/TestimonialCard',
   component: TestimonialCard,
   args: {
     theme: 'developers',
     data: data[0],
   },
   argTypes: {
-    theme: {
-      options: ['developers', 'testers', 'front-end'],
-      control: 'radio',
-      mapping: {
-        developers: { theme: 'developers', data: data[3] },
-        testers: { theme: 'testers', data: data[5] },
-        'front-end': { theme: 'front-end', data: data[9] },
-      },
-    },
     alt: {
       table: {
         disable: true,
@@ -28,10 +19,10 @@ export default {
 };
 
 export const Testimonial = (args) => {
-  const { theme, data } = args.theme;
+  const { theme } = args;
   return (
     <div theme={theme}>
-      <TestimonialCard data={data} />
+      <TestimonialCard {...args} />
     </div>
   );
 };

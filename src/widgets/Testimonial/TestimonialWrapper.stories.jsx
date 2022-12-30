@@ -5,7 +5,7 @@ import { data } from './TestimonialCard/data';
 import './TestimonialCard/TestimonialCardStories.scss';
 
 export default {
-  title: 'TestimonialWrapper',
+  title: 'widgets/TestimonialWrapper',
   component: TestimonialWrapper,
   args: {
     theme: 'developers',
@@ -44,7 +44,7 @@ export const TestimonialWrapperComponent = (args) => {
 
   return (
     <div theme={theme} className={'story-container'}>
-      <TestimonialWrapper data={data} {...args} />
+      <TestimonialWrapper {...args} data={data} />
     </div>
   );
 };

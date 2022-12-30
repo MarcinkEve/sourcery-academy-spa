@@ -8,7 +8,7 @@ import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
 const images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
 
 export default {
-  title: 'CornerVideo',
+  title: 'widgets/CornerVideo',
   component: CornerVideo,
   args: {
     theme: 'developers',

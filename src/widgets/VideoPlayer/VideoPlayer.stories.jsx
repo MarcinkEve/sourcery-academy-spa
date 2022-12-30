@@ -3,7 +3,7 @@ import React from 'react';
 import { VideoPlayer } from './VideoPlayer';
 
 export default {
-  title: 'VideoPlayer',
+  title: 'widgets/VideoPlayer',
   component: VideoPlayer,
   args: {
     theme: 'developers',

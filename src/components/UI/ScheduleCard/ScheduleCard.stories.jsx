@@ -4,7 +4,7 @@ import { ScheduleCard } from './ScheduleCard';
 import { developersData, testersData, frontEndData } from './storybookText';
 
 export default {
-  title: 'Schedule card',
+  title: 'UI/Schedule card',
   component: ScheduleCard,
   parameters: {
     layout: 'centered',
@@ -36,6 +36,12 @@ export default {
         },
       },
     },
+    lectureData: {
+      table: { disable: true },
+    },
+    lectureDates: {
+      table: { disable: true },
+    },
   },
 };
 
@@ -43,7 +49,11 @@ export const Schedule = (args) => {
   const { theme, lectureData, lectureDates } = args.theme;
   return (
     <div theme={theme}>
-      <ScheduleCard lectureData={lectureData} lectureDates={lectureDates} />
+      <ScheduleCard
+        {...args}
+        lectureData={lectureData}
+        lectureDates={lectureDates}
+      />
     </div>
   );
 };
