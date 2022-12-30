@@ -7,6 +7,8 @@ import AcademyFrontEndDescription from '~/components/AcademiesDescriptionSection
 import AcademyKidsDescription from '~/components/AcademiesDescriptionSection/AcademyKidsDescription';
 import { textSectionType } from '~/components/TextSection/types';
 
+import './academies-description-section';
+
 export const AcademiesDescriptionSection = ({
   developersDescriptionData,
   testersDescriptionData,
