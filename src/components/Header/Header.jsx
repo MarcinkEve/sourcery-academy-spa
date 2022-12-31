@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HeaderDropdown from '~/components/Header/Dropdown';
+
 import './header.scss';
 
 const dropdownElements = [
@@ -94,7 +95,12 @@ export const Header = () => {
           )}
         </li>
         <li>
-          <NavLink className="navlinks__link" to="/media">
+          <NavLink
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/media"
+          >
             Media
           </NavLink>
         </li>
@@ -109,7 +115,14 @@ export const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="navlinks__link">Questions</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/questions"
+          >
+            Questions
+          </NavLink>
         </li>
       </ul>
     </div>

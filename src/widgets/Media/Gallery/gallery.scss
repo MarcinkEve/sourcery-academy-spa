@@ -1,0 +1,70 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.gallery {
+  $_this: &;
+  $_gap-size: $spacer-l;
+
+  column-gap: $_gap-size;
+  display: grid;
+
+  /* autoprefixer: ignore next */
+  grid-auto-rows: to-rem(220);
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: $_gap-size;
+
+  &__item {
+    @include box-shadow;
+
+    border: 2px solid var(--primary-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform $transition-time-200 ease;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      transform: scale(1.02);
+
+      #{$_this}__play-icon {
+        background-color: var(--primary-color);
+      }
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:nth-child(13n + 2),
+    &:nth-child(13n + 6),
+    &:nth-child(13n + 7) {
+      grid-column: span 2;
+    }
+
+    &--video {
+      @include flex-box($justify-content: center, $align-items: center);
+
+      &:focus-visible {
+        outline: none;
+
+        #{$_this}__play-icon {
+          outline: 4px dashed $orange-200;
+        }
+      }
+    }
+  }
+
+  &__thumbnail {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__play-icon {
+    border-radius: 50%;
+    color: var(--primary-color);
+    position: absolute;
+    transition: background-color $transition-time-200 ease;
+    width: to-rem(90);
+  }
+}

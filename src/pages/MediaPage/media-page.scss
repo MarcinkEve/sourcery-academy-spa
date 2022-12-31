@@ -1,0 +1,9 @@
+@import '~/sass/utilities/functions';
+
+.media-page-wrapper {
+  margin-top: to-rem(40);
+
+  .media-section {
+    margin-bottom: to-rem(120);
+  }
+}
