@@ -1,32 +1,36 @@
 import { object } from 'prop-types';
 import React from 'react';
 
-import Admission from '~/components/Admission';
-import DatesContainer from '~/components/DatesContainer';
-import Particles from '~/assets/particles/particles-admission-section.svg';
-import Line from '~/assets/lines/line-admission-section.svg';
+import Admission from '~/pages/AcademiesPages/AcademyWrapper/AdmissionSection/AdmissionComponent';
+import DatesContainer from '~/pages/AcademiesPages/AcademyWrapper/AdmissionSection/DatesContainer';
+import Particles from '~/assets/decorators/particles/particles-admission-section.svg';
+import Line from '~/assets/decorators/lines/line-admission-section.svg';
 import Image from '~/assets/images/admission-section.svg';
 
 import './admission-section';
 
-export const AdmissionSection = ({ location, data }) => {
-  const academyType = location.pathname.slice(1);
-
+export const AdmissionSection = ({ data }) => {
   return (
     <section className="admission-section">
-      <Admission content={data[academyType].admission} />
-      <Particles className="admission-section__particles" />
-      <Line className="admission-section__line" />
-      <Image className="admission-section__image" />
-      <DatesContainer
-        title="Dates"
-        cardData={data[academyType].dates}
-      ></DatesContainer>
+      <div className="admission-section__text-container">
+        <Admission content={data.admission} />
+      </div>
+      <div className="admission-section__particles-container">
+        <Particles className="admission-section__particles" />
+      </div>
+      <div className="admission-section__dates-container">
+        <DatesContainer title="Dates" cardData={data.dates} />
+      </div>
+      <div className="admission-section__image-container">
+        <Image className="admission-section__image" />
+      </div>
+      <div className="admission-section__line-container">
+        <Line className="admission-section__line" />
+      </div>
     </section>
   );
 };
 
 AdmissionSection.propTypes = {
-  location: object.isRequired,
   data: object.isRequired,
 };

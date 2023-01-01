@@ -1,6 +1,7 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { array, object } from 'prop-types';
 
+import AdmissionSection from '~/pages/AcademiesPages/AcademyWrapper/AdmissionSection';
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
 import ScheduleSection from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection';
 import { scheduleType } from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection/ScheduleCardsWrapper/types';
@@ -8,11 +9,16 @@ import TestimonialSection from '~/pages/AcademiesPages/AcademyWrapper/Testimonia
 import { MediaSectionAcademies } from '~/pages/AcademiesPages/AcademyWrapper/MediaSection/MediaSectionAcademies';
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
 
-export const AcademyWrapper = ({ schedule, applicationText }) => {
+export const AcademyWrapper = ({
+  schedule,
+  applicationText,
+  admissionSectionData,
+}) => {
   return (
     <>
       <ExtraWrappingSection>
         <ApplicationProcessSection applicationText={applicationText} />
+        <AdmissionSection data={admissionSectionData} />
         <ScheduleSection schedule={schedule} />
         <TestimonialSection />
         <MediaSectionAcademies />
@@ -24,4 +30,5 @@ export const AcademyWrapper = ({ schedule, applicationText }) => {
 AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
   applicationText: array,
+  admissionSectionData: object.isRequired,
 };
