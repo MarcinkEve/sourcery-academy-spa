@@ -7,7 +7,7 @@ import InstagramIcon from '~/assets/icons/icon-instagram.svg';
 import { SocialLink } from './SocialLink';
 
 export default {
-  title: 'UI/SocialLink component',
+  title: 'UI/SocialLinkComponent',
   component: SocialLink,
   args: {
     icons: 'Facebook',
@@ -57,7 +57,7 @@ export default {
   },
 };
 
-export const LinkIcons = (args) => {
+export const SocialLinkComponent = (args) => {
   const { icon, title, link } = args.icons;
   return <SocialLink icon={icon} title={title} link={link} />;
 };

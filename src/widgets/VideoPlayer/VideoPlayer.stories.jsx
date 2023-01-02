@@ -3,7 +3,7 @@ import React from 'react';
 import { VideoPlayer } from './VideoPlayer';
 
 export default {
-  title: 'widgets/VideoPlayer',
+  title: 'widgets/VideoModalComponent',
   component: VideoPlayer,
   args: {
     theme: 'developers',
@@ -19,10 +19,15 @@ export default {
         disable: true,
       },
     },
+    videoSrc: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };
 
-export const Video = (args) => (
+export const VideoModalComponent = (args) => (
   <div theme={args.theme}>
     <VideoPlayer {...args} />
   </div>

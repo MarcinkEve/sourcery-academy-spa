@@ -5,11 +5,11 @@ import { Error } from './Error';
 const titleWithThemeVariable = (theme) =>
   `Error for ${
     theme === 'developers'
-      ? 'developers'
+      ? 'Developers'
       : theme === 'testers'
-      ? 'testers'
+      ? 'Testers'
       : theme === 'front-end'
-      ? 'front-end'
+      ? 'Front-end'
       : ''
   } component`;
 
@@ -29,7 +29,10 @@ export default {
           theme: 'developers',
           title: titleWithThemeVariable('developers'),
         },
-        testers: { theme: 'testers', title: titleWithThemeVariable('testers') },
+        testers: {
+          theme: 'testers',
+          title: titleWithThemeVariable('testers'),
+        },
         'front-end': {
           theme: 'front-end',
           title: titleWithThemeVariable('front-end'),
@@ -49,7 +52,7 @@ export default {
   },
 };
 
-export const ErrorShown = (args) => {
+export const ErrorMessage = (args) => {
   const { theme, title } = args.theme;
   return (
     <div theme={theme}>

@@ -8,7 +8,7 @@ import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
 const images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
 
 export default {
-  title: 'widgets/CornerVideo',
+  title: 'widgets/CornerVideoComponent',
   component: CornerVideo,
   args: {
     theme: 'developers',
@@ -33,10 +33,13 @@ export default {
     description: {
       table: { disable: true },
     },
+    videoSrc: {
+      table: { disable: true },
+    },
   },
 };
 
-export const Video = (args) => {
+export const CornerVideoComponent = (args) => {
   const { theme, image } = args.theme;
   return (
     <div theme={theme}>

@@ -23,16 +23,16 @@ const lectureDates = [
 ];
 
 export default {
-  title: 'UI/Schedule card',
+  title: 'UI/ScheduleComponent',
   component: ScheduleCard,
   args: {
     theme: 'developers',
-    lectureData: lectureData,
-    lectureDates: lectureDates,
+    lectureData,
+    lectureDates,
   },
 };
 
-export const Schedule = (args) => (
+export const ScheduleComponent = (args) => (
   <div theme={args.theme} style={{ paddingLeft: '1rem' }}>
     <ScheduleCard {...args} />
   </div>

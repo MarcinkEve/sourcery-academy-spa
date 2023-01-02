@@ -3,7 +3,7 @@ import React from 'react';
 import { RadioButton } from './RadioButton';
 
 export default {
-  title: 'Form / Radio Button',
+  title: 'Form /RadioSelectButton',
   component: RadioButton,
   args: {
     isRequired: true,
@@ -35,4 +35,4 @@ export default {
   },
 };
 
-export const RadioButtons = (args) => <RadioButton {...args} />;
+export const RadioSelectButton = (args) => <RadioButton {...args} />;

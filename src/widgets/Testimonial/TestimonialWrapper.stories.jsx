@@ -5,20 +5,22 @@ import { data } from './TestimonialCard/data';
 import './TestimonialCard/TestimonialCardStories.scss';
 
 export default {
-  title: 'widgets/TestimonialWrapper',
+  title: 'widgets/TestimonialCardsCarousel',
   component: TestimonialWrapper,
   args: {
     theme: 'developers',
     title: 'Testimonials',
+    visibleSlides: 3,
   },
   argTypes: {
     theme: {
-      options: ['developers', 'testers', 'front-end'],
+      options: ['home', 'developers', 'testers', 'front-end'],
       control: 'radio',
       mapping: {
-        developers: { theme: 'developers', data: data.slice(2, 5) },
-        testers: { theme: 'testers', data: data.slice(5, 8) },
-        'front-end': { theme: 'front-end', data: data.slice(8, 11) },
+        home: { theme: 'home', data: [data[3], data[7], data[0]] },
+        developers: { theme: 'developers', data: data.slice(0, 3) },
+        testers: { theme: 'testers', data: data.slice(3, 6) },
+        'front-end': { theme: 'front-end', data: data.slice(7, 10) },
       },
     },
     alt: {
@@ -39,7 +41,7 @@ export default {
   },
 };
 
-export const TestimonialWrapperComponent = (args) => {
+export const TestimonialCardsCarousel = (args) => {
   const { theme, data } = args.theme;
 
   return (

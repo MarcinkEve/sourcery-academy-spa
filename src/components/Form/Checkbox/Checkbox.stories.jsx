@@ -3,7 +3,7 @@ import React from 'react';
 import { Checkbox } from './Checkbox';
 
 export default {
-  title: 'Form/Checkbox',
+  title: 'Form/CheckboxWithText',
   component: Checkbox,
   args: {
     checkboxText:
@@ -42,4 +42,4 @@ export default {
   ],
 };
 
-export const checkMark = (args) => <Checkbox {...args} />;
+export const CheckboxWithText = (args) => <Checkbox {...args} />;

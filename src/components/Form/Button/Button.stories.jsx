@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
-  title: 'Form/Button',
+  title: 'Form/FormButton',
   component: Button,
   args: {
     theme: 'developers',
@@ -18,7 +18,7 @@ export default {
   },
 };
 
-export const ButtonStory = (args) => (
+export const FormButton = (args) => (
   <div theme={args.theme}>
     <Button {...args} />
   </div>

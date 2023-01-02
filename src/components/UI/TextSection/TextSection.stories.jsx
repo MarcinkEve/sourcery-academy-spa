@@ -28,7 +28,7 @@ const headingOptions = {
 };
 
 export default {
-  title: 'UI/TextSection',
+  title: 'UI/TextSections',
   component: TextSection,
   args: {
     theme: 'developers',

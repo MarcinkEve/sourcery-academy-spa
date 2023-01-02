@@ -3,7 +3,7 @@ import React from 'react';
 import { SuccessMessage } from './SuccessMessage';
 
 export default {
-  title: 'UI/Success Message',
+  title: 'UI/SuccessComponent',
   component: SuccessMessage,
   parameters: {
     layout: 'centered',

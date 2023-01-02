@@ -3,7 +3,7 @@ import React from 'react';
 import { RadioToggler } from './RadioToggler';
 
 export default {
-  title: 'Form / RadioToggler',
+  title: 'Form /RadioToggleButton',
   component: RadioToggler,
   args: {
     name: 'Academy',
@@ -32,4 +32,4 @@ export default {
   ],
 };
 
-export const RadioTogglerComponent = (args) => <RadioToggler {...args} />;
+export const RadioToggleButton = (args) => <RadioToggler {...args} />;

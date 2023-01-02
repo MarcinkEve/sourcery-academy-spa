@@ -3,7 +3,7 @@ import TestimonialCard from './index';
 import { data } from './data';
 
 export default {
-  title: 'widgets/TestimonialCard',
+  title: 'widgets/TestimonialSingleCard',
   component: TestimonialCard,
   args: {
     theme: 'developers',
@@ -18,7 +18,7 @@ export default {
   },
 };
 
-export const Testimonial = (args) => (
+export const TestimonialSingleCard = (args) => (
   <div theme={args.theme} style={{ paddingLeft: '1rem' }}>
     <TestimonialCard {...args} />
   </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { InputField } from './InputField';
 
 export default {
-  title: 'Form / Input field',
+  title: 'Form /TextInputField',
   component: InputField,
   args: {
     isRequired: true,
@@ -38,4 +38,4 @@ export default {
   ],
 };
 
-export const Input = (args) => <InputField {...args} />;
+export const TextInputField = (args) => <InputField {...args} />;

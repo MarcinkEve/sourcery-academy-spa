@@ -2,7 +2,7 @@ import React from 'react';
 import { FileUpload } from './FileUpload';
 
 export default {
-  title: 'Form / File Upload',
+  title: 'Form/FileUploadInput',
   component: FileUpload,
   args: {
     isRequired: true,
@@ -30,4 +30,4 @@ export default {
   ],
 };
 
-export const ResumeUpload = (args) => <FileUpload {...args} />;
+export const FileUploadInput = (args) => <FileUpload {...args} />;

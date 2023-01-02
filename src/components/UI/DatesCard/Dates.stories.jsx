@@ -3,7 +3,7 @@ import React from 'react';
 import { DatesCard } from './DatesCard';
 
 export default {
-  title: 'UI/Dates card',
+  title: 'UI/DateCard',
   component: DatesCard,
   args: {
     theme: 'developers',
