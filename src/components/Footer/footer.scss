@@ -8,6 +8,10 @@
     $align-items: center
   );
 
+  @include mobile-breakpoint {
+    flex-direction: column;
+  }
+
   height: $height-header-footer;
   margin: 0 auto;
   max-width: to-rem(1440);
@@ -21,21 +25,29 @@
     );
     @include reset-list-style;
 
+    @include mobile-breakpoint {
+      column-gap: to-rem(40);
+    }
+
+    column-gap: to-rem(16);
+
     &-item {
       @include padding-margin-0;
-
-      &:not(:last-child) {
-        margin-right: to-rem(16);
-      }
     }
   }
 
   &__text {
+    @include mobile-breakpoint {
+      margin-bottom: to-rem(10);
+      text-align: center;
+    }
+
     color: $violet-700;
+    display: block;
     font-family: $main-font;
     font-size: to-rem(16);
     font-style: normal;
-    line-height: 1;
+    line-height: $line-height-m;
     margin: 0;
     text-transform: capitalize;
   }
