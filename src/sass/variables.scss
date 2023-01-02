@@ -9,10 +9,13 @@ $paragraph-font: 'Raleway', sans-serif;
 
 /* Font sizes */
 
-$font-size-xl: to-rem(48);
-$font-size-l: to-rem(32);
+$font-size-xxxl: to-rem(48);
+$font-size-xxl: to-rem(42);
+$font-size-xl: to-rem(32);
+$font-size-l: to-rem(24);
 $font-size-m: to-rem(18);
-$font-size-s: to-rem(14);
+$font-size-s: to-rem(16);
+$font-size-xs: to-rem(14);
 
 /* Font weights */
 
@@ -108,7 +111,7 @@ $shadow-clr: $gray-200;
 
 $semi-transparent-bg-clr: rgba(30, 30, 30, 0.9);
 
-/* Media query breakpoints */
+/* Breakpoints */
 
 $breakpoint-tablet: 1023px;
 $breakpoint-mobile: 767px;

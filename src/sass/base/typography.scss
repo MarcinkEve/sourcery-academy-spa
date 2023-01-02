@@ -1,20 +1,36 @@
 h1,
 h2 {
+  @include tablet-breakpoint {
+    font-size: $font-size-xxl;
+  }
+
+  @include mobile-breakpoint {
+    font-size: $font-size-xl;
+  }
+
+  color: var(--primary-color);
+  font: $font-weight-bold $font-size-xxxl $header-font;
+}
+
+h3 {
+  @include mobile-breakpoint {
+    font-size: $font-size-l;
+  }
+
   color: var(--primary-color);
   font: $font-weight-bold $font-size-xl $header-font;
 }
 
-h3 {
-  color: var(--primary-color);
-  font: $font-weight-bold $font-size-l $header-font;
-}
-
 p {
+  @include mobile-breakpoint {
+    font-size: $font-size-s;
+  }
+
   color: $charcoal-400;
   font: $font-weight-normal $font-size-m $paragraph-font;
   line-height: $line-height-l;
 }
 
 .paragraph-small {
-  font: $font-weight-normal $font-size-s $paragraph-font;
+  font: $font-weight-normal $font-size-xs $paragraph-font;
 }
