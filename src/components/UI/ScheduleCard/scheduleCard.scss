@@ -14,7 +14,7 @@
   min-height: to-rem(60);
   overflow: hidden;
   transition: $transition-time-200;
-  width: to-rem(266);
+  width: 100%;
   word-break: break-word;
 
   &__title {
@@ -26,11 +26,13 @@
 
     &-name {
       font-weight: $font-weight-bold;
-      max-width: to-rem(193);
+      margin-right: to-rem(20);
+      max-width: to-rem(180);
     }
 
     // COMPONENT / SVG
     &-arrow {
+      flex-shrink: 0;
       height: to-rem(13);
       margin-left: auto;
       margin-top: to-rem(9);

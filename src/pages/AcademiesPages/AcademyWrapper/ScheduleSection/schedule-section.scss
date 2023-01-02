@@ -1,4 +1,5 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .schedule-section {
   margin: to-rem(250) auto to-rem(290);
@@ -27,6 +28,10 @@
   }
 
   &__line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
     color: var(--primary-color);
     position: absolute;
     right: 0;
