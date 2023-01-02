@@ -9,12 +9,14 @@ import scheduleData from '../scheduleData.json';
 
 export const Testers = ({ theme }) => {
   return (
-    <PageLayout theme={theme}>
-      <AcademyWrapper
-        schedule={scheduleData}
-        applicationText={applicationProcessData.testersText}
-      />
-    </PageLayout>
+    <div>
+      <PageLayout theme={theme}>
+        <AcademyWrapper
+          schedule={scheduleData}
+          applicationText={applicationProcessData.testersText}
+        />
+      </PageLayout>
+    </div>
   );
 };
 
