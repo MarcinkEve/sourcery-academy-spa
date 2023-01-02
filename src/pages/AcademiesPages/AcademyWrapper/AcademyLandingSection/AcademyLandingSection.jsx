@@ -1,5 +1,5 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { shape, string } from 'prop-types';
 import { ROUTES } from '~/constants/routes';
 
 import TextSection from '~/components/UI/TextSection';
@@ -35,5 +35,13 @@ export const AcademyLandingSection = ({ data }) => {
 };
 
 AcademyLandingSection.propTypes = {
-  data: object.isRequired,
+  data: shape({
+    title: string.isRequired,
+    text: string.isRequired,
+    videoSrc: string.isRequired,
+    image: shape({
+      src: string.isRequired,
+      alt: string.isRequired,
+    }),
+  }),
 };

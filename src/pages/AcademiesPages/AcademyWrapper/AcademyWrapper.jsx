@@ -1,5 +1,5 @@
 import React from 'react';
-import { array, object } from 'prop-types';
+import { array, shape, string } from 'prop-types';
 
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
 import AcademyLandingSection from '~/pages/AcademiesPages/AcademyWrapper/AcademyLandingSection';
@@ -30,5 +30,13 @@ export const AcademyWrapper = ({
 AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
   applicationText: array,
-  landingSectionData: object.isRequired,
+  landingSectionData: shape({
+    title: string.isRequired,
+    text: string.isRequired,
+    videoSrc: string.isRequired,
+    image: shape({
+      src: string.isRequired,
+      alt: string.isRequired,
+    }),
+  }),
 };
