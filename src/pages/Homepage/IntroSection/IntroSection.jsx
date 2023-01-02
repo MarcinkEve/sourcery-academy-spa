@@ -19,7 +19,7 @@ export const IntroSection = ({ introSectionData }) => {
     <section className="intro-section">
       <div className="intro-section__paragraph">
         <TextSection
-          headingContent={<h2>{headingContent}</h2>}
+          headingContent={<h1>{headingContent}</h1>}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
           pageRoute={pageRoute}

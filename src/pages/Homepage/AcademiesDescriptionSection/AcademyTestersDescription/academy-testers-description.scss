@@ -8,41 +8,47 @@
     $align-items: flex-start
   );
 
-  padding-top: to-rem(100);
+  column-gap: 1rem;
+  margin-top: to-rem(100);
 
   &__top-particles {
-    margin-bottom: to-rem(15);
-    max-width: to-rem(125);
     position: absolute;
-    right: to-rem(41);
-    transform: translateY(-125%);
+    right: 10%;
+    top: -25%;
+    width: to-rem(125);
+    z-index: -1;
   }
 
   &__content {
-    max-width: to-rem(559);
     position: relative;
+    width: min(48%, to-rem(560));
   }
 
   &__bottom-particles {
-    bottom: to-rem(20);
-    left: to-rem(45);
-    max-width: to-rem(230);
+    bottom: 5%;
+    left: 10%;
     position: absolute;
+    width: to-rem(230);
+    z-index: -1;
   }
 
   &__icons {
-    left: to-rem(70);
+    height: 100%;
     position: relative;
+    text-align: end;
+    width: 52%;
   }
 
   &__icons-image {
+    margin-right: 20%;
     width: to-rem(353);
     z-index: -1;
   }
 
   &__icons-line {
     position: absolute;
-    transform: translate(-75%, -11%);
+    right: 0;
+    top: -35%;
     width: to-rem(693);
     z-index: -1;
   }

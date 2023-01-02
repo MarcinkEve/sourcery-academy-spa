@@ -8,39 +8,44 @@
     $align-items: flex-start
   );
 
-  padding-top: to-rem(148);
+  column-gap: 1rem;
+  margin-top: to-rem(150);
 
   &__top-particles {
-    left: to-rem(25);
-    max-width: to-rem(126);
+    left: 5%;
     position: absolute;
-    transform: translateY(-170%);
+    top: -25%;
+    width: to-rem(126);
+    z-index: -1;
   }
 
   &__content {
-    max-width: to-rem(570);
     position: relative;
+    width: min(50%, to-rem(570));
   }
 
   &__bottom-particles {
-    left: to-rem(249);
-    max-width: to-rem(190);
+    bottom: 10%;
+    left: 45%;
     position: absolute;
-    transform: translateY(-175%);
+    width: to-rem(190);
+    z-index: -1;
   }
 
   &__icons {
     position: relative;
+    width: 50%;
   }
 
   &__icons-image {
-    margin-right: to-rem(53);
+    margin-left: 15%;
     width: to-rem(430);
   }
 
   &__icons-line {
+    left: 0;
     position: absolute;
-    transform: translate(-85%, -40%);
+    top: -110%;
     width: to-rem(665);
     z-index: -1;
   }

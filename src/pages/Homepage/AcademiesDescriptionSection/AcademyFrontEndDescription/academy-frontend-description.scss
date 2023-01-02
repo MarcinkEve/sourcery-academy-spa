@@ -4,16 +4,16 @@
 .frontend-description {
   @include flex-box(
     $direction: row,
-    $justify-content: space-between,
+    $justify-content: flex-end,
     $align-items: flex-start
   );
 
+  column-gap: 1rem;
   margin-top: to-rem(210);
-  position: relative;
 
   &__content {
-    max-width: to-rem(550);
     position: relative;
+    width: min(55%, to-rem(550));
   }
 
   &__top-particles {
@@ -22,6 +22,7 @@
     position: absolute;
     right: to-rem(39);
     transform: translateY(-100%);
+    z-index: -1;
   }
 
   &__bottom-particles {
@@ -29,10 +30,11 @@
     left: to-rem(40);
     max-width: to-rem(285);
     position: absolute;
+    z-index: -1;
   }
 
   &__icon {
-    max-width: to-rem(417);
-    transform: translateX(18%);
+    margin-right: 10%;
+    width: min(45%, to-rem(450));
   }
 }
