@@ -19,15 +19,13 @@ export const Testers = ({ theme }) => {
   };
 
   return (
-    <div>
-      <PageLayout theme={theme}>
-        <AcademyWrapper
-          schedule={scheduleData}
-          applicationText={applicationProcessData.testersText}
-          landingSectionData={landingSectionData}
-        />
-      </PageLayout>
-    </div>
+    <PageLayout theme={theme}>
+      <AcademyWrapper
+        schedule={scheduleData}
+        applicationText={applicationProcessData.testersText}
+        landingSectionData={landingSectionData}
+      />
+    </PageLayout>
   );
 };
 
