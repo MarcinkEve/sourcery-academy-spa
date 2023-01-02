@@ -5,7 +5,7 @@ import TopFiveParticles from '~/assets/decorators/particles/apply-to-academy-fiv
 import DevelopersImage from '~/assets/images/apply-to-academy-developers.svg';
 import { ACADEMY_TYPE } from '~/constants/academyType';
 
-export const artwork = {
+export const applyToAcademyDecorators = {
   [ACADEMY_TYPE.DEVELOPERS]: {
     image: DevelopersImage,
     particles: TopThreeParticles,

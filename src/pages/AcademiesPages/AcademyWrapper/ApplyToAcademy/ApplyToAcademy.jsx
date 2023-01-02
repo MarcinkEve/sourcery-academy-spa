@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { object } from 'prop-types';
 import classNames from 'classnames';
 
 import { ROUTES } from '~/constants/routes';
@@ -7,36 +6,18 @@ import { ACADEMY_TYPE } from '~/constants/academyType';
 import BottomParticles from '~/assets/decorators/particles/apply-to-academy-bottom-particles.svg';
 import TextSection from '~/components/UI/TextSection';
 
-import { artwork } from './applyToAcademyArtwork';
+import { applyToAcademyType } from './types.js';
 import './apply-to-academy';
 
 export const ApplyToAcademy = ({ data }) => {
-  const currentAcademyType = location.pathname.slice(1);
+  const { title, text, academyType, Image, TopParticles } = data;
   const [
     isParticlePositionNonDefault,
     setIsParticlePositionNonDefault,
   ] = useState(false);
 
-  let Image;
-  let TopParticles;
-
-  switch (currentAcademyType) {
-    case ACADEMY_TYPE.DEVELOPERS:
-      Image = artwork[ACADEMY_TYPE.DEVELOPERS].image;
-      TopParticles = artwork[ACADEMY_TYPE.DEVELOPERS].particles;
-      break;
-    case ACADEMY_TYPE.FRONTEND:
-      Image = artwork[ACADEMY_TYPE.FRONTEND].image;
-      TopParticles = artwork[ACADEMY_TYPE.FRONTEND].particles;
-      break;
-    case ACADEMY_TYPE.TESTERS:
-      Image = artwork[ACADEMY_TYPE.TESTERS].image;
-      TopParticles = artwork[ACADEMY_TYPE.TESTERS].particles;
-      break;
-  }
-
   useEffect(() => {
-    if (currentAcademyType === ACADEMY_TYPE.FRONTEND)
+    if (academyType === ACADEMY_TYPE.FRONTEND)
       setIsParticlePositionNonDefault(true);
   }, []);
 
@@ -53,9 +34,9 @@ export const ApplyToAcademy = ({ data }) => {
         <div>
           <TextSection
             isHeadingSpacingLarge
-            headingContent={<h2>{data.title}</h2>}
+            headingContent={<h2>{title}</h2>}
             isParagraphTextBold
-            paragraphContent={<p>{data.text}</p>}
+            paragraphContent={<p>{text}</p>}
             buttonText="Apply now"
             pageRoute={ROUTES.APPLICATION}
           />
@@ -74,5 +55,5 @@ export const ApplyToAcademy = ({ data }) => {
 };
 
 ApplyToAcademy.propTypes = {
-  data: object.isRequired,
+  data: applyToAcademyType.isRequired,
 };

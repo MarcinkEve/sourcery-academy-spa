@@ -1,8 +1,9 @@
 import React from 'react';
-import { array, object } from 'prop-types';
 
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
+import { applicationProcessType } from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection/types';
 import ApplyToAcademy from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy';
+import { applyToAcademyType } from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy/types';
 import ScheduleSection from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection';
 import { scheduleType } from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection/ScheduleCardsWrapper/types';
 import TestimonialSection from '~/pages/AcademiesPages/AcademyWrapper/TestimonialSection';
@@ -29,6 +30,6 @@ export const AcademyWrapper = ({
 
 AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
-  applicationText: array,
-  applyToAcademyData: object.isRequired,
+  applicationText: applicationProcessType.isRequired,
+  applyToAcademyData: applyToAcademyType.isRequired,
 };

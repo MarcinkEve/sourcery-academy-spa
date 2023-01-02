@@ -4,18 +4,26 @@ import { string } from 'prop-types';
 import PageLayout from '~/layouts/pageLayout';
 import AcademyWrapper from '~/pages/AcademiesPages/AcademyWrapper';
 import { ACADEMY_TYPE } from '~/constants/academyType';
+import { applyToAcademyDecorators } from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy/applyToAcademyDecorators';
 
-import applyToAcademyData from '../applyToAcademyData.json';
+import applyToAcademyText from '../applyToAcademyData.json';
 import applicationProcessData from '../applicationProcessData.json';
 import scheduleData from '../scheduleData.json';
 
 export const Testers = ({ theme }) => {
+  const applyToAcademyData = {
+    ...applyToAcademyText[ACADEMY_TYPE.TESTERS],
+    academyType: ACADEMY_TYPE.TESTERS,
+    Image: applyToAcademyDecorators[ACADEMY_TYPE.TESTERS].image,
+    TopParticles: applyToAcademyDecorators[ACADEMY_TYPE.TESTERS].particles,
+  };
+
   return (
     <PageLayout theme={theme}>
       <AcademyWrapper
         schedule={scheduleData}
         applicationText={applicationProcessData.testersText}
-        applyToAcademyData={applyToAcademyData[ACADEMY_TYPE.TESTERS]}
+        applyToAcademyData={applyToAcademyData}
       />
     </PageLayout>
   );
