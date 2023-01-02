@@ -2,8 +2,6 @@
   $_this: &;
 
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(10, 1fr);
 
