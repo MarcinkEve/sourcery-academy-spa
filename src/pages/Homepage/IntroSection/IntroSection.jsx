@@ -2,6 +2,7 @@ import React from 'react';
 import { shape } from 'prop-types';
 
 import IntroIcon from '~/assets/images/intro.svg';
+import ColorSplash from '~/assets/decorators/intro-section-color-splash.svg';
 import TextSection from '~/components/UI/TextSection';
 import { textSectionType } from '~/components/UI/TextSection/types';
 
@@ -25,6 +26,7 @@ export const IntroSection = ({ introSectionData }) => {
         />
       </div>
       <IntroIcon className="intro-section__image" />
+      <ColorSplash className="intro-section__background" />
     </section>
   );
 };

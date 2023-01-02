@@ -8,13 +8,38 @@
     $align-items: center
   );
 
+  @include tablet-breakpoint {
+    justify-content: center;
+    margin: to-rem(100) 0 to-rem(250);
+    position: relative;
+    text-align: center;
+  }
+
   margin: to-rem(194) 0 to-rem(420);
 
   &__paragraph {
-    max-width: to-rem(465);
+    @include tablet-breakpoint {
+      width: 100%;
+    }
+
+    width: max(36%, 400px);
   }
 
   &__image {
-    max-width: to-rem(634);
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    width: max(50%, 500px);
+  }
+
+  &__background {
+    @include tablet-breakpoint {
+      display: block;
+      height: 150%;
+      position: absolute;
+    }
+
+    display: none;
   }
 }

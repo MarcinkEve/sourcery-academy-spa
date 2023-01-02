@@ -4,13 +4,24 @@
 .article {
   $_icon-size: to-rem(48);
 
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+
   margin: 0 auto;
   max-width: to-rem(1006);
   text-align: center;
 
   &__top-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     position: relative;
     transform: translateY(20%);
+    width: to-rem(1000);
     z-index: -1;
   }
 
@@ -39,6 +50,10 @@
   }
 
   &__icon-line {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     height: to-rem(48);
     margin-bottom: $spacer-s;
   }
@@ -55,9 +70,13 @@
   }
 
   &__bottom-particles {
-    max-width: to-rem(790);
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     position: relative;
     transform: translateY(-50%);
+    width: to-rem(790);
   }
 }
 
