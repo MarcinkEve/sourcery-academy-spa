@@ -20,12 +20,10 @@ export const AdmissionSection = ({ data }) => {
       </div>
       <div className="admission-section__dates-container">
         <DatesContainer title="Dates" cardData={data.dates} />
+        <Line className="admission-section__line" />
       </div>
       <div className="admission-section__image-container">
         <Image className="admission-section__image" />
-      </div>
-      <div className="admission-section__line-container">
-        <Line className="admission-section__line" />
       </div>
     </section>
   );

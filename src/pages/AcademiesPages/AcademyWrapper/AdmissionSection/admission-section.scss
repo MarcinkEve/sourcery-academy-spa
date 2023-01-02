@@ -26,6 +26,15 @@
 
   &__dates-container {
     grid-area: 2 / 4 / 5 / 5;
+    position: relative;
+
+    #{$_this}__line {
+      bottom: -54%;
+      position: absolute;
+      right: -23%;
+      stroke: var(--primary-color);
+      width: 142%;
+    }
   }
 
   &__image-container {
@@ -37,19 +46,6 @@
       position: absolute;
       top: 5%;
       width: 90%;
-    }
-  }
-
-  &__line-container {
-    grid-area: 1 / 4 / 2 / 5;
-    position: relative;
-
-    #{$_this}__line {
-      position: absolute;
-      right: -23%;
-      stroke: var(--primary-color);
-      top: -219%;
-      width: 142%;
     }
   }
 
