@@ -1,4 +1,5 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .btn {
   background-color: var(--secondary-color);
@@ -12,6 +13,10 @@
   padding: to-rem(12) to-rem(24);
   transition: color $transition-time-200 ease,
     background-color $transition-time-200 ease;
+
+  @include mobile-breakpoint {
+    font-size: $font-size-s;
+  }
 
   &:hover {
     background-color: var(--button-hover);
