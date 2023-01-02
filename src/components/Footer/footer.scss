@@ -1,5 +1,6 @@
 @import '~/sass/variables';
 @import '~/sass/utilities/mixins';
+@import '~/sass/utilities/mixins/media-queries-tablet';
 
 .footer {
   @include flex-box(
@@ -7,6 +8,10 @@
     $justify-content: space-between,
     $align-items: center
   );
+
+  @include tablet {
+    flex-direction: column;
+  }
 
   height: $height-header-footer;
   margin: 0 auto;
@@ -21,21 +26,29 @@
     );
     @include reset-list-style;
 
+    @include tablet {
+      column-gap: to-rem(40);
+    }
+
+    column-gap: to-rem(16);
+
     &-item {
       @include padding-margin-0;
-
-      &:not(:last-child) {
-        margin-right: to-rem(16);
-      }
     }
   }
 
   &__text {
+    @include tablet {
+      margin-bottom: to-rem(10);
+      text-align: center;
+    }
+
     color: $violet-700;
+    display: block;
     font-family: $main-font;
     font-size: to-rem(16);
     font-style: normal;
-    line-height: 1;
+    line-height: $line-height-m;
     margin: 0;
     text-transform: capitalize;
   }

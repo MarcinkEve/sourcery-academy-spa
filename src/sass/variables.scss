@@ -107,3 +107,9 @@ $paragraph-text-clr: $charcoal-400;
 $shadow-clr: $gray-200;
 
 $semi-transparent-bg-clr: rgba(30, 30, 30, 0.9);
+
+/* Media query breakpoints */
+
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 320px;
