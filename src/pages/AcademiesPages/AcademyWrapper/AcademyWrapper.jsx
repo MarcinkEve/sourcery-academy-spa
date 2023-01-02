@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { array } from 'prop-types';
 
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
@@ -9,6 +9,10 @@ import { MediaSectionAcademies } from '~/pages/AcademiesPages/AcademyWrapper/Med
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
 
 export const AcademyWrapper = ({ schedule, applicationText }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <ExtraWrappingSection>
