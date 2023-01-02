@@ -1,6 +1,5 @@
 @import '~/sass/variables';
 @import '~/sass/utilities/mixins';
-@import '~/sass/utilities/mixins/media-queries-tablet';
 
 .footer {
   @include flex-box(
@@ -9,7 +8,7 @@
     $align-items: center
   );
 
-  @include tablet {
+  @include mobile-breakpoint {
     flex-direction: column;
   }
 
@@ -26,7 +25,7 @@
     );
     @include reset-list-style;
 
-    @include tablet {
+    @include mobile-breakpoint {
       column-gap: to-rem(40);
     }
 
@@ -38,7 +37,7 @@
   }
 
   &__text {
-    @include tablet {
+    @include mobile-breakpoint {
       margin-bottom: to-rem(10);
       text-align: center;
     }

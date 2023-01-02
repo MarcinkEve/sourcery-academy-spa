@@ -1,5 +1,0 @@
-@mixin tablet {
-  @media screen and (max-width: $breakpoint-tablet) {
-    @content;
-  }
-}
