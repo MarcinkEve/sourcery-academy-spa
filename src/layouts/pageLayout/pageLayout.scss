@@ -2,12 +2,6 @@
 @import '~/sass/utilities/mixins';
 
 .page-layout {
-  margin: 0 auto;
-  max-width: $max-page-width;
-  min-height: calc(100vh - (#{$height-header-footer} * 2));
-  overflow: hidden;
-  padding: 0 to-rem(80);
-
   @include tablet-breakpoint {
     padding: 0 to-rem(60);
   }
@@ -15,4 +9,10 @@
   @include mobile-breakpoint {
     padding: 0 to-rem(30);
   }
+
+  margin: 0 auto;
+  max-width: $max-page-width;
+  min-height: calc(100vh - (#{$height-header-footer} * 2));
+  overflow: hidden;
+  padding: 0 to-rem(80);
 }

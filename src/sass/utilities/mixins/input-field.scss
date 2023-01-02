@@ -1,4 +1,8 @@
 @mixin input-field {
+  @include mobile-breakpoint {
+    font-size: $font-size-s;
+  }
+
   background-color: $white-400;
   border: 1px solid $charcoal-200;
   border-radius: 10px;
@@ -8,10 +12,6 @@
   height: to-rem(48);
   padding: to-rem(14);
   width: 100%;
-
-  @include mobile-breakpoint {
-    font-size: $font-size-s;
-  }
 
   &::placeholder {
     color: $charcoal-100;
