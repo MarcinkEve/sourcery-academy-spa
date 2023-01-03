@@ -26,7 +26,7 @@
     @include reset-list-style;
 
     @include mobile-breakpoint {
-      column-gap: to-rem(40);
+      column-gap: $spacer-l;
     }
 
     column-gap: to-rem(16);
@@ -38,14 +38,15 @@
 
   &__text {
     @include mobile-breakpoint {
-      margin-bottom: to-rem(20);
+      font-size: $font-size-xs;
+      margin-bottom: $spacer-xxxs;
       text-align: center;
     }
 
     color: $violet-700;
     display: block;
     font-family: $main-font;
-    font-size: to-rem(16);
+    font-size: $font-size-s;
     font-style: normal;
     line-height: $line-height-m;
     margin: 0;

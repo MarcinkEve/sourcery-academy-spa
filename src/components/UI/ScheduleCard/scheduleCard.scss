@@ -6,6 +6,15 @@
 
   @include box-shadow;
 
+  @include tablet-breakpoint {
+    min-width: to-rem(300);
+  }
+
+  @include mobile-breakpoint {
+    min-width: 250px;
+    width: 50vw;
+  }
+
   border: 2px solid var(--primary-color);
   border-radius: 17px;
   color: $white-400;
@@ -27,7 +36,7 @@
     &-name {
       font-weight: $font-weight-bold;
       margin-right: to-rem(20);
-      max-width: to-rem(180);
+      min-width: to-rem(100);
     }
 
     // COMPONENT / SVG
