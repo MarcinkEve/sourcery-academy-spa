@@ -8,15 +8,32 @@
     $align-items: flex-start
   );
 
+  @include tablet-breakpoint {
+    align-items: center;
+    flex-direction: column;
+  }
+
   column-gap: 1rem;
   margin: to-rem(110) 0 to-rem(267);
 
   &__content {
+    @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
+      width: 100%;
+    }
+
     position: relative;
     width: min(50%, to-rem(570));
   }
 
   &__top-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     left: 65%;
     position: absolute;
     top: -25%;
@@ -25,24 +42,44 @@
   }
 
   &__bottom-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     left: 15%;
     position: absolute;
     top: 70%;
     width: to-rem(442);
-    z-index: -1;
   }
 
   &__icons {
+    @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
+      width: 100%;
+    }
+
     position: relative;
     width: 50%;
   }
 
   &__icons-image {
+    @include tablet-breakpoint {
+      margin: 5% 0 0;
+      width: 100%;
+    }
+
     margin-left: 20%;
     width: min(90%, to-rem(458));
   }
 
   &__icons-line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
     left: 5%;
     position: absolute;
     top: -20%;

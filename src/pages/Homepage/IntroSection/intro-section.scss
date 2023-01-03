@@ -10,9 +10,13 @@
 
   @include tablet-breakpoint {
     justify-content: center;
-    margin: to-rem(100) 0 to-rem(250);
+    margin: to-rem(100) 0 to-rem(350);
     position: relative;
     text-align: center;
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) 0 to-rem(300);
   }
 
   margin: to-rem(194) 0 to-rem(420);
@@ -35,9 +39,10 @@
 
   &__background {
     @include tablet-breakpoint {
+      bottom: -12rem;
       display: block;
-      height: 150%;
       position: absolute;
+      width: to-rem(1350);
       z-index: -1;
     }
 
