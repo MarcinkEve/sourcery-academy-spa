@@ -1,6 +1,9 @@
 QA rules:
 
-> Screen resolution support: Desktop only (> 1366px);
+> Screen resolution support:
+  - Desktop (including small Laptops) (> 1024px);
+  - Tablet (> 768px);
+  - Mobile (> 320px);
 
 > Browser support:
 	- Chrome 57+;

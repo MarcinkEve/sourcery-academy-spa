@@ -17,18 +17,18 @@
   }
 
   &__top-particles {
+    left: 75%;
     margin-bottom: to-rem(2);
     max-width: to-rem(99);
     position: absolute;
-    right: to-rem(39);
-    transform: translateY(-100%);
+    top: -12%;
   }
 
   &__bottom-particles {
-    bottom: to-rem(2);
-    left: to-rem(40);
+    left: 9%;
     max-width: to-rem(285);
     position: absolute;
+    top: 79%;
   }
 
   &__icon {

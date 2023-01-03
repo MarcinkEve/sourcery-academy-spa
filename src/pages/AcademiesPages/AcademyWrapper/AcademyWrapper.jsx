@@ -1,8 +1,11 @@
 import React from 'react';
-import { array, shape, string } from 'prop-types';
+import { shape, string } from 'prop-types';
 
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
 import AcademyLandingSection from '~/pages/AcademiesPages/AcademyWrapper/AcademyLandingSection';
+import { applicationProcessType } from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection/types';
+import ApplyToAcademy from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy';
+import { applyToAcademyType } from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy/types';
 import ScheduleSection from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection';
 import { scheduleType } from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection/ScheduleCardsWrapper/types';
 import TestimonialSection from '~/pages/AcademiesPages/AcademyWrapper/TestimonialSection';
@@ -13,6 +16,7 @@ export const AcademyWrapper = ({
   schedule,
   applicationText,
   landingSectionData,
+  applyToAcademyData,
 }) => {
   return (
     <>
@@ -22,6 +26,7 @@ export const AcademyWrapper = ({
         <ScheduleSection schedule={schedule} />
         <TestimonialSection />
         <MediaSectionAcademies />
+        <ApplyToAcademy data={applyToAcademyData} />
       </ExtraWrappingSection>
     </>
   );
@@ -29,7 +34,8 @@ export const AcademyWrapper = ({
 
 AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
-  applicationText: array,
+  applicationText: applicationProcessType.isRequired,
+  applyToAcademyData: applyToAcademyType.isRequired,
   landingSectionData: shape({
     title: string.isRequired,
     text: string.isRequired,
