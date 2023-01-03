@@ -2,8 +2,25 @@ import React from 'react';
 import { FileUpload } from './FileUpload';
 
 export default {
-  title: 'Form / File Upload',
+  title: 'Form/FileUploadInput',
   component: FileUpload,
+  args: {
+    isRequired: true,
+    name: 'Resume',
+    placeholder: 'Upload your resume',
+  },
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+    getValue: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <div style={{ width: '509px' }}>
@@ -13,11 +30,4 @@ export default {
   ],
 };
 
-const Template = (args) => <FileUpload {...args} />;
-
-export const ResumeUpload = Template.bind({});
-ResumeUpload.args = {
-  name: 'Resume',
-  placeholder: 'Upload your resume',
-  getValue: () => {},
-};
+export const FileUploadInput = (args) => <FileUpload {...args} />;
