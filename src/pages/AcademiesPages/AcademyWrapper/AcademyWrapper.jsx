@@ -11,7 +11,7 @@ import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
 export const AcademyWrapper = ({ schedule, applicationText }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   return (
     <>
