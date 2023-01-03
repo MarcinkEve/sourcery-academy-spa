@@ -1,6 +1,15 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .page-layout {
+  @include tablet-breakpoint {
+    padding: 0 to-rem(60);
+  }
+
+  @include mobile-breakpoint {
+    padding: 0 to-rem(30);
+  }
+
   margin: 0 auto;
   max-width: $max-page-width;
   min-height: calc(100vh - (#{$height-header-footer} * 2));
