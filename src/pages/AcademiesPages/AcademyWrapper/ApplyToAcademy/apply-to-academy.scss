@@ -1,0 +1,42 @@
+@import '~/sass/utilities';
+
+.apply-to-academy {
+  $_this: &;
+
+  padding: 0 to-rem(48);
+  position: relative;
+
+  @include flex-box(
+    $direction: row,
+    $justify-content: normal,
+    $align-items: center
+  );
+
+  &__image-wrapper {
+    width: 180%;
+
+    #{$_this}__image {
+      transform: translate(8%, -6%) scale(110%);
+    }
+  }
+
+  &__particles-top {
+    left: 50%;
+    position: absolute;
+    right: 20%;
+    top: 3%;
+
+    &--five {
+      left: 40%;
+      right: 20%;
+      top: 0%;
+    }
+  }
+
+  &__particles-bottom {
+    left: 4%;
+    position: absolute;
+    right: 65%;
+    top: 77%;
+  }
+}
