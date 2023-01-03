@@ -1,4 +1,3 @@
-import { object } from 'prop-types';
 import React from 'react';
 
 import Admission from '~/pages/AcademiesPages/AcademyWrapper/AdmissionSection/AdmissionComponent';
@@ -7,20 +6,23 @@ import Particles from '~/assets/decorators/particles/particles-admission-section
 import Line from '~/assets/decorators/lines/line-admission-section.svg';
 import Image from '~/assets/images/admission-section.svg';
 
+import { admissionSectionType } from './type';
 import './admission-section';
 
 export const AdmissionSection = ({ data }) => {
+  const { admission, dates } = data;
+
   return (
     data && (
       <section className="admission-section">
         <div className="admission-section__text-container">
-          <Admission content={data.admission} />
+          <Admission content={admission} />
         </div>
         <div className="admission-section__particles-container">
           <Particles className="admission-section__particles" />
         </div>
         <div className="admission-section__dates-container">
-          <DatesContainer title="Dates" cardData={data.dates} />
+          <DatesContainer title="Dates" cardData={dates} />
           <Line className="admission-section__line" />
         </div>
         <div className="admission-section__image-container">
@@ -32,5 +34,5 @@ export const AdmissionSection = ({ data }) => {
 };
 
 AdmissionSection.propTypes = {
-  data: object.isRequired,
+  data: admissionSectionType.isRequired,
 };
