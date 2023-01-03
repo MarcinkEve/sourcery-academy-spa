@@ -29,6 +29,10 @@
       @include flex-box($justify-content: center);
     }
 
+    @include mobile-breakpoint {
+      min-width: to-rem(240);
+    }
+
     width: to-rem(576);
   }
 

@@ -2,6 +2,10 @@
 @import '~/sass/utilities/mixins';
 
 .radio {
+  @include mobile-breakpoint {
+    @include flex-box($direction: column);
+  }
+
   &__title {
     @include label($violet-400);
 
@@ -16,6 +20,14 @@
 
     &:not(:last-child) {
       margin-right: to-rem(61);
+    }
+
+    @include mobile-breakpoint {
+      @include flex-box($align-items: center);
+
+      &:not(:last-child) {
+        margin: 0 0 to-rem(20) 0;
+      }
     }
   }
 
