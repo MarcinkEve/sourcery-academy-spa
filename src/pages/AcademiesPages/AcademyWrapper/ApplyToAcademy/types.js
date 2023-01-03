@@ -4,6 +4,6 @@ export const applyToAcademyType = shape({
   title: string.isRequired,
   text: string.isRequired,
   academyType: string.isRequired,
-  Image: func,
-  TopParticles: func,
+  image: func,
+  particles: func,
 });

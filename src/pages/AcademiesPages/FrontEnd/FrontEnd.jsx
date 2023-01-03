@@ -14,8 +14,8 @@ export const FrontEnd = ({ theme }) => {
   const applyToAcademyData = {
     ...applyToAcademyText[ACADEMY_TYPE.FRONTEND],
     academyType: ACADEMY_TYPE.FRONTEND,
-    Image: applyToAcademyDecorators[ACADEMY_TYPE.FRONTEND].image,
-    TopParticles: applyToAcademyDecorators[ACADEMY_TYPE.FRONTEND].particles,
+    image: applyToAcademyDecorators[ACADEMY_TYPE.FRONTEND].image,
+    particles: applyToAcademyDecorators[ACADEMY_TYPE.FRONTEND].particles,
   };
 
   return (

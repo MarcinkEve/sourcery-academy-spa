@@ -14,8 +14,8 @@ export const Testers = ({ theme }) => {
   const applyToAcademyData = {
     ...applyToAcademyText[ACADEMY_TYPE.TESTERS],
     academyType: ACADEMY_TYPE.TESTERS,
-    Image: applyToAcademyDecorators[ACADEMY_TYPE.TESTERS].image,
-    TopParticles: applyToAcademyDecorators[ACADEMY_TYPE.TESTERS].particles,
+    image: applyToAcademyDecorators[ACADEMY_TYPE.TESTERS].image,
+    particles: applyToAcademyDecorators[ACADEMY_TYPE.TESTERS].particles,
   };
 
   return (

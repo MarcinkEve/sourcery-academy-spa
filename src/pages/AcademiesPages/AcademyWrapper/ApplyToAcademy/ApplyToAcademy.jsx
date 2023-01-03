@@ -10,7 +10,9 @@ import { applyToAcademyType } from './types.js';
 import './apply-to-academy';
 
 export const ApplyToAcademy = ({ data }) => {
-  const { title, text, academyType, Image, TopParticles } = data;
+  const { title, text, academyType, image, particles } = data;
+  const Image = image;
+  const TopParticles = particles;
   const [
     isParticlePositionNonDefault,
     setIsParticlePositionNonDefault,
