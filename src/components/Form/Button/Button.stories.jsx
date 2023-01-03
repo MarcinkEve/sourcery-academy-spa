@@ -3,33 +3,23 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
-  title: 'Button',
+  title: 'Form/FormButton',
   component: Button,
   args: {
+    theme: 'developers',
+    disabled: false,
     label: 'Button',
+    handleClick: () => {},
+  },
+  argTypes: {
+    handleClick: {
+      table: { disable: true },
+    },
   },
 };
 
-const provideTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <Button {...args} />;
-
-export const Home = Template.bind({});
-Home.decorators = provideTheme('home');
-
-export const Developers = Template.bind({});
-Developers.decorators = provideTheme('developers');
-
-export const Testers = Template.bind({});
-Testers.decorators = provideTheme('testers');
-
-export const FrontEnd = Template.bind({});
-FrontEnd.decorators = provideTheme('front-end');
+export const FormButton = (args) => (
+  <div theme={args.theme}>
+    <Button {...args} />
+  </div>
+);

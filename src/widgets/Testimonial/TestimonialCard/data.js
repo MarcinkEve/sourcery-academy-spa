@@ -1,20 +1,6 @@
 export const data = [
   {
     name: 'Lucas Celab',
-    photo: 'https://randomuser.me/api/portraits/men/1.jpg',
-    message:
-      'Sourcery seeks to inspire and educate the students giving them the opportunity to learn and apply technological product development skills.',
-    academy: 'Sourcery for Testers Graduate',
-  },
-  {
-    name: 'Laura Hales',
-    photo: 'https://randomuser.me/api/portraits/women/1.jpg',
-    message:
-      'During the 3 month academy we managed to learn not only the basics, but also to create advanced web pages. I am glad that I chose to apply and challenge myself. I would definitely recommend to apply for anyone who’s interested in front-end.',
-    academy: 'Sourcery for Front-End Graduate',
-  },
-  {
-    name: 'Lucas Celab',
     photo: 'https://randomuser.me/api/portraits/men/2.jpg',
     message: 'I really enjoyed working with the team using agile principles.',
     academy: 'Sourcery for Developers Graduate',
@@ -54,6 +40,13 @@ export const data = [
     academy: 'Sourcery for Testers Graduate',
   },
   {
+    name: 'Lucas Celab',
+    photo: 'https://randomuser.me/api/portraits/men/1.jpg',
+    message:
+      'Sourcery seeks to inspire and educate the students giving them the opportunity to learn and apply technological product development skills.',
+    academy: 'Sourcery for Testers Graduate',
+  },
+  {
     name: 'Juri Gian',
     photo: 'https://randomuser.me/api/portraits/men/4.jpg',
     message:
@@ -71,6 +64,13 @@ export const data = [
     name: 'Sofia Oliveira',
     photo: 'https://randomuser.me/api/portraits/women/3.jpg',
     message: 'Sourcery for Front-End helped me to become a better developer.',
+    academy: 'Sourcery for Front-End Graduate',
+  },
+  {
+    name: 'Laura Hales',
+    photo: 'https://randomuser.me/api/portraits/women/1.jpg',
+    message:
+      'During the 3 month academy we managed to learn not only the basics, but also to create advanced web pages. I am glad that I chose to apply and challenge myself. I would definitely recommend to apply for anyone who’s interested in front-end.',
     academy: 'Sourcery for Front-End Graduate',
   },
 ];
