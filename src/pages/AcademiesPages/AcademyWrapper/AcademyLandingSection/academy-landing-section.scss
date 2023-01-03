@@ -31,10 +31,6 @@
       display: none;
     }
 
-    @include mobile-breakpoint {
-      display: none;
-    }
-
     color: var(--primary-color);
     left: to-rem(70);
     max-width: to-rem(401);
