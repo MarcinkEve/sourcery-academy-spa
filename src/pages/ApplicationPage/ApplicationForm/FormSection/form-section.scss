@@ -6,6 +6,12 @@
     padding-right: $spacer-xs;
   }
 
+  @include mobile-breakpoint {
+    &:not(:first-child) {
+      padding-right: 0;
+    }
+  }
+
   &__title {
     margin: 0 0 to-rem(30) 0;
   }
