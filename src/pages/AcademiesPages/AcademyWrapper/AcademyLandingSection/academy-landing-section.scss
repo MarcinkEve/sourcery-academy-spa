@@ -3,6 +3,14 @@
 @import '~/sass/base';
 
 .academy-landing-section {
+  @include tablet-breakpoint {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+  }
+
   @include mobile-breakpoint {
     flex-wrap: wrap;
   }
