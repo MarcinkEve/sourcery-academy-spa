@@ -41,17 +41,17 @@ const config = {
             },
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: devMode,
-            },
-          },
-          {
             loader: 'postcss-loader',
             options: {
               config: {
                 path: `${__dirname}/postcss.config.js`,
               },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: devMode,
             },
           },
         ],
