@@ -1,6 +1,8 @@
 import React from 'react';
 
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
+import AcademyLandingSection from '~/pages/AcademiesPages/AcademyWrapper/AcademyLandingSection';
+import { landingSectionDataTypes } from '~/pages/AcademiesPages/AcademyWrapper/AcademyLandingSection/types.js';
 import { applicationProcessType } from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection/types';
 import ApplyToAcademy from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy';
 import { applyToAcademyType } from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy/types';
@@ -13,10 +15,12 @@ import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
 export const AcademyWrapper = ({
   schedule,
   applicationText,
+  landingSectionData,
   applyToAcademyData,
 }) => {
   return (
     <>
+      <AcademyLandingSection data={landingSectionData} />
       <ExtraWrappingSection>
         <ApplicationProcessSection applicationText={applicationText} />
         <ScheduleSection schedule={schedule} />
@@ -32,4 +36,5 @@ AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
   applicationText: applicationProcessType.isRequired,
   applyToAcademyData: applyToAcademyType.isRequired,
+  landingSectionData: landingSectionDataTypes.isRequired,
 };
