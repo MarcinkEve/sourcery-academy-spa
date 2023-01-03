@@ -15,6 +15,7 @@
 
   &__label {
     color: $charcoal-400;
+    cursor: pointer;
     font-family: $paragraph-font;
     font-weight: $font-weight-bold;
 
@@ -39,6 +40,7 @@
 
     &-label {
       text-transform: capitalize;
+      word-break: break-word;
     }
 
     &:focus,
