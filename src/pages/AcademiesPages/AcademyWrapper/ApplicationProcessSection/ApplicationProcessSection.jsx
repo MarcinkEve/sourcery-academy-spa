@@ -1,5 +1,4 @@
 import React from 'react';
-import { array } from 'prop-types';
 
 import IconLine from '~/assets/decorators/lines/application-process-line.svg';
 import IconParticlesBottom from '~/assets/decorators/particles/application-process-particles-bottom.svg';

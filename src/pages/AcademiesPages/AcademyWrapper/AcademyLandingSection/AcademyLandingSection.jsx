@@ -1,5 +1,4 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
 
 import { ROUTES } from '~/constants/routes';
 import TextSection from '~/components/UI/TextSection';
@@ -8,6 +7,7 @@ import CornerLine from '~/assets/decorators/lines/landing-section-corner-line.sv
 import ParagraphLine from '~/assets/decorators/lines/landing-section-paragraph-line.svg';
 
 import './academy-landing-section.scss';
+import { landingSectionDataTypes } from './types';
 
 export const AcademyLandingSection = ({ data }) => {
   const {
@@ -42,13 +42,5 @@ export const AcademyLandingSection = ({ data }) => {
 };
 
 AcademyLandingSection.propTypes = {
-  data: shape({
-    title: string.isRequired,
-    text: string.isRequired,
-    videoSrc: string.isRequired,
-    image: shape({
-      src: string.isRequired,
-      alt: string.isRequired,
-    }),
-  }),
+  data: landingSectionDataTypes.isRequired,
 };

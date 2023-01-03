@@ -1,8 +1,8 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
 
 import ApplicationProcessSection from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection';
 import AcademyLandingSection from '~/pages/AcademiesPages/AcademyWrapper/AcademyLandingSection';
+import { landingSectionDataTypes } from '~/pages/AcademiesPages/AcademyWrapper/AcademyLandingSection/types.js';
 import { applicationProcessType } from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection/types';
 import ApplyToAcademy from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy';
 import { applyToAcademyType } from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy/types';
@@ -36,13 +36,5 @@ AcademyWrapper.propTypes = {
   schedule: scheduleType.isRequired,
   applicationText: applicationProcessType.isRequired,
   applyToAcademyData: applyToAcademyType.isRequired,
-  landingSectionData: shape({
-    title: string.isRequired,
-    text: string.isRequired,
-    videoSrc: string.isRequired,
-    image: shape({
-      src: string.isRequired,
-      alt: string.isRequired,
-    }),
-  }),
+  landingSectionData: landingSectionDataTypes.isRequired,
 };
