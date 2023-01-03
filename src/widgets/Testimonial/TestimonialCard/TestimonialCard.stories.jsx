@@ -3,33 +3,23 @@ import TestimonialCard from './index';
 import { data } from './data';
 
 export default {
+  title: 'widgets/TestimonialSingleCard',
   component: TestimonialCard,
-  title: 'TestimonialCard',
   args: {
+    theme: 'developers',
     data: data[0],
+  },
+  argTypes: {
+    alt: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };
 
-const provideTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <TestimonialCard {...args} />;
-
-export const Home = Template.bind({});
-Home.decorators = provideTheme('home');
-
-export const Developers = Template.bind({});
-Developers.decorators = provideTheme('developers');
-
-export const Testers = Template.bind({});
-Testers.decorators = provideTheme('testers');
-
-export const FrontEnd = Template.bind({});
-FrontEnd.decorators = provideTheme('front-end');
+export const TestimonialSingleCard = (args) => (
+  <div theme={args.theme} style={{ paddingLeft: '1rem' }}>
+    <TestimonialCard {...args} />
+  </div>
+);

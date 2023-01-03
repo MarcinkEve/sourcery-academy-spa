@@ -7,29 +7,57 @@ import InstagramIcon from '~/assets/icons/icon-instagram.svg';
 import { SocialLink } from './SocialLink';
 
 export default {
-  title: 'SocialLink component',
+  title: 'UI/SocialLinkComponent',
   component: SocialLink,
+  args: {
+    icons: 'Facebook',
+  },
+  argTypes: {
+    icons: {
+      options: ['Facebook', 'Twitter', 'Instagram'],
+      control: 'radio',
+      mapping: {
+        Facebook: {
+          icon: <FacebookIcon className="social-link__icon" />,
+          title: 'Facebook',
+          link: 'https://www.facebook.com/devbridge',
+        },
+        Twitter: {
+          icon: <TwitterIcon className="social-link__icon" />,
+          title: 'Twitter',
+          link: 'https://www.twitter.com/devbridge',
+        },
+        Instagram: {
+          icon: <InstagramIcon className="social-link__icon" />,
+          title: 'Instagram',
+          link: 'https://www.instagram.com/devbridge',
+        },
+      },
+    },
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+    title: {
+      table: {
+        disable: true,
+      },
+    },
+    link: {
+      table: {
+        disable: true,
+      },
+    },
+    icon: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
-const Template = (args) => <SocialLink {...args} />;
-
-export const Facebook = Template.bind({});
-Facebook.args = {
-  title: 'Facebook',
-  link: 'https://www.facebook.com/devbridge',
-  icon: <FacebookIcon className="social-link__icon" />,
-};
-
-export const Twitter = Template.bind({});
-Twitter.args = {
-  title: 'Twitter',
-  link: 'https://www.twitter.com/devbridge',
-  icon: <TwitterIcon className="social-link__icon" />,
-};
-
-export const Instagram = Template.bind({});
-Instagram.args = {
-  title: 'Instagram',
-  link: 'https://www.instagram.com/devbridge',
-  icon: <InstagramIcon className="social-link__icon" />,
+export const SocialLinkComponent = (args) => {
+  const { icon, title, link } = args.icons;
+  return <SocialLink icon={icon} title={title} link={link} />;
 };

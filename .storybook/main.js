@@ -27,6 +27,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/preset-scss',
     'storybook-addon-pseudo-states',
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
   core: {

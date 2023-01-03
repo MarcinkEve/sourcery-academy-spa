@@ -3,10 +3,12 @@
 
 .corner-video {
   border-radius: 30%;
-  height: to-rem(620);
+  max-height: to-rem(620);
+  max-width: to-rem(620);
+  min-height: to-rem(260);
+  min-width: to-rem(260);
   overflow: hidden;
   position: relative;
-  width: to-rem(620);
 
   &::before {
     background-color: $white-400;

@@ -6,11 +6,13 @@
 
   margin: 0 auto;
   max-width: to-rem(1006);
+  position: relative;
   text-align: center;
 
   &__top-particles {
-    position: relative;
-    transform: translateY(20%);
+    left: 0%;
+    position: absolute;
+    top: -35%;
     z-index: -1;
   }
 
@@ -55,9 +57,10 @@
   }
 
   &__bottom-particles {
+    left: 10%;
     max-width: to-rem(790);
-    position: relative;
-    transform: translateY(-50%);
+    position: absolute;
+    top: 70%;
   }
 }
 
