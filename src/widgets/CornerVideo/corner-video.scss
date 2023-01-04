@@ -32,11 +32,11 @@
     width: 100%;
 
     @include tablet-breakpoint {
-      max-height: to-rem(500);
+      max-height: to-rem(400);
     }
 
     @include mobile-breakpoint {
-      max-height: to-rem(707);
+      object-position: 0 40%;
     }
   }
 
