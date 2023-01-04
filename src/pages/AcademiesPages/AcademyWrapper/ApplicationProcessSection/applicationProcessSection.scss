@@ -5,17 +5,33 @@
   margin: to-rem(300) auto to-rem(356);
   position: relative;
 
+  @include tablet-breakpoint {
+    margin: to-rem(100) auto to-rem(100);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) auto to-rem(100);
+  }
+
   &__particles--top {
     left: 63%;
     position: absolute;
     top: -15%;
     width: to-rem(436);
+
+    @include mobile-breakpoint {
+      display: none;
+    }
   }
 
   &__particles--bottom {
     left: 5%;
     position: absolute;
     width: to-rem(476);
+
+    @include mobile-breakpoint {
+      display: none;
+    }
   }
 
   &__svg-line {
