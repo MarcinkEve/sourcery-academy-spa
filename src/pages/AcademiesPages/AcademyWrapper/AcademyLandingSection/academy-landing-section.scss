@@ -9,58 +9,64 @@
     $align-items: center
   );
 
+  margin: to-rem(33) 0 to-rem(292);
+
   @include tablet-breakpoint {
+    flex-wrap: wrap;
     justify-content: center;
+    margin-top: to-rem(100);
+    max-width: to-rem(900);
   }
 
   @include mobile-breakpoint {
     flex-wrap: wrap;
+    margin-top: to-rem(50);
   }
 
-  margin: to-rem(118) 0 to-rem(292);
-
   &__paragraph {
-    @include mobile-breakpoint {
-      margin-right: 0;
-      text-align: center;
-    }
-
     margin-right: to-rem(60);
     position: relative;
     width: to-rem(559);
+
+    @include tablet-breakpoint {
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   &__paragraph-line {
-    @include tablet-breakpoint {
-      display: none;
-    }
-
     color: var(--primary-color);
     left: to-rem(70);
     max-width: to-rem(401);
     min-width: to-rem(300);
     position: absolute;
     transform: translateY(-50%);
+
+    @include tablet-breakpoint {
+      display: none;
+    }
   }
 
   &__corner {
     position: relative;
+
+    @include tablet-breakpoint {
+      justify-content: center;
+      width: to-rem(900);
+    }
   }
 
   &__corner-line {
-    @include tablet-breakpoint {
-      top: 12%;
-    }
-
-    @include mobile-breakpoint {
-      display: none;
-    }
-
     color: var(--primary-color);
     left: -8%;
     max-width: to-rem(648);
     min-width: to-rem(330);
     position: absolute;
     top: 15%;
+
+    @include tablet-breakpoint {
+      display: none;
+    }
   }
 }

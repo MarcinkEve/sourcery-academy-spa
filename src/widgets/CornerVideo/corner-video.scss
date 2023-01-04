@@ -3,12 +3,17 @@
 
 .corner-video {
   border-radius: 30%;
-  max-height: to-rem(620);
-  max-width: to-rem(620);
-  min-height: to-rem(260);
-  min-width: to-rem(260);
   overflow: hidden;
   position: relative;
+
+  @include tablet-breakpoint {
+    border-radius: to-rem(30);
+    margin-top: to-rem(40);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(40) auto 0;
+  }
 
   &::before {
     background-color: $white-400;
@@ -25,6 +30,14 @@
     height: 100%;
     object-fit: cover;
     width: 100%;
+
+    @include tablet-breakpoint {
+      max-height: to-rem(500);
+    }
+
+    @include mobile-breakpoint {
+      max-height: to-rem(707);
+    }
   }
 
   &__button {
