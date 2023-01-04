@@ -13,7 +13,7 @@ export const ScheduleColumn = ({ columnData }) => {
   const handleExpand = () => {
     setIsExpanded((prev) => !prev);
     isExpanded === false &&
-      document.getElementById('schedule-section-title').scrollIntoView();
+      document.getElementById('schedule-section-id').scrollIntoView();
   };
 
   return (
