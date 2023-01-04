@@ -24,9 +24,7 @@ export const ScheduleColumn = ({ columnData }) => {
         <div className="schedule-column__small-screen">
           <ScheduleSubcolumn
             subcolumnData={
-              isExpanded
-                ? allColumnData.map((column) => column).slice(0, 2)
-                : allColumnData.map((column) => column)
+              isExpanded ? allColumnData.slice(0, 2) : allColumnData
             }
           />
 
@@ -34,7 +32,7 @@ export const ScheduleColumn = ({ columnData }) => {
             <div className="schedule-column__button-container">
               <Button
                 handleClick={() => setIsExpanded((prev) => !prev)}
-                label={`Show ${isExpanded ? 'More' : 'Less'}`}
+                label={`Show ${isExpanded ? 'more' : 'less'}`}
               />
             </div>
           )}
