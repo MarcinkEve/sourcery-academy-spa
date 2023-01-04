@@ -1,6 +1,11 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .schedule-cards-wrapper {
+  @include tablet-breakpoint {
+    @include flex-box($direction: column);
+  }
+
   column-gap: $spacer-l;
   display: grid;
   grid-auto-flow: column;

@@ -14,7 +14,9 @@ export const ScheduleSection = ({ schedule }) => {
       {schedule && (
         <section className="schedule-section">
           <TopParticles className="schedule-section__top-particles" />
-          <h2 className="schedule-section__title">Schedule</h2>
+          <h2 id="schedule-section-id" className="schedule-section__title">
+            Schedule
+          </h2>
           <ScheduleCardsWrapper schedule={schedule} />
           <BottomParticles className="schedule-section__bottom-particles" />
           <Line className="schedule-section__line" />
