@@ -10,5 +10,5 @@ export const textSectionType = {
   paragraphContent: string.isRequired,
   buttonText: string,
   pageRoute: oneOf([...Object.values(ROUTES)]),
-  sectionId: string,
+  targetSectionId: string,
 };
