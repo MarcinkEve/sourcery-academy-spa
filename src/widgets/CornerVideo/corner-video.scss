@@ -2,11 +2,19 @@
 @import '~/sass/utilities/mixins';
 
 .corner-video {
+  @include tablet-breakpoint {
+    border-radius: to-rem(30);
+    margin-top: to-rem(40);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(40) auto 0;
+  }
+
   border-radius: 30%;
-  height: to-rem(620);
+  max-width: to-rem(900);
   overflow: hidden;
   position: relative;
-  width: to-rem(620);
 
   &::before {
     background-color: $white-400;
@@ -20,6 +28,14 @@
   }
 
   &__image {
+    @include tablet-breakpoint {
+      max-height: to-rem(400);
+    }
+
+    @include mobile-breakpoint {
+      object-position: 0 40%;
+    }
+
     height: 100%;
     object-fit: cover;
     width: 100%;

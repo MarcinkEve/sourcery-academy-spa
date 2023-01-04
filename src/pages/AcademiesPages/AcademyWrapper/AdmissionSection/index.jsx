@@ -1,3 +1,3 @@
-import { Admission } from './Admission';
+import { AdmissionSection } from './AdmissionSection';
 
-export default Admission;
+export default AdmissionSection;

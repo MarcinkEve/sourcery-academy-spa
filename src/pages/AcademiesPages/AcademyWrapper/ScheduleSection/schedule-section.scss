@@ -1,6 +1,11 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .schedule-section {
+  @include mobile-breakpoint {
+    margin: to-rem(50) auto to-rem(50);
+  }
+
   margin: to-rem(250) auto to-rem(290);
   max-width: to-rem(1184);
   position: relative;
@@ -11,6 +16,10 @@
   }
 
   &__top-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     left: to-rem(48);
     position: absolute;
     transform: translateY(-50%);
@@ -19,6 +28,10 @@
   }
 
   &__bottom-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     left: to-rem(314);
     position: absolute;
     transform: translateY(38%);
@@ -27,6 +40,10 @@
   }
 
   &__line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
     color: var(--primary-color);
     position: absolute;
     right: 0;

@@ -3,24 +3,22 @@ import React from 'react';
 import { SuccessMessage } from './SuccessMessage';
 
 export default {
-  title: 'Success Message',
+  title: 'UI/SuccessComponent',
   component: SuccessMessage,
   parameters: {
     layout: 'centered',
   },
+  args: {
+    title: 'Thank you',
+    text: 'Your form was submitted',
+  },
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
-const setTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <SuccessMessage {...args} />;
-
-export const Success = Template.bind({});
-Success.decorators = setTheme('application');
+export const SuccessComponent = (args) => <SuccessMessage {...args} />;

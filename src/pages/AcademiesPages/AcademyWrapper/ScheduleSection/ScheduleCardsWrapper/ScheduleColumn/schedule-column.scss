@@ -10,6 +10,38 @@
   &__data {
     @include flex-box($direction: row, $justify-content: center);
 
+    @include tablet-breakpoint {
+      &:not(:last-child) {
+        margin-bottom: $spacer-l;
+      }
+    }
+
+    @include mobile-breakpoint {
+      @include flex-box($direction: column, $align-items: center);
+    }
+  }
+
+  &__large-screen {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     column-gap: $spacer-l;
+    display: flex;
+  }
+
+  &__small-screen {
+    @include mobile-breakpoint {
+      display: block;
+      justify-content: center;
+    }
+
+    display: none;
+    margin-bottom: $spacer-l;
+  }
+
+  &__button-container {
+    margin-top: $spacer-l;
+    text-align: center;
   }
 }

@@ -6,6 +6,13 @@ addDecorator((story) => (
   <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
 ));
 
+export const argTypes = {
+  theme: {
+    options: ['developers', 'testers', 'front-end'],
+    control: 'radio',
+  },
+};
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
