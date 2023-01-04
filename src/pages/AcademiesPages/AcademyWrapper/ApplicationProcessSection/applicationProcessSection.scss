@@ -6,11 +6,11 @@
   position: relative;
 
   @include tablet-breakpoint {
-    margin: to-rem(100) auto to-rem(100);
+    margin: to-rem(200) auto to-rem(250);
   }
 
   @include mobile-breakpoint {
-    margin: to-rem(50) auto to-rem(100);
+    margin: to-rem(50) auto to-rem(75);
   }
 
   &__particles--top {
