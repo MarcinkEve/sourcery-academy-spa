@@ -4,7 +4,7 @@
 .checkbox {
   $_this: &;
 
-  @include flex-box($justify-content: flex-start, $align-items: start);
+  @include flex-box($justify-content: flex-start, $align-items: flex-start);
 
   &__text {
     line-height: $line-height-l;

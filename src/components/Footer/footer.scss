@@ -2,19 +2,16 @@
 @import '~/sass/utilities/mixins';
 
 .footer {
-  @include flex-box(
-    $direction: row,
-    $justify-content: space-between,
-    $align-items: center
-  );
+  @include flex-box($justify-content: space-between, $align-items: center);
 
   @include mobile-breakpoint {
     flex-direction: column;
+    padding: 0;
   }
 
   height: $height-header-footer;
   margin: 0 auto;
-  max-width: to-rem(1440);
+  max-width: $max-page-width;
   padding: 0 to-rem(40);
 
   &__list {
@@ -23,6 +20,7 @@
       $justify-content: center,
       $align-items: center
     );
+
     @include reset-list-style;
 
     @include mobile-breakpoint {
@@ -40,6 +38,7 @@
     @include mobile-breakpoint {
       font-size: $font-size-xs;
       margin-bottom: $spacer-xxxs;
+      margin-top: $spacer-xxxs;
       text-align: center;
     }
 
