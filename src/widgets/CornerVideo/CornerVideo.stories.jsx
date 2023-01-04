@@ -8,7 +8,7 @@ import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
 const images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
 
 export default {
-  title: 'CornerVideo',
+  title: 'widgets/CornerVideoComponent',
   component: CornerVideo,
   args: {
     theme: 'developers',
@@ -22,25 +22,28 @@ export default {
       options: ['developers', 'testers', 'front-end'],
       control: 'radio',
       mapping: {
-        developers: 'developers',
-        testers: 'testers',
-        'front-end': 'front-end',
+        developers: { theme: 'developers', image: images[0] },
+        testers: { theme: 'testers', image: images[1] },
+        'front-end': { theme: 'front-end', image: images[2] },
       },
     },
     image: {
-      options: images,
-      control: 'radio',
+      table: { disable: true },
+    },
+    description: {
+      table: { disable: true },
+    },
+    videoSrc: {
+      table: { disable: true },
     },
   },
 };
 
-const Template = (args) => {
-  const { theme, ...rest } = args;
+export const CornerVideoComponent = (args) => {
+  const { theme, image } = args.theme;
   return (
     <div theme={theme}>
-      <CornerVideo {...rest} />
+      <CornerVideo {...args} image={image} />
     </div>
   );
 };
-
-export const VideoCardComponent = Template.bind({});

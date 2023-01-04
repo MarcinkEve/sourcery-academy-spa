@@ -10,7 +10,7 @@
 
   @include tablet-breakpoint {
     justify-content: center;
-    margin: to-rem(100) 0 to-rem(350);
+    margin-top: to-rem(100);
     position: relative;
     text-align: center;
   }

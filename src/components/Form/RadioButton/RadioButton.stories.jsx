@@ -3,35 +3,36 @@ import React from 'react';
 import { RadioButton } from './RadioButton';
 
 export default {
-  title: 'Form / Radio Button',
+  title: 'Form /RadioSelectButton',
   component: RadioButton,
+  args: {
+    isRequired: true,
+    name: 'City',
+    radioValues: [
+      {
+        name: 'Kaunas',
+        value: 'kaunas',
+        id: 15698,
+      },
+      {
+        name: 'Vilnius',
+        value: 'vilnius',
+        id: 81554,
+      },
+    ],
+  },
+  argTypes: {
+    theme: {
+      table: {
+        disable: true,
+      },
+    },
+    onValueChange: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
-const setTheme = (theme) => {
-  return [
-    (Story) => (
-      <div theme={theme}>
-        <Story />
-      </div>
-    ),
-  ];
-};
-
-const Template = (args) => <RadioButton {...args} />;
-export const RadioButtonComponent = Template.bind({});
-RadioButtonComponent.decorators = setTheme('application');
-RadioButtonComponent.args = {
-  title: 'Academy city',
-  radioValues: [
-    {
-      name: 'Kaunas',
-      value: 'kaunas',
-      id: 15698,
-    },
-    {
-      name: 'Vilnius',
-      value: 'vilnius',
-      id: 81554,
-    },
-  ],
-};
+export const RadioSelectButton = (args) => <RadioButton {...args} />;
