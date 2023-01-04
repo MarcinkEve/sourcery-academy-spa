@@ -10,6 +10,12 @@ export const ScheduleColumn = ({ columnData }) => {
   const allColumnData = [...columnData.column_1, ...columnData.column_2];
   const [isExpanded, setIsExpanded] = useState(true);
 
+  const handleExpand = () => {
+    setIsExpanded((prev) => !prev);
+    isExpanded === false &&
+      document.getElementById('schedule-section-title').scrollIntoView();
+  };
+
   return (
     <>
       <h3 className="schedule-column__title">{columnData.title.join(' / ')}</h3>
@@ -31,7 +37,7 @@ export const ScheduleColumn = ({ columnData }) => {
           {allColumnData.length > 2 && (
             <div className="schedule-column__button-container">
               <Button
-                handleClick={() => setIsExpanded((prev) => !prev)}
+                handleClick={handleExpand}
                 label={`Show ${isExpanded ? 'more' : 'less'}`}
               />
             </div>
