@@ -1,4 +1,5 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .application-section {
   margin: to-rem(300) auto to-rem(356);
@@ -24,5 +25,9 @@
     top: -2%;
     transform: rotate(3deg);
     width: to-rem(72);
+
+    @include tablet-breakpoint {
+      display: none;
+    }
   }
 }
