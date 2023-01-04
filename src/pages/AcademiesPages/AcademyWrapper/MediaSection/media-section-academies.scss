@@ -1,10 +1,15 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .media-section-academies {
   margin-bottom: to-rem(370);
   position: relative;
 
   &__particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
     position: absolute;
     right: 5%;
     top: -5%;
@@ -13,6 +18,10 @@
   }
 
   &__line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
     color: var(--primary-color);
     left: -5%;
     position: absolute;
