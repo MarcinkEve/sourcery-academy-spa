@@ -1,8 +1,15 @@
 @import '~/sass/variables';
+@import '~/sass/utilities';
 
 .form-section {
   &:not(:first-child) {
     padding-right: $spacer-xs;
+  }
+
+  @include mobile-breakpoint {
+    &:not(:first-child) {
+      padding-right: 0;
+    }
   }
 
   &__title {
