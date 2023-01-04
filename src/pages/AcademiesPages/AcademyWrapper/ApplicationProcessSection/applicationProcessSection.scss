@@ -10,7 +10,7 @@
   }
 
   @include mobile-breakpoint {
-    margin: to-rem(50) auto to-rem(75);
+    margin: to-rem(50) auto to-rem(50);
   }
 
   &__particles--top {
