@@ -13,7 +13,7 @@ export const IntroSection = ({ introSectionData }) => {
     headingContent,
     paragraphContent,
     buttonText,
-    pageRoute,
+    targetSectionId,
   } = introSectionData;
   return (
     <section className="intro-section">
@@ -22,7 +22,7 @@ export const IntroSection = ({ introSectionData }) => {
           headingContent={<h1>{headingContent}</h1>}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
-          pageRoute={pageRoute}
+          targetSectionId={targetSectionId}
         />
       </div>
       <IntroIcon className="intro-section__image" />
