@@ -1,0 +1,70 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+@import '~/sass/base';
+
+.academy-landing-section {
+  @include tablet-breakpoint {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: to-rem(900);
+  }
+
+  @include mobile-breakpoint {
+    margin-top: to-rem(50);
+  }
+
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  margin: to-rem(100) 0 to-rem(292);
+
+  &__paragraph {
+    @include tablet-breakpoint {
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    margin-right: to-rem(60);
+    position: relative;
+    width: to-rem(559);
+  }
+
+  &__paragraph-line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    color: var(--primary-color);
+    left: to-rem(70);
+    max-width: to-rem(401);
+    min-width: to-rem(300);
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  &__corner {
+    @include tablet-breakpoint {
+      justify-content: center;
+      width: to-rem(900);
+    }
+
+    position: relative;
+  }
+
+  &__corner-line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    color: var(--primary-color);
+    left: -8%;
+    max-width: to-rem(648);
+    min-width: to-rem(330);
+    position: absolute;
+    top: 15%;
+  }
+}

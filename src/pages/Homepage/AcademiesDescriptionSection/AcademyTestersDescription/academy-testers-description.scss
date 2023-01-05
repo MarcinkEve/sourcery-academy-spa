@@ -8,41 +8,81 @@
     $align-items: flex-start
   );
 
-  padding-top: to-rem(100);
+  @include tablet-breakpoint {
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-top: to-rem(100);
+  }
+
+  @include mobile-breakpoint {
+    margin-top: to-rem(20);
+  }
+
+  column-gap: to-rem(16);
+  margin-top: to-rem(100);
 
   &__top-particles {
-    margin-bottom: to-rem(15);
-    max-width: to-rem(125);
+    left: 70%;
     position: absolute;
-    right: to-rem(41);
-    transform: translateY(-125%);
+    top: -24%;
+    width: to-rem(125);
+    z-index: -1;
+    @include mobile-breakpoint {
+      display: none;
+    }
   }
 
   &__content {
-    max-width: to-rem(559);
+    @include tablet-breakpoint {
+      width: 100%;
+    }
+
     position: relative;
+    width: min(48%, to-rem(560));
   }
 
   &__bottom-particles {
-    bottom: to-rem(20);
-    left: to-rem(45);
-    max-width: to-rem(230);
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    bottom: 5%;
+    left: 10%;
     position: absolute;
+    top: 68%;
+    width: to-rem(230);
+    z-index: -1;
   }
 
   &__icons {
-    left: to-rem(70);
+    @include tablet-breakpoint {
+      width: 100%;
+    }
+
     position: relative;
+    width: 52%;
   }
 
   &__icons-image {
+    @include tablet-breakpoint {
+      transform: translateY(0%);
+      width: 100%;
+      z-index: -1;
+    }
+
+    transform: translateX(20%);
     width: to-rem(353);
     z-index: -1;
   }
 
   &__icons-line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
     position: absolute;
-    transform: translate(-75%, -11%);
+    right: 0;
+    top: -35%;
     width: to-rem(693);
     z-index: -1;
   }

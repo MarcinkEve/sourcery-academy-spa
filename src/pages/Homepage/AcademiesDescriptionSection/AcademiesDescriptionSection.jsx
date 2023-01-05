@@ -7,6 +7,8 @@ import AcademyTestersDescription from '~/pages/Homepage/AcademiesDescriptionSect
 import AcademyFrontEndDescription from '~/pages/Homepage/AcademiesDescriptionSection/AcademyFrontEndDescription';
 import AcademyKidsDescription from '~/pages/Homepage/AcademiesDescriptionSection/AcademyKidsDescription';
 
+import './academies-description-section';
+
 export const AcademiesDescriptionSection = ({
   developersDescriptionData,
   testersDescriptionData,
@@ -16,7 +18,7 @@ export const AcademiesDescriptionSection = ({
   return (
     <section
       className="academies-description-section"
-      id="academies-decription-section"
+      id="academiesDecriptionSection"
     >
       <AcademyDevelopersDescription
         developersDescriptionData={developersDescriptionData}

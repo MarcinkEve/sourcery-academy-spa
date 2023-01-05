@@ -1,5 +1,4 @@
 import React from 'react';
-import { array } from 'prop-types';
 
 import IconLine from '~/assets/decorators/lines/application-process-line.svg';
 import IconParticlesBottom from '~/assets/decorators/particles/application-process-particles-bottom.svg';
@@ -7,6 +6,7 @@ import IconParticlesTop from '~/assets/decorators/particles/application-process-
 import ApplicationProcess from '~/pages/AcademiesPages/AcademyWrapper/ApplicationProcessSection/ApplicationProcess';
 
 import { icons } from './data';
+import { applicationProcessType } from './types';
 import './applicationProcessSection.scss';
 
 export const ApplicationProcessSection = ({ applicationText }) => {
@@ -25,5 +25,5 @@ export const ApplicationProcessSection = ({ applicationText }) => {
 };
 
 ApplicationProcessSection.propTypes = {
-  applicationText: array.isRequired,
+  applicationText: applicationProcessType.isRequired,
 };

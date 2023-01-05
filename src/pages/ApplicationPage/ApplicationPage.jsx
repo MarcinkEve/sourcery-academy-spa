@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { string } from 'prop-types';
 
 import IconSuccessImage from '~/assets/icons/icon-success-image.svg';
@@ -47,6 +47,10 @@ export const ApplicationPage = ({ title, theme }) => {
     setIsSubmitted(true);
     console.table(formValues); //eslint-disable-line
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <PageLayout theme={theme}>

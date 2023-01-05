@@ -2,6 +2,10 @@
 @import '~/sass/utilities/mixins';
 
 .radio {
+  @include mobile-breakpoint {
+    @include flex-box($direction: column);
+  }
+
   &__title {
     @include label($violet-400);
 
@@ -11,11 +15,20 @@
 
   &__label {
     color: $charcoal-400;
+    cursor: pointer;
     font-family: $paragraph-font;
     font-weight: $font-weight-bold;
 
     &:not(:last-child) {
       margin-right: to-rem(61);
+    }
+
+    @include mobile-breakpoint {
+      @include flex-box($align-items: center);
+
+      &:not(:last-child) {
+        margin: 0 0 to-rem(20) 0;
+      }
     }
   }
 
@@ -27,6 +40,7 @@
 
     &-label {
       text-transform: capitalize;
+      word-break: break-word;
     }
 
     &:focus,
