@@ -1,0 +1,8 @@
+@import '~/sass/utilities/functions';
+
+.corner-video {
+  &__storybook-container {
+    max-height: to-rem(620);
+    max-width: to-rem(620);
+  }
+}

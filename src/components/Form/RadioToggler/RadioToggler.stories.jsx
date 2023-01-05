@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { RadioToggler } from './RadioToggler';
+import './radio-toggler-storybook.scss';
 
 export default {
   title: 'Form /RadioToggleButton',
@@ -23,13 +24,10 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: '509px' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
-export const RadioToggleButton = (args) => <RadioToggler {...args} />;
+export const RadioToggleButton = (args) => (
+  <div className="radio-toggler__storybook-container">
+    <RadioToggler {...args} />
+  </div>
+);

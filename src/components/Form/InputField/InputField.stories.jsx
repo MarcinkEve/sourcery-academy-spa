@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { InputField } from './InputField';
+import './input-field-storybook.scss';
 
 export default {
   title: 'Form /InputFields',
@@ -30,16 +31,13 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: '509px' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
-const Template = (args) => <InputField {...args} />;
+const Template = (args) => (
+  <div className="input-field__storybook-container">
+    <InputField {...args} />
+  </div>
+);
 
 export const NameInput = Template.bind({});
 NameInput.args = {
