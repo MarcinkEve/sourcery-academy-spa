@@ -8,13 +8,44 @@
     $align-items: center
   );
 
+  @include tablet-breakpoint {
+    justify-content: center;
+    margin-top: to-rem(100);
+    position: relative;
+    text-align: center;
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) 0 to-rem(300);
+  }
+
   margin: to-rem(194) 0 to-rem(420);
 
   &__paragraph {
-    max-width: to-rem(465);
+    @include tablet-breakpoint {
+      width: 100%;
+    }
+
+    width: max(36%, 400px);
   }
 
   &__image {
-    max-width: to-rem(634);
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    width: max(50%, 500px);
+  }
+
+  &__background {
+    @include tablet-breakpoint {
+      bottom: to-rem(-190);
+      display: block;
+      position: absolute;
+      width: to-rem(1350);
+      z-index: -1;
+    }
+
+    display: none;
   }
 }

@@ -1,14 +1,23 @@
+@import '~/sass/variables';
 @import '~/sass/utilities';
 
 .form-layout {
   margin: to-rem(40) 0;
 
   &__container-header {
+    @include tablet-breakpoint {
+      text-align: center;
+    }
+
     margin-bottom: to-rem(80);
   }
 
   &__content-container {
     @include flex-box($justify-content: space-between, $align-items: center);
+
+    @include tablet-breakpoint {
+      @include flex-box($justify-content: center);
+    }
 
     min-height: to-rem(587);
   }
@@ -16,10 +25,22 @@
   &__content {
     @include flex-box($direction: column, $align-items: center);
 
+    @include tablet-breakpoint {
+      @include flex-box($justify-content: center);
+    }
+
+    @include mobile-breakpoint {
+      min-width: to-rem(240);
+    }
+
     width: to-rem(576);
   }
 
   &__image-section {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
     display: flex;
     position: relative;
     width: to-rem(620);

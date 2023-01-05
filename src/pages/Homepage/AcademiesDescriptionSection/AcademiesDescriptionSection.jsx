@@ -18,7 +18,7 @@ export const AcademiesDescriptionSection = ({
   return (
     <section
       className="academies-description-section"
-      id="academies-decription-section"
+      id="academiesDecriptionSection"
     >
       <AcademyDevelopersDescription
         developersDescriptionData={developersDescriptionData}

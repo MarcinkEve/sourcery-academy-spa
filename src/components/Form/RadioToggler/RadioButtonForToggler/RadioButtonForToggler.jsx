@@ -11,27 +11,29 @@ export const RadioButtonForToggler = ({
   radioValue,
 }) => {
   return (
-    <>
+    <div className={'radio-toggler-item'}>
       <input
         type="radio"
         name={name}
         value={value}
         onChange={handleChange}
-        className={'radio-toggler__input'}
+        className={'radio-toggler-item__input'}
         checked={value === radioValue}
         id={value}
       />
       <label
         htmlFor={value}
-        className={classNames('radio-toggler__label', {
-          'radio-toggler__label--checked': value === radioValue,
+        className={classNames('radio-toggler-item__label', {
+          'radio-toggler-item__label--checked': value === radioValue,
         })}
         title={value}
         aria-label={value}
       >
-        <span aria-hidden="true">{value}</span>
+        <span className={'radio-toggler-item__input-label'} aria-hidden="true">
+          {value}
+        </span>
       </label>
-    </>
+    </div>
   );
 };
 
