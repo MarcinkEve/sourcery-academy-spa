@@ -39,7 +39,7 @@
 
   &__background {
     @include tablet-breakpoint {
-      bottom: -12rem;
+      bottom: to-rem(-190);
       display: block;
       position: absolute;
       width: to-rem(1350);
