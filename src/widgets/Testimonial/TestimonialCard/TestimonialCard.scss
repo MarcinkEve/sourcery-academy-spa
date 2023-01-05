@@ -13,6 +13,10 @@ $_border-radius-size: 16px;
     $align-items: center
   );
   @include box-shadow(to-rem(-$_shadow-size), to-rem($_shadow-size));
+  @include tablet-breakpoint {
+    max-width: 340px;
+    width: 80vw;
+  }
 
   background-color: $white-400;
   border: var(--primary-color) solid 2px;
