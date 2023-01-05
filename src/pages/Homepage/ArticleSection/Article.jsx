@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ArticleTopParticles from '~/assets/icons/icon-article-top-particles.svg';
-import ArticleBottomParticles from '~/assets/icons/icon-article-bottom-particles.svg';
+import ArticleTopParticles from '~/assets/decorators/particles/article-top-particles.svg';
+import ArticleBottomParticles from '~/assets/decorators/particles/article-bottom-particles.svg';
 import VerticalLine from '~/assets/icons/icon-vertical-line-article.svg';
 import ArrowDownArticle from '~/assets/icons/icon-arrow-down-article.svg';
 import { articleTypes } from '~/pages/Homepage/ArticleSection/types';
