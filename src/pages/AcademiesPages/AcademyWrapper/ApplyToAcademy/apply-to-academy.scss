@@ -1,9 +1,18 @@
-@import '~/sass/utilities';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .apply-to-academy {
   $_this: &;
 
   position: relative;
+
+  @include tablet-breakpoint {
+    margin: to-rem(200) auto to-rem(200);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) auto to-rem(50);
+  }
 
   @include flex-box(
     $direction: row,
@@ -23,7 +32,7 @@
     left: 50%;
     position: absolute;
     right: 20%;
-    top: 0%;
+    top: 0;
 
     &--five {
       left: 46%;

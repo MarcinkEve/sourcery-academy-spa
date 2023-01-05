@@ -1,7 +1,16 @@
-@import '~/sass/utilities';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .admission-section {
   $_this: &;
+
+  @include tablet-breakpoint {
+    margin: to-rem(200) auto to-rem(200);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) auto to-rem(50);
+  }
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
