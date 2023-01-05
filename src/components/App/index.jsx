@@ -7,21 +7,13 @@ import { Footer } from '~/components/Footer/Footer';
 import FrontEnd from '~/pages/AcademiesPages/FrontEnd';
 import Header from '~/components/Header';
 import Homepage from '~/pages/Homepage';
-import Kids from '~/pages/AcademiesPages/Kids';
 import Media from '~/pages/MediaPage';
 import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
+import NotFound from '~/components/UI/NotFound';
 
 export default function index() {
-  const {
-    HOME,
-    DEVELOPERS,
-    FRONTEND,
-    KIDS,
-    TESTERS,
-    MEDIA,
-    APPLICATION,
-  } = ROUTES;
+  const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION } = ROUTES;
 
   return (
     <>
@@ -34,7 +26,7 @@ export default function index() {
             element={<Developers theme="developers" />}
           />
           <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
-          <Route path={KIDS} element={<Kids theme="home" />} />
+          <Route path="*" element={<NotFound theme="home" />} />
           <Route path={TESTERS} element={<Testers theme="testers" />} />
           <Route path={MEDIA} element={<Media theme="home" />} />
           <Route

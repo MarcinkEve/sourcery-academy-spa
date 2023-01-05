@@ -6,26 +6,26 @@ import TextSection from '~/components/UI/TextSection';
 import { textSectionType } from '~/components/UI/TextSection/types';
 import Image from '~/assets/images/testers-description.svg';
 
-import './page-404.scss';
+import './not-found-content.scss';
 
-export const Page404 = ({ data }) => {
+export const NotFoundContent = ({ data }) => {
   const { headingContent, paragraphContent, buttonText } = data;
 
   return (
-    <div className="page404">
+    <div className="not-found">
       <TextSection
-        className="page404__text"
+        className="not-found__text"
         headingContent={<h1>{headingContent}</h1>}
         isHeadingSpacingLarge
         paragraphContent={<p>{paragraphContent}</p>}
         buttonText={buttonText}
         pageRoute={ROUTES.HOME}
       />
-      <Image className="page404__image" />
+      <Image className="not-found__image" />
     </div>
   );
 };
 
-Page404.propTypes = {
+NotFoundContent.propTypes = {
   data: shape(textSectionType).isRequired,
 };

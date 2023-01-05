@@ -1,7 +1,7 @@
 @import '~/sass/variables';
 @import '~/sass/utilities';
 
-.page404 {
+.not-found {
   @include flex-box(
     $direction: row,
     $justify-content: space-between,
