@@ -6,7 +6,7 @@ $_paragraph-width: 62%;
 $_paragraph-width-responsive: 65vw;
 
 $_svg-container-width: 50%;
-$_svg-container-width-responsive: 22vw;
+$_svg-container-width-responsive: 18vw;
 
 .application-step {
   $_this: &;
@@ -37,7 +37,7 @@ $_svg-container-width-responsive: 22vw;
     min-height: to-rem(110);
 
     @include mobile-breakpoint {
-      width: $_paragraph-width-responsive;
+      width: 80vw;
     }
   }
 
@@ -53,6 +53,10 @@ $_svg-container-width-responsive: 22vw;
 
     @include mobile-breakpoint {
       transform: none;
+
+      #{$_this}__paragraph {
+        transform: translateX(-17%);
+      }
     }
 
     #{$_this}__svg-container {
