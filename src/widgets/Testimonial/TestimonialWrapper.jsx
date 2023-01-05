@@ -50,9 +50,10 @@ export const TestimonialWrapper = ({ title, data, alt, slides = 3 }) => {
   useEffect(updateWidth, [carouselWrapperRef]);
   useWindowSizeUpdates(updateWidth, [carouselWrapperRef]);
   useEffect(() => {
-    setVisibleSlides(
-      Math.floor(containerWidth / (testimonialCardWidth + parseInt(shadowSize)))
+    const numSlidesFit = Math.floor(
+      containerWidth / (testimonialCardWidth + parseInt(shadowSize))
     );
+    setVisibleSlides(Math.max(1, numSlidesFit));
   }, [containerWidth]);
 
   return (
@@ -84,6 +85,7 @@ export const TestimonialWrapper = ({ title, data, alt, slides = 3 }) => {
               key={index}
               index={index}
               className="carousel-wrapper__card"
+              innerClassName={'carousel-wrapper__inner-slide'}
               style={
                 visibleSlides >= 3
                   ? { marginRight: gap }
