@@ -1,5 +1,7 @@
+@import '~/sass/utilities/functions';
+
 .file-upload {
   &__story-container {
-    width: 509px;
+    width: to-rem(509);
   }
 }

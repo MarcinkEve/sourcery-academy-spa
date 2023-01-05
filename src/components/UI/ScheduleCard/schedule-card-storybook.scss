@@ -1,5 +1,8 @@
+@import '~/sass/utilities/functions';
+
 .schedule-card {
   &__storybook-container {
-    padding-left: 1rem;
+    padding-left: to-rem(16);
+    width: to-rem(266);
   }
 }

@@ -1,5 +1,7 @@
+@import '~/sass/utilities/functions';
+
 .radio-toggler {
   &__storybook-container {
-    width: 509px;
+    width: to-rem(509);
   }
 }

@@ -1,5 +1,7 @@
+@import '~/sass/utilities/functions';
+
 .dates-card {
   &__storybook-container {
-    width: 306px;
+    width: to-rem(306);
   }
 }

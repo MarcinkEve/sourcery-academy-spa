@@ -1,5 +1,7 @@
+@import '~/sass/utilities/functions';
+
 .input-field {
   &__storybook-container {
-    width: 509px;
+    width: to-rem(509);
   }
 }

@@ -1,5 +1,7 @@
+@import '~/sass/utilities/functions';
+
 .checkbox {
   &__story-container {
-    width: 509px;
+    width: to-rem(509);
   }
 }
