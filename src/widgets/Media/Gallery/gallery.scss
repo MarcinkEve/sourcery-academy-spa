@@ -6,12 +6,15 @@
   $_gap-size: $spacer-l;
 
   @include tablet-breakpoint {
+    /* autoprefixer: ignore next */
     grid-auto-rows: min(to-rem(220), 25vw);
     grid-template-columns: repeat(3, 1fr);
   }
 
   @include mobile-breakpoint {
     column-gap: min($_gap-size, 7vw);
+
+    /* autoprefixer: ignore next */
     grid-auto-rows: min(to-rem(202), 40vw);
     grid-template-columns: repeat(2, 1fr);
     row-gap: min($_gap-size, 7vw);
