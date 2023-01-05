@@ -51,9 +51,11 @@ $_svg-container-width-responsive: 18vw;
     text-align: right;
     transform: translateY(to-rem(95));
 
-    @include mobile-breakpoint {
+    @include tablet-breakpoint {
       transform: none;
+    }
 
+    @include mobile-breakpoint {
       #{$_this}__paragraph {
         transform: translateX(-17%);
       }
