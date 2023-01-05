@@ -1,0 +1,36 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.burger-menu {
+  position: fixed;
+  right: 50px;
+  top: 100px;
+
+  &__line {
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      background-color: $header-clr;
+      content: '';
+      display: inline-block;
+      height: to-rem(5);
+      width: to-rem(40);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      top: 10px;
+    }
+
+    &::after {
+      top: -10px;
+    }
+  }
+}

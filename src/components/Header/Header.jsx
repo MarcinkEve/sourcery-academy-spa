@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HeaderDropdown from '~/components/Header/Dropdown';
+import BurgerMenu from '~/components/Header/BurgerMenu';
 
 import './header.scss';
 
@@ -29,6 +30,7 @@ const dropdownElements = [
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const ref = useRef(null);
 
@@ -57,74 +59,78 @@ export const Header = () => {
   }, []);
 
   return (
-    <div className="header">
-      <NavLink className="logo" to="/" aria-label="Home link">
-        <SvgLogo className="logo__image" />
-        <span className="logo__text">Sourcery Academy</span>
-      </NavLink>
-      <ul className="navlinks">
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/"
-          >
-            About us
-          </NavLink>
-        </li>
-        <li className="navlinks__academies" ref={ref}>
-          <button
-            className={classNames(
-              'navlinks__academies-menu',
-              isAcademiesPathActive(pathname) &&
-                'navlinks__academies-menu--active'
+    <>
+      {/* <BurgerMenu></BurgerMenu> */}
+      <BurgerMenu />
+      <div className="header">
+        <NavLink className="logo" to="/" aria-label="Home link">
+          <SvgLogo className="logo__image" />
+          <span className="logo__text">Sourcery Academy</span>
+        </NavLink>
+        <ul className="navlinks">
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+              }
+              to="/"
+            >
+              About us
+            </NavLink>
+          </li>
+          <li className="navlinks__academies" ref={ref}>
+            <button
+              className={classNames(
+                'navlinks__academies-menu',
+                isAcademiesPathActive(pathname) &&
+                  'navlinks__academies-menu--active'
+              )}
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+            >
+              Academies
+              <SvgArrow className="navlinks__academies-arrow" />
+            </button>
+            {isDropdownOpen && (
+              <div className="navlinks__academies-dropdown">
+                <HeaderDropdown
+                  data={dropdownElements}
+                  onClickOutside={() => setIsDropdownOpen(false)}
+                />
+              </div>
             )}
-            onClick={() => setIsDropdownOpen((prev) => !prev)}
-          >
-            Academies
-            <SvgArrow className="navlinks__academies-arrow" />
-          </button>
-          {isDropdownOpen && (
-            <div className="navlinks__academies-dropdown">
-              <HeaderDropdown
-                data={dropdownElements}
-                onClickOutside={() => setIsDropdownOpen(false)}
-              />
-            </div>
-          )}
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/media"
-          >
-            Media
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/applicationform"
-          >
-            Register
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/questions"
-          >
-            Questions
-          </NavLink>
-        </li>
-      </ul>
-    </div>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+              }
+              to="/media"
+            >
+              Media
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+              }
+              to="/applicationform"
+            >
+              Register
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+              }
+              to="/questions"
+            >
+              Questions
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
