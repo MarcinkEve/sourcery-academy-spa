@@ -24,6 +24,14 @@
     }
 
     &--spaced {
+      @include tablet-breakpoint {
+        margin: to-rem(45) 0;
+      }
+
+      @include mobile-breakpoint {
+        margin: to-rem(30) 0;
+      }
+
       margin: to-rem(60) 0;
     }
   }
