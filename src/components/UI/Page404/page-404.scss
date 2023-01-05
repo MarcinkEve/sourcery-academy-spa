@@ -1,7 +1,31 @@
 @import '~/sass/variables';
+@import '~/sass/utilities';
 
 .page404 {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  @include tablet-breakpoint {
+    @include flex-box($justify-content: center, $align-items: flex-start);
+
+    margin-top: to-rem(40);
+    text-align: center;
+  }
+
+  min-height: calc(100vh - (6rem * 2));
+
   &__text {
     color: var(--primary-color);
+  }
+
+  &__image {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    max-width: to-rem(450);
   }
 }
