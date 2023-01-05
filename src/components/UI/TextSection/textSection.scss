@@ -13,6 +13,10 @@
 
     &--large-spacing {
       margin: 0 0 to-rem(70) 0;
+
+      @include mobile-breakpoint {
+        margin-bottom: to-rem(40);
+      }
     }
   }
 
