@@ -3,14 +3,10 @@ import React from 'react';
 import { InputField } from './InputField';
 
 export default {
-  title: 'Form /TextInputField',
+  title: 'Form /InputFields',
   component: InputField,
   args: {
     isRequired: true,
-    name: 'First name',
-    label: 'Your first name',
-    type: 'text',
-    placeholder: 'Enter your first name',
   },
   argTypes: {
     theme: {
@@ -28,6 +24,11 @@ export default {
         disable: true,
       },
     },
+    type: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => (
@@ -38,4 +39,20 @@ export default {
   ],
 };
 
-export const TextInputField = (args) => <InputField {...args} />;
+const Template = (args) => <InputField {...args} />;
+
+export const NameInput = Template.bind({});
+NameInput.args = {
+  type: 'text',
+  label: 'Your first name',
+  placeholder: 'Enter your first name',
+  name: 'First name',
+};
+
+export const EmailInput = Template.bind({});
+EmailInput.args = {
+  type: 'email',
+  label: 'Your email',
+  placeholder: 'Enter your email',
+  name: 'First name',
+};

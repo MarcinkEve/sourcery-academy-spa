@@ -11,6 +11,7 @@ export default {
   args: {
     title: 'Thank you',
     text: 'Your form was submitted',
+    theme: 'home',
   },
   argTypes: {
     theme: {
@@ -21,4 +22,8 @@ export default {
   },
 };
 
-export const SuccessComponent = (args) => <SuccessMessage {...args} />;
+export const SuccessComponent = (args) => (
+  <div theme={args.theme}>
+    <SuccessMessage {...args} />
+  </div>
+);
