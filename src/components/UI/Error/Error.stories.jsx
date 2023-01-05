@@ -10,13 +10,6 @@ export default {
     title: 'Error for component',
     message: 'This error may indicate that the component is not running...',
   },
-  argTypes: {
-    message: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 };
 
 export const ErrorMessage = (args) => (

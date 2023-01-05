@@ -2,7 +2,7 @@ import React from 'react';
 import { FileUpload } from './FileUpload';
 
 export default {
-  title: 'Form/FileUploadInput',
+  title: 'Form/InputFields/FileUploadInput',
   component: FileUpload,
   args: {
     isRequired: true,
