@@ -4,6 +4,11 @@
 .header {
   @include flex-box($justify-content: space-between, $align-items: center);
 
+  @include mobile-breakpoint {
+    height: 0;
+    position: fixed;
+  }
+
   height: $height-header-footer;
   margin: auto;
   max-width: $max-page-width;
@@ -12,8 +17,17 @@
   width: 100%;
   z-index: 10;
 
+  // &--hidden {
+  //   transform: translateX(to-rem(-250));
+  // }
+
   .logo {
     @include flex-box($justify-content: center, $align-items: center);
+
+    @include mobile-breakpoint {
+      // display: none;
+      margin-top: 60px;
+    }
 
     column-gap: $spacer-xxxs;
     text-decoration: none;
@@ -24,10 +38,6 @@
     }
 
     &__text {
-      @include tablet-breakpoint {
-        // width: 100px;
-      }
-
       color: $header-clr;
       font-weight: $font-weight-bold;
     }
@@ -42,13 +52,34 @@
     $_this: &;
 
     @include reset-list-style;
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
+
+    @include flex-box($justify-content: center, $align-items: center);
+
+    @include mobile-breakpoint {
+      @include flex-box(
+        $direction: column,
+        $justify-content: center,
+        $align-items: center
+      );
+
+      background-color: $shadow-clr;
+      font-size: 200%;
+      height: 100vh;
+      padding: to-rem(20);
+      position: fixed;
+      right: 0;
+      row-gap: to-rem(20);
+      scale: 0;
+      top: to-rem(60);
+      width: 100vw;
+    }
 
     white-space: nowrap;
+
+    &--hidden {
+      scale: 1;
+      transition: scale $transition-time-200;
+    }
 
     &__academies {
       @include flex-box(
@@ -56,9 +87,18 @@
         $justify-content: center,
         $align-items: center
       );
+
+      @include mobile-breakpoint {
+        align-items: center;
+        margin: to-rem(-10) 0;
+      }
     }
 
     &__academies-menu {
+      @include mobile-breakpoint {
+        background: none;
+      }
+
       background-color: $header-bg-clr;
       border: 0;
       font-family: $paragraph-font;
@@ -73,6 +113,11 @@
     }
 
     &__academies-dropdown {
+      @include mobile-breakpoint {
+        position: relative;
+        top: 0;
+      }
+
       position: absolute;
       top: to-rem(78);
     }
