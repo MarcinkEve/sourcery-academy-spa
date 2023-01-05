@@ -42,7 +42,7 @@ export default {
 export const CornerVideoComponent = (args) => {
   const { theme, image } = args.theme;
   return (
-    <div theme={theme} style={{ maxWidth: '620px', maxHeight: '620px' }}>
+    <div theme={theme}>
       <CornerVideo {...args} image={image} />
     </div>
   );
