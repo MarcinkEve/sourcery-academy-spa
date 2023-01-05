@@ -34,7 +34,7 @@ export default function index() {
             element={<Developers theme="developers" />}
           />
           <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
-          <Route path={KIDS} element={<Kids />} />
+          <Route path={KIDS} element={<Kids theme="home" />} />
           <Route path={TESTERS} element={<Testers theme="testers" />} />
           <Route path={MEDIA} element={<Media theme="home" />} />
           <Route

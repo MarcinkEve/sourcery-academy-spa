@@ -1,0 +1,7 @@
+@import '~/sass/variables';
+
+.page404 {
+  &__text {
+    color: var(--primary-color);
+  }
+}

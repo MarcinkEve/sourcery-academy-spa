@@ -1,12 +1,22 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 import PageLayout from '~/layouts/pageLayout';
+import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
+import Page404 from '~/components/UI/Page404';
 
-export const Kids = () => {
+import page404Data from '../page404Data.json';
+
+export const Kids = ({ theme }) => {
   return (
-    <PageLayout>
-      <h1>404 - page not found</h1>
-      <p>Temporary placeholder for when we&apos;ll have 404 page</p>
+    <PageLayout theme={theme}>
+      <ExtraWrappingSection>
+        <Page404 data={page404Data} />
+      </ExtraWrappingSection>
     </PageLayout>
   );
+};
+
+Kids.propTypes = {
+  theme: string,
 };
