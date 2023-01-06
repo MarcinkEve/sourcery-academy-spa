@@ -6,7 +6,7 @@
   position: relative;
 
   &__particles {
-    @include mobile-breakpoint {
+    @include tablet-breakpoint {
       display: none;
     }
 
