@@ -9,11 +9,8 @@
   );
 
   @include tablet-breakpoint {
-    align-items: center;
     flex-direction: column;
   }
-
-  column-gap: to-rem(16);
 
   &__top-particles {
     @include mobile-breakpoint {
@@ -29,11 +26,15 @@
 
   &__content {
     @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
       width: 100%;
     }
 
+    flex: 0 1 45%;
     position: relative;
-    width: min(50%, to-rem(570));
   }
 
   &__bottom-particles {
@@ -50,23 +51,29 @@
 
   &__icons {
     @include tablet-breakpoint {
-      width: 100%;
+      transform: translate(-10%, -20%);
     }
 
+    @include mobile-breakpoint {
+      transform: translate(0, -20%);
+    }
+
+    flex: 0 1 50%;
     position: relative;
-    width: 50%;
   }
 
   &__icons-image {
     @include tablet-breakpoint {
       margin: 0;
-      transform: translateY(-15%);
-      width: 100%;
-      z-index: -1;
+    }
+
+    @include mobile-breakpoint {
+      max-width: 100%;
     }
 
     margin-left: 15%;
     width: to-rem(430);
+    z-index: -1;
   }
 
   &__icons-line {

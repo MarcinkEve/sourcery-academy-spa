@@ -9,28 +9,35 @@
   );
 
   @include tablet-breakpoint {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column-reverse;
-    margin-top: to-rem(120);
+    margin: 0;
   }
 
   @include mobile-breakpoint {
-    margin-top: to-rem(60);
+    margin-top: to-rem(30);
   }
 
-  column-gap: to-rem(16);
   margin-top: to-rem(210);
 
   &__content {
     @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
       width: 100%;
     }
 
+    flex: 0 1 45%;
     position: relative;
-    width: min(55%, to-rem(550));
   }
 
   &__top-particles {
+    @include tablet-breakpoint {
+      left: 25%;
+    }
+
     @include mobile-breakpoint {
       display: none;
     }
@@ -44,6 +51,10 @@
   }
 
   &__bottom-particles {
+    @include tablet-breakpoint {
+      left: 55%;
+    }
+
     @include mobile-breakpoint {
       display: none;
     }
@@ -58,11 +69,11 @@
   &__icon {
     @include tablet-breakpoint {
       margin: 0;
-      width: 80%;
+      width: 50%;
     }
 
     @include mobile-breakpoint {
-      width: 100%;
+      width: min(100%, to-rem(340));
     }
 
     margin-right: 10%;

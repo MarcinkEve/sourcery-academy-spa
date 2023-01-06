@@ -9,28 +9,35 @@
   );
 
   @include tablet-breakpoint {
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
-    margin-bottom: to-rem(200);
+    margin: 0;
   }
 
   @include mobile-breakpoint {
-    margin: to-rem(60) 0 to-rem(100);
+    margin-top: to-rem(30);
   }
 
-  column-gap: to-rem(16);
-  margin: to-rem(110) 0 to-rem(267);
+  margin-top: to-rem(110);
 
   &__content {
     @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
       width: 100%;
     }
 
+    flex: 0 1 48%;
     position: relative;
-    width: min(50%, to-rem(570));
   }
 
   &__top-particles {
+    @include tablet-breakpoint {
+      top: -35%;
+    }
+
     @include mobile-breakpoint {
       display: none;
     }
@@ -43,6 +50,10 @@
   }
 
   &__bottom-particles {
+    @include tablet-breakpoint {
+      left: -40%;
+    }
+
     @include mobile-breakpoint {
       display: none;
     }
@@ -55,19 +66,16 @@
   }
 
   &__icons {
-    @include tablet-breakpoint {
-      width: 80%;
-    }
-
-    @include mobile-breakpoint {
-      width: 100%;
-    }
-
+    flex: 0 1 48%;
     position: relative;
-    width: 50%;
   }
 
   &__icons-image {
+    @include tablet-breakpoint {
+      margin: 0;
+      width: 100%;
+    }
+
     @include tablet-breakpoint {
       margin: 0;
       width: 100%;
@@ -84,7 +92,7 @@
 
     left: 5%;
     position: absolute;
-    top: -20%;
+    top: -25%;
     width: to-rem(657);
     z-index: -1;
   }
