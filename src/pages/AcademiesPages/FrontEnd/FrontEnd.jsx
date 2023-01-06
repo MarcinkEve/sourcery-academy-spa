@@ -32,7 +32,7 @@ export const FrontEnd = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <AcademyWrapper
-        schedule={scheduleData}
+        schedule={scheduleData[ACADEMY_TYPE.FRONTEND]}
         applicationText={applicationProcessData.frontEndText}
         landingSectionData={landingSectionData}
         applyToAcademyData={applyToAcademyData}
