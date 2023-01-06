@@ -1,3 +1,5 @@
+@import '~/sass/utilities';
+
 .admission-section {
   $_this: &;
 
@@ -12,11 +14,12 @@
 
   &__particles-container {
     grid-area: 1 / 3 / 7 / 4;
+    max-height: to-rem(550);
     position: relative;
 
     #{$_this}__particles {
       bottom: 6%;
-      left: 40%;
+      left: 30%;
       position: absolute;
       width: 50%;
     }
@@ -24,13 +27,14 @@
 
   &__dates-container {
     grid-area: 2 / 4 / 5 / 5;
+    max-height: to-rem(284);
     position: relative;
 
     #{$_this}__line {
-      bottom: -54%;
       color: var(--primary-color);
       position: absolute;
       right: -23%;
+      top: -108%;
       width: 142%;
     }
   }
