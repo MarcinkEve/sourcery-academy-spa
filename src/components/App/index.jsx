@@ -10,7 +10,7 @@ import Homepage from '~/pages/Homepage';
 import Media from '~/pages/MediaPage';
 import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
-import NotFound from '~/components/UI/NotFound';
+import PageNotFound from '~/pages/PageNotFound';
 
 export default function index() {
   const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION } = ROUTES;
@@ -26,13 +26,13 @@ export default function index() {
             element={<Developers theme="developers" />}
           />
           <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
-          <Route path="*" element={<NotFound theme="home" />} />
           <Route path={TESTERS} element={<Testers theme="testers" />} />
           <Route path={MEDIA} element={<Media theme="home" />} />
           <Route
             path={APPLICATION}
             element={<ApplicationPage theme="application" />}
           />
+          <Route path="*" element={<PageNotFound theme="home" />} />
         </Routes>
       </BrowserRouter>
       <Footer />

@@ -3,20 +3,20 @@ import { string } from 'prop-types';
 
 import PageLayout from '~/layouts/pageLayout';
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
-import NotFoundContent from '~/components/UI/NotFound/NotFoundContent';
+import NotFoundContent from '~/pages/PageNotFound/PageNotFoundContent';
 
-import notFoundData from './notFoundData.json';
+import pageNotFoundData from './pageNotFoundData.json';
 
-export const NotFound = ({ theme }) => {
+export const PageNotFound = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <ExtraWrappingSection>
-        <NotFoundContent data={notFoundData} />
+        <NotFoundContent data={pageNotFoundData} />
       </ExtraWrappingSection>
     </PageLayout>
   );
 };
 
-NotFound.propTypes = {
+PageNotFound.propTypes = {
   theme: string,
 };
