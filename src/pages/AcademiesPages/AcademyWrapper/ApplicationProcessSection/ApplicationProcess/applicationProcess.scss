@@ -1,9 +1,15 @@
 @import '~/sass/utilities/functions/to-rem';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .application-process {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: auto;
   padding-bottom: to-rem(95);
-  width: max-content;
+  width: 100%;
+
+  @include mobile-breakpoint {
+    grid-template-columns: 1fr;
+  }
 }

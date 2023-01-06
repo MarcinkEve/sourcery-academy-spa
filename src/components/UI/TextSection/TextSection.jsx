@@ -17,6 +17,7 @@ export const TextSection = ({
   paragraphContent,
   buttonText,
   pageRoute,
+  targetSectionId,
 }) => {
   const nav = useNavigate();
 
@@ -26,8 +27,12 @@ export const TextSection = ({
     }),
   });
 
-  const navigateToPage = () => {
-    nav(pageRoute);
+  const handleButtonClick = () => {
+    pageRoute && nav(pageRoute);
+    targetSectionId &&
+      document
+        .getElementById(targetSectionId)
+        .scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -46,7 +51,7 @@ export const TextSection = ({
       </div>
       {buttonText && (
         <div className="text-section__button-wrapper">
-          <Button label={buttonText} handleClick={navigateToPage} />
+          <Button label={buttonText} handleClick={handleButtonClick} />
         </div>
       )}
     </div>

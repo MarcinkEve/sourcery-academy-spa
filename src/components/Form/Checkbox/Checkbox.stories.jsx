@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Checkbox } from './Checkbox';
+import './checkbox-storybook.scss';
 
 export default {
   title: 'Form/CheckboxWithText',
@@ -33,13 +34,10 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: '509px' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
-export const CheckboxWithText = (args) => <Checkbox {...args} />;
+export const CheckboxWithText = (args) => (
+  <div className="checkbox__story-container">
+    <Checkbox {...args} />
+  </div>
+);
