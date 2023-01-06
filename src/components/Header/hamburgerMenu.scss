@@ -1,21 +1,25 @@
 @import '~/sass/variables';
 @import '~/sass/utilities/mixins';
 
-.burger-menu {
+.hamburger-menu {
   @include mobile-breakpoint {
     display: unset;
   }
 
   cursor: pointer;
   display: none;
-  height: 30px;
+  height: to-rem(30);
   position: fixed;
-  right: 20px;
-  top: 20px;
-  width: 40px;
+  right: to-rem(40);
+  top: to-rem(17);
+  width: to-rem(30);
   z-index: 100;
 
-  &__line {
+  &:focus-visible {
+    outline: 4px dashed $orange-200;
+  }
+
+  &__lines {
     background-color: $header-clr;
     position: relative;
 
@@ -24,8 +28,8 @@
     &::after {
       content: '';
       display: inline-block;
-      height: to-rem(5);
-      width: to-rem(40);
+      height: to-rem(3);
+      width: to-rem(30);
     }
 
     &::before,
@@ -36,14 +40,14 @@
     }
 
     &::before {
-      top: 10px;
+      top: to-rem(7);
     }
 
     &::after {
-      top: -10px;
+      top: to-rem(-7);
     }
 
-    &--active {
+    &--transform {
       background: unset;
 
       &::before {

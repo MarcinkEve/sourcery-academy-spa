@@ -6,7 +6,7 @@ import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HeaderDropdown from '~/components/Header/Dropdown';
 
-import './BurgerMenu/burgerMenu.scss';
+import './hamburgerMenu.scss';
 import './header.scss';
 
 const dropdownElements = [
@@ -30,7 +30,9 @@ const dropdownElements = [
 
 export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+  const [getWindowSize, setGetWindowSize] = useState(window.innerWidth);
+
   const { pathname } = useLocation();
   const ref = useRef(null);
 
@@ -44,13 +46,23 @@ export const Header = () => {
   };
 
   const handleClose = () => {
-    setIsBurgerMenuOpen(false);
+    setIsHamburgerMenuOpen(false);
+  };
+
+  const getTabIndexChange = () => {
+    if (getWindowSize < 767 && !isHamburgerMenuOpen) {
+      return '-1';
+    }
+
+    return '0';
   };
 
   const academiesPaths = getAcademiesPath();
+
   const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
 
   useEffect(() => setIsDropdownOpen(false), [useLocation()]);
+
   useEffect(() => {
     const keyListener = ({ key }) => {
       if (key === 'Escape') {
@@ -62,35 +74,61 @@ export const Header = () => {
     return () => document.removeEventListener('keydown', keyListener);
   }, []);
 
+  useEffect(() => {
+    const windowSizeListener = () => {
+      setGetWindowSize(window.innerWidth);
+    };
+    window.addEventListener('resize', windowSizeListener);
+
+    return () => document.removeEventListener('resize', windowSizeListener);
+  }, []);
+
+  useEffect(() => {
+    const escapeListener = (e) => {
+      e.key === 'Escape' && handleClose();
+    };
+    document.addEventListener('keydown', escapeListener);
+
+    return () => document.removeEventListener('keydown', escapeListener);
+  }, []);
+
   return (
     <>
       <div
-        className="burger-menu"
-        onClick={() => setIsBurgerMenuOpen((prev) => !prev)}
+        tabIndex="0"
+        className="hamburger-menu"
+        onClick={() => setIsHamburgerMenuOpen((prev) => !prev)}
+        onKeyDown={(e) =>
+          e.key === 'Enter' && setIsHamburgerMenuOpen((prev) => !prev)
+        }
       >
         <span
           className={classNames(
-            'burger-menu__line',
-            isBurgerMenuOpen && 'burger-menu__line--active'
+            'hamburger-menu__lines',
+            isHamburgerMenuOpen && 'hamburger-menu__lines--transform'
           )}
         ></span>
       </div>
-      <div
-        className={classNames('header', isBurgerMenuOpen && 'header--hidden')}
-        // className={classNames('header', isBurgerMenuOpen && 'header--hidden')}
-      >
-        <NavLink className="logo" to="/" aria-label="Home link">
+      <div className="header">
+        <NavLink
+          tabIndex="1"
+          onClick={handleClose}
+          className="logo"
+          to="/"
+          aria-label="Home link"
+        >
           <SvgLogo className="logo__image" />
           <span className="logo__text">Sourcery Academy</span>
         </NavLink>
         <ul
           className={classNames(
             'navlinks',
-            isBurgerMenuOpen && 'navlinks--hidden'
+            isHamburgerMenuOpen && 'navlinks--scaled'
           )}
         >
           <li>
             <NavLink
+              tabIndex={getTabIndexChange()}
               onClick={handleClose}
               className={({ isActive }) =>
                 `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
@@ -102,6 +140,7 @@ export const Header = () => {
           </li>
           <li className="navlinks__academies" ref={ref}>
             <button
+              tabIndex={getTabIndexChange()}
               className={classNames(
                 'navlinks__academies-menu',
                 isAcademiesPathActive(pathname) &&
@@ -126,6 +165,7 @@ export const Header = () => {
           </li>
           <li>
             <NavLink
+              tabIndex={getTabIndexChange()}
               onClick={handleClose}
               className={({ isActive }) =>
                 `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
@@ -137,6 +177,7 @@ export const Header = () => {
           </li>
           <li>
             <NavLink
+              tabIndex={getTabIndexChange()}
               onClick={handleClose}
               className={({ isActive }) =>
                 `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
@@ -148,6 +189,7 @@ export const Header = () => {
           </li>
           <li>
             <NavLink
+              tabIndex={getTabIndexChange()}
               onClick={handleClose}
               className={({ isActive }) =>
                 `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`

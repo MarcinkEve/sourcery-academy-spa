@@ -5,7 +5,9 @@
   @include flex-box($justify-content: space-between, $align-items: center);
 
   @include mobile-breakpoint {
-    height: 0;
+    background-color: $header-bg-clr;
+    height: to-rem(60);
+    margin-top: to-rem(-60);
     position: fixed;
   }
 
@@ -17,16 +19,11 @@
   width: 100%;
   z-index: 10;
 
-  // &--hidden {
-  //   transform: translateX(to-rem(-250));
-  // }
-
   .logo {
     @include flex-box($justify-content: center, $align-items: center);
 
     @include mobile-breakpoint {
-      // display: none;
-      margin-top: 60px;
+      margin-right: to-rem(50);
     }
 
     column-gap: $spacer-xxxs;
@@ -58,17 +55,16 @@
     @include mobile-breakpoint {
       @include flex-box(
         $direction: column,
-        $justify-content: center,
+        $justify-content: flex-start,
         $align-items: center
       );
 
       background-color: $shadow-clr;
-      font-size: 200%;
       height: 100vh;
-      padding: to-rem(20);
+      padding-top: to-rem(100);
       position: fixed;
       right: 0;
-      row-gap: to-rem(20);
+      row-gap: to-rem(30);
       scale: 0;
       top: to-rem(60);
       width: 100vw;
@@ -76,7 +72,7 @@
 
     white-space: nowrap;
 
-    &--hidden {
+    &--scaled {
       scale: 1;
       transition: scale $transition-time-200;
     }

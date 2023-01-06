@@ -47,8 +47,6 @@
       );
 
       background: unset;
-      margin-bottom: 0;
-      margin-top: 0;
       padding: 0;
     }
 
@@ -61,12 +59,15 @@
     &-item {
       @include mobile-breakpoint {
         background: unset;
-        display: inline-block;
 
         /* stylelint-disable */
+        &:first-child {
+          margin-top: to-rem(12);
+        }
+
         &:not(:last-child) {
           /* stylelint-enable */
-          margin-bottom: 6px;
+          margin-bottom: to-rem(12);
         }
       }
 

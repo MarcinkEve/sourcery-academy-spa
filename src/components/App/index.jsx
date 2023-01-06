@@ -11,6 +11,7 @@ import Kids from '~/pages/AcademiesPages/Kids';
 import Media from '~/pages/MediaPage';
 import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
+import Questions from '~/pages/QuestionsPage';
 
 export default function index() {
   const {
@@ -21,6 +22,7 @@ export default function index() {
     TESTERS,
     MEDIA,
     APPLICATION,
+    QUESTIONS,
   } = ROUTES;
 
   return (
@@ -41,6 +43,7 @@ export default function index() {
             path={APPLICATION}
             element={<ApplicationPage theme="application" />}
           />
+          <Route path={QUESTIONS} element={<Questions theme="home" />} />
         </Routes>
       </BrowserRouter>
       <Footer />
