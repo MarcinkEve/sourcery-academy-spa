@@ -1,9 +1,18 @@
-@import '~/sass/utilities';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .apply-to-academy {
   $_this: &;
 
   position: relative;
+
+  @include tablet-breakpoint {
+    margin: to-rem(200) auto to-rem(50);
+  }
+
+  @include mobile-breakpoint {
+    margin-top: to-rem(50);
+  }
 
   @include flex-box(
     $direction: row,
@@ -17,17 +26,27 @@
     #{$_this}__image {
       transform: translate(8%, -6%);
     }
+
+    @include mobile-breakpoint {
+      display: none;
+    }
   }
 
   &__particles-top {
     left: 50%;
     position: absolute;
     right: 20%;
-    top: 0%;
+    top: 0;
+    width: to-rem(289);
 
     &--five {
       left: 46%;
       right: 14%;
+      width: to-rem(469);
+    }
+
+    @include mobile-breakpoint {
+      display: none;
     }
   }
 
@@ -36,6 +55,11 @@
     position: absolute;
     right: 65%;
     top: 77%;
+    width: to-rem(391);
     z-index: -1;
+
+    @include mobile-breakpoint {
+      display: none;
+    }
   }
 }
