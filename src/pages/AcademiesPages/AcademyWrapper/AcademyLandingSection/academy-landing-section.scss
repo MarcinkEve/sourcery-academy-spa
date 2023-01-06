@@ -20,7 +20,7 @@
     $align-items: center
   );
 
-  margin: to-rem(100) 0 to-rem(292);
+  margin: to-rem(90) 0 to-rem(292);
 
   &__paragraph {
     @include tablet-breakpoint {
