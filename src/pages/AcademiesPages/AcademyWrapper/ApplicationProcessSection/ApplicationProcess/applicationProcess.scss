@@ -11,5 +11,6 @@
 
   @include tablet-breakpoint {
     grid-template-columns: 1fr;
+    padding-bottom: 0;
   }
 }
