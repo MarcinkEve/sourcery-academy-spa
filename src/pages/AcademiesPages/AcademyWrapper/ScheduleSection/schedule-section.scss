@@ -2,6 +2,10 @@
 @import '~/sass/utilities/mixins';
 
 .schedule-section {
+  @include tablet-breakpoint {
+    margin: to-rem(200) auto to-rem(200);
+  }
+
   @include mobile-breakpoint {
     margin: to-rem(50) auto to-rem(50);
   }

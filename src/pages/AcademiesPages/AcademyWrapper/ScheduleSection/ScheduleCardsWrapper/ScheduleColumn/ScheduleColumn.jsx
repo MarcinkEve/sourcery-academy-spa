@@ -13,7 +13,9 @@ export const ScheduleColumn = ({ columnData }) => {
   const handleExpand = () => {
     setIsExpanded((prev) => !prev);
     isExpanded === false &&
-      document.getElementById('schedule-section-id').scrollIntoView();
+      document
+        .getElementById('schedule-section-id')
+        .scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

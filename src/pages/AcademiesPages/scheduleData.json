@@ -1,160 +1,770 @@
 {
-  "column_1": {
-    "title": ["October", "November"],
-    "column_1": [
-      {
-        "lectureData": {
-          "lecture": "Git & JS Fundamentals",
-          "name": "Paulius Sabeckis, Paulius Bereta",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+  "developers": {
+    "column_1": {
+      "title": ["October", "November"],
+      "column_1": [
+        {
+          "lectureData": {
+            "lecture": "Git & JS Fundamentals",
+            "name": "Paulius Sabeckis, Paulius Bereta",
+            "time": "2:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 9,
+              "month": "Oct"
+            },
+            {
+              "city": "Kaunas",
+              "day": 10,
+              "month": "Oct"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 9, "month": "Oct" },
-          { "city": "Kaunas", "day": 10, "month": "Oct" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "Web Basics",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Web Basics",
+            "name": "Jonas Jonaitis",
+            "time": "3:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 10,
+              "month": "Oct"
+            },
+            {
+              "city": "Kaunas",
+              "day": 11,
+              "month": "Oct"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 10, "month": "Oct" },
-          { "city": "Kaunas", "day": 11, "month": "Oct" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "React fundamentals",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "React fundamentals",
+            "name": "Eivinas Vinas",
+            "time": "5:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 16,
+              "month": "Oct"
+            },
+            {
+              "city": "Kaunas",
+              "day": 17,
+              "month": "Oct"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 16, "month": "Oct" },
-          { "city": "Kaunas", "day": 17, "month": "Oct" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "React router & Redux",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "React router & Redux",
+            "name": "Petras Konas",
+            "time": "1:00 pm",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 17,
+              "month": "Oct"
+            },
+            {
+              "city": "Kaunas",
+              "day": 18,
+              "month": "Oct"
+            }
+          ]
+        }
+      ],
+      "column_2": [
+        {
+          "lectureData": {
+            "lecture": "Async & Testing for Developers",
+            "name": "Saulius Morkaitis",
+            "time": "6:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 31,
+              "month": "Oct"
+            },
+            {
+              "city": "Kaunas",
+              "day": 1,
+              "month": "Nov"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 17, "month": "Oct" },
-          { "city": "Kaunas", "day": 18, "month": "Oct" }
-        ]
-      }
-    ],
-    "column_2": [
-      {
-        "lectureData": {
-          "lecture": "Async & Testing for Developers",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "REST API fundamentals",
+            "name": "Alina Ipsum",
+            "time": "5:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 11,
+              "month": "Nov"
+            },
+            {
+              "city": "Kaunas",
+              "day": 12,
+              "month": "Nov"
+            }
+          ]
+        }
+      ]
+    },
+    "column_2": {
+      "title": ["November", "December"],
+      "column_1": [
+        {
+          "lectureData": {
+            "lecture": "Spring framework",
+            "name": "Lorem Peterson",
+            "time": "2:00 pm",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 18,
+              "month": "Nov"
+            },
+            {
+              "city": "Kaunas",
+              "day": 19,
+              "month": "Nov"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 31, "month": "Oct" },
-          { "city": "Kaunas", "day": 3, "month": "Nov" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "REST API fundamentals",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Databases",
+            "name": "Bon Jovi",
+            "time": "2:00 pm",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 26,
+              "month": "Nov"
+            },
+            {
+              "city": "Kaunas",
+              "day": 27,
+              "month": "Nov"
+            }
+          ]
+        }
+      ],
+      "column_2": [
+        {
+          "lectureData": {
+            "lecture": "Authentication, Authorization",
+            "name": "Yoko Ono",
+            "time": "7:00 pm",
+            "duration": "2 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 3,
+              "month": "Dec"
+            },
+            {
+              "city": "Kaunas",
+              "day": 4,
+              "month": "Dec"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 11, "month": "Nov" },
-          { "city": "Kaunas", "day": 12, "month": "Nov" }
-        ]
-      }
-    ]
+        {
+          "lectureData": {
+            "lecture": "Development best practices",
+            "name": "Tomas Tomaitis",
+            "time": "3:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 4,
+              "month": "Dec"
+            },
+            {
+              "city": "Kaunas",
+              "day": 5,
+              "month": "Dec"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Final Exam",
+            "name": "",
+            "time": "1:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 10,
+              "month": "Dec"
+            },
+            {
+              "city": "Kaunas",
+              "day": 11,
+              "month": "Dec"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Demo, Results and Rewards",
+            "name": "",
+            "time": "2:00 pm",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 17,
+              "month": "Dec"
+            },
+            {
+              "city": "Kaunas",
+              "day": 18,
+              "month": "Dec"
+            }
+          ]
+        }
+      ]
+    }
   },
-  "column_2": {
-    "title": ["November", "December"],
-    "column_1": [
-      {
-        "lectureData": {
-          "lecture": "Spring framework",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+  "testers": {
+    "column_1": {
+      "title": ["June", "July"],
+      "column_1": [
+        {
+          "lectureData": {
+            "lecture": "Testing Foundations, Manual Testing Approach, Exploratory Testing",
+            "name": "Gerda Monkevičiūtė",
+            "time": "11:00 am",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 2,
+              "month": "Jun"
+            },
+            {
+              "city": "Kaunas",
+              "day": 3,
+              "month": "Jun"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 18, "month": "Nov" },
-          { "city": "Kaunas", "day": 19, "month": "Nov" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "Databases",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Understanding Agile. Continuous Testing",
+            "name": "Jonas Jonaitis",
+            "time": "3:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 3,
+              "month": "Jun"
+            },
+            {
+              "city": "Kaunas",
+              "day": 4,
+              "month": "Jun"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 26, "month": "Nov" },
-          { "city": "Kaunas", "day": 27, "month": "Nov" }
-        ]
-      }
-    ],
-    "column_2": [
-      {
-        "lectureData": {
-          "lecture": "Authentication, Authorization",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Web Testing Specifics",
+            "name": "Asta Dagienė",
+            "time": "11:00 am",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 10,
+              "month": "Jun"
+            },
+            {
+              "city": "Kaunas",
+              "day": 11,
+              "month": "Jun"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 3, "month": "Dec" },
-          { "city": "Kaunas", "day": 4, "month": "Dec" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "Development best practices",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Mobile Testing Specifics",
+            "name": "Petras Konas",
+            "time": "11:00 am",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 17,
+              "month": "Jun"
+            },
+            {
+              "city": "Kaunas",
+              "day": 18,
+              "month": "Jun"
+            }
+          ]
+        }
+      ],
+      "column_2": [
+        {
+          "lectureData": {
+            "lecture": "Server-side Testing Specifics",
+            "name": "Saulius Morkaitis",
+            "time": "4:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 30,
+              "month": "Jun"
+            },
+            {
+              "city": "Kaunas",
+              "day": 1,
+              "month": "Jul"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 4, "month": "Dec" },
-          { "city": "Kaunas", "day": 5, "month": "Dec" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "Final Exam",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Test Automation: Theory and Practice (Part 1)",
+            "name": "Alina Ipsum",
+            "time": "5:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 6,
+              "month": "Jul"
+            },
+            {
+              "city": "Kaunas",
+              "day": 7,
+              "month": "Jul"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 10, "month": "Dec" },
-          { "city": "Kaunas", "day": 11, "month": "Dec" }
-        ]
-      },
-      {
-        "lectureData": {
-          "lecture": "Demo, Results and Rewards",
-          "name": "Lorem ipsum",
-          "time": "4:00 pm",
-          "duration": "3 hours"
+        {
+          "lectureData": {
+            "lecture": "Test Automation: Theory and Practice (Part 2)",
+            "name": "Alina Ipsum",
+            "time": "2:00 pm",
+            "duration": "2 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 7,
+              "month": "Jul"
+            },
+            {
+              "city": "Kaunas",
+              "day": 8,
+              "month": "Jul"
+            }
+          ]
+        }
+      ]
+    },
+    "column_2": {
+      "title": ["July", "August"],
+      "column_1": [
+        {
+          "lectureData": {
+            "lecture": "Non-functional testing: Security",
+            "name": "Vilius Pankauskas",
+            "time": "11:00 am",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 7,
+              "month": "Aug"
+            },
+            {
+              "city": "Kaunas",
+              "day": 5,
+              "month": "Aug"
+            }
+          ]
         },
-        "lectureDates": [
-          { "city": "Vilnius", "day": 17, "month": "Dec" },
-          { "city": "Kaunas", "day": 18, "month": "Dec" }
-        ]
-      }
-    ]
+        {
+          "lectureData": {
+            "lecture": "Non-functional testing: Performance",
+            "name": "Vilius Pankauskas",
+            "time": "11:00 am",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 8,
+              "month": "Aug"
+            },
+            {
+              "city": "Kaunas",
+              "day": 6,
+              "month": "Aug"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Non-functional testing: Accessibility",
+            "name": "Jonas Jonaitis",
+            "time": "10:00 am",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 9,
+              "month": "Aug"
+            },
+            {
+              "city": "Kaunas",
+              "day": 7,
+              "month": "Aug"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Bonus: Machine Learning Basics",
+            "name": "Monika Monciūtė",
+            "time": "4:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 13,
+              "month": "Aug"
+            },
+            {
+              "city": "Kaunas",
+              "day": 14,
+              "month": "Aug"
+            }
+          ]
+        }
+      ],
+      "column_2": [
+        {
+          "lectureData": {
+            "lecture": "Evaluation workshop",
+            "name": "",
+            "time": "1:00 pm",
+            "duration": "2 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Vilnius",
+              "day": 24,
+              "month": "Aug"
+            },
+            {
+              "city": "Kaunas",
+              "day": 25,
+              "month": "Aug"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "frontend": {
+    "column_1": {
+      "title": ["October", "November", "December"],
+      "column_1": [
+        {
+          "lectureData": {
+            "lecture": "Intro, Agile & Git",
+            "name": "Audrius Navickas",
+            "time": "4:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 30,
+              "month": "Oct"
+            },
+            {
+              "city": "Vilnius",
+              "day": 31,
+              "month": "Oct"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "HTML Semantics & Accessibility basics",
+            "name": "Jonas Jonaitis",
+            "time": "1:00 pm",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 3,
+              "month": "Nov"
+            },
+            {
+              "city": "Vilnius",
+              "day": 4,
+              "month": "Nov"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "HTML Layouts",
+            "name": "Asta Dagienė",
+            "time": "4:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 5,
+              "month": "Nov"
+            },
+            {
+              "city": "Vilnius",
+              "day": 6,
+              "month": "Nov"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Tips & tricks to build clean and functional CSS",
+            "name": "Petras Konas",
+            "time": "5:00 pm",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 12,
+              "month": "Nov"
+            },
+            {
+              "city": "Vilnius",
+              "day": 13,
+              "month": "Nov"
+            }
+          ]
+        }
+      ],
+      "column_2": [
+        {
+          "lectureData": {
+            "lecture": "BEM & SCSS basics",
+            "name": "Saulius Morkaitis",
+            "time": "1:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 18,
+              "month": "Nov"
+            },
+            {
+              "city": "Vilnius",
+              "day": 19,
+              "month": "Nov"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "SCSS in depth",
+            "name": "Alina Ipsum",
+            "time": "1:00 pm",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 24,
+              "month": "Nov"
+            },
+            {
+              "city": "Vilnius",
+              "day": 25,
+              "month": "Nov"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "JS fundamentals Part 1",
+            "name": "Tomas Tomaitis",
+            "time": "2:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 1,
+              "month": "Dec"
+            },
+            {
+              "city": "Vilnius",
+              "day": 2,
+              "month": "Dec"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "JS fundamentals Part 2",
+            "name": "Tomas Tomaitis",
+            "time": "2:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 3,
+              "month": "Dec"
+            },
+            {
+              "city": "Vilnius",
+              "day": 4,
+              "month": "Dec"
+            }
+          ]
+        }
+      ]
+    },
+    "column_2": {
+      "title": ["December", "January"],
+      "column_1": [
+        {
+          "lectureData": {
+            "lecture": "Accessibility in depth",
+            "name": "Kęstas Kestaitis",
+            "time": "11:00 am",
+            "duration": "4 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 10,
+              "month": "Dec"
+            },
+            {
+              "city": "Vilnius",
+              "day": 11,
+              "month": "Dec"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Build tools",
+            "name": "Ona Onaitienė",
+            "time": "9:00 am",
+            "duration": "5 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 14,
+              "month": "Aug"
+            },
+            {
+              "city": "Vilnius",
+              "day": 15,
+              "month": "Aug"
+            }
+          ]
+        }
+      ],
+      "column_2": [
+        {
+          "lectureData": {
+            "lecture": "Final exam",
+            "name": "",
+            "time": "4:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 9,
+              "month": "Jan"
+            },
+            {
+              "city": "Vilnius",
+              "day": 9,
+              "month": "Jan"
+            }
+          ]
+        },
+        {
+          "lectureData": {
+            "lecture": "Demo Day, Results and Rewards",
+            "name": "",
+            "time": "4:00 pm",
+            "duration": "3 hours"
+          },
+          "lectureDates": [
+            {
+              "city": "Kaunas",
+              "day": 19,
+              "month": "Jan"
+            },
+            {
+              "city": "Vilnius",
+              "day": 19,
+              "month": "Jan"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

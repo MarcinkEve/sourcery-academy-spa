@@ -15,8 +15,8 @@
     width: 50vw;
   }
 
-  border: 2px solid var(--primary-color);
   border-radius: 17px;
+  box-shadow: 0 0 0 2px var(--primary-color);
   color: $white-400;
   cursor: pointer;
   line-height: $line-height-l;

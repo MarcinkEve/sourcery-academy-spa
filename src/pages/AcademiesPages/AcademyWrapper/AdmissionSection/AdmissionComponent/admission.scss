@@ -1,7 +1,12 @@
 @import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .admission {
   &__title {
     margin: 0 0 $spacer-xxl 0;
+
+    @include tablet-breakpoint {
+      text-align: center;
+    }
   }
 }

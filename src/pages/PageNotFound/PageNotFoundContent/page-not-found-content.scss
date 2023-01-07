@@ -1,0 +1,30 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.page-not-found {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  @include tablet-breakpoint {
+    @include flex-box($justify-content: center, $align-items: flex-start);
+
+    margin-top: to-rem(40);
+    text-align: center;
+  }
+
+  margin: 0 auto;
+  max-width: to-rem(1200);
+  min-height: calc(100vh - (#{$height-header-footer} * 2));
+  padding-left: to-rem(35);
+
+  &__image {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    max-width: to-rem(450);
+  }
+}

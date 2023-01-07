@@ -3,6 +3,10 @@
 
 .schedule-subcolumn {
   @include flex-box($direction: column, $align-items: center);
+  @include mobile-breakpoint {
+    width: initial;
+  }
 
   row-gap: $spacer-l;
+  width: 50%;
 }
