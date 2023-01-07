@@ -11,8 +11,11 @@
   }
 
   @include mobile-breakpoint {
-    flex-direction: column-reverse;
-    justify-content: center;
+    @include flex-box(
+      $direction: column-reverse,
+      $justify-content: center,
+      $align-items: center
+    );
   }
 
   @include flex-box(
@@ -28,18 +31,21 @@
     }
 
     @include mobile-breakpoint {
-      align-items: center;
-      display: flex;
-      height: 70vw;
-      justify-content: center;
+      @include flex-box($justify-content: center, $align-items: center);
+
+      max-height: to-rem(400);
       overflow: hidden;
-      width: 80%;
+      width: 70%;
     }
 
     width: 180%;
 
     #{$_this}__image {
       transform: translate(8%, -6%);
+
+      @include mobile-breakpoint {
+        transform: translate(0, -6%);
+      }
     }
   }
 

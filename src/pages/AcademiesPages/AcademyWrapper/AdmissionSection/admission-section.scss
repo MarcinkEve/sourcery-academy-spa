@@ -73,8 +73,8 @@
 
   &__image-container {
     @include tablet-breakpoint {
-      display: flex;
-      justify-content: end;
+      @include flex-box($justify-content: end);
+
       left: initial;
       margin-top: to-rem(40);
       position: initial;
