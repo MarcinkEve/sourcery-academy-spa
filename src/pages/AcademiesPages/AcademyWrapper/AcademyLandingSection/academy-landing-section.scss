@@ -6,11 +6,12 @@
   @include tablet-breakpoint {
     flex-wrap: wrap;
     justify-content: center;
+    margin: to-rem(40) 0 to-rem(200);
     max-width: to-rem(900);
   }
 
   @include mobile-breakpoint {
-    margin-top: to-rem(50);
+    margin-bottom: to-rem(50);
   }
 
   @include flex-box(
@@ -19,7 +20,7 @@
     $align-items: center
   );
 
-  margin: to-rem(100) 0 to-rem(292);
+  margin: to-rem(90) 0 to-rem(292);
 
   &__paragraph {
     @include tablet-breakpoint {

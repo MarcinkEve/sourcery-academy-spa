@@ -1,9 +1,13 @@
-@import '~/sass/utilities/functions';
+@import '~/sass/utilities/';
 
 .media-page-wrapper {
   margin-top: to-rem(40);
 
   .media-section {
+    @include mobile-breakpoint {
+      margin-bottom: to-rem(100);
+    }
+
     margin-bottom: to-rem(120);
   }
 }

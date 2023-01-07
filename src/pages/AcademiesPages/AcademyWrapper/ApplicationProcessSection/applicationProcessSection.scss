@@ -6,7 +6,7 @@
   position: relative;
 
   @include tablet-breakpoint {
-    margin: to-rem(200) auto to-rem(250);
+    margin: to-rem(200) auto to-rem(200);
   }
 
   @include mobile-breakpoint {

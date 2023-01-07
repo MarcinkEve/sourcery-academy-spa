@@ -78,11 +78,17 @@ $_button-size: to-rem(40);
     outline: 4px dashed $orange-200;
   }
 
+  &__inner-slide {
+    width: initial;
+  }
+
   &__card {
+    display: flex;
     height: 100% !important; //overriding carousel inline styles
+    justify-content: center;
     margin-bottom: to-rem($_shadow-size);
     margin-left: to-rem($_shadow-size);
-    width: initial !important; //overriding carousel inline styles
+    width: to-rem($_card-width) !important; //overriding carousel inline styles
   }
 
   &__slide-focus-ring {

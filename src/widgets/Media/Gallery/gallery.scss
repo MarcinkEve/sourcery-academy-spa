@@ -5,6 +5,21 @@
   $_this: &;
   $_gap-size: $spacer-l;
 
+  @include tablet-breakpoint {
+    /* autoprefixer: ignore next */
+    grid-auto-rows: min(to-rem(220), 25vw);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mobile-breakpoint {
+    column-gap: min($_gap-size, 7vw);
+
+    /* autoprefixer: ignore next */
+    grid-auto-rows: min(to-rem(202), 40vw);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: min($_gap-size, 7vw);
+  }
+
   column-gap: $_gap-size;
   display: grid;
 
@@ -41,6 +56,26 @@
       grid-column: span 2;
     }
 
+    &:nth-child(13n + 3) {
+      @include tablet-breakpoint {
+        grid-column: span 2;
+      }
+    }
+
+    &:nth-child(13n + 7) {
+      @include tablet-breakpoint {
+        grid-column: span 1;
+      }
+    }
+
+    &:nth-child(13n + 2),
+    &:nth-child(13n + 3),
+    &:nth-child(13n + 6) {
+      @include mobile-breakpoint {
+        grid-column: span 1;
+      }
+    }
+
     &--video {
       @include flex-box($justify-content: center, $align-items: center);
 
@@ -61,6 +96,10 @@
   }
 
   &__play-icon {
+    @include mobile-breakpoint {
+      width: min(to-rem(90), 17vw);
+    }
+
     border-radius: 50%;
     color: var(--primary-color);
     position: absolute;

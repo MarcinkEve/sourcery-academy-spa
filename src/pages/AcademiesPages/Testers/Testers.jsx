@@ -32,7 +32,7 @@ export const Testers = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <AcademyWrapper
-        schedule={scheduleData}
+        schedule={scheduleData[ACADEMY_TYPE.TESTERS]}
         applicationText={applicationProcessData.testersText}
         landingSectionData={landingSectionData}
         applyToAcademyData={applyToAcademyData}
