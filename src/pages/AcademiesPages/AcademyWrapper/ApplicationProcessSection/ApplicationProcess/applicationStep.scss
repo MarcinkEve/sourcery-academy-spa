@@ -8,7 +8,7 @@ $_paragraph-width-mobile: 90%;
 $_svg-container-width: 50%;
 $_svg-container-width-mobile: 20%;
 $_svg-container-max-width: to-rem(200);
-$_svg-container-max-width-mobile: to-rem(110);
+$_svg-container-min-width-mobile: to-rem(110);
 $_svg-margin: to-rem(13);
 
 .application-step {
@@ -78,7 +78,7 @@ $_svg-margin: to-rem(13);
       }
 
       @include mobile-breakpoint {
-        left: -$_svg-container-max-width-mobile;
+        left: -$_svg-container-min-width-mobile;
       }
     }
   }
@@ -94,7 +94,7 @@ $_svg-margin: to-rem(13);
 
     @include mobile-breakpoint {
       margin-left: 0;
-      min-width: $_svg-container-max-width-mobile;
+      min-width: $_svg-container-min-width-mobile;
       width: $_svg-container-width-mobile;
     }
   }
