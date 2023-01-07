@@ -7,11 +7,12 @@
   position: relative;
 
   @include tablet-breakpoint {
-    margin: to-rem(200) auto to-rem(50);
+    margin: to-rem(50) auto;
   }
 
   @include mobile-breakpoint {
-    margin-top: to-rem(50);
+    flex-direction: column-reverse;
+    justify-content: center;
   }
 
   @include flex-box(
@@ -21,14 +22,24 @@
   );
 
   &__image-wrapper {
+    @include tablet-breakpoint {
+      min-width: to-rem(350);
+      width: 120%;
+    }
+
+    @include mobile-breakpoint {
+      align-items: center;
+      display: flex;
+      height: 70vw;
+      justify-content: center;
+      overflow: hidden;
+      width: 80%;
+    }
+
     width: 180%;
 
     #{$_this}__image {
       transform: translate(8%, -6%);
-    }
-
-    @include mobile-breakpoint {
-      display: none;
     }
   }
 
