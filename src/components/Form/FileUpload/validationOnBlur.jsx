@@ -38,5 +38,8 @@ export const handleValidation = (
       }
     };
     validateFileFromInput();
+  } else if (uploadedFile === undefined) {
+    setErrorMessage('File with Resume must be provided');
+    setValidFile('notValid');
   }
 };
