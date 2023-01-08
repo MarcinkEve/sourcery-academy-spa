@@ -7,8 +7,9 @@
   @include mobile-breakpoint {
     background-color: $header-bg-clr;
     height: to-rem(60);
-    margin-top: to-rem(-60);
+    overflow: hidden;
     position: fixed;
+    top: 0;
   }
 
   height: $height-header-footer;

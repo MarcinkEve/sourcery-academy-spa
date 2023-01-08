@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HeaderDropdown from '~/components/Header/Dropdown';
+import HamburgerMenuButton from '../UI/HamburgerMenuButton';
 
 import './hamburgerMenu.scss';
 import './header.scss';
@@ -67,6 +68,7 @@ export const Header = () => {
     const keyListener = ({ key }) => {
       if (key === 'Escape') {
         setIsDropdownOpen(false);
+        handleClose();
       }
     };
     document.addEventListener('keydown', keyListener, false);
@@ -83,14 +85,14 @@ export const Header = () => {
     return () => document.removeEventListener('resize', windowSizeListener);
   }, []);
 
-  useEffect(() => {
-    const escapeListener = (e) => {
-      e.key === 'Escape' && handleClose();
-    };
-    document.addEventListener('keydown', escapeListener);
+  // useEffect(() => {
+  //   const escapeListener = (e) => {
+  //     e.key === 'Escape' && handleClose();
+  //   };
+  //   document.addEventListener('keydown', escapeListener);
 
-    return () => document.removeEventListener('keydown', escapeListener);
-  }, []);
+  //   return () => document.removeEventListener('keydown', escapeListener);
+  // }, []);
 
   return (
     <>
@@ -120,6 +122,7 @@ export const Header = () => {
           <SvgLogo className="logo__image" />
           <span className="logo__text">Sourcery Academy</span>
         </NavLink>
+        {/* <HamburgerMenuButton /> */}
         <ul
           className={classNames(
             'navlinks',
