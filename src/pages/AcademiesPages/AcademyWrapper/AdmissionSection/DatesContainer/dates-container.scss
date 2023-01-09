@@ -2,10 +2,19 @@
 @import '~/sass/utilities/mixins';
 
 .dates-container {
+  @include mobile-breakpoint {
+    max-width: to-rem(306);
+    width: auto;
+  }
+
   width: to-rem(306);
 
   &__title {
     @include padding-margin-0;
+
+    @include tablet-breakpoint {
+      text-align: left;
+    }
 
     color: var(--primary-color);
     margin-bottom: $spacer-m;

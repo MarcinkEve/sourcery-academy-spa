@@ -6,15 +6,24 @@
 
   @include box-shadow;
 
-  border: 2px solid var(--primary-color);
+  @include tablet-breakpoint {
+    min-width: to-rem(300);
+  }
+
+  @include mobile-breakpoint {
+    min-width: 250px;
+    width: 50vw;
+  }
+
   border-radius: 17px;
+  box-shadow: 0 0 0 2px var(--primary-color);
   color: $white-400;
   cursor: pointer;
   line-height: $line-height-l;
   min-height: to-rem(60);
   overflow: hidden;
   transition: $transition-time-200;
-  width: to-rem(266);
+  width: 100%;
   word-break: break-word;
 
   &__title {
@@ -26,11 +35,13 @@
 
     &-name {
       font-weight: $font-weight-bold;
-      max-width: to-rem(193);
+      margin-right: to-rem(20);
+      min-width: to-rem(100);
     }
 
     // COMPONENT / SVG
     &-arrow {
+      flex-shrink: 0;
       height: to-rem(13);
       margin-left: auto;
       margin-top: to-rem(9);

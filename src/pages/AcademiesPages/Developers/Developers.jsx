@@ -8,6 +8,7 @@ import { ACADEMY_TYPE } from '~/constants/academyType';
 import { applyToAcademyDecorators } from '~/pages/AcademiesPages/AcademyWrapper/ApplyToAcademy/applyToAcademyDecorators';
 
 import applyToAcademyText from '../applyToAcademyData.json';
+import admissionData from '../admissionData.json';
 import applicationProcessData from '../applicationProcessData.json';
 import scheduleData from '../scheduleData.json';
 import academyLandingSectionData from '../academyLandingSectionData.json';
@@ -31,10 +32,11 @@ export const Developers = ({ theme }) => {
   return (
     <PageLayout theme={theme}>
       <AcademyWrapper
-        schedule={scheduleData}
+        schedule={scheduleData[ACADEMY_TYPE.DEVELOPERS]}
         applicationText={applicationProcessData.developersText}
         landingSectionData={landingSectionData}
         applyToAcademyData={applyToAcademyData}
+        admissionSectionData={admissionData[ACADEMY_TYPE.DEVELOPERS]}
       />
     </PageLayout>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { DatesCard } from './DatesCard';
+import './dates-card-storybook.scss';
 
 export default {
   title: 'UI/DateCard',
@@ -18,7 +19,7 @@ export default {
 };
 
 export const DateCard = (args) => (
-  <div theme={args.theme} style={{ width: '306px' }}>
+  <div theme={args.theme} className="dates-card__storybook-container">
     <DatesCard {...args} />
   </div>
 );

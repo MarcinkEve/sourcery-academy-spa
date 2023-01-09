@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { FileUpload } from './FileUpload';
+import './file-upload-storybook.scss';
 
 export default {
-  title: 'Form/FileUploadInput',
+  title: 'Form/InputFields/FileUploadInput',
   component: FileUpload,
   args: {
     isRequired: true,
@@ -21,13 +23,10 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: '509px' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
-export const FileUploadInput = (args) => <FileUpload {...args} />;
+export const FileUploadInput = (args) => (
+  <div className="file-upload__story-container">
+    <FileUpload {...args} />
+  </div>
+);

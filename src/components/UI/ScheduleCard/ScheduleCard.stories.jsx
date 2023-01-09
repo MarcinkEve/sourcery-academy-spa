@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ScheduleCard } from './ScheduleCard';
+import './schedule-card-storybook.scss';
 
 const lectureData = {
   lecture: 'Git & JS Fundamentals',
@@ -33,7 +34,7 @@ export default {
 };
 
 export const ScheduleComponent = (args) => (
-  <div theme={args.theme} style={{ paddingLeft: '1rem' }}>
+  <div theme={args.theme} className="schedule-card__storybook-container">
     <ScheduleCard {...args} />
   </div>
 );

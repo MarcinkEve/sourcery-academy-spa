@@ -22,22 +22,39 @@ function useWindowSizeUpdates(func, deps) {
   }, deps);
 }
 
-export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
-  visibleSlides = Math.min(data.length, visibleSlides);
+const calculateGap = (visibleSlides, sumGaps) => {
+  switch (visibleSlides) {
+    case 1:
+      return sumGaps / 2;
+    case 2:
+      return sumGaps / 3;
+    default:
+      return sumGaps / (visibleSlides - 1);
+  }
+};
+
+export const TestimonialWrapper = ({ title, data, alt, slides = 3 }) => {
+  slides = Math.min(data.length, slides);
 
   const carouselWrapperRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
+  const [visibleSlides, setVisibleSlides] = useState(slides);
   const updateWidth = () =>
     carouselWrapperRef.current &&
     setContainerWidth(carouselWrapperRef.current.offsetWidth);
+  const testimonialCardWidth = parseInt(cardWidth) + parseInt(shadowSize);
+  const sumGaps = containerWidth - testimonialCardWidth * visibleSlides;
+  const gap = calculateGap(visibleSlides, sumGaps);
+  const gapWithShadows = gap + parseInt(shadowSize);
 
   useEffect(updateWidth, [carouselWrapperRef]);
   useWindowSizeUpdates(updateWidth, [carouselWrapperRef]);
-
-  const testimonialCardWidth = parseInt(cardWidth) + parseInt(shadowSize);
-  const sumGaps = containerWidth - testimonialCardWidth * visibleSlides;
-  const gap = sumGaps / (visibleSlides === 1 ? 2 : visibleSlides - 1);
-  const gapWithShadows = gap + parseInt(shadowSize);
+  useEffect(() => {
+    const numSlidesFit = Math.floor(
+      containerWidth / (testimonialCardWidth + parseInt(shadowSize))
+    );
+    setVisibleSlides(Math.max(1, numSlidesFit));
+  }, [containerWidth]);
 
   return (
     <div className="carousel-wrapper" ref={carouselWrapperRef}>
@@ -68,8 +85,9 @@ export const TestimonialWrapper = ({ title, data, alt, visibleSlides = 3 }) => {
               key={index}
               index={index}
               className="carousel-wrapper__card"
+              innerClassName={'carousel-wrapper__inner-slide'}
               style={
-                visibleSlides !== 1
+                visibleSlides >= 3
                   ? { marginRight: gap }
                   : { marginLeft: gapWithShadows }
               }
@@ -94,5 +112,5 @@ TestimonialWrapper.propTypes = {
     }).isRequired
   ),
   alt: arrayOf(string),
-  visibleSlides: number,
+  slides: number,
 };

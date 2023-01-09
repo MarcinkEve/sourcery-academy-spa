@@ -3,8 +3,15 @@
 @import '~/sass/base';
 
 .academy-landing-section {
-  @include mobile-breakpoint {
+  @include tablet-breakpoint {
     flex-wrap: wrap;
+    justify-content: center;
+    margin: to-rem(40) 0 to-rem(200);
+    max-width: to-rem(900);
+  }
+
+  @include mobile-breakpoint {
+    margin-bottom: to-rem(50);
   }
 
   @include flex-box(
@@ -13,12 +20,13 @@
     $align-items: center
   );
 
-  margin: to-rem(118) 0 to-rem(292);
+  margin: to-rem(90) 0 to-rem(292);
 
   &__paragraph {
-    @include mobile-breakpoint {
-      margin-right: 0;
+    @include tablet-breakpoint {
+      margin: 0;
       text-align: center;
+      width: 100%;
     }
 
     margin-right: to-rem(60);
@@ -40,15 +48,16 @@
   }
 
   &__corner {
+    @include tablet-breakpoint {
+      justify-content: center;
+      width: to-rem(900);
+    }
+
     position: relative;
   }
 
   &__corner-line {
     @include tablet-breakpoint {
-      top: 12%;
-    }
-
-    @include mobile-breakpoint {
       display: none;
     }
 
