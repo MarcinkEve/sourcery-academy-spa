@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { string, func, bool } from 'prop-types';
+import { string, func, bool, oneOf } from 'prop-types';
 
 import ErrorMessage from '~/components/UI/ErrorMessage';
 
@@ -58,7 +58,7 @@ export const InputField = ({
 InputField.propTypes = {
   name: string.isRequired,
   label: string.isRequired,
-  type: string.isRequired,
+  type: oneOf(['text', 'email']).isRequired,
   placeholder: string.isRequired,
   getValue: func,
   isRequired: bool,
