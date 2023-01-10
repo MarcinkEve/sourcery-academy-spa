@@ -3,7 +3,9 @@
 
 .hamburger-menu {
   @include mobile-breakpoint {
-    display: unset;
+    background: unset;
+    border-style: none;
+    display: block;
   }
 
   cursor: pointer;
@@ -11,8 +13,8 @@
   height: to-rem(30);
   position: fixed;
   right: to-rem(40);
-  top: to-rem(17);
-  width: to-rem(30);
+  top: to-rem(15);
+  width: to-rem(40);
   z-index: 100;
 
   &:focus-visible {
@@ -21,6 +23,7 @@
 
   &__lines {
     background-color: $header-clr;
+    margin-bottom: to-rem(3);
     position: relative;
 
     &,
@@ -36,6 +39,7 @@
     &::after {
       background-color: $header-clr;
       content: '';
+      left: 0;
       position: absolute;
     }
 

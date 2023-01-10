@@ -7,7 +7,6 @@ import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HeaderDropdown from '~/components/Header/Dropdown';
 import HamburgerMenuButton from '../UI/HamburgerMenuButton';
 
-import './hamburgerMenu.scss';
 import './header.scss';
 
 const dropdownElements = [
@@ -96,7 +95,7 @@ export const Header = () => {
 
   return (
     <>
-      <div
+      {/* <div
         tabIndex="0"
         className="hamburger-menu"
         onClick={() => setIsHamburgerMenuOpen((prev) => !prev)}
@@ -110,7 +109,7 @@ export const Header = () => {
             isHamburgerMenuOpen && 'hamburger-menu__lines--transform'
           )}
         ></span>
-      </div>
+      </div> */}
       <div className="header">
         <NavLink
           tabIndex="1"
@@ -122,7 +121,7 @@ export const Header = () => {
           <SvgLogo className="logo__image" />
           <span className="logo__text">Sourcery Academy</span>
         </NavLink>
-        {/* <HamburgerMenuButton /> */}
+        <HamburgerMenuButton />
         <ul
           className={classNames(
             'navlinks',
