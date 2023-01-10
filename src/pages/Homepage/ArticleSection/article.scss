@@ -10,7 +10,15 @@
     $align-items: center
   );
 
-  margin: 0 auto;
+  @include tablet-breakpoint {
+    margin-bottom: to-rem(300);
+  }
+
+  @include mobile-breakpoint {
+    margin-bottom: to-rem(150);
+  }
+
+  margin: 0 auto to-rem(400);
   max-width: to-rem(1006);
   position: relative;
   text-align: center;

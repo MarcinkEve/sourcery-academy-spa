@@ -3,12 +3,12 @@
 
 .academies-description-section {
   @include tablet-breakpoint {
-    margin-top: to-rem(300);
+    margin-bottom: to-rem(200);
   }
 
   @include mobile-breakpoint {
-    margin-top: to-rem(200);
+    margin-bottom: to-rem(50);
   }
 
-  margin-top: to-rem(400);
+  margin-bottom: to-rem(267);
 }
