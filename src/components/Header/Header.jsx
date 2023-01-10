@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 
-import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
+// import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
-import HeaderDropdown from '~/components/Header/Dropdown';
-import HamburgerMenuButton from '../UI/HamburgerMenuButton';
+// import HeaderDropdown from '~/components/Header/Dropdown';
+import HamburgerMenuButton from '~/components/UI/HamburgerMenuButton';
+import NavigationLinks from '~/components/Header/NavigationLinks';
 
 import './header.scss';
 
@@ -33,7 +34,7 @@ export const Header = () => {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
   const [getWindowSize, setGetWindowSize] = useState(window.innerWidth);
 
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
   const ref = useRef(null);
 
   const getAcademiesPath = () => {
@@ -49,17 +50,17 @@ export const Header = () => {
     setIsHamburgerMenuOpen(false);
   };
 
-  const getTabIndexChange = () => {
-    if (getWindowSize < 767 && !isHamburgerMenuOpen) {
-      return '-1';
-    }
+  // const getTabIndexChange = () => {
+  //   if (getWindowSize < 767 && !isHamburgerMenuOpen) {
+  //     return '-1';
+  //   }
 
-    return '0';
-  };
+  //   return '0';
+  // };
 
-  const academiesPaths = getAcademiesPath();
+  // const academiesPaths = getAcademiesPath();
 
-  const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
+  // const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
 
   useEffect(() => setIsDropdownOpen(false), [useLocation()]);
 
@@ -94,115 +95,95 @@ export const Header = () => {
   // }, []);
 
   return (
-    <>
-      {/* <div
-        tabIndex="0"
-        className="hamburger-menu"
-        onClick={() => setIsHamburgerMenuOpen((prev) => !prev)}
-        onKeyDown={(e) =>
-          e.key === 'Enter' && setIsHamburgerMenuOpen((prev) => !prev)
-        }
+    <div className="header">
+      <NavLink
+        onClick={handleClose}
+        className="logo"
+        to="/"
+        aria-label="Home link"
       >
-        <span
-          className={classNames(
-            'hamburger-menu__lines',
-            isHamburgerMenuOpen && 'hamburger-menu__lines--transform'
-          )}
-        ></span>
-      </div> */}
-      <div className="header">
-        <NavLink
-          tabIndex="1"
-          onClick={handleClose}
-          className="logo"
-          to="/"
-          aria-label="Home link"
-        >
-          <SvgLogo className="logo__image" />
-          <span className="logo__text">Sourcery Academy</span>
-        </NavLink>
-        <HamburgerMenuButton />
-        <ul
-          className={classNames(
-            'navlinks',
-            isHamburgerMenuOpen && 'navlinks--scaled'
-          )}
-        >
-          <li>
-            <NavLink
-              tabIndex={getTabIndexChange()}
-              onClick={handleClose}
-              className={({ isActive }) =>
-                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-              }
-              to="/"
-            >
-              About us
-            </NavLink>
-          </li>
-          <li className="navlinks__academies" ref={ref}>
-            <button
-              tabIndex={getTabIndexChange()}
-              className={classNames(
-                'navlinks__academies-menu',
-                isAcademiesPathActive(pathname) &&
-                  'navlinks__academies-menu--active'
-              )}
-              onClick={() => setIsDropdownOpen((prev) => !prev)}
-            >
-              Academies
-              <SvgArrow className="navlinks__academies-arrow" />
-            </button>
-            {isDropdownOpen && (
-              <div
-                onClick={handleClose}
-                className="navlinks__academies-dropdown"
-              >
-                <HeaderDropdown
-                  data={dropdownElements}
-                  onClickOutside={() => setIsDropdownOpen(false)}
-                />
-              </div>
+        <SvgLogo className="logo__image" />
+        <span className="logo__text">Sourcery Academy</span>
+      </NavLink>
+      <HamburgerMenuButton />
+      <NavigationLinks dropdownElements={dropdownElements} ref={ref} />
+      {/* <ul
+        className={classNames(
+          'navlinks',
+          isHamburgerMenuOpen && 'navlinks--scaled'
+        )}
+      >
+        <li>
+          <NavLink
+            tabIndex={getTabIndexChange()}
+            onClick={handleClose}
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/"
+          >
+            About us
+          </NavLink>
+        </li>
+        <li className="navlinks__academies" ref={ref}>
+          <button
+            tabIndex={getTabIndexChange()}
+            className={classNames(
+              'navlinks__academies-menu',
+              isAcademiesPathActive(pathname) &&
+                'navlinks__academies-menu--active'
             )}
-          </li>
-          <li>
-            <NavLink
-              tabIndex={getTabIndexChange()}
-              onClick={handleClose}
-              className={({ isActive }) =>
-                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-              }
-              to="/media"
-            >
-              Media
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              tabIndex={getTabIndexChange()}
-              onClick={handleClose}
-              className={({ isActive }) =>
-                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-              }
-              to="/applicationform"
-            >
-              Register
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              tabIndex={getTabIndexChange()}
-              onClick={handleClose}
-              className={({ isActive }) =>
-                `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-              }
-              to="/questions"
-            >
-              Questions
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </>
+            onClick={() => setIsDropdownOpen((prev) => !prev)}
+          >
+            Academies
+            <SvgArrow className="navlinks__academies-arrow" />
+          </button>
+          {isDropdownOpen && (
+            <div onClick={handleClose} className="navlinks__academies-dropdown">
+              <HeaderDropdown
+                data={dropdownElements}
+                onClickOutside={() => setIsDropdownOpen(false)}
+              />
+            </div>
+          )}
+        </li>
+        <li>
+          <NavLink
+            tabIndex={getTabIndexChange()}
+            onClick={handleClose}
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/media"
+          >
+            Media
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            tabIndex={getTabIndexChange()}
+            onClick={handleClose}
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/applicationform"
+          >
+            Register
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            tabIndex={getTabIndexChange()}
+            onClick={handleClose}
+            className={({ isActive }) =>
+              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+            }
+            to="/questions"
+          >
+            Questions
+          </NavLink>
+        </li>
+      </ul> */}
+    </div>
   );
 };

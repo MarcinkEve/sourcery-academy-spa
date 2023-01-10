@@ -8,7 +8,6 @@ export const HamburgerMenuButton = () => {
 
   return (
     <button
-      // tabIndex="0"
       className="hamburger-menu"
       onClick={() => setIsHamburgerMenuOpen((prev) => !prev)}
       onKeyDown={(e) =>
