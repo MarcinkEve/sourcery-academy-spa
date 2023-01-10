@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { string, func, bool } from 'prop-types';
+import { string, func, bool, oneOf } from 'prop-types';
 
 import ErrorMessage from '~/components/UI/ErrorMessage';
 
@@ -46,6 +46,7 @@ export const InputField = ({
         name={name}
         id={name}
         className={errorMessage ? 'input__field input__error' : 'input__field'}
+        autoComplete={'disabledForMVP'}
         onBlur={(e) => {
           setInputValue(e.target.value);
         }}
@@ -58,7 +59,7 @@ export const InputField = ({
 InputField.propTypes = {
   name: string.isRequired,
   label: string.isRequired,
-  type: string.isRequired,
+  type: oneOf(['text', 'email']).isRequired,
   placeholder: string.isRequired,
   getValue: func,
   isRequired: bool,

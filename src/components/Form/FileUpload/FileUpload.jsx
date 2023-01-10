@@ -61,7 +61,9 @@ export const FileUpload = ({
         onClick={triggerInputFile}
       >
         {uploadedFile ? (
-          <span className="upload__file-name">{uploadedFile.name}</span>
+          <span className="upload__file-name">
+            {errorMessage ? placeholder : uploadedFile.name}
+          </span>
         ) : (
           <span className="upload__placeholder">{placeholder}</span>
         )}
