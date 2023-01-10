@@ -9,16 +9,22 @@
   );
 
   @include tablet-breakpoint {
-    @include flex-box($justify-content: center, $align-items: flex-start);
+    @include flex-box($justify-content: center);
 
-    margin-top: to-rem(40);
+    padding-top: to-rem(40);
     text-align: center;
   }
 
   margin: 0 auto;
   max-width: to-rem(1200);
   min-height: calc(100vh - (#{$height-header-footer} * 2));
-  padding-left: to-rem(35);
+
+  &__heading-span {
+    display: none;
+    @include tablet-breakpoint {
+      display: block;
+    }
+  }
 
   &__image {
     @include tablet-breakpoint {
