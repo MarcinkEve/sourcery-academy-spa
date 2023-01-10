@@ -32,6 +32,15 @@
     top: to-rem(-50);
     transition: $transition-time-200;
 
+    @include tablet-breakpoint {
+      right: -4vw;
+      top: -4vh;
+    }
+    @include mobile-breakpoint {
+      right: -4.5vw;
+      top: -4.5vh;
+    }
+
     &:hover {
       color: var(--button-hover);
     }
