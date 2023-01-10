@@ -6,11 +6,11 @@
   position: relative;
 
   @include tablet-breakpoint {
-    margin-bottom: to-rem(200);
+    margin-bottom: to-rem(50);
   }
 
   @include mobile-breakpoint {
-    margin-bottom: to-rem(50);
+    margin-bottom: 0;
   }
 
   &__particles {

@@ -11,7 +11,7 @@
   }
 
   @include mobile-breakpoint {
-    margin-bottom: to-rem(50);
+    margin-bottom: to-rem(150);
   }
 
   @include flex-box(
