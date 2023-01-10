@@ -46,6 +46,7 @@ export const InputField = ({
         name={name}
         id={name}
         className={errorMessage ? 'input__field input__error' : 'input__field'}
+        autoComplete={'disabledForMVP'}
         onBlur={(e) => {
           setInputValue(e.target.value);
         }}
