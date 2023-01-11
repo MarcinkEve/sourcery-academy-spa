@@ -8,6 +8,8 @@ import Article from '~/pages/Homepage/ArticleSection';
 import AcademiesDescriptionSection from '~/pages/Homepage/AcademiesDescriptionSection';
 import TestimonialSection from '~/pages/Homepage/TestimonialSection';
 import { MediaSectionHomepage } from '~/pages/Homepage/MediaSection/MediaSectionHomepage';
+import { LoadingSpinner } from '~/components/UI/Loader/LoadingSpinner';
+import { getTestimonials } from '~/widgets/Testimonial/TestimonialProvider';
 
 import {
   introSectionData,
@@ -19,8 +21,11 @@ import {
 } from './data.js';
 
 export const Homepage = ({ theme }) => {
+  const { isLoading } = getTestimonials();
+
   return (
     <PageLayout theme={theme}>
+      {isLoading && <LoadingSpinner />}
       <IntroSection introSectionData={introSectionData} />
       <Article articleSectionData={articleSectionData} />
       <ExtraWrappingSection>

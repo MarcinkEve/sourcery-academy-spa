@@ -29,7 +29,7 @@ export const getTestimonials = () => {
   return { ...testimonialContext, data: getTestimonialsForPage(pathname) };
 };
 
-const initialState = { data: [], error: false };
+const initialState = { data: [], error: false, isLoading: true };
 
 export const TestimonialContext = createContext(initialState);
 
@@ -39,8 +39,12 @@ export const TestimonialProvider = ({ children }) => {
   useEffect(() => {
     fetch(LINKS.TESTIMONIALS)
       .then((response) => response.json())
-      .then((response) => setTestimonials({ data: response, error: false }))
-      .catch(() => setTestimonials({ data: [], error: true }));
+      .then((response) =>
+        setTestimonials({ data: response, error: false, isLoading: false })
+      )
+      .catch(() =>
+        setTestimonials({ data: [], error: true, isLoading: false })
+      );
   }, []);
 
   return (
