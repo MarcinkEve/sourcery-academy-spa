@@ -33,12 +33,10 @@
     transition: $transition-time-200;
 
     @include tablet-breakpoint {
-      right: to-rem(-35);
-      top: to-rem(-35);
+      right: to-rem(-20);
     }
     @include mobile-breakpoint {
-      right: to-rem(-25);
-      top: to-rem(-25);
+      right: to-rem(-15);
     }
 
     &:hover {
