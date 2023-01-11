@@ -37,17 +37,22 @@ export const getMedia = () => {
   return { ...mediaContext, data: getMediaForPage(pathname) };
 };
 
-const initialState = { data: [], error: false };
+const initialState = { data: [], error: false, isLoading: false };
 
 export const MediaContext = createContext(initialState);
 
 export const MediaProvider = ({ children }) => {
   const [media, setMedia] = useState(initialState);
+
   useEffect(() => {
+    setMedia({ data: [], error: true, isLoading: true });
+
     fetch(LINKS.MEDIA)
       .then((response) => response.json())
-      .then((response) => setMedia({ data: response, error: false }))
-      .catch(() => setMedia({ data: [], error: true }));
+      .then((response) =>
+        setMedia({ data: response, error: false, isLoading: false })
+      )
+      .catch(() => setMedia({ data: [], error: true, isLoading: false }));
   }, []);
 
   return (
