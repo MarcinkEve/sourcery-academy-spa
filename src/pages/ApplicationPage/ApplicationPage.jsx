@@ -45,7 +45,10 @@ export const ApplicationPage = ({ title, theme }) => {
 
   const submitHandler = () => {
     setIsSubmitted(true);
-    console.table(formValues); //eslint-disable-line
+    sessionStorage.setItem(
+      `form-${formValues.email}`,
+      JSON.stringify(formValues)
+    );
   };
 
   useEffect(() => {
