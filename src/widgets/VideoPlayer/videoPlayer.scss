@@ -94,6 +94,10 @@
   position: absolute;
   width: 100%;
 
+  @include mobile-breakpoint {
+    height: to-rem(32);
+  }
+
   &__play-pause {
     border-radius: 0 0 0 15px;
   }
@@ -146,6 +150,12 @@
       bottom: to-rem(74);
       right: to-rem(43);
       width: to-rem(120);
+
+      @include mobile-breakpoint {
+        bottom: to-rem(54);
+        right: to-rem(22);
+        width: to-rem(90);
+      }
     }
   }
 
@@ -157,12 +167,24 @@
     transform: rotate(-90deg);
     width: to-rem(0);
 
+    @include mobile-breakpoint {
+      bottom: to-rem(10);
+      height: to-rem(45);
+      right: to-rem(66);
+    }
+
     &:hover,
     &:focus-visible {
       background-color: $semi-transparent-bg-clr;
       bottom: to-rem(74);
       right: to-rem(43);
       width: to-rem(120);
+
+      @include mobile-breakpoint {
+        bottom: to-rem(54);
+        right: to-rem(22);
+        width: to-rem(90);
+      }
     }
 
     &::-moz-range-thumb {
@@ -187,6 +209,10 @@
     height: 100%;
     padding-top: to-rem(3);
     width: to-rem(69);
+
+    @include mobile-breakpoint {
+      width: to-rem(45);
+    }
   }
 
   button,
