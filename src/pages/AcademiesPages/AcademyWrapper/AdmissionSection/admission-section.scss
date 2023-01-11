@@ -8,7 +8,7 @@
     @include flex-box(
       $direction: column,
       $justify-content: space-between,
-      $align-items: start
+      $align-items: flex-start
     );
 
     margin: to-rem(200) auto;
@@ -73,7 +73,7 @@
 
   &__image-container {
     @include tablet-breakpoint {
-      @include flex-box($justify-content: end);
+      @include flex-box($justify-content: flex-end);
 
       left: initial;
       margin-top: to-rem(40);
