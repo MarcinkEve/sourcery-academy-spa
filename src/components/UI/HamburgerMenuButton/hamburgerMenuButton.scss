@@ -3,11 +3,11 @@
 
 .hamburger-menu {
   @include mobile-breakpoint {
-    background: unset;
     border-style: none;
     display: block;
   }
 
+  background: unset;
   cursor: pointer;
   display: none;
   height: to-rem(30);

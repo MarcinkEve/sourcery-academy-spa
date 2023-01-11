@@ -40,7 +40,7 @@ export const ApplicationPage = ({ title, theme }) => {
   };
 
   const isButtonDisabled = Object.values(formValues).some((value) =>
-    [null, undefined].includes(value)
+    [null, undefined, false, 'notValid'].includes(value)
   );
 
   const submitHandler = () => {

@@ -3,17 +3,16 @@
 
 .page-layout {
   @include tablet-breakpoint {
-    padding: 0 to-rem(60);
+    padding: $height-header-footer to-rem(60) 0;
   }
 
   @include mobile-breakpoint {
-    margin-top: to-rem(60);
-    padding: 0 to-rem(30);
+    padding: $height-header-footer to-rem(30) 0;
   }
 
   margin: 0 auto;
   max-width: $max-page-width;
-  min-height: calc(100vh - (#{$height-header-footer} * 2));
+  min-height: calc(100vh - #{$height-header-footer});
   overflow: hidden;
-  padding: 0 to-rem(80);
+  padding: $height-header-footer to-rem(80) 0;
 }

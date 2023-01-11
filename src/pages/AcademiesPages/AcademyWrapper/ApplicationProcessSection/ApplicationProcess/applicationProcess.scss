@@ -9,7 +9,8 @@
   padding-bottom: to-rem(95);
   width: 100%;
 
-  @include mobile-breakpoint {
+  @include tablet-breakpoint {
     grid-template-columns: 1fr;
+    padding-bottom: initial;
   }
 }

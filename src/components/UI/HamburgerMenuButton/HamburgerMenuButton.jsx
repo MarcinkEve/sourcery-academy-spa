@@ -61,6 +61,6 @@ export const HamburgerMenuButton = ({ dropdownElements, stateToggler }) => {
 };
 
 HamburgerMenuButton.propTypes = {
-  dropdownElements: array.isRequired,
+  dropdownElements: array,
   stateToggler: bool,
 };

@@ -42,7 +42,8 @@ export const handleValidation = (
         setValidInput(yupValidation);
       } catch (err) {
         setErrorMessage(err.message);
-        setValidInput(null);
+        //not 'null' or 'undefined, just to rerender the component.
+        setValidInput('notValid');
       }
     };
     validateValue();

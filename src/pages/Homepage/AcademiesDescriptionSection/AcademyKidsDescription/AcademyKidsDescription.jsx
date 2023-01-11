@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { shape } from 'prop-types';
 
 import ImageKidsDescriptionParticlesBottom from '~/assets/decorators/particles/kids-description-particles-bottom.svg';
@@ -17,11 +17,27 @@ export const AcademyKidsDescription = ({ kidsDescriptionData }) => {
     buttonText,
     pageRoute,
   } = kidsDescriptionData;
+
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const mediaWatcher = window.matchMedia('(max-width: 1023px)');
+    setIsTablet(mediaWatcher.matches);
+
+    const updateIsTablet = (e) => {
+      setIsTablet(e.matches);
+    };
+    mediaWatcher.addEventListener('change', updateIsTablet);
+
+    return () => mediaWatcher.removeEventListener('change', updateIsTablet);
+  }, []);
+
   return (
     <section className="kids-description">
       <div className="kids-description__content">
         <ImageKidsDescriptionParticlesTop className="kids-description__top-particles" />
         <TextSection
+          isRightAligned={isTablet}
           headingContent={<h3>{headingContent}</h3>}
           paragraphContent={<p>{paragraphContent}</p>}
           buttonText={buttonText}
