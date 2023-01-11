@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { array } from 'prop-types';
 import classNames from 'classnames';
-import { array, func } from 'prop-types';
 
 import HeaderDropdown from '~/components/Header/Dropdown';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 
 // import '../header.scss';
 
-export const NavigationLinks = ({ dropdownElements, ref }) => {
+export const NavigationLinks = ({ dropdownElements }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const { pathname } = useLocation();
+  const ref = useRef(null);
 
   const getAcademiesPath = () => {
     const academiesPathArray = [];
@@ -22,22 +22,27 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
     return academiesPathArray;
   };
 
+  useEffect(() => setIsDropdownOpen(false), [useLocation()]);
+
+  useEffect(() => {
+    const keyListener = ({ key }) => {
+      if (key === 'Escape') {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('keydown', keyListener, false);
+
+    return () => document.removeEventListener('keydown', keyListener);
+  }, []);
+
   const academiesPaths = getAcademiesPath();
 
   const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
 
   return (
-    <ul
-      className="navlinks"
-      // className={classNames(
-      //   'navlinks',
-      //   isHamburgerMenuOpen && 'navlinks--scaled'
-      // )}
-    >
+    <ul className="navlinks">
       <li>
         <NavLink
-          // tabIndex={getTabIndexChange()}
-          // onClick={handleClose}
           className={({ isActive }) =>
             `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
           }
@@ -48,7 +53,6 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
       </li>
       <li className="navlinks__academies" ref={ref}>
         <button
-          // tabIndex={getTabIndexChange()}
           className={classNames(
             'navlinks__academies-menu',
             isAcademiesPathActive(pathname) &&
@@ -60,10 +64,7 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
           <SvgArrow className="navlinks__academies-arrow" />
         </button>
         {isDropdownOpen && (
-          <div
-            //  onClick={handleClose}
-            className="navlinks__academies-dropdown"
-          >
+          <div className="navlinks__academies-dropdown">
             <HeaderDropdown
               data={dropdownElements}
               onClickOutside={() => setIsDropdownOpen(false)}
@@ -73,8 +74,6 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
       </li>
       <li>
         <NavLink
-          // tabIndex={getTabIndexChange()}
-          // onClick={handleClose}
           className={({ isActive }) =>
             `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
           }
@@ -85,8 +84,6 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
       </li>
       <li>
         <NavLink
-          // tabIndex={getTabIndexChange()}
-          // onClick={handleClose}
           className={({ isActive }) =>
             `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
           }
@@ -97,8 +94,6 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
       </li>
       <li>
         <NavLink
-          // tabIndex={getTabIndexChange()}
-          // onClick={handleClose}
           className={({ isActive }) =>
             `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
           }
@@ -113,5 +108,4 @@ export const NavigationLinks = ({ dropdownElements, ref }) => {
 
 NavigationLinks.propTypes = {
   dropdownElements: array.isRequired,
-  ref: func,
 };

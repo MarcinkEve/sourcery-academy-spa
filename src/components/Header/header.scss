@@ -61,22 +61,23 @@
       );
 
       background-color: $shadow-clr;
+      display: none;
       height: 100vh;
       padding-top: to-rem(100);
       position: fixed;
       right: 0;
       row-gap: to-rem(30);
-      scale: 0;
+      // scale: 0;
       top: to-rem(60);
       width: 100vw;
     }
 
     white-space: nowrap;
 
-    &--scaled {
-      scale: 1;
-      transition: scale $transition-time-200;
-    }
+    // &--scaled {
+    //   scale: 1;
+    //   transition: scale $transition-time-200;
+    // }
 
     &__academies {
       @include flex-box(

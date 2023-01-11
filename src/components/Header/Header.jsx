@@ -30,25 +30,25 @@ const dropdownElements = [
 ];
 
 export const Header = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
-  const [getWindowSize, setGetWindowSize] = useState(window.innerWidth);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+  // const [getWindowSize, setGetWindowSize] = useState(window.innerWidth);
 
   // const { pathname } = useLocation();
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
-  const getAcademiesPath = () => {
-    const academiesPathArray = [];
-    dropdownElements.forEach((el) => {
-      academiesPathArray.push(el.route);
-    });
+  // const getAcademiesPath = () => {
+  //   const academiesPathArray = [];
+  //   dropdownElements.forEach((el) => {
+  //     academiesPathArray.push(el.route);
+  //   });
 
-    return academiesPathArray;
-  };
+  //   return academiesPathArray;
+  // };
 
-  const handleClose = () => {
-    setIsHamburgerMenuOpen(false);
-  };
+  // const handleClose = () => {
+  //   setIsHamburgerMenuOpen(false);
+  // };
 
   // const getTabIndexChange = () => {
   //   if (getWindowSize < 767 && !isHamburgerMenuOpen) {
@@ -62,28 +62,28 @@ export const Header = () => {
 
   // const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
 
-  useEffect(() => setIsDropdownOpen(false), [useLocation()]);
+  // useEffect(() => setIsDropdownOpen(false), [useLocation()]);
 
-  useEffect(() => {
-    const keyListener = ({ key }) => {
-      if (key === 'Escape') {
-        setIsDropdownOpen(false);
-        handleClose();
-      }
-    };
-    document.addEventListener('keydown', keyListener, false);
+  // useEffect(() => {
+  //   const keyListener = ({ key }) => {
+  //     if (key === 'Escape') {
+  //       setIsDropdownOpen(false);
+  //       handleClose();
+  //     }
+  //   };
+  //   document.addEventListener('keydown', keyListener, false);
 
-    return () => document.removeEventListener('keydown', keyListener);
-  }, []);
+  //   return () => document.removeEventListener('keydown', keyListener);
+  // }, []);
 
-  useEffect(() => {
-    const windowSizeListener = () => {
-      setGetWindowSize(window.innerWidth);
-    };
-    window.addEventListener('resize', windowSizeListener);
+  // useEffect(() => {
+  //   const windowSizeListener = () => {
+  //     setGetWindowSize(window.innerWidth);
+  //   };
+  //   window.addEventListener('resize', windowSizeListener);
 
-    return () => document.removeEventListener('resize', windowSizeListener);
-  }, []);
+  //   return () => document.removeEventListener('resize', windowSizeListener);
+  // }, []);
 
   // useEffect(() => {
   //   const escapeListener = (e) => {
@@ -97,7 +97,7 @@ export const Header = () => {
   return (
     <div className="header">
       <NavLink
-        onClick={handleClose}
+        // onClick={handleClose}
         className="logo"
         to="/"
         aria-label="Home link"
@@ -105,8 +105,8 @@ export const Header = () => {
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <HamburgerMenuButton />
-      <NavigationLinks dropdownElements={dropdownElements} ref={ref} />
+      <HamburgerMenuButton dropdownElements={dropdownElements} />
+      <NavigationLinks dropdownElements={dropdownElements} />
       {/* <ul
         className={classNames(
           'navlinks',

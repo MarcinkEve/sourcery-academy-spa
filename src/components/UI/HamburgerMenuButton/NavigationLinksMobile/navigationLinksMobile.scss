@@ -1,0 +1,32 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.navlinks-mobile {
+  @include mobile-breakpoint {
+    display: flex;
+  }
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+
+  @include center-alignment;
+
+  background-color: $gray-200;
+  display: none;
+  height: 100vh;
+  list-style-type: none;
+  margin-top: 60px;
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+
+  &__link {
+    color: $orange-200;
+
+    &--active {
+      color: $violet-700;
+    }
+  }
+}
