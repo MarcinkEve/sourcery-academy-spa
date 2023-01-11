@@ -17,10 +17,6 @@
   width: to-rem(40);
   z-index: 100;
 
-  &:focus-visible {
-    outline: 4px dashed $orange-200;
-  }
-
   &__lines {
     background-color: $header-clr;
     margin-bottom: to-rem(3);

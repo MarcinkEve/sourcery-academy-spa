@@ -1,13 +1,7 @@
 @import '~/sass/variables';
 @import '~/sass/utilities/mixins';
 
-// ALL STYLELINT IGNORE RULES ARE FOR MEDIA QUERIES NESTED 3+ LEVELS
-
 .dropdown {
-  @include mobile-breakpoint {
-    font-size: $font-size-m;
-  }
-
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -15,10 +9,6 @@
   font-size: $font-size-xs;
 
   &__pin {
-    @include mobile-breakpoint {
-      display: none;
-    }
-
     display: flex;
     height: to-rem(60);
     justify-content: center;
@@ -39,17 +29,6 @@
   &__content {
     @include flex-box($direction: column, $justify-content: center);
 
-    @include mobile-breakpoint {
-      @include flex-box(
-        $direction: column,
-        $justify-content: center,
-        $align-items: center
-      );
-
-      background: unset;
-      padding: 0;
-    }
-
     background-color: $white-400;
     border-radius: 14px;
     margin: 0;
@@ -57,20 +36,6 @@
     position: relative;
 
     &-item {
-      @include mobile-breakpoint {
-        background: unset;
-
-        /* stylelint-disable */
-        &:first-child {
-          margin-top: to-rem(12);
-        }
-
-        &:not(:last-child) {
-          /* stylelint-enable */
-          margin-bottom: to-rem(12);
-        }
-      }
-
       background-color: $white-400;
       list-style: none;
       text-align: start;
@@ -78,16 +43,6 @@
     }
 
     &-link {
-      @include mobile-breakpoint {
-        border-radius: 5px;
-        color: $header-clr;
-        font-size: $font-size-m;
-        line-height: inherit;
-        padding: to-rem(7) to-rem(11);
-        position: relative;
-        text-decoration: none;
-      }
-
       color: $violet-700;
       display: inline-block;
       height: 100%;
@@ -97,13 +52,6 @@
       width: 100%;
 
       &:hover {
-        /* stylelint-disable */
-        @include mobile-breakpoint {
-          /* stylelint-enable */
-          background-color: $violet-400;
-          color: $white-400;
-        }
-
         background-color: $gray-200;
       }
 
@@ -113,24 +61,10 @@
       }
 
       &:active {
-        /* stylelint-disable */
-        @include mobile-breakpoint {
-          /* stylelint-enable */
-          background-color: $violet-400;
-        }
-
         background-color: $gray-100;
       }
 
       &--active {
-        /* stylelint-disable */
-        @include mobile-breakpoint {
-          /* stylelint-enable */
-          background: unset;
-          font-weight: unset;
-          text-decoration: underline;
-        }
-
         background-color: $gray-200;
         font-weight: 700;
       }
@@ -138,10 +72,6 @@
   }
 
   &__content::after {
-    @include mobile-breakpoint {
-      display: none;
-    }
-
     border-radius: 14px;
     bottom: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);

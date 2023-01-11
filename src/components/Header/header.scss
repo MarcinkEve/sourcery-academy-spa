@@ -54,30 +54,10 @@
     @include flex-box($justify-content: center, $align-items: center);
 
     @include mobile-breakpoint {
-      @include flex-box(
-        $direction: column,
-        $justify-content: flex-start,
-        $align-items: center
-      );
-
-      background-color: $shadow-clr;
       display: none;
-      height: 100vh;
-      padding-top: to-rem(100);
-      position: fixed;
-      right: 0;
-      row-gap: to-rem(30);
-      // scale: 0;
-      top: to-rem(60);
-      width: 100vw;
     }
 
     white-space: nowrap;
-
-    // &--scaled {
-    //   scale: 1;
-    //   transition: scale $transition-time-200;
-    // }
 
     &__academies {
       @include flex-box(
@@ -85,18 +65,9 @@
         $justify-content: center,
         $align-items: center
       );
-
-      @include mobile-breakpoint {
-        align-items: center;
-        margin: to-rem(-10) 0;
-      }
     }
 
     &__academies-menu {
-      @include mobile-breakpoint {
-        background: none;
-      }
-
       background-color: $header-bg-clr;
       border: 0;
       font-family: $paragraph-font;
@@ -111,11 +82,6 @@
     }
 
     &__academies-dropdown {
-      @include mobile-breakpoint {
-        position: relative;
-        top: 0;
-      }
-
       position: absolute;
       top: to-rem(78);
     }

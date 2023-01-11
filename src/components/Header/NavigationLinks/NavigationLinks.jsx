@@ -6,11 +6,13 @@ import classNames from 'classnames';
 import HeaderDropdown from '~/components/Header/Dropdown';
 import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 
-// import '../header.scss';
+import '../header.scss';
 
 export const NavigationLinks = ({ dropdownElements }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const { pathname } = useLocation();
+
   const ref = useRef(null);
 
   const getAcademiesPath = () => {

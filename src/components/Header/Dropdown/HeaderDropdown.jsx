@@ -18,8 +18,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
         onClickOutside &&
         !pinRef.current.contains(target) &&
         !contentRef.current.contains(target) &&
-        !(target.autofocus === false) &&
-        window.innerWidth > 767
+        !(target.autofocus === false)
       ) {
         onClickOutside();
       }
