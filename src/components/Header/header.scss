@@ -9,12 +9,34 @@
   );
 
   height: $height-header-footer;
-  margin: auto;
+  left: 50%;
   max-width: $max-page-width;
   padding: 0 $spacer-l;
-  position: relative;
+  position: fixed;
+  top: 0;
+  transform: translate(-50%, 0);
   width: 100%;
   z-index: 10;
+
+  &::after {
+    background-color: $header-bg-clr;
+    box-shadow: none;
+    content: '';
+    height: 100%;
+    left: -50%;
+    position: absolute;
+    transition: box-shadow $transition-time-200 ease-in-out;
+    width: 150vw;
+    z-index: -1;
+  }
+
+  &__scrolled::after {
+    @include box-shadow(
+      $x-offset: 0,
+      $y-offset: to-rem(5),
+      $blur-radius: to-rem(30)
+    );
+  }
 
   .logo {
     @include flex-box(
