@@ -27,11 +27,13 @@ export const DropdownBar = ({ buttonText, contentText }) => {
           )}
         />
       </button>
-      {isExpanded && (
-        <div className="dropdown-container__content">
-          <p className="dropdown-container__content-text">{contentText}</p>
-        </div>
-      )}
+      <div className="dropdown-container__dropdown">
+        {isExpanded && (
+          <div className="dropdown-container__content">
+            <p className="dropdown-container__content-text">{contentText}</p>
+          </div>
+        )}
+      </div>
     </article>
   );
 };

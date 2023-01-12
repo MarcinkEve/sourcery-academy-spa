@@ -4,6 +4,10 @@
 .dropdown-container {
   margin: 0;
 
+  &:not(:last-of-type) {
+    margin-bottom: to-rem(20);
+  }
+
   &__button {
     @include flex-box(
       $direction: row,
@@ -69,6 +73,11 @@
     }
   }
 
+  &__dropdown {
+    transition-duration: $transition-time-400;
+    transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
+  }
+
   &__content {
     margin-bottom: to-rem(40);
 
@@ -77,8 +86,4 @@
       padding: 0 to-rem(10);
     }
   }
-}
-
-.dropdown-container:not(:last-of-type) {
-  margin-bottom: to-rem(20);
 }
