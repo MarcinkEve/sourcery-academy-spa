@@ -12,10 +12,8 @@ export const PageNotFoundContent = () => {
       <TextSection
         headingContent={<h1>{'404 - Page Not Found'}</h1>}
         isHeadingSpacingLarge
-        paragraphContent={
-          <p>{'Junior developers are still building this page!'}</p>
-        }
-        buttonText={'Back to Homepage'}
+        paragraphContent={<p>{'Junior developers are on it!'}</p>}
+        buttonText={'Go to Homepage'}
         pageRoute={ROUTES.HOME}
       />
       <Image className="page-not-found__image" />

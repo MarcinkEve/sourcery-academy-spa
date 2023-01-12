@@ -9,20 +9,25 @@
   );
 
   @include tablet-breakpoint {
-    @include flex-box($justify-content: center, $align-items: flex-start);
+    @include flex-box(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
 
-    margin-top: to-rem(40);
+    flex-flow: column-reverse;
+    padding-top: to-rem(40);
     text-align: center;
   }
 
   margin: 0 auto;
   max-width: to-rem(1200);
   min-height: calc(100vh - (#{$height-header-footer} * 2));
-  padding-left: to-rem(35);
 
   &__image {
     @include tablet-breakpoint {
-      display: none;
+      margin-bottom: to-rem(40);
+      max-width: to-rem(250);
     }
 
     max-width: to-rem(450);

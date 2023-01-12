@@ -28,6 +28,7 @@ const dropdownElements = [
 ];
 
 export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { pathname } = useLocation();
   const ref = useRef(null);
@@ -56,8 +57,19 @@ export const Header = () => {
     return () => document.removeEventListener('keydown', keyListener);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('scroll', isScrolled);
+
+    return () => window.removeEventListener('scroll', isScrolled);
+  }, []);
+
+  const isScrolled = () => {
+    const scrollTop = window.scrollY;
+    setScrolled(scrollTop > 0);
+  };
+
   return (
-    <div className="header">
+    <div className={classNames('header', { header__scrolled: scrolled })}>
       <NavLink className="logo" to="/" aria-label="Home link">
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
