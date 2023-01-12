@@ -11,7 +11,6 @@ const errorTextForNameSymbols =
 // validation data for email
 const minEmailLength = 6;
 const maxEmailLength = 64;
-const errorTextForEmailDuplicate = 'This email has already been registered';
 const errorTextForEmail = 'Please use a valid email address';
 
 const nameYupSchema = string()
@@ -24,9 +23,6 @@ const emailYupSchema = string()
   .email(errorTextForEmail)
   .min(minEmailLength, errorTextForEmail)
   .max(maxEmailLength, errorTextForEmail)
-  .test('Unique Email', errorTextForEmailDuplicate, function (email) {
-    return !sessionStorage.getItem(`form-${email}`);
-  })
   .trim();
 
 export const handleValidation = (

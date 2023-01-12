@@ -13,6 +13,7 @@ import { data as applicationPageData } from './mockData';
 export const FormValuesContext = createContext();
 
 export const ApplicationPage = ({ title, theme }) => {
+  const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { section_1 } = applicationPageData;
 
@@ -44,11 +45,18 @@ export const ApplicationPage = ({ title, theme }) => {
   );
 
   const submitHandler = () => {
-    setIsSubmitted(true);
-    sessionStorage.setItem(
-      `form-${formValues.email}`,
-      JSON.stringify(formValues)
-    );
+    let current = JSON.parse(sessionStorage.getItem('application')) || [];
+
+    if (current.some(({ email }) => email === formValues.email)) {
+      setIsEmailDuplicate(true);
+    } else {
+      setIsEmailDuplicate(false);
+      setIsSubmitted(true);
+      sessionStorage.setItem(
+        'application',
+        JSON.stringify([...current, formValues])
+      );
+    }
   };
 
   useEffect(() => {
@@ -69,6 +77,7 @@ export const ApplicationPage = ({ title, theme }) => {
                   data={applicationPageData}
                   isButtonDisabled={isButtonDisabled}
                   submitHandler={submitHandler}
+                  isEmailDuplicate={isEmailDuplicate}
                 />
               )}
             </div>
