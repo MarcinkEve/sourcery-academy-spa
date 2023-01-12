@@ -11,12 +11,8 @@
       $blur-radius: to-rem(30)
     );
 
-    background-color: $header-bg-clr;
     height: to-rem(60);
     left: unset;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
     transform: unset;
   }
 

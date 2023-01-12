@@ -8,7 +8,7 @@ import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 
 import '../header.scss';
 
-export const NavigationLinks = ({ dropdownElements }) => {
+export const NavigationLinks = ({ allLinks }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { pathname } = useLocation();
@@ -17,7 +17,7 @@ export const NavigationLinks = ({ dropdownElements }) => {
 
   const getAcademiesPath = () => {
     const academiesPathArray = [];
-    dropdownElements.forEach((el) => {
+    allLinks[1].dropdownElements.forEach((el) => {
       academiesPathArray.push(el.route);
     });
 
@@ -43,71 +43,49 @@ export const NavigationLinks = ({ dropdownElements }) => {
 
   return (
     <ul className="navlinks">
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-          }
-          to="/"
-        >
-          About us
-        </NavLink>
-      </li>
-      <li className="navlinks__academies" ref={ref}>
-        <button
-          className={classNames(
-            'navlinks__academies-menu',
-            isAcademiesPathActive(pathname) &&
-              'navlinks__academies-menu--active'
+      {allLinks.map((link, index) => (
+        <React.Fragment key={index}>
+          {link.title === 'Academies' && (
+            <li className="navlinks__academies" ref={ref}>
+              <button
+                className={classNames(
+                  'navlinks__academies-menu',
+                  isAcademiesPathActive(pathname) &&
+                    'navlinks__academies-menu--active'
+                )}
+                onClick={() => setIsDropdownOpen((prev) => !prev)}
+              >
+                Academies
+                <SvgArrow className="navlinks__academies-arrow" />
+              </button>
+              {isDropdownOpen && (
+                <div className="navlinks__academies-dropdown">
+                  <HeaderDropdown
+                    data={link.dropdownElements}
+                    onClickOutside={() => setIsDropdownOpen(false)}
+                  />
+                </div>
+              )}
+            </li>
           )}
-          onClick={() => setIsDropdownOpen((prev) => !prev)}
-        >
-          Academies
-          <SvgArrow className="navlinks__academies-arrow" />
-        </button>
-        {isDropdownOpen && (
-          <div className="navlinks__academies-dropdown">
-            <HeaderDropdown
-              data={dropdownElements}
-              onClickOutside={() => setIsDropdownOpen(false)}
-            />
-          </div>
-        )}
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-          }
-          to="/media"
-        >
-          Media
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-          }
-          to="/applicationform"
-        >
-          Register
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-          }
-          to="/questions"
-        >
-          Questions
-        </NavLink>
-      </li>
+          {link.title !== 'Academies' && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
+                }
+                to={link.route}
+              >
+                {link.title}
+              </NavLink>
+            </li>
+          )}
+        </React.Fragment>
+      ))}
     </ul>
   );
 };
 
 NavigationLinks.propTypes = {
-  dropdownElements: array.isRequired,
+  allLinks: array.isRequired,
 };

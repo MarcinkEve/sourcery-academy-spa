@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import SvgLogo from '~/assets/icons/icon-logo.svg';
-import HamburgerMenuButton from '~/components/UI/HamburgerMenuButton';
+import HamburgerButton from '~/components/Header/HamburgerButton';
 import NavigationLinks from '~/components/Header/NavigationLinks';
 
 import './header.scss';
@@ -24,6 +24,29 @@ const dropdownElements = [
   {
     text: 'Sourcery for Kids',
     route: '/kids',
+  },
+];
+
+const allLinks = [
+  {
+    route: '/',
+    title: 'About us',
+  },
+  {
+    dropdownElements,
+    title: 'Academies',
+  },
+  {
+    route: '/applicationform',
+    title: 'Register',
+  },
+  {
+    route: '/media',
+    title: 'Media',
+  },
+  {
+    route: '/questions',
+    title: 'Questions',
   },
 ];
 
@@ -53,11 +76,8 @@ export const Header = () => {
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <HamburgerMenuButton
-        stateToggler={stateToggler}
-        dropdownElements={dropdownElements}
-      />
-      <NavigationLinks dropdownElements={dropdownElements} />
+      <HamburgerButton stateToggler={stateToggler} allLinks={allLinks} />
+      <NavigationLinks allLinks={allLinks} />
     </div>
   );
 };

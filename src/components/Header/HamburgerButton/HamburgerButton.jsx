@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { array, bool } from 'prop-types';
 
-import NavigationLinksMobile from '~/components/UI/HamburgerMenuButton/NavigationLinksMobile';
+import NavigationLinksMobile from '~/components/Header/HamburgerButton/NavigationLinksMobile';
 
-import './hamburgerMenuButton.scss';
+import './hamburgerButton.scss';
 
-export const HamburgerMenuButton = ({ dropdownElements, stateToggler }) => {
-  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+export const HamburgerButton = ({ stateToggler, allLinks }) => {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const handleClose = () => {
-    setIsHamburgerMenuOpen(false);
+    setIsHamburgerOpen(false);
   };
 
   useEffect(() => {
@@ -19,17 +19,17 @@ export const HamburgerMenuButton = ({ dropdownElements, stateToggler }) => {
 
   // ADD/REMOVE SCROLLBAR WHEN HAMBURGER MENU IS ACTIVE/INACTIVE
   useEffect(() => {
-    if (isHamburgerMenuOpen === true) {
+    if (isHamburgerOpen === true) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'visible';
     }
-  }, [isHamburgerMenuOpen]);
+  }, [isHamburgerOpen]);
 
   // SET FALSE STATE FOR HAMBURGER MENU WHEN WINDOW WIDTH WOULD BE CHANGED WHILE SCROLLBAR IS DISABLED (BUGFIX)
   useEffect(() => {
     const windowSizeListener = () => {
-      window.innerWidth > 767 && setIsHamburgerMenuOpen(false);
+      window.innerWidth > 767 && setIsHamburgerOpen(false);
     };
     window.addEventListener('resize', windowSizeListener);
     return () => document.removeEventListener('resize', windowSizeListener);
@@ -38,29 +38,25 @@ export const HamburgerMenuButton = ({ dropdownElements, stateToggler }) => {
   return (
     <>
       <button
-        className="hamburger-menu"
-        onClick={() => setIsHamburgerMenuOpen((prev) => !prev)}
+        className="hamburger-button"
+        onClick={() => setIsHamburgerOpen((prev) => !prev)}
       >
         <span
           className={classNames(
-            'hamburger-menu__lines',
-            isHamburgerMenuOpen && 'hamburger-menu__lines--transform'
+            'hamburger-button__lines',
+            isHamburgerOpen && 'hamburger-button__lines--transformed'
           )}
         ></span>
       </button>
 
-      {isHamburgerMenuOpen && (
-        <NavigationLinksMobile
-          isHamburgerMenuOpen={isHamburgerMenuOpen}
-          dropdownElements={dropdownElements}
-          handleClose={handleClose}
-        />
+      {isHamburgerOpen && (
+        <NavigationLinksMobile allLinks={allLinks} handleClose={handleClose} />
       )}
     </>
   );
 };
 
-HamburgerMenuButton.propTypes = {
-  dropdownElements: array,
+HamburgerButton.propTypes = {
   stateToggler: bool,
+  allLinks: array.isRequired,
 };

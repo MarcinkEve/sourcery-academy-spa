@@ -1,7 +1,7 @@
 @import '~/sass/variables';
 @import '~/sass/utilities/mixins';
 
-.hamburger-menu {
+.hamburger-button {
   @include mobile-breakpoint {
     border-style: none;
     display: block;
@@ -47,7 +47,7 @@
       top: to-rem(-7);
     }
 
-    &--transform {
+    &--transformed {
       background: unset;
 
       &::before {
