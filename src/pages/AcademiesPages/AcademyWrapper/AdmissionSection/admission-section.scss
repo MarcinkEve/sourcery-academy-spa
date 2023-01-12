@@ -75,11 +75,15 @@
     @include tablet-breakpoint {
       @include flex-box($justify-content: flex-end);
 
-      left: initial;
       margin-top: to-rem(40);
+      position: relative;
+      width: 100%;
+    }
+
+    @include mobile-breakpoint {
+      left: initial;
       position: initial;
       top: initial;
-      width: 100%;
     }
 
     grid-area: 6 / 3 / 11 / 5;
@@ -88,7 +92,13 @@
     #{$_this}__image {
       @include tablet-breakpoint {
         left: initial;
-        max-width: to-rem(600);
+        max-width: to-rem(500);
+        position: absolute;
+        top: to-rem(-150);
+        width: 55%;
+      }
+
+      @include mobile-breakpoint {
         position: initial;
         top: initial;
         width: 100%;
