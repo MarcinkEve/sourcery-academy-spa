@@ -19,7 +19,7 @@ export const DropdownBar = ({ buttonText, contentText }) => {
         onClick={toggleExpanded}
         type="button"
       >
-        <h2 className="dropdown-container__button-text">{buttonText}</h2>
+        {buttonText}
         <IconArrowDown
           className={classNames(
             'dropdown-container__button-arrow',
