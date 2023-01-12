@@ -37,7 +37,7 @@ export const getMedia = () => {
   return { ...mediaContext, data: getMediaForPage(pathname) };
 };
 
-const initialState = { data: [], error: false, isLoading: true };
+const initialState = { data: [], error: false, isLoading: null };
 
 export const MediaContext = createContext(initialState);
 
@@ -45,6 +45,8 @@ export const MediaProvider = ({ children }) => {
   const [media, setMedia] = useState(initialState);
 
   useEffect(() => {
+    setMedia({ ...initialState, isLoading: true });
+
     fetch(LINKS.MEDIA)
       .then((response) => response.json())
       .then((response) =>

@@ -29,7 +29,7 @@ export const getTestimonials = () => {
   return { ...testimonialContext, data: getTestimonialsForPage(pathname) };
 };
 
-const initialState = { data: [], error: false, isLoading: true };
+const initialState = { data: [], error: false, isLoading: null };
 
 export const TestimonialContext = createContext(initialState);
 
@@ -37,6 +37,8 @@ export const TestimonialProvider = ({ children }) => {
   const [testimonials, setTestimonials] = useState(initialState);
 
   useEffect(() => {
+    setTestimonials({ ...initialState, isLoading: true });
+
     fetch(LINKS.TESTIMONIALS)
       .then((response) => response.json())
       .then((response) =>

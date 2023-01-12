@@ -1,14 +1,17 @@
 import React from 'react';
 
-import { LoaderSpinner } from './LoadingSpinner';
+import { LoadingSpinner } from './LoadingSpinner';
 
 export default {
   title: 'UI/Loader',
-  component: LoaderSpinner,
+  component: LoadingSpinner,
+  args: {
+    theme: 'developers',
+  },
 };
 
 export const Loader = (args) => (
   <div theme={args.theme}>
-    <LoaderSpinner />
+    <LoadingSpinner />
   </div>
 );
