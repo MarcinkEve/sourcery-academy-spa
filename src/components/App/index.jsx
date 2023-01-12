@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ApplicationPage from '~/pages/ApplicationPage';
@@ -12,30 +12,45 @@ import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
 import PageNotFound from '~/pages/PageNotFound';
 
+import { LoadingSpinner } from '../UI/LoadingSpinner/LoadingSpinner';
+
+export const LoadingContext = createContext();
+
 export default function index() {
   const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION } = ROUTES;
+  const [isLoadingMedia, setIsLoadingMedia] = useState(true);
+  const [isLoadingTestimonial, setIsLoadingTestimonial] = useState(true);
+
+  const handleLoadingStateMedia = (props) => setIsLoadingMedia(props);
+  const handleLoadingStateTestimonial = (props) =>
+    setIsLoadingTestimonial(props);
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path={HOME} element={<Homepage theme="home" />} />
-          <Route
-            path={DEVELOPERS}
-            element={<Developers theme="developers" />}
-          />
-          <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
-          <Route path={TESTERS} element={<Testers theme="testers" />} />
-          <Route path={MEDIA} element={<Media theme="home" />} />
-          <Route
-            path={APPLICATION}
-            element={<ApplicationPage theme="application" />}
-          />
-          <Route path="*" element={<PageNotFound theme="home" />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      <LoadingContext.Provider
+        value={{ handleLoadingStateMedia, handleLoadingStateTestimonial }}
+      >
+        <BrowserRouter>
+          <Header />
+          {isLoadingMedia && isLoadingTestimonial && <LoadingSpinner />}
+          <Routes>
+            <Route path={HOME} element={<Homepage theme="home" />} />
+            <Route
+              path={DEVELOPERS}
+              element={<Developers theme="developers" />}
+            />
+            <Route path={FRONTEND} element={<FrontEnd theme="front-end" />} />
+            <Route path={TESTERS} element={<Testers theme="testers" />} />
+            <Route path={MEDIA} element={<Media theme="home" />} />
+            <Route
+              path={APPLICATION}
+              element={<ApplicationPage theme="application" />}
+            />
+            <Route path="*" element={<PageNotFound theme="home" />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </LoadingContext.Provider>
     </>
   );
 }

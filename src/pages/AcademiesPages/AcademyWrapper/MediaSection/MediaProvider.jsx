@@ -4,9 +4,14 @@ import { func, node } from 'prop-types';
 
 import { ROUTES, LINKS } from '~/constants';
 
+import { LoadingContext } from '../../../../components/App';
+
 export const getMedia = () => {
   const { pathname } = useLocation();
   const mediaContext = useContext(MediaContext);
+  const { handleLoadingStateMedia } = useContext(LoadingContext);
+
+  handleLoadingStateMedia(mediaContext.loadingStateMedia);
 
   const generateMediaForHomepage = () => {
     const videos = mediaContext.data.filter((item) => item.type === 'video');
@@ -37,7 +42,7 @@ export const getMedia = () => {
   return { ...mediaContext, data: getMediaForPage(pathname) };
 };
 
-const initialState = { data: [], error: false, isLoading: null };
+const initialState = { data: [], error: false, loadingStateMedia: true };
 
 export const MediaContext = createContext(initialState);
 
@@ -45,16 +50,15 @@ export const MediaProvider = ({ children }) => {
   const [media, setMedia] = useState(initialState);
 
   useEffect(() => {
-    setMedia({ ...initialState, isLoading: true });
-
     fetch(LINKS.MEDIA)
       .then((response) => response.json())
       .then((response) =>
-        setMedia({ data: response, error: false, isLoading: false })
+        setMedia({ data: response, error: false, loadingStateMedia: false })
       )
-      .catch(() => setMedia({ data: [], error: true, isLoading: false }));
+      .catch(() =>
+        setMedia({ data: [], error: true, loadingStateMedia: false })
+      );
   }, []);
-
   return (
     <MediaContext.Provider value={media}>{children}</MediaContext.Provider>
   );

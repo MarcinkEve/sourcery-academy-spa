@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { string } from 'prop-types';
 
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
@@ -26,23 +26,19 @@ export const Homepage = ({ theme }) => {
 
   return (
     <PageLayout theme={theme}>
-      {isLoading && <LoadingSpinner />}
-      {!isLoading && (
-        <>
-          <IntroSection introSectionData={introSectionData} />
-          <Article articleSectionData={articleSectionData} />
-          <ExtraWrappingSection>
-            <AcademiesDescriptionSection
-              developersDescriptionData={developersDescriptionData}
-              testersDescriptionData={testersDescriptionData}
-              frontEndDescriptionData={frontEndDescriptionData}
-              kidsDescriptionData={kidsDescriptionData}
-            />
-            <TestimonialSection />
-            <MediaSectionHomepage />
-          </ExtraWrappingSection>
-        </>
-      )}
+      <IntroSection introSectionData={introSectionData} />
+      <Article articleSectionData={articleSectionData} />
+      <ExtraWrappingSection>
+        <AcademiesDescriptionSection
+          developersDescriptionData={developersDescriptionData}
+          testersDescriptionData={testersDescriptionData}
+          frontEndDescriptionData={frontEndDescriptionData}
+          kidsDescriptionData={kidsDescriptionData}
+        />
+        <TestimonialSection />
+        <MediaSectionHomepage />
+      </ExtraWrappingSection>
+      )
     </PageLayout>
   );
 };
