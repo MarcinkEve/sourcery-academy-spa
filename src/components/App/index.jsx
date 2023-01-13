@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ApplicationPage from '~/pages/ApplicationPage';
@@ -11,28 +11,18 @@ import Media from '~/pages/MediaPage';
 import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
 import PageNotFound from '~/pages/PageNotFound';
-
-import { LoadingSpinner } from '../UI/LoadingSpinner/LoadingSpinner';
+import { LoadingContextProvider } from '~/context/LoadingContext';
 
 export const LoadingContext = createContext();
 
 export default function index() {
   const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION } = ROUTES;
-  const [isLoadingMedia, setIsLoadingMedia] = useState(true);
-  const [isLoadingTestimonial, setIsLoadingTestimonial] = useState(true);
-
-  const handleLoadingStateMedia = (props) => setIsLoadingMedia(props);
-  const handleLoadingStateTestimonial = (props) =>
-    setIsLoadingTestimonial(props);
 
   return (
     <>
-      <LoadingContext.Provider
-        value={{ handleLoadingStateMedia, handleLoadingStateTestimonial }}
-      >
+      <LoadingContextProvider>
         <BrowserRouter>
           <Header />
-          {isLoadingMedia && isLoadingTestimonial && <LoadingSpinner />}
           <Routes>
             <Route path={HOME} element={<Homepage theme="home" />} />
             <Route
@@ -50,7 +40,7 @@ export default function index() {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </LoadingContext.Provider>
+      </LoadingContextProvider>
     </>
   );
 }
