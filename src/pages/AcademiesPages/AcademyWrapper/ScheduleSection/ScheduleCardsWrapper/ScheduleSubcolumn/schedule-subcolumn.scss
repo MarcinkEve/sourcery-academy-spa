@@ -9,4 +9,8 @@
 
   row-gap: $spacer-l;
   width: 50%;
+
+  &--single {
+    width: auto;
+  }
 }
