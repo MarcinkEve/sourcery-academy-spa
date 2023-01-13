@@ -11,9 +11,10 @@ import Media from '~/pages/MediaPage';
 import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
 import PageNotFound from '~/pages/PageNotFound';
+import QuestionsPage from '~/pages/QuestionsPage';
 
 export default function index() {
-  const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION } = ROUTES;
+  const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION, QUESTIONS } = ROUTES;
 
   return (
     <>
@@ -32,6 +33,7 @@ export default function index() {
             path={APPLICATION}
             element={<ApplicationPage theme="application" />}
           />
+          <Route path={QUESTIONS} element={<QuestionsPage theme="home" />} />
           <Route path="*" element={<PageNotFound theme="home" />} />
         </Routes>
       </BrowserRouter>
