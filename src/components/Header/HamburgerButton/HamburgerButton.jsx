@@ -6,7 +6,7 @@ import NavigationLinksMobile from '~/components/Header/HamburgerButton/Navigatio
 
 import './hamburgerButton.scss';
 
-export const HamburgerButton = ({ stateToggler, navigationLinks }) => {
+export const HamburgerButton = ({ closeOnLogoClick, navigationLinks }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const handleClose = () => {
@@ -15,7 +15,7 @@ export const HamburgerButton = ({ stateToggler, navigationLinks }) => {
 
   useEffect(() => {
     handleClose();
-  }, [stateToggler]);
+  }, [closeOnLogoClick]);
 
   // ADD/REMOVE SCROLLBAR WHEN HAMBURGER MENU IS ACTIVE/INACTIVE
   useEffect(() => {
@@ -60,6 +60,6 @@ export const HamburgerButton = ({ stateToggler, navigationLinks }) => {
 };
 
 HamburgerButton.propTypes = {
-  stateToggler: bool,
+  closeOnLogoClick: bool,
   navigationLinks: array.isRequired,
 };
