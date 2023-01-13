@@ -1,33 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import { array, bool, object } from 'prop-types';
+import { array, func, any } from 'prop-types';
 
 import NavigationLinksMobile from '~/components/Header/HamburgerButton/NavigationLinksMobile';
 
 import './hamburgerButton.scss';
 import breakpoints from '~/sass/variables';
 
-export const HamburgerButton = ({ navigationLinks, logoRef }) => {
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-
-  const handleClose = () => {
-    setIsHamburgerOpen(false);
-  };
-
-  useEffect(() => {
-    const clickListener = ({ target }) => {
-      if (handleClose && logoRef.current.contains(target)) {
-        handleClose();
-      }
-    };
-    document.addEventListener('mousedown', clickListener);
-
-    return () => document.removeEventListener('mousedown', clickListener);
-  }, [logoRef]);
-
+export const HamburgerButton = ({
+  navigationLinks,
+  isHamburgerOpen,
+  setIsHamburgerOpen,
+  handleClose,
+}) => {
   // ADD/REMOVE SCROLLBAR WHEN HAMBURGER MENU IS ACTIVE/INACTIVE
+
   useEffect(() => {
-    if (isHamburgerOpen === true) {
+    if (isHamburgerOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'visible';
@@ -38,7 +27,7 @@ export const HamburgerButton = ({ navigationLinks, logoRef }) => {
   useEffect(() => {
     const windowSizeListener = () => {
       window.innerWidth > parseInt(breakpoints.breakpointMobile) &&
-        setIsHamburgerOpen(false);
+        handleClose();
     };
     window.addEventListener('resize', windowSizeListener);
     return () => document.removeEventListener('resize', windowSizeListener);
@@ -48,7 +37,7 @@ export const HamburgerButton = ({ navigationLinks, logoRef }) => {
     <>
       <button
         className="hamburger-button"
-        onClick={() => setIsHamburgerOpen((prev) => !prev)}
+        onClick={setIsHamburgerOpen((prev) => !prev)}
       >
         <span
           className={classNames('hamburger-button__lines', {
@@ -68,7 +57,8 @@ export const HamburgerButton = ({ navigationLinks, logoRef }) => {
 };
 
 HamburgerButton.propTypes = {
-  closeOnLogoClick: bool,
   navigationLinks: array.isRequired,
-  logoRef: object,
+  isHamburgerOpen: any,
+  setIsHamburgerOpen: func,
+  handleClose: func,
 };

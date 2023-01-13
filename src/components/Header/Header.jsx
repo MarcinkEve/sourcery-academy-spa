@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -50,7 +50,11 @@ const navigationLinks = [
 ];
 
 export const Header = () => {
-  const logoRef = useRef(null);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsHamburgerOpen(false);
+  };
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -67,11 +71,21 @@ export const Header = () => {
 
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
-      <NavLink ref={logoRef} className="logo" to="/" aria-label="Home link">
+      <NavLink
+        onClick={handleClose}
+        className="logo"
+        to="/"
+        aria-label="Home link"
+      >
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <HamburgerButton navigationLinks={navigationLinks} logoRef={logoRef} />
+      <HamburgerButton
+        navigationLinks={navigationLinks}
+        handleClose={() => handleClose()}
+        isHamburgerOpen={isHamburgerOpen}
+        setIsHamburgerOpen={() => setIsHamburgerOpen}
+      />
       <NavigationLinks navigationLinks={navigationLinks} />
     </div>
   );
