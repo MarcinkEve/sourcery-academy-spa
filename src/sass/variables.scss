@@ -115,3 +115,8 @@ $semi-transparent-bg-clr: rgba(30, 30, 30, 0.9);
 
 $breakpoint-tablet: 1023px;
 $breakpoint-mobile: 767px;
+
+:export {
+  breakpointMobile: $breakpoint-mobile;
+  breakpointTablet: $breakpoint-tablet;
+}

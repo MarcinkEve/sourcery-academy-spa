@@ -4,6 +4,7 @@ import { array, func } from 'prop-types';
 import classNames from 'classnames';
 
 import './navigationLinksMobile.scss';
+import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 
 export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -30,6 +31,7 @@ export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
                     )}
                   >
                     Academies
+                    <SvgArrow className="navlinks-mobile__arrow-icon" />
                   </span>
                 </li>
 

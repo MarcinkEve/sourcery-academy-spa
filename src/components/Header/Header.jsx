@@ -1,56 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import SvgLogo from '~/assets/icons/icon-logo.svg';
 import HamburgerButton from '~/components/Header/HamburgerButton';
 import NavigationLinks from '~/components/Header/NavigationLinks';
+import { ROUTES } from '~/constants/routes';
 
 import './header.scss';
 
 const navigationLinks = [
   {
-    route: '/',
+    route: ROUTES.HOME,
     title: 'About us',
   },
   {
     dropdownElements: [
       {
         text: 'Sourcery for Developers',
-        route: '/developers',
+        route: ROUTES.DEVELOPERS,
       },
       {
         text: 'Sourcery for Testers',
-        route: '/testers',
+        route: ROUTES.TESTERS,
       },
       {
         text: 'Sourcery for Front-End',
-        route: '/frontend',
+        route: ROUTES.FRONTEND,
       },
       {
         text: 'Sourcery for Kids',
-        route: '/kids',
+        route: ROUTES.KIDS,
       },
     ],
     title: 'Academies',
   },
   {
-    route: '/applicationform',
+    route: ROUTES.APPLICATION,
     title: 'Register',
   },
   {
-    route: '/media',
+    route: ROUTES.MEDIA,
     title: 'Media',
   },
   {
-    route: '/questions',
+    route: ROUTES.QUESTIONS,
     title: 'Questions',
   },
 ];
 
 export const Header = () => {
+  const logoRef = useRef(null);
+
   const [scrolled, setScrolled] = useState(false);
-  const [closeOnLogoClick, setCloseOnLogoClick] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', isScrolled);
@@ -65,19 +67,11 @@ export const Header = () => {
 
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
-      <NavLink
-        onClick={() => setCloseOnLogoClick((prev) => !prev)}
-        className="logo"
-        to="/"
-        aria-label="Home link"
-      >
+      <NavLink ref={logoRef} className="logo" to="/" aria-label="Home link">
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <HamburgerButton
-        closeOnLogoClick={closeOnLogoClick}
-        navigationLinks={navigationLinks}
-      />
+      <HamburgerButton navigationLinks={navigationLinks} logoRef={logoRef} />
       <NavigationLinks navigationLinks={navigationLinks} />
     </div>
   );

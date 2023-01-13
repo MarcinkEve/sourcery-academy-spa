@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import { array, bool } from 'prop-types';
+import { array, bool, object } from 'prop-types';
 
 import NavigationLinksMobile from '~/components/Header/HamburgerButton/NavigationLinksMobile';
 
 import './hamburgerButton.scss';
+import breakpoints from '~/sass/variables';
 
-export const HamburgerButton = ({ closeOnLogoClick, navigationLinks }) => {
+export const HamburgerButton = ({ navigationLinks, logoRef }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const handleClose = () => {
@@ -14,8 +15,15 @@ export const HamburgerButton = ({ closeOnLogoClick, navigationLinks }) => {
   };
 
   useEffect(() => {
-    handleClose();
-  }, [closeOnLogoClick]);
+    const clickListener = ({ target }) => {
+      if (handleClose && logoRef.current.contains(target)) {
+        handleClose();
+      }
+    };
+    document.addEventListener('mousedown', clickListener);
+
+    return () => document.removeEventListener('mousedown', clickListener);
+  }, [logoRef]);
 
   // ADD/REMOVE SCROLLBAR WHEN HAMBURGER MENU IS ACTIVE/INACTIVE
   useEffect(() => {
@@ -29,7 +37,8 @@ export const HamburgerButton = ({ closeOnLogoClick, navigationLinks }) => {
   // SET FALSE STATE FOR HAMBURGER MENU WHEN WINDOW WIDTH WOULD BE CHANGED WHILE SCROLLBAR IS DISABLED (BUGFIX)
   useEffect(() => {
     const windowSizeListener = () => {
-      window.innerWidth > 767 && setIsHamburgerOpen(false);
+      window.innerWidth > parseInt(breakpoints.breakpointMobile) &&
+        setIsHamburgerOpen(false);
     };
     window.addEventListener('resize', windowSizeListener);
     return () => document.removeEventListener('resize', windowSizeListener);
@@ -42,10 +51,9 @@ export const HamburgerButton = ({ closeOnLogoClick, navigationLinks }) => {
         onClick={() => setIsHamburgerOpen((prev) => !prev)}
       >
         <span
-          className={classNames(
-            'hamburger-button__lines',
-            isHamburgerOpen && 'hamburger-button__lines--transformed'
-          )}
+          className={classNames('hamburger-button__lines', {
+            'hamburger-button__lines--transformed': isHamburgerOpen,
+          })}
         ></span>
       </button>
 
@@ -62,4 +70,5 @@ export const HamburgerButton = ({ closeOnLogoClick, navigationLinks }) => {
 HamburgerButton.propTypes = {
   closeOnLogoClick: bool,
   navigationLinks: array.isRequired,
+  logoRef: object,
 };

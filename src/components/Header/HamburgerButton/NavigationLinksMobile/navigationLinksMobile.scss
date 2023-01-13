@@ -33,7 +33,7 @@
   font-size: $font-size-m;
   height: 80vh;
   list-style-type: none;
-  min-width: to-rem(200);
+  min-width: to-rem(250);
   padding-left: 0;
   position: absolute;
   row-gap: $spacer-xxxs;
@@ -50,9 +50,15 @@
     }
   }
 
+  &__arrow-icon {
+    left: 10px;
+    position: relative;
+    width: 15px;
+  }
+
   &__academies-link {
     @include flex-box(
-      $direction: column,
+      $direction: row,
       $justify-content: center,
       $align-items: center
     );
