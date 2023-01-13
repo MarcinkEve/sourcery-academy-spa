@@ -25,7 +25,8 @@
     line-height: $line-height-m;
     margin: 0;
     min-height: to-rem(72);
-    padding: to-rem(12) to-rem(20);
+    padding: to-rem(12) to-rem(60) to-rem(12) to-rem(20);
+    position: relative;
     text-align: left;
     transition: color $transition-time-200 ease,
       background-color $transition-time-200 ease;
@@ -64,7 +65,8 @@
   &__button-arrow {
     flex-shrink: 0;
     height: to-rem(13);
-    margin-left: to-rem(15);
+    position: absolute;
+    right: to-rem(20);
     transition: $transition-time-400 ease-in-out;
     width: to-rem(21);
 
