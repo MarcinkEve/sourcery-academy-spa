@@ -8,32 +8,30 @@ import NavigationLinks from '~/components/Header/NavigationLinks';
 
 import './header.scss';
 
-const dropdownElements = [
-  {
-    text: 'Sourcery for Developers',
-    route: '/developers',
-  },
-  {
-    text: 'Sourcery for Testers',
-    route: '/testers',
-  },
-  {
-    text: 'Sourcery for Front-End',
-    route: '/frontend',
-  },
-  {
-    text: 'Sourcery for Kids',
-    route: '/kids',
-  },
-];
-
-const allLinks = [
+const navigationLinks = [
   {
     route: '/',
     title: 'About us',
   },
   {
-    dropdownElements,
+    dropdownElements: [
+      {
+        text: 'Sourcery for Developers',
+        route: '/developers',
+      },
+      {
+        text: 'Sourcery for Testers',
+        route: '/testers',
+      },
+      {
+        text: 'Sourcery for Front-End',
+        route: '/frontend',
+      },
+      {
+        text: 'Sourcery for Kids',
+        route: '/kids',
+      },
+    ],
     title: 'Academies',
   },
   {
@@ -52,7 +50,7 @@ const allLinks = [
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [stateToggler, setStateToggler] = useState(false);
+  const [closeOnLogoClick, setCloseOnLogoClick] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', isScrolled);
@@ -68,7 +66,7 @@ export const Header = () => {
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
       <NavLink
-        onClick={() => setStateToggler((prev) => !prev)}
+        onClick={() => setCloseOnLogoClick((prev) => !prev)}
         className="logo"
         to="/"
         aria-label="Home link"
@@ -76,8 +74,11 @@ export const Header = () => {
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <HamburgerButton stateToggler={stateToggler} allLinks={allLinks} />
-      <NavigationLinks allLinks={allLinks} />
+      <HamburgerButton
+        closeOnLogoClick={closeOnLogoClick}
+        navigationLinks={navigationLinks}
+      />
+      <NavigationLinks navigationLinks={navigationLinks} />
     </div>
   );
 };

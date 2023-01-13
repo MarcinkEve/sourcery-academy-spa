@@ -8,16 +8,16 @@ import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 
 import '../header.scss';
 
-export const NavigationLinks = ({ allLinks }) => {
+export const NavigationLinks = ({ navigationLinks }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { pathname } = useLocation();
 
-  const ref = useRef(null);
+  const academiesRef = useRef(null);
 
   const getAcademiesPath = () => {
     const academiesPathArray = [];
-    allLinks[1].dropdownElements.forEach((el) => {
+    navigationLinks[1].dropdownElements.forEach((el) => {
       academiesPathArray.push(el.route);
     });
 
@@ -43,11 +43,12 @@ export const NavigationLinks = ({ allLinks }) => {
 
   return (
     <ul className="navlinks">
-      {allLinks.map((link, index) => (
+      {navigationLinks.map((link, index) => (
         <React.Fragment key={index}>
           {link.title === 'Academies' && (
-            <li className="navlinks__academies" ref={ref}>
+            <li className="navlinks__academies">
               <button
+                ref={academiesRef}
                 className={classNames(
                   'navlinks__academies-menu',
                   isAcademiesPathActive(pathname) &&
@@ -61,6 +62,7 @@ export const NavigationLinks = ({ allLinks }) => {
               {isDropdownOpen && (
                 <div className="navlinks__academies-dropdown">
                   <HeaderDropdown
+                    academiesRef={academiesRef}
                     data={link.dropdownElements}
                     onClickOutside={() => setIsDropdownOpen(false)}
                   />
@@ -87,5 +89,5 @@ export const NavigationLinks = ({ allLinks }) => {
 };
 
 NavigationLinks.propTypes = {
-  allLinks: array.isRequired,
+  navigationLinks: array.isRequired,
 };

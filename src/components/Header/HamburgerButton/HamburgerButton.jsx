@@ -6,7 +6,7 @@ import NavigationLinksMobile from '~/components/Header/HamburgerButton/Navigatio
 
 import './hamburgerButton.scss';
 
-export const HamburgerButton = ({ stateToggler, allLinks }) => {
+export const HamburgerButton = ({ stateToggler, navigationLinks }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const handleClose = () => {
@@ -50,7 +50,10 @@ export const HamburgerButton = ({ stateToggler, allLinks }) => {
       </button>
 
       {isHamburgerOpen && (
-        <NavigationLinksMobile allLinks={allLinks} handleClose={handleClose} />
+        <NavigationLinksMobile
+          navigationLinks={navigationLinks}
+          handleClose={handleClose}
+        />
       )}
     </>
   );
@@ -58,5 +61,5 @@ export const HamburgerButton = ({ stateToggler, allLinks }) => {
 
 HamburgerButton.propTypes = {
   stateToggler: bool,
-  allLinks: array.isRequired,
+  navigationLinks: array.isRequired,
 };

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import './navigationLinksMobile.scss';
 
-export const NavigationLinksMobile = ({ handleClose, allLinks }) => {
+export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
   const [showDropDown, setShowDropDown] = useState(false);
 
   const { pathname } = useLocation();
@@ -13,7 +13,7 @@ export const NavigationLinksMobile = ({ handleClose, allLinks }) => {
   return (
     <nav className="navlink-container">
       <ul className="navlinks-mobile">
-        {allLinks.map((link, index) => (
+        {navigationLinks.map((link, index) => (
           <React.Fragment key={index}>
             {link.title === 'Academies' && (
               <>
@@ -76,5 +76,5 @@ export const NavigationLinksMobile = ({ handleClose, allLinks }) => {
 
 NavigationLinksMobile.propTypes = {
   handleClose: func.isRequired,
-  allLinks: array.isRequired,
+  navigationLinks: array.isRequired,
 };
