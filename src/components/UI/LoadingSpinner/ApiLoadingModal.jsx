@@ -5,35 +5,19 @@ import { LoadingSpinner } from './LoadingSpinner';
 import './loading-spinner.scss';
 
 import { useLoadingContext } from '~/context/LoadingContext';
+import { ROUTE_THEME } from '~/constants/routeTheme';
 
 export const ApiLoadingModal = () => {
   const { isLoadingMedia, isLoadingTestimonial } = useLoadingContext();
   const { pathname } = useLocation();
 
   const isLoaderVisible = () => isLoadingMedia || isLoadingTestimonial;
-
-  const handleThemeName = () => {
-    const pathWord = pathname.replace('/', '');
-    switch (pathWord) {
-      case '':
-        return 'home';
-      case 'frontend':
-        return 'front-end';
-      case 'applicationform':
-        return 'application';
-      case 'media':
-        return 'home';
-      case 'questions':
-        return 'home';
-      default:
-        return pathWord;
-    }
-  };
+  const theme = ROUTE_THEME[pathname] || 'home';
 
   return (
     <>
       {isLoaderVisible() && (
-        <div className="loader__modal" theme={handleThemeName()}>
+        <div className="loader__modal" theme={theme}>
           <LoadingSpinner />
         </div>
       )}
