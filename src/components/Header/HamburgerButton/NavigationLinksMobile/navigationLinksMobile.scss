@@ -51,21 +51,12 @@
   }
 
   &__arrow-icon {
-    left: 10px;
-    position: relative;
-    width: 15px;
+    position: absolute;
+    right: to-rem(55);
+    width: to-rem(15);
   }
 
   &__academies-link {
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
-
-    color: $violet-700;
-    list-style-type: none;
-    padding-left: 0;
-    row-gap: $spacer-xxxs;
+    @include flex-box($align-items: center);
   }
 }
