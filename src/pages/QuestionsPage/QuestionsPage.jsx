@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { string } from 'prop-types';
 import classNames from 'classnames';
 
@@ -12,6 +12,11 @@ import './questions-page.scss';
 
 export const QuestionsPage = ({ theme }) => {
   const { data, title } = dataFile;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <PageLayout theme={theme}>
       <section className="questions-page">
