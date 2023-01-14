@@ -4,8 +4,8 @@ import { node } from 'prop-types';
 const LoadingContext = createContext({});
 
 export const LoadingContextProvider = ({ children }) => {
-  const [isLoadingMedia, setIsLoadingMedia] = useState(true);
-  const [isLoadingTestimonial, setIsLoadingTestimonial] = useState(true);
+  const [isLoadingMedia, setIsLoadingMedia] = useState(false);
+  const [isLoadingTestimonial, setIsLoadingTestimonial] = useState(false);
 
   const handleLoadingStateMedia = (props) => setIsLoadingMedia(props);
   const handleLoadingStateTestimonial = (props) =>

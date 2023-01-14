@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import { string } from 'prop-types';
 
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
@@ -8,8 +8,6 @@ import Article from '~/pages/Homepage/ArticleSection';
 import AcademiesDescriptionSection from '~/pages/Homepage/AcademiesDescriptionSection';
 import TestimonialSection from '~/pages/Homepage/TestimonialSection';
 import { MediaSectionHomepage } from '~/pages/Homepage/MediaSection/MediaSectionHomepage';
-import { LoadingSpinner } from '~/components/UI/LoadingSpinner/LoadingSpinner';
-import { getTestimonials } from '~/widgets/Testimonial/TestimonialProvider';
 
 import {
   introSectionData,
@@ -21,7 +19,6 @@ import {
 } from './data.js';
 
 export const Homepage = ({ theme }) => {
-  const { isLoading } = getTestimonials();
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (

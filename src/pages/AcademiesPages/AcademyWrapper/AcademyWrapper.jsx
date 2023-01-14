@@ -13,9 +13,6 @@ import { scheduleType } from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSect
 import TestimonialSection from '~/pages/AcademiesPages/AcademyWrapper/TestimonialSection';
 import { MediaSectionAcademies } from '~/pages/AcademiesPages/AcademyWrapper/MediaSection/MediaSectionAcademies';
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
-import { LoadingSpinner } from '~/components/UI/LoadingSpinner/LoadingSpinner';
-
-import { getMedia } from './MediaSection/MediaProvider';
 
 export const AcademyWrapper = ({
   schedule,
@@ -28,24 +25,17 @@ export const AcademyWrapper = ({
     window.scrollTo(0, 0);
   }, []);
 
-  const { isLoading } = getMedia();
-
   return (
     <>
-      {isLoading && <LoadingSpinner />}
-      {!isLoading && (
-        <>
-          <AcademyLandingSection data={landingSectionData} />
-          <ExtraWrappingSection>
-            <ApplicationProcessSection applicationText={applicationText} />
-            <AdmissionSection data={admissionSectionData} />
-            <ScheduleSection schedule={schedule} />
-            <TestimonialSection />
-            <MediaSectionAcademies />
-            <ApplyToAcademy data={applyToAcademyData} />
-          </ExtraWrappingSection>
-        </>
-      )}
+      <AcademyLandingSection data={landingSectionData} />
+      <ExtraWrappingSection>
+        <ApplicationProcessSection applicationText={applicationText} />
+        <AdmissionSection data={admissionSectionData} />
+        <ScheduleSection schedule={schedule} />
+        <TestimonialSection />
+        <MediaSectionAcademies />
+        <ApplyToAcademy data={applyToAcademyData} />
+      </ExtraWrappingSection>
     </>
   );
 };

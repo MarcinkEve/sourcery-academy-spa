@@ -7,12 +7,11 @@ import { MediaSection } from '~/widgets/Media/MediaSection';
 import { getMedia } from '~/pages/AcademiesPages/AcademyWrapper/MediaSection/MediaProvider';
 import { MEDIA_PAGE_SECTION_IDS } from '~/widgets/Media/constants';
 import Error from '~/components/UI/Error';
-import { LoadingSpinner } from '~/components/UI/LoadingSpinner/LoadingSpinner';
 
 import './media-page.scss';
 
 export const MediaPage = ({ theme }) => {
-  const { data, error, isLoading } = getMedia();
+  const { data, error } = getMedia();
   const { targetId } = useLocation().state || {};
 
   const getMediaByAcademy = (academy) =>
@@ -31,7 +30,6 @@ export const MediaPage = ({ theme }) => {
 
   return (
     <PageLayout theme={theme}>
-      {isLoading && <LoadingSpinner />}
       <div className="media-page-wrapper">
         {error ? (
           <Error title="Media" />
