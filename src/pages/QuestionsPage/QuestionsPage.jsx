@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import PageLayout from '~/layouts/pageLayout';
 import DropdownBar from '~/components/UI/DropdownBar';
 import Image from '~/assets/images/questions-section.svg';
-import Particles from '~/assets/decorators/particles/kids-description-particles-bottom.svg';
+import Particles from '~/assets/decorators/particles/application-process-particles-bottom.svg';
 
 import dataFile from './data.json';
 import './questions-page.scss';
@@ -45,7 +45,7 @@ export const QuestionsPage = ({ theme }) => {
           >
             <Particles className="questions-page__decorators-particles--top" />
             <Image className="questions-page__decorators-image" />
-            <Particles className="questions-page__decorators-particles--bottom" />{' '}
+            <Particles className="questions-page__decorators-particles--bottom" />
           </div>
         </div>
       </section>

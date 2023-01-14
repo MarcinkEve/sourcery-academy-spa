@@ -5,7 +5,6 @@
   @include flex-box($direction: column);
 
   margin-bottom: to-rem(40);
-  position: relative;
   width: 100%;
 
   &__title {
@@ -13,11 +12,7 @@
   }
 
   &__wrapper {
-    @include flex-box(
-      $direction: row,
-      $justify-content: space-between,
-      $align-items: center
-    );
+    @include flex-box($direction: row, $justify-content: space-between);
 
     &-no-data {
       @include flex-box(
@@ -26,7 +21,6 @@
         $align-items: center
       );
 
-      height: to-rem(500);
       margin-top: to-rem(100);
     }
   }
@@ -40,6 +34,7 @@
     }
 
     @include tablet-breakpoint {
+      margin-right: 0;
       width: 100%;
     }
   }
@@ -65,8 +60,6 @@
 
     &-particles--top {
       max-width: to-rem(500);
-      position: absolute;
-      top: to-rem(100);
     }
 
     &-image {
@@ -74,9 +67,7 @@
     }
 
     &-particles--bottom {
-      bottom: 0%;
       max-width: to-rem(500);
-      position: absolute;
       transform: rotate(180deg);
     }
   }
