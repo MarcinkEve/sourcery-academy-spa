@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { string } from 'prop-types';
 
 import PlayButton from '~/assets/icons/icon-play-button.svg';
@@ -8,6 +8,11 @@ import './corner-video.scss';
 
 export const CornerVideo = ({ image, description, videoSrc }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isModalOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'visible';
+  }, [isModalOpen]);
 
   return (
     <>
