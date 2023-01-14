@@ -1,0 +1,8 @@
+@import '~/sass/utilities/functions';
+
+.dropdown-bar {
+  &__storybook-container {
+    padding: to-rem(16);
+    width: to-rem(766);
+  }
+}

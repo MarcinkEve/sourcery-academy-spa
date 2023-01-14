@@ -6,4 +6,5 @@ export const ROUTES = Object.freeze({
   APPLICATION: '/applicationform',
   KIDS: '/kids',
   MEDIA: '/media',
+  QUESTIONS: '/questions',
 });

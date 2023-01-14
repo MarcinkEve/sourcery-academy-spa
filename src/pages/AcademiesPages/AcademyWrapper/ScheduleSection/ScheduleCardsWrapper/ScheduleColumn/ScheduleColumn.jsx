@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
 
 import { scheduleColumnType } from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection/ScheduleCardsWrapper/types';
 import ScheduleSubcolumn from '~/pages/AcademiesPages/AcademyWrapper/ScheduleSection/ScheduleCardsWrapper/ScheduleSubcolumn';
@@ -9,6 +10,7 @@ import './schedule-column.scss';
 export const ScheduleColumn = ({ columnData }) => {
   const allColumnData = [...columnData.column_1, ...columnData.column_2];
   const [isExpanded, setIsExpanded] = useState(true);
+  const [isSubcolumnSingle, setIsSubcolumnSingle] = useState(false);
 
   const handleExpand = () => {
     setIsExpanded((prev) => !prev);
@@ -18,14 +20,31 @@ export const ScheduleColumn = ({ columnData }) => {
         .scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    if (columnData.column_1.length === 0 || columnData.column_2.length === 0)
+      setIsSubcolumnSingle(true);
+  }, []);
+
   return (
     <>
       <h3 className="schedule-column__title">{columnData.title.join(' / ')}</h3>
       <div className="schedule-column__data">
-        <div className="schedule-column__large-screen">
-          <ScheduleSubcolumn subcolumnData={columnData.column_1} />
+        <div
+          className={classNames('schedule-column__large-screen', {
+            'schedule-column__large-screen--single': isSubcolumnSingle,
+          })}
+        >
+          {columnData.column_1.length !== 0 && (
+            <ScheduleSubcolumn
+              subcolumnData={columnData.column_1}
+              isSingleColumn={isSubcolumnSingle}
+            />
+          )}
           {columnData.column_2.length !== 0 && (
-            <ScheduleSubcolumn subcolumnData={columnData.column_2} />
+            <ScheduleSubcolumn
+              subcolumnData={columnData.column_2}
+              isSingleColumn={isSubcolumnSingle}
+            />
           )}
         </div>
 

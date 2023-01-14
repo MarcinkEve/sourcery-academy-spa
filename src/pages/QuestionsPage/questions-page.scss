@@ -1,0 +1,83 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.questions-page {
+  @include flex-box($direction: column);
+
+  margin-bottom: to-rem(40);
+  position: relative;
+  width: 100%;
+
+  &__title {
+    margin-top: to-rem(40);
+  }
+
+  &__wrapper {
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-between,
+      $align-items: center
+    );
+
+    &-no-data {
+      @include flex-box(
+        $direction: row,
+        $justify-content: center,
+        $align-items: center
+      );
+
+      height: to-rem(500);
+      margin-top: to-rem(100);
+    }
+  }
+
+  &__questions {
+    margin-right: to-rem(65);
+    width: 60%;
+
+    &-no-data {
+      display: none;
+    }
+
+    @include tablet-breakpoint {
+      width: 100%;
+    }
+  }
+
+  &__decorators {
+    @include flex-box(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    width: to-rem(450);
+
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    &-no-data {
+      @include tablet-breakpoint {
+        display: block;
+      }
+    }
+
+    &-particles--top {
+      max-width: to-rem(500);
+      position: absolute;
+      top: to-rem(100);
+    }
+
+    &-image {
+      color: var(--primary-color);
+    }
+
+    &-particles--bottom {
+      bottom: 0%;
+      max-width: to-rem(500);
+      position: absolute;
+      transform: rotate(180deg);
+    }
+  }
+}
