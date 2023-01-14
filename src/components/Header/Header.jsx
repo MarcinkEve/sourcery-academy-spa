@@ -82,9 +82,9 @@ export const Header = () => {
       </NavLink>
       <HamburgerButton
         navigationLinks={navigationLinks}
-        handleClose={() => handleClose()}
+        handleClose={handleClose}
         isHamburgerOpen={isHamburgerOpen}
-        setIsHamburgerOpen={() => setIsHamburgerOpen}
+        setIsHamburgerOpen={setIsHamburgerOpen}
       />
       <NavigationLinks navigationLinks={navigationLinks} />
     </div>

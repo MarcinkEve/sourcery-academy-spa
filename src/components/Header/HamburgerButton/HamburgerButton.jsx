@@ -37,7 +37,7 @@ export const HamburgerButton = ({
     <>
       <button
         className="hamburger-button"
-        onClick={setIsHamburgerOpen((prev) => !prev)}
+        onClick={() => setIsHamburgerOpen((prev) => !prev)}
       >
         <span
           className={classNames('hamburger-button__lines', {
