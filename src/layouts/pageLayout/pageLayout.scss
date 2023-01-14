@@ -7,7 +7,7 @@
   }
 
   @include mobile-breakpoint {
-    padding: $height-header-footer to-rem(30) 0;
+    padding: to-rem(60) to-rem(30) 0;
   }
 
   margin: 0 auto;

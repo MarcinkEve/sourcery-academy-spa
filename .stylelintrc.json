@@ -41,7 +41,9 @@
           "composes",
           "compose-with",
           "font-range",
-          "accent-color"
+          "accent-color",
+          "breakpointMobile",
+          "breakpointTablet"
         ]
       }
     ],

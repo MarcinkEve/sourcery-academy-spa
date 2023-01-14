@@ -116,3 +116,8 @@ $almost-transparent-bg-clr: rgba(0, 0, 0, 0.2);
 
 $breakpoint-tablet: 1023px;
 $breakpoint-mobile: 767px;
+
+:export {
+  breakpointMobile: $breakpoint-mobile;
+  breakpointTablet: $breakpoint-tablet;
+}

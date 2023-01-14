@@ -1,0 +1,62 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.navlink-container {
+  @include center-alignment;
+  @include mobile-breakpoint {
+    display: unset;
+  }
+
+  background-color: $gray-200;
+  display: none;
+  height: 100vh;
+  margin-top: to-rem(60);
+  position: fixed;
+  width: 100vw;
+}
+
+.navlinks-mobile {
+  @include mobile-breakpoint {
+    display: flex;
+  }
+  @include flex-box(
+    $direction: column,
+    $justify-content: flex-start,
+    $align-items: center
+  );
+
+  @include center-alignment;
+
+  bottom: to-rem(200);
+  cursor: pointer;
+  display: none;
+  font-size: $font-size-m;
+  height: 80vh;
+  list-style-type: none;
+  min-width: to-rem(250);
+  padding-left: 0;
+  position: absolute;
+  row-gap: $spacer-xxxs;
+  width: max-content;
+
+  &__link {
+    color: $violet-700;
+    text-decoration: none;
+
+    &--active {
+      color: $violet-700;
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+    }
+  }
+
+  &__arrow-icon {
+    position: absolute;
+    right: to-rem(55);
+    width: to-rem(15);
+  }
+
+  &__academies-link {
+    @include flex-box($align-items: center);
+  }
+}

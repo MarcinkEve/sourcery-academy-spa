@@ -2,11 +2,13 @@
 @import '~/sass/utilities/mixins';
 
 .header {
-  @include flex-box(
-    $direction: row,
-    $justify-content: space-between,
-    $align-items: center
-  );
+  @include flex-box($justify-content: space-between, $align-items: center);
+
+  @include mobile-breakpoint {
+    height: to-rem(60);
+    left: unset;
+    transform: unset;
+  }
 
   height: $height-header-footer;
   left: 50%;
@@ -39,23 +41,23 @@
   }
 
   .logo {
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
+    @include flex-box($justify-content: center, $align-items: center);
+
+    @include mobile-breakpoint {
+      margin-right: to-rem(50);
+    }
 
     column-gap: $spacer-xxxs;
     text-decoration: none;
 
     &__image {
+      flex-shrink: 0;
       width: to-rem(38);
     }
 
     &__text {
       color: $header-clr;
       font-weight: $font-weight-bold;
-      margin-left: to-rem(20);
     }
 
     &:focus-visible {
@@ -68,11 +70,14 @@
     $_this: &;
 
     @include reset-list-style;
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
+
+    @include flex-box($justify-content: center, $align-items: center);
+
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    white-space: nowrap;
 
     &__academies {
       @include flex-box(

@@ -1,0 +1,64 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.hamburger-button {
+  @include mobile-breakpoint {
+    border-style: none;
+    display: block;
+  }
+
+  background: unset;
+  cursor: pointer;
+  display: none;
+  height: to-rem(30);
+  position: fixed;
+  right: to-rem(40);
+  top: to-rem(15);
+  width: to-rem(40);
+  z-index: 100;
+
+  &__lines {
+    background-color: $header-clr;
+    margin-bottom: to-rem(3);
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      height: to-rem(3);
+      width: to-rem(30);
+    }
+
+    &::before,
+    &::after {
+      background-color: $header-clr;
+      content: '';
+      left: 0;
+      position: absolute;
+    }
+
+    &::before {
+      top: to-rem(7);
+    }
+
+    &::after {
+      top: to-rem(-7);
+    }
+
+    &--transformed {
+      background: unset;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

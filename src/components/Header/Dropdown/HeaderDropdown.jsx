@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { arrayOf, func, shape, string } from 'prop-types';
+import { arrayOf, func, shape, string, object } from 'prop-types';
 
 import './headerDropdown.scss';
 
-export const HeaderDropdown = ({ data, onClickOutside }) => {
+export const HeaderDropdown = ({ data, onClickOutside, academiesRef }) => {
   const pinRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -18,7 +18,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
         onClickOutside &&
         !pinRef.current.contains(target) &&
         !contentRef.current.contains(target) &&
-        !(target.autofocus === false)
+        !academiesRef.current.contains(target)
       ) {
         onClickOutside();
       }
@@ -54,6 +54,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
 };
 
 HeaderDropdown.propTypes = {
+  academiesRef: object,
   data: arrayOf(
     shape({
       text: string.isRequired,

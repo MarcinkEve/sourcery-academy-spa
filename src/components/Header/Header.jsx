@@ -1,61 +1,62 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
-import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 import SvgLogo from '~/assets/icons/icon-logo.svg';
-import HeaderDropdown from '~/components/Header/Dropdown';
+import HamburgerButton from '~/components/Header/HamburgerButton';
+import NavigationLinks from '~/components/Header/NavigationLinks';
+import { ROUTES } from '~/constants/routes';
 
 import './header.scss';
 
-const dropdownElements = [
+const navigationLinks = [
   {
-    text: 'Sourcery for Developers',
-    route: '/developers',
+    route: ROUTES.HOME,
+    title: 'About us',
   },
   {
-    text: 'Sourcery for Testers',
-    route: '/testers',
+    dropdownElements: [
+      {
+        text: 'Sourcery for Developers',
+        route: ROUTES.DEVELOPERS,
+      },
+      {
+        text: 'Sourcery for Testers',
+        route: ROUTES.TESTERS,
+      },
+      {
+        text: 'Sourcery for Front-End',
+        route: ROUTES.FRONTEND,
+      },
+      {
+        text: 'Sourcery for Kids',
+        route: ROUTES.KIDS,
+      },
+    ],
+    title: 'Academies',
   },
   {
-    text: 'Sourcery for Front-End',
-    route: '/frontend',
+    route: ROUTES.APPLICATION,
+    title: 'Register',
   },
   {
-    text: 'Sourcery for Kids',
-    route: '/kids',
+    route: ROUTES.MEDIA,
+    title: 'Media',
+  },
+  {
+    route: ROUTES.QUESTIONS,
+    title: 'Questions',
   },
 ];
 
 export const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { pathname } = useLocation();
-  const ref = useRef(null);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-  const getAcademiesPath = () => {
-    const academiesPathArray = [];
-    dropdownElements.forEach((el) => {
-      academiesPathArray.push(el.route);
-    });
-
-    return academiesPathArray;
+  const handleClose = () => {
+    setIsHamburgerOpen(false);
   };
 
-  const academiesPaths = getAcademiesPath();
-  const isAcademiesPathActive = (pathname) => academiesPaths.includes(pathname);
-
-  useEffect(() => setIsDropdownOpen(false), [useLocation()]);
-  useEffect(() => {
-    const keyListener = ({ key }) => {
-      if (key === 'Escape') {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener('keydown', keyListener, false);
-
-    return () => document.removeEventListener('keydown', keyListener);
-  }, []);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', isScrolled);
@@ -70,73 +71,22 @@ export const Header = () => {
 
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
-      <NavLink className="logo" to="/" aria-label="Home link">
+      <NavLink
+        onClick={handleClose}
+        className="logo"
+        to="/"
+        aria-label="Home link"
+      >
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
-      <ul className="navlinks">
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/"
-          >
-            About us
-          </NavLink>
-        </li>
-        <li className="navlinks__academies" ref={ref}>
-          <button
-            className={classNames(
-              'navlinks__academies-menu',
-              isAcademiesPathActive(pathname) &&
-                'navlinks__academies-menu--active'
-            )}
-            onClick={() => setIsDropdownOpen((prev) => !prev)}
-          >
-            Academies
-            <SvgArrow className="navlinks__academies-arrow" />
-          </button>
-          {isDropdownOpen && (
-            <div className="navlinks__academies-dropdown">
-              <HeaderDropdown
-                data={dropdownElements}
-                onClickOutside={() => setIsDropdownOpen(false)}
-              />
-            </div>
-          )}
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/media"
-          >
-            Media
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/applicationform"
-          >
-            Register
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
-            }
-            to="/questions"
-          >
-            Questions
-          </NavLink>
-        </li>
-      </ul>
+      <HamburgerButton
+        navigationLinks={navigationLinks}
+        handleClose={handleClose}
+        isHamburgerOpen={isHamburgerOpen}
+        setIsHamburgerOpen={setIsHamburgerOpen}
+      />
+      <NavigationLinks navigationLinks={navigationLinks} />
     </div>
   );
 };
