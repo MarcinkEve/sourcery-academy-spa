@@ -3,15 +3,16 @@ import { useLocation } from 'react-router-dom';
 import { func, node } from 'prop-types';
 
 import { ROUTES, LINKS } from '~/constants';
-
-import { LoadingContext } from '../../../../components/App';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 export const getMedia = () => {
   const { pathname } = useLocation();
   const mediaContext = useContext(MediaContext);
-  const { handleLoadingStateMedia } = useContext(LoadingContext);
+  const { handleLoadingStateMedia } = useLoadingContext();
 
-  handleLoadingStateMedia(mediaContext.loadingStateMedia);
+  useEffect(() => {
+    handleLoadingStateMedia(mediaContext.loadingStateMedia);
+  }, [mediaContext.loadingStateMedia]);
 
   const generateMediaForHomepage = () => {
     const videos = mediaContext.data.filter((item) => item.type === 'video');

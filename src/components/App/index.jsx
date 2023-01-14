@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ApplicationPage from '~/pages/ApplicationPage';
@@ -12,8 +12,7 @@ import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
 import PageNotFound from '~/pages/PageNotFound';
 import { LoadingContextProvider } from '~/context/LoadingContext';
-
-export const LoadingContext = createContext();
+import { ApiLoadingModal } from '~/components/UI/LoadingSpinner/ApiLoadingModal';
 
 export default function index() {
   const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION } = ROUTES;
@@ -23,6 +22,7 @@ export default function index() {
       <LoadingContextProvider>
         <BrowserRouter>
           <Header />
+          <ApiLoadingModal />
           <Routes>
             <Route path={HOME} element={<Homepage theme="home" />} />
             <Route

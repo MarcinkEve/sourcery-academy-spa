@@ -3,14 +3,16 @@ import { func, node } from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import { ROUTES, LINKS } from '~/constants';
-
-import { LoadingContext } from '../../components/App';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 export const getTestimonials = () => {
   const { pathname } = useLocation();
   const testimonialContext = useContext(TestimonialContext);
-  const { handleLoadingStateTestimonial } = useContext(LoadingContext);
-  handleLoadingStateTestimonial(testimonialContext.loadingStateTestimonial);
+  const { handleLoadingStateTestimonial } = useLoadingContext();
+
+  useEffect(() => {
+    handleLoadingStateTestimonial(testimonialContext.loadingStateTestimonial);
+  }, [testimonialContext.loadingStateTestimonial]);
 
   const filterTestimonialsForAcademy = (academy) =>
     testimonialContext.data.filter((testimonial) =>
