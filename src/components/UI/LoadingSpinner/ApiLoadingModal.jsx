@@ -23,6 +23,8 @@ export const ApiLoadingModal = () => {
         return 'application';
       case 'media':
         return 'home';
+      case 'questions':
+        return 'home';
       default:
         return pathWord;
     }

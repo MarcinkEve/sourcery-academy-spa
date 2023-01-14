@@ -13,7 +13,7 @@ import Testers from '~/pages/AcademiesPages/Testers';
 import PageNotFound from '~/pages/PageNotFound';
 import QuestionsPage from '~/pages/QuestionsPage';
 import { LoadingContextProvider } from '~/context/LoadingContext';
-import { ApiLoadingModal } from '../UI/LoadingSpinner/ApiLoadingModal';
+import { ApiLoadingModal } from '~/components/UI/LoadingSpinner/ApiLoadingModal';
 
 export default function index() {
   const {
