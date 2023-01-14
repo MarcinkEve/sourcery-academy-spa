@@ -19,7 +19,9 @@ import {
 } from './data.js';
 
 export const Homepage = ({ theme }) => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <PageLayout theme={theme}>
