@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { string } from 'prop-types';
 
 import ExtraWrappingSection from '~/layouts/ExtraWrappingSection';
@@ -19,6 +19,10 @@ import {
 } from './data.js';
 
 export const Homepage = ({ theme }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <PageLayout theme={theme}>
       <IntroSection introSectionData={introSectionData} />
@@ -33,6 +37,7 @@ export const Homepage = ({ theme }) => {
         <TestimonialSection />
         <MediaSectionHomepage />
       </ExtraWrappingSection>
+      )
     </PageLayout>
   );
 };

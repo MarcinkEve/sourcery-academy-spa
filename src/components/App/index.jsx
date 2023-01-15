@@ -12,14 +12,25 @@ import { ROUTES } from '~/constants/routes';
 import Testers from '~/pages/AcademiesPages/Testers';
 import PageNotFound from '~/pages/PageNotFound';
 import QuestionsPage from '~/pages/QuestionsPage';
+import { LoadingContextProvider } from '~/context/LoadingContext';
+import { ApiLoadingModal } from '~/components/UI/LoadingSpinner/ApiLoadingModal';
 
 export default function index() {
-  const { HOME, DEVELOPERS, FRONTEND, TESTERS, MEDIA, APPLICATION, QUESTIONS } = ROUTES;
+  const {
+    HOME,
+    DEVELOPERS,
+    FRONTEND,
+    TESTERS,
+    MEDIA,
+    APPLICATION,
+    QUESTIONS,
+  } = ROUTES;
 
   return (
-    <>
+    <LoadingContextProvider>
       <BrowserRouter>
         <Header />
+        <ApiLoadingModal />
         <Routes>
           <Route path={HOME} element={<Homepage theme="home" />} />
           <Route
@@ -38,6 +49,6 @@ export default function index() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </>
+    </LoadingContextProvider>
   );
 }
