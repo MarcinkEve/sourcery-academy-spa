@@ -3,10 +3,16 @@ import { useLocation } from 'react-router-dom';
 import { func, node } from 'prop-types';
 
 import { ROUTES, LINKS } from '~/constants';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 export const getMedia = () => {
   const { pathname } = useLocation();
   const mediaContext = useContext(MediaContext);
+  const { handleLoadingStateMedia } = useLoadingContext();
+
+  useEffect(() => {
+    handleLoadingStateMedia(mediaContext.loadingStateMedia);
+  }, [mediaContext.loadingStateMedia]);
 
   const generateMediaForHomepage = () => {
     const videos = mediaContext.data.filter((item) => item.type === 'video');
@@ -37,19 +43,23 @@ export const getMedia = () => {
   return { ...mediaContext, data: getMediaForPage(pathname) };
 };
 
-const initialState = { data: [], error: false };
+const initialState = { data: [], error: false, loadingStateMedia: true };
 
 export const MediaContext = createContext(initialState);
 
 export const MediaProvider = ({ children }) => {
   const [media, setMedia] = useState(initialState);
+
   useEffect(() => {
     fetch(LINKS.MEDIA)
       .then((response) => response.json())
-      .then((response) => setMedia({ data: response, error: false }))
-      .catch(() => setMedia({ data: [], error: true }));
+      .then((response) =>
+        setMedia({ data: response, error: false, loadingStateMedia: false })
+      )
+      .catch(() =>
+        setMedia({ data: [], error: true, loadingStateMedia: false })
+      );
   }, []);
-
   return (
     <MediaContext.Provider value={media}>{children}</MediaContext.Provider>
   );
