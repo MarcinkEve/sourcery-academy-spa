@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { string } from 'prop-types';
 import classNames from 'classnames';
 
 import PageLayout from '~/layouts/pageLayout';
 import DropdownBar from '~/components/UI/DropdownBar';
 import Image from '~/assets/images/questions-section.svg';
-import Particles from '~/assets/decorators/particles/kids-description-particles-bottom.svg';
+import Particles from '~/assets/decorators/particles/application-process-particles-bottom.svg';
 
 import dataFile from './data.json';
 import './questions-page.scss';
 
 export const QuestionsPage = ({ theme }) => {
   const { data, title } = dataFile;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <PageLayout theme={theme}>
       <section className="questions-page">
@@ -45,7 +50,7 @@ export const QuestionsPage = ({ theme }) => {
           >
             <Particles className="questions-page__decorators-particles--top" />
             <Image className="questions-page__decorators-image" />
-            <Particles className="questions-page__decorators-particles--bottom" />{' '}
+            <Particles className="questions-page__decorators-particles--bottom" />
           </div>
         </div>
       </section>
