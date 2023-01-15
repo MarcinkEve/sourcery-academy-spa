@@ -1,9 +1,10 @@
 import React, { cloneElement } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
 import Button from '~/components/Form/Button';
 import { textSectionType } from '~/components/UI/TextSection/types';
+import { ROUTES } from '~/constants/routes';
 
 import './textSection.scss';
 
@@ -18,6 +19,7 @@ export const TextSection = ({
   buttonText,
   pageRoute,
   targetSectionId,
+  hasParameters,
 }) => {
   const nav = useNavigate();
 
@@ -51,7 +53,16 @@ export const TextSection = ({
       </div>
       {buttonText && (
         <div className="text-section__button-wrapper">
-          <Button label={buttonText} handleClick={handleButtonClick} />
+          {hasParameters ? (
+            <NavLink
+              to={ROUTES.APPLICATION}
+              state={{ from: useLocation().pathname }}
+            >
+              <Button label={buttonText} handleClick={handleButtonClick} />
+            </NavLink>
+          ) : (
+            <Button label={buttonText} handleClick={handleButtonClick} />
+          )}
         </div>
       )}
     </div>

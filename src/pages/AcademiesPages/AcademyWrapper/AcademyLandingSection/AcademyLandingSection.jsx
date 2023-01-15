@@ -25,6 +25,7 @@ export const AcademyLandingSection = ({ data }) => {
           paragraphContent={<p>{text}</p>}
           buttonText={'Register'}
           pageRoute={ROUTES.APPLICATION}
+          hasParameters={true}
         />
         <ParagraphLine className="academy-landing-section__paragraph-line" />
       </div>
