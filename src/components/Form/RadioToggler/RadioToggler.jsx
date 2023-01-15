@@ -23,8 +23,13 @@ export const RadioToggler = ({
 
   useEffect(() => {
     if (routeParam !== null) {
-      routeParam.from === ROUTES.TESTERS && setRadioValue(values[1]);
-      routeParam.from === ROUTES.FRONTEND && setRadioValue(values[2]);
+      if (routeParam.from === ROUTES.TESTERS) {
+        setRadioValue(values[1]);
+        onValueChange(values[1]);
+      } else if (routeParam.from === ROUTES.FRONTEND) {
+        setRadioValue(values[2]);
+        onValueChange(values[2]);
+      }
     }
   }, []);
 
