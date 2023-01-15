@@ -50,8 +50,13 @@ const navigationLinks = [
 ];
 
 export const Header = () => {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsHamburgerOpen(false);
+  };
+
   const [scrolled, setScrolled] = useState(false);
-  const [closeOnLogoClick, setCloseOnLogoClick] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', isScrolled);
@@ -67,7 +72,7 @@ export const Header = () => {
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
       <NavLink
-        onClick={() => setCloseOnLogoClick((prev) => !prev)}
+        onClick={handleClose}
         className="logo"
         to="/"
         aria-label="Home link"
@@ -76,8 +81,10 @@ export const Header = () => {
         <span className="logo__text">Sourcery Academy</span>
       </NavLink>
       <HamburgerButton
-        closeOnLogoClick={closeOnLogoClick}
         navigationLinks={navigationLinks}
+        handleClose={handleClose}
+        isHamburgerOpen={isHamburgerOpen}
+        setIsHamburgerOpen={setIsHamburgerOpen}
       />
       <NavigationLinks navigationLinks={navigationLinks} />
     </div>
