@@ -77,6 +77,7 @@ export const NavigationLinks = ({ navigationLinks }) => {
                   `navlinks__link ${isActive ? 'navlinks__link--active' : ''}`
                 }
                 to={link.route}
+                state={{ from: useLocation().pathname }}
               >
                 {link.title}
               </NavLink>
