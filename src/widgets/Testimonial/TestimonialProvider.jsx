@@ -3,10 +3,16 @@ import { func, node } from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 import { ROUTES, LINKS } from '~/constants';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 export const getTestimonials = () => {
   const { pathname } = useLocation();
   const testimonialContext = useContext(TestimonialContext);
+  const { handleLoadingStateTestimonial } = useLoadingContext();
+
+  useEffect(() => {
+    handleLoadingStateTestimonial(testimonialContext.loadingStateTestimonial);
+  }, [testimonialContext.loadingStateTestimonial]);
 
   const filterTestimonialsForAcademy = (academy) =>
     testimonialContext.data.filter((testimonial) =>
@@ -29,7 +35,7 @@ export const getTestimonials = () => {
   return { ...testimonialContext, data: getTestimonialsForPage(pathname) };
 };
 
-const initialState = { data: [], error: false };
+const initialState = { data: [], error: false, loadingStateTestimonial: true };
 
 export const TestimonialContext = createContext(initialState);
 
@@ -39,8 +45,20 @@ export const TestimonialProvider = ({ children }) => {
   useEffect(() => {
     fetch(LINKS.TESTIMONIALS)
       .then((response) => response.json())
-      .then((response) => setTestimonials({ data: response, error: false }))
-      .catch(() => setTestimonials({ data: [], error: true }));
+      .then((response) =>
+        setTestimonials({
+          data: response,
+          error: false,
+          loadingStateTestimonial: false,
+        })
+      )
+      .catch(() =>
+        setTestimonials({
+          data: [],
+          error: true,
+          loadingStateTestimonial: false,
+        })
+      );
   }, []);
 
   return (
