@@ -61,5 +61,10 @@
 
     color: $violet-700;
     cursor: pointer;
+
+    &--active {
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+    }
   }
 }

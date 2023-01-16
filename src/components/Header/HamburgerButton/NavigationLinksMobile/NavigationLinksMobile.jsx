@@ -24,7 +24,8 @@ export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
                     'navlinks-mobile__academies-link',
                     link.dropdownElements
                       .map((route) => route.route)
-                      .includes(pathname) && 'navlinks-mobile__link--active'
+                      .includes(pathname) &&
+                      'navlinks-mobile__academies-link--active'
                   )}
                 >
                   {link.title}
