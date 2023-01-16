@@ -37,7 +37,6 @@ export const Homepage = ({ theme }) => {
         <TestimonialSection />
         <MediaSectionHomepage />
       </ExtraWrappingSection>
-      )
     </PageLayout>
   );
 };
