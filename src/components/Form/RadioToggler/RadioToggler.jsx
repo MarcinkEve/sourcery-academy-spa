@@ -22,7 +22,7 @@ export const RadioToggler = ({
   };
 
   useEffect(() => {
-    if (routeParam !== null) {
+    if (routeParam) {
       if (routeParam.from === ROUTES.TESTERS) {
         setRadioValue(values[1]);
         onValueChange(values[1]);
