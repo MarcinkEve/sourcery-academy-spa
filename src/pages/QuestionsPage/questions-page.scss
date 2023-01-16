@@ -40,11 +40,7 @@
   }
 
   &__decorators {
-    @include flex-box(
-      $direction: column,
-      $justify-content: space-around,
-      $align-items: center
-    );
+    @include flex-box($direction: column, $align-items: center);
 
     width: to-rem(450);
 
