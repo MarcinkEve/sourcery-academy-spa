@@ -61,6 +61,7 @@ export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
                     }`
                   }
                   to={link.route}
+                  state={{ from: useLocation().pathname }}
                 >
                   {link.title}
                 </NavLink>
