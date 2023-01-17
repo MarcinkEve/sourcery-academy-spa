@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { array } from 'prop-types';
+import { array, func } from 'prop-types';
 import classNames from 'classnames';
 
 import HeaderDropdown from '~/components/Header/Dropdown';
@@ -8,7 +8,7 @@ import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
 
 import '../header.scss';
 
-export const NavigationLinks = ({ navigationLinks }) => {
+export const NavigationLinks = ({ navigationLinks, handleScrollTop }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { pathname } = useLocation();
@@ -64,6 +64,7 @@ export const NavigationLinks = ({ navigationLinks }) => {
                   <HeaderDropdown
                     academiesRef={academiesRef}
                     data={link.dropdownElements}
+                    handleScrollTop={handleScrollTop}
                     onClickOutside={() => setIsDropdownOpen(false)}
                   />
                 </div>
@@ -78,6 +79,7 @@ export const NavigationLinks = ({ navigationLinks }) => {
                 }
                 to={link.route}
                 state={{ from: useLocation().pathname }}
+                onClick={handleScrollTop}
               >
                 {link.title}
               </NavLink>
@@ -91,4 +93,5 @@ export const NavigationLinks = ({ navigationLinks }) => {
 
 NavigationLinks.propTypes = {
   navigationLinks: array.isRequired,
+  handleScrollTop: func,
 };

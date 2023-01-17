@@ -54,6 +54,7 @@ export const Header = () => {
 
   const handleClose = () => {
     setIsHamburgerOpen(false);
+    handleScrollTop();
   };
 
   const handleScrollTop = () => {
@@ -76,7 +77,7 @@ export const Header = () => {
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
       <NavLink
-        onClick={(() => handleClose, handleScrollTop)}
+        onClick={handleClose}
         className="logo"
         to="/"
         aria-label="Home link"
@@ -90,7 +91,10 @@ export const Header = () => {
         isHamburgerOpen={isHamburgerOpen}
         setIsHamburgerOpen={setIsHamburgerOpen}
       />
-      <NavigationLinks navigationLinks={navigationLinks} />
+      <NavigationLinks
+        navigationLinks={navigationLinks}
+        handleScrollTop={handleScrollTop}
+      />
     </div>
   );
 };
