@@ -29,6 +29,7 @@ export const Checkbox = ({
               onKeyDown={(e) => e.key === 'Enter' && setIsChecked(!isChecked)}
               type="checkbox"
               name={name}
+              aria-invalid={isChecked === false && errorMessage}
             />
             <div
               className={`checkbox__custom-checkmark${

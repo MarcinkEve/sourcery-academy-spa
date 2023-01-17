@@ -39,6 +39,7 @@ export const RadioToggler = ({
         className={classNames('section-label', {
           'section-label--required': isRequired,
         })}
+        aria-required={isRequired}
       >
         {name}
       </span>
