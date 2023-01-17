@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { LoadingSpinner } from './LoadingSpinner';
@@ -11,12 +11,16 @@ export const ApiLoadingModal = () => {
   const { isLoadingMedia, isLoadingTestimonial } = useLoadingContext();
   const { pathname } = useLocation();
 
-  const isLoaderVisible = () => isLoadingMedia || isLoadingTestimonial;
+  const isLoaderVisible = isLoadingMedia || isLoadingTestimonial;
+  useEffect(() => {
+    document.body.style.overflow = isLoaderVisible ? 'hidden' : 'visible';
+  }, [isLoaderVisible]);
+
   const theme = ROUTE_THEME[pathname] || 'home';
 
   return (
     <>
-      {isLoaderVisible() && (
+      {isLoaderVisible && (
         <div className="loader__modal" theme={theme}>
           <LoadingSpinner />
         </div>
