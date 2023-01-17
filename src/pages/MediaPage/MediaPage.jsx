@@ -25,7 +25,7 @@ export const MediaPage = ({ theme }) => {
     if (targetId) {
       return document.getElementById(targetId).scrollIntoView();
     }
-    return window.scrollTo(0, 0);
+    return window.scrollTo(0, 80);
   }, []);
 
   return (
