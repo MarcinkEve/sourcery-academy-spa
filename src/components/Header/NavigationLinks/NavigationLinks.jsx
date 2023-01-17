@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { array, func } from 'prop-types';
+import { arrayOf, func, shape, string } from 'prop-types';
 import classNames from 'classnames';
 
 import HeaderDropdown from '~/components/Header/Dropdown';
@@ -92,6 +92,17 @@ export const NavigationLinks = ({ navigationLinks, handleScrollTop }) => {
 };
 
 NavigationLinks.propTypes = {
-  navigationLinks: array.isRequired,
+  navigationLinks: arrayOf(
+    shape({
+      route: string,
+      title: string,
+      dropdownElements: arrayOf(
+        shape({
+          text: string,
+          route: string,
+        })
+      ),
+    })
+  ).isRequired,
   handleScrollTop: func,
 };
