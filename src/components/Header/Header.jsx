@@ -56,6 +56,10 @@ export const Header = () => {
     setIsHamburgerOpen(false);
   };
 
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -72,7 +76,7 @@ export const Header = () => {
   return (
     <div className={classNames('header', { header__scrolled: scrolled })}>
       <NavLink
-        onClick={handleClose}
+        onClick={(() => handleClose, handleScrollTop)}
         className="logo"
         to="/"
         aria-label="Home link"
