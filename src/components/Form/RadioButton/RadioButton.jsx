@@ -16,6 +16,7 @@ export const RadioButton = ({
         className={classNames('radio__title', {
           'radio__title--required': isRequired,
         })}
+        aria-required={isRequired}
       >
         {name}
       </span>

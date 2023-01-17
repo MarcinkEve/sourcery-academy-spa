@@ -41,6 +41,7 @@ export const ApplyToAcademy = ({ data }) => {
             paragraphContent={<p>{text}</p>}
             buttonText="Apply now"
             pageRoute={ROUTES.APPLICATION}
+            hasParameters={true}
           />
         </div>
         {Image && (

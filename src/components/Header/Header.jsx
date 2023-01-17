@@ -54,6 +54,11 @@ export const Header = () => {
 
   const handleClose = () => {
     setIsHamburgerOpen(false);
+    handleScrollTop();
+  };
+
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const [scrolled, setScrolled] = useState(false);
@@ -86,7 +91,10 @@ export const Header = () => {
         isHamburgerOpen={isHamburgerOpen}
         setIsHamburgerOpen={setIsHamburgerOpen}
       />
-      <NavigationLinks navigationLinks={navigationLinks} />
+      <NavigationLinks
+        navigationLinks={navigationLinks}
+        handleScrollTop={handleScrollTop}
+      />
     </div>
   );
 };

@@ -50,6 +50,8 @@ export const InputField = ({
         onBlur={(e) => {
           setInputValue(e.target.value);
         }}
+        aria-invalid={errorMessage}
+        aria-required={isRequired}
       />
       {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>

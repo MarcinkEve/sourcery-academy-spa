@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { func, string, array, bool } from 'prop-types';
 import classNames from 'classnames';
+import { useLocation } from 'react-router-dom';
 
 import RadioButtonForToggler from '~/components/Form/RadioToggler/RadioButtonForToggler';
+import { ROUTES } from '~/constants/routes';
 
 import './radio-toggler.scss';
 
@@ -13,11 +15,23 @@ export const RadioToggler = ({
   isRequired = true,
 }) => {
   const [radioValue, setRadioValue] = useState(values[0]);
-
+  const routeParam = useLocation().state;
   const handleChange = (event) => {
     setRadioValue(event.target.value);
     onValueChange(event.target.value);
   };
+
+  useEffect(() => {
+    if (routeParam) {
+      if (routeParam.from === ROUTES.TESTERS) {
+        setRadioValue(values[1]);
+        onValueChange(values[1]);
+      } else if (routeParam.from === ROUTES.FRONTEND) {
+        setRadioValue(values[2]);
+        onValueChange(values[2]);
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -25,6 +39,7 @@ export const RadioToggler = ({
         className={classNames('section-label', {
           'section-label--required': isRequired,
         })}
+        aria-required={isRequired}
       >
         {name}
       </span>
