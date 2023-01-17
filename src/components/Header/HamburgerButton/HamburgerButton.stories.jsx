@@ -61,6 +61,21 @@ export default {
         disable: true,
       },
     },
+    isHamburgerOpen: {
+      table: {
+        disable: true,
+      },
+    },
+    setIsHamburgerOpen: {
+      table: {
+        disable: true,
+      },
+    },
+    handleClose: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };
 
