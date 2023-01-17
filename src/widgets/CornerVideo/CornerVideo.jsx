@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { string } from 'prop-types';
 
 import PlayButton from '~/assets/icons/icon-play-button.svg';
 import VideoPlayer from '~/widgets/VideoPlayer';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 import './corner-video.scss';
 
 export const CornerVideo = ({ image, description, videoSrc }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageIsLoading, setImageIsLoading] = useState(true);
+
+  const { handleLoadingStateImage } = useLoadingContext();
+
+  useEffect(() => {
+    handleLoadingStateImage(imageIsLoading);
+  }, [imageIsLoading]);
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'visible';
+  }, [isModalOpen]);
 
   return (
     <>
@@ -21,6 +33,7 @@ export const CornerVideo = ({ image, description, videoSrc }) => {
           src={image}
           alt={description || ''}
           className="corner-video__image"
+          onLoad={() => setImageIsLoading(false)}
         />
         <button
           type="button"

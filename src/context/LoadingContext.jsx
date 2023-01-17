@@ -6,16 +6,20 @@ const LoadingContext = createContext({});
 export const LoadingContextProvider = ({ children }) => {
   const [isLoadingMedia, setIsLoadingMedia] = useState(false);
   const [isLoadingTestimonial, setIsLoadingTestimonial] = useState(false);
+  const [isLoadingImage, setIsLoadingImage] = useState(false);
 
   const handleLoadingStateMedia = (props) => setIsLoadingMedia(props);
   const handleLoadingStateTestimonial = (props) =>
     setIsLoadingTestimonial(props);
+  const handleLoadingStateImage = (props) => setIsLoadingImage(props);
 
   const loadingContextStore = {
     isLoadingMedia,
     handleLoadingStateMedia,
     isLoadingTestimonial,
     handleLoadingStateTestimonial,
+    isLoadingImage,
+    handleLoadingStateImage,
   };
 
   return (
