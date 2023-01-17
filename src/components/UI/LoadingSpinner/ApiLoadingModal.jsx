@@ -12,11 +12,15 @@ export const ApiLoadingModal = () => {
     isLoadingMedia,
     isLoadingTestimonial,
     isLoadingImage,
+    isLoadingMediaImages,
   } = useLoadingContext();
   const { pathname } = useLocation();
 
   const isLoaderVisible =
-    isLoadingMedia || isLoadingTestimonial || isLoadingImage;
+    isLoadingMedia ||
+    isLoadingTestimonial ||
+    isLoadingImage ||
+    isLoadingMediaImages;
 
   useEffect(() => {
     document.body.style.overflow = isLoaderVisible ? 'hidden' : 'visible';

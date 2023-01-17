@@ -7,11 +7,13 @@ export const LoadingContextProvider = ({ children }) => {
   const [isLoadingMedia, setIsLoadingMedia] = useState(false);
   const [isLoadingTestimonial, setIsLoadingTestimonial] = useState(false);
   const [isLoadingImage, setIsLoadingImage] = useState(false);
+  const [isLoadingMediaImages, setIsLoadingMediaImages] = useState(false);
 
   const handleLoadingStateMedia = (props) => setIsLoadingMedia(props);
   const handleLoadingStateTestimonial = (props) =>
     setIsLoadingTestimonial(props);
   const handleLoadingStateImage = (props) => setIsLoadingImage(props);
+  const handleLoadingStateImages = (props) => setIsLoadingMediaImages(props);
 
   const loadingContextStore = {
     isLoadingMedia,
@@ -20,6 +22,8 @@ export const LoadingContextProvider = ({ children }) => {
     handleLoadingStateTestimonial,
     isLoadingImage,
     handleLoadingStateImage,
+    isLoadingMediaImages,
+    handleLoadingStateImages,
   };
 
   return (
