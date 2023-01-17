@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import { array, func, any } from 'prop-types';
+import { array, func, bool } from 'prop-types';
 
 import NavigationLinksMobile from '~/components/Header/HamburgerButton/NavigationLinksMobile';
 
 import './hamburgerButton.scss';
-import breakpoints from '~/sass/variables';
+import { breakpointMobile } from '~/sass/variables.scss';
 
 export const HamburgerButton = ({
   navigationLinks,
@@ -26,10 +26,10 @@ export const HamburgerButton = ({
   // SET FALSE STATE FOR HAMBURGER MENU WHEN WINDOW WIDTH WOULD BE CHANGED WHILE SCROLLBAR IS DISABLED (BUGFIX)
   useEffect(() => {
     const windowSizeListener = () => {
-      window.innerWidth > parseInt(breakpoints.breakpointMobile) &&
-        handleClose();
+      window.innerWidth > parseInt(breakpointMobile) && handleClose();
     };
     window.addEventListener('resize', windowSizeListener);
+
     return () => document.removeEventListener('resize', windowSizeListener);
   }, []);
 
@@ -43,7 +43,7 @@ export const HamburgerButton = ({
           className={classNames('hamburger-button__lines', {
             'hamburger-button__lines--transformed': isHamburgerOpen,
           })}
-        ></span>
+        />
       </button>
 
       {isHamburgerOpen && (
@@ -58,7 +58,7 @@ export const HamburgerButton = ({
 
 HamburgerButton.propTypes = {
   navigationLinks: array.isRequired,
-  isHamburgerOpen: any,
+  isHamburgerOpen: bool,
   setIsHamburgerOpen: func,
   handleClose: func,
 };

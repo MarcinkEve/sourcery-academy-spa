@@ -1,30 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { HamburgerMenuButton } from './HamburgerMenuButton';
-const dropdownElements = [
+import { ROUTES } from '~/constants';
+
+import { HamburgerButton } from './HamburgerButton';
+
+const navigationLinks = [
   {
-    text: 'Sourcery for Developers',
-    route: '/developers',
+    route: ROUTES.HOME,
+    title: 'About us',
   },
   {
-    text: 'Sourcery for Testers',
-    route: '/testers',
+    dropdownElements: [
+      {
+        text: 'Sourcery for Developers',
+        route: ROUTES.DEVELOPERS,
+      },
+      {
+        text: 'Sourcery for Testers',
+        route: ROUTES.TESTERS,
+      },
+      {
+        text: 'Sourcery for Front-End',
+        route: ROUTES.FRONTEND,
+      },
+      {
+        text: 'Sourcery for Kids',
+        route: ROUTES.KIDS,
+      },
+    ],
+    title: 'Academies',
   },
   {
-    text: 'Sourcery for Front-End',
-    route: '/frontend',
+    route: ROUTES.APPLICATION,
+    title: 'Register',
   },
   {
-    text: 'Sourcery for Kids',
-    route: '/kids',
+    route: ROUTES.MEDIA,
+    title: 'Media',
+  },
+  {
+    route: ROUTES.QUESTIONS,
+    title: 'Questions',
   },
 ];
 
 export default {
   title: 'UI',
-  component: HamburgerMenuButton,
+  component: HamburgerButton,
   args: {
-    dropdownElements: dropdownElements,
+    navigationLinks: navigationLinks,
   },
   argTypes: {
     theme: {
@@ -40,8 +64,21 @@ export default {
   },
 };
 
-export const hamburgerButton = (args) => (
-  <div>
-    <HamburgerMenuButton {...args} />
-  </div>
-);
+export const hamburgerButton = (args) => {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsHamburgerOpen(false);
+  };
+
+  return (
+    <div>
+      <HamburgerButton
+        {...args}
+        handleClose={handleClose}
+        isHamburgerOpen={isHamburgerOpen}
+        setIsHamburgerOpen={setIsHamburgerOpen}
+      />
+    </div>
+  );
+};
