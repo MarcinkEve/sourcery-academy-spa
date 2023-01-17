@@ -15,10 +15,10 @@ export const Gallery = ({ mediaList }) => {
     slide: 1,
   });
   const { handleLoadingStateImages } = useLoadingContext();
-  const [imagesAreLoading, setImagesAreLoading] = useState(true);
+  const [isLoadingImages, setIsLoadingImages] = useState(true);
   useEffect(() => {
-    handleLoadingStateImages(imagesAreLoading);
-  }, [imagesAreLoading]);
+    handleLoadingStateImages(isLoadingImages);
+  }, [isLoadingImages]);
 
   const openLightboxOnSlide = (index) => {
     setLightboxController({
@@ -54,7 +54,7 @@ export const Gallery = ({ mediaList }) => {
               alt={alt || ''}
               onLoad={
                 index === mediaList.length - 1
-                  ? () => setImagesAreLoading(false)
+                  ? () => setIsLoadingImages(false)
                   : null
               }
             />

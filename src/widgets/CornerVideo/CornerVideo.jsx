@@ -9,13 +9,13 @@ import './corner-video.scss';
 
 export const CornerVideo = ({ image, description, videoSrc }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imageIsLoading, setImageIsLoading] = useState(true);
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
 
   const { handleLoadingStateImage } = useLoadingContext();
 
   useEffect(() => {
-    handleLoadingStateImage(imageIsLoading);
-  }, [imageIsLoading]);
+    handleLoadingStateImage(isLoadingImage);
+  }, [isLoadingImage]);
 
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'visible';
@@ -33,7 +33,7 @@ export const CornerVideo = ({ image, description, videoSrc }) => {
           src={image}
           alt={description || ''}
           className="corner-video__image"
-          onLoad={() => setImageIsLoading(false)}
+          onLoad={() => setIsLoadingImage(false)}
         />
         <button
           type="button"
