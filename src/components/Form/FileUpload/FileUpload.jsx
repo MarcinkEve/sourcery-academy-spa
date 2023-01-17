@@ -53,6 +53,8 @@ export const FileUpload = ({
         type="file"
         accept=".pdf"
         onChange={handleUpload}
+        aria-invalid={errorMessage}
+        aria-required={isRequired}
       />
       <div
         className={classNames('upload__field', {
