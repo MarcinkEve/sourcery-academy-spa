@@ -11,6 +11,7 @@ import './application-page.scss';
 import { data as applicationPageData } from './mockData';
 
 export const FormValuesContext = createContext();
+export const EmailDuplicateContext = createContext(false);
 
 export const ApplicationPage = ({ title, theme }) => {
   const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
@@ -73,12 +74,13 @@ export const ApplicationPage = ({ title, theme }) => {
               {isSubmitted ? (
                 <SuccessMessage />
               ) : (
-                <ApplicationForm
-                  data={applicationPageData}
-                  isButtonDisabled={isButtonDisabled}
-                  submitHandler={submitHandler}
-                  isEmailDuplicate={isEmailDuplicate}
-                />
+                <EmailDuplicateContext.Provider value={isEmailDuplicate}>
+                  <ApplicationForm
+                    data={applicationPageData}
+                    isButtonDisabled={isButtonDisabled}
+                    submitHandler={submitHandler}
+                  />
+                </EmailDuplicateContext.Provider>
               )}
             </div>
             <div className="form-layout__image-section">
