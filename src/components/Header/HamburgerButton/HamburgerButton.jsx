@@ -26,7 +26,8 @@ export const HamburgerButton = ({
   // SET FALSE STATE FOR HAMBURGER MENU WHEN WINDOW WIDTH WOULD BE CHANGED WHILE SCROLLBAR IS DISABLED (BUGFIX)
   useEffect(() => {
     const windowSizeListener = () => {
-      window.innerWidth > parseInt(breakpointMobile) && handleClose();
+      window.innerWidth > parseInt(breakpointMobile) &&
+        setIsHamburgerOpen(false);
     };
     window.addEventListener('resize', windowSizeListener);
 
