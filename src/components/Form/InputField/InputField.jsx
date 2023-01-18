@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { string, func, bool, oneOf } from 'prop-types';
 
 import ErrorMessage from '~/components/UI/ErrorMessage';
+import { EmailDuplicateContext } from '~/pages/ApplicationPage/ApplicationPage';
 
 import './inputField.scss';
 import { handleValidation } from './validationOnBlur';
@@ -18,15 +19,22 @@ export const InputField = ({
   const [inputValue, setInputValue] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [validInput, setValidInput] = useState(null);
+  const isEmailDuplicate = useContext(EmailDuplicateContext);
 
   useEffect(() => {
     handleValidation(inputValue, type, setErrorMessage, setValidInput);
   }, [inputValue]);
 
+  useEffect(() => {
+    if (isEmailDuplicate && type === 'email') {
+      setValidInput(false);
+      setErrorMessage('This email has already been registered');
+    }
+  }, [isEmailDuplicate]);
+
   //Send valid input string
   useEffect(() => {
     if (validInput && getValue) return getValue(validInput);
-    return;
   }, [validInput]);
 
   return (
@@ -45,11 +53,15 @@ export const InputField = ({
         type={type}
         name={name}
         id={name}
-        className={errorMessage ? 'input__field input__error' : 'input__field'}
+        className={classNames('input__field', {
+          input__error: errorMessage,
+        })}
         autoComplete={'disabledForMVP'}
         onBlur={(e) => {
           setInputValue(e.target.value);
         }}
+        aria-invalid={errorMessage}
+        aria-required={isRequired}
       />
       {errorMessage && <ErrorMessage message={errorMessage} />}
     </div>

@@ -10,7 +10,7 @@
   background-color: $gray-200;
   display: none;
   height: 100vh;
-  margin-top: to-rem(60);
+  margin-top: to-rem(59);
   position: fixed;
   width: 100vw;
 }
@@ -28,7 +28,6 @@
   @include center-alignment;
 
   bottom: to-rem(200);
-  cursor: pointer;
   display: none;
   font-size: $font-size-m;
   height: 80vh;
@@ -36,15 +35,16 @@
   min-width: to-rem(250);
   padding-left: 0;
   position: absolute;
-  row-gap: $spacer-xxxs;
+  row-gap: to-rem(15);
   width: max-content;
 
   &__link {
     color: $violet-700;
+    cursor: pointer;
+    padding: to-rem(5) 0;
     text-decoration: none;
 
     &--active {
-      color: $violet-700;
       font-weight: $font-weight-bold;
       text-decoration: underline;
     }
@@ -58,5 +58,13 @@
 
   &__academies-link {
     @include flex-box($align-items: center);
+
+    color: $violet-700;
+    cursor: pointer;
+
+    &--active {
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+    }
   }
 }

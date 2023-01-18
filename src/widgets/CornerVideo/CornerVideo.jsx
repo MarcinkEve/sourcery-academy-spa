@@ -21,6 +21,10 @@ export const CornerVideo = ({ image, description, videoSrc }) => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'visible';
   }, [isModalOpen]);
 
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'visible';
+  }, [isModalOpen]);
+
   return (
     <>
       <VideoPlayer

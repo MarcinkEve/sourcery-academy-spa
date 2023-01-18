@@ -4,7 +4,12 @@ import { arrayOf, func, shape, string, object } from 'prop-types';
 
 import './headerDropdown.scss';
 
-export const HeaderDropdown = ({ data, onClickOutside, academiesRef }) => {
+export const HeaderDropdown = ({
+  data,
+  onClickOutside,
+  academiesRef,
+  handleScrollTop,
+}) => {
   const pinRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -43,6 +48,7 @@ export const HeaderDropdown = ({ data, onClickOutside, academiesRef }) => {
                 }`
               }
               to={element.route}
+              onClick={handleScrollTop}
             >
               {element.text}
             </NavLink>
@@ -62,4 +68,5 @@ HeaderDropdown.propTypes = {
     })
   ),
   onClickOutside: func,
+  handleScrollTop: func,
 };

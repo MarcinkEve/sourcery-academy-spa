@@ -4,8 +4,4 @@
 .application-form {
   align-self: flex-start;
   max-width: to-rem(536);
-
-  &__error-wrapper {
-    margin-bottom: to-rem(5);
-  }
 }

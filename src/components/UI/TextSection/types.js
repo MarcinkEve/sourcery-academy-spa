@@ -11,4 +11,5 @@ export const textSectionType = {
   buttonText: string,
   pageRoute: oneOf([...Object.values(ROUTES)]),
   targetSectionId: string,
+  hasParameters: bool,
 };

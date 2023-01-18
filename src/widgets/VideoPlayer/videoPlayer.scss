@@ -96,6 +96,9 @@
 
   @include mobile-breakpoint {
     height: to-rem(32);
+    @supports (-moz-appearance: none) {
+      height: to-rem(46);
+    }
   }
 
   &__play-pause {

@@ -20,19 +20,16 @@ export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
               <>
                 <li
                   onClick={() => setShowDropDown((prev) => !prev)}
-                  className="navlinks-mobile__link"
+                  className={classNames(
+                    'navlinks-mobile__academies-link',
+                    link.dropdownElements
+                      .map((route) => route.route)
+                      .includes(pathname) &&
+                      'navlinks-mobile__academies-link--active'
+                  )}
                 >
-                  <span
-                    className={classNames(
-                      'navlinks-mobile__academies-link',
-                      link.dropdownElements
-                        .map((route) => route.route)
-                        .includes(pathname) && 'navlinks-mobile__link--active'
-                    )}
-                  >
-                    Academies
-                    <SvgArrow className="navlinks-mobile__arrow-icon" />
-                  </span>
+                  {link.title}
+                  <SvgArrow className="navlinks-mobile__arrow-icon" />
                 </li>
 
                 {showDropDown &&
@@ -64,6 +61,7 @@ export const NavigationLinksMobile = ({ handleClose, navigationLinks }) => {
                     }`
                   }
                   to={link.route}
+                  state={{ from: useLocation().pathname }}
                 >
                   {link.title}
                 </NavLink>
