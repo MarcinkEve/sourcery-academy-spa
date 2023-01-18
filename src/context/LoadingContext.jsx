@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { node } from 'prop-types';
 
-const LoadingContext = createContext({});
+export const LoadingContext = createContext({});
 
 export const LoadingContextProvider = ({ children }) => {
   const [isLoadingMedia, setIsLoadingMedia] = useState(false);

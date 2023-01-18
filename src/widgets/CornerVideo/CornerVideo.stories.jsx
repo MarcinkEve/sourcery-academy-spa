@@ -6,6 +6,7 @@ import FrontEndCornerImage from '~/assets/images/frontend-corner-photo.jpg';
 
 import { CornerVideo } from './CornerVideo';
 import './corner-video-storybook.scss';
+import { LoadingContext } from '~/context/LoadingContext';
 
 const images = [DevelopersCornerImage, TestersCornerImage, FrontEndCornerImage];
 
@@ -44,8 +45,10 @@ export default {
 export const CornerVideoComponent = (args) => {
   const { theme, image } = args.theme;
   return (
-    <div theme={theme} className="corner-video__storybook-container">
-      <CornerVideo {...args} image={image} />
-    </div>
+    <LoadingContext.Provider value={{ handleLoadingStateImage: () => {} }}>
+      <div theme={theme} className="corner-video__storybook-container">
+        <CornerVideo {...args} image={image} />
+      </div>
+    </LoadingContext.Provider>
   );
 };
