@@ -3,11 +3,23 @@ import { string } from 'prop-types';
 
 import PlayButton from '~/assets/icons/icon-play-button.svg';
 import VideoPlayer from '~/widgets/VideoPlayer';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 import './corner-video.scss';
 
 export const CornerVideo = ({ image, description, videoSrc }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
+
+  const { handleLoadingStateImage } = useLoadingContext();
+
+  useEffect(() => {
+    handleLoadingStateImage(isLoadingImage);
+  }, [isLoadingImage]);
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'visible';
+  }, [isModalOpen]);
 
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'visible';
@@ -25,6 +37,7 @@ export const CornerVideo = ({ image, description, videoSrc }) => {
           src={image}
           alt={description || ''}
           className="corner-video__image"
+          onLoad={() => setIsLoadingImage(false)}
         />
         <button
           type="button"

@@ -8,10 +8,20 @@ import { useLoadingContext } from '~/context/LoadingContext';
 import { ROUTE_THEME } from '~/constants/routeTheme';
 
 export const ApiLoadingModal = () => {
-  const { isLoadingMedia, isLoadingTestimonial } = useLoadingContext();
+  const {
+    isLoadingMedia,
+    isLoadingTestimonial,
+    isLoadingImage,
+    isLoadingMediaImages,
+  } = useLoadingContext();
   const { pathname } = useLocation();
 
-  const isLoaderVisible = isLoadingMedia || isLoadingTestimonial;
+  const isLoaderVisible =
+    isLoadingMedia ||
+    isLoadingTestimonial ||
+    isLoadingImage ||
+    isLoadingMediaImages;
+
   useEffect(() => {
     document.body.style.overflow = isLoaderVisible ? 'hidden' : 'visible';
   }, [isLoaderVisible]);

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import FsLightbox from 'fslightbox-react';
 
 import PlayIcon from '~/assets/icons/icon-play-button.svg';
 import VideoPlayer from '~/widgets/VideoPlayer';
+import { useLoadingContext } from '~/context/LoadingContext';
 
 import './gallery.scss';
 import { mediaListType } from './types';
@@ -13,6 +14,11 @@ export const Gallery = ({ mediaList }) => {
     isOpened: false,
     slide: 1,
   });
+  const { handleLoadingStateImages } = useLoadingContext();
+  const [isLoadingImages, setIsLoadingImages] = useState(true);
+  useEffect(() => {
+    handleLoadingStateImages(isLoadingImages);
+  }, [isLoadingImages]);
 
   const openLightboxOnSlide = (index) => {
     setLightboxController({
@@ -46,6 +52,11 @@ export const Gallery = ({ mediaList }) => {
               className="gallery__thumbnail"
               src={thumbnail}
               alt={alt || ''}
+              onLoad={
+                index === mediaList.length - 1
+                  ? () => setIsLoadingImages(false)
+                  : null
+              }
             />
             {type === 'video' && <PlayIcon className="gallery__play-icon" />}
           </div>
