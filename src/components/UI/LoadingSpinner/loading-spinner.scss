@@ -2,16 +2,21 @@
 @import '~/sass/utilities/mixins';
 
 .loader {
+  $_this: &;
+
   &__modal {
     @include flex-box($justify-content: center, $align-items: center);
 
-    background-color: $almost-transparent-bg-clr;
     height: 150%;
     left: 0;
     position: absolute;
-    top: 0;
+    top: -25%;
     width: 100%;
     z-index: 1;
+
+    &--background {
+      background-color: $almost-transparent-bg-clr;
+    }
   }
 
   &__spinner {

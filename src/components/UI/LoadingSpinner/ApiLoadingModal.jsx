@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { LoadingSpinner } from './LoadingSpinner';
@@ -16,6 +16,8 @@ export const ApiLoadingModal = () => {
   } = useLoadingContext();
   const { pathname } = useLocation();
 
+  const [hasOverlay, setHasOverlay] = useState(false);
+
   const isLoaderVisible =
     isLoadingMedia ||
     isLoadingTestimonial ||
@@ -24,6 +26,16 @@ export const ApiLoadingModal = () => {
 
   useEffect(() => {
     document.body.style.overflow = isLoaderVisible ? 'hidden' : 'visible';
+
+    const addStateIfTimeIsPassed = isLoaderVisible
+      ? setTimeout(() => {
+          setHasOverlay(true);
+        }, 300)
+      : setHasOverlay(false);
+
+    return () => {
+      clearTimeout(addStateIfTimeIsPassed);
+    };
   }, [isLoaderVisible]);
 
   const theme = ROUTE_THEME[pathname] || 'home';
@@ -31,7 +43,12 @@ export const ApiLoadingModal = () => {
   return (
     <>
       {isLoaderVisible && (
-        <div className="loader__modal" theme={theme}>
+        <div
+          className={`loader__modal ${
+            hasOverlay && 'loader__modal--background'
+          } `}
+          theme={theme}
+        >
           <LoadingSpinner />
         </div>
       )}
