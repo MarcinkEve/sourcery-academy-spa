@@ -17,7 +17,9 @@ export const Gallery = ({ mediaList }) => {
   const { handleLoadingStateImages } = useLoadingContext();
   const [isLoadingImages, setIsLoadingImages] = useState(true);
   useEffect(() => {
-    handleLoadingStateImages(isLoadingImages);
+    if (handleLoadingStateImages) {
+      handleLoadingStateImages(isLoadingImages);
+    }
   }, [isLoadingImages]);
 
   const openLightboxOnSlide = (index) => {

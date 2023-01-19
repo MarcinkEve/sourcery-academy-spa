@@ -4,7 +4,7 @@ import { MediaSection } from './MediaSection';
 import { mediaLists } from './storybookData';
 
 const titleForTheme = (theme) =>
-  `${theme === 'Home' ? `${theme} page` : `Sourcery for ${theme}`}`;
+  `${theme === 'Home' ? 'Homepage' : `Sourcery for ${theme}`}`;
 
 export default {
   title: 'widgets/MediaSectionComponent',
