@@ -1,0 +1,140 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.radio-toggler-item {
+  $_this: &;
+
+  @include mobile-breakpoint {
+    @include flex-box($direction: row, $align-items: center);
+
+    max-width: to-rem(536);
+    min-width: to-rem(240);
+
+    &:not(:last-child) {
+      margin: 0 0 to-rem(20) 0;
+    }
+  }
+
+  &__label {
+    @include overflow-ellipsis();
+
+    border-radius: 30px;
+    color: $charcoal-400;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    margin: to-rem(7);
+    padding: to-rem(13);
+    text-align: center;
+    transition: color $transition-time-200 ease,
+      background-color $transition-time-200 ease;
+    width: to-rem(159);
+
+    &:hover {
+      color: $violet-400;
+    }
+
+    @include mobile-breakpoint {
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      transition: none;
+      width: 100%;
+
+      &:hover {
+        color: $charcoal-400;
+      }
+    }
+
+    &--checked {
+      background-color: $violet-400;
+      color: $white-400;
+      transition: color $transition-time-400 ease,
+        background-color $transition-time-400 ease;
+
+      &:hover {
+        background-color: $violet-600;
+        color: $white-400;
+      }
+
+      &:focus,
+      &:focus-visible,
+      &:active {
+        background-color: $violet-300;
+      }
+
+      @include mobile-breakpoint {
+        background-color: $white-400;
+        color: $charcoal-400;
+        transition: none;
+
+        // Expected nesting depth to be no more than 3
+        /* stylelint-disable */
+        &:hover {
+          background-color: $white-400;
+          color: $charcoal-400;
+        }
+
+        &:focus,
+        &:focus-visible,
+        &:active {
+          background-color: $white-400;
+        }
+        /* stylelint-enable */
+      }
+    }
+  }
+
+  &__input {
+    clip-path: circle(0%);
+    height: 0;
+    position: absolute;
+    width: 0;
+
+    &:focus-visible {
+      + #{$_this}__label {
+        outline: 4px dashed $orange-200;
+      }
+    }
+
+    @include mobile-breakpoint {
+      accent-color: $violet-400;
+      border-radius: 0;
+      clip-path: none;
+      height: to-rem(21);
+      margin: 0 to-rem(21) 0 0;
+      padding: 0;
+      position: static;
+      text-align: left;
+      width: to-rem(21);
+
+      &:focus,
+      &:focus-visible,
+      &:active {
+        background-color: var(--button-active);
+      }
+
+      &:focus {
+        outline: 2px solid var(--button-hover);
+      }
+
+      &:active {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 4px dashed $orange-200;
+
+        + #{$_this}__label {
+          outline: none;
+        }
+      }
+    }
+
+    @include mobile-breakpoint {
+      &__input-label {
+        word-break: break-word;
+      }
+    }
+  }
+}

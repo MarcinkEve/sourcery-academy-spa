@@ -1,0 +1,58 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.schedule-section {
+  @include tablet-breakpoint {
+    margin: to-rem(200) auto to-rem(200);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) auto to-rem(50);
+  }
+
+  margin: to-rem(250) auto to-rem(290);
+  position: relative;
+
+  &__title {
+    margin: 0 0 to-rem(60) 0;
+    text-align: center;
+  }
+
+  &__top-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: to-rem(48);
+    position: absolute;
+    transform: translateY(-50%);
+    width: to-rem(732);
+    z-index: -1;
+  }
+
+  &__bottom-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: to-rem(314);
+    position: absolute;
+    transform: translateY(38%);
+    width: to-rem(732);
+    z-index: -1;
+  }
+
+  &__line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    color: var(--primary-color);
+    position: absolute;
+    right: 0;
+    top: to-rem(115);
+    transform: translateX(150%);
+    width: to-rem(43);
+    z-index: -1;
+  }
+}

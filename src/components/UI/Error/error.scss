@@ -1,0 +1,27 @@
+@import '~/sass/utilities/mixins';
+@import '~/sass/variables';
+
+.error {
+  &__title {
+    margin: 0 0 to-rem(67);
+    text-align: center;
+  }
+
+  &__card {
+    @include box-shadow;
+
+    background-color: $white-400;
+    border: var(--primary-color) solid 2px;
+    border-radius: 16px;
+    line-height: $line-height-l;
+    margin: auto;
+    max-width: to-rem(340);
+    padding: $spacer-xs;
+    word-break: break-word;
+  }
+
+  &__message {
+    color: var(--primary-color);
+    font-size: $font-size-xs;
+  }
+}

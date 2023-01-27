@@ -1,12 +1,11 @@
-@mixin label($color) {
+@mixin label($color: $charcoal-200) {
   color: $color;
   display: inline-block;
-  font-size: $font-size-s;
-  height: to-rem(21);
+  font-size: $font-size-xs;
   line-height: $line-height-l;
   margin-bottom: to-rem(5);
 
-  &::before {
+  &--required::before {
     color: $red-500;
     content: '*';
     font-size: $font-size-m;

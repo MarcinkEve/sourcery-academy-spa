@@ -1,28 +1,57 @@
-@import '../../sass/global';
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
 
 .header {
-  @include flex-box(
-    $direction: row,
-    $justify-content: space-between,
-    $align-items: center
-  );
+  @include flex-box($justify-content: space-between, $align-items: center);
+
+  @include mobile-breakpoint {
+    height: to-rem(60);
+    left: unset;
+    transform: unset;
+  }
 
   height: $height-header-footer;
-  margin: auto;
+  left: 50%;
   max-width: $max-page-width;
   padding: 0 $spacer-l;
+  position: fixed;
+  top: 0;
+  transform: translate(-50%, 0);
   width: 100%;
+  z-index: 10;
+
+  &::after {
+    background-color: $header-bg-clr;
+    box-shadow: none;
+    content: '';
+    height: 100%;
+    left: -50%;
+    position: absolute;
+    transition: box-shadow $transition-time-200 ease-in-out;
+    width: 150vw;
+    z-index: -1;
+  }
+
+  &__scrolled::after {
+    @include box-shadow(
+      $x-offset: 0,
+      $y-offset: to-rem(5),
+      $blur-radius: to-rem(30)
+    );
+  }
 
   .logo {
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
+    @include flex-box($justify-content: center, $align-items: center);
 
-    gap: $spacer-xxxs;
+    @include mobile-breakpoint {
+      margin-right: to-rem(50);
+    }
+
+    column-gap: $spacer-xxxs;
+    text-decoration: none;
 
     &__image {
+      flex-shrink: 0;
       width: to-rem(38);
     }
 
@@ -30,17 +59,25 @@
       color: $header-clr;
       font-weight: $font-weight-bold;
     }
+
+    &:focus-visible {
+      border-radius: 5px;
+      outline: 4px dashed $orange-200;
+    }
   }
 
   .navlinks {
-    @include reset-list-style;
-    @include flex-box(
-      $direction: row,
-      $justify-content: center,
-      $align-items: center
-    );
+    $_this: &;
 
-    gap: $spacer-xxs;
+    @include reset-list-style;
+
+    @include flex-box($justify-content: center, $align-items: center);
+
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    white-space: nowrap;
 
     &__academies {
       @include flex-box(
@@ -55,6 +92,8 @@
       border: 0;
       font-family: $paragraph-font;
       padding: 0;
+      position: relative;
+      z-index: 1;
     }
 
     &__academies-arrow {
@@ -63,22 +102,52 @@
     }
 
     &__academies-dropdown {
-      padding-right: to-rem(21);
       position: absolute;
       top: to-rem(78);
-      z-index: 1; //temporary fix
     }
 
     &__academies-menu:hover {
+      #{$_this}__academies-arrow {
+        fill: $white-400;
+      }
+
       cursor: pointer;
+    }
+
+    &__link {
+      position: relative;
+      z-index: 2;
     }
 
     &__link,
     &__academies-menu {
+      border-radius: 5px;
       color: $header-clr;
       font-size: $font-size-m;
       line-height: inherit;
+      padding: to-rem(7) to-rem(11);
+      position: relative;
       text-decoration: none;
+
+      &:focus-visible {
+        outline: 4px dashed $orange-200;
+      }
+
+      &:hover {
+        background-color: $violet-400;
+        color: $white-400;
+        transition: $transition-time-200;
+      }
+    }
+
+    &__link--active,
+    &__academies-menu--active {
+      text-decoration: underline;
+      text-decoration-color: $violet-600;
+
+      &:hover {
+        text-decoration-color: $white-400;
+      }
     }
   }
 }

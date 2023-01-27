@@ -1,0 +1,7 @@
+@import '~/sass/variables';
+
+.error-message {
+  color: $red-500;
+  font-size: $font-size-xs;
+  margin-top: to-rem(5);
+}

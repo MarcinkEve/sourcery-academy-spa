@@ -1,0 +1,28 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.play-icon,
+.pause-icon,
+.fullscreen-icon {
+  width: to-rem(20);
+
+  @include mobile-breakpoint {
+    width: to-rem(15);
+  }
+}
+
+.volume-icon {
+  width: to-rem(24);
+
+  @include mobile-breakpoint {
+    width: to-rem(19);
+  }
+}
+
+.volume-off-icon {
+  width: to-rem(26);
+
+  @include mobile-breakpoint {
+    width: to-rem(21);
+  }
+}

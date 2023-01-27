@@ -5,4 +5,6 @@ export const ROUTES = Object.freeze({
   TESTERS: '/testers',
   APPLICATION: '/applicationform',
   KIDS: '/kids',
+  MEDIA: '/media',
+  QUESTIONS: '/questions',
 });

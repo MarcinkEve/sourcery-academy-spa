@@ -1,0 +1,31 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.section-label {
+  @include label($color: $violet-400);
+
+  margin-bottom: to-rem(20);
+}
+
+.radio-toggler {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  background-color: $white-400;
+  border: 2px solid $violet-700;
+  border-radius: 30px;
+  height: to-rem(62);
+  position: relative;
+
+  @include mobile-breakpoint {
+    @include flex-box($direction: column);
+
+    border: 0 solid $violet-700;
+    border-radius: 0;
+    height: fit-content;
+    position: static;
+  }
+}

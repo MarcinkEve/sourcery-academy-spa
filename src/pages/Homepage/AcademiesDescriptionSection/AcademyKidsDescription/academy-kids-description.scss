@@ -1,0 +1,94 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.kids-description {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: flex-start
+  );
+
+  @include tablet-breakpoint {
+    align-items: flex-end;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  @include mobile-breakpoint {
+    margin-top: to-rem(30);
+  }
+
+  margin-top: to-rem(110);
+
+  &__content {
+    @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
+      width: 100%;
+    }
+
+    flex: 0 1 48%;
+    position: relative;
+  }
+
+  &__top-particles {
+    @include tablet-breakpoint {
+      top: -35%;
+    }
+
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: 65%;
+    position: absolute;
+    top: -25%;
+    width: to-rem(140);
+    z-index: -1;
+  }
+
+  &__bottom-particles {
+    @include tablet-breakpoint {
+      left: -40%;
+    }
+
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: 15%;
+    position: absolute;
+    top: 70%;
+    width: to-rem(442);
+    z-index: -1;
+  }
+
+  &__icons {
+    flex: 0 1 48%;
+    position: relative;
+  }
+
+  &__icons-image {
+    @include tablet-breakpoint {
+      margin: 0;
+      width: 100%;
+    }
+
+    margin-left: 20%;
+    width: min(90%, to-rem(458));
+  }
+
+  &__icons-line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    left: 5%;
+    position: absolute;
+    top: -25%;
+    width: to-rem(657);
+    z-index: -1;
+  }
+}

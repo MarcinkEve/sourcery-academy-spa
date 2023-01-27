@@ -41,6 +41,10 @@ To start developing run npm script command:
 
     $ npm run ts:fix
 
+To run Storybook in this project run npm command:
+
+    $ npm run storybook
+
 ## License
 
 The MIT License (MIT).

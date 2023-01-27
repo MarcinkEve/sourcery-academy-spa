@@ -1,87 +1,100 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
+
+import SvgLogo from '~/assets/icons/icon-logo.svg';
+import HamburgerButton from '~/components/Header/HamburgerButton';
+import NavigationLinks from '~/components/Header/NavigationLinks';
+import { ROUTES } from '~/constants/routes';
 
 import './header.scss';
-import SvgArrow from '~/assets/icons/icon-arrow-down.svg';
-import SvgLogo from '~/assets/icons/icon-logo.svg';
-import HeaderDropdown from '~/components/Header/Dropdown';
 
-const dropdownElements = [
+const navigationLinks = [
   {
-    text: 'Sourcery for Developers',
-    route: '/developers',
+    route: ROUTES.HOME,
+    title: 'About us',
   },
   {
-    text: 'Sourcery for Testers',
-    route: '/testers',
+    dropdownElements: [
+      {
+        text: 'Sourcery for Developers',
+        route: ROUTES.DEVELOPERS,
+      },
+      {
+        text: 'Sourcery for Testers',
+        route: ROUTES.TESTERS,
+      },
+      {
+        text: 'Sourcery for Front-End',
+        route: ROUTES.FRONTEND,
+      },
+      {
+        text: 'Sourcery for Kids',
+        route: ROUTES.KIDS,
+      },
+    ],
+    title: 'Academies',
   },
   {
-    text: 'Sourcery for Front-End',
-    route: '/frontend',
+    route: ROUTES.APPLICATION,
+    title: 'Register',
   },
   {
-    text: 'Sourcery for Kids',
-    route: '/kids',
+    route: ROUTES.MEDIA,
+    title: 'Media',
+  },
+  {
+    route: ROUTES.QUESTIONS,
+    title: 'Questions',
   },
 ];
 
 export const Header = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const ref = useRef(null);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-  useEffect(() => setIsDropdownOpen(false), [useLocation()]);
+  const handleClose = () => {
+    setIsHamburgerOpen(false);
+    handleScrollTop();
+  };
+
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
-    const keyListener = ({ key }) => {
-      if (key === 'Escape') {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener('keydown', keyListener, false);
+    window.addEventListener('scroll', isScrolled);
 
-    return () => document.removeEventListener('keydown', keyListener);
+    return () => window.removeEventListener('scroll', isScrolled);
   }, []);
 
+  const isScrolled = () => {
+    const scrollTop = window.scrollY;
+    setScrolled(scrollTop > 0);
+  };
+
   return (
-    <div className="header">
-      <div className="logo">
+    <div className={classNames('header', { header__scrolled: scrolled })}>
+      <NavLink
+        onClick={handleClose}
+        className="logo"
+        to="/"
+        aria-label="Home link"
+      >
         <SvgLogo className="logo__image" />
         <span className="logo__text">Sourcery Academy</span>
-      </div>
-      <ul className="navlinks">
-        <li>
-          <Link to="/" className="navlinks__link">
-            About us
-          </Link>
-        </li>
-        <li className="navlinks__academies" ref={ref}>
-          <button
-            className="navlinks__academies-menu"
-            onClick={() => setIsDropdownOpen((prev) => !prev)}
-          >
-            Academies
-            <SvgArrow className="navlinks__academies-arrow" />
-          </button>
-          {isDropdownOpen && (
-            <div className="navlinks__academies-dropdown">
-              <HeaderDropdown
-                data={dropdownElements}
-                onClickOutside={() => setIsDropdownOpen(false)}
-              />
-            </div>
-          )}
-        </li>
-        <li>
-          <Link className="navlinks__link">Media</Link>
-        </li>
-        <li>
-          <Link className="navlinks__link" to="/applicationform">
-            Register
-          </Link>
-        </li>
-        <li>
-          <Link className="navlinks__link">Questions</Link>
-        </li>
-      </ul>
+      </NavLink>
+      <HamburgerButton
+        navigationLinks={navigationLinks}
+        handleClose={handleClose}
+        isHamburgerOpen={isHamburgerOpen}
+        setIsHamburgerOpen={setIsHamburgerOpen}
+      />
+      <NavigationLinks
+        navigationLinks={navigationLinks}
+        handleScrollTop={handleScrollTop}
+      />
     </div>
   );
 };

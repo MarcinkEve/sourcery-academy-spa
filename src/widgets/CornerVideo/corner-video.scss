@@ -1,0 +1,90 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.corner-video {
+  @include tablet-breakpoint {
+    border-radius: to-rem(30);
+    margin-top: to-rem(40);
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(40) auto 0;
+  }
+
+  border-radius: 30%;
+  max-width: to-rem(900);
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-color: $white-400;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__image {
+    @include tablet-breakpoint {
+      max-height: to-rem(400);
+    }
+
+    @include mobile-breakpoint {
+      object-position: 0 40%;
+    }
+
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__button {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+    @include center-alignment;
+
+    background: transparent;
+    border: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    transition: color $transition-time-200 ease,
+      background-color $transition-time-200 ease;
+    width: to-rem(90);
+
+    &:hover {
+      background-color: var(--button-hover);
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--button-active);
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &__button-icon {
+    color: var(--primary-color);
+    width: 100%;
+  }
+}

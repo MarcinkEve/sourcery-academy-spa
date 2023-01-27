@@ -1,0 +1,90 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.developers-description {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: flex-start
+  );
+
+  @include tablet-breakpoint {
+    flex-direction: column;
+  }
+
+  &__top-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: 4%;
+    position: absolute;
+    top: -18%;
+    width: to-rem(126);
+    z-index: -1;
+  }
+
+  &__content {
+    @include tablet-breakpoint {
+      width: 80%;
+    }
+
+    @include mobile-breakpoint {
+      width: 100%;
+    }
+
+    flex: 0 1 45%;
+    position: relative;
+  }
+
+  &__bottom-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: 44%;
+    position: absolute;
+    top: 61%;
+    width: to-rem(190);
+    z-index: -1;
+  }
+
+  &__icons {
+    @include tablet-breakpoint {
+      transform: translate(-10%, -20%);
+    }
+
+    @include mobile-breakpoint {
+      transform: translate(0, -20%);
+    }
+
+    flex: 0 1 50%;
+    position: relative;
+  }
+
+  &__icons-image {
+    @include tablet-breakpoint {
+      margin: 0;
+    }
+
+    @include mobile-breakpoint {
+      max-width: 100%;
+    }
+
+    margin-left: 15%;
+    width: to-rem(430);
+    z-index: -1;
+  }
+
+  &__icons-line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    left: 0;
+    position: absolute;
+    top: -110%;
+    width: to-rem(665);
+    z-index: -1;
+  }
+}

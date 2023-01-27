@@ -1,0 +1,34 @@
+@import '~/sass/variables';
+
+$_border-radius: 10px;
+$_bg-color-toolbar: rgba(35, 35, 35, 0.65);
+
+.fslightbox-container {
+  background: $semi-transparent-bg-clr !important;
+  font-family: inherit !important;
+}
+
+.fslightbox-slide-number-container {
+  background-color: $_bg-color-toolbar;
+  border-bottom-right-radius: $_border-radius;
+}
+
+.fslightbox-toolbar {
+  border-bottom-left-radius: $_border-radius;
+}
+
+.fslightbox-toolbar-button {
+  &:first-child {
+    display: none;
+  }
+}
+
+.fslightbox-slide-btn {
+  border-radius: $_border-radius;
+  padding: 15px !important;
+}
+
+.fslightbox-source {
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+}

@@ -41,17 +41,17 @@ const config = {
             },
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: devMode,
-            },
-          },
-          {
             loader: 'postcss-loader',
             options: {
               config: {
                 path: `${__dirname}/postcss.config.js`,
               },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: devMode,
             },
           },
         ],
@@ -102,6 +102,14 @@ const config = {
         test: /\.svg$/i,
         issuer: /\.(js|jsx)?$/,
         use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },

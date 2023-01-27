@@ -1,0 +1,27 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.testimonial-homepage-section {
+  @include tablet-breakpoint {
+    margin-bottom: to-rem(200);
+  }
+
+  @include mobile-breakpoint {
+    margin-bottom: to-rem(50);
+  }
+
+  margin: 0 auto to-rem(295);
+  position: relative;
+
+  &__bottom-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: 7%;
+    position: absolute;
+    top: 90%;
+    width: to-rem(1100);
+    z-index: -1;
+  }
+}

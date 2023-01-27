@@ -1,0 +1,40 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.loader {
+  $_this: &;
+
+  &__modal {
+    @include flex-box($justify-content: center, $align-items: center);
+
+    height: 150%;
+    left: 0;
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    z-index: 1;
+
+    &--background {
+      background-color: $almost-transparent-bg-clr;
+    }
+  }
+
+  &__spinner {
+    animation: spinning 2s linear infinite;
+    border: to-rem(8) solid #f3f3f3;
+    border-radius: 50%;
+    border-top: to-rem(8) solid var(--primary-color);
+    height: to-rem(50);
+    width: to-rem(50);
+  }
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

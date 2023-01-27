@@ -1,0 +1,85 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.text-section {
+  $_this: &;
+
+  &:not(:last-child) {
+    margin: 0 0 $spacer-l 0;
+  }
+
+  &__heading {
+    margin: 0 0 $spacer-m 0;
+
+    &--large-spacing {
+      @include mobile-breakpoint {
+        margin-bottom: to-rem(40);
+      }
+
+      margin: 0 0 to-rem(70) 0;
+    }
+  }
+
+  &__content {
+    margin: 0;
+
+    &--bold {
+      @include tablet-breakpoint {
+        font-size: $font-size-l;
+      }
+
+      @include mobile-breakpoint {
+        font-size: $font-size-m;
+      }
+
+      font-family: $header-font;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+    }
+
+    p {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      margin: inherit;
+    }
+
+    ul {
+      line-height: $line-height-l;
+      list-style-type: '\25cf';
+      margin: inherit;
+      padding-left: to-rem(10);
+    }
+
+    li {
+      padding-left: to-rem(16);
+
+      &::marker {
+        color: var(--primary-color);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: to-rem(5);
+      }
+    }
+  }
+
+  &--right {
+    text-align: right;
+
+    #{$_this}__content {
+      ul {
+        padding-right: to-rem(10);
+      }
+
+      li {
+        direction: rtl;
+        padding-right: to-rem(16);
+      }
+    }
+  }
+
+  &__button-wrapper {
+    margin: $spacer-xxxl 0 0 0;
+  }
+}

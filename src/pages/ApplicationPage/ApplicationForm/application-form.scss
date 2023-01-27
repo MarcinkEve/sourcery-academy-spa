@@ -1,0 +1,7 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.application-form {
+  align-self: flex-start;
+  max-width: to-rem(536);
+}

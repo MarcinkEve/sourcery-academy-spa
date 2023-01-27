@@ -1,0 +1,11 @@
+@import '~/sass/variables';
+
+.media-section {
+  &__title {
+    margin: 0 0 $spacer-l 0;
+  }
+
+  .btn {
+    margin: $spacer-xxxl 0 0;
+  }
+}

@@ -1,10 +1,15 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { arrayOf, func, shape, string } from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import { arrayOf, func, shape, string, object } from 'prop-types';
 
 import './headerDropdown.scss';
 
-export const HeaderDropdown = ({ data, onClickOutside }) => {
+export const HeaderDropdown = ({
+  data,
+  onClickOutside,
+  academiesRef,
+  handleScrollTop,
+}) => {
   const pinRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -17,7 +22,8 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
       if (
         onClickOutside &&
         !pinRef.current.contains(target) &&
-        !contentRef.current.contains(target)
+        !contentRef.current.contains(target) &&
+        !academiesRef.current.contains(target)
       ) {
         onClickOutside();
       }
@@ -26,6 +32,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
 
     return () => document.removeEventListener('mousedown', clickListener);
   }, [pinRef, contentRef]);
+
   return (
     <div className="dropdown">
       <div className="dropdown__pin">
@@ -34,9 +41,17 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
       <ul className="dropdown__content" ref={contentRef}>
         {data.map((element, index) => (
           <li key={index} className="dropdown__content-item">
-            <Link className="dropdown__content-link" to={element.route}>
+            <NavLink
+              className={({ isActive }) =>
+                `dropdown__content-link ${
+                  isActive ? 'dropdown__content-link--active' : ''
+                }`
+              }
+              to={element.route}
+              onClick={handleScrollTop}
+            >
               {element.text}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -45,6 +60,7 @@ export const HeaderDropdown = ({ data, onClickOutside }) => {
 };
 
 HeaderDropdown.propTypes = {
+  academiesRef: object,
   data: arrayOf(
     shape({
       text: string.isRequired,
@@ -52,4 +68,5 @@ HeaderDropdown.propTypes = {
     })
   ),
   onClickOutside: func,
+  handleScrollTop: func,
 };

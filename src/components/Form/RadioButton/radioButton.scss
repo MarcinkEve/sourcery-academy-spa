@@ -1,0 +1,64 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.radio {
+  @include mobile-breakpoint {
+    @include flex-box($direction: column);
+  }
+
+  &__title {
+    @include label($violet-400);
+
+    display: block;
+    margin-bottom: to-rem(17);
+  }
+
+  &__label {
+    color: $charcoal-400;
+    cursor: pointer;
+    font-family: $paragraph-font;
+    font-weight: $font-weight-bold;
+
+    &:not(:last-child) {
+      margin-right: to-rem(61);
+    }
+
+    @include mobile-breakpoint {
+      @include flex-box($align-items: center);
+
+      &:not(:last-child) {
+        margin: 0 0 to-rem(20) 0;
+      }
+    }
+  }
+
+  &__input {
+    accent-color: $violet-400;
+    height: to-rem(18);
+    margin: 0 to-rem(21) 0 0;
+    width: to-rem(18);
+
+    &-label {
+      text-transform: capitalize;
+      word-break: break-word;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--button-active);
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+}

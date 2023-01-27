@@ -1,0 +1,111 @@
+@import '~/sass/utilities/functions/';
+@import '~/sass/utilities/mixins';
+@import '~/sass/variables';
+
+$_paragraph-width: 62%;
+$_paragraph-width-mobile: 90%;
+
+$_svg-container-width: 50%;
+$_svg-container-width-mobile: 20%;
+$_svg-container-max-width: to-rem(200);
+$_svg-container-min-width-mobile: to-rem(110);
+$_svg-margin: to-rem(13);
+
+.application-step {
+  $_this: &;
+
+  &__text-container {
+    max-width: calc(#{$_paragraph-width} + 0.5rem);
+
+    @include mobile-breakpoint {
+      max-width: $_paragraph-width-mobile;
+    }
+  }
+
+  &__heading {
+    @include padding-margin-0;
+
+    margin-top: to-rem(23);
+    min-height: to-rem(39);
+
+    @include mobile-breakpoint {
+      width: 75%;
+    }
+  }
+
+  &__line {
+    background-color: var(--primary-color);
+    height: 2px;
+    margin: to-rem(17) 0 to-rem(25);
+
+    @include mobile-breakpoint {
+      width: 75%;
+    }
+  }
+
+  &__paragraph {
+    min-height: to-rem(110);
+  }
+
+  &__odd-number {
+    @include flex-box;
+  }
+
+  &__even-number {
+    @include flex-box(row-reverse);
+
+    text-align: right;
+    transform: translateY(to-rem(95));
+
+    @include tablet-breakpoint {
+      transform: none;
+    }
+
+    @include mobile-breakpoint {
+      #{$_this}__heading {
+        margin-left: 25%;
+      }
+      #{$_this}__line {
+        margin-left: 25%;
+      }
+    }
+
+    #{$_this}__svg-container {
+      left: -$_svg-container-width;
+
+      @include tablet-breakpoint {
+        left: calc(#{-$_svg-container-max-width} - #{-$_svg-margin});
+      }
+
+      @include mobile-breakpoint {
+        left: -$_svg-container-min-width-mobile;
+      }
+    }
+  }
+
+  &__svg-container {
+    color: var(--primary-color);
+    left: 100%;
+    margin-left: $_svg-margin;
+    max-width: $_svg-container-max-width;
+    position: relative;
+    top: to-rem(-80);
+    width: $_svg-container-width;
+
+    @include mobile-breakpoint {
+      margin-left: 0;
+      min-width: $_svg-container-min-width-mobile;
+      width: $_svg-container-width-mobile;
+    }
+  }
+}
+
+.isolated-path {
+  &--secondary {
+    color: var(--secondary-color);
+  }
+
+  &--lighter {
+    color: var(--icon-secondary-color);
+  }
+}

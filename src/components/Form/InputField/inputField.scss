@@ -1,0 +1,19 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__field {
+    @include input-field;
+  }
+
+  &__label {
+    @include label;
+  }
+
+  &__error {
+    border-color: $red-500;
+  }
+}

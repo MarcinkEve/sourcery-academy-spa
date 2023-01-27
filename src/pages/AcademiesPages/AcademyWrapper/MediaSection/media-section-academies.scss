@@ -1,0 +1,40 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.media-section-academies {
+  margin-bottom: to-rem(100);
+  position: relative;
+
+  @include tablet-breakpoint {
+    margin-bottom: to-rem(50);
+  }
+
+  @include mobile-breakpoint {
+    margin-bottom: 0;
+  }
+
+  &__particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    position: absolute;
+    right: 5%;
+    top: -5%;
+    width: to-rem(800);
+    z-index: -1;
+  }
+
+  &__line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    color: var(--primary-color);
+    left: -5%;
+    position: absolute;
+    top: 10%;
+    width: to-rem(130);
+    z-index: -1;
+  }
+}

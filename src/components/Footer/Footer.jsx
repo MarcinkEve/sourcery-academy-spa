@@ -1,9 +1,10 @@
 import React from 'react';
 
-import SocialLink from '../SocialLink';
-import Facebook from '../../assets/icons/icon-facebook.svg';
-import Twitter from '../../assets/icons/icon-twitter.svg';
-import Instagram from '../../assets/icons/icon-instagram.svg';
+import SocialLink from '~/components/UI/SocialLink';
+import Facebook from '~/assets/icons/icon-facebook.svg';
+import Twitter from '~/assets/icons/icon-twitter.svg';
+import Instagram from '~/assets/icons/icon-instagram.svg';
+
 import './footer.scss';
 
 export const Footer = () => {
@@ -24,6 +25,9 @@ export const Footer = () => {
       icon: <Instagram className="social-link__icon" />,
     },
   ];
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <ul className="footer__list">
@@ -37,7 +41,9 @@ export const Footer = () => {
           </li>
         ))}
       </ul>
-      <p className="footer__text">Copyright &copy; 2022 sourcery academy</p>
+      <p className="footer__text">
+        Copyright &copy; {currentYear} sourcery academy
+      </p>
     </footer>
   );
 };

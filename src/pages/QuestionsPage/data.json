@@ -1,0 +1,33 @@
+{
+  "title": "Frequently asked questions",
+  "data": [
+    {
+      "buttonText": "What was your biggest challenge?",
+      "contentText": "It was new for us to code as a team. Write code in a way that others would understand as well as work with each other's code. We had to learn a new way to think about components and all the use cases they could have."
+    },
+    {
+      "buttonText": "What skills did you improve the most?",
+      "contentText": "Working according good practices, write clean code, working in team, reading and understanding other people code, many tech things."
+    },
+    {
+      "buttonText": "How was your experience working as a team?",
+      "contentText": "I think it was a great experience of how our team grew together maybe we started a little shy but went on to collaborate excellently, helping each other and making big decisions together. We managed to keep our meetings regular and fun."
+    },
+    {
+      "buttonText": "The happiest and the saddest thing that happened during academy.",
+      "contentText": "Happiest moments were when after struggling for a while I could solve all things, so this gave me more self confidence.  Happiest things- the team, that became my second family. Saddest thing, that all thing has its ending and the question- what's next? Somehow I'll have to find something to fill this void that will come after graduating from the academy."
+    },
+    {
+      "buttonText": "What would you change in the academy?",
+      "contentText": "My personal opinion, since the quality of this academy was exceptional, I would like to see this academy more than once a year to help other fresh developers gain some hands-on experience of what it is like to be a front-end developer."
+    },
+    {
+      "buttonText": "Did the project fulfill your expectations? ",
+      "contentText": "Definitely, we had an opportunity to simulate a real-life project, with all its nuance and problems learning good practices and getting some hands-on experience. Which is invaluable for junior developers like us."
+    },
+    {
+      "buttonText": "How would you define your team's mentor?",
+      "contentText": "The best mentor ever! He is so honest, patient and dedicated. Helps everyone, patiently answers all questions, doesn't spare advices."
+    }
+  ]
+}

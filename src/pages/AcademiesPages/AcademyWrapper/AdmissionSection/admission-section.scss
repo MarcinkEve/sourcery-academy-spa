@@ -1,0 +1,121 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.admission-section {
+  $_this: &;
+
+  @include tablet-breakpoint {
+    @include flex-box(
+      $direction: column,
+      $justify-content: space-between,
+      $align-items: flex-start
+    );
+
+    margin: to-rem(200) auto;
+  }
+
+  @include mobile-breakpoint {
+    margin: to-rem(50) auto;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+
+  &__text-container {
+    @include tablet-breakpoint {
+      width: 100%;
+    }
+
+    grid-area: 1 / 1 / 11 / 3;
+    width: 92%;
+  }
+
+  &__particles-container {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    grid-area: 1 / 3 / 7 / 4;
+    max-height: to-rem(550);
+    position: relative;
+
+    #{$_this}__particles {
+      bottom: 6%;
+      left: 30%;
+      position: absolute;
+      width: to-rem(141);
+    }
+  }
+
+  &__dates-container {
+    @include tablet-breakpoint {
+      margin-top: to-rem(40);
+    }
+
+    grid-area: 2 / 4 / 5 / 5;
+    max-height: to-rem(284);
+    position: relative;
+
+    #{$_this}__line {
+      @include tablet-breakpoint {
+        display: none;
+      }
+
+      bottom: -54%;
+      color: var(--primary-color);
+      position: absolute;
+      right: -23%;
+      top: -108%;
+      width: 142%;
+    }
+  }
+
+  &__image-container {
+    @include tablet-breakpoint {
+      @include flex-box($justify-content: flex-end);
+
+      margin-top: to-rem(40);
+      position: relative;
+      width: 100%;
+    }
+
+    @include mobile-breakpoint {
+      left: initial;
+      position: initial;
+      top: initial;
+    }
+
+    grid-area: 6 / 3 / 11 / 5;
+    position: relative;
+
+    #{$_this}__image {
+      @include tablet-breakpoint {
+        left: initial;
+        max-width: to-rem(500);
+        position: absolute;
+        top: to-rem(-150);
+        width: 55%;
+      }
+
+      @include mobile-breakpoint {
+        position: initial;
+        top: initial;
+        width: 100%;
+      }
+
+      left: 20%;
+      position: absolute;
+      top: 5%;
+      width: 90%;
+    }
+  }
+
+  &__svg-primary {
+    fill: var(--primary-color);
+  }
+
+  &__svg-secondary {
+    fill: var(--secondary-color);
+  }
+}

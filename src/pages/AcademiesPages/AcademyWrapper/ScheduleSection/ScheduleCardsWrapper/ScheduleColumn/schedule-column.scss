@@ -1,0 +1,53 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.schedule-column {
+  &__title {
+    margin: 0 0 $spacer-xxl 0;
+    text-align: center;
+  }
+
+  &__data {
+    @include flex-box($direction: row, $justify-content: center);
+
+    @include tablet-breakpoint {
+      @include flex-box($direction: column);
+
+      &:not(:last-child) {
+        margin-bottom: $spacer-l;
+      }
+    }
+
+    @include mobile-breakpoint {
+      @include flex-box($direction: column, $align-items: center);
+    }
+  }
+
+  &__large-screen {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    column-gap: $spacer-l;
+    display: flex;
+
+    &--single {
+      justify-content: center;
+    }
+  }
+
+  &__small-screen {
+    @include mobile-breakpoint {
+      display: block;
+      justify-content: center;
+    }
+
+    display: none;
+    margin-bottom: $spacer-l;
+  }
+
+  &__button-container {
+    margin-top: $spacer-l;
+    text-align: center;
+  }
+}

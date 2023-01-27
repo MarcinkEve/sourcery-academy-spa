@@ -1,0 +1,16 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.academies-description-section {
+  @include tablet-breakpoint {
+    margin-bottom: to-rem(200);
+  }
+
+  @include mobile-breakpoint {
+    margin-bottom: to-rem(50);
+    padding-top: to-rem(100);
+  }
+
+  margin-bottom: to-rem(267);
+  padding-top: to-rem(170);
+}

@@ -1,0 +1,92 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.dropdown-container {
+  margin: 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: to-rem(20);
+  }
+
+  &__button {
+    @include flex-box(
+      $direction: row,
+      $justify-content: space-between,
+      $align-items: center
+    );
+
+    background-color: $lavender-100;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: $font-size-m;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-m;
+    margin: 0;
+    min-height: to-rem(72);
+    padding: to-rem(12) to-rem(60) to-rem(12) to-rem(20);
+    position: relative;
+    text-align: left;
+    transition: color $transition-time-200 ease,
+      background-color $transition-time-200 ease;
+    width: 100%;
+    word-break: break-word;
+
+    &:hover {
+      background-color: var(--button-hover);
+      color: $white-400;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--button-active);
+      color: $white-400;
+    }
+
+    &:focus {
+      outline: 2px solid var(--button-hover);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed $orange-200;
+    }
+
+    &:active {
+      outline: none;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  &__button-arrow {
+    flex-shrink: 0;
+    height: to-rem(13);
+    position: absolute;
+    right: to-rem(20);
+    transition: $transition-time-400 ease-in-out;
+    width: to-rem(21);
+
+    &--up {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    transition-duration: $transition-time-400;
+    transition-timing-function: cubic-bezier(0.05, 0.08, 0.4, 0);
+  }
+
+  &__content {
+    margin-bottom: to-rem(40);
+
+    &-text {
+      font-size: $font-size-s;
+      padding: 0 to-rem(10);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import '~/sass/variables';
+@import '~/sass/utilities';
+
+.page-not-found {
+  @include flex-box(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  @include tablet-breakpoint {
+    @include flex-box(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    flex-flow: column-reverse;
+    padding-top: to-rem(40);
+    text-align: center;
+  }
+
+  margin: 0 auto;
+  max-width: to-rem(1200);
+  min-height: calc(100vh - (#{$height-header-footer} * 2));
+
+  &__image {
+    @include tablet-breakpoint {
+      margin-bottom: to-rem(40);
+      max-width: to-rem(250);
+    }
+
+    max-width: to-rem(450);
+  }
+}

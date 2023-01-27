@@ -1,0 +1,19 @@
+@import '~/sass/utilities/';
+
+.media-page-wrapper {
+  .media-section {
+    @include mobile-breakpoint {
+      padding-top: to-rem(120);
+
+      &:last-child {
+        margin-bottom: to-rem(100);
+      }
+    }
+
+    padding-top: to-rem(120);
+
+    &:last-child {
+      margin-bottom: to-rem(120);
+    }
+  }
+}

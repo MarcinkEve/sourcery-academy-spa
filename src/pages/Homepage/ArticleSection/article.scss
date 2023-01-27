@@ -1,0 +1,108 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.article {
+  $_icon-size: to-rem(48);
+
+  @include flex-box(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+
+  @include tablet-breakpoint {
+    margin-bottom: to-rem(300);
+  }
+
+  @include mobile-breakpoint {
+    margin-bottom: to-rem(150);
+  }
+
+  margin: 0 auto to-rem(230);
+  max-width: to-rem(1006);
+  position: relative;
+  text-align: center;
+
+  &__top-particles {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    left: 50%;
+    position: absolute;
+    top: -35%;
+    transform: translateX(-50%);
+    width: to-rem(1000);
+    z-index: -1;
+  }
+
+  &__title {
+    color: $violet-700;
+    margin: 0 0 $spacer-xs;
+    padding: 0 2rem;
+    word-wrap: break-word;
+  }
+
+  &__content {
+    color: $charcoal-400;
+    margin-bottom: $spacer-m;
+  }
+
+  &__icon-wrapper {
+    @include flex-box(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+  }
+
+  &__icon-line {
+    @include mobile-breakpoint {
+      display: none;
+    }
+
+    height: to-rem(48);
+    margin-bottom: $spacer-s;
+  }
+
+  &__icon-circle {
+    border: 2px solid $violet-700;
+    border-radius: 50%;
+    height: #{$_icon-size};
+    width: #{$_icon-size};
+  }
+
+  &__icon-arrow-down {
+    animation: bounce $transition-time-1200 ease-in-out infinite;
+  }
+
+  &__bottom-particles {
+    left: 50%;
+    position: absolute;
+    top: 70%;
+    transform: translateX(-50%);
+    width: to-rem(790);
+    z-index: -1;
+    @include mobile-breakpoint {
+      display: none;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

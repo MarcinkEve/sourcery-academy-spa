@@ -1,0 +1,32 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.media-section-homepage {
+  margin-bottom: to-rem(40);
+  position: relative;
+
+  &__particles {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    position: absolute;
+    right: 5%;
+    top: -5%;
+    width: to-rem(800);
+    z-index: -1;
+  }
+
+  &__line {
+    @include tablet-breakpoint {
+      display: none;
+    }
+
+    color: var(--primary-color);
+    left: -5%;
+    position: absolute;
+    top: -35%;
+    width: to-rem(350);
+    z-index: -1;
+  }
+}
